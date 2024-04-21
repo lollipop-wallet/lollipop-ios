@@ -10,4 +10,7 @@ import Foundation
 enum StorageKeys : String {
     case imei
     case subscribed
+    case notificationsaccepted
+    case notifications
+    case sessions
 }
