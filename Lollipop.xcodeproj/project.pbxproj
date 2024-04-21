@@ -56,6 +56,8 @@
 		2CACCDE62BD54058008178F8 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDE52BD54058008178F8 /* UINavigationController+Extension.swift */; };
 		2CACCDE92BD540C9008178F8 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDE82BD540C9008178F8 /* RemoteConfigManager.swift */; };
 		2CACCDEB2BD54120008178F8 /* PushNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDEA2BD54120008178F8 /* PushNotificationsManager.swift */; };
+		2CACCDED2BD541D3008178F8 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDEC2BD541D3008178F8 /* AppDelegate+Extension.swift */; };
+		2CACCDEF2BD5422A008178F8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDEE2BD5422A008178F8 /* StorageManager.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +135,8 @@
 		2CACCDE52BD54058008178F8 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		2CACCDE82BD540C9008178F8 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		2CACCDEA2BD54120008178F8 /* PushNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsManager.swift; sourceTree = "<group>"; };
+		2CACCDEC2BD541D3008178F8 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDEE2BD5422A008178F8 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		2F5C16632B5378460D3B34E7 /* Pods-Lollipop.lollipop developmet debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop developmet debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop developmet debug.xcconfig"; sourceTree = "<group>"; };
 		38FFEF8E6EBB79E961E895E0 /* Pods-Lollipop.lollipop production debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production debug.xcconfig"; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
@@ -328,6 +332,7 @@
 				2CACCDE12BD53FC4008178F8 /* UIView+Extension.swift */,
 				2CACCDE32BD54039008178F8 /* UIViewController+Extension.swift */,
 				2CACCDE52BD54058008178F8 /* UINavigationController+Extension.swift */,
+				2CACCDEC2BD541D3008178F8 /* AppDelegate+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 			children = (
 				2CACCDE82BD540C9008178F8 /* RemoteConfigManager.swift */,
 				2CACCDEA2BD54120008178F8 /* PushNotificationsManager.swift */,
+				2CACCDEE2BD5422A008178F8 /* StorageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -622,11 +628,13 @@
 				2CACCDB02BD53B1B008178F8 /* Connectivity.swift in Sources */,
 				2CACCD892BD5290B008178F8 /* LaunchUI.swift in Sources */,
 				2CACCDDC2BD53F71008178F8 /* UIStackView+Extension.swift in Sources */,
+				2CACCDED2BD541D3008178F8 /* AppDelegate+Extension.swift in Sources */,
 				2CACCDB72BD53C0B008178F8 /* DefaultModels.swift in Sources */,
 				2CACCDA82BD53265008178F8 /* FirebaseEvents.swift in Sources */,
 				2CACCDE42BD54039008178F8 /* UIViewController+Extension.swift in Sources */,
 				2CACCDD22BD53E82008178F8 /* String+Extension.swift in Sources */,
 				2CACCDBA2BD53C40008178F8 /* Configuration.swift in Sources */,
+				2CACCDEF2BD5422A008178F8 /* StorageManager.swift in Sources */,
 				2CACCDD62BD53F1B008178F8 /* UIImage+Extension.swift in Sources */,
 				2CACCD802BD528F7008178F8 /* LaunchPresenter.swift in Sources */,
 				2CACCD812BD528F7008178F8 /* LaunchProtocols.swift in Sources */,

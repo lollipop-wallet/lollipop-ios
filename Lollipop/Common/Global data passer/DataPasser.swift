@@ -10,4 +10,5 @@ import Foundation
 struct Manager {
     static var didCloseReviewPrompt = Bool()
     static var userIMEI = String()
+    static var sessionsCount = Int()
 }
