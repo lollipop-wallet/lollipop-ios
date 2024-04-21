@@ -13,12 +13,6 @@
 		2CACCD432BD51C83008178F8 /* LollipopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD422BD51C83008178F8 /* LollipopTests.swift */; };
 		2CACCD4D2BD51C83008178F8 /* LollipopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD4C2BD51C83008178F8 /* LollipopUITests.swift */; };
 		2CACCD4F2BD51C83008178F8 /* LollipopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD4E2BD51C83008178F8 /* LollipopUITestsLaunchTests.swift */; };
-		2CACCD712BD528E3008178F8 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD6B2BD528E3008178F8 /* OnboardingPresenter.swift */; };
-		2CACCD722BD528E3008178F8 /* OnboardingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD6C2BD528E3008178F8 /* OnboardingProtocols.swift */; };
-		2CACCD732BD528E3008178F8 /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD6D2BD528E3008178F8 /* OnboardingInteractor.swift */; };
-		2CACCD742BD528E3008178F8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD6E2BD528E3008178F8 /* OnboardingView.swift */; };
-		2CACCD752BD528E3008178F8 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD6F2BD528E3008178F8 /* OnboardingModel.swift */; };
-		2CACCD762BD528E3008178F8 /* OnboardingWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD702BD528E3008178F8 /* OnboardingWireframe.swift */; };
 		2CACCD802BD528F7008178F8 /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD7A2BD528F7008178F8 /* LaunchPresenter.swift */; };
 		2CACCD812BD528F7008178F8 /* LaunchProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD7B2BD528F7008178F8 /* LaunchProtocols.swift */; };
 		2CACCD822BD528F7008178F8 /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD7C2BD528F7008178F8 /* LaunchInteractor.swift */; };
@@ -26,6 +20,8 @@
 		2CACCD842BD528F7008178F8 /* LaunchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD7E2BD528F7008178F8 /* LaunchModel.swift */; };
 		2CACCD852BD528F7008178F8 /* LaunchWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD7F2BD528F7008178F8 /* LaunchWireframe.swift */; };
 		2CACCD892BD5290B008178F8 /* LaunchUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD882BD5290B008178F8 /* LaunchUI.swift */; };
+		2CACCD8D2BD52E38008178F8 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD8C2BD52E38008178F8 /* Alert.swift */; };
+		2CACCD902BD52E81008178F8 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD8F2BD52E81008178F8 /* UIApplication+Extension.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,12 +54,6 @@
 		2CACCD4C2BD51C83008178F8 /* LollipopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LollipopUITests.swift; sourceTree = "<group>"; };
 		2CACCD4E2BD51C83008178F8 /* LollipopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LollipopUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2CACCD632BD52449008178F8 /* Lollipop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lollipop.entitlements; sourceTree = "<group>"; };
-		2CACCD6B2BD528E3008178F8 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = SOURCE_ROOT; };
-		2CACCD6C2BD528E3008178F8 /* OnboardingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocols.swift; sourceTree = SOURCE_ROOT; };
-		2CACCD6D2BD528E3008178F8 /* OnboardingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInteractor.swift; sourceTree = SOURCE_ROOT; };
-		2CACCD6E2BD528E3008178F8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = SOURCE_ROOT; };
-		2CACCD6F2BD528E3008178F8 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = SOURCE_ROOT; };
-		2CACCD702BD528E3008178F8 /* OnboardingWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWireframe.swift; sourceTree = SOURCE_ROOT; };
 		2CACCD7A2BD528F7008178F8 /* LaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenter.swift; sourceTree = "<group>"; };
 		2CACCD7B2BD528F7008178F8 /* LaunchProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchProtocols.swift; sourceTree = "<group>"; };
 		2CACCD7C2BD528F7008178F8 /* LaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
@@ -71,6 +61,8 @@
 		2CACCD7E2BD528F7008178F8 /* LaunchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchModel.swift; sourceTree = "<group>"; };
 		2CACCD7F2BD528F7008178F8 /* LaunchWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchWireframe.swift; sourceTree = "<group>"; };
 		2CACCD882BD5290B008178F8 /* LaunchUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchUI.swift; sourceTree = "<group>"; };
+		2CACCD8C2BD52E38008178F8 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		2CACCD8F2BD52E81008178F8 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		2F5C16632B5378460D3B34E7 /* Pods-Lollipop.lollipop developmet debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop developmet debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop developmet debug.xcconfig"; sourceTree = "<group>"; };
 		38FFEF8E6EBB79E961E895E0 /* Pods-Lollipop.lollipop production debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production debug.xcconfig"; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +123,7 @@
 			children = (
 				2CACCD632BD52449008178F8 /* Lollipop.entitlements */,
 				2CACCD642BD52794008178F8 /* App Flow */,
+				2CACCD8A2BD52DFF008178F8 /* Common */,
 				2CACCD652BD5279F008178F8 /* Info property lists */,
 				2CACCD662BD527AF008178F8 /* Lifecycle delegates */,
 				2CACCD672BD527C0008178F8 /* Resources */,
@@ -160,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				2CACCD782BD528EC008178F8 /* Launch */,
-				2CACCD692BD528D4008178F8 /* Onboarding */,
 			);
 			path = "App Flow";
 			sourceTree = "<group>";
@@ -197,19 +189,6 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
-		2CACCD692BD528D4008178F8 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				2CACCD6B2BD528E3008178F8 /* OnboardingPresenter.swift */,
-				2CACCD6C2BD528E3008178F8 /* OnboardingProtocols.swift */,
-				2CACCD6D2BD528E3008178F8 /* OnboardingInteractor.swift */,
-				2CACCD6E2BD528E3008178F8 /* OnboardingView.swift */,
-				2CACCD6F2BD528E3008178F8 /* OnboardingModel.swift */,
-				2CACCD702BD528E3008178F8 /* OnboardingWireframe.swift */,
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
 		2CACCD782BD528EC008178F8 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +209,31 @@
 				2CACCD882BD5290B008178F8 /* LaunchUI.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		2CACCD8A2BD52DFF008178F8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCD8B2BD52E33008178F8 /* Alert */,
+				2CACCD8E2BD52E59008178F8 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2CACCD8B2BD52E33008178F8 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCD8C2BD52E38008178F8 /* Alert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		2CACCD8E2BD52E59008178F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCD8F2BD52E81008178F8 /* UIApplication+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8C1AC92D620E8BB50BD90320 /* Pods */ = {
@@ -425,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CACCD8D2BD52E38008178F8 /* Alert.swift in Sources */,
 				2CACCD892BD5290B008178F8 /* LaunchUI.swift in Sources */,
 				2CACCD802BD528F7008178F8 /* LaunchPresenter.swift in Sources */,
 				2CACCD812BD528F7008178F8 /* LaunchProtocols.swift in Sources */,
@@ -432,12 +437,7 @@
 				2CACCD832BD528F7008178F8 /* LaunchView.swift in Sources */,
 				2CACCD842BD528F7008178F8 /* LaunchModel.swift in Sources */,
 				2CACCD852BD528F7008178F8 /* LaunchWireframe.swift in Sources */,
-				2CACCD712BD528E3008178F8 /* OnboardingPresenter.swift in Sources */,
-				2CACCD722BD528E3008178F8 /* OnboardingProtocols.swift in Sources */,
-				2CACCD732BD528E3008178F8 /* OnboardingInteractor.swift in Sources */,
-				2CACCD742BD528E3008178F8 /* OnboardingView.swift in Sources */,
-				2CACCD752BD528E3008178F8 /* OnboardingModel.swift in Sources */,
-				2CACCD762BD528E3008178F8 /* OnboardingWireframe.swift in Sources */,
+				2CACCD902BD52E81008178F8 /* UIApplication+Extension.swift in Sources */,
 				2CACCD2C2BD51C81008178F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
