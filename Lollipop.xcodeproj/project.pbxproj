@@ -506,9 +506,9 @@
 				DEVELOPMENT_TEAM = 63M9VB92YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Lollipop/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -540,9 +540,9 @@
 				DEVELOPMENT_TEAM = 63M9VB92YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Lollipop/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -715,9 +715,9 @@
 				DEVELOPMENT_TEAM = 63M9VB92YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Lollipop/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -846,9 +846,9 @@
 				DEVELOPMENT_TEAM = 63M9VB92YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Lollipop/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
