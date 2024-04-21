@@ -26,7 +26,7 @@
 		2CACCD842BD528F7008178F8 /* LaunchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD7E2BD528F7008178F8 /* LaunchModel.swift */; };
 		2CACCD852BD528F7008178F8 /* LaunchWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD7F2BD528F7008178F8 /* LaunchWireframe.swift */; };
 		2CACCD892BD5290B008178F8 /* LaunchUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD882BD5290B008178F8 /* LaunchUI.swift */; };
-		C090555BB88A19DF7E77E722 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12552434BDABEF54EAFF8CD1 /* Pods_Lollipop.framework */; };
+		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12552434BDABEF54EAFF8CD1 /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CACCD282BD51C81008178F8 /* Lollipop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lollipop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CACCD2B2BD51C81008178F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CACCD342BD51C83008178F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,10 +71,11 @@
 		2CACCD7E2BD528F7008178F8 /* LaunchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchModel.swift; sourceTree = "<group>"; };
 		2CACCD7F2BD528F7008178F8 /* LaunchWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchWireframe.swift; sourceTree = "<group>"; };
 		2CACCD882BD5290B008178F8 /* LaunchUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchUI.swift; sourceTree = "<group>"; };
-		44CD2D3AEABE20F033723D94 /* Pods-Lollipop.lollipop production debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production debug.xcconfig"; sourceTree = "<group>"; };
-		65979F813CC411AD574E1CC5 /* Pods-Lollipop.lollipop developmet debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop developmet debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop developmet debug.xcconfig"; sourceTree = "<group>"; };
-		6E1D50F698A5CDAFCB69A214 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
-		B3E61DB79779F4D4C4C7D851 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
+		2F5C16632B5378460D3B34E7 /* Pods-Lollipop.lollipop developmet debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop developmet debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop developmet debug.xcconfig"; sourceTree = "<group>"; };
+		38FFEF8E6EBB79E961E895E0 /* Pods-Lollipop.lollipop production debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production debug.xcconfig"; sourceTree = "<group>"; };
+		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
+		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
+		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C090555BB88A19DF7E77E722 /* Pods_Lollipop.framework in Frameworks */,
+				A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,14 +104,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		19285DB9B732C529D86BA640 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				12552434BDABEF54EAFF8CD1 /* Pods_Lollipop.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		2CACCD1F2BD51C81008178F8 = {
 			isa = PBXGroup;
 			children = (
@@ -120,7 +112,7 @@
 				2CACCD4B2BD51C83008178F8 /* LollipopUITests */,
 				2CACCD292BD51C81008178F8 /* Products */,
 				8C1AC92D620E8BB50BD90320 /* Pods */,
-				19285DB9B732C529D86BA640 /* Frameworks */,
+				AABBFA14AC2816D552F69FF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,12 +235,20 @@
 		8C1AC92D620E8BB50BD90320 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				65979F813CC411AD574E1CC5 /* Pods-Lollipop.lollipop developmet debug.xcconfig */,
-				44CD2D3AEABE20F033723D94 /* Pods-Lollipop.lollipop production debug.xcconfig */,
-				6E1D50F698A5CDAFCB69A214 /* Pods-Lollipop.lollipop development release.xcconfig */,
-				B3E61DB79779F4D4C4C7D851 /* Pods-Lollipop.lollipop production release.xcconfig */,
+				2F5C16632B5378460D3B34E7 /* Pods-Lollipop.lollipop developmet debug.xcconfig */,
+				38FFEF8E6EBB79E961E895E0 /* Pods-Lollipop.lollipop production debug.xcconfig */,
+				D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */,
+				7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		AABBFA14AC2816D552F69FF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,11 +258,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CACCD522BD51C83008178F8 /* Build configuration list for PBXNativeTarget "Lollipop" */;
 			buildPhases = (
-				7DCE0A347205438F20208FFE /* [CP] Check Pods Manifest.lock */,
+				1AF9E195F019747DEA5CE2A4 /* [CP] Check Pods Manifest.lock */,
 				2CACCD242BD51C81008178F8 /* Sources */,
 				2CACCD252BD51C81008178F8 /* Frameworks */,
 				2CACCD262BD51C81008178F8 /* Resources */,
-				85B104D89D90156278BC220C /* [CP] Embed Pods Frameworks */,
+				D030AA325E6801CA31C3B885 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -379,7 +379,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7DCE0A347205438F20208FFE /* [CP] Check Pods Manifest.lock */ = {
+		1AF9E195F019747DEA5CE2A4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -401,7 +401,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		85B104D89D90156278BC220C /* [CP] Embed Pods Frameworks */ = {
+		D030AA325E6801CA31C3B885 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -612,7 +612,7 @@
 		};
 		2CACCD532BD51C83008178F8 /* Lollipop Developmet Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65979F813CC411AD574E1CC5 /* Pods-Lollipop.lollipop developmet debug.xcconfig */;
+			baseConfigurationReference = 2F5C16632B5378460D3B34E7 /* Pods-Lollipop.lollipop developmet debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -620,12 +620,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 63M9VB92YC;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Lollipop/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
+				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -646,7 +646,7 @@
 		};
 		2CACCD542BD51C83008178F8 /* Lollipop Development Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E1D50F698A5CDAFCB69A214 /* Pods-Lollipop.lollipop development release.xcconfig */;
+			baseConfigurationReference = D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -654,12 +654,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 63M9VB92YC;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Lollipop/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
+				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -821,7 +821,7 @@
 		};
 		2CACCD5C2BD52130008178F8 /* Lollipop Production Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44CD2D3AEABE20F033723D94 /* Pods-Lollipop.lollipop production debug.xcconfig */;
+			baseConfigurationReference = 38FFEF8E6EBB79E961E895E0 /* Pods-Lollipop.lollipop production debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -829,12 +829,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 63M9VB92YC;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Lollipop/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
+				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -952,7 +952,7 @@
 		};
 		2CACCD602BD52134008178F8 /* Lollipop Production Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3E61DB79779F4D4C4C7D851 /* Pods-Lollipop.lollipop production release.xcconfig */;
+			baseConfigurationReference = 7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -960,12 +960,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 63M9VB92YC;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Lollipop/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
+				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
