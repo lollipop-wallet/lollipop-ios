@@ -55,13 +55,14 @@ class Alert {
         if
             let settings = URL(string: UIApplication.openSettingsURLString),
             UIApplication.shared.canOpenURL(settings) {
-            alert.addAction(UIAlertAction(title: Titles.openSettings, style: .default) { action in
+            alert.addAction(UIAlertAction(title: LocalizedTitle.openSettings.localized, style: .default) { action in
                 UIApplication.shared.open(settings)
             })
         }
-        alert.addAction(UIAlertAction(title: Titles.cancel, style: .cancel) { action in
+        alert.addAction(UIAlertAction(title: LocalizedTitle.cancel.localized, style: .cancel) { action in
         })
         UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
     }
     
+
 }

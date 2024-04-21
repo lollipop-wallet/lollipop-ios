@@ -22,6 +22,9 @@
 		2CACCD892BD5290B008178F8 /* LaunchUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD882BD5290B008178F8 /* LaunchUI.swift */; };
 		2CACCD8D2BD52E38008178F8 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD8C2BD52E38008178F8 /* Alert.swift */; };
 		2CACCD902BD52E81008178F8 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD8F2BD52E81008178F8 /* UIApplication+Extension.swift */; };
+		2CACCD932BD52F84008178F8 /* LocalizationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD922BD52F84008178F8 /* LocalizationSystem.swift */; };
+		2CACCD952BD52FA3008178F8 /* LocalizedTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD942BD52FA3008178F8 /* LocalizedTitle.swift */; };
+		2CACCDA02BD530A5008178F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CACCD9E2BD530A5008178F8 /* Localizable.strings */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +66,11 @@
 		2CACCD882BD5290B008178F8 /* LaunchUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchUI.swift; sourceTree = "<group>"; };
 		2CACCD8C2BD52E38008178F8 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		2CACCD8F2BD52E81008178F8 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		2CACCD922BD52F84008178F8 /* LocalizationSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationSystem.swift; sourceTree = "<group>"; };
+		2CACCD942BD52FA3008178F8 /* LocalizedTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTitle.swift; sourceTree = "<group>"; };
+		2CACCD9F2BD530A5008178F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2CACCDA12BD530B9008178F8 /* sr-ME */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-ME"; path = "sr-ME.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2CACCDA22BD530C7008178F8 /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2F5C16632B5378460D3B34E7 /* Pods-Lollipop.lollipop developmet debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop developmet debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop developmet debug.xcconfig"; sourceTree = "<group>"; };
 		38FFEF8E6EBB79E961E895E0 /* Pods-Lollipop.lollipop production debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production debug.xcconfig"; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +184,7 @@
 		2CACCD672BD527C0008178F8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CACCD912BD52F71008178F8 /* Localization */,
 				2CACCD342BD51C83008178F8 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -234,6 +243,16 @@
 				2CACCD8F2BD52E81008178F8 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2CACCD912BD52F71008178F8 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCD922BD52F84008178F8 /* LocalizationSystem.swift */,
+				2CACCD942BD52FA3008178F8 /* LocalizedTitle.swift */,
+				2CACCD9E2BD530A5008178F8 /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		8C1AC92D620E8BB50BD90320 /* Pods */ = {
@@ -343,6 +362,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"sr-ME",
+				sr,
 			);
 			mainGroup = 2CACCD1F2BD51C81008178F8;
 			productRefGroup = 2CACCD292BD51C81008178F8 /* Products */;
@@ -362,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CACCD352BD51C83008178F8 /* Assets.xcassets in Resources */,
+				2CACCDA02BD530A5008178F8 /* Localizable.strings in Resources */,
 				2CACCD382BD51C83008178F8 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,7 +459,9 @@
 				2CACCD832BD528F7008178F8 /* LaunchView.swift in Sources */,
 				2CACCD842BD528F7008178F8 /* LaunchModel.swift in Sources */,
 				2CACCD852BD528F7008178F8 /* LaunchWireframe.swift in Sources */,
+				2CACCD952BD52FA3008178F8 /* LocalizedTitle.swift in Sources */,
 				2CACCD902BD52E81008178F8 /* UIApplication+Extension.swift in Sources */,
+				2CACCD932BD52F84008178F8 /* LocalizationSystem.swift in Sources */,
 				2CACCD2C2BD51C81008178F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +505,16 @@
 				2CACCD372BD51C83008178F8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2CACCD9E2BD530A5008178F8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CACCD9F2BD530A5008178F8 /* en */,
+				2CACCDA12BD530B9008178F8 /* sr-ME */,
+				2CACCDA22BD530C7008178F8 /* sr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
