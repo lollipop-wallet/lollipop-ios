@@ -112,10 +112,11 @@
 			isa = PBXGroup;
 			children = (
 				2CACCD632BD52449008178F8 /* Lollipop.entitlements */,
-				2CACCD2B2BD51C81008178F8 /* AppDelegate.swift */,
-				2CACCD342BD51C83008178F8 /* Assets.xcassets */,
-				2CACCD362BD51C83008178F8 /* LaunchScreen.storyboard */,
-				2CACCD392BD51C83008178F8 /* Info.plist */,
+				2CACCD642BD52794008178F8 /* App Flow */,
+				2CACCD652BD5279F008178F8 /* Info property lists */,
+				2CACCD662BD527AF008178F8 /* Lifecycle delegates */,
+				2CACCD672BD527C0008178F8 /* Resources */,
+				2CACCD682BD527D3008178F8 /* Splash */,
 			);
 			path = Lollipop;
 			sourceTree = "<group>";
@@ -135,6 +136,45 @@
 				2CACCD4E2BD51C83008178F8 /* LollipopUITestsLaunchTests.swift */,
 			);
 			path = LollipopUITests;
+			sourceTree = "<group>";
+		};
+		2CACCD642BD52794008178F8 /* App Flow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "App Flow";
+			sourceTree = "<group>";
+		};
+		2CACCD652BD5279F008178F8 /* Info property lists */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCD392BD51C83008178F8 /* Info.plist */,
+			);
+			path = "Info property lists";
+			sourceTree = "<group>";
+		};
+		2CACCD662BD527AF008178F8 /* Lifecycle delegates */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCD2B2BD51C81008178F8 /* AppDelegate.swift */,
+			);
+			path = "Lifecycle delegates";
+			sourceTree = "<group>";
+		};
+		2CACCD672BD527C0008178F8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCD342BD51C83008178F8 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2CACCD682BD527D3008178F8 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCD362BD51C83008178F8 /* LaunchScreen.storyboard */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		8C1AC92D620E8BB50BD90320 /* Pods */ = {
