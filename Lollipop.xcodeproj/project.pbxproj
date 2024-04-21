@@ -40,6 +40,20 @@
 		2CACCDC62BD53DCB008178F8 /* SettingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDC52BD53DCB008178F8 /* SettingType.swift */; };
 		2CACCDC82BD53DDD008178F8 /* StorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDC72BD53DDD008178F8 /* StorageKeys.swift */; };
 		2CACCDCA2BD53E00008178F8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDC92BD53E00008178F8 /* Date+Extension.swift */; };
+		2CACCDCC2BD53E44008178F8 /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDCB2BD53E44008178F8 /* DispatchQueue+Extension.swift */; };
+		2CACCDCE2BD53E58008178F8 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDCD2BD53E58008178F8 /* Int+Extension.swift */; };
+		2CACCDD02BD53E69008178F8 /* NSAttachment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDCF2BD53E69008178F8 /* NSAttachment+Extension.swift */; };
+		2CACCDD22BD53E82008178F8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDD12BD53E82008178F8 /* String+Extension.swift */; };
+		2CACCDD42BD53EDE008178F8 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDD32BD53EDE008178F8 /* UIFont+Extension.swift */; };
+		2CACCDD62BD53F1B008178F8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDD52BD53F1B008178F8 /* UIImage+Extension.swift */; };
+		2CACCDD82BD53F50008178F8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDD72BD53F50008178F8 /* UIImageView+Extension.swift */; };
+		2CACCDDA2BD53F5F008178F8 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDD92BD53F5F008178F8 /* UILabel+Extension.swift */; };
+		2CACCDDC2BD53F71008178F8 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDDB2BD53F71008178F8 /* UIStackView+Extension.swift */; };
+		2CACCDDE2BD53F85008178F8 /* UITapGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDDD2BD53F85008178F8 /* UITapGestureRecognizer+Extension.swift */; };
+		2CACCDE02BD53FA9008178F8 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDDF2BD53FA9008178F8 /* UITextField+Extension.swift */; };
+		2CACCDE22BD53FC4008178F8 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDE12BD53FC4008178F8 /* UIView+Extension.swift */; };
+		2CACCDE42BD54039008178F8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDE32BD54039008178F8 /* UIViewController+Extension.swift */; };
+		2CACCDE62BD54058008178F8 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDE52BD54058008178F8 /* UINavigationController+Extension.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +115,20 @@
 		2CACCDC52BD53DCB008178F8 /* SettingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingType.swift; sourceTree = "<group>"; };
 		2CACCDC72BD53DDD008178F8 /* StorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageKeys.swift; sourceTree = "<group>"; };
 		2CACCDC92BD53E00008178F8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDCB2BD53E44008178F8 /* DispatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDCD2BD53E58008178F8 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDCF2BD53E69008178F8 /* NSAttachment+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttachment+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDD12BD53E82008178F8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDD32BD53EDE008178F8 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDD52BD53F1B008178F8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDD72BD53F50008178F8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDD92BD53F5F008178F8 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDDB2BD53F71008178F8 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDDD2BD53F85008178F8 /* UITapGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDDF2BD53FA9008178F8 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDE12BD53FC4008178F8 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDE32BD54039008178F8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		2CACCDE52BD54058008178F8 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		2F5C16632B5378460D3B34E7 /* Pods-Lollipop.lollipop developmet debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop developmet debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop developmet debug.xcconfig"; sourceTree = "<group>"; };
 		38FFEF8E6EBB79E961E895E0 /* Pods-Lollipop.lollipop production debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production debug.xcconfig"; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
@@ -281,6 +309,20 @@
 				2CACCD8F2BD52E81008178F8 /* UIApplication+Extension.swift */,
 				2CACCDA92BD5327F008178F8 /* UIColor+Extension.swift */,
 				2CACCDC92BD53E00008178F8 /* Date+Extension.swift */,
+				2CACCDCB2BD53E44008178F8 /* DispatchQueue+Extension.swift */,
+				2CACCDCD2BD53E58008178F8 /* Int+Extension.swift */,
+				2CACCDCF2BD53E69008178F8 /* NSAttachment+Extension.swift */,
+				2CACCDD12BD53E82008178F8 /* String+Extension.swift */,
+				2CACCDD32BD53EDE008178F8 /* UIFont+Extension.swift */,
+				2CACCDD52BD53F1B008178F8 /* UIImage+Extension.swift */,
+				2CACCDD72BD53F50008178F8 /* UIImageView+Extension.swift */,
+				2CACCDD92BD53F5F008178F8 /* UILabel+Extension.swift */,
+				2CACCDDB2BD53F71008178F8 /* UIStackView+Extension.swift */,
+				2CACCDDD2BD53F85008178F8 /* UITapGestureRecognizer+Extension.swift */,
+				2CACCDDF2BD53FA9008178F8 /* UITextField+Extension.swift */,
+				2CACCDE12BD53FC4008178F8 /* UIView+Extension.swift */,
+				2CACCDE32BD54039008178F8 /* UIViewController+Extension.swift */,
+				2CACCDE52BD54058008178F8 /* UINavigationController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -561,24 +603,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CACCD8D2BD52E38008178F8 /* Alert.swift in Sources */,
+				2CACCDCC2BD53E44008178F8 /* DispatchQueue+Extension.swift in Sources */,
 				2CACCDA52BD53241008178F8 /* Analytics.swift in Sources */,
 				2CACCDB02BD53B1B008178F8 /* Connectivity.swift in Sources */,
 				2CACCD892BD5290B008178F8 /* LaunchUI.swift in Sources */,
+				2CACCDDC2BD53F71008178F8 /* UIStackView+Extension.swift in Sources */,
 				2CACCDB72BD53C0B008178F8 /* DefaultModels.swift in Sources */,
 				2CACCDA82BD53265008178F8 /* FirebaseEvents.swift in Sources */,
+				2CACCDE42BD54039008178F8 /* UIViewController+Extension.swift in Sources */,
+				2CACCDD22BD53E82008178F8 /* String+Extension.swift in Sources */,
 				2CACCDBA2BD53C40008178F8 /* Configuration.swift in Sources */,
+				2CACCDD62BD53F1B008178F8 /* UIImage+Extension.swift in Sources */,
 				2CACCD802BD528F7008178F8 /* LaunchPresenter.swift in Sources */,
 				2CACCD812BD528F7008178F8 /* LaunchProtocols.swift in Sources */,
 				2CACCDC42BD53DAE008178F8 /* LinkType.swift in Sources */,
 				2CACCD822BD528F7008178F8 /* LaunchInteractor.swift in Sources */,
 				2CACCDCA2BD53E00008178F8 /* Date+Extension.swift in Sources */,
+				2CACCDD42BD53EDE008178F8 /* UIFont+Extension.swift in Sources */,
 				2CACCDC62BD53DCB008178F8 /* SettingType.swift in Sources */,
+				2CACCDDA2BD53F5F008178F8 /* UILabel+Extension.swift in Sources */,
+				2CACCDE02BD53FA9008178F8 /* UITextField+Extension.swift in Sources */,
 				2CACCD832BD528F7008178F8 /* LaunchView.swift in Sources */,
 				2CACCDC82BD53DDD008178F8 /* StorageKeys.swift in Sources */,
 				2CACCDC02BD53D7D008178F8 /* Helper.swift in Sources */,
 				2CACCDC22BD53D96008178F8 /* CellId.swift in Sources */,
 				2CACCD842BD528F7008178F8 /* LaunchModel.swift in Sources */,
+				2CACCDD02BD53E69008178F8 /* NSAttachment+Extension.swift in Sources */,
 				2CACCDBD2BD53D09008178F8 /* DataPasser.swift in Sources */,
+				2CACCDE22BD53FC4008178F8 /* UIView+Extension.swift in Sources */,
+				2CACCDCE2BD53E58008178F8 /* Int+Extension.swift in Sources */,
 				2CACCDAA2BD5327F008178F8 /* UIColor+Extension.swift in Sources */,
 				2CACCD852BD528F7008178F8 /* LaunchWireframe.swift in Sources */,
 				2CACCD952BD52FA3008178F8 /* LocalizedTitle.swift in Sources */,
@@ -586,7 +639,10 @@
 				2CACCD902BD52E81008178F8 /* UIApplication+Extension.swift in Sources */,
 				2CACCDAD2BD53299008178F8 /* AppColors.swift in Sources */,
 				2CACCD932BD52F84008178F8 /* LocalizationSystem.swift in Sources */,
+				2CACCDD82BD53F50008178F8 /* UIImageView+Extension.swift in Sources */,
 				2CACCD2C2BD51C81008178F8 /* AppDelegate.swift in Sources */,
+				2CACCDDE2BD53F85008178F8 /* UITapGestureRecognizer+Extension.swift in Sources */,
+				2CACCDE62BD54058008178F8 /* UINavigationController+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

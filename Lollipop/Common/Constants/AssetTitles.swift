@@ -9,4 +9,5 @@ import Foundation
 
 struct AssetTitles {
     static let splashIcon = "ic_splash_lollipop"
+    static let backIcon = "ic_back"
 }
