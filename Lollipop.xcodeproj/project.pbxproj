@@ -30,6 +30,8 @@
 		2CACCDAA2BD5327F008178F8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDA92BD5327F008178F8 /* UIColor+Extension.swift */; };
 		2CACCDAD2BD53299008178F8 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDAC2BD53299008178F8 /* AppColors.swift */; };
 		2CACCDB02BD53B1B008178F8 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDAF2BD53B1B008178F8 /* Connectivity.swift */; };
+		2CACCDB52BD53BEB008178F8 /* AssetTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDB42BD53BEB008178F8 /* AssetTitles.swift */; };
+		2CACCDB72BD53C0B008178F8 /* DefaultModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDB62BD53C0B008178F8 /* DefaultModels.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +83,8 @@
 		2CACCDA92BD5327F008178F8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2CACCDAC2BD53299008178F8 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		2CACCDAF2BD53B1B008178F8 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		2CACCDB42BD53BEB008178F8 /* AssetTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTitles.swift; sourceTree = "<group>"; };
+		2CACCDB62BD53C0B008178F8 /* DefaultModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultModels.swift; sourceTree = "<group>"; };
 		2F5C16632B5378460D3B34E7 /* Pods-Lollipop.lollipop developmet debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop developmet debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop developmet debug.xcconfig"; sourceTree = "<group>"; };
 		38FFEF8E6EBB79E961E895E0 /* Pods-Lollipop.lollipop production debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production debug.xcconfig"; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 				2CACCDA32BD5322F008178F8 /* Analytics */,
 				2CACCDAB2BD5328A008178F8 /* App Colors */,
 				2CACCDAE2BD53AFE008178F8 /* Connectivity */,
+				2CACCDB12BD53BD6008178F8 /* Constants */,
 				2CACCDA62BD5324A008178F8 /* Enumerations */,
 				2CACCD8E2BD52E59008178F8 /* Extensions */,
 			);
@@ -300,6 +305,15 @@
 				2CACCDAF2BD53B1B008178F8 /* Connectivity.swift */,
 			);
 			path = Connectivity;
+			sourceTree = "<group>";
+		};
+		2CACCDB12BD53BD6008178F8 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				2CACCDB42BD53BEB008178F8 /* AssetTitles.swift */,
+				2CACCDB62BD53C0B008178F8 /* DefaultModels.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		8C1AC92D620E8BB50BD90320 /* Pods */ = {
@@ -502,6 +516,7 @@
 				2CACCDA52BD53241008178F8 /* Analytics.swift in Sources */,
 				2CACCDB02BD53B1B008178F8 /* Connectivity.swift in Sources */,
 				2CACCD892BD5290B008178F8 /* LaunchUI.swift in Sources */,
+				2CACCDB72BD53C0B008178F8 /* DefaultModels.swift in Sources */,
 				2CACCDA82BD53265008178F8 /* FirebaseEvents.swift in Sources */,
 				2CACCD802BD528F7008178F8 /* LaunchPresenter.swift in Sources */,
 				2CACCD812BD528F7008178F8 /* LaunchProtocols.swift in Sources */,
@@ -511,6 +526,7 @@
 				2CACCDAA2BD5327F008178F8 /* UIColor+Extension.swift in Sources */,
 				2CACCD852BD528F7008178F8 /* LaunchWireframe.swift in Sources */,
 				2CACCD952BD52FA3008178F8 /* LocalizedTitle.swift in Sources */,
+				2CACCDB52BD53BEB008178F8 /* AssetTitles.swift in Sources */,
 				2CACCD902BD52E81008178F8 /* UIApplication+Extension.swift in Sources */,
 				2CACCDAD2BD53299008178F8 /* AppColors.swift in Sources */,
 				2CACCD932BD52F84008178F8 /* LocalizationSystem.swift in Sources */,
