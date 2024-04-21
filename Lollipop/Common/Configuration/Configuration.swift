@@ -11,6 +11,7 @@ import KeychainSwift
 
 struct Configuration {
     
+    
     //MARK: API config
     static var productionServerBaseURL: String {
         get {
@@ -23,6 +24,17 @@ struct Configuration {
     }
 
     static let currentAPIVersion = "v1.9/"
+    
+    //MARK: RemoteConfig config
+    static var remoteConfigCacheTimeInterval: TimeInterval {
+        get {
+            #if PROD
+                return 1800
+            #else
+                return 5
+            #endif
+        }
+    }
         
     
     //MARK: AppStore config
