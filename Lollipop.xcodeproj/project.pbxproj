@@ -58,6 +58,13 @@
 		2CACCDEB2BD54120008178F8 /* PushNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDEA2BD54120008178F8 /* PushNotificationsManager.swift */; };
 		2CACCDED2BD541D3008178F8 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDEC2BD541D3008178F8 /* AppDelegate+Extension.swift */; };
 		2CACCDEF2BD5422A008178F8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDEE2BD5422A008178F8 /* StorageManager.swift */; };
+		62214AE52BD6E17600ABF38E /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214ADE2BD6E17600ABF38E /* OnboardingPresenter.swift */; };
+		62214AE62BD6E17600ABF38E /* OnboardingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214ADF2BD6E17600ABF38E /* OnboardingProtocols.swift */; };
+		62214AE72BD6E17600ABF38E /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214AE02BD6E17600ABF38E /* OnboardingInteractor.swift */; };
+		62214AE82BD6E17600ABF38E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214AE12BD6E17600ABF38E /* OnboardingView.swift */; };
+		62214AE92BD6E17600ABF38E /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214AE22BD6E17600ABF38E /* OnboardingModel.swift */; };
+		62214AEA2BD6E17600ABF38E /* OnboardingWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214AE32BD6E17600ABF38E /* OnboardingWireframe.swift */; };
+		62214AED2BD6E19000ABF38E /* OnboardingUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214AEC2BD6E19000ABF38E /* OnboardingUI.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +146,13 @@
 		2CACCDEE2BD5422A008178F8 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		2F5C16632B5378460D3B34E7 /* Pods-Lollipop.lollipop developmet debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop developmet debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop developmet debug.xcconfig"; sourceTree = "<group>"; };
 		38FFEF8E6EBB79E961E895E0 /* Pods-Lollipop.lollipop production debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production debug.xcconfig"; sourceTree = "<group>"; };
+		62214ADE2BD6E17600ABF38E /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
+		62214ADF2BD6E17600ABF38E /* OnboardingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocols.swift; sourceTree = "<group>"; };
+		62214AE02BD6E17600ABF38E /* OnboardingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInteractor.swift; sourceTree = "<group>"; };
+		62214AE12BD6E17600ABF38E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		62214AE22BD6E17600ABF38E /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		62214AE32BD6E17600ABF38E /* OnboardingWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWireframe.swift; sourceTree = "<group>"; };
+		62214AEC2BD6E19000ABF38E /* OnboardingUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUI.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				2CACCD782BD528EC008178F8 /* Launch */,
+				62903E222BD6E12700031D60 /* Onboarding */,
 			);
 			path = "App Flow";
 			sourceTree = "<group>";
@@ -424,6 +439,28 @@
 				2CACCDEE2BD5422A008178F8 /* StorageManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		62214AEB2BD6E18300ABF38E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62214AEC2BD6E19000ABF38E /* OnboardingUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		62903E222BD6E12700031D60 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				62214ADE2BD6E17600ABF38E /* OnboardingPresenter.swift */,
+				62214ADF2BD6E17600ABF38E /* OnboardingProtocols.swift */,
+				62214AE02BD6E17600ABF38E /* OnboardingInteractor.swift */,
+				62214AE12BD6E17600ABF38E /* OnboardingView.swift */,
+				62214AE22BD6E17600ABF38E /* OnboardingModel.swift */,
+				62214AE32BD6E17600ABF38E /* OnboardingWireframe.swift */,
+				62214AEB2BD6E18300ABF38E /* UI */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		8C1AC92D620E8BB50BD90320 /* Pods */ = {
@@ -624,6 +661,7 @@
 			files = (
 				2CACCD8D2BD52E38008178F8 /* Alert.swift in Sources */,
 				2CACCDCC2BD53E44008178F8 /* DispatchQueue+Extension.swift in Sources */,
+				62214AED2BD6E19000ABF38E /* OnboardingUI.swift in Sources */,
 				2CACCDA52BD53241008178F8 /* Analytics.swift in Sources */,
 				2CACCDB02BD53B1B008178F8 /* Connectivity.swift in Sources */,
 				2CACCD892BD5290B008178F8 /* LaunchUI.swift in Sources */,
@@ -666,6 +704,12 @@
 				2CACCDD82BD53F50008178F8 /* UIImageView+Extension.swift in Sources */,
 				2CACCD2C2BD51C81008178F8 /* AppDelegate.swift in Sources */,
 				2CACCDDE2BD53F85008178F8 /* UITapGestureRecognizer+Extension.swift in Sources */,
+				62214AE52BD6E17600ABF38E /* OnboardingPresenter.swift in Sources */,
+				62214AE62BD6E17600ABF38E /* OnboardingProtocols.swift in Sources */,
+				62214AE72BD6E17600ABF38E /* OnboardingInteractor.swift in Sources */,
+				62214AE82BD6E17600ABF38E /* OnboardingView.swift in Sources */,
+				62214AE92BD6E17600ABF38E /* OnboardingModel.swift in Sources */,
+				62214AEA2BD6E17600ABF38E /* OnboardingWireframe.swift in Sources */,
 				2CACCDE62BD54058008178F8 /* UINavigationController+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
