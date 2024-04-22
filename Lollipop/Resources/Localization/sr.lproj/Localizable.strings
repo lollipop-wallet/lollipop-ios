@@ -1,3 +1,12 @@
 "cancel" = "Odustani";
 "openSettings" = "Otvori podešavanja";
-
+"onboardingTitle1" = "Digitalizuj svoje plastične kartice";
+"onboardingTitle2" = "Jednostavno skeniraj";
+"onboardingTitle3" = "Sve na jednom mestu";
+"onboardingTitle4" = "Iskoristite pogodnosti svuda";
+"onboardingSubtitle1" = "Digitalizujte sve svoje loyalty kartice i maksimalno iskoristite svoje kupovine";
+"onboardingSubtitle2" = "Skener omogućava brzo prebacivanje fizičkih kartica u digitalni oblik u samo nekoliko koraka";
+"onboardingSubtitle3" = "Pregledajte, upravljajte i iskoristite sve svoje loyalty programe iz jedne aplikacije bez dodatnih napora";
+"onboardingSubtitle4" = "Sa Lollipopom, uživajte u ekskluzivnim ponudama i nagradama u svim omiljenim prodavnicama, jednostavno i brzo.";
+"cont" = "Nastavi";
+"moveForward" = "Kreni dalje";
