@@ -9,6 +9,8 @@
 import Foundation
 
 struct OnboardingModel : Codable {
-    
+    let artwork: String
+    let title: String
+    let subtitle: String
 }
 
