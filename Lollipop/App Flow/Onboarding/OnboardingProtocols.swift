@@ -42,3 +42,9 @@ protocol OnboardingWireframeProtocol: AnyObject {
 
     
 }
+
+//MARK: ContentView Protocol
+protocol ContentViewProtocol: AnyObject {
+    func nextPage()
+    func proceed()
+}
