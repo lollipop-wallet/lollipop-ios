@@ -74,6 +74,7 @@
 		62214AFE2BD6E3C500ABF38E /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62214AF52BD6E3C500ABF38E /* Inter-Thin.ttf */; };
 		62214AFF2BD6E3C500ABF38E /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62214AF62BD6E3C500ABF38E /* Inter-Light.ttf */; };
 		62214B002BD6E3C500ABF38E /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62214AF72BD6E3C500ABF38E /* Inter-Medium.ttf */; };
+		62214B022BD6E5D000ABF38E /* AppFontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214B012BD6E5D000ABF38E /* AppFontWeight.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -171,6 +172,7 @@
 		62214AF52BD6E3C500ABF38E /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
 		62214AF62BD6E3C500ABF38E /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
 		62214AF72BD6E3C500ABF38E /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		62214B012BD6E5D000ABF38E /* AppFontWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFontWeight.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -397,6 +399,7 @@
 				2CACCDC32BD53DAE008178F8 /* LinkType.swift */,
 				2CACCDC52BD53DCB008178F8 /* SettingType.swift */,
 				2CACCDC72BD53DDD008178F8 /* StorageKeys.swift */,
+				62214B012BD6E5D000ABF38E /* AppFontWeight.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -736,6 +739,7 @@
 				2CACCDBD2BD53D09008178F8 /* DataPasser.swift in Sources */,
 				2CACCDEB2BD54120008178F8 /* PushNotificationsManager.swift in Sources */,
 				2CACCDE22BD53FC4008178F8 /* UIView+Extension.swift in Sources */,
+				62214B022BD6E5D000ABF38E /* AppFontWeight.swift in Sources */,
 				2CACCDE92BD540C9008178F8 /* RemoteConfigManager.swift in Sources */,
 				2CACCDCE2BD53E58008178F8 /* Int+Extension.swift in Sources */,
 				2CACCDAA2BD5327F008178F8 /* UIColor+Extension.swift in Sources */,

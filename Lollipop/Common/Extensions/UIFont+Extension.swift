@@ -29,4 +29,9 @@ extension UIFont {
         guard #available(iOS 13.0, *), let descriptor = systemFont.fontDescriptor.withDesign(.rounded) else { return systemFont }
         return UIFont(descriptor: descriptor, size: size)
     }
+    
+    class func inter(ofSize size: CGFloat, name: AppFontWeight) -> UIFont {
+        let font = UIFont(name: name.rawValue, size: size)!
+        return font
+    }
 }
