@@ -85,6 +85,7 @@
 		62214B052BD6F39C00ABF38E /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214B042BD6F39C00ABF38E /* PageView.swift */; };
 		62214B072BD6F3BB00ABF38E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214B062BD6F3BB00ABF38E /* ContentView.swift */; };
 		62214B0B2BD6F44D00ABF38E /* ContentViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214B0A2BD6F44D00ABF38E /* ContentViewUI.swift */; };
+		627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92BD2BD847BB0016FF73 /* InputField.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -193,6 +194,7 @@
 		62214B042BD6F39C00ABF38E /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		62214B062BD6F3BB00ABF38E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		62214B0A2BD6F44D00ABF38E /* ContentViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewUI.swift; sourceTree = "<group>"; };
+		627E92BD2BD847BB0016FF73 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -352,6 +354,7 @@
 				2CACCDAE2BD53AFE008178F8 /* Connectivity */,
 				2CACCDB12BD53BD6008178F8 /* Constants */,
 				2CACCDB82BD53C33008178F8 /* Configuration */,
+				627E92B82BD847750016FF73 /* Custom UI */,
 				2CACCDBB2BD53CF4008178F8 /* Global data passer */,
 				2CACCDA62BD5324A008178F8 /* Enumerations */,
 				2CACCD8E2BD52E59008178F8 /* Extensions */,
@@ -562,6 +565,30 @@
 				62214B0A2BD6F44D00ABF38E /* ContentViewUI.swift */,
 			);
 			path = "Content view";
+			sourceTree = "<group>";
+		};
+		627E92B82BD847750016FF73 /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				627E92B92BD847820016FF73 /* Input fields */,
+			);
+			path = "Custom UI";
+			sourceTree = "<group>";
+		};
+		627E92B92BD847820016FF73 /* Input fields */ = {
+			isa = PBXGroup;
+			children = (
+				627E92BA2BD847880016FF73 /* Input  field */,
+			);
+			path = "Input fields";
+			sourceTree = "<group>";
+		};
+		627E92BA2BD847880016FF73 /* Input  field */ = {
+			isa = PBXGroup;
+			children = (
+				627E92BD2BD847BB0016FF73 /* InputField.swift */,
+			);
+			path = "Input  field";
 			sourceTree = "<group>";
 		};
 		62903E222BD6E12700031D60 /* Onboarding */ = {
@@ -815,6 +842,7 @@
 				2CACCDC02BD53D7D008178F8 /* Helper.swift in Sources */,
 				2CACCDC22BD53D96008178F8 /* CellId.swift in Sources */,
 				2CACCD842BD528F7008178F8 /* LaunchModel.swift in Sources */,
+				627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */,
 				2CACCDD02BD53E69008178F8 /* NSAttachment+Extension.swift in Sources */,
 				2CACCDBD2BD53D09008178F8 /* DataPasser.swift in Sources */,
 				2CACCDEB2BD54120008178F8 /* PushNotificationsManager.swift in Sources */,
