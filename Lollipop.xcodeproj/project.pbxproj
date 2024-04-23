@@ -58,6 +58,13 @@
 		2CACCDEB2BD54120008178F8 /* PushNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDEA2BD54120008178F8 /* PushNotificationsManager.swift */; };
 		2CACCDED2BD541D3008178F8 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDEC2BD541D3008178F8 /* AppDelegate+Extension.swift */; };
 		2CACCDEF2BD5422A008178F8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDEE2BD5422A008178F8 /* StorageManager.swift */; };
+		2CCF3AB12BD7B29300B3729E /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAA2BD7B29300B3729E /* SignInPresenter.swift */; };
+		2CCF3AB22BD7B29300B3729E /* SignInProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAB2BD7B29300B3729E /* SignInProtocols.swift */; };
+		2CCF3AB32BD7B29300B3729E /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAC2BD7B29300B3729E /* SignInInteractor.swift */; };
+		2CCF3AB42BD7B29300B3729E /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAD2BD7B29300B3729E /* SignInView.swift */; };
+		2CCF3AB52BD7B29300B3729E /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAE2BD7B29300B3729E /* SignInModel.swift */; };
+		2CCF3AB62BD7B29300B3729E /* SignInWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAF2BD7B29300B3729E /* SignInWireframe.swift */; };
+		2CCF3AB92BD7B2A100B3729E /* SignInUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AB82BD7B2A100B3729E /* SignInUI.swift */; };
 		62214AE52BD6E17600ABF38E /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214ADE2BD6E17600ABF38E /* OnboardingPresenter.swift */; };
 		62214AE62BD6E17600ABF38E /* OnboardingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214ADF2BD6E17600ABF38E /* OnboardingProtocols.swift */; };
 		62214AE72BD6E17600ABF38E /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214AE02BD6E17600ABF38E /* OnboardingInteractor.swift */; };
@@ -157,6 +164,13 @@
 		2CACCDEA2BD54120008178F8 /* PushNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsManager.swift; sourceTree = "<group>"; };
 		2CACCDEC2BD541D3008178F8 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
 		2CACCDEE2BD5422A008178F8 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		2CCF3AAA2BD7B29300B3729E /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		2CCF3AAB2BD7B29300B3729E /* SignInProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInProtocols.swift; sourceTree = "<group>"; };
+		2CCF3AAC2BD7B29300B3729E /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
+		2CCF3AAD2BD7B29300B3729E /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		2CCF3AAE2BD7B29300B3729E /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		2CCF3AAF2BD7B29300B3729E /* SignInWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWireframe.swift; sourceTree = "<group>"; };
+		2CCF3AB82BD7B2A100B3729E /* SignInUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUI.swift; sourceTree = "<group>"; };
 		2F5C16632B5378460D3B34E7 /* Pods-Lollipop.lollipop developmet debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop developmet debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop developmet debug.xcconfig"; sourceTree = "<group>"; };
 		38FFEF8E6EBB79E961E895E0 /* Pods-Lollipop.lollipop production debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production debug.xcconfig"; sourceTree = "<group>"; };
 		62214ADE2BD6E17600ABF38E /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
@@ -268,6 +282,7 @@
 			children = (
 				2CACCD782BD528EC008178F8 /* Launch */,
 				62903E222BD6E12700031D60 /* Onboarding */,
+				2CCF3AA72BD7B24D00B3729E /* Registration */,
 			);
 			path = "App Flow";
 			sourceTree = "<group>";
@@ -467,6 +482,36 @@
 				2CACCDEE2BD5422A008178F8 /* StorageManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		2CCF3AA72BD7B24D00B3729E /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				2CCF3AA82BD7B25600B3729E /* Sign in */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		2CCF3AA82BD7B25600B3729E /* Sign in */ = {
+			isa = PBXGroup;
+			children = (
+				2CCF3AAA2BD7B29300B3729E /* SignInPresenter.swift */,
+				2CCF3AAB2BD7B29300B3729E /* SignInProtocols.swift */,
+				2CCF3AAC2BD7B29300B3729E /* SignInInteractor.swift */,
+				2CCF3AAD2BD7B29300B3729E /* SignInView.swift */,
+				2CCF3AAE2BD7B29300B3729E /* SignInModel.swift */,
+				2CCF3AAF2BD7B29300B3729E /* SignInWireframe.swift */,
+				2CCF3AB72BD7B29B00B3729E /* UI */,
+			);
+			path = "Sign in";
+			sourceTree = "<group>";
+		};
+		2CCF3AB72BD7B29B00B3729E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2CCF3AB82BD7B2A100B3729E /* SignInUI.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		62214AEB2BD6E18300ABF38E /* UI */ = {
@@ -775,6 +820,7 @@
 				2CACCDEB2BD54120008178F8 /* PushNotificationsManager.swift in Sources */,
 				62214B0B2BD6F44D00ABF38E /* ContentViewUI.swift in Sources */,
 				2CACCDE22BD53FC4008178F8 /* UIView+Extension.swift in Sources */,
+				2CCF3AB92BD7B2A100B3729E /* SignInUI.swift in Sources */,
 				62214B022BD6E5D000ABF38E /* AppFontWeight.swift in Sources */,
 				2CACCDE92BD540C9008178F8 /* RemoteConfigManager.swift in Sources */,
 				2CACCDCE2BD53E58008178F8 /* Int+Extension.swift in Sources */,
@@ -785,6 +831,12 @@
 				2CACCD902BD52E81008178F8 /* UIApplication+Extension.swift in Sources */,
 				2CACCDAD2BD53299008178F8 /* AppColors.swift in Sources */,
 				2CACCD932BD52F84008178F8 /* LocalizationSystem.swift in Sources */,
+				2CCF3AB12BD7B29300B3729E /* SignInPresenter.swift in Sources */,
+				2CCF3AB22BD7B29300B3729E /* SignInProtocols.swift in Sources */,
+				2CCF3AB32BD7B29300B3729E /* SignInInteractor.swift in Sources */,
+				2CCF3AB42BD7B29300B3729E /* SignInView.swift in Sources */,
+				2CCF3AB52BD7B29300B3729E /* SignInModel.swift in Sources */,
+				2CCF3AB62BD7B29300B3729E /* SignInWireframe.swift in Sources */,
 				2CACCDD82BD53F50008178F8 /* UIImageView+Extension.swift in Sources */,
 				2CACCD2C2BD51C81008178F8 /* AppDelegate.swift in Sources */,
 				2CACCDDE2BD53F85008178F8 /* UITapGestureRecognizer+Extension.swift in Sources */,

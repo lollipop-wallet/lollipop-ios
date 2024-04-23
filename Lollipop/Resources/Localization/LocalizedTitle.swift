@@ -22,6 +22,7 @@ enum LocalizedTitle: String {
     case onboardingSubtitle4
     case cont
     case moveForward
+    case lollipop
     
 
     var localized: String {
