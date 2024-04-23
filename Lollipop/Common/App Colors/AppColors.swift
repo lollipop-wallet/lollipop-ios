@@ -19,6 +19,7 @@ struct AppColors {
     static let success = UIColor(hexString: ColorHex.success)
     static let error = UIColor(hexString: ColorHex.error)
     static let link = UIColor(hexString: ColorHex.link)
+    static let fb = UIColor(hexString: ColorHex.fb)
 }
 
     
@@ -35,4 +36,5 @@ struct ColorHex {
     static let success = "#6FBF6D"
     static let error = "#E85656"
     static let link = "#4288F0"
+    static let fb = "#1877F2"
 }

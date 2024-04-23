@@ -26,4 +26,16 @@ class SignInView: UIViewController, SignInViewProtocol {
     @objc func onEmailTap() {
         
     }
+    
+    @objc func onAppleTap() {
+        
+    }
+    
+    @objc func onFacebookTap() {
+        
+    }
+    
+    @objc func onGoogleTap() {
+        
+    }
 }

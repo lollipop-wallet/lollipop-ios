@@ -92,6 +92,10 @@ extension SignInView {
             emailStack.snp.makeConstraints { make in
                 make.centerX.centerY.equalToSuperview()
             }
+            view.addSubview(emailButton)
+            emailButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
             view.backgroundColor = AppColors.brandPrimary
             view.layer.cornerRadius = 12
             view.layer.masksToBounds = true
@@ -140,6 +144,181 @@ extension SignInView {
             stack.spacing = 8
             return stack
         }()
+        
+        //MARK: Apple section
+        
+        lazy var appleImage: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.appleSignInIcon)
+            imageView.contentMode = .scaleAspectFit
+            imageView.snp.makeConstraints { make in
+                make.width.height.equalTo(47)
+            }
+            return imageView
+        }()
+        
+        lazy var appleLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 14, name: .medium)
+            label.text = LocalizedTitle.continueWithApple.localized
+            label.textAlignment = .center
+            label.textColor = AppColors.white
+            return label
+        }()
+        
+        lazy var appleStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [appleImage, appleLabel])
+            stack.axis = .horizontal
+            stack.alignment = .center
+            stack.distribution = .fill
+            stack.spacing = 4
+            return stack
+        }()
+        
+        lazy var appleButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onAppleTap), for: .touchUpInside)
+            return button
+        }()
+        
+        lazy var applePlaceholderView: UIView = {
+            let view = UIView()
+            view.addSubview(appleStack)
+            appleStack.snp.makeConstraints { make in
+                make.centerX.centerY.equalToSuperview()
+            }
+            view.addSubview(appleButton)
+            appleButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
+            view.backgroundColor = AppColors.black
+            view.layer.cornerRadius = 12
+            view.layer.masksToBounds = true
+            view.snp.makeConstraints { make in
+                make.height.equalTo(55)
+            }
+            return view
+        }()
+        
+        //MARK: Facebook section
+        
+        lazy var facebookImage: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.facebookSignInIcon)
+            imageView.contentMode = .scaleAspectFit
+            imageView.snp.makeConstraints { make in
+                make.width.height.equalTo(47)
+            }
+            return imageView
+        }()
+        
+        lazy var facebookLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 14, name: .medium)
+            label.text = LocalizedTitle.continueWithFacebook.localized
+            label.textAlignment = .center
+            label.textColor = AppColors.white
+            return label
+        }()
+        
+        lazy var facebookStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [facebookImage, facebookLabel])
+            stack.axis = .horizontal
+            stack.alignment = .center
+            stack.distribution = .fill
+            stack.spacing = 4
+            return stack
+        }()
+        
+        lazy var facebookButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onFacebookTap), for: .touchUpInside)
+            return button
+        }()
+        
+        lazy var facebookPlaceholderView: UIView = {
+            let view = UIView()
+            view.addSubview(facebookStack)
+            facebookStack.snp.makeConstraints { make in
+                make.centerX.centerY.equalToSuperview()
+            }
+            view.addSubview(facebookButton)
+            facebookButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
+            view.backgroundColor = AppColors.fb
+            view.layer.cornerRadius = 12
+            view.layer.masksToBounds = true
+            view.snp.makeConstraints { make in
+                make.height.equalTo(55)
+            }
+            return view
+        }()
+        
+        //MARK: Google section
+        
+        lazy var googleImage: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.googleSignInIcon)
+            imageView.contentMode = .scaleAspectFit
+            imageView.snp.makeConstraints { make in
+                make.width.height.equalTo(47)
+            }
+            return imageView
+        }()
+        
+        lazy var googleLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 14, name: .medium)
+            label.text = LocalizedTitle.continueWithGoogle.localized
+            label.textColor = AppColors.black
+            label.textAlignment = .center
+            return label
+        }()
+        
+        lazy var googleStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [googleImage, googleLabel])
+            stack.axis = .horizontal
+            stack.alignment = .center
+            stack.distribution = .fill
+            stack.spacing = 4
+            return stack
+        }()
+        
+        lazy var googleButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onGoogleTap), for: .touchUpInside)
+            return button
+        }()
+        
+        lazy var googlePlaceholderView: UIView = {
+            let view = UIView()
+            view.addSubview(googleStack)
+            googleStack.snp.makeConstraints { make in
+                make.centerX.centerY.equalToSuperview()
+            }
+            view.addSubview(googleButton)
+            googleButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
+            view.backgroundColor = AppColors.lightGrey
+            view.layer.cornerRadius = 12
+            view.layer.masksToBounds = true
+            view.snp.makeConstraints { make in
+                make.height.equalTo(55)
+            }
+            return view
+        }()
+        
+        lazy var socialStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [googlePlaceholderView, facebookPlaceholderView, applePlaceholderView])
+            stack.axis = .vertical
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.spacing = 16
+            return stack
+        }()
+
 
         
         self.view.addSubview(backgroundImage)
@@ -173,6 +352,13 @@ extension SignInView {
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.bottom.equalTo(emailPlaceholderView.snp.top).offset(-16)
+        }
+        
+        self.view.addSubview(socialStack)
+        socialStack.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+            make.bottom.equalTo(separatorStack.snp.top).offset(-16)
         }
     }
     
