@@ -16,7 +16,7 @@ class LaunchView: UIViewController, LaunchViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        presenter?.viewDidLoad()
+        //presenter?.viewDidLoad()
     }
 
 }

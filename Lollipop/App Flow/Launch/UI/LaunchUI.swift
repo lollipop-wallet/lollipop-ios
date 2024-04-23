@@ -20,10 +20,22 @@ extension LaunchView {
             return imageView
         }()
         
-        self.view.addSubview(lollipopIcon)
-        lollipopIcon.snp.makeConstraints { make in
-            make.width.height.equalTo(104)
-            make.centerX.centerY.equalToSuperview()
+        lazy var input: InputField = {
+            let field = InputField(titleString: "test", errorString: "greska")
+            return field
+        }()
+        
+//        self.view.addSubview(lollipopIcon)
+//        lollipopIcon.snp.makeConstraints { make in
+//            make.width.height.equalTo(104)
+//            make.centerX.centerY.equalToSuperview()
+//        }
+        
+        self.view.addSubview(input)
+        input.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+            make.centerY.equalToSuperview()
         }
     }
 }
