@@ -19,4 +19,20 @@ class LaunchWireframe: LaunchWireframeProtocol {
         LaunchRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toMain(){
+//        let mainVC = MainView()
+//        let navigationController = UINavigationController(rootViewController: mainVC)
+//        navigationController.isNavigationBarHidden = true
+//        UIApplication.shared.keyWindow?.rootViewController = navigationController
+//        UIApplication.shared.keyWindow?.makeKeyAndVisible()
+    }
+    
+    func toOnboarding() {
+        let vc = OnboardingView()
+        let navigationController = UINavigationController(rootViewController: vc)
+        //navigationController.isNavigationBarHidden = true
+        UIApplication.shared.keyWindow?.rootViewController = navigationController
+        UIApplication.shared.keyWindow?.makeKeyAndVisible()
+    }
 }

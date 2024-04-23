@@ -21,7 +21,6 @@ extension AppDelegate {
         //MARK: Language setter
         Localize.setCurrentLanguage("sr-ME")
 
-        
         //MARK: Defaults
         Manager.sessionsCount = 1
         
@@ -52,7 +51,7 @@ extension AppDelegate {
     
     func configureEntryPoint() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let launchView = OnboardingView()
+        let launchView = LaunchView()
         //Manager.currentIndexOnMain = 0
         let navigationController = UINavigationController(rootViewController: launchView)
         //navigationController.isNavigationBarHidden = true

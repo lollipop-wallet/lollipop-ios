@@ -16,6 +16,7 @@ protocol LaunchPresenterProtocol: AnyObject {
     var view: LaunchViewProtocol? { get set }
     var wireframe:LaunchWireframeProtocol? { get set }
     
+    func viewDidLoad()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -39,6 +40,6 @@ protocol LaunchViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol LaunchWireframeProtocol: AnyObject {
-
-    
+    func toMain()
+    func toOnboarding()
 }

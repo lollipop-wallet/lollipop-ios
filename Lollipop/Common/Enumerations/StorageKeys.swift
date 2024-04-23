@@ -13,4 +13,5 @@ enum StorageKeys : String {
     case notificationsaccepted
     case notifications
     case sessions
+    case onboarding
 }

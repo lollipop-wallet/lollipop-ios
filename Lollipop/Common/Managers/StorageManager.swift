@@ -41,4 +41,9 @@ class StorageManager {
         UserDefaults.standard.synchronize()
     }
     
+    func onboarding(){
+        UserDefaults.standard.set("1", forKey: StorageKeys.onboarding.rawValue)
+        UserDefaults.standard.synchronize()
+    }
+    
 }
