@@ -11,3 +11,7 @@
 "cont" = "Continue";
 "moveForward" = "Move further";
 "lollipop" = "Lollipop";
+"continueWithGoogle" = "Continue with Google";
+"continueWithApple" = "Continue with Apple";
+"continueWithFacebook" = "Continue with Facebook";
+"continueWirhEmail" = "Continue with e-mail";

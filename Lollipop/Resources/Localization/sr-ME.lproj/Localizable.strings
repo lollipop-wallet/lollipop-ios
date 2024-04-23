@@ -11,3 +11,7 @@
 "cont" = "Nastavi";
 "moveForward" = "Kreni dalje";
 "lollipop" = "Lollipop";
+"continueWithGoogle" = "Nastavite sa Google nalogom";
+"continueWithApple" = "Nastavite sa Apple nalogom";
+"continueWithFacebook" = "Nastavite sa Facebook nalogom";
+"continueWirhEmail" = "Nastavite koristeći email";

@@ -23,6 +23,10 @@ enum LocalizedTitle: String {
     case cont
     case moveForward
     case lollipop
+    case continueWithGoogle
+    case continueWithApple
+    case continueWithFacebook
+    case continueWirhEmail
     
 
     var localized: String {
