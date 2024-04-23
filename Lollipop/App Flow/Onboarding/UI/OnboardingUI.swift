@@ -11,5 +11,9 @@ extension OnboardingView {
     func setup() {
         self.view.backgroundColor = AppColors.white
         OnboardingWireframe.createModule(OnboardingRef: self)
+        
+        self.pageViewController = PageView(transitionStyle: .scroll, navigationOrientation: .horizontal)
+        self.pageViewController.dataSource = presenter
+        self.pageViewController.delegate = presenter
     }
 }

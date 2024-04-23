@@ -19,4 +19,8 @@ class OnboardingWireframe: OnboardingWireframeProtocol {
         OnboardingRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toMain(){
+        
+    }
 }

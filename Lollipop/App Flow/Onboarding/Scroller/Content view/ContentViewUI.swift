@@ -9,6 +9,7 @@ import UIKit
 
 extension ContentView {
     func setup() {
+        self.view.backgroundColor = AppColors.white
         self.artworkImageView.contentMode = .scaleAspectFit
         
         self.titleLabel.font = .inter(ofSize: 30.0, name: .bold)
