@@ -10,6 +10,8 @@
 import UIKit
 
 class SignInView: UIViewController, SignInViewProtocol {
+    
+    var termsLabel = UILabel()
 
     var presenter: SignInPresenterProtocol?
 
@@ -18,4 +20,10 @@ class SignInView: UIViewController, SignInViewProtocol {
         setup()
     }
 
+    
+    //MARK: Actions
+    
+    @objc func onEmailTap() {
+        
+    }
 }
