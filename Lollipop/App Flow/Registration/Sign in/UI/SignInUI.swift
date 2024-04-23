@@ -38,7 +38,7 @@ extension SignInView {
         }()
         
         lazy var lollipopStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [lollipopImage, lollipopLabel])
+            let stack = UIStackView(arrangedSubviews: [lollipopLabel])
             stack.axis = .horizontal
             stack.alignment = .center
             stack.distribution = .fill
@@ -356,8 +356,7 @@ extension SignInView {
         
         self.view.addSubview(socialStack)
         socialStack.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
+            make.centerX.equalToSuperview()
             make.bottom.equalTo(separatorStack.snp.top).offset(-16)
         }
     }
