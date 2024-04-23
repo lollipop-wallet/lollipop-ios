@@ -27,6 +27,12 @@ enum LocalizedTitle: String {
     case continueWithApple
     case continueWithFacebook
     case continueWirhEmail
+    case or
+    case and
+    case termsPart1
+    case termsPart2
+    case terms
+    case privacy
     
 
     var localized: String {

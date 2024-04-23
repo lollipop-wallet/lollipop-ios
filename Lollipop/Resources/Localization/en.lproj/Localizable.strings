@@ -15,3 +15,9 @@
 "continueWithApple" = "Continue with Apple";
 "continueWithFacebook" = "Continue with Facebook";
 "continueWirhEmail" = "Continue with e-mail";
+"or" = "or";
+"and" = "and";
+"termsPart1" = "If you proceed, you accept ";
+"termsPart2" = " prescribed by the app.";
+"terms" = "Terms and conditions";
+"privacy" = "Privacy policy";
