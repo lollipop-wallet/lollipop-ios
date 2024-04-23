@@ -25,7 +25,7 @@ class PageView: UIPageViewController {
                    view.frame = UIScreen.main.bounds
                }else if view is UIPageControl{
                    //view.backgroundColor = UIColor.clear
-                   view.frame.origin.y = self.view.frame.size.height - 134
+                   view.frame.origin.y = self.view.frame.size.height - 155
                    self.view.bringSubviewToFront(view)
                }
            }

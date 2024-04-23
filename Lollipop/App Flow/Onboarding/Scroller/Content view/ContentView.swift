@@ -49,7 +49,7 @@ class ContentView: UIViewController {
     
     @objc func onProceedTap() {
         if self.pageIndex != 3 {
-            delegate?.nextPage()
+            delegate?.nextPage(page: self.pageIndex + 1)
         }else{
             delegate?.proceed()
         }

@@ -69,9 +69,9 @@ extension OnboardingPresenter {
 }
 
 extension OnboardingPresenter {
-    func nextPage() {
-        self.currentPageIndex = 1
-        let nextController = self.pageTutorialAtIndex(1) as ContentView
+    func nextPage(page: Int){
+        self.currentPageIndex = page
+        let nextController = self.pageTutorialAtIndex(page) as ContentView
         self.view?.setNextViewControllerWith(vc: nextController, isForward: true)
     }
     

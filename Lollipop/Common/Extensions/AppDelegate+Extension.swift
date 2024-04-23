@@ -10,12 +10,17 @@ import Firebase
 import AppTrackingTransparency
 import IQKeyboardManagerSwift
 import Alamofire
+import Localize_Swift
 
 // MARK: - AppDelegate
 extension AppDelegate {
     /// Configuring Application when finishing launching
     /// - Parameter application: Main UIApplication
     func configureAppWith(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        
+        //MARK: Language setter
+        Localize.setCurrentLanguage("sr-ME")
+
         
         //MARK: Defaults
         Manager.sessionsCount = 1
