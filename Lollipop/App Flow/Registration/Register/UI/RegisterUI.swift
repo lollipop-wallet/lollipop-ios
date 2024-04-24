@@ -48,9 +48,21 @@ extension RegisterView {
         self.emailField.keyboardType = .emailAddress
         self.emailField.background = AppColors.white
         self.emailField.leftSuplementaryIconHidden = true
+        
+        self.calendarField.title = "\(LocalizedTitle.dateOfBirh.localized):"
+        self.calendarField.errorHidden = true
+        self.calendarField.background = AppColors.white
+        self.calendarField.text = LocalizedTitle.choose.localized
+        self.calendarField.rightSuplementaryIconHidden = false
+        self.calendarField.rightSuplementaryIcon = UIImage(named: AssetTitles.calendarIcon)
+        self.calendarField.rightSuplementaryIconTintColor = AppColors.darkGrey
+        self.calendarField.delegate = presenter
+        
+        self.datePicker.preferredDatePickerStyle = .inline
+        self.datePicker.isHidden = true
 
         lazy var mainStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [self.nameField, self.surnameField, self.emailField])
+            let stack = UIStackView(arrangedSubviews: [self.nameField, self.surnameField, self.emailField, self.calendarField])
             stack.axis = .vertical
             stack.alignment = .fill
             stack.distribution = .fill
@@ -63,6 +75,13 @@ extension RegisterView {
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(24)
+        }
+        
+        self.view.addSubview(self.datePicker)
+        self.datePicker.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(self.calendarField.snp.bottom)
         }
     }
 }

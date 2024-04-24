@@ -10,7 +10,7 @@ import Foundation
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol RegisterPresenterProtocol: AnyObject {
+protocol RegisterPresenterProtocol: CalendarInputProtocol {
     
     var interactor: RegisterInputInteractorProtocol? { get set }
     var view: RegisterViewProtocol? { get set }
@@ -35,7 +35,7 @@ protocol RegisterOutputInteractorProtocol: AnyObject {
 protocol RegisterViewProtocol: AnyObject {
     
     var presenter: RegisterPresenterProtocol?  { get set }
-    
+    func displayCalendar()
 }
 //MARK: Wireframe
 protocol RegisterWireframeProtocol: AnyObject {

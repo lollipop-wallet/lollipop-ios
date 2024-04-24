@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class RegisterPresenter: RegisterPresenterProtocol  {
+class RegisterPresenter: NSObject, RegisterPresenterProtocol  {
     
     var interactor : RegisterInputInteractorProtocol?
     weak var view: RegisterViewProtocol?
@@ -17,4 +17,11 @@ class RegisterPresenter: RegisterPresenterProtocol  {
 
 extension RegisterPresenter: RegisterOutputInteractorProtocol {
     
+}
+
+//MARK: InputCalendarField delegate
+extension RegisterPresenter {
+    func showCalendar() {
+        view?.displayCalendar()
+    }
 }

@@ -14,6 +14,8 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     var nameField = InputField()
     var surnameField = InputField()
     var emailField = InputField()
+    var calendarField = CalendarInputField()
+    var datePicker = UIDatePicker()
 
     var presenter: RegisterPresenterProtocol?
 
@@ -24,6 +26,13 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    //MARK: RegisterView protocol
+    func displayCalendar(){
+        DispatchQueue.main.async {
+            self.datePicker.isHidden = false
+        }
     }
     
     //MARK: Actions

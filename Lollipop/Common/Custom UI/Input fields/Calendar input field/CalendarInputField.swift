@@ -186,8 +186,5 @@ class CalendarInputField: UIView {
     @objc func onSuplementaryButtonTap() {
         //MARK: Delegat da se postavi date picker
         delegate?.showCalendar()
-//        let secondDatePicker = UIDatePicker()
-//        secondDatePicker.preferredDatePickerStyle = .inline
-//        UIApplication.topViewController()?.view.addSubview(secondDatePicker)
     }
 }
