@@ -21,7 +21,9 @@ extension LaunchView {
         }()
         
         lazy var input: InputField = {
-            let field = InputField(titleString: "test", errorString: "greska")
+            let field = InputField()
+            field.title = "dwadwa"
+            field.error = "dddd"
             return field
         }()
         

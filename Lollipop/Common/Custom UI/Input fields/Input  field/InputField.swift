@@ -9,6 +9,28 @@ import UIKit
 
 class InputField: UIView {
     
+    //MARK: Properties
+    
+    open var title: String? {
+        set { self.inputTitleLabel.text = newValue ?? "" }
+        get { return "" }
+    }
+    
+    open var error: String? {
+        set { self.inputErrorLabel.text = newValue ?? "" }
+        get { return "" }
+    }
+    
+    open var text: String? {
+        set { self.textField.text = newValue ?? "" }
+        get { return textField.text }
+    }
+    
+    open var errorHidden: Bool? {
+        set { self.inputErrorLabel.isHidden = newValue ?? false }
+        get { return true }
+    }
+    
     lazy var inputTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .inter(ofSize: 14, name: .light)
@@ -66,11 +88,9 @@ class InputField: UIView {
         return stack
     }()
     
-    required init(titleString: String, errorString: String) {
+    required init() {
         super.init(frame: .zero)
         setup()
-        self.inputTitleLabel.text = titleString
-        self.inputErrorLabel.text = errorString
     }
 
     required init?(coder: NSCoder) {
@@ -78,14 +98,15 @@ class InputField: UIView {
     }
     
     override func layoutSubviews() {
-        
     }
+    
     
     func setup() {
         self.addSubview(inputStackView)
         inputStackView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
         }
+        
     }
     
     //MARK: Actions
