@@ -9,6 +9,38 @@ import UIKit
 
 class CalendarInputField: UIView {
     
+    //MARK: Properties
+    
+    open var title: String? {
+        set { self.inputTitleLabel.text = newValue ?? "" }
+        get { return "" }
+    }
+    
+    open var error: String? {
+        set { self.inputErrorLabel.text = newValue ?? "" }
+        get { return "" }
+    }
+    
+    open var text: String? {
+        set { self.inputLabel.text = newValue ?? "" }
+        get { return inputLabel.text }
+    }
+    
+    open var errorHidden: Bool? {
+        set { self.inputErrorLabel.isHidden = newValue ?? false }
+        get { return true }
+    }
+    
+    open var background: UIColor? {
+        set { self.titleFieldPlaceholder.backgroundColor = newValue ?? .clear }
+        get { return .white }
+    }
+    
+    open var font: UIFont? {
+        set { self.inputLabel.font = newValue ?? .inter(ofSize: 14, name: .light)}
+        get { return .inter(ofSize: 14, name: .light) }
+    }
+    
     //MARK: Outlets
     
     lazy var inputLabel: UILabel = {
