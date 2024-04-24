@@ -46,6 +46,16 @@ class InputField: UIView {
         get { return .default }
     }
     
+    open var leftSuplementaryIcon: UIImage? {
+        set { self.inputFieldSuplementaryLeftIcon.image = newValue ?? UIImage() }
+        get { return UIImage() }
+    }
+    
+    open var leftSuplementaryIconHidden: Bool? {
+        set { self.inputFieldSuplementaryLeftIcon.isHidden = newValue ?? false }
+        get { return true }
+    }
+    
     //MARK: Outlets
     
     lazy var inputTitleLabel: UILabel = {
@@ -70,6 +80,15 @@ class InputField: UIView {
         return label
     }()
     
+    lazy var inputFieldSuplementaryLeftIcon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.snp.makeConstraints { make in
+            make.width.height.equalTo(24)
+        }
+        return imageView
+    }()
+    
     lazy var textField: UITextField = {
         let textField = UITextField()
         textField.font = .inter(ofSize: 14, name: .light)
@@ -77,10 +96,19 @@ class InputField: UIView {
         return textField
     }()
     
+    lazy var textFieldStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [inputFieldSuplementaryLeftIcon, textField])
+        stack.axis = .horizontal
+        stack.distribution = .fill
+        stack.alignment = .center
+        stack.spacing = 8
+        return stack
+    }()
+    
     lazy var textFieldPlaceholder: UIView = {
         let view = UIView()
-        view.addSubview(textField)
-        textField.snp.makeConstraints { make in
+        view.addSubview(textFieldStack)
+        textFieldStack.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(12)
             make.trailing.equalToSuperview().offset(-12)
             make.top.equalToSuperview().offset(14)

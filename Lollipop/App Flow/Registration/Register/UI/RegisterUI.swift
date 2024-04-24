@@ -35,16 +35,19 @@ extension RegisterView {
         self.nameField.errorHidden = true
         self.nameField.keyboardType = .default
         self.nameField.background = AppColors.white
+        self.nameField.leftSuplementaryIconHidden = true
         
         self.surnameField.title = "\(LocalizedTitle.surname.localized):"
         self.surnameField.errorHidden = true
         self.surnameField.keyboardType = .default
         self.surnameField.background = AppColors.white
+        self.surnameField.leftSuplementaryIconHidden = true
 
         self.emailField.title = "\(LocalizedTitle.email.localized):"
         self.emailField.errorHidden = true
         self.emailField.keyboardType = .emailAddress
         self.emailField.background = AppColors.white
+        self.emailField.leftSuplementaryIconHidden = true
 
         lazy var mainStack: UIStackView = {
             let stack = UIStackView(arrangedSubviews: [self.nameField, self.surnameField, self.emailField])
