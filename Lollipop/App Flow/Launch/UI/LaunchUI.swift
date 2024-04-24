@@ -20,11 +20,14 @@ extension LaunchView {
             return imageView
         }()
         
-        lazy var input: InputField = {
-            let field = InputField()
+        lazy var input: CalendarInputField = {
+            let field = CalendarInputField()
             field.title = "dwadwa"
             field.error = "dddd"
             field.background = AppColors.white
+            field.rightSuplementaryIcon = UIImage(named: AssetTitles.calendarIcon)
+            field.rightSuplementaryIconTintColor = AppColors.darkGrey
+            field.rightSuplementaryIconHidden = false
             return field
         }()
 //        self.view.addSubview(lollipopIcon)

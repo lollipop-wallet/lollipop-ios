@@ -41,6 +41,21 @@ class CalendarInputField: UIView {
         get { return .inter(ofSize: 14, name: .light) }
     }
     
+    open var rightSuplementaryIcon: UIImage? {
+        set { self.inputFieldSuplementaryRightIcon.image = newValue ?? UIImage() }
+        get { return UIImage() }
+    }
+    
+    open var rightSuplementaryIconTintColor: UIColor? {
+        set { self.inputFieldSuplementaryRightIcon.tintColor = newValue ?? AppColors.mediumGrey }
+        get { return AppColors.mediumGrey }
+    }
+    
+    open var rightSuplementaryIconHidden: Bool? {
+        set { self.inputFieldSuplementaryRightView.isHidden = newValue ?? false }
+        get { return true }
+    }
+    
     //MARK: Outlets
     
     lazy var inputLabel: UILabel = {
