@@ -34,6 +34,15 @@ enum LocalizedTitle: String {
     case terms
     case privacy
     case newUser
+    case name
+    case surname
+    case email
+    case dateOfBirh
+    case gender
+    case city
+    case optional
+    case choose
+    case chooseCity
     
 
     var localized: String {

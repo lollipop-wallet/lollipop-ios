@@ -10,6 +10,10 @@
 import UIKit
 
 class RegisterView: UIViewController, RegisterViewProtocol {
+    
+    var nameField = InputField()
+    var surnameField = InputField()
+    var emailField = InputField()
 
     var presenter: RegisterPresenterProtocol?
 

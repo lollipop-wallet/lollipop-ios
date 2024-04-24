@@ -22,3 +22,12 @@
 "terms" = "Uslove korišćenja ";
 "privacy" = "Politiku privatnosti";
 "newUser" = "Novi korisnik";
+"name" = "Ime";
+"surname" = "Prezime";
+"email" = "E-mail adresa";
+"dateOfBirh" = "Datum rođenja";
+"gender" = "Pol";
+"city" = "Grad";
+"optional" = "opciono";
+"choose" = "Odaberite";
+"chooseCity" = "Odaberite grad";

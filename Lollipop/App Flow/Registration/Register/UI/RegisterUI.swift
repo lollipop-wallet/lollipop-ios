@@ -30,5 +30,36 @@ extension RegisterView {
         }()
         
         self.navigationItem.leftBarButtonItems = [backButton]
+     
+        self.nameField.title = "\(LocalizedTitle.name.localized):"
+        self.nameField.errorHidden = true
+        self.nameField.keyboardType = .default
+        self.nameField.background = AppColors.white
+        
+        self.surnameField.title = "\(LocalizedTitle.surname.localized):"
+        self.surnameField.errorHidden = true
+        self.surnameField.keyboardType = .default
+        self.surnameField.background = AppColors.white
+
+        self.emailField.title = "\(LocalizedTitle.email.localized):"
+        self.emailField.errorHidden = true
+        self.emailField.keyboardType = .emailAddress
+        self.emailField.background = AppColors.white
+
+        lazy var mainStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [self.nameField, self.surnameField, self.emailField])
+            stack.axis = .vertical
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.spacing = 16
+            return stack
+        }()
+        
+        self.view.addSubview(mainStack)
+        mainStack.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(24)
+        }
     }
 }

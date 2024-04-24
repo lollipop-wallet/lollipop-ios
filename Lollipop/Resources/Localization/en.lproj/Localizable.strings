@@ -22,3 +22,12 @@
 "terms" = "Terms and conditions";
 "privacy" = "Privacy policy";
 "newUser" = "New user";
+"name" = "Name";
+"surname" = "Surname";
+"email" = "Email";
+"dateOfBirh" = "Date of birth";
+"gender" = "Gender";
+"city" = "City";
+"optional" = "optional";
+"choose" = "Choose";
+"chooseCity" = "Choose city";
