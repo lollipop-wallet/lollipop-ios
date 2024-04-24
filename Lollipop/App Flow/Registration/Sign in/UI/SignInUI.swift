@@ -357,6 +357,8 @@ extension SignInView {
         self.view.addSubview(socialStack)
         socialStack.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
             make.bottom.equalTo(separatorStack.snp.top).offset(-16)
         }
     }
