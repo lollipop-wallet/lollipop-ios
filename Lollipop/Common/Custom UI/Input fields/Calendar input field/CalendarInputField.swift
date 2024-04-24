@@ -56,6 +56,8 @@ class CalendarInputField: UIView {
         get { return true }
     }
     
+    open var delegate: CalendarInputProtocol?
+    
     //MARK: Outlets
     
     lazy var inputLabel: UILabel = {
@@ -182,6 +184,10 @@ class CalendarInputField: UIView {
     //MARK: Actions
     
     @objc func onSuplementaryButtonTap() {
-        
+        //MARK: Delegat da se postavi date picker
+        delegate?.showCalendar()
+//        let secondDatePicker = UIDatePicker()
+//        secondDatePicker.preferredDatePickerStyle = .inline
+//        UIApplication.topViewController()?.view.addSubview(secondDatePicker)
     }
 }
