@@ -12,7 +12,10 @@ class SignInPresenter: SignInPresenterProtocol  {
     var interactor : SignInInputInteractorProtocol?
     weak var view: SignInViewProtocol?
     var wireframe: SignInWireframeProtocol?
-    
+ 
+    func signInEmail() {
+        wireframe?.toManualSignIn()
+    }
 }
 
 extension SignInPresenter: SignInOutputInteractorProtocol {

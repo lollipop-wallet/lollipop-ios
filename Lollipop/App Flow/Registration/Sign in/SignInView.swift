@@ -24,7 +24,7 @@ class SignInView: UIViewController, SignInViewProtocol {
     //MARK: Actions
     
     @objc func onEmailTap() {
-        
+        presenter?.signInEmail()
     }
     
     @objc func onAppleTap() {

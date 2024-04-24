@@ -33,6 +33,7 @@ enum LocalizedTitle: String {
     case termsPart2
     case terms
     case privacy
+    case newUser
     
 
     var localized: String {

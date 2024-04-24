@@ -19,4 +19,9 @@ class SignInWireframe: SignInWireframeProtocol {
         SignInRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toManualSignIn() {
+        let vc = RegisterView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

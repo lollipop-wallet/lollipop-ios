@@ -16,6 +16,7 @@ protocol SignInPresenterProtocol: AnyObject {
     var view: SignInViewProtocol? { get set }
     var wireframe:SignInWireframeProtocol? { get set }
     
+    func signInEmail()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -39,6 +40,5 @@ protocol SignInViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol SignInWireframeProtocol: AnyObject {
-
-    
+    func toManualSignIn()
 }
