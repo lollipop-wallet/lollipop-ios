@@ -319,17 +319,17 @@ extension SignInView {
             return stack
         }()
 
+        lazy var closeButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onCloseTap), for: .touchUpInside)
+            button.setImage(UIImage(named: AssetTitles.closeSignInIcon), for: .normal)
+            return button
+        }()
 
         
         self.view.addSubview(backgroundImage)
         backgroundImage.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
-        }
-        
-        self.view.addSubview(lollipopStack)
-        lollipopStack.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(60)
-            make.centerX.equalToSuperview()
         }
         
         self.view.addSubview(self.termsLabel)
@@ -360,6 +360,20 @@ extension SignInView {
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.bottom.equalTo(separatorStack.snp.top).offset(-16)
+        }
+        
+        self.view.addSubview(closeButton)
+        closeButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(24)
+            make.top.equalToSuperview().offset(60)
+            make.width.height.equalTo(48)
+        }
+        
+        self.view.addSubview(lollipopStack)
+        lollipopStack.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(60)
+            make.centerX.equalToSuperview()
+            make.centerY.equalTo(closeButton)
         }
     }
     

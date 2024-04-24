@@ -38,4 +38,8 @@ class SignInView: UIViewController, SignInViewProtocol {
     @objc func onGoogleTap() {
         
     }
+    
+    @objc func onCloseTap() {
+        dismiss(animated: true)
+    }
 }

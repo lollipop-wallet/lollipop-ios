@@ -19,5 +19,6 @@ struct AssetTitles {
     static let facebookSignInIcon = "ic_sign_in_facebook"
     static let appleSignInIcon = "ic_sign_in_apple"
     static let envelopeIcon = "ic_envelope"
+    static let closeSignInIcon = "ic_sign_in_close"
 
 }
