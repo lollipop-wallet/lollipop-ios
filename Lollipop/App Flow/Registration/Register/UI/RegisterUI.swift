@@ -59,8 +59,28 @@ extension RegisterView {
         self.calendarField.delegate = presenter
         
         self.datePicker.preferredDatePickerStyle = .inline
-        self.datePicker.isHidden = true
-
+        self.datePicker.datePickerMode = .date
+        self.datePicker.tintColor = AppColors.mediumGrey
+        
+        lazy var datePickerPlaceholder: UIView = {
+            let view = UIView()
+            view.addSubview(self.datePicker)
+            self.datePicker.snp.makeConstraints { make in
+                make.leading.top.equalToSuperview().offset(5)
+                make.trailing.bottom.equalToSuperview().offset(-5)
+            }
+            view.backgroundColor = AppColors.black.withAlphaComponent(0.5)
+            view.layer.cornerRadius = 8
+            view.layer.masksToBounds = true
+            return view
+        }()
+        
+        self.datePickerStackView = UIStackView(arrangedSubviews: [datePickerPlaceholder])
+        self.datePickerStackView.axis = .vertical
+        self.datePickerStackView.distribution = .fill
+        self.datePickerStackView.alignment = .fill
+        self.datePickerStackView.isHidden = true
+        
         lazy var mainStack: UIStackView = {
             let stack = UIStackView(arrangedSubviews: [self.nameField, self.surnameField, self.emailField, self.calendarField])
             stack.axis = .vertical
@@ -77,11 +97,12 @@ extension RegisterView {
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(24)
         }
         
-        self.view.addSubview(self.datePicker)
-        self.datePicker.snp.makeConstraints { make in
+        self.view.addSubview(self.datePickerStackView)
+        self.datePickerStackView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.top.equalTo(self.calendarField.snp.bottom)
+            make.bottom.equalTo(self.calendarField.snp.top).offset(-5)
+            make.top.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
 }

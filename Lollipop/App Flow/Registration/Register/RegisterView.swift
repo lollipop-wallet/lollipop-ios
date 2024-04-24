@@ -16,6 +16,7 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     var emailField = InputField()
     var calendarField = CalendarInputField()
     var datePicker = UIDatePicker()
+    var datePickerStackView = UIStackView()
 
     var presenter: RegisterPresenterProtocol?
 
@@ -31,7 +32,7 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     //MARK: RegisterView protocol
     func displayCalendar(){
         DispatchQueue.main.async {
-            self.datePicker.isHidden = false
+            self.datePickerStackView.isHidden = !self.datePickerStackView.isHidden
         }
     }
     
