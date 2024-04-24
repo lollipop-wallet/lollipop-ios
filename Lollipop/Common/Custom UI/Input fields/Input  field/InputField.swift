@@ -31,6 +31,21 @@ class InputField: UIView {
         get { return true }
     }
     
+    open var background: UIColor? {
+        set { self.textFieldPlaceholder.backgroundColor = newValue ?? .clear }
+        get { return .white }
+    }
+    
+    open var font: UIFont? {
+        set { self.textField.font = newValue ?? .inter(ofSize: 14, name: .light)}
+        get { return .inter(ofSize: 14, name: .light) }
+    }
+    
+    open var keyboardType: UIKeyboardType? {
+        set { self.textField.keyboardType = newValue ?? .default }
+        get { return .default }
+    }
+    
     //MARK: Outlets
     
     lazy var inputTitleLabel: UILabel = {
@@ -74,7 +89,7 @@ class InputField: UIView {
         view.layer.cornerRadius = 8
         view.layer.masksToBounds = true
         view.layer.borderWidth = 1
-        view.layer.borderColor = AppColors.black.cgColor
+        view.layer.borderColor = AppColors.mediumGrey.cgColor
         view.snp.makeConstraints { make in
             make.height.equalTo(48)
         }
@@ -123,6 +138,6 @@ extension InputField : UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.textFieldPlaceholder.layer.borderWidth = 1
-        self.textFieldPlaceholder.layer.borderColor = AppColors.black.cgColor
+        self.textFieldPlaceholder.layer.borderColor = (textField.text ?? "").isEmpty ? AppColors.mediumGrey.cgColor : AppColors.black.cgColor 
     }
 }

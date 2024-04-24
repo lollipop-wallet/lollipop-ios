@@ -24,6 +24,7 @@ extension LaunchView {
             let field = InputField()
             field.title = "dwadwa"
             field.error = "dddd"
+            field.background = AppColors.white
             return field
         }()
 //        self.view.addSubview(lollipopIcon)
