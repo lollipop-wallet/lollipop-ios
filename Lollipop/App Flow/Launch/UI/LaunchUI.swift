@@ -26,7 +26,6 @@ extension LaunchView {
             field.error = "dddd"
             return field
         }()
-        
 //        self.view.addSubview(lollipopIcon)
 //        lollipopIcon.snp.makeConstraints { make in
 //            make.width.height.equalTo(104)

@@ -31,6 +31,8 @@ class InputField: UIView {
         get { return true }
     }
     
+    //MARK: Outlets
+    
     lazy var inputTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .inter(ofSize: 14, name: .light)
@@ -106,10 +108,21 @@ class InputField: UIView {
         inputStackView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
         }
-        
+        self.textField.delegate = self
     }
     
     //MARK: Actions
     
 }
 
+extension InputField : UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.textFieldPlaceholder.layer.borderWidth = 2
+        self.textFieldPlaceholder.layer.borderColor = AppColors.link.cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.textFieldPlaceholder.layer.borderWidth = 1
+        self.textFieldPlaceholder.layer.borderColor = AppColors.black.cgColor
+    }
+}
