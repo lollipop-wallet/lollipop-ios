@@ -44,6 +44,74 @@ class CalendarInputField: UIView {
         return label
     }()
     
+    lazy var inputFieldSuplementaryRightIcon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.snp.makeConstraints { make in
+            make.width.height.equalTo(24)
+        }
+        return imageView
+    }()
+    
+    lazy var inputFieldSuplementaryRightButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(onSuplementaryButtonTap), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var inputFieldSuplementaryRightView: UIView = {
+        let view = UIView()
+        view.addSubview(inputFieldSuplementaryRightIcon)
+        inputFieldSuplementaryRightIcon.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+        view.addSubview(inputFieldSuplementaryRightButton)
+        inputFieldSuplementaryRightButton.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+        view.snp.makeConstraints { make in
+            make.width.height.equalTo(24)
+        }
+        return view
+    }()
+    
+    lazy var titleFieldStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [inputLabel, inputFieldSuplementaryRightView])
+        stack.axis = .horizontal
+        stack.distribution = .fill
+        stack.alignment = .center
+        stack.spacing = 8
+        return stack
+    }()
+    
+    lazy var titleFieldPlaceholder: UIView = {
+        let view = UIView()
+        view.addSubview(titleFieldStack)
+        titleFieldStack.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(12)
+            make.trailing.equalToSuperview().offset(-12)
+            make.top.equalToSuperview().offset(14)
+            make.bottom.equalToSuperview().offset(-14)
+        }
+        view.layer.cornerRadius = 8
+        view.layer.masksToBounds = true
+        view.layer.borderWidth = 1
+        view.layer.borderColor = AppColors.mediumGrey.cgColor
+        view.snp.makeConstraints { make in
+            make.height.equalTo(48)
+        }
+        return view
+    }()
+    
+    lazy var inputStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [inputTitleLabel, titleFieldPlaceholder, inputErrorLabel])
+        stack.axis = .vertical
+        stack.distribution = .fill
+        stack.alignment = .fill
+        stack.spacing = 8
+        return stack
+    }()
+    
     required init() {
         super.init(frame: .zero)
         setup()
@@ -58,5 +126,15 @@ class CalendarInputField: UIView {
     
     
     func setup() {
+        self.addSubview(inputStackView)
+        inputStackView.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+    }
+    
+    //MARK: Actions
+    
+    @objc func onSuplementaryButtonTap() {
+        
     }
 }
