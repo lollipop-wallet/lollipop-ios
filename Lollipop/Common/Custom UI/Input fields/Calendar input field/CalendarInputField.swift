@@ -106,9 +106,6 @@ class CalendarInputField: UIView {
     lazy var inputFieldSuplementaryRightIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
-        }
         return imageView
     }()
     
@@ -127,9 +124,6 @@ class CalendarInputField: UIView {
         view.addSubview(inputFieldSuplementaryRightButton)
         inputFieldSuplementaryRightButton.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
-        }
-        view.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
         }
         return view
     }()
