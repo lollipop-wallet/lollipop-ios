@@ -56,6 +56,16 @@ class CalendarInputField: UIView {
         get { return true }
     }
     
+    open var textColor: UIColor? {
+        set { self.inputLabel.textColor = newValue ?? AppColors.mediumGrey }
+        get { return AppColors.mediumGrey }
+    }
+    
+    open var borderColor: UIColor? {
+        set { self.titleFieldPlaceholder.layer.borderColor = newValue?.cgColor ?? AppColors.mediumGrey.cgColor }
+        get { return AppColors.mediumGrey }
+    }
+    
     open var delegate: CalendarInputProtocol?
     
     //MARK: Outlets

@@ -41,4 +41,12 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     @objc func onBackTap() {
         popBack(2)
     }
+    
+    @objc func handleDatePicker() {
+        DispatchQueue.main.async {
+            self.calendarField.text = self.datePicker.date.asString(style: .medium)
+            self.calendarField.textColor = AppColors.black
+            self.calendarField.borderColor = AppColors.black
+        }
+    }
 }

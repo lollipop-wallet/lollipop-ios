@@ -61,6 +61,8 @@ extension RegisterView {
         self.datePicker.preferredDatePickerStyle = .inline
         self.datePicker.datePickerMode = .date
         self.datePicker.tintColor = AppColors.mediumGrey
+        self.datePicker.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
+
         
         lazy var datePickerPlaceholder: UIView = {
             let view = UIView()
