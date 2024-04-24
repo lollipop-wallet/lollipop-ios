@@ -72,6 +72,7 @@
 		2CEC7FB82BD8D1730050E762 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FB12BD8D1730050E762 /* RegisterModel.swift */; };
 		2CEC7FB92BD8D1730050E762 /* RegisterWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FB22BD8D1730050E762 /* RegisterWireframe.swift */; };
 		2CEC7FBC2BD8D1810050E762 /* RegisterUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FBB2BD8D1810050E762 /* RegisterUI.swift */; };
+		2CEC7FBF2BD8F74D0050E762 /* CalendarInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FBE2BD8F74D0050E762 /* CalendarInputField.swift */; };
 		62214AE52BD6E17600ABF38E /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214ADE2BD6E17600ABF38E /* OnboardingPresenter.swift */; };
 		62214AE62BD6E17600ABF38E /* OnboardingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214ADF2BD6E17600ABF38E /* OnboardingProtocols.swift */; };
 		62214AE72BD6E17600ABF38E /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214AE02BD6E17600ABF38E /* OnboardingInteractor.swift */; };
@@ -186,6 +187,7 @@
 		2CEC7FB12BD8D1730050E762 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		2CEC7FB22BD8D1730050E762 /* RegisterWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWireframe.swift; sourceTree = "<group>"; };
 		2CEC7FBB2BD8D1810050E762 /* RegisterUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUI.swift; sourceTree = "<group>"; };
+		2CEC7FBE2BD8F74D0050E762 /* CalendarInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInputField.swift; sourceTree = "<group>"; };
 		2F5C16632B5378460D3B34E7 /* Pods-Lollipop.lollipop developmet debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop developmet debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop developmet debug.xcconfig"; sourceTree = "<group>"; };
 		38FFEF8E6EBB79E961E895E0 /* Pods-Lollipop.lollipop production debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production debug.xcconfig"; sourceTree = "<group>"; };
 		62214ADE2BD6E17600ABF38E /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
@@ -554,6 +556,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		2CEC7FBD2BD8F73E0050E762 /* Calendar input field */ = {
+			isa = PBXGroup;
+			children = (
+				2CEC7FBE2BD8F74D0050E762 /* CalendarInputField.swift */,
+			);
+			path = "Calendar input field";
+			sourceTree = "<group>";
+		};
 		62214AEB2BD6E18300ABF38E /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +626,7 @@
 			isa = PBXGroup;
 			children = (
 				627E92BA2BD847880016FF73 /* Input  field */,
+				2CEC7FBD2BD8F73E0050E762 /* Calendar input field */,
 			);
 			path = "Input fields";
 			sourceTree = "<group>";
@@ -905,6 +916,7 @@
 				2CEC7FBC2BD8D1810050E762 /* RegisterUI.swift in Sources */,
 				2CCF3AB12BD7B29300B3729E /* SignInPresenter.swift in Sources */,
 				2CCF3AB22BD7B29300B3729E /* SignInProtocols.swift in Sources */,
+				2CEC7FBF2BD8F74D0050E762 /* CalendarInputField.swift in Sources */,
 				2CCF3AB32BD7B29300B3729E /* SignInInteractor.swift in Sources */,
 				2CCF3AB42BD7B29300B3729E /* SignInView.swift in Sources */,
 				2CCF3AB52BD7B29300B3729E /* SignInModel.swift in Sources */,
