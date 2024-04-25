@@ -10,12 +10,23 @@
 import UIKit
 
 class OTPView: UIViewController, OTPViewProtocol {
+    
+    var subtitleLabel = UILabel()
 
     var presenter: OTPPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
+    }
+    
+    //MARK: OTPView protocol
+    
+    func setSubtitleWith(subtitle: NSAttributedString){
+        DispatchQueue.main.async {
+            self.subtitleLabel.attributedText = subtitle
+        }
     }
 
     //MARK: Actions

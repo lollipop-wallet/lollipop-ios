@@ -40,6 +40,10 @@ extension OTPView {
             return label
         }()
         
+        self.subtitleLabel.textAlignment = .left
+        self.subtitleLabel.numberOfLines = 0
+        self.subtitleLabel.lineBreakMode = .byWordWrapping
+        
         self.navigationItem.leftBarButtonItems = [closeButton]
         
         self.view.addSubview(titleLabel)
@@ -47,6 +51,13 @@ extension OTPView {
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(16)
+        }
+        
+        self.view.addSubview(self.subtitleLabel)
+        self.subtitleLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
         }
     }
 }
