@@ -95,6 +95,8 @@
 		62214B072BD6F3BB00ABF38E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214B062BD6F3BB00ABF38E /* ContentView.swift */; };
 		62214B0B2BD6F44D00ABF38E /* ContentViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214B0A2BD6F44D00ABF38E /* ContentViewUI.swift */; };
 		627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92BD2BD847BB0016FF73 /* InputField.swift */; };
+		627E92C12BDA044F0016FF73 /* DropdownInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C02BDA044F0016FF73 /* DropdownInputField.swift */; };
+		627E92C32BDA056B0016FF73 /* DropdownInputFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -213,6 +215,8 @@
 		62214B062BD6F3BB00ABF38E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		62214B0A2BD6F44D00ABF38E /* ContentViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewUI.swift; sourceTree = "<group>"; };
 		627E92BD2BD847BB0016FF73 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		627E92C02BDA044F0016FF73 /* DropdownInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputField.swift; sourceTree = "<group>"; };
+		627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputFieldProtocols.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -630,6 +634,7 @@
 			children = (
 				627E92BA2BD847880016FF73 /* Input  field */,
 				2CEC7FBD2BD8F73E0050E762 /* Calendar input field */,
+				627E92BF2BDA04390016FF73 /* Drop down input field */,
 			);
 			path = "Input fields";
 			sourceTree = "<group>";
@@ -640,6 +645,15 @@
 				627E92BD2BD847BB0016FF73 /* InputField.swift */,
 			);
 			path = "Input  field";
+			sourceTree = "<group>";
+		};
+		627E92BF2BDA04390016FF73 /* Drop down input field */ = {
+			isa = PBXGroup;
+			children = (
+				627E92C02BDA044F0016FF73 /* DropdownInputField.swift */,
+				627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */,
+			);
+			path = "Drop down input field";
 			sourceTree = "<group>";
 		};
 		62903E222BD6E12700031D60 /* Onboarding */ = {
@@ -894,6 +908,7 @@
 				2CEC7FB72BD8D1730050E762 /* RegisterView.swift in Sources */,
 				2CEC7FB82BD8D1730050E762 /* RegisterModel.swift in Sources */,
 				2CEC7FB92BD8D1730050E762 /* RegisterWireframe.swift in Sources */,
+				627E92C32BDA056B0016FF73 /* DropdownInputFieldProtocols.swift in Sources */,
 				2CACCDE02BD53FA9008178F8 /* UITextField+Extension.swift in Sources */,
 				2CACCD832BD528F7008178F8 /* LaunchView.swift in Sources */,
 				2CACCDC82BD53DDD008178F8 /* StorageKeys.swift in Sources */,
@@ -922,6 +937,7 @@
 				2CCF3AB22BD7B29300B3729E /* SignInProtocols.swift in Sources */,
 				2CEC7FBF2BD8F74D0050E762 /* CalendarInputField.swift in Sources */,
 				2CCF3AB32BD7B29300B3729E /* SignInInteractor.swift in Sources */,
+				627E92C12BDA044F0016FF73 /* DropdownInputField.swift in Sources */,
 				2CCF3AB42BD7B29300B3729E /* SignInView.swift in Sources */,
 				2CCF3AB52BD7B29300B3729E /* SignInModel.swift in Sources */,
 				2CCF3AB62BD7B29300B3729E /* SignInWireframe.swift in Sources */,
