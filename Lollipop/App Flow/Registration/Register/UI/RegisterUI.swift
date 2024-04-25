@@ -98,8 +98,15 @@ extension RegisterView {
         self.datePickerStackView.alignment = .fill
         self.datePickerStackView.isHidden = true
         
+        self.cityField.title = "\(LocalizedTitle.city.localized)(\(LocalizedTitle.optional.localized):"
+        self.cityField.errorHidden = true
+        self.cityField.background = AppColors.white
+        self.cityField.text = LocalizedTitle.choose.localized
+        self.cityField.rightSuplementaryIconHidden = false
+        self.cityField.delegate = presenter
+        
         lazy var mainStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [self.nameField, self.surnameField, self.emailField, midStack])
+            let stack = UIStackView(arrangedSubviews: [self.nameField, self.surnameField, self.emailField, midStack, self.cityField])
             stack.axis = .vertical
             stack.alignment = .fill
             stack.distribution = .fill
