@@ -19,4 +19,9 @@ class RegisterWireframe: RegisterWireframeProtocol {
         RegisterRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toPWd(){
+        let vc = PasswordView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

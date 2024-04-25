@@ -56,6 +56,11 @@ class InputField: UIView {
         get { return true }
     }
     
+    open var isSecureTextEntry: Bool? {
+        set { self.textField.isSecureTextEntry = newValue ?? false }
+        get { return false }
+    }
+    
     //MARK: Outlets
     
     lazy var inputTitleLabel: UILabel = {

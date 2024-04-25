@@ -53,6 +53,6 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     }
     
     @objc func onProceedTap() {
-        
+        presenter?.proceed()
     }
 }

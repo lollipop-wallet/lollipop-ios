@@ -31,3 +31,6 @@
 "optional" = "opciono";
 "choose" = "Odaberite";
 "chooseCity" = "Odaberite grad";
+"passwordCreation" = "Kreiranje šifre";
+"enterPassword" = "Unesi šifru";
+"confirmPassword" = "Potvrdi šifru";

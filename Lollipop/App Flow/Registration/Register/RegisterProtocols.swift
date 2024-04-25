@@ -16,6 +16,7 @@ protocol RegisterPresenterProtocol: CalendarInputProtocol, DropdownInputFieldPro
     var view: RegisterViewProtocol? { get set }
     var wireframe:RegisterWireframeProtocol? { get set }
     
+    func proceed()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -39,6 +40,5 @@ protocol RegisterViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol RegisterWireframeProtocol: AnyObject {
-
-    
+    func toPWd()
 }

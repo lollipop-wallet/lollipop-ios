@@ -43,6 +43,9 @@ enum LocalizedTitle: String {
     case optional
     case choose
     case chooseCity
+    case passwordCreation
+    case enterPassword
+    case confirmPassword
     
 
     var localized: String {

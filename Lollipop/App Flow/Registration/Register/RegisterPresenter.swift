@@ -13,6 +13,9 @@ class RegisterPresenter: NSObject, RegisterPresenterProtocol  {
     weak var view: RegisterViewProtocol?
     var wireframe: RegisterWireframeProtocol?
     
+    func proceed() {
+        wireframe?.toPWd()
+    }
 }
 
 extension RegisterPresenter: RegisterOutputInteractorProtocol {

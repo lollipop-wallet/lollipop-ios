@@ -98,6 +98,14 @@
 		627E92C12BDA044F0016FF73 /* DropdownInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C02BDA044F0016FF73 /* DropdownInputField.swift */; };
 		627E92C32BDA056B0016FF73 /* DropdownInputFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */; };
 		627E92C82BDA0E200016FF73 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C72BDA0E200016FF73 /* MainButton.swift */; };
+		627E92D22BDA10990016FF73 /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92CB2BDA10990016FF73 /* PasswordPresenter.swift */; };
+		627E92D32BDA10990016FF73 /* PasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92CC2BDA10990016FF73 /* PasswordProtocols.swift */; };
+		627E92D42BDA10990016FF73 /* PasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92CD2BDA10990016FF73 /* PasswordInteractor.swift */; };
+		627E92D52BDA10990016FF73 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92CE2BDA10990016FF73 /* PasswordView.swift */; };
+		627E92D62BDA10990016FF73 /* PasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92CF2BDA10990016FF73 /* PasswordModel.swift */; };
+		627E92D72BDA10990016FF73 /* PasswordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92D02BDA10990016FF73 /* PasswordWireframe.swift */; };
+		627E92DA2BDA10A80016FF73 /* PasswordUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92D92BDA10A80016FF73 /* PasswordUI.swift */; };
+		627E92DD2BDA18560016FF73 /* OTPInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92DC2BDA18560016FF73 /* OTPInputField.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -219,6 +227,14 @@
 		627E92C02BDA044F0016FF73 /* DropdownInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputField.swift; sourceTree = "<group>"; };
 		627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputFieldProtocols.swift; sourceTree = "<group>"; };
 		627E92C72BDA0E200016FF73 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		627E92CB2BDA10990016FF73 /* PasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
+		627E92CC2BDA10990016FF73 /* PasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordProtocols.swift; sourceTree = "<group>"; };
+		627E92CD2BDA10990016FF73 /* PasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInteractor.swift; sourceTree = "<group>"; };
+		627E92CE2BDA10990016FF73 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
+		627E92CF2BDA10990016FF73 /* PasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordModel.swift; sourceTree = "<group>"; };
+		627E92D02BDA10990016FF73 /* PasswordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWireframe.swift; sourceTree = "<group>"; };
+		627E92D92BDA10A80016FF73 /* PasswordUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordUI.swift; sourceTree = "<group>"; };
+		627E92DC2BDA18560016FF73 /* OTPInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputField.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -516,6 +532,7 @@
 			children = (
 				2CCF3AA82BD7B25600B3729E /* Sign in */,
 				2CEC7F9A2BD8D1210050E762 /* Register */,
+				627E92C92BDA108B0016FF73 /* Password */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -638,6 +655,7 @@
 				627E92BA2BD847880016FF73 /* Input  field */,
 				2CEC7FBD2BD8F73E0050E762 /* Calendar input field */,
 				627E92BF2BDA04390016FF73 /* Drop down input field */,
+				627E92DB2BDA18400016FF73 /* OTP Input Field */,
 			);
 			path = "Input fields";
 			sourceTree = "<group>";
@@ -673,6 +691,36 @@
 				627E92C72BDA0E200016FF73 /* MainButton.swift */,
 			);
 			path = "Main button";
+			sourceTree = "<group>";
+		};
+		627E92C92BDA108B0016FF73 /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				627E92CB2BDA10990016FF73 /* PasswordPresenter.swift */,
+				627E92CC2BDA10990016FF73 /* PasswordProtocols.swift */,
+				627E92CD2BDA10990016FF73 /* PasswordInteractor.swift */,
+				627E92CE2BDA10990016FF73 /* PasswordView.swift */,
+				627E92CF2BDA10990016FF73 /* PasswordModel.swift */,
+				627E92D02BDA10990016FF73 /* PasswordWireframe.swift */,
+				627E92D82BDA109F0016FF73 /* UI */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
+		627E92D82BDA109F0016FF73 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				627E92D92BDA10A80016FF73 /* PasswordUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		627E92DB2BDA18400016FF73 /* OTP Input Field */ = {
+			isa = PBXGroup;
+			children = (
+				627E92DC2BDA18560016FF73 /* OTPInputField.swift */,
+			);
+			path = "OTP Input Field";
 			sourceTree = "<group>";
 		};
 		62903E222BD6E12700031D60 /* Onboarding */ = {
@@ -936,12 +984,14 @@
 				2CACCD842BD528F7008178F8 /* LaunchModel.swift in Sources */,
 				627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */,
 				2CACCDD02BD53E69008178F8 /* NSAttachment+Extension.swift in Sources */,
+				627E92DD2BDA18560016FF73 /* OTPInputField.swift in Sources */,
 				2CACCDBD2BD53D09008178F8 /* DataPasser.swift in Sources */,
 				2CACCDEB2BD54120008178F8 /* PushNotificationsManager.swift in Sources */,
 				62214B0B2BD6F44D00ABF38E /* ContentViewUI.swift in Sources */,
 				2CACCDE22BD53FC4008178F8 /* UIView+Extension.swift in Sources */,
 				2CCF3AB92BD7B2A100B3729E /* SignInUI.swift in Sources */,
 				62214B022BD6E5D000ABF38E /* AppFontWeight.swift in Sources */,
+				627E92DA2BDA10A80016FF73 /* PasswordUI.swift in Sources */,
 				2CACCDE92BD540C9008178F8 /* RemoteConfigManager.swift in Sources */,
 				2CACCDCE2BD53E58008178F8 /* Int+Extension.swift in Sources */,
 				2CACCDAA2BD5327F008178F8 /* UIColor+Extension.swift in Sources */,
@@ -971,6 +1021,12 @@
 				62214AE92BD6E17600ABF38E /* OnboardingModel.swift in Sources */,
 				62214AEA2BD6E17600ABF38E /* OnboardingWireframe.swift in Sources */,
 				2CACCDE62BD54058008178F8 /* UINavigationController+Extension.swift in Sources */,
+				627E92D22BDA10990016FF73 /* PasswordPresenter.swift in Sources */,
+				627E92D32BDA10990016FF73 /* PasswordProtocols.swift in Sources */,
+				627E92D42BDA10990016FF73 /* PasswordInteractor.swift in Sources */,
+				627E92D52BDA10990016FF73 /* PasswordView.swift in Sources */,
+				627E92D62BDA10990016FF73 /* PasswordModel.swift in Sources */,
+				627E92D72BDA10990016FF73 /* PasswordWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

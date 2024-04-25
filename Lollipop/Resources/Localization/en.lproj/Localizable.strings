@@ -31,3 +31,6 @@
 "optional" = "optional";
 "choose" = "Choose";
 "chooseCity" = "Choose city";
+"passwordCreation" = "Password creation";
+"enterPassword" = "Enter password";
+"confirmPassword" = "Confirm password";
