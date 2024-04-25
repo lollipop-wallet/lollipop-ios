@@ -46,6 +46,11 @@ enum LocalizedTitle: String {
     case passwordCreation
     case enterPassword
     case confirmPassword
+    case confirmEmailAdderss
+    case activationCode
+    case activationCodeTitle
+    case activationCodeText1
+    case activationCodeText2
     
 
     var localized: String {
