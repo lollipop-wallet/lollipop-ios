@@ -31,6 +31,10 @@ class OTPInputField: UIView {
         get { return .default }
     }
     
+    var fieldTag = Int()
+    
+    var delegate: OTPInputFieldProtocol?
+    
     //MARK: Outlets
     
     lazy var textField: UITextField = {
@@ -100,5 +104,17 @@ extension OTPInputField : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.textFieldPlaceholder.layer.borderWidth = 1
         self.textFieldPlaceholder.layer.borderColor = (textField.text ?? "").isEmpty ? AppColors.mediumGrey.cgColor : AppColors.black.cgColor
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (string.count == 1){
+            delegate?.becomeFirstResponder(tag: self.fieldTag)
+            textField.text? = string
+            return false
+        }else{
+            delegate?.becomeFirstResponder(tag: self.fieldTag)
+            textField.text? = string
+            return false
+        }
     }
 }

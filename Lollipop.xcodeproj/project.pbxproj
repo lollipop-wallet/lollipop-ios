@@ -72,6 +72,7 @@
 		2CDDA73A2BDA256100B6C8B5 /* OTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA7332BDA256100B6C8B5 /* OTPModel.swift */; };
 		2CDDA73B2BDA256100B6C8B5 /* OTPWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA7342BDA256100B6C8B5 /* OTPWireframe.swift */; };
 		2CDDA73E2BDA257600B6C8B5 /* OTPUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA73D2BDA257600B6C8B5 /* OTPUI.swift */; };
+		2CDDA7402BDA367000B6C8B5 /* OTPInputProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA73F2BDA367000B6C8B5 /* OTPInputProtocols.swift */; };
 		2CEC7FB42BD8D1730050E762 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAD2BD8D1730050E762 /* RegisterPresenter.swift */; };
 		2CEC7FB52BD8D1730050E762 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAE2BD8D1730050E762 /* RegisterProtocols.swift */; };
 		2CEC7FB62BD8D1730050E762 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAF2BD8D1730050E762 /* RegisterInteractor.swift */; };
@@ -206,6 +207,7 @@
 		2CDDA7332BDA256100B6C8B5 /* OTPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPModel.swift; sourceTree = "<group>"; };
 		2CDDA7342BDA256100B6C8B5 /* OTPWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPWireframe.swift; sourceTree = "<group>"; };
 		2CDDA73D2BDA257600B6C8B5 /* OTPUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPUI.swift; sourceTree = "<group>"; };
+		2CDDA73F2BDA367000B6C8B5 /* OTPInputProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputProtocols.swift; sourceTree = "<group>"; };
 		2CEC7FAD2BD8D1730050E762 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		2CEC7FAE2BD8D1730050E762 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
 		2CEC7FAF2BD8D1730050E762 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
@@ -756,6 +758,7 @@
 			isa = PBXGroup;
 			children = (
 				627E92DC2BDA18560016FF73 /* OTPInputField.swift */,
+				2CDDA73F2BDA367000B6C8B5 /* OTPInputProtocols.swift */,
 			);
 			path = "OTP Input Field";
 			sourceTree = "<group>";
@@ -1030,6 +1033,7 @@
 				627E92DD2BDA18560016FF73 /* OTPInputField.swift in Sources */,
 				2CACCDBD2BD53D09008178F8 /* DataPasser.swift in Sources */,
 				2CACCDEB2BD54120008178F8 /* PushNotificationsManager.swift in Sources */,
+				2CDDA7402BDA367000B6C8B5 /* OTPInputProtocols.swift in Sources */,
 				62214B0B2BD6F44D00ABF38E /* ContentViewUI.swift in Sources */,
 				2CACCDE22BD53FC4008178F8 /* UIView+Extension.swift in Sources */,
 				2CCF3AB92BD7B2A100B3729E /* SignInUI.swift in Sources */,

@@ -8,7 +8,7 @@
 import UIKit
 import SwiftyAttributes
 
-class OTPPresenter: OTPPresenterProtocol  {
+class OTPPresenter: NSObject, OTPPresenterProtocol  {
     
     var interactor : OTPInputInteractorProtocol?
     weak var view: OTPViewProtocol?
@@ -21,6 +21,25 @@ class OTPPresenter: OTPPresenterProtocol  {
 
 extension OTPPresenter: OTPOutputInteractorProtocol {
     
+}
+
+//MARK: OTPField Delegate
+extension OTPPresenter {
+    func becomeFirstResponder(tag: Int) {
+        print("Koji je tag: ", tag)
+        switch tag {
+        case 1:
+            view?.activateSecondField()
+        case 2:
+            view?.activateThirdField()
+        case 3:
+            view?.activateFourthField()
+        case 4:
+            view?.resignFirstResponder()
+        default:
+            print()
+        }
+    }
 }
 
 //MARK: Private methods

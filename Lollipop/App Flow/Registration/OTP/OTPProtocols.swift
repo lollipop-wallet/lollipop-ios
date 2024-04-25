@@ -10,7 +10,7 @@ import Foundation
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol OTPPresenterProtocol: AnyObject {
+protocol OTPPresenterProtocol: OTPInputFieldProtocol {
     
     var interactor: OTPInputInteractorProtocol? { get set }
     var view: OTPViewProtocol? { get set }
@@ -33,9 +33,14 @@ protocol OTPOutputInteractorProtocol: AnyObject {
 }
 //MARK: View
 protocol OTPViewProtocol: AnyObject {
-    
     var presenter: OTPPresenterProtocol?  { get set }
     func setSubtitleWith(subtitle: NSAttributedString)
+    func activateFirstField()
+    func activateSecondField()
+    func activateThirdField()
+    func activateFourthField()
+    func resignFirstResponder()
+
 }
 //MARK: Wireframe
 protocol OTPWireframeProtocol: AnyObject {

@@ -48,15 +48,27 @@ extension OTPView {
         
         self.firstOTPField.background = AppColors.white
         self.firstOTPField.font = .inter(ofSize: 28, name: .bold)
+        self.firstOTPField.keyboardType = .numberPad
+        self.firstOTPField.fieldTag = 1
+        self.firstOTPField.delegate = presenter
         
         self.secondOTPField.background = AppColors.white
         self.secondOTPField.font = .inter(ofSize: 28, name: .bold)
+        self.secondOTPField.keyboardType = .numberPad
+        self.secondOTPField.fieldTag = 2
+        self.secondOTPField.delegate = presenter
         
         self.thirdOTPField.background = AppColors.white
         self.thirdOTPField.font = .inter(ofSize: 28, name: .bold)
+        self.thirdOTPField.keyboardType = .numberPad
+        self.thirdOTPField.fieldTag = 3
+        self.thirdOTPField.delegate = presenter
         
         self.fourthOTPField.background = AppColors.white
         self.fourthOTPField.font = .inter(ofSize: 28, name: .bold)
+        self.fourthOTPField.keyboardType = .numberPad
+        self.fourthOTPField.fieldTag = 4
+        self.fourthOTPField.delegate = presenter
         
         lazy var otpStack: UIStackView = {
             let stack = UIStackView(arrangedSubviews: [self.firstOTPField, self.secondOTPField, self.thirdOTPField, self.fourthOTPField])
