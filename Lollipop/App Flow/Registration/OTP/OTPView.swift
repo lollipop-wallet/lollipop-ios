@@ -12,6 +12,11 @@ import UIKit
 class OTPView: UIViewController, OTPViewProtocol {
     
     var subtitleLabel = UILabel()
+    
+    var firstOTPField = OTPInputField()
+    var secondOTPField = OTPInputField()
+    var thirdOTPField = OTPInputField()
+    var fourthOTPField = OTPInputField()
 
     var presenter: OTPPresenterProtocol?
 
@@ -32,5 +37,9 @@ class OTPView: UIViewController, OTPViewProtocol {
     //MARK: Actions
     @objc func onCloseTap() {
         dismiss(animated: true)
+    }
+    
+    @objc func onProceedTap() {
+        
     }
 }
