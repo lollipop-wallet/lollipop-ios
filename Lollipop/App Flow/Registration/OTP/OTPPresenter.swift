@@ -26,7 +26,6 @@ extension OTPPresenter: OTPOutputInteractorProtocol {
 //MARK: OTPField Delegate
 extension OTPPresenter {
     func becomeFirstResponder(tag: Int) {
-        print("Koji je tag: ", tag)
         switch tag {
         case 1:
             view?.activateSecondField()
