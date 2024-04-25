@@ -10,7 +10,7 @@ import Foundation
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol RegisterPresenterProtocol: CalendarInputProtocol {
+protocol RegisterPresenterProtocol: CalendarInputProtocol, DropdownInputFieldProtocol {
     
     var interactor: RegisterInputInteractorProtocol? { get set }
     var view: RegisterViewProtocol? { get set }

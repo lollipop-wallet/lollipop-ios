@@ -17,6 +17,8 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     var calendarField = CalendarInputField()
     var datePicker = UIDatePicker()
     var datePickerStackView = UIStackView()
+    var genderField = DropdownInputField()
+    var cityField = DropdownInputField()
 
     var presenter: RegisterPresenterProtocol?
 

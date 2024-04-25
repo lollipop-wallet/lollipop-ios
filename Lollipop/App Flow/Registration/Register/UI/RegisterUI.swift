@@ -63,7 +63,22 @@ extension RegisterView {
         self.datePicker.tintColor = AppColors.mediumGrey
         self.datePicker.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
 
+        self.genderField.title = "\(LocalizedTitle.gender.localized):"
+        self.genderField.errorHidden = true
+        self.genderField.background = AppColors.white
+        self.genderField.text = LocalizedTitle.choose.localized
+        self.genderField.rightSuplementaryIconHidden = false
+        self.genderField.delegate = presenter
         
+        lazy var midStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [self.calendarField, self.genderField])
+            stack.axis = .horizontal
+            stack.distribution = .fillEqually
+            stack.alignment = .fill
+            stack.spacing = 8
+            return stack
+        }()
+
         lazy var datePickerPlaceholder: UIView = {
             let view = UIView()
             view.addSubview(self.datePicker)
@@ -84,7 +99,7 @@ extension RegisterView {
         self.datePickerStackView.isHidden = true
         
         lazy var mainStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [self.nameField, self.surnameField, self.emailField, self.calendarField])
+            let stack = UIStackView(arrangedSubviews: [self.nameField, self.surnameField, self.emailField, midStack])
             stack.axis = .vertical
             stack.alignment = .fill
             stack.distribution = .fill

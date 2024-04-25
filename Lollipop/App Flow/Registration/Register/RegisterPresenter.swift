@@ -25,3 +25,10 @@ extension RegisterPresenter {
         view?.displayCalendar()
     }
 }
+
+//MARK: Dropdown field delegate
+extension RegisterPresenter {
+    func showDropdown() {
+        
+    }
+}
