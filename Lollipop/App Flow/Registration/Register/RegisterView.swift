@@ -51,4 +51,8 @@ class RegisterView: UIViewController, RegisterViewProtocol {
             self.calendarField.borderColor = AppColors.black
         }
     }
+    
+    @objc func onProceedTap() {
+        
+    }
 }
