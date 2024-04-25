@@ -28,6 +28,6 @@ class PasswordView: UIViewController, PasswordViewProtocol {
     }
     
     @objc func onProceedTap() {
-        
+        presenter?.proceed()
     }
 }

@@ -22,5 +22,6 @@ struct AssetTitles {
     static let closeSignInIcon = "ic_sign_in_close"
     static let calendarIcon = "ic_calendar"
     static let pointDownIcon = "ic_down"
+    static let closeIcon = "ic_close"
 
 }

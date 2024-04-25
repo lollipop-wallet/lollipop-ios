@@ -65,6 +65,13 @@
 		2CCF3AB52BD7B29300B3729E /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAE2BD7B29300B3729E /* SignInModel.swift */; };
 		2CCF3AB62BD7B29300B3729E /* SignInWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAF2BD7B29300B3729E /* SignInWireframe.swift */; };
 		2CCF3AB92BD7B2A100B3729E /* SignInUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AB82BD7B2A100B3729E /* SignInUI.swift */; };
+		2CDDA7362BDA256100B6C8B5 /* OTPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA72F2BDA256100B6C8B5 /* OTPPresenter.swift */; };
+		2CDDA7372BDA256100B6C8B5 /* OTPProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA7302BDA256100B6C8B5 /* OTPProtocols.swift */; };
+		2CDDA7382BDA256100B6C8B5 /* OTPInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA7312BDA256100B6C8B5 /* OTPInteractor.swift */; };
+		2CDDA7392BDA256100B6C8B5 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA7322BDA256100B6C8B5 /* OTPView.swift */; };
+		2CDDA73A2BDA256100B6C8B5 /* OTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA7332BDA256100B6C8B5 /* OTPModel.swift */; };
+		2CDDA73B2BDA256100B6C8B5 /* OTPWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA7342BDA256100B6C8B5 /* OTPWireframe.swift */; };
+		2CDDA73E2BDA257600B6C8B5 /* OTPUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA73D2BDA257600B6C8B5 /* OTPUI.swift */; };
 		2CEC7FB42BD8D1730050E762 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAD2BD8D1730050E762 /* RegisterPresenter.swift */; };
 		2CEC7FB52BD8D1730050E762 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAE2BD8D1730050E762 /* RegisterProtocols.swift */; };
 		2CEC7FB62BD8D1730050E762 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAF2BD8D1730050E762 /* RegisterInteractor.swift */; };
@@ -192,6 +199,13 @@
 		2CCF3AAE2BD7B29300B3729E /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		2CCF3AAF2BD7B29300B3729E /* SignInWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWireframe.swift; sourceTree = "<group>"; };
 		2CCF3AB82BD7B2A100B3729E /* SignInUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUI.swift; sourceTree = "<group>"; };
+		2CDDA72F2BDA256100B6C8B5 /* OTPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPPresenter.swift; sourceTree = "<group>"; };
+		2CDDA7302BDA256100B6C8B5 /* OTPProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPProtocols.swift; sourceTree = "<group>"; };
+		2CDDA7312BDA256100B6C8B5 /* OTPInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInteractor.swift; sourceTree = "<group>"; };
+		2CDDA7322BDA256100B6C8B5 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
+		2CDDA7332BDA256100B6C8B5 /* OTPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPModel.swift; sourceTree = "<group>"; };
+		2CDDA7342BDA256100B6C8B5 /* OTPWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPWireframe.swift; sourceTree = "<group>"; };
+		2CDDA73D2BDA257600B6C8B5 /* OTPUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPUI.swift; sourceTree = "<group>"; };
 		2CEC7FAD2BD8D1730050E762 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		2CEC7FAE2BD8D1730050E762 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
 		2CEC7FAF2BD8D1730050E762 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
@@ -533,6 +547,7 @@
 				2CCF3AA82BD7B25600B3729E /* Sign in */,
 				2CEC7F9A2BD8D1210050E762 /* Register */,
 				627E92C92BDA108B0016FF73 /* Password */,
+				2CDDA72D2BDA255100B6C8B5 /* OTP */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -555,6 +570,28 @@
 			isa = PBXGroup;
 			children = (
 				2CCF3AB82BD7B2A100B3729E /* SignInUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2CDDA72D2BDA255100B6C8B5 /* OTP */ = {
+			isa = PBXGroup;
+			children = (
+				2CDDA72F2BDA256100B6C8B5 /* OTPPresenter.swift */,
+				2CDDA7302BDA256100B6C8B5 /* OTPProtocols.swift */,
+				2CDDA7312BDA256100B6C8B5 /* OTPInteractor.swift */,
+				2CDDA7322BDA256100B6C8B5 /* OTPView.swift */,
+				2CDDA7332BDA256100B6C8B5 /* OTPModel.swift */,
+				2CDDA7342BDA256100B6C8B5 /* OTPWireframe.swift */,
+				2CDDA73C2BDA256800B6C8B5 /* UI */,
+			);
+			path = OTP;
+			sourceTree = "<group>";
+		};
+		2CDDA73C2BDA256800B6C8B5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2CDDA73D2BDA257600B6C8B5 /* OTPUI.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -969,6 +1006,12 @@
 				2CACCDD42BD53EDE008178F8 /* UIFont+Extension.swift in Sources */,
 				2CACCDC62BD53DCB008178F8 /* SettingType.swift in Sources */,
 				2CACCDDA2BD53F5F008178F8 /* UILabel+Extension.swift in Sources */,
+				2CDDA7362BDA256100B6C8B5 /* OTPPresenter.swift in Sources */,
+				2CDDA7372BDA256100B6C8B5 /* OTPProtocols.swift in Sources */,
+				2CDDA7382BDA256100B6C8B5 /* OTPInteractor.swift in Sources */,
+				2CDDA7392BDA256100B6C8B5 /* OTPView.swift in Sources */,
+				2CDDA73A2BDA256100B6C8B5 /* OTPModel.swift in Sources */,
+				2CDDA73B2BDA256100B6C8B5 /* OTPWireframe.swift in Sources */,
 				2CEC7FB42BD8D1730050E762 /* RegisterPresenter.swift in Sources */,
 				2CEC7FB52BD8D1730050E762 /* RegisterProtocols.swift in Sources */,
 				2CEC7FB62BD8D1730050E762 /* RegisterInteractor.swift in Sources */,
@@ -1016,6 +1059,7 @@
 				2CACCDDE2BD53F85008178F8 /* UITapGestureRecognizer+Extension.swift in Sources */,
 				62214AE52BD6E17600ABF38E /* OnboardingPresenter.swift in Sources */,
 				62214AE62BD6E17600ABF38E /* OnboardingProtocols.swift in Sources */,
+				2CDDA73E2BDA257600B6C8B5 /* OTPUI.swift in Sources */,
 				62214AE72BD6E17600ABF38E /* OnboardingInteractor.swift in Sources */,
 				62214AE82BD6E17600ABF38E /* OnboardingView.swift in Sources */,
 				62214AE92BD6E17600ABF38E /* OnboardingModel.swift in Sources */,

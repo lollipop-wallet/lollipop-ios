@@ -21,6 +21,8 @@ class PasswordWireframe: PasswordWireframeProtocol {
     }
     
     func toOtp(){
-        
+        let vc = OTPView()
+        let navVC = UINavigationController(rootViewController: vc)
+        UIApplication.topViewController()?.present(navVC, animated: true)
     }
 }
