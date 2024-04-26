@@ -16,6 +16,13 @@ class MainView: UITabBarController, MainViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
 
+    
+    //MARK: MainView protocol
+    
+    func setControllersWith(vcs: [UINavigationController]){
+        
+    }
 }

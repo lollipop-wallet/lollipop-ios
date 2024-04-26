@@ -13,6 +13,10 @@ class MainPresenter: MainPresenterProtocol  {
     weak var view: MainViewProtocol?
     var wireframe: MainWireframeProtocol?
     
+    
+    func viewDidLoad(){
+        
+    }
 }
 
 extension MainPresenter: MainOutputInteractorProtocol {

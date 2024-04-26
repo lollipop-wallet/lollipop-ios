@@ -15,7 +15,8 @@ protocol MainPresenterProtocol: AnyObject {
     var interactor: MainInputInteractorProtocol? { get set }
     var view: MainViewProtocol? { get set }
     var wireframe:MainWireframeProtocol? { get set }
-    
+ 
+    func viewDidLoad()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -35,7 +36,8 @@ protocol MainOutputInteractorProtocol: AnyObject {
 protocol MainViewProtocol: AnyObject {
     
     var presenter: MainPresenterProtocol?  { get set }
-    
+    func setControllersWith(vcs: [UINavigationController])
+
 }
 //MARK: Wireframe
 protocol MainWireframeProtocol: AnyObject {
