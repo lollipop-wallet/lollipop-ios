@@ -23,6 +23,8 @@ class MainView: UITabBarController, MainViewProtocol {
     //MARK: MainView protocol
     
     func setControllersWith(vcs: [UINavigationController]){
-        
+        self.viewControllers = vcs
+        tabBar.barTintColor = AppColors.white
+        tabBar.isTranslucent = false
     }
 }
