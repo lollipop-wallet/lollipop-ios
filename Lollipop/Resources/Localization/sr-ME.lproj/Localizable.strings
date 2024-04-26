@@ -39,3 +39,6 @@
 "activationCodeTitle" = "Unesite kôd koji smo Vam poslali na email.";
 "activationCodeText1" = "bi trebao uskoro da stigne na email adresu ";
 "activationCodeText2" = " Unesite broj u polja ispod.";
+"home" = "Početna";
+"partners" = "Partneri";
+"profile" = "Profil";

@@ -39,3 +39,6 @@
 "activationCodeTitle" = "Enter the code we sent you on email.";
 "activationCodeText1" = "should soon arrive on email address ";
 "activationCodeText2" = " Enter the number in the fields bellow.";
+"home" = "Home";
+"partners" = "Partners";
+"profile" = "Profile";

@@ -51,6 +51,9 @@ enum LocalizedTitle: String {
     case activationCodeTitle
     case activationCodeText1
     case activationCodeText2
+    case home
+    case partners
+    case profile
     
 
     var localized: String {
