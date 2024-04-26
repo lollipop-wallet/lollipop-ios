@@ -9,7 +9,7 @@
 //
 import UIKit
 
-class MainView: UIViewController, MainViewProtocol {
+class MainView: UITabBarController, MainViewProtocol {
 
     var presenter: MainPresenterProtocol?
 
