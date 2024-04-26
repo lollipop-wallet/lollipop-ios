@@ -54,6 +54,13 @@ enum LocalizedTitle: String {
     case home
     case partners
     case profile
+    case myProfile
+    case favoriteShops
+    case profileSettings
+    case myCards
+    case aboutApp
+    case changeLanguage
+    case termsOfUse
     
 
     var localized: String {
