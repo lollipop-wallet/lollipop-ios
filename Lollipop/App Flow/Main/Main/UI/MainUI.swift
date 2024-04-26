@@ -9,7 +9,7 @@ import UIKit
 
 extension MainView {
     func setup() {
-        self.view.backgroundColor = AppColors.lightGrey
+        self.view.backgroundColor = AppColors.white
         MainWireframe.createModule(MainRef: self)
         
         self.tabBar.tintColor = AppColors.brandPrimary
