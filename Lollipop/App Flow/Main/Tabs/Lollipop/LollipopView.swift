@@ -1,6 +1,6 @@
 
 //
-//  PartnersView.swift
+//  LollipopView.swift
 //  Lollipop
 //
 //  Created Aleksandar Draskovic on 26/04/2024.
@@ -9,9 +9,9 @@
 //
 import UIKit
 
-class PartnersView: UIViewController, PartnersViewProtocol {
+class LollipopView: UIViewController, LollipopViewProtocol {
 
-    var presenter: PartnersPresenterProtocol?
+    var presenter: LollipopPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()

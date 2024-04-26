@@ -135,6 +135,20 @@
 		62F6CDA12BDBC6D600C4775C /* PartnersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CD9B2BDBC6D600C4775C /* PartnersModel.swift */; };
 		62F6CDA22BDBC6D600C4775C /* PartnersWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CD9C2BDBC6D600C4775C /* PartnersWireframe.swift */; };
 		62F6CDA62BDBC6E600C4775C /* PartnersUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDA52BDBC6E600C4775C /* PartnersUI.swift */; };
+		62F6CDAF2BDBC74B00C4775C /* LollipopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDA92BDBC74B00C4775C /* LollipopPresenter.swift */; };
+		62F6CDB02BDBC74B00C4775C /* LollipopProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDAA2BDBC74B00C4775C /* LollipopProtocols.swift */; };
+		62F6CDB12BDBC74B00C4775C /* LollipopInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDAB2BDBC74B00C4775C /* LollipopInteractor.swift */; };
+		62F6CDB22BDBC74B00C4775C /* LollipopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDAC2BDBC74B00C4775C /* LollipopView.swift */; };
+		62F6CDB32BDBC74B00C4775C /* LollipopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDAD2BDBC74B00C4775C /* LollipopModel.swift */; };
+		62F6CDB42BDBC74B00C4775C /* LollipopWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDAE2BDBC74B00C4775C /* LollipopWireframe.swift */; };
+		62F6CDB82BDBC75900C4775C /* LollipopUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDB72BDBC75900C4775C /* LollipopUI.swift */; };
+		62F6CDC12BDBC79400C4775C /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDBB2BDBC79400C4775C /* ProfilePresenter.swift */; };
+		62F6CDC22BDBC79400C4775C /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDBC2BDBC79400C4775C /* ProfileProtocols.swift */; };
+		62F6CDC32BDBC79400C4775C /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDBD2BDBC79400C4775C /* ProfileInteractor.swift */; };
+		62F6CDC42BDBC79400C4775C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDBE2BDBC79400C4775C /* ProfileView.swift */; };
+		62F6CDC52BDBC79400C4775C /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDBF2BDBC79400C4775C /* ProfileModel.swift */; };
+		62F6CDC62BDBC79400C4775C /* ProfileWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDC02BDBC79400C4775C /* ProfileWireframe.swift */; };
+		62F6CDCA2BDBC7A300C4775C /* ProfileUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDC92BDBC7A300C4775C /* ProfileUI.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -293,6 +307,20 @@
 		62F6CD9B2BDBC6D600C4775C /* PartnersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersModel.swift; sourceTree = "<group>"; };
 		62F6CD9C2BDBC6D600C4775C /* PartnersWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersWireframe.swift; sourceTree = "<group>"; };
 		62F6CDA52BDBC6E600C4775C /* PartnersUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersUI.swift; sourceTree = "<group>"; };
+		62F6CDA92BDBC74B00C4775C /* LollipopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LollipopPresenter.swift; sourceTree = "<group>"; };
+		62F6CDAA2BDBC74B00C4775C /* LollipopProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LollipopProtocols.swift; sourceTree = "<group>"; };
+		62F6CDAB2BDBC74B00C4775C /* LollipopInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LollipopInteractor.swift; sourceTree = "<group>"; };
+		62F6CDAC2BDBC74B00C4775C /* LollipopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LollipopView.swift; sourceTree = "<group>"; };
+		62F6CDAD2BDBC74B00C4775C /* LollipopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LollipopModel.swift; sourceTree = "<group>"; };
+		62F6CDAE2BDBC74B00C4775C /* LollipopWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LollipopWireframe.swift; sourceTree = "<group>"; };
+		62F6CDB72BDBC75900C4775C /* LollipopUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LollipopUI.swift; sourceTree = "<group>"; };
+		62F6CDBB2BDBC79400C4775C /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		62F6CDBC2BDBC79400C4775C /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
+		62F6CDBD2BDBC79400C4775C /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		62F6CDBE2BDBC79400C4775C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		62F6CDBF2BDBC79400C4775C /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		62F6CDC02BDBC79400C4775C /* ProfileWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWireframe.swift; sourceTree = "<group>"; };
+		62F6CDC92BDBC7A300C4775C /* ProfileUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUI.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -857,6 +885,8 @@
 			children = (
 				62F6CD832BDBC68800C4775C /* Home */,
 				62F6CD952BDBC6C800C4775C /* Partners */,
+				62F6CDA72BDBC73D00C4775C /* Lollipop */,
+				62F6CDB92BDBC78100C4775C /* Profile */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -901,6 +931,50 @@
 			isa = PBXGroup;
 			children = (
 				62F6CDA52BDBC6E600C4775C /* PartnersUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		62F6CDA72BDBC73D00C4775C /* Lollipop */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CDA92BDBC74B00C4775C /* LollipopPresenter.swift */,
+				62F6CDAA2BDBC74B00C4775C /* LollipopProtocols.swift */,
+				62F6CDAB2BDBC74B00C4775C /* LollipopInteractor.swift */,
+				62F6CDAC2BDBC74B00C4775C /* LollipopView.swift */,
+				62F6CDAD2BDBC74B00C4775C /* LollipopModel.swift */,
+				62F6CDAE2BDBC74B00C4775C /* LollipopWireframe.swift */,
+				62F6CDB62BDBC75200C4775C /* UI */,
+			);
+			path = Lollipop;
+			sourceTree = "<group>";
+		};
+		62F6CDB62BDBC75200C4775C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CDB72BDBC75900C4775C /* LollipopUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		62F6CDB92BDBC78100C4775C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CDBB2BDBC79400C4775C /* ProfilePresenter.swift */,
+				62F6CDBC2BDBC79400C4775C /* ProfileProtocols.swift */,
+				62F6CDBD2BDBC79400C4775C /* ProfileInteractor.swift */,
+				62F6CDBE2BDBC79400C4775C /* ProfileView.swift */,
+				62F6CDBF2BDBC79400C4775C /* ProfileModel.swift */,
+				62F6CDC02BDBC79400C4775C /* ProfileWireframe.swift */,
+				62F6CDC82BDBC79B00C4775C /* UI */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		62F6CDC82BDBC79B00C4775C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CDC92BDBC7A300C4775C /* ProfileUI.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1139,6 +1213,13 @@
 				2CACCDC42BD53DAE008178F8 /* LinkType.swift in Sources */,
 				2CACCD822BD528F7008178F8 /* LaunchInteractor.swift in Sources */,
 				62F6CDA62BDBC6E600C4775C /* PartnersUI.swift in Sources */,
+				62F6CDC12BDBC79400C4775C /* ProfilePresenter.swift in Sources */,
+				62F6CDC22BDBC79400C4775C /* ProfileProtocols.swift in Sources */,
+				62F6CDC32BDBC79400C4775C /* ProfileInteractor.swift in Sources */,
+				62F6CDCA2BDBC7A300C4775C /* ProfileUI.swift in Sources */,
+				62F6CDC42BDBC79400C4775C /* ProfileView.swift in Sources */,
+				62F6CDC52BDBC79400C4775C /* ProfileModel.swift in Sources */,
+				62F6CDC62BDBC79400C4775C /* ProfileWireframe.swift in Sources */,
 				2CACCDCA2BD53E00008178F8 /* Date+Extension.swift in Sources */,
 				2CACCDD42BD53EDE008178F8 /* UIFont+Extension.swift in Sources */,
 				2CACCDC62BD53DCB008178F8 /* SettingType.swift in Sources */,
@@ -1178,10 +1259,17 @@
 				62214B0B2BD6F44D00ABF38E /* ContentViewUI.swift in Sources */,
 				2CACCDE22BD53FC4008178F8 /* UIView+Extension.swift in Sources */,
 				2CCF3AB92BD7B2A100B3729E /* SignInUI.swift in Sources */,
+				62F6CDB82BDBC75900C4775C /* LollipopUI.swift in Sources */,
 				62214B022BD6E5D000ABF38E /* AppFontWeight.swift in Sources */,
 				627E92DA2BDA10A80016FF73 /* PasswordUI.swift in Sources */,
 				2CACCDE92BD540C9008178F8 /* RemoteConfigManager.swift in Sources */,
 				2CACCDCE2BD53E58008178F8 /* Int+Extension.swift in Sources */,
+				62F6CDAF2BDBC74B00C4775C /* LollipopPresenter.swift in Sources */,
+				62F6CDB02BDBC74B00C4775C /* LollipopProtocols.swift in Sources */,
+				62F6CDB12BDBC74B00C4775C /* LollipopInteractor.swift in Sources */,
+				62F6CDB22BDBC74B00C4775C /* LollipopView.swift in Sources */,
+				62F6CDB32BDBC74B00C4775C /* LollipopModel.swift in Sources */,
+				62F6CDB42BDBC74B00C4775C /* LollipopWireframe.swift in Sources */,
 				2CACCDAA2BD5327F008178F8 /* UIColor+Extension.swift in Sources */,
 				2CACCD852BD528F7008178F8 /* LaunchWireframe.swift in Sources */,
 				2CACCD952BD52FA3008178F8 /* LocalizedTitle.swift in Sources */,

@@ -1,6 +1,6 @@
 
 //
-//  PartnersView.swift
+//  ProfileView.swift
 //  Lollipop
 //
 //  Created Aleksandar Draskovic on 26/04/2024.
@@ -9,9 +9,9 @@
 //
 import UIKit
 
-class PartnersView: UIViewController, PartnersViewProtocol {
+class ProfileView: UIViewController, ProfileViewProtocol {
 
-    var presenter: PartnersPresenterProtocol?
+    var presenter: ProfilePresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
