@@ -27,4 +27,10 @@ class MainView: UITabBarController, MainViewProtocol {
         tabBar.barTintColor = AppColors.white
         tabBar.isTranslucent = false
     }
+    
+    //MARK: Actions
+    
+    @objc func onScanTap() {
+        
+    }
 }

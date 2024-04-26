@@ -31,4 +31,5 @@ struct AssetTitles {
     static let lollipopSelectedIcon = "ic_lollipop_selected"
     static let profileUnselectedIcon = "ic_profile_unselected"
     static let profileSelectedIcon = "ic_profile_selected"
+    static let mainScanIcon = "ic_main_scan"
 }

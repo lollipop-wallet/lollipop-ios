@@ -21,5 +21,20 @@ extension MainView {
                 self.tabBar.items?[i].image = UIImage(named: imageNameForSelectedState)?.withRenderingMode(.alwaysOriginal)
             }
         }
+        
+        lazy var scanButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onScanTap), for: .touchUpInside)
+            button.setImage(UIImage(named: AssetTitles.mainScanIcon), for: .normal)
+            return button
+        }()
+        
+        
+        self.view.addSubview(scanButton)
+        scanButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.width.height.equalTo(80)
+            make.bottom.equalToSuperview().offset(-21)
+        }
     }
 }
