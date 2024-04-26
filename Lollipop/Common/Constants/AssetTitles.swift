@@ -23,5 +23,12 @@ struct AssetTitles {
     static let calendarIcon = "ic_calendar"
     static let pointDownIcon = "ic_down"
     static let closeIcon = "ic_close"
-
+    static let homeUnselectedIcon = "ic_home_unselected"
+    static let homeSelectedIcon = "ic_home_selected"
+    static let partnersUnselectedIcon = "ic_partners_unselected"
+    static let partnersSelectedIcon = "ic_partners_selected"
+    static let lollipopUnselectedIcon = "ic_lollipop_unselected"
+    static let lollipopSelectedIcon = "ic_lollipop_selected"
+    static let profileUnselectedIcon = "ic_profile_unselected"
+    static let profileSelectedIcon = "ic_profile_selected"
 }

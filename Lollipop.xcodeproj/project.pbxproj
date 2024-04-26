@@ -114,6 +114,13 @@
 		627E92D72BDA10990016FF73 /* PasswordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92D02BDA10990016FF73 /* PasswordWireframe.swift */; };
 		627E92DA2BDA10A80016FF73 /* PasswordUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92D92BDA10A80016FF73 /* PasswordUI.swift */; };
 		627E92DD2BDA18560016FF73 /* OTPInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92DC2BDA18560016FF73 /* OTPInputField.swift */; };
+		62F6CD782BDBBDFC00C4775C /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CD722BDBBDFC00C4775C /* MainPresenter.swift */; };
+		62F6CD792BDBBDFC00C4775C /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CD732BDBBDFC00C4775C /* MainProtocols.swift */; };
+		62F6CD7A2BDBBDFC00C4775C /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CD742BDBBDFC00C4775C /* MainInteractor.swift */; };
+		62F6CD7B2BDBBDFC00C4775C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CD752BDBBDFC00C4775C /* MainView.swift */; };
+		62F6CD7C2BDBBDFC00C4775C /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CD762BDBBDFC00C4775C /* MainModel.swift */; };
+		62F6CD7D2BDBBDFC00C4775C /* MainWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CD772BDBBDFC00C4775C /* MainWireframe.swift */; };
+		62F6CD812BDBBE0C00C4775C /* MainUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CD802BDBBE0C00C4775C /* MainUI.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -251,6 +258,13 @@
 		627E92D02BDA10990016FF73 /* PasswordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWireframe.swift; sourceTree = "<group>"; };
 		627E92D92BDA10A80016FF73 /* PasswordUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordUI.swift; sourceTree = "<group>"; };
 		627E92DC2BDA18560016FF73 /* OTPInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputField.swift; sourceTree = "<group>"; };
+		62F6CD722BDBBDFC00C4775C /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		62F6CD732BDBBDFC00C4775C /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
+		62F6CD742BDBBDFC00C4775C /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		62F6CD752BDBBDFC00C4775C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		62F6CD762BDBBDFC00C4775C /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		62F6CD772BDBBDFC00C4775C /* MainWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWireframe.swift; sourceTree = "<group>"; };
+		62F6CD802BDBBE0C00C4775C /* MainUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUI.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -341,6 +355,7 @@
 				2CACCD782BD528EC008178F8 /* Launch */,
 				62903E222BD6E12700031D60 /* Onboarding */,
 				2CCF3AA72BD7B24D00B3729E /* Registration */,
+				62F6CD6F2BDBBDEC00C4775C /* Main */,
 			);
 			path = "App Flow";
 			sourceTree = "<group>";
@@ -778,6 +793,36 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		62F6CD6F2BDBBDEC00C4775C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CD702BDBBDF200C4775C /* Main */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		62F6CD702BDBBDF200C4775C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CD722BDBBDFC00C4775C /* MainPresenter.swift */,
+				62F6CD732BDBBDFC00C4775C /* MainProtocols.swift */,
+				62F6CD742BDBBDFC00C4775C /* MainInteractor.swift */,
+				62F6CD752BDBBDFC00C4775C /* MainView.swift */,
+				62F6CD762BDBBDFC00C4775C /* MainModel.swift */,
+				62F6CD772BDBBDFC00C4775C /* MainWireframe.swift */,
+				62F6CD7F2BDBBE0300C4775C /* UI */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		62F6CD7F2BDBBE0300C4775C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CD802BDBBE0C00C4775C /* MainUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		8C1AC92D620E8BB50BD90320 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1010,6 +1055,13 @@
 				2CACCDC62BD53DCB008178F8 /* SettingType.swift in Sources */,
 				2CACCDDA2BD53F5F008178F8 /* UILabel+Extension.swift in Sources */,
 				2CDDA7362BDA256100B6C8B5 /* OTPPresenter.swift in Sources */,
+				62F6CD782BDBBDFC00C4775C /* MainPresenter.swift in Sources */,
+				62F6CD792BDBBDFC00C4775C /* MainProtocols.swift in Sources */,
+				62F6CD7A2BDBBDFC00C4775C /* MainInteractor.swift in Sources */,
+				62F6CD7B2BDBBDFC00C4775C /* MainView.swift in Sources */,
+				62F6CD812BDBBE0C00C4775C /* MainUI.swift in Sources */,
+				62F6CD7C2BDBBDFC00C4775C /* MainModel.swift in Sources */,
+				62F6CD7D2BDBBDFC00C4775C /* MainWireframe.swift in Sources */,
 				2CDDA7372BDA256100B6C8B5 /* OTPProtocols.swift in Sources */,
 				2CDDA7382BDA256100B6C8B5 /* OTPInteractor.swift in Sources */,
 				2CDDA7392BDA256100B6C8B5 /* OTPView.swift in Sources */,
