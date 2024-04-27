@@ -153,6 +153,13 @@
 		62F6CDDD2BDD372800C4775C /* ProfileListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDDC2BDD372800C4775C /* ProfileListModel.swift */; };
 		62F6CDE02BDD3ACC00C4775C /* AutomaticHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDDF2BDD3ACC00C4775C /* AutomaticHeightTableView.swift */; };
 		62F6CDE32BDD3AE900C4775C /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDE22BDD3AE900C4775C /* ProfileTableViewCell.swift */; };
+		62F6CDEE2BDD455600C4775C /* PersonalDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDE72BDD455600C4775C /* PersonalDataPresenter.swift */; };
+		62F6CDEF2BDD455600C4775C /* PersonalDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDE82BDD455600C4775C /* PersonalDataProtocols.swift */; };
+		62F6CDF02BDD455600C4775C /* PersonalDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDE92BDD455600C4775C /* PersonalDataInteractor.swift */; };
+		62F6CDF12BDD455600C4775C /* PersonalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDEA2BDD455600C4775C /* PersonalDataView.swift */; };
+		62F6CDF22BDD455600C4775C /* PersonalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDEB2BDD455600C4775C /* PersonalDataModel.swift */; };
+		62F6CDF32BDD455600C4775C /* PersonalDataWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDEC2BDD455600C4775C /* PersonalDataWireframe.swift */; };
+		62F6CDF62BDD456700C4775C /* PersonalDataUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDF52BDD456700C4775C /* PersonalDataUI.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -329,6 +336,13 @@
 		62F6CDDC2BDD372800C4775C /* ProfileListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListModel.swift; sourceTree = "<group>"; };
 		62F6CDDF2BDD3ACC00C4775C /* AutomaticHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticHeightTableView.swift; sourceTree = "<group>"; };
 		62F6CDE22BDD3AE900C4775C /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		62F6CDE72BDD455600C4775C /* PersonalDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataPresenter.swift; sourceTree = "<group>"; };
+		62F6CDE82BDD455600C4775C /* PersonalDataProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataProtocols.swift; sourceTree = "<group>"; };
+		62F6CDE92BDD455600C4775C /* PersonalDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataInteractor.swift; sourceTree = "<group>"; };
+		62F6CDEA2BDD455600C4775C /* PersonalDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataView.swift; sourceTree = "<group>"; };
+		62F6CDEB2BDD455600C4775C /* PersonalDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataModel.swift; sourceTree = "<group>"; };
+		62F6CDEC2BDD455600C4775C /* PersonalDataWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataWireframe.swift; sourceTree = "<group>"; };
+		62F6CDF52BDD456700C4775C /* PersonalDataUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataUI.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -970,15 +984,8 @@
 		62F6CDB92BDBC78100C4775C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				62F6CDBB2BDBC79400C4775C /* ProfilePresenter.swift */,
-				62F6CDBC2BDBC79400C4775C /* ProfileProtocols.swift */,
-				62F6CDBD2BDBC79400C4775C /* ProfileInteractor.swift */,
-				62F6CDBE2BDBC79400C4775C /* ProfileView.swift */,
-				62F6CDBF2BDBC79400C4775C /* ProfileModel.swift */,
-				62F6CDDC2BDD372800C4775C /* ProfileListModel.swift */,
-				62F6CDC02BDBC79400C4775C /* ProfileWireframe.swift */,
-				62F6CDC82BDBC79B00C4775C /* UI */,
-				62F6CDE12BDD3ADA00C4775C /* Cells */,
+				62F6CDE42BDD453B00C4775C /* Profile */,
+				62F6CDE52BDD454600C4775C /* Personal data */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1005,6 +1012,44 @@
 				62F6CDE22BDD3AE900C4775C /* ProfileTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		62F6CDE42BDD453B00C4775C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CDBB2BDBC79400C4775C /* ProfilePresenter.swift */,
+				62F6CDBC2BDBC79400C4775C /* ProfileProtocols.swift */,
+				62F6CDBD2BDBC79400C4775C /* ProfileInteractor.swift */,
+				62F6CDBE2BDBC79400C4775C /* ProfileView.swift */,
+				62F6CDBF2BDBC79400C4775C /* ProfileModel.swift */,
+				62F6CDDC2BDD372800C4775C /* ProfileListModel.swift */,
+				62F6CDC02BDBC79400C4775C /* ProfileWireframe.swift */,
+				62F6CDC82BDBC79B00C4775C /* UI */,
+				62F6CDE12BDD3ADA00C4775C /* Cells */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		62F6CDE52BDD454600C4775C /* Personal data */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CDE72BDD455600C4775C /* PersonalDataPresenter.swift */,
+				62F6CDE82BDD455600C4775C /* PersonalDataProtocols.swift */,
+				62F6CDE92BDD455600C4775C /* PersonalDataInteractor.swift */,
+				62F6CDEA2BDD455600C4775C /* PersonalDataView.swift */,
+				62F6CDEB2BDD455600C4775C /* PersonalDataModel.swift */,
+				62F6CDEC2BDD455600C4775C /* PersonalDataWireframe.swift */,
+				62F6CDF42BDD455E00C4775C /* UI */,
+			);
+			path = "Personal data";
+			sourceTree = "<group>";
+		};
+		62F6CDF42BDD455E00C4775C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CDF52BDD456700C4775C /* PersonalDataUI.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		8C1AC92D620E8BB50BD90320 /* Pods */ = {
@@ -1225,11 +1270,18 @@
 				62F6CDA12BDBC6D600C4775C /* PartnersModel.swift in Sources */,
 				62F6CDA22BDBC6D600C4775C /* PartnersWireframe.swift in Sources */,
 				2CACCD892BD5290B008178F8 /* LaunchUI.swift in Sources */,
+				62F6CDF62BDD456700C4775C /* PersonalDataUI.swift in Sources */,
 				2CACCDDC2BD53F71008178F8 /* UIStackView+Extension.swift in Sources */,
 				62214B052BD6F39C00ABF38E /* PageView.swift in Sources */,
 				2CACCDED2BD541D3008178F8 /* AppDelegate+Extension.swift in Sources */,
 				2CACCDB72BD53C0B008178F8 /* DefaultModels.swift in Sources */,
 				2CEC7FC22BD935A50050E762 /* CalendarInputProtocols.swift in Sources */,
+				62F6CDEE2BDD455600C4775C /* PersonalDataPresenter.swift in Sources */,
+				62F6CDEF2BDD455600C4775C /* PersonalDataProtocols.swift in Sources */,
+				62F6CDF02BDD455600C4775C /* PersonalDataInteractor.swift in Sources */,
+				62F6CDF12BDD455600C4775C /* PersonalDataView.swift in Sources */,
+				62F6CDF22BDD455600C4775C /* PersonalDataModel.swift in Sources */,
+				62F6CDF32BDD455600C4775C /* PersonalDataWireframe.swift in Sources */,
 				2CACCDA82BD53265008178F8 /* FirebaseEvents.swift in Sources */,
 				2CACCDE42BD54039008178F8 /* UIViewController+Extension.swift in Sources */,
 				2CACCDD22BD53E82008178F8 /* String+Extension.swift in Sources */,
