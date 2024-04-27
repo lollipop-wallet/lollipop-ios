@@ -81,11 +81,35 @@ extension ProfileView {
             return view
         }()
         
+        self.nameLabel.font = .inter(ofSize: 24, name: .bold)
+        self.nameLabel.textAlignment = .center
+        self.nameLabel.textColor = AppColors.white
+        self.nameLabel.text = "Aco Draskovic"
+        
+        self.phoneLabel.font = .inter(ofSize: 14, name: .regular)
+        self.phoneLabel.textAlignment = .center
+        self.phoneLabel.textColor = AppColors.white.withAlphaComponent(0.6)
+        self.phoneLabel.text = "+382 67 231 868"
+        
         self.view.addSubview(avatarContainerView)
         avatarContainerView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
             make.centerX.equalToSuperview()
             make.width.height.equalTo(104)
+        }
+        
+        self.view.addSubview(self.nameLabel)
+        self.nameLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(avatarContainerView.snp.bottom).offset(12)
+        }
+        
+        self.view.addSubview(self.phoneLabel)
+        self.phoneLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(self.nameLabel.snp.bottom).offset(2)
         }
     }
 }
