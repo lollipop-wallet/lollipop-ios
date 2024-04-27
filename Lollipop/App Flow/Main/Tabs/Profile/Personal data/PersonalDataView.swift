@@ -18,4 +18,9 @@ class PersonalDataView: UIViewController, PersonalDataViewProtocol {
         setup()
     }
 
+    
+    //MARK: Actions
+    @objc func onBackTap() {
+        
+    }
 }
