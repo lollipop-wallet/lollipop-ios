@@ -98,7 +98,7 @@ extension PersonalDataView {
         self.datePickerStackView.alignment = .fill
         self.datePickerStackView.isHidden = true
         
-        self.cityField.title = "\(LocalizedTitle.city.localized)(\(LocalizedTitle.optional.localized):"
+        self.cityField.title = "\(LocalizedTitle.city.localized)(\(LocalizedTitle.optional.localized)):"
         self.cityField.errorHidden = true
         self.cityField.background = AppColors.white
         self.cityField.text = LocalizedTitle.choose.localized
@@ -117,7 +117,7 @@ extension PersonalDataView {
         lazy var proceedButton: UIButton = {
             let button = UIButton()
             button.addTarget(self, action: #selector(onProceedTap), for: .touchUpInside)
-            button.setTitle(LocalizedTitle.cont.localized, for: .normal)
+            button.setTitle(LocalizedTitle.save.localized, for: .normal)
             button.backgroundColor = AppColors.brandPrimary
             button.titleLabel?.font = .inter(ofSize: 16, name: .medium)
             button.setTitleColor(AppColors.white, for: .normal)

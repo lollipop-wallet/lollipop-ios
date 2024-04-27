@@ -37,7 +37,7 @@ extension ProfileSettingsPresenter {
         let item = self.datasource[index.row]
         switch item.item {
         case .data:
-            print()
+            wireframe?.toPersonalData()
         case .password:
             print()
         }
