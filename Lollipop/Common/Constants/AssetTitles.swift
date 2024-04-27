@@ -34,4 +34,11 @@ struct AssetTitles {
     static let mainScanIcon = "ic_main_scan"
     static let editIcon = "ic_edit"
     static let avatarIcon = "ic_avatar"
+    static let heartIcon = "ic_heart"
+    static let settingsIcon = "ic_profile_settings"
+    static let arrowRightIcon = "ic_arrow_right"
+    static let cardsIcon = "ic_profile_cards"
+    static let aboutIcon = "ic_profile_about"
+    static let changeLanguageIcon = "ic_profile_change_language"
+    static let termsIcon = "ic_profile_terms"
 }

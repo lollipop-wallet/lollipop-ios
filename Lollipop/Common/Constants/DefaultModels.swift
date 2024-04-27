@@ -14,4 +14,10 @@ struct DefaultModels {
                                 OnboardingModel(artwork: AssetTitles.onboardingIcon4, title: LocalizedTitle.onboardingTitle4.localized, subtitle: LocalizedTitle.onboardingSubtitle4.localized)]
     let unselected = [AssetTitles.homeUnselectedIcon, AssetTitles.partnersUnselectedIcon, "", AssetTitles.lollipopUnselectedIcon, AssetTitles.profileUnselectedIcon]
     let selected = [AssetTitles.homeSelectedIcon, AssetTitles.partnersSelectedIcon, "", AssetTitles.lollipopSelectedIcon, AssetTitles.profileSelectedIcon]
+    
+    let profileDatasource = [ProfileListModel(icon: AssetTitles.settingsIcon, title: LocalizedTitle.profileSettings.localized, item: .settings),
+                             ProfileListModel(icon: AssetTitles.cardsIcon, title: LocalizedTitle.myCards.localized, item: .cards),
+                             ProfileListModel(icon: AssetTitles.aboutIcon, title: LocalizedTitle.aboutApp.localized, item: .about),
+                             ProfileListModel(icon: AssetTitles.changeLanguageIcon, title: LocalizedTitle.changeLanguage.localized, item: .language),
+                             ProfileListModel(icon: AssetTitles.termsIcon, title: LocalizedTitle.terms.localized, item: .terms)]
 }
