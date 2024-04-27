@@ -10,11 +10,20 @@
 import UIKit
 
 class ProfileView: UIViewController, ProfileViewProtocol {
+    
+    var avatarImageView = UIImageView()
+    var nameLabel = UILabel()
+    var phoneLabel = UILabel()
 
     var presenter: ProfilePresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    //MARK: Actions
+    @objc func onEditAvatarTap() {
+        
     }
 }
