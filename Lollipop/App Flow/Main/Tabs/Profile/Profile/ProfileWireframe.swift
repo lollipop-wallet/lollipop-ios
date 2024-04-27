@@ -19,4 +19,9 @@ class ProfileWireframe: ProfileWireframeProtocol {
         ProfileRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toPersonalData(){
+        let vc = PersonalDataView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

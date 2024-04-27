@@ -18,7 +18,7 @@ extension PersonalDataView {
         appearance.setBackIndicatorImage(imgBackArrow, transitionMaskImage: imgBackArrow)
         navigationItem.standardAppearance = appearance
         UINavigationBar.appearance().layoutMargins.left = 20
-        self.navigationItem.title = LocalizedTitle.newUser.localized
+        self.navigationItem.title = LocalizedTitle.profileSettings.localized
         
         lazy var backButton: UIBarButtonItem = {
             let button = UIBarButtonItem()

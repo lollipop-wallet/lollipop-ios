@@ -33,6 +33,18 @@ extension ProfilePresenter {
     }
     
     func didSelectItemAt(index: IndexPath) {
-        
+        let item = self.datasource[index.row]
+        switch item.item {
+        case .settings:
+            wireframe?.toPersonalData()
+        case .cards:
+            print()
+        case .about:
+            print()
+        case .language:
+            print()
+        case .terms:
+            print()
+        }
     }
 }

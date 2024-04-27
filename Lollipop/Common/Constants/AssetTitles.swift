@@ -41,4 +41,7 @@ struct AssetTitles {
     static let aboutIcon = "ic_profile_about"
     static let changeLanguageIcon = "ic_profile_change_language"
     static let termsIcon = "ic_profile_terms"
+    static let personalDataIcon = "ic_profile_personal_data"
+    static let lockIcon = "ic_profile_lock"
+    static let trashIcon = "ic_profile_trash"
 }

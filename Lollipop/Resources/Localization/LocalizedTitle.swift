@@ -61,6 +61,9 @@ enum LocalizedTitle: String {
     case aboutApp
     case changeLanguage
     case termsOfUse
+    case personalData
+    case passwordChange
+    case accountDeletion
 
     var localized: String {
         return self.rawValue.localized()
