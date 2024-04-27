@@ -26,4 +26,8 @@ class ProfileView: UIViewController, ProfileViewProtocol {
     @objc func onEditAvatarTap() {
         
     }
+    
+    @objc func onFavoriteShopsTap() {
+        
+    }
 }

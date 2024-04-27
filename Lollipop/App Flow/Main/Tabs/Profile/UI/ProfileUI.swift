@@ -91,6 +91,67 @@ extension ProfileView {
         self.phoneLabel.textColor = AppColors.white.withAlphaComponent(0.6)
         self.phoneLabel.text = "+382 67 231 868"
         
+        lazy var heartIcon: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.heartIcon)
+            imageView.snp.makeConstraints { make in
+                make.width.height.equalTo(24)
+            }
+            return imageView
+        }()
+        
+        lazy var arrowIcon: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.arrowRightIcon)
+            imageView.tintColor = AppColors.white
+            imageView.snp.makeConstraints { make in
+                make.width.height.equalTo(24)
+            }
+            return imageView
+        }()
+        
+        lazy var favoriteShopsLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .regular)
+            label.textColor = AppColors.white
+            label.textAlignment = .left
+            label.text = LocalizedTitle.favoriteShops.localized
+            return label
+        }()
+        
+        lazy var favoriteShopsStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [heartIcon, favoriteShopsLabel, arrowIcon])
+            stack.axis = .horizontal
+            stack.distribution = .fill
+            stack.alignment = .center
+            stack.spacing = 13
+            return stack
+        }()
+        
+        lazy var favoriteButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onFavoriteShopsTap), for: .touchUpInside)
+            return button
+        }()
+        
+        lazy var favoriteShopsPlaceholderView: UIView = {
+            let view = UIView()
+            view.addSubview(favoriteShopsStack)
+            favoriteShopsStack.snp.makeConstraints { make in
+                make.leading.top.equalToSuperview().offset(16)
+                make.bottom.trailing.equalToSuperview().offset(-16)
+                
+            }
+            view.addSubview(favoriteButton)
+            favoriteButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
+            view.layer.cornerRadius = 12
+            view.layer.masksToBounds = true
+            view.backgroundColor = AppColors.white.withAlphaComponent(0.2)
+            return view
+        }()
+        
         self.view.addSubview(avatarContainerView)
         avatarContainerView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
@@ -110,6 +171,13 @@ extension ProfileView {
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(self.nameLabel.snp.bottom).offset(2)
+        }
+        
+        self.view.addSubview(favoriteShopsPlaceholderView)
+        favoriteShopsPlaceholderView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
+            make.top.equalTo(self.phoneLabel.snp.bottom).offset(24)
         }
     }
 }
