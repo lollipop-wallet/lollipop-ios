@@ -10,7 +10,7 @@ import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PersonalDataPresenterProtocol: PersonalDataCellProtocol, UITableViewDelegate, UITableViewDataSource {
+protocol PersonalDataPresenterProtocol {
     
     var interactor: PersonalDataInputInteractorProtocol? { get set }
     var view: PersonalDataViewProtocol? { get set }
@@ -43,7 +43,3 @@ protocol PersonalDataWireframeProtocol: AnyObject {
     
 }
 
-//MARK: PersonalDataCell Protocol
-protocol PersonalDataCellProtocol: AnyObject {
-    func didSelectItemAt(index: IndexPath)
-}

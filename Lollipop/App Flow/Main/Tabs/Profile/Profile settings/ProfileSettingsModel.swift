@@ -1,5 +1,5 @@
 //
-//  PersonalDataModel.swift
+//  ProfileSettingsModel.swift
 //  Lollipop
 //
 //  Created Aleksandar Draskovic on 27/04/2024.
@@ -8,6 +8,9 @@
 
 import Foundation
 
-struct PersonalDataModel: Codable {
+struct ProfileSettingsModel {
+    let icon: String
+    let title: String
+    let item: ProfileSettingsItem
 }
 

@@ -21,6 +21,6 @@ struct DefaultModels {
                              ProfileListModel(icon: AssetTitles.changeLanguageIcon, title: LocalizedTitle.changeLanguage.localized, item: .language),
                              ProfileListModel(icon: AssetTitles.termsIcon, title: LocalizedTitle.termsOfUse.localized, item: .terms)]
     
-    let personalDataDatasource = [PersonalDataModel(icon: AssetTitles.personalDataIcon, title: LocalizedTitle.personalData.localized, item: .data),
-                                  PersonalDataModel(icon: AssetTitles.lockIcon, title: LocalizedTitle.passwordChange.localized, item: .password)]
+    let personalDataDatasource = [ProfileSettingsModel(icon: AssetTitles.personalDataIcon, title: LocalizedTitle.personalData.localized, item: .data),
+                                  ProfileSettingsModel(icon: AssetTitles.lockIcon, title: LocalizedTitle.passwordChange.localized, item: .password)]
 }

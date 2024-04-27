@@ -21,7 +21,7 @@ class ProfileWireframe: ProfileWireframeProtocol {
     }
     
     func toPersonalData(){
-        let vc = PersonalDataView()
+        let vc = ProfileSettingsView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

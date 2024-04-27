@@ -10,4 +10,5 @@ import Foundation
 enum CellId : String {
     case profileCell = "profileCell"
     case personalDataCell = "personalDataCell"
+    case profileSettingsCell = "profileSettingsCell"
 }

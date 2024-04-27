@@ -1,0 +1,22 @@
+//
+//  ProfileSettingsWireframe.swift
+//  Lollipop
+//
+//  Created Aleksandar Draskovic on 27/04/2024.
+//  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
+//
+import UIKit
+
+class ProfileSettingsWireframe: ProfileSettingsWireframeProtocol {
+    
+    
+    static func createModule(ProfileSettingsRef: ProfileSettingsView) {
+        let presenter: ProfileSettingsPresenterProtocol & ProfileSettingsOutputInteractorProtocol = ProfileSettingsPresenter()
+        ProfileSettingsRef.presenter = presenter
+        ProfileSettingsRef.presenter?.wireframe = ProfileSettingsWireframe()
+        ProfileSettingsRef.presenter?.view = ProfileSettingsRef
+        ProfileSettingsRef.presenter?.interactor = ProfileSettingsInteractor()
+        ProfileSettingsRef.presenter?.interactor?.presenter = presenter
+        
+    }
+}

@@ -1,6 +1,6 @@
 
 //
-//  PersonalDataView.swift
+//  ProfileSettingsView.swift
 //  Lollipop
 //
 //  Created Aleksandar Draskovic on 27/04/2024.
@@ -9,9 +9,11 @@
 //
 import UIKit
 
-class PersonalDataView: UIViewController, PersonalDataViewProtocol {
+class ProfileSettingsView: UIViewController, ProfileSettingsViewProtocol {
+
+    var tableView = AutomaticHeightTableView()
     
-    var presenter: PersonalDataPresenterProtocol?
+    var presenter: ProfileSettingsPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +29,12 @@ class PersonalDataView: UIViewController, PersonalDataViewProtocol {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    
     //MARK: Actions
     @objc func onBackTap() {
         popBack(2)
+    }
+    
+    @objc func onDeleteAccountTap() {
+        
     }
 }

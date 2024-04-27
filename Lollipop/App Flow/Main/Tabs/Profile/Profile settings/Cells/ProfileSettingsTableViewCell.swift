@@ -1,15 +1,14 @@
 //
-//  PersonalDataTableViewCell.swift
+//  ProfileSettingsTableViewCell.swift
 //  Lollipop
 //
 //  Created by Aleksandar Draskovic on 27/04/2024.
 //
-
 import UIKit
 
-class PersonalDataTableViewCell: UITableViewCell {
+class ProfileSettingsTableViewCell: UITableViewCell {
     
-    var delegate: PersonalDataCellProtocol?
+    var delegate: ProfileSettingsCellProtocol?
     var index: IndexPath!
     
     lazy var cellContentView: UIView = {
@@ -110,7 +109,7 @@ class PersonalDataTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(item: PersonalDataModel, index: IndexPath, delegate: PersonalDataCellProtocol) {
+    func configureWith(item: ProfileSettingsModel, index: IndexPath, delegate: ProfileSettingsCellProtocol) {
         self.index = index
         self.delegate = delegate
         self.titleLabel.text = item.title
