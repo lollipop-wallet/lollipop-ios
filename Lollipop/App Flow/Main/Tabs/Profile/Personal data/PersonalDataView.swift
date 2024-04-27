@@ -33,4 +33,8 @@ class PersonalDataView: UIViewController, PersonalDataViewProtocol {
     @objc func onBackTap() {
         popBack(2)
     }
+    
+    @objc func onDeleteAccountTap() {
+        
+    }
 }
