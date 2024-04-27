@@ -9,6 +9,8 @@
 import Foundation
 
 struct PersonalDataModel : Codable {
-    
+    let icon: String
+    let title: String
+    let item: PersonalDataItem
 }
 

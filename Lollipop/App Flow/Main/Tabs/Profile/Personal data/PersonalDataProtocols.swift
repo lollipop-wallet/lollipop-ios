@@ -42,3 +42,8 @@ protocol PersonalDataWireframeProtocol: AnyObject {
 
     
 }
+
+//MARK: PersonalDataCell Protocol
+protocol PersonalDataCellProtocol: AnyObject {
+    func didSelectItemAt(index: IndexPath)
+}

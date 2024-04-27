@@ -160,6 +160,8 @@
 		62F6CDF22BDD455600C4775C /* PersonalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDEB2BDD455600C4775C /* PersonalDataModel.swift */; };
 		62F6CDF32BDD455600C4775C /* PersonalDataWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDEC2BDD455600C4775C /* PersonalDataWireframe.swift */; };
 		62F6CDF62BDD456700C4775C /* PersonalDataUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDF52BDD456700C4775C /* PersonalDataUI.swift */; };
+		62F6CDF92BDD4E5500C4775C /* PersonalDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDF82BDD4E5500C4775C /* PersonalDataTableViewCell.swift */; };
+		62F6CDFB2BDD4EEB00C4775C /* PersonalDataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDFA2BDD4EEB00C4775C /* PersonalDataItem.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -343,6 +345,8 @@
 		62F6CDEB2BDD455600C4775C /* PersonalDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataModel.swift; sourceTree = "<group>"; };
 		62F6CDEC2BDD455600C4775C /* PersonalDataWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataWireframe.swift; sourceTree = "<group>"; };
 		62F6CDF52BDD456700C4775C /* PersonalDataUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataUI.swift; sourceTree = "<group>"; };
+		62F6CDF82BDD4E5500C4775C /* PersonalDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataTableViewCell.swift; sourceTree = "<group>"; };
+		62F6CDFA2BDD4EEB00C4775C /* PersonalDataItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataItem.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -574,6 +578,7 @@
 				2CACCDC72BD53DDD008178F8 /* StorageKeys.swift */,
 				62214B012BD6E5D000ABF38E /* AppFontWeight.swift */,
 				62F6CDDA2BDD370400C4775C /* ProfileItem.swift */,
+				62F6CDFA2BDD4EEB00C4775C /* PersonalDataItem.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -1040,6 +1045,7 @@
 				62F6CDEB2BDD455600C4775C /* PersonalDataModel.swift */,
 				62F6CDEC2BDD455600C4775C /* PersonalDataWireframe.swift */,
 				62F6CDF42BDD455E00C4775C /* UI */,
+				62F6CDF72BDD4E4B00C4775C /* Cells */,
 			);
 			path = "Personal data";
 			sourceTree = "<group>";
@@ -1050,6 +1056,14 @@
 				62F6CDF52BDD456700C4775C /* PersonalDataUI.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		62F6CDF72BDD4E4B00C4775C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CDF82BDD4E5500C4775C /* PersonalDataTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		8C1AC92D620E8BB50BD90320 /* Pods */ = {
@@ -1315,6 +1329,7 @@
 				62F6CD7C2BDBBDFC00C4775C /* MainModel.swift in Sources */,
 				62F6CD7D2BDBBDFC00C4775C /* MainWireframe.swift in Sources */,
 				2CDDA7372BDA256100B6C8B5 /* OTPProtocols.swift in Sources */,
+				62F6CDFB2BDD4EEB00C4775C /* PersonalDataItem.swift in Sources */,
 				2CDDA7382BDA256100B6C8B5 /* OTPInteractor.swift in Sources */,
 				2CDDA7392BDA256100B6C8B5 /* OTPView.swift in Sources */,
 				2CDDA73A2BDA256100B6C8B5 /* OTPModel.swift in Sources */,
@@ -1394,6 +1409,7 @@
 				627E92D42BDA10990016FF73 /* PasswordInteractor.swift in Sources */,
 				627E92D52BDA10990016FF73 /* PasswordView.swift in Sources */,
 				627E92D62BDA10990016FF73 /* PasswordModel.swift in Sources */,
+				62F6CDF92BDD4E5500C4775C /* PersonalDataTableViewCell.swift in Sources */,
 				627E92D72BDA10990016FF73 /* PasswordWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
