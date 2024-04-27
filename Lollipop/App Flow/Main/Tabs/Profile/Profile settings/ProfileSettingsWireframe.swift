@@ -24,4 +24,10 @@ class ProfileSettingsWireframe: ProfileSettingsWireframeProtocol {
         let vc = PersonalDataView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toChangePassword(){
+        print("Je li odje?")
+        let vc = ChangePasswordView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

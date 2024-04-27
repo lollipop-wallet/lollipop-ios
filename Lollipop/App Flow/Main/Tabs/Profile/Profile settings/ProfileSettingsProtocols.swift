@@ -40,6 +40,7 @@ protocol ProfileSettingsViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol ProfileSettingsWireframeProtocol: AnyObject {
     func toPersonalData()
+    func toChangePassword()
 }
 
 //MARK: ProfileSettingsCell Protocol

@@ -13,9 +13,9 @@ extension PersonalDataView {
         PersonalDataWireframe.createModule(PersonalDataRef: self)
         
         let appearance = UINavigationBarAppearance()
-        appearance.largeTitleTextAttributes = [.foregroundColor: AppColors.black, .font : UIFont.inter(ofSize: 30, name: .bold)]
-        let imgBackArrow = UIImage(named: AssetTitles.backIcon)?.withAlignmentRectInsets(UIEdgeInsets(top: 0, left: 0, bottom: 1.5, right: 0))
-        appearance.setBackIndicatorImage(imgBackArrow, transitionMaskImage: imgBackArrow)
+        let imgClose = UIImage(named: AssetTitles.closeIcon)?.withAlignmentRectInsets(UIEdgeInsets(top: 0, left: 0, bottom: 1.5, right: 0))
+        appearance.titleTextAttributes = [.foregroundColor: AppColors.black, .font : UIFont.inter(ofSize: 20, name: .bold)]
+        appearance.setBackIndicatorImage(imgClose, transitionMaskImage: imgClose)
         navigationItem.standardAppearance = appearance
         UINavigationBar.appearance().layoutMargins.left = 20
         self.navigationItem.title = LocalizedTitle.personalData.localized

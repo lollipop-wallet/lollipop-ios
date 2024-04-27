@@ -39,7 +39,7 @@ extension ProfileSettingsPresenter {
         case .data:
             wireframe?.toPersonalData()
         case .password:
-            print()
+            wireframe?.toChangePassword()
         }
     }
 }

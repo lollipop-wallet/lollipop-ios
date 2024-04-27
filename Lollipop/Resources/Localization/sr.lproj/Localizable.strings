@@ -53,3 +53,6 @@
 "passwordChange" = "Promena šifre";
 "accountDeletion" = "Brisanje naloga";
 "save" = "Sačuvaj";
+"currentPassword" = "Trenutna šifra";
+"newPassword" = "Nova šifra";
+"confirmNewPassword" = "Potvrda nove šifre";

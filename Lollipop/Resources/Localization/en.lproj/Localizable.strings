@@ -54,3 +54,6 @@
 "passwordChange" = "Change password";
 "accountDeletion" = "Account deletion";
 "save" = "Save";
+"currentPassword" = "Current password";
+"newPassword" = "New password";
+"confirmNewPassword" = "Confirm new password";

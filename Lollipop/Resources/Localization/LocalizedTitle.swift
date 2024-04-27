@@ -65,6 +65,9 @@ enum LocalizedTitle: String {
     case passwordChange
     case accountDeletion
     case save
+    case currentPassword
+    case newPassword
+    case confirmNewPassword
 
     var localized: String {
         return self.rawValue.localized()

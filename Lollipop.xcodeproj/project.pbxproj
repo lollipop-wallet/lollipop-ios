@@ -169,6 +169,13 @@
 		62F6CE0D2BDD55F900C4775C /* ProfileSettingsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE0C2BDD55F900C4775C /* ProfileSettingsUI.swift */; };
 		62F6CE102BDD560900C4775C /* ProfileSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE0F2BDD560900C4775C /* ProfileSettingsTableViewCell.swift */; };
 		62F6CE122BDD56B600C4775C /* ProfileSettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE112BDD56B600C4775C /* ProfileSettingsItem.swift */; };
+		62F6CE1C2BDD5AF300C4775C /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE152BDD5AF300C4775C /* ChangePasswordPresenter.swift */; };
+		62F6CE1D2BDD5AF300C4775C /* ChangePasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE162BDD5AF300C4775C /* ChangePasswordProtocols.swift */; };
+		62F6CE1E2BDD5AF300C4775C /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE172BDD5AF300C4775C /* ChangePasswordInteractor.swift */; };
+		62F6CE1F2BDD5AF300C4775C /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE182BDD5AF300C4775C /* ChangePasswordView.swift */; };
+		62F6CE202BDD5AF300C4775C /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE192BDD5AF300C4775C /* ChangePasswordModel.swift */; };
+		62F6CE212BDD5AF300C4775C /* ChangePasswordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE1A2BDD5AF300C4775C /* ChangePasswordWireframe.swift */; };
+		62F6CE242BDD5B0200C4775C /* ChangePasswordUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE232BDD5B0200C4775C /* ChangePasswordUI.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -361,6 +368,13 @@
 		62F6CE0C2BDD55F900C4775C /* ProfileSettingsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsUI.swift; sourceTree = "<group>"; };
 		62F6CE0F2BDD560900C4775C /* ProfileSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		62F6CE112BDD56B600C4775C /* ProfileSettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsItem.swift; sourceTree = "<group>"; };
+		62F6CE152BDD5AF300C4775C /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
+		62F6CE162BDD5AF300C4775C /* ChangePasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordProtocols.swift; sourceTree = "<group>"; };
+		62F6CE172BDD5AF300C4775C /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
+		62F6CE182BDD5AF300C4775C /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		62F6CE192BDD5AF300C4775C /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
+		62F6CE1A2BDD5AF300C4775C /* ChangePasswordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordWireframe.swift; sourceTree = "<group>"; };
+		62F6CE232BDD5B0200C4775C /* ChangePasswordUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordUI.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1006,6 +1020,7 @@
 				62F6CDE42BDD453B00C4775C /* Profile */,
 				62F6CDFC2BDD55D700C4775C /* Profile settings */,
 				62F6CDE52BDD454600C4775C /* Personal data */,
+				62F6CE132BDD5AE200C4775C /* Change password */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1101,6 +1116,28 @@
 				62F6CE0F2BDD560900C4775C /* ProfileSettingsTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		62F6CE132BDD5AE200C4775C /* Change password */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CE152BDD5AF300C4775C /* ChangePasswordPresenter.swift */,
+				62F6CE162BDD5AF300C4775C /* ChangePasswordProtocols.swift */,
+				62F6CE172BDD5AF300C4775C /* ChangePasswordInteractor.swift */,
+				62F6CE182BDD5AF300C4775C /* ChangePasswordView.swift */,
+				62F6CE192BDD5AF300C4775C /* ChangePasswordModel.swift */,
+				62F6CE1A2BDD5AF300C4775C /* ChangePasswordWireframe.swift */,
+				62F6CE222BDD5AFA00C4775C /* UI */,
+			);
+			path = "Change password";
+			sourceTree = "<group>";
+		};
+		62F6CE222BDD5AFA00C4775C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CE232BDD5B0200C4775C /* ChangePasswordUI.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		8C1AC92D620E8BB50BD90320 /* Pods */ = {
@@ -1324,6 +1361,12 @@
 				62F6CDF62BDD456700C4775C /* PersonalDataUI.swift in Sources */,
 				2CACCDDC2BD53F71008178F8 /* UIStackView+Extension.swift in Sources */,
 				62214B052BD6F39C00ABF38E /* PageView.swift in Sources */,
+				62F6CE1C2BDD5AF300C4775C /* ChangePasswordPresenter.swift in Sources */,
+				62F6CE1D2BDD5AF300C4775C /* ChangePasswordProtocols.swift in Sources */,
+				62F6CE1E2BDD5AF300C4775C /* ChangePasswordInteractor.swift in Sources */,
+				62F6CE1F2BDD5AF300C4775C /* ChangePasswordView.swift in Sources */,
+				62F6CE202BDD5AF300C4775C /* ChangePasswordModel.swift in Sources */,
+				62F6CE212BDD5AF300C4775C /* ChangePasswordWireframe.swift in Sources */,
 				2CACCDED2BD541D3008178F8 /* AppDelegate+Extension.swift in Sources */,
 				2CACCDB72BD53C0B008178F8 /* DefaultModels.swift in Sources */,
 				2CEC7FC22BD935A50050E762 /* CalendarInputProtocols.swift in Sources */,
@@ -1436,6 +1479,7 @@
 				62214AE62BD6E17600ABF38E /* OnboardingProtocols.swift in Sources */,
 				2CDDA73E2BDA257600B6C8B5 /* OTPUI.swift in Sources */,
 				62214AE72BD6E17600ABF38E /* OnboardingInteractor.swift in Sources */,
+				62F6CE242BDD5B0200C4775C /* ChangePasswordUI.swift in Sources */,
 				62214AE82BD6E17600ABF38E /* OnboardingView.swift in Sources */,
 				62F6CD942BDBC69E00C4775C /* HomeUI.swift in Sources */,
 				62214AE92BD6E17600ABF38E /* OnboardingModel.swift in Sources */,
