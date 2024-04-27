@@ -151,6 +151,8 @@
 		62F6CDCA2BDBC7A300C4775C /* ProfileUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDC92BDBC7A300C4775C /* ProfileUI.swift */; };
 		62F6CDDB2BDD370400C4775C /* ProfileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDDA2BDD370400C4775C /* ProfileItem.swift */; };
 		62F6CDDD2BDD372800C4775C /* ProfileListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDDC2BDD372800C4775C /* ProfileListModel.swift */; };
+		62F6CDE02BDD3ACC00C4775C /* AutomaticHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDDF2BDD3ACC00C4775C /* AutomaticHeightTableView.swift */; };
+		62F6CDE32BDD3AE900C4775C /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CDE22BDD3AE900C4775C /* ProfileTableViewCell.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -325,6 +327,8 @@
 		62F6CDC92BDBC7A300C4775C /* ProfileUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUI.swift; sourceTree = "<group>"; };
 		62F6CDDA2BDD370400C4775C /* ProfileItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItem.swift; sourceTree = "<group>"; };
 		62F6CDDC2BDD372800C4775C /* ProfileListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListModel.swift; sourceTree = "<group>"; };
+		62F6CDDF2BDD3ACC00C4775C /* AutomaticHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticHeightTableView.swift; sourceTree = "<group>"; };
+		62F6CDE22BDD3AE900C4775C /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -758,6 +762,7 @@
 		627E92B82BD847750016FF73 /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
+				62F6CDDE2BDD3AA800C4775C /* UITableView */,
 				627E92B92BD847820016FF73 /* Input fields */,
 				627E92C52BDA0E130016FF73 /* Buttons */,
 			);
@@ -973,6 +978,7 @@
 				62F6CDDC2BDD372800C4775C /* ProfileListModel.swift */,
 				62F6CDC02BDBC79400C4775C /* ProfileWireframe.swift */,
 				62F6CDC82BDBC79B00C4775C /* UI */,
+				62F6CDE12BDD3ADA00C4775C /* Cells */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -983,6 +989,22 @@
 				62F6CDC92BDBC7A300C4775C /* ProfileUI.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		62F6CDDE2BDD3AA800C4775C /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CDDF2BDD3ACC00C4775C /* AutomaticHeightTableView.swift */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		62F6CDE12BDD3ADA00C4775C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CDE22BDD3AE900C4775C /* ProfileTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		8C1AC92D620E8BB50BD90320 /* Pods */ = {
@@ -1217,6 +1239,7 @@
 				2CACCD802BD528F7008178F8 /* LaunchPresenter.swift in Sources */,
 				2CACCD812BD528F7008178F8 /* LaunchProtocols.swift in Sources */,
 				2CACCDC42BD53DAE008178F8 /* LinkType.swift in Sources */,
+				62F6CDE32BDD3AE900C4775C /* ProfileTableViewCell.swift in Sources */,
 				2CACCD822BD528F7008178F8 /* LaunchInteractor.swift in Sources */,
 				62F6CDA62BDBC6E600C4775C /* PartnersUI.swift in Sources */,
 				62F6CDC12BDBC79400C4775C /* ProfilePresenter.swift in Sources */,
@@ -1276,6 +1299,7 @@
 				62F6CDB02BDBC74B00C4775C /* LollipopProtocols.swift in Sources */,
 				62F6CDB12BDBC74B00C4775C /* LollipopInteractor.swift in Sources */,
 				62F6CDB22BDBC74B00C4775C /* LollipopView.swift in Sources */,
+				62F6CDE02BDD3ACC00C4775C /* AutomaticHeightTableView.swift in Sources */,
 				62F6CDB32BDBC74B00C4775C /* LollipopModel.swift in Sources */,
 				62F6CDB42BDBC74B00C4775C /* LollipopWireframe.swift in Sources */,
 				2CACCDAA2BD5327F008178F8 /* UIColor+Extension.swift in Sources */,

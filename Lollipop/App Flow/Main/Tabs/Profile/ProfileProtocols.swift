@@ -42,3 +42,8 @@ protocol ProfileWireframeProtocol: AnyObject {
 
     
 }
+
+//MARK: ProfileCell Protocol
+protocol ProfileCellProtocol: AnyObject {
+    func didSelectItemAt(index: IndexPath)
+}
