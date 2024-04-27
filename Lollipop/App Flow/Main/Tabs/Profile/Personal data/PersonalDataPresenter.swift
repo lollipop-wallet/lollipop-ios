@@ -8,14 +8,29 @@
 import UIKit
 
 class PersonalDataPresenter: NSObject, PersonalDataPresenterProtocol  {
-    
     var interactor : PersonalDataInputInteractorProtocol?
     weak var view: PersonalDataViewProtocol?
     var wireframe: PersonalDataWireframeProtocol?
     
+    func proceed() {
+        
+    }
 }
 
 extension PersonalDataPresenter: PersonalDataOutputInteractorProtocol {
     
 }
 
+//MARK: InputCalendarField delegate
+extension PersonalDataPresenter {
+    func showCalendar() {
+        view?.displayCalendar()
+    }
+}
+
+//MARK: Dropdown field delegate
+extension PersonalDataPresenter {
+    func showDropdown() {
+        
+    }
+}

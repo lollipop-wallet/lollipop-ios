@@ -10,12 +10,14 @@ import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PersonalDataPresenterProtocol {
+protocol PersonalDataPresenterProtocol: CalendarInputProtocol, DropdownInputFieldProtocol {
     
     var interactor: PersonalDataInputInteractorProtocol? { get set }
     var view: PersonalDataViewProtocol? { get set }
     var wireframe:PersonalDataWireframeProtocol? { get set }
     
+    func proceed()
+
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -35,7 +37,8 @@ protocol PersonalDataOutputInteractorProtocol: AnyObject {
 protocol PersonalDataViewProtocol: AnyObject {
     
     var presenter: PersonalDataPresenterProtocol?  { get set }
-    
+    func displayCalendar()
+
 }
 //MARK: Wireframe
 protocol PersonalDataWireframeProtocol: AnyObject {
