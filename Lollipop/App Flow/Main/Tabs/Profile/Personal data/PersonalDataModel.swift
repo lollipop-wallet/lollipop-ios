@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PersonalDataModel : Codable {
+struct PersonalDataModel {
     let icon: String
     let title: String
     let item: PersonalDataItem

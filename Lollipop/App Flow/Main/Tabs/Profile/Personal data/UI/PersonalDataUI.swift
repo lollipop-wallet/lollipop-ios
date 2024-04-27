@@ -30,5 +30,20 @@ extension PersonalDataView {
         }()
         
         self.navigationItem.leftBarButtonItems = [backButton]
+        
+        self.tableView.separatorStyle = .none
+        //self.tableView.backgroundColor = AppColors.white
+        self.tableView.register(PersonalDataTableViewCell.self, forCellReuseIdentifier: CellId.personalDataCell.rawValue)
+        self.tableView.delegate = presenter
+        self.tableView.dataSource = presenter
+        self.tableView.layer.cornerRadius = 12
+        self.tableView.layer.masksToBounds = true
+        
+        self.view.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
+        }
     }
 }

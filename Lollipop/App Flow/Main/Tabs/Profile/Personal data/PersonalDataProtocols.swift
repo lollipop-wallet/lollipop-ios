@@ -6,11 +6,11 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PersonalDataPresenterProtocol: AnyObject {
+protocol PersonalDataPresenterProtocol: PersonalDataCellProtocol, UITableViewDelegate, UITableViewDataSource {
     
     var interactor: PersonalDataInputInteractorProtocol? { get set }
     var view: PersonalDataViewProtocol? { get set }

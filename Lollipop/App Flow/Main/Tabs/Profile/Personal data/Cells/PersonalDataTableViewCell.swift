@@ -64,19 +64,6 @@ class PersonalDataTableViewCell: UITableViewCell {
         return stack
     }()
     
-    lazy var profileCellPlaceholderView: UIView = {
-        let view = UIView()
-        view.addSubview(profileStack)
-        profileStack.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().offset(16)
-            make.bottom.trailing.equalToSuperview().offset(-16)
-        }
-        view.layer.cornerRadius = 12
-        view.layer.masksToBounds = true
-        view.backgroundColor = AppColors.white
-        return view
-    }()
-    
     lazy var cellButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(onCellTap), for: .touchUpInside)
@@ -90,7 +77,7 @@ class PersonalDataTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         //Do your cell set up
-        self.contentView.backgroundColor = AppColors.lightGrey
+        self.contentView.backgroundColor = AppColors.white
         self.contentView.addSubview(cellContentView)
         cellContentView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
@@ -103,15 +90,15 @@ class PersonalDataTableViewCell: UITableViewCell {
             make.bottom.equalToSuperview()
             make.trailing.equalToSuperview()
             make.leading.equalToSuperview()
-            make.height.equalTo(8)
+            make.height.equalTo(1)
         }
         
-        cellContentView.addSubview(profileCellPlaceholderView)
-        profileCellPlaceholderView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.bottom.equalTo(separatorView.snp.top)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+        cellContentView.addSubview(profileStack)
+        profileStack.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(16)
+            make.bottom.equalTo(separatorView.snp.top).offset(-16)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
         }
         
         

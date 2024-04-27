@@ -10,6 +10,8 @@
 import UIKit
 
 class PersonalDataView: UIViewController, PersonalDataViewProtocol {
+    
+    var tableView = AutomaticHeightTableView()
 
     var presenter: PersonalDataPresenterProtocol?
 
