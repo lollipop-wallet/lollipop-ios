@@ -152,6 +152,27 @@ extension ProfileView {
             return view
         }()
         
+        self.tableView.separatorStyle = .none
+        self.tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: CellId.profileCell.rawValue)
+        self.tableView.delegate = presenter
+        self.tableView.dataSource = presenter
+        
+        lazy var tableViewPlaceholder: UIView = {
+            let view = UIView()
+            view.backgroundColor = AppColors.lightGrey
+            view.addSubview(self.tableView)
+            self.tableView.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(16)
+                make.trailing.equalToSuperview().offset(-16)
+                make.top.equalToSuperview().offset(24)
+                make.bottom.equalToSuperview().offset(-13)
+            }
+            view.layer.cornerRadius = 32
+            view.layer.masksToBounds = true
+            view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            return view
+        }()
+        
         self.view.addSubview(avatarContainerView)
         avatarContainerView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
@@ -178,6 +199,11 @@ extension ProfileView {
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
             make.top.equalTo(self.phoneLabel.snp.bottom).offset(24)
+        }
+        
+        self.view.addSubview(tableViewPlaceholder)
+        tableViewPlaceholder.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
         }
     }
 }

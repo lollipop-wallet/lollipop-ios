@@ -61,7 +61,6 @@ enum LocalizedTitle: String {
     case aboutApp
     case changeLanguage
     case termsOfUse
-    
 
     var localized: String {
         return self.rawValue.localized()

@@ -19,5 +19,5 @@ struct DefaultModels {
                              ProfileListModel(icon: AssetTitles.cardsIcon, title: LocalizedTitle.myCards.localized, item: .cards),
                              ProfileListModel(icon: AssetTitles.aboutIcon, title: LocalizedTitle.aboutApp.localized, item: .about),
                              ProfileListModel(icon: AssetTitles.changeLanguageIcon, title: LocalizedTitle.changeLanguage.localized, item: .language),
-                             ProfileListModel(icon: AssetTitles.termsIcon, title: LocalizedTitle.terms.localized, item: .terms)]
+                             ProfileListModel(icon: AssetTitles.termsIcon, title: LocalizedTitle.termsOfUse.localized, item: .terms)]
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 enum CellId : String {
-    case mainCell = "profileCell"
+    case profileCell = "profileCell"
 }

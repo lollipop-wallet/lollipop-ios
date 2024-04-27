@@ -29,6 +29,7 @@ class ProfileTableViewCell: UITableViewCell {
         imageView.snp.makeConstraints { make in
             make.width.height.equalTo(24)
         }
+        imageView.tintColor = AppColors.black
         return imageView
     }()
     
@@ -89,12 +90,12 @@ class ProfileTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         //Do your cell set up
-        self.contentView.backgroundColor = .clear
+        self.contentView.backgroundColor = AppColors.lightGrey
         self.contentView.addSubview(cellContentView)
         cellContentView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
         }
         
         cellContentView.addSubview(separatorView)
@@ -108,7 +109,7 @@ class ProfileTableViewCell: UITableViewCell {
         cellContentView.addSubview(profileCellPlaceholderView)
         profileCellPlaceholderView.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.bottom.equalTo(separatorView.snp.top).offset(-12)
+            make.bottom.equalTo(separatorView.snp.top)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
@@ -125,6 +126,8 @@ class ProfileTableViewCell: UITableViewCell {
     func configureWith(item: ProfileListModel, index: IndexPath, delegate: ProfileCellProtocol) {
         self.index = index
         self.delegate = delegate
+        self.titleLabel.text = item.title
+        self.iconImageView.image = UIImage(named: item.icon)
     }
     
     //MARK: Actions

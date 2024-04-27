@@ -6,11 +6,11 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol ProfilePresenterProtocol: AnyObject {
+protocol ProfilePresenterProtocol: UITableViewDelegate, UITableViewDataSource, ProfileCellProtocol {
     
     var interactor: ProfileInputInteractorProtocol? { get set }
     var view: ProfileViewProtocol? { get set }
