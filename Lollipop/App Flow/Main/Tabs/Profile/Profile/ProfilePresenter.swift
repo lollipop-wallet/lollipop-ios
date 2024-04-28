@@ -38,7 +38,7 @@ extension ProfilePresenter {
         case .settings:
             wireframe?.toPersonalData()
         case .cards:
-            print()
+            wireframe?.toMyCards()
         case .about:
             print()
         case .language:

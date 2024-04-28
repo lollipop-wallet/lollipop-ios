@@ -183,6 +183,13 @@
 		62F6CE322BDE0FDF00C4775C /* AccountDeletionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE2B2BDE0FDF00C4775C /* AccountDeletionModel.swift */; };
 		62F6CE332BDE0FDF00C4775C /* AccountDeletionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE2C2BDE0FDF00C4775C /* AccountDeletionWireframe.swift */; };
 		62F6CE362BDE0FF000C4775C /* AccountDeletionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE352BDE0FF000C4775C /* AccountDeletionUI.swift */; };
+		62F6CE412BDE683A00C4775C /* MyCardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE3A2BDE683A00C4775C /* MyCardsPresenter.swift */; };
+		62F6CE422BDE683A00C4775C /* MyCardsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE3B2BDE683A00C4775C /* MyCardsProtocols.swift */; };
+		62F6CE432BDE683A00C4775C /* MyCardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE3C2BDE683A00C4775C /* MyCardsInteractor.swift */; };
+		62F6CE442BDE683A00C4775C /* MyCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE3D2BDE683A00C4775C /* MyCardsView.swift */; };
+		62F6CE452BDE683A00C4775C /* MyCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE3E2BDE683A00C4775C /* MyCardsModel.swift */; };
+		62F6CE462BDE683A00C4775C /* MyCardsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE3F2BDE683A00C4775C /* MyCardsWireframe.swift */; };
+		62F6CE492BDE684C00C4775C /* MyCardsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE482BDE684C00C4775C /* MyCardsUI.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -389,6 +396,13 @@
 		62F6CE2B2BDE0FDF00C4775C /* AccountDeletionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDeletionModel.swift; sourceTree = "<group>"; };
 		62F6CE2C2BDE0FDF00C4775C /* AccountDeletionWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDeletionWireframe.swift; sourceTree = "<group>"; };
 		62F6CE352BDE0FF000C4775C /* AccountDeletionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDeletionUI.swift; sourceTree = "<group>"; };
+		62F6CE3A2BDE683A00C4775C /* MyCardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsPresenter.swift; sourceTree = "<group>"; };
+		62F6CE3B2BDE683A00C4775C /* MyCardsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsProtocols.swift; sourceTree = "<group>"; };
+		62F6CE3C2BDE683A00C4775C /* MyCardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsInteractor.swift; sourceTree = "<group>"; };
+		62F6CE3D2BDE683A00C4775C /* MyCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsView.swift; sourceTree = "<group>"; };
+		62F6CE3E2BDE683A00C4775C /* MyCardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsModel.swift; sourceTree = "<group>"; };
+		62F6CE3F2BDE683A00C4775C /* MyCardsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsWireframe.swift; sourceTree = "<group>"; };
+		62F6CE482BDE684C00C4775C /* MyCardsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsUI.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1033,6 +1047,7 @@
 			children = (
 				62F6CDE42BDD453B00C4775C /* Profile */,
 				62F6CDFC2BDD55D700C4775C /* Profile settings */,
+				62F6CE382BDE682100C4775C /* My cards */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1183,6 +1198,28 @@
 				62F6CE0E2BDD560000C4775C /* Cells */,
 			);
 			path = "Profile Settings";
+			sourceTree = "<group>";
+		};
+		62F6CE382BDE682100C4775C /* My cards */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CE3A2BDE683A00C4775C /* MyCardsPresenter.swift */,
+				62F6CE3B2BDE683A00C4775C /* MyCardsProtocols.swift */,
+				62F6CE3C2BDE683A00C4775C /* MyCardsInteractor.swift */,
+				62F6CE3D2BDE683A00C4775C /* MyCardsView.swift */,
+				62F6CE3E2BDE683A00C4775C /* MyCardsModel.swift */,
+				62F6CE3F2BDE683A00C4775C /* MyCardsWireframe.swift */,
+				62F6CE472BDE684600C4775C /* UI */,
+			);
+			path = "My cards";
+			sourceTree = "<group>";
+		};
+		62F6CE472BDE684600C4775C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CE482BDE684C00C4775C /* MyCardsUI.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		8C1AC92D620E8BB50BD90320 /* Pods */ = {
@@ -1480,6 +1517,12 @@
 				2CACCD842BD528F7008178F8 /* LaunchModel.swift in Sources */,
 				627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */,
 				2CACCDD02BD53E69008178F8 /* NSAttachment+Extension.swift in Sources */,
+				62F6CE412BDE683A00C4775C /* MyCardsPresenter.swift in Sources */,
+				62F6CE422BDE683A00C4775C /* MyCardsProtocols.swift in Sources */,
+				62F6CE432BDE683A00C4775C /* MyCardsInteractor.swift in Sources */,
+				62F6CE442BDE683A00C4775C /* MyCardsView.swift in Sources */,
+				62F6CE452BDE683A00C4775C /* MyCardsModel.swift in Sources */,
+				62F6CE462BDE683A00C4775C /* MyCardsWireframe.swift in Sources */,
 				627E92DD2BDA18560016FF73 /* OTPInputField.swift in Sources */,
 				2CACCDBD2BD53D09008178F8 /* DataPasser.swift in Sources */,
 				2CACCDEB2BD54120008178F8 /* PushNotificationsManager.swift in Sources */,
@@ -1515,6 +1558,7 @@
 				62F6CE092BDD55E900C4775C /* ProfileSettingsModel.swift in Sources */,
 				62F6CE0A2BDD55E900C4775C /* ProfileSettingsWireframe.swift in Sources */,
 				2CACCD932BD52F84008178F8 /* LocalizationSystem.swift in Sources */,
+				62F6CE492BDE684C00C4775C /* MyCardsUI.swift in Sources */,
 				2CEC7FBC2BD8D1810050E762 /* RegisterUI.swift in Sources */,
 				2CCF3AB12BD7B29300B3729E /* SignInPresenter.swift in Sources */,
 				2CCF3AB22BD7B29300B3729E /* SignInProtocols.swift in Sources */,

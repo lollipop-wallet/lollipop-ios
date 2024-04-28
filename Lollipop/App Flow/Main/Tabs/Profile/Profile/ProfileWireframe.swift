@@ -24,4 +24,9 @@ class ProfileWireframe: ProfileWireframeProtocol {
         let vc = ProfileSettingsView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toMyCards(){
+        let vc = MyCardsView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

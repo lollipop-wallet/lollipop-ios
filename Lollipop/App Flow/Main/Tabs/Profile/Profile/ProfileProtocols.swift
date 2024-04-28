@@ -40,6 +40,7 @@ protocol ProfileViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol ProfileWireframeProtocol: AnyObject {
     func toPersonalData()
+    func toMyCards()
 }
 
 //MARK: ProfileCell Protocol
