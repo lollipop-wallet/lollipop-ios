@@ -44,6 +44,10 @@ extension LanguagePresenter {
     }
     
     func didSelectItemAt(index: IndexPath) {
-        
+        self.datasource.indices.forEach { self.datasource[$0].selected = false }
+        var item = self.datasource[index.row]
+        item.selected = true
+        self.datasource[index.row] = item
+        self.view?.reload()
     }
 }
