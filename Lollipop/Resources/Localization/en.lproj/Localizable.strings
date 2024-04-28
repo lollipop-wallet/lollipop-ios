@@ -57,3 +57,6 @@
 "currentPassword" = "Current password";
 "newPassword" = "New password";
 "confirmNewPassword" = "Confirm new password";
+"deleteAccountTitle" = "Are you sure you want to delete your account?";
+"deleteAccountSubtitle" = "By doing this all of your data will be deleted witouth possibility to restore them.";
+"deleteAccount" = "Delete account";

@@ -44,4 +44,5 @@ struct AssetTitles {
     static let personalDataIcon = "ic_profile_personal_data"
     static let lockIcon = "ic_profile_lock"
     static let trashIcon = "ic_profile_trash"
+    static let deleteAccountWarningIcon = "ic_profile_delete_account_warning"
 }
