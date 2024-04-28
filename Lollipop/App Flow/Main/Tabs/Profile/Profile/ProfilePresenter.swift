@@ -14,6 +14,10 @@ class ProfilePresenter: NSObject, ProfilePresenterProtocol  {
     var wireframe: ProfileWireframeProtocol?
     
     let datasource = DefaultModels().profileDatasource
+    
+    func favoriteShops(){
+        wireframe?.toFavoriteShops()
+    }
 }
 
 extension ProfilePresenter: ProfileOutputInteractorProtocol {

@@ -16,6 +16,8 @@ protocol ProfilePresenterProtocol: UITableViewDelegate, UITableViewDataSource, P
     var view: ProfileViewProtocol? { get set }
     var wireframe:ProfileWireframeProtocol? { get set }
     
+    func favoriteShops()
+    
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -39,6 +41,7 @@ protocol ProfileViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol ProfileWireframeProtocol: AnyObject {
+    func toFavoriteShops()
     func toPersonalData()
     func toMyCards()
     func toAbout()

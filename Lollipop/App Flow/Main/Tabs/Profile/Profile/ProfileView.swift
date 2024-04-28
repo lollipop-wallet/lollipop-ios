@@ -29,6 +29,6 @@ class ProfileView: UIViewController, ProfileViewProtocol {
     }
     
     @objc func onFavoriteShopsTap() {
-        
+        presenter?.favoriteShops()
     }
 }
