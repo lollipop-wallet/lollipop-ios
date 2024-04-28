@@ -11,4 +11,5 @@ enum CellId : String {
     case profileCell = "profileCell"
     case personalDataCell = "personalDataCell"
     case profileSettingsCell = "profileSettingsCell"
+    case lanCell = "lanCell"
 }

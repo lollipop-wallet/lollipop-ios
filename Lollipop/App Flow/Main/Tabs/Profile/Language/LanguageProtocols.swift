@@ -42,3 +42,8 @@ protocol LanguageWireframeProtocol: AnyObject {
 
     
 }
+
+//MARK: LanguageTableViewCell Protocol
+protocol LanguageTableViewCellProtocol: AnyObject {
+    func didSelectItemAt(index: IndexPath)
+}
