@@ -42,7 +42,7 @@ extension ProfilePresenter {
         case .about:
             wireframe?.toAbout()
         case .language:
-            print()
+            wireframe?.toLanguage()
         case .terms:
             print()
         }
