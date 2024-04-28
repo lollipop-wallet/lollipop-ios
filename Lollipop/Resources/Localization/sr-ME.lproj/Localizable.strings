@@ -60,3 +60,6 @@
 "deleteAccountSubtitle" = "Ovom akcijom će biti obrisani svi Vaši podaci i neće biti moguće povratiti ih.";
 "deleteAccount" = "Obriši nalog";
 "myShops" = "Moje prodavnice";
+"mne" = "Crnogorski";
+"eng" = "Engleski";
+"chooseAppLanguage" = "Odaberi jezik aplikacije";

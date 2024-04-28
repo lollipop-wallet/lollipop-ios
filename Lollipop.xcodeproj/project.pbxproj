@@ -218,6 +218,7 @@
 		62F6CE8D2BDE6F7E00C4775C /* FavoriteShopsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE862BDE6F7E00C4775C /* FavoriteShopsModel.swift */; };
 		62F6CE8E2BDE6F7E00C4775C /* FavoriteShopsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE872BDE6F7E00C4775C /* FavoriteShopsWireframe.swift */; };
 		62F6CE912BDE6F9000C4775C /* FavoriteShopsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE902BDE6F9000C4775C /* FavoriteShopsUI.swift */; };
+		62F6CE932BDEA36100C4775C /* LanCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE922BDEA36100C4775C /* LanCode.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -459,6 +460,7 @@
 		62F6CE862BDE6F7E00C4775C /* FavoriteShopsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShopsModel.swift; sourceTree = "<group>"; };
 		62F6CE872BDE6F7E00C4775C /* FavoriteShopsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShopsWireframe.swift; sourceTree = "<group>"; };
 		62F6CE902BDE6F9000C4775C /* FavoriteShopsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShopsUI.swift; sourceTree = "<group>"; };
+		62F6CE922BDEA36100C4775C /* LanCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanCode.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -691,6 +693,7 @@
 				62214B012BD6E5D000ABF38E /* AppFontWeight.swift */,
 				62F6CDDA2BDD370400C4775C /* ProfileItem.swift */,
 				62F6CE112BDD56B600C4775C /* ProfileSettingsItem.swift */,
+				62F6CE922BDEA36100C4775C /* LanCode.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -1707,6 +1710,7 @@
 				62F6CE662BDE6C9700C4775C /* LanguageProtocols.swift in Sources */,
 				62F6CE672BDE6C9700C4775C /* LanguageInteractor.swift in Sources */,
 				62F6CE682BDE6C9700C4775C /* LanguageView.swift in Sources */,
+				62F6CE932BDEA36100C4775C /* LanCode.swift in Sources */,
 				62F6CE692BDE6C9700C4775C /* LanguageModel.swift in Sources */,
 				62F6CE6A2BDE6C9700C4775C /* LanguageWireframe.swift in Sources */,
 				2CACCDE92BD540C9008178F8 /* RemoteConfigManager.swift in Sources */,

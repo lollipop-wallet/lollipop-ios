@@ -61,3 +61,6 @@
 "deleteAccountSubtitle" = "By doing this all of your data will be deleted witouth possibility to restore them.";
 "deleteAccount" = "Delete account";
 "myShops" = "My shops";
+"mne" = "Montenegrin";
+"eng" = "English";
+"chooseAppLanguage" = "Choose app language";

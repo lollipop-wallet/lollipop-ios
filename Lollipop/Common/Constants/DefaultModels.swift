@@ -23,4 +23,7 @@ struct DefaultModels {
     
     let personalDataDatasource = [ProfileSettingsModel(icon: AssetTitles.personalDataIcon, title: LocalizedTitle.personalData.localized, item: .data),
                                   ProfileSettingsModel(icon: AssetTitles.lockIcon, title: LocalizedTitle.passwordChange.localized, item: .password)]
+    
+    let languageDatasource = [LanguageModel(flag: AssetTitles.flagMneIcon, title: LocalizedTitle.mne.localized, lanCode: .mne, selected: false),
+                              LanguageModel(flag: AssetTitles.flagEngIcon, title: LocalizedTitle.eng.localized, lanCode: .en, selected: false)]
 }
