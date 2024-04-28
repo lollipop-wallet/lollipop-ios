@@ -71,6 +71,7 @@ enum LocalizedTitle: String {
     case deleteAccountTitle
     case deleteAccountSubtitle
     case deleteAccount
+    case myShops
     
 
     var localized: String {

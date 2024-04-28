@@ -115,7 +115,7 @@ extension ProfileView {
             label.font = .inter(ofSize: 16, name: .regular)
             label.textColor = AppColors.white
             label.textAlignment = .left
-            label.text = LocalizedTitle.favoriteShops.localized
+            label.text = LocalizedTitle.myShops.localized
             return label
         }()
         
