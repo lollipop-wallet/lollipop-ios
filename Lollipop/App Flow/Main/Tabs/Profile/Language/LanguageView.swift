@@ -10,12 +10,15 @@
 import UIKit
 
 class LanguageView: UIViewController, LanguageViewProtocol {
+    
+    var tableView = AutomaticHeightTableView()
 
     var presenter: LanguagePresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,6 +28,14 @@ class LanguageView: UIViewController, LanguageViewProtocol {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    //MARK: LanguageView protocol
+    
+    func reload(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     //MARK: Actions

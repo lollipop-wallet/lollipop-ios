@@ -52,11 +52,18 @@ extension LanguageView {
             return button
         }()
         
+        self.tableView.separatorStyle = .none
+        self.tableView.register(LanguageTableViewCell.self, forCellReuseIdentifier: CellId.lanCell.rawValue)
+        self.tableView.delegate = presenter
+        self.tableView.dataSource = presenter
+        self.tableView.backgroundColor = AppColors.lightGrey
+        
         self.view.addSubview(chooseAppLanLabel)
         chooseAppLanLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(6)
+            make.height.equalTo(19)
         }
         
         self.view.addSubview(saveButton)
@@ -65,6 +72,14 @@ extension LanguageView {
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview().offset(-45)
             make.height.equalTo(48)
+        }
+        
+        self.view.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(chooseAppLanLabel.snp.bottom).offset(24)
+            make.bottom.equalTo(saveButton.snp.top).offset(-24)
         }
     }
 }

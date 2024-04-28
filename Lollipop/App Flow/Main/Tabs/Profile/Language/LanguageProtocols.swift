@@ -6,16 +6,17 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol LanguagePresenterProtocol: AnyObject {
+protocol LanguagePresenterProtocol: UITableViewDelegate, UITableViewDataSource, LanguageTableViewCellProtocol {
     
     var interactor: LanguageInputInteractorProtocol? { get set }
     var view: LanguageViewProtocol? { get set }
     var wireframe:LanguageWireframeProtocol? { get set }
     
+    func viewDidLoad()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -35,11 +36,10 @@ protocol LanguageOutputInteractorProtocol: AnyObject {
 protocol LanguageViewProtocol: AnyObject {
     
     var presenter: LanguagePresenterProtocol?  { get set }
-    
+    func reload()
 }
 //MARK: Wireframe
 protocol LanguageWireframeProtocol: AnyObject {
-
     
 }
 
