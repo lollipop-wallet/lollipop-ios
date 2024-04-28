@@ -41,6 +41,7 @@ protocol ProfileViewProtocol: AnyObject {
 protocol ProfileWireframeProtocol: AnyObject {
     func toPersonalData()
     func toMyCards()
+    func toAbout()
 }
 
 //MARK: ProfileCell Protocol

@@ -190,6 +190,13 @@
 		62F6CE452BDE683A00C4775C /* MyCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE3E2BDE683A00C4775C /* MyCardsModel.swift */; };
 		62F6CE462BDE683A00C4775C /* MyCardsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE3F2BDE683A00C4775C /* MyCardsWireframe.swift */; };
 		62F6CE492BDE684C00C4775C /* MyCardsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE482BDE684C00C4775C /* MyCardsUI.swift */; };
+		62F6CE532BDE6BBA00C4775C /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE4C2BDE6BBA00C4775C /* AboutPresenter.swift */; };
+		62F6CE542BDE6BBA00C4775C /* AboutProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE4D2BDE6BBA00C4775C /* AboutProtocols.swift */; };
+		62F6CE552BDE6BBA00C4775C /* AboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE4E2BDE6BBA00C4775C /* AboutInteractor.swift */; };
+		62F6CE562BDE6BBA00C4775C /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE4F2BDE6BBA00C4775C /* AboutView.swift */; };
+		62F6CE572BDE6BBA00C4775C /* AboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE502BDE6BBA00C4775C /* AboutModel.swift */; };
+		62F6CE582BDE6BBA00C4775C /* AboutWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE512BDE6BBA00C4775C /* AboutWireframe.swift */; };
+		62F6CE5B2BDE6BC900C4775C /* AboutUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE5A2BDE6BC900C4775C /* AboutUI.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -403,6 +410,13 @@
 		62F6CE3E2BDE683A00C4775C /* MyCardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsModel.swift; sourceTree = "<group>"; };
 		62F6CE3F2BDE683A00C4775C /* MyCardsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsWireframe.swift; sourceTree = "<group>"; };
 		62F6CE482BDE684C00C4775C /* MyCardsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsUI.swift; sourceTree = "<group>"; };
+		62F6CE4C2BDE6BBA00C4775C /* AboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
+		62F6CE4D2BDE6BBA00C4775C /* AboutProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutProtocols.swift; sourceTree = "<group>"; };
+		62F6CE4E2BDE6BBA00C4775C /* AboutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractor.swift; sourceTree = "<group>"; };
+		62F6CE4F2BDE6BBA00C4775C /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		62F6CE502BDE6BBA00C4775C /* AboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModel.swift; sourceTree = "<group>"; };
+		62F6CE512BDE6BBA00C4775C /* AboutWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWireframe.swift; sourceTree = "<group>"; };
+		62F6CE5A2BDE6BC900C4775C /* AboutUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUI.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1048,6 +1062,7 @@
 				62F6CDE42BDD453B00C4775C /* Profile */,
 				62F6CDFC2BDD55D700C4775C /* Profile settings */,
 				62F6CE382BDE682100C4775C /* My cards */,
+				62F6CE4A2BDE6B7200C4775C /* About */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1218,6 +1233,28 @@
 			isa = PBXGroup;
 			children = (
 				62F6CE482BDE684C00C4775C /* MyCardsUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		62F6CE4A2BDE6B7200C4775C /* About */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CE4C2BDE6BBA00C4775C /* AboutPresenter.swift */,
+				62F6CE4D2BDE6BBA00C4775C /* AboutProtocols.swift */,
+				62F6CE4E2BDE6BBA00C4775C /* AboutInteractor.swift */,
+				62F6CE4F2BDE6BBA00C4775C /* AboutView.swift */,
+				62F6CE502BDE6BBA00C4775C /* AboutModel.swift */,
+				62F6CE512BDE6BBA00C4775C /* AboutWireframe.swift */,
+				62F6CE592BDE6BC100C4775C /* UI */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		62F6CE592BDE6BC100C4775C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CE5A2BDE6BC900C4775C /* AboutUI.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1438,6 +1475,12 @@
 				62F6CD9E2BDBC6D600C4775C /* PartnersProtocols.swift in Sources */,
 				62F6CD9F2BDBC6D600C4775C /* PartnersInteractor.swift in Sources */,
 				62F6CDA02BDBC6D600C4775C /* PartnersView.swift in Sources */,
+				62F6CE532BDE6BBA00C4775C /* AboutPresenter.swift in Sources */,
+				62F6CE542BDE6BBA00C4775C /* AboutProtocols.swift in Sources */,
+				62F6CE552BDE6BBA00C4775C /* AboutInteractor.swift in Sources */,
+				62F6CE562BDE6BBA00C4775C /* AboutView.swift in Sources */,
+				62F6CE572BDE6BBA00C4775C /* AboutModel.swift in Sources */,
+				62F6CE582BDE6BBA00C4775C /* AboutWireframe.swift in Sources */,
 				62F6CDA12BDBC6D600C4775C /* PartnersModel.swift in Sources */,
 				62F6CDA22BDBC6D600C4775C /* PartnersWireframe.swift in Sources */,
 				2CACCD892BD5290B008178F8 /* LaunchUI.swift in Sources */,
@@ -1553,6 +1596,7 @@
 				2CACCDAD2BD53299008178F8 /* AppColors.swift in Sources */,
 				62F6CE052BDD55E900C4775C /* ProfileSettingsPresenter.swift in Sources */,
 				62F6CE062BDD55E900C4775C /* ProfileSettingsProtocols.swift in Sources */,
+				62F6CE5B2BDE6BC900C4775C /* AboutUI.swift in Sources */,
 				62F6CE072BDD55E900C4775C /* ProfileSettingsInteractor.swift in Sources */,
 				62F6CE082BDD55E900C4775C /* ProfileSettingsView.swift in Sources */,
 				62F6CE092BDD55E900C4775C /* ProfileSettingsModel.swift in Sources */,

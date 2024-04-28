@@ -40,7 +40,7 @@ extension ProfilePresenter {
         case .cards:
             wireframe?.toMyCards()
         case .about:
-            print()
+            wireframe?.toAbout()
         case .language:
             print()
         case .terms:
