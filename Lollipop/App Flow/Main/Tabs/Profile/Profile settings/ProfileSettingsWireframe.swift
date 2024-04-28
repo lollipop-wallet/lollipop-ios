@@ -26,8 +26,12 @@ class ProfileSettingsWireframe: ProfileSettingsWireframeProtocol {
     }
     
     func toChangePassword(){
-        print("Je li odje?")
         let vc = ChangePasswordView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func toAccountDeletion() {
+        let vc = AccountDeletionView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

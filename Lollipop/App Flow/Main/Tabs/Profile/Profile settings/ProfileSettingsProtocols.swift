@@ -16,6 +16,7 @@ protocol ProfileSettingsPresenterProtocol: UITableViewDelegate, UITableViewDataS
     var view: ProfileSettingsViewProtocol? { get set }
     var wireframe:ProfileSettingsWireframeProtocol? { get set }
     
+    func deleteAccount()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -41,6 +42,7 @@ protocol ProfileSettingsViewProtocol: AnyObject {
 protocol ProfileSettingsWireframeProtocol: AnyObject {
     func toPersonalData()
     func toChangePassword()
+    func toAccountDeletion()
 }
 
 //MARK: ProfileSettingsCell Protocol

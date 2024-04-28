@@ -15,6 +15,9 @@ class ProfileSettingsPresenter: NSObject, ProfileSettingsPresenterProtocol  {
     
     let datasource = DefaultModels().personalDataDatasource
 
+    func deleteAccount(){
+        wireframe?.toAccountDeletion()
+    }
 }
 
 extension ProfileSettingsPresenter: ProfileSettingsOutputInteractorProtocol {

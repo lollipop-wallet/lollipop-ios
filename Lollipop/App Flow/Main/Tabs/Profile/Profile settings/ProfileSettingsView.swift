@@ -35,6 +35,6 @@ class ProfileSettingsView: UIViewController, ProfileSettingsViewProtocol {
     }
     
     @objc func onDeleteAccountTap() {
-        
+        presenter?.deleteAccount()
     }
 }
