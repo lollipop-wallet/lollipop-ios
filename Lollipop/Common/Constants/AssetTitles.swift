@@ -47,4 +47,6 @@ struct AssetTitles {
     static let deleteAccountWarningIcon = "ic_profile_delete_account_warning"
     static let flagMneIcon = "ic_flag_me"
     static let flagEngIcon = "ic_flag_en"
+    static let radioSelectedIcon = "ic_radio_selected"
+    static let radioUnselectedIcon = "ic_radio_unselected"
 }

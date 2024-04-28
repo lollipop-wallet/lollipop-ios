@@ -219,6 +219,7 @@
 		62F6CE8E2BDE6F7E00C4775C /* FavoriteShopsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE872BDE6F7E00C4775C /* FavoriteShopsWireframe.swift */; };
 		62F6CE912BDE6F9000C4775C /* FavoriteShopsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE902BDE6F9000C4775C /* FavoriteShopsUI.swift */; };
 		62F6CE932BDEA36100C4775C /* LanCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE922BDEA36100C4775C /* LanCode.swift */; };
+		62F6CE962BDEA40600C4775C /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE952BDEA40600C4775C /* LanguageTableViewCell.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -461,6 +462,7 @@
 		62F6CE872BDE6F7E00C4775C /* FavoriteShopsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShopsWireframe.swift; sourceTree = "<group>"; };
 		62F6CE902BDE6F9000C4775C /* FavoriteShopsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShopsUI.swift; sourceTree = "<group>"; };
 		62F6CE922BDEA36100C4775C /* LanCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanCode.swift; sourceTree = "<group>"; };
+		62F6CE952BDEA40600C4775C /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1317,6 +1319,7 @@
 				62F6CE622BDE6C9700C4775C /* LanguageModel.swift */,
 				62F6CE632BDE6C9700C4775C /* LanguageWireframe.swift */,
 				62F6CE6B2BDE6C9D00C4775C /* UI */,
+				62F6CE942BDEA3F800C4775C /* Cells */,
 			);
 			path = Language;
 			sourceTree = "<group>";
@@ -1371,6 +1374,14 @@
 				62F6CE902BDE6F9000C4775C /* FavoriteShopsUI.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		62F6CE942BDEA3F800C4775C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CE952BDEA40600C4775C /* LanguageTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		8C1AC92D620E8BB50BD90320 /* Pods */ = {
@@ -1761,6 +1772,7 @@
 				62214AE92BD6E17600ABF38E /* OnboardingModel.swift in Sources */,
 				62214AEA2BD6E17600ABF38E /* OnboardingWireframe.swift in Sources */,
 				62F6CD8B2BDBC69000C4775C /* HomePresenter.swift in Sources */,
+				62F6CE962BDEA40600C4775C /* LanguageTableViewCell.swift in Sources */,
 				62F6CD8C2BDBC69000C4775C /* HomeProtocols.swift in Sources */,
 				62F6CE102BDD560900C4775C /* ProfileSettingsTableViewCell.swift in Sources */,
 				62F6CD8D2BDBC69000C4775C /* HomeInteractor.swift in Sources */,
