@@ -18,8 +18,14 @@ extension AppDelegate {
     /// - Parameter application: Main UIApplication
     func configureAppWith(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         
-        //MARK: Language setter
-        Localize.setCurrentLanguage("sr-ME")
+        //MARK: Localization setup
+        if let lanCode = UserDefaults.standard.string(forKey: "lanCode"){
+            Localize.setCurrentLanguage(lanCode)
+            Manager.selectedLanguageCode = lanCode
+        }else {
+            Localize.setCurrentLanguage("sr-ME")
+            Manager.selectedLanguageCode = "sr-ME"
+        }
 
         //MARK: Defaults
         Manager.sessionsCount = 1
