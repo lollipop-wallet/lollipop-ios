@@ -43,6 +43,7 @@ protocol ProfileWireframeProtocol: AnyObject {
     func toMyCards()
     func toAbout()
     func toLanguage()
+    func toTerms()
 }
 
 //MARK: ProfileCell Protocol

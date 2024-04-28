@@ -204,6 +204,13 @@
 		62F6CE692BDE6C9700C4775C /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE622BDE6C9700C4775C /* LanguageModel.swift */; };
 		62F6CE6A2BDE6C9700C4775C /* LanguageWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE632BDE6C9700C4775C /* LanguageWireframe.swift */; };
 		62F6CE6D2BDE6CA600C4775C /* LanguageUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE6C2BDE6CA600C4775C /* LanguageUI.swift */; };
+		62F6CE772BDE6DF600C4775C /* TermsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE702BDE6DF600C4775C /* TermsPresenter.swift */; };
+		62F6CE782BDE6DF600C4775C /* TermsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE712BDE6DF600C4775C /* TermsProtocols.swift */; };
+		62F6CE792BDE6DF600C4775C /* TermsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE722BDE6DF600C4775C /* TermsInteractor.swift */; };
+		62F6CE7A2BDE6DF600C4775C /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE732BDE6DF600C4775C /* TermsView.swift */; };
+		62F6CE7B2BDE6DF600C4775C /* TermsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE742BDE6DF600C4775C /* TermsModel.swift */; };
+		62F6CE7C2BDE6DF600C4775C /* TermsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE752BDE6DF600C4775C /* TermsWireframe.swift */; };
+		62F6CE7F2BDE6E0400C4775C /* TermsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE7E2BDE6E0400C4775C /* TermsUI.swift */; };
 		A2ED0BA9955552BA4BD24FE6 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
@@ -431,6 +438,13 @@
 		62F6CE622BDE6C9700C4775C /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
 		62F6CE632BDE6C9700C4775C /* LanguageWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageWireframe.swift; sourceTree = "<group>"; };
 		62F6CE6C2BDE6CA600C4775C /* LanguageUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageUI.swift; sourceTree = "<group>"; };
+		62F6CE702BDE6DF600C4775C /* TermsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPresenter.swift; sourceTree = "<group>"; };
+		62F6CE712BDE6DF600C4775C /* TermsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsProtocols.swift; sourceTree = "<group>"; };
+		62F6CE722BDE6DF600C4775C /* TermsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsInteractor.swift; sourceTree = "<group>"; };
+		62F6CE732BDE6DF600C4775C /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
+		62F6CE742BDE6DF600C4775C /* TermsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsModel.swift; sourceTree = "<group>"; };
+		62F6CE752BDE6DF600C4775C /* TermsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsWireframe.swift; sourceTree = "<group>"; };
+		62F6CE7E2BDE6E0400C4775C /* TermsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsUI.swift; sourceTree = "<group>"; };
 		7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 		D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
 		D5685BCEBB04E30B01FA8A1F /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1078,6 +1092,7 @@
 				62F6CE382BDE682100C4775C /* My cards */,
 				62F6CE4A2BDE6B7200C4775C /* About */,
 				62F6CE5C2BDE6C8700C4775C /* Language */,
+				62F6CE6E2BDE6DE700C4775C /* Terms */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1292,6 +1307,28 @@
 			isa = PBXGroup;
 			children = (
 				62F6CE6C2BDE6CA600C4775C /* LanguageUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		62F6CE6E2BDE6DE700C4775C /* Terms */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CE702BDE6DF600C4775C /* TermsPresenter.swift */,
+				62F6CE712BDE6DF600C4775C /* TermsProtocols.swift */,
+				62F6CE722BDE6DF600C4775C /* TermsInteractor.swift */,
+				62F6CE732BDE6DF600C4775C /* TermsView.swift */,
+				62F6CE742BDE6DF600C4775C /* TermsModel.swift */,
+				62F6CE752BDE6DF600C4775C /* TermsWireframe.swift */,
+				62F6CE7D2BDE6DFD00C4775C /* UI */,
+			);
+			path = Terms;
+			sourceTree = "<group>";
+		};
+		62F6CE7D2BDE6DFD00C4775C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CE7E2BDE6E0400C4775C /* TermsUI.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1545,6 +1582,12 @@
 				62F6CDF12BDD455600C4775C /* PersonalDataView.swift in Sources */,
 				62F6CDF22BDD455600C4775C /* PersonalDataModel.swift in Sources */,
 				62F6CDF32BDD455600C4775C /* PersonalDataWireframe.swift in Sources */,
+				62F6CE772BDE6DF600C4775C /* TermsPresenter.swift in Sources */,
+				62F6CE782BDE6DF600C4775C /* TermsProtocols.swift in Sources */,
+				62F6CE792BDE6DF600C4775C /* TermsInteractor.swift in Sources */,
+				62F6CE7A2BDE6DF600C4775C /* TermsView.swift in Sources */,
+				62F6CE7B2BDE6DF600C4775C /* TermsModel.swift in Sources */,
+				62F6CE7C2BDE6DF600C4775C /* TermsWireframe.swift in Sources */,
 				2CACCDA82BD53265008178F8 /* FirebaseEvents.swift in Sources */,
 				2CACCDE42BD54039008178F8 /* UIViewController+Extension.swift in Sources */,
 				2CACCDD22BD53E82008178F8 /* String+Extension.swift in Sources */,
@@ -1660,6 +1703,7 @@
 				2CACCD2C2BD51C81008178F8 /* AppDelegate.swift in Sources */,
 				2CACCDDE2BD53F85008178F8 /* UITapGestureRecognizer+Extension.swift in Sources */,
 				62214AE52BD6E17600ABF38E /* OnboardingPresenter.swift in Sources */,
+				62F6CE7F2BDE6E0400C4775C /* TermsUI.swift in Sources */,
 				62214AE62BD6E17600ABF38E /* OnboardingProtocols.swift in Sources */,
 				2CDDA73E2BDA257600B6C8B5 /* OTPUI.swift in Sources */,
 				62214AE72BD6E17600ABF38E /* OnboardingInteractor.swift in Sources */,

@@ -44,7 +44,7 @@ extension ProfilePresenter {
         case .language:
             wireframe?.toLanguage()
         case .terms:
-            print()
+            wireframe?.toTerms()
         }
     }
 }
