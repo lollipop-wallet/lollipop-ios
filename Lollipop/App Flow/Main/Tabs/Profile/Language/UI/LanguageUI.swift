@@ -30,5 +30,41 @@ extension LanguageView {
         }()
         
         self.navigationItem.leftBarButtonItems = [backButton]
+        
+        lazy var chooseAppLanLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .regular)
+            label.textColor = AppColors.black
+            label.textAlignment = .left
+            label.text = LocalizedTitle.chooseAppLanguage.localized
+            return label
+        }()
+        
+        lazy var saveButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onSaveTap), for: .touchUpInside)
+            button.setTitle(LocalizedTitle.save.localized, for: .normal)
+            button.backgroundColor = AppColors.brandPrimary
+            button.titleLabel?.font = .inter(ofSize: 16, name: .medium)
+            button.setTitleColor(AppColors.white, for: .normal)
+            button.layer.cornerRadius = 12
+            button.layer.masksToBounds = true
+            return button
+        }()
+        
+        self.view.addSubview(chooseAppLanLabel)
+        chooseAppLanLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(6)
+        }
+        
+        self.view.addSubview(saveButton)
+        saveButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-45)
+            make.height.equalTo(48)
+        }
     }
 }

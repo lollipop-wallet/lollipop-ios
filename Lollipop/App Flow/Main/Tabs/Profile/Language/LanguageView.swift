@@ -31,5 +31,9 @@ class LanguageView: UIViewController, LanguageViewProtocol {
     @objc func onBackTap() {
         popBack(2)
     }
+    
+    @objc func onSaveTap() {
+        
+    }
 
 }

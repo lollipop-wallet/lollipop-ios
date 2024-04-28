@@ -23,8 +23,8 @@ extension AppDelegate {
             Localize.setCurrentLanguage(lanCode)
             Manager.selectedLanguageCode = lanCode
         }else {
-            Localize.setCurrentLanguage("sr-ME")
-            Manager.selectedLanguageCode = "sr-ME"
+            Localize.setCurrentLanguage(LanCode.mne.rawValue)
+            Manager.selectedLanguageCode = LanCode.mne.rawValue
         }
 
         //MARK: Defaults
