@@ -80,11 +80,49 @@ extension AccountDeletionView {
             return stack
         }()
         
+        lazy var deleteAccountButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onDeleteAccountTap), for: .touchUpInside)
+            button.setTitle(LocalizedTitle.deleteAccount.localized, for: .normal)
+            button.backgroundColor = AppColors.error
+            button.titleLabel?.font = .inter(ofSize: 16, name: .semibold)
+            button.setTitleColor(AppColors.white, for: .normal)
+            button.layer.cornerRadius = 12
+            button.layer.masksToBounds = true
+            return button
+        }()
+        
+        lazy var quitButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onQuitTap), for: .touchUpInside)
+            button.setTitle(LocalizedTitle.cancel.localized, for: .normal)
+            button.backgroundColor = AppColors.lightGrey
+            button.titleLabel?.font = .inter(ofSize: 16, name: .semibold)
+            button.setTitleColor(AppColors.link, for: .normal)
+            return button
+        }()
+        
         self.view.addSubview(infoStackView)
         infoStackView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.centerX.centerY.equalToSuperview()
+        }
+        
+        self.view.addSubview(quitButton)
+        quitButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-41)
+            make.height.equalTo(48)
+        }
+        
+        self.view.addSubview(deleteAccountButton)
+        deleteAccountButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalTo(quitButton.snp.top).offset(-8)
+            make.height.equalTo(48)
         }
     }
 }
