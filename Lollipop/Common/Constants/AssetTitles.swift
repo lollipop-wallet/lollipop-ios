@@ -53,4 +53,5 @@ struct AssetTitles {
     static let lollipopPartnerIcon = "ic_lollipop_partner"
     static let partnerDetailsArtworkIcon = "ic_partner_details_artwork"
     static let locationPitIcon = "ic_location_pin"
+    static let illustrationSuccessIcon = "ic_illustration_success"
 }

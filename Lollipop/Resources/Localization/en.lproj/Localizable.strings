@@ -77,4 +77,5 @@
 "max300Chars" = "Max 300 characters";
 "address" = "Address";
 "send" = "Send";
-
+"thanksForSuggestionTitle" = "Thank you for a suggestion!";
+"thanksForSuggestionSubtitle" = "Your opinion matters to us.";
