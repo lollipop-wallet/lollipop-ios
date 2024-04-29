@@ -30,5 +30,62 @@ extension NewPartnerView {
         }()
         
         self.navigationItem.leftBarButtonItems = [backButton]
+        
+        lazy var lollipopPartnerIcon: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.partnerDetailsArtworkIcon)
+            return imageView
+        }()
+        
+        self.shopNameField.title = "\(LocalizedTitle.shopName.localized):"
+        self.shopNameField.placeholder = "\(LocalizedTitle.enterShopMerchantName.localized):"
+        self.shopNameField.errorHidden = true
+        self.shopNameField.keyboardType = .default
+        self.shopNameField.background = AppColors.white
+        self.shopNameField.leftSuplementaryIconHidden = true
+        
+        self.cityField.title = "\(LocalizedTitle.city.localized) (\(LocalizedTitle.optional.localized)):"
+        self.cityField.errorHidden = true
+        self.cityField.background = AppColors.white
+        self.cityField.text = LocalizedTitle.choose.localized
+        self.cityField.rightSuplementaryIconHidden = false
+        //self.cityField.delegate = presenter
+        
+        self.addressField.title = "\(LocalizedTitle.address.localized) (\(LocalizedTitle.optional.localized)):"
+        self.addressField.placeholder = "\(LocalizedTitle.enterAddress.localized)"
+        self.addressField.errorHidden = true
+        self.addressField.keyboardType = .default
+        self.addressField.background = AppColors.white
+        self.addressField.leftSuplementaryIconHidden = false
+        self.addressField.leftSuplementaryIcon = UIImage(named: AssetTitles.locationPitIcon)
+        
+        self.noteField.title = "\(LocalizedTitle.additionalNote.localized) (\(LocalizedTitle.optional.localized)):"
+        self.noteField.placeholder = "\(LocalizedTitle.max300Chars.localized)"
+        self.noteField.errorHidden = true
+        self.noteField.leftSuplementaryIconHidden = true
+        self.noteField.background = AppColors.white
+        
+        lazy var mainStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [self.shopNameField, self.cityField, self.addressField, self.noteField])
+            stack.axis = .vertical
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.spacing = 16
+            return stack
+        }()
+        
+        self.view.addSubview(lollipopPartnerIcon)
+        lollipopPartnerIcon.snp.makeConstraints { make in
+            make.width.height.equalTo(128)
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(24)
+            make.centerX.equalToSuperview()
+        }
+        
+        self.view.addSubview(mainStack)
+        mainStack.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(lollipopPartnerIcon.snp.bottom).offset(24)
+        }
     }
 }

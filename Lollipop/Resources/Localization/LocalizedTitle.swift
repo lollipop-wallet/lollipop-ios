@@ -86,6 +86,7 @@ enum LocalizedTitle: String {
     case additionalNote
     case enterAddress
     case max300Chars
+    case address
     
 
     var localized: String {

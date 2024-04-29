@@ -1,13 +1,13 @@
 //
-//  InputField.swift
+//  InputTextViewField.swift
 //  Lollipop
 //
-//  Created by Aleksandar Draskovic on 23/04/2024.
+//  Created by Aleksandar Draskovic on 29.4.24..
 //
 
 import UIKit
 
-class InputField: UIView {
+class InputTextViewField: UIView {
     
     //MARK: Properties
     
@@ -17,14 +17,8 @@ class InputField: UIView {
     }
     
     open var placeholder: String? {
-        set {
-            let attributes = [
-                NSAttributedString.Key.foregroundColor: AppColors.darkGrey,
-                NSAttributedString.Key.font : UIFont.inter(ofSize: 14, name: .regular)
-            ]
-            self.textField.attributedPlaceholder = NSAttributedString(string: newValue ?? "", attributes:attributes)
-        }
-        get { return self.textField.placeholder }
+        set { self.placeholderLabel.text = newValue ?? "" }
+        get { return self.placeholderLabel.text }
     }
     
     open var error: String? {
@@ -33,8 +27,8 @@ class InputField: UIView {
     }
     
     open var text: String? {
-        set { self.textField.text = newValue ?? "" }
-        get { return textField.text }
+        set { self.textView.text = newValue ?? "" }
+        get { return textView.text }
     }
     
     open var errorHidden: Bool? {
@@ -43,17 +37,17 @@ class InputField: UIView {
     }
     
     open var background: UIColor? {
-        set { self.textFieldPlaceholder.backgroundColor = newValue ?? .clear }
+        set { self.textViewPlaceholder.backgroundColor = newValue ?? .clear }
         get { return .white }
     }
     
     open var font: UIFont? {
-        set { self.textField.font = newValue ?? .inter(ofSize: 14, name: .light)}
+        set { self.textView.font = newValue ?? .inter(ofSize: 14, name: .light)}
         get { return .inter(ofSize: 14, name: .light) }
     }
     
     open var keyboardType: UIKeyboardType? {
-        set { self.textField.keyboardType = newValue ?? .default }
+        set { self.textView.keyboardType = newValue ?? .default }
         get { return .default }
     }
     
@@ -67,10 +61,6 @@ class InputField: UIView {
         get { return true }
     }
     
-    open var isSecureTextEntry: Bool? {
-        set { self.textField.isSecureTextEntry = newValue ?? false }
-        get { return false }
-    }
     
     //MARK: Outlets
     
@@ -96,6 +86,14 @@ class InputField: UIView {
         return label
     }()
     
+    lazy var placeholderLabel: UILabel = {
+        let label = UILabel()
+        label.font = .inter(ofSize: 14, name: .regular)
+        label.textColor = AppColors.darkGrey
+        label.textAlignment = .left
+        return label
+    }()
+    
     lazy var inputFieldSuplementaryLeftIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -105,43 +103,51 @@ class InputField: UIView {
         return imageView
     }()
     
-    lazy var textField: UITextField = {
-        let textField = UITextField()
-        textField.font = .inter(ofSize: 14, name: .light)
-        textField.textColor = AppColors.black
-        return textField
+    lazy var textView: UITextView = {
+        let textView = UITextView()
+        textView.font = .inter(ofSize: 14, name: .light)
+        textView.textColor = AppColors.black
+        textView.backgroundColor = AppColors.white
+        return textView
     }()
     
-    lazy var textFieldStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [inputFieldSuplementaryLeftIcon, textField])
+    lazy var textViewdStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [inputFieldSuplementaryLeftIcon, textView])
         stack.axis = .horizontal
         stack.distribution = .fill
-        stack.alignment = .center
+        stack.alignment = .fill
         stack.spacing = 8
         return stack
     }()
     
-    lazy var textFieldPlaceholder: UIView = {
+    lazy var textViewPlaceholder: UIView = {
         let view = UIView()
-        view.addSubview(textFieldStack)
-        textFieldStack.snp.makeConstraints { make in
+        view.addSubview(textViewdStack)
+        textViewdStack.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(12)
             make.trailing.equalToSuperview().offset(-12)
             make.top.equalToSuperview().offset(14)
             make.bottom.equalToSuperview().offset(-14)
+        }
+        view.addSubview(placeholderLabel)
+        placeholderLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(12)
+            make.trailing.equalToSuperview().offset(-12)
+            make.top.equalToSuperview().offset(14)
+            make.height.equalTo(20)
         }
         view.layer.cornerRadius = 8
         view.layer.masksToBounds = true
         view.layer.borderWidth = 1
         view.layer.borderColor = AppColors.mediumGrey.cgColor
         view.snp.makeConstraints { make in
-            make.height.equalTo(48)
+            make.height.equalTo(124)
         }
         return view
     }()
     
     lazy var inputStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [inputTitleLabel, textFieldPlaceholder, inputErrorLabel])
+        let stack = UIStackView(arrangedSubviews: [inputTitleLabel, textViewPlaceholder, inputErrorLabel])
         stack.axis = .vertical
         stack.distribution = .fill
         stack.alignment = .fill
@@ -167,21 +173,25 @@ class InputField: UIView {
         inputStackView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
         }
-        self.textField.delegate = self
+        self.textView.delegate = self
     }
     
     //MARK: Actions
     
 }
 
-extension InputField : UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.textFieldPlaceholder.layer.borderWidth = 2
-        self.textFieldPlaceholder.layer.borderColor = AppColors.link.cgColor
+extension InputTextViewField : UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.textViewPlaceholder.layer.borderWidth = 2
+        self.textViewPlaceholder.layer.borderColor = AppColors.link.cgColor
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        self.textFieldPlaceholder.layer.borderWidth = 1
-        self.textFieldPlaceholder.layer.borderColor = (textField.text ?? "").isEmpty ? AppColors.mediumGrey.cgColor : AppColors.black.cgColor 
+    func textViewDidEndEditing(_ textView: UITextView) {
+        self.textViewPlaceholder.layer.borderWidth = 1
+        self.textViewPlaceholder.layer.borderColor = (textView.text ?? "").isEmpty ? AppColors.mediumGrey.cgColor : AppColors.black.cgColor
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        self.placeholderLabel.isHidden = !textView.text.isEmpty
     }
 }

@@ -13,6 +13,9 @@ class PartnersPresenter: NSObject, PartnersPresenterProtocol  {
     weak var view: PartnersViewProtocol?
     var wireframe: PartnersWireframeProtocol?
     
+    func suggestPartner() {
+        wireframe?.toNewPartner()
+    }
 }
 
 extension PartnersPresenter: PartnersOutputInteractorProtocol {

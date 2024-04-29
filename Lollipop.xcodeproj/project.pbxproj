@@ -82,6 +82,7 @@
 		2CE32AB82BDF9E3B004757C5 /* NewPartnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AB22BDF9E3B004757C5 /* NewPartnerModel.swift */; };
 		2CE32AB92BDF9E3B004757C5 /* NewPartnerWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AB32BDF9E3B004757C5 /* NewPartnerWireframe.swift */; };
 		2CE32ABD2BDF9E4B004757C5 /* NewPartnerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32ABC2BDF9E4B004757C5 /* NewPartnerUI.swift */; };
+		2CE32AC02BDFAAE1004757C5 /* InputTextViewField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32ABF2BDFAAE1004757C5 /* InputTextViewField.swift */; };
 		2CEC7FB42BD8D1730050E762 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAD2BD8D1730050E762 /* RegisterPresenter.swift */; };
 		2CEC7FB52BD8D1730050E762 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAE2BD8D1730050E762 /* RegisterProtocols.swift */; };
 		2CEC7FB62BD8D1730050E762 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAF2BD8D1730050E762 /* RegisterInteractor.swift */; };
@@ -333,6 +334,7 @@
 		2CE32AB22BDF9E3B004757C5 /* NewPartnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPartnerModel.swift; sourceTree = "<group>"; };
 		2CE32AB32BDF9E3B004757C5 /* NewPartnerWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPartnerWireframe.swift; sourceTree = "<group>"; };
 		2CE32ABC2BDF9E4B004757C5 /* NewPartnerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPartnerUI.swift; sourceTree = "<group>"; };
+		2CE32ABF2BDFAAE1004757C5 /* InputTextViewField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextViewField.swift; sourceTree = "<group>"; };
 		2CEC7FAD2BD8D1730050E762 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		2CEC7FAE2BD8D1730050E762 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
 		2CEC7FAF2BD8D1730050E762 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
@@ -887,6 +889,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		2CE32ABE2BDFAACF004757C5 /* Input text view */ = {
+			isa = PBXGroup;
+			children = (
+				2CE32ABF2BDFAAE1004757C5 /* InputTextViewField.swift */,
+			);
+			path = "Input text view";
+			sourceTree = "<group>";
+		};
 		2CEC7F9A2BD8D1210050E762 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -987,6 +997,7 @@
 				2CEC7FBD2BD8F73E0050E762 /* Calendar input field */,
 				627E92BF2BDA04390016FF73 /* Drop down input field */,
 				627E92DB2BDA18400016FF73 /* OTP Input Field */,
+				2CE32ABE2BDFAACF004757C5 /* Input text view */,
 			);
 			path = "Input fields";
 			sourceTree = "<group>";
@@ -1765,6 +1776,7 @@
 				2CEC7FB42BD8D1730050E762 /* RegisterPresenter.swift in Sources */,
 				2CEC7FB52BD8D1730050E762 /* RegisterProtocols.swift in Sources */,
 				2CE32ABD2BDF9E4B004757C5 /* NewPartnerUI.swift in Sources */,
+				2CE32AC02BDFAAE1004757C5 /* InputTextViewField.swift in Sources */,
 				2CEC7FB62BD8D1730050E762 /* RegisterInteractor.swift in Sources */,
 				2CEC7FB72BD8D1730050E762 /* RegisterView.swift in Sources */,
 				2CEC7FB82BD8D1730050E762 /* RegisterModel.swift in Sources */,

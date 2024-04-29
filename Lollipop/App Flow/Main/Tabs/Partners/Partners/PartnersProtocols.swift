@@ -16,6 +16,7 @@ protocol PartnersPresenterProtocol: UICollectionViewDelegate, UICollectionViewDa
     var view: PartnersViewProtocol? { get set }
     var wireframe:PartnersWireframeProtocol? { get set }
     
+    func suggestPartner()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -39,8 +40,7 @@ protocol PartnersViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol PartnersWireframeProtocol: AnyObject {
-
-    
+    func toNewPartner()
 }
 
 //MARK: PartnersCell Protocol

@@ -19,4 +19,9 @@ class PartnersWireframe: PartnersWireframeProtocol {
         PartnersRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toNewPartner() {
+        let vc = NewPartnerView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

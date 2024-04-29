@@ -27,6 +27,6 @@ class PartnersView: UIViewController, PartnersViewProtocol {
     }
     
     @objc func onRecommendPartnerTap() {
-        
+        presenter?.suggestPartner()
     }
 }
