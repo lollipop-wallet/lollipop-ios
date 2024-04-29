@@ -46,9 +46,9 @@ extension PartnersView {
         self.collectionView?.dataSource = presenter
         self.collectionView?.backgroundColor = AppColors.lightGrey
         self.collectionView?.isScrollEnabled = false
-        self.collectionView?.snp.makeConstraints({ make in
-            make.width.equalTo(self.view.frame.width - 28)
-        })
+//        self.collectionView?.snp.makeConstraints({ make in
+//            make.width.equalTo(self.view.frame.width - 28)
+//        })
         
         lazy var partnersBannerTitle: UILabel = {
             let label = UILabel()
