@@ -52,4 +52,5 @@ struct AssetTitles {
     static let outlinedHeartIcon = "ic_heart_outlined"
     static let lollipopPartnerIcon = "ic_lollipop_partner"
     static let partnerDetailsArtworkIcon = "ic_partner_details_artwork"
+    static let locationPitIcon = "ic_location_pin"
 }
