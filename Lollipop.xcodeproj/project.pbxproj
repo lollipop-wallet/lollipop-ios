@@ -74,6 +74,7 @@
 		2CDDA73E2BDA257600B6C8B5 /* OTPUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA73D2BDA257600B6C8B5 /* OTPUI.swift */; };
 		2CDDA7402BDA367000B6C8B5 /* OTPInputProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA73F2BDA367000B6C8B5 /* OTPInputProtocols.swift */; };
 		2CE32AA72BDF66F5004757C5 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AA62BDF66F5004757C5 /* CustomSegmentedControl.swift */; };
+		2CE32AAA2BDF6B3F004757C5 /* PartnersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AA92BDF6B3E004757C5 /* PartnersCollectionViewCell.swift */; };
 		2CEC7FB42BD8D1730050E762 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAD2BD8D1730050E762 /* RegisterPresenter.swift */; };
 		2CEC7FB52BD8D1730050E762 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAE2BD8D1730050E762 /* RegisterProtocols.swift */; };
 		2CEC7FB62BD8D1730050E762 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAF2BD8D1730050E762 /* RegisterInteractor.swift */; };
@@ -317,6 +318,7 @@
 		2CDDA73D2BDA257600B6C8B5 /* OTPUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPUI.swift; sourceTree = "<group>"; };
 		2CDDA73F2BDA367000B6C8B5 /* OTPInputProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputProtocols.swift; sourceTree = "<group>"; };
 		2CE32AA62BDF66F5004757C5 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		2CE32AA92BDF6B3E004757C5 /* PartnersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CEC7FAD2BD8D1730050E762 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		2CEC7FAE2BD8D1730050E762 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
 		2CEC7FAF2BD8D1730050E762 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
@@ -826,6 +828,14 @@
 			path = UISegmentedControl;
 			sourceTree = "<group>";
 		};
+		2CE32AA82BDF6B33004757C5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2CE32AA92BDF6B3E004757C5 /* PartnersCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		2CEC7F9A2BD8D1210050E762 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -1083,6 +1093,7 @@
 				62F6CD9B2BDBC6D600C4775C /* PartnersModel.swift */,
 				62F6CD9C2BDBC6D600C4775C /* PartnersWireframe.swift */,
 				62F6CDA42BDBC6DE00C4775C /* UI */,
+				2CE32AA82BDF6B33004757C5 /* Cells */,
 			);
 			path = Partners;
 			sourceTree = "<group>";
@@ -1770,6 +1781,7 @@
 				62F6CE082BDD55E900C4775C /* ProfileSettingsView.swift in Sources */,
 				62F6CE092BDD55E900C4775C /* ProfileSettingsModel.swift in Sources */,
 				62F6CE0A2BDD55E900C4775C /* ProfileSettingsWireframe.swift in Sources */,
+				2CE32AAA2BDF6B3F004757C5 /* PartnersCollectionViewCell.swift in Sources */,
 				2CACCD932BD52F84008178F8 /* LocalizationSystem.swift in Sources */,
 				62F6CE492BDE684C00C4775C /* MyCardsUI.swift in Sources */,
 				2CEC7FBC2BD8D1810050E762 /* RegisterUI.swift in Sources */,

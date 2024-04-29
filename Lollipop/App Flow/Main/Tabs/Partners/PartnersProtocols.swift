@@ -42,3 +42,10 @@ protocol PartnersWireframeProtocol: AnyObject {
 
     
 }
+
+//MARK: PartnersCell Protocol
+
+protocol PartnersCellProtocol: AnyObject {
+    func didSelectItemAt(index: IndexPath)
+}
+ 
