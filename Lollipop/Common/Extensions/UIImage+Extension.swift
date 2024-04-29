@@ -229,14 +229,15 @@ extension UIImage {
         return image!
     }
     
-    convenience init(color: UIColor, size: CGSize) {
-        UIGraphicsBeginImageContextWithOptions(size, false, 1)
-        color.set()
-        let ctx = UIGraphicsGetCurrentContext()!
-        ctx.fill(CGRect(origin: .zero, size: size))
-        let image = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-
-        self.init(data: image.pngData()!)!
+    convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+      let rect = CGRect(origin: .zero, size: size)
+      UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+      color.setFill()
+      UIRectFill(rect)
+      let image = UIGraphicsGetImageFromCurrentImageContext()
+      UIGraphicsEndImageContext()
+      
+      guard let cgImage = image?.cgImage else { return nil }
+      self.init(cgImage: cgImage)
     }
 }

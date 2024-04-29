@@ -17,4 +17,9 @@ class PartnersView: UIViewController, PartnersViewProtocol {
         super.viewDidLoad()
         setup()
     }
+    
+    //MARK: Actions
+    @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
+        //presenter?.onSegmentTapWith(segmentId: segmentedControl.selectedSegmentIndex)
+    }
 }
