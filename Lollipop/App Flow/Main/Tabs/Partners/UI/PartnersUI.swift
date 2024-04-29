@@ -30,12 +30,42 @@ extension PartnersView {
             return control
         }()
         
+        lazy var scrollView : UIScrollView = {
+            let scView = UIScrollView()
+            return scView
+        }()
+        
+        lazy var contentView : UIView = {
+            let view = UIView()
+            return view
+        }()
+        
         self.view.addSubview(segmentedControl)
         segmentedControl.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
             make.height.equalTo(47)
+        }
+        
+        self.view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.top.equalTo(segmentedControl.snp.bottom).offset(32)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets.zero)
+            make.width.equalTo(scrollView)
+        }
+        
+        contentView.addSubview(mainStackView)
+        mainStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(21)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
     }
 }
