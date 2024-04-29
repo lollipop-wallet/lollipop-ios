@@ -50,4 +50,5 @@ struct AssetTitles {
     static let radioSelectedIcon = "ic_radio_selected"
     static let radioUnselectedIcon = "ic_radio_unselected"
     static let outlinedHeartIcon = "ic_heart_outlined"
+    static let lollipopPartnerIcon = "ic_lollipop_partner"
 }

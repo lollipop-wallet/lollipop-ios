@@ -25,4 +25,8 @@ class PartnersView: UIViewController, PartnersViewProtocol {
     @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
         //presenter?.onSegmentTapWith(segmentId: segmentedControl.selectedSegmentIndex)
     }
+    
+    @objc func onRecommendPartnerTap() {
+        
+    }
 }

@@ -50,16 +50,111 @@ extension PartnersView {
             make.width.equalTo(self.view.frame.width - 28)
         })
         
+        lazy var partnersBannerTitle: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 20, name: .bold)
+            label.textColor = AppColors.black
+            label.textAlignment = .left
+            label.text = LocalizedTitle.cantSeeFavoriteBrand.localized
+            return label
+        }()
+        
+        lazy var arrowIcon: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.arrowRightIcon)
+            imageView.tintColor = AppColors.black
+            imageView.snp.makeConstraints { make in
+                make.width.height.equalTo(24)
+            }
+            return imageView
+        }()
+        
+        lazy var lollipopPartnerIcon: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.lollipopPartnerIcon)
+            imageView.snp.makeConstraints { make in
+                make.width.height.equalTo(64)
+            }
+            return imageView
+        }()
+        
+        lazy var recommendPartnerLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .regular)
+            label.textColor = AppColors.black
+            label.textAlignment = .left
+            label.text = LocalizedTitle.recommendLollipopPartner.localized
+            return label
+        }()
+        
+        lazy var lollipopPartnerStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [lollipopPartnerIcon, recommendPartnerLabel, arrowIcon])
+            stack.axis = .horizontal
+            stack.distribution = .fill
+            stack.alignment = .center
+            stack.spacing = 8
+            return stack
+        }()
+        
+        lazy var lollipopPartnerButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onRecommendPartnerTap), for: .touchUpInside)
+            return button
+        }()
+        
+        lazy var lollipopPartnerPlaceholderView: UIView = {
+            let view = UIView()
+            view.addSubview(lollipopPartnerStack)
+            lollipopPartnerStack.snp.makeConstraints { make in
+                make.leading.top.equalToSuperview().offset(12)
+                make.trailing.bottom.equalToSuperview().offset(-12)
+            }
+            view.addSubview(lollipopPartnerButton)
+            lollipopPartnerButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
+            view.backgroundColor = AppColors.brandPowder
+            view.layer.cornerRadius = 16
+            view.layer.masksToBounds = true
+            
+            view.snp.makeConstraints { make in
+                make.height.equalTo(88)
+            }
+            return view
+        }()
+        
+        lazy var lollipopSectionStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [partnersBannerTitle, lollipopPartnerPlaceholderView])
+            stack.axis = .vertical
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.spacing = 14
+            return stack
+        }()
+        
+        lazy var lollipopPartnerConainer: UIView = {
+            let view = UIView()
+            view.addSubview(lollipopSectionStack)
+            lollipopSectionStack.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(10)
+                make.trailing.equalToSuperview().offset(-4)
+                make.top.bottom.equalToSuperview()
+            }
+            view.backgroundColor = AppColors.lightGrey
+            return view
+        }()
+        
         lazy var fillerView: UIView = {
             let view = UIView()
             return view
         }()
         
-        self.mainStackView = UIStackView(arrangedSubviews: [self.collectionView ?? UICollectionView(), fillerView])
+        self.mainStackView = UIStackView(arrangedSubviews: [self.collectionView ?? UICollectionView(), lollipopPartnerConainer, fillerView])
         self.mainStackView.axis = .vertical
         self.mainStackView.distribution = .fill
         self.mainStackView.alignment = .fill
-        self.mainStackView.spacing = 16
+        self.mainStackView.spacing = 32
+        
         
         self.view.addSubview(segmentedControl)
         segmentedControl.snp.makeConstraints { make in
