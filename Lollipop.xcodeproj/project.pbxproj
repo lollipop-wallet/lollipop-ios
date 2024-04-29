@@ -83,6 +83,14 @@
 		2CE32AB92BDF9E3B004757C5 /* NewPartnerWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AB32BDF9E3B004757C5 /* NewPartnerWireframe.swift */; };
 		2CE32ABD2BDF9E4B004757C5 /* NewPartnerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32ABC2BDF9E4B004757C5 /* NewPartnerUI.swift */; };
 		2CE32AC02BDFAAE1004757C5 /* InputTextViewField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32ABF2BDFAAE1004757C5 /* InputTextViewField.swift */; };
+		2CE32AC92BDFBB91004757C5 /* DialoguePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AC32BDFBB91004757C5 /* DialoguePresenter.swift */; };
+		2CE32ACA2BDFBB91004757C5 /* DialogueProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AC42BDFBB91004757C5 /* DialogueProtocols.swift */; };
+		2CE32ACB2BDFBB91004757C5 /* DialogueInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AC52BDFBB91004757C5 /* DialogueInteractor.swift */; };
+		2CE32ACC2BDFBB91004757C5 /* DialogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AC62BDFBB91004757C5 /* DialogueView.swift */; };
+		2CE32ACD2BDFBB91004757C5 /* DialogueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AC72BDFBB91004757C5 /* DialogueModel.swift */; };
+		2CE32ACE2BDFBB91004757C5 /* DialogueWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AC82BDFBB91004757C5 /* DialogueWireframe.swift */; };
+		2CE32AD22BDFBBA0004757C5 /* DialogueUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AD12BDFBBA0004757C5 /* DialogueUI.swift */; };
+		2CE32AD42BDFBFBC004757C5 /* DialogueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AD32BDFBFBC004757C5 /* DialogueType.swift */; };
 		2CEC7FB42BD8D1730050E762 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAD2BD8D1730050E762 /* RegisterPresenter.swift */; };
 		2CEC7FB52BD8D1730050E762 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAE2BD8D1730050E762 /* RegisterProtocols.swift */; };
 		2CEC7FB62BD8D1730050E762 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAF2BD8D1730050E762 /* RegisterInteractor.swift */; };
@@ -335,6 +343,14 @@
 		2CE32AB32BDF9E3B004757C5 /* NewPartnerWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPartnerWireframe.swift; sourceTree = "<group>"; };
 		2CE32ABC2BDF9E4B004757C5 /* NewPartnerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPartnerUI.swift; sourceTree = "<group>"; };
 		2CE32ABF2BDFAAE1004757C5 /* InputTextViewField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextViewField.swift; sourceTree = "<group>"; };
+		2CE32AC32BDFBB91004757C5 /* DialoguePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialoguePresenter.swift; sourceTree = "<group>"; };
+		2CE32AC42BDFBB91004757C5 /* DialogueProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueProtocols.swift; sourceTree = "<group>"; };
+		2CE32AC52BDFBB91004757C5 /* DialogueInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueInteractor.swift; sourceTree = "<group>"; };
+		2CE32AC62BDFBB91004757C5 /* DialogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueView.swift; sourceTree = "<group>"; };
+		2CE32AC72BDFBB91004757C5 /* DialogueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueModel.swift; sourceTree = "<group>"; };
+		2CE32AC82BDFBB91004757C5 /* DialogueWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueWireframe.swift; sourceTree = "<group>"; };
+		2CE32AD12BDFBBA0004757C5 /* DialogueUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueUI.swift; sourceTree = "<group>"; };
+		2CE32AD32BDFBFBC004757C5 /* DialogueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueType.swift; sourceTree = "<group>"; };
 		2CEC7FAD2BD8D1730050E762 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		2CEC7FAE2BD8D1730050E762 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
 		2CEC7FAF2BD8D1730050E762 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
@@ -576,6 +592,7 @@
 				62903E222BD6E12700031D60 /* Onboarding */,
 				2CCF3AA72BD7B24D00B3729E /* Registration */,
 				62F6CD6F2BDBBDEC00C4775C /* Main */,
+				2CE32AC12BDFBB83004757C5 /* Dialogue */,
 			);
 			path = "App Flow";
 			sourceTree = "<group>";
@@ -718,6 +735,7 @@
 				62F6CDDA2BDD370400C4775C /* ProfileItem.swift */,
 				62F6CE112BDD56B600C4775C /* ProfileSettingsItem.swift */,
 				62F6CE922BDEA36100C4775C /* LanCode.swift */,
+				2CE32AD32BDFBFBC004757C5 /* DialogueType.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -895,6 +913,28 @@
 				2CE32ABF2BDFAAE1004757C5 /* InputTextViewField.swift */,
 			);
 			path = "Input text view";
+			sourceTree = "<group>";
+		};
+		2CE32AC12BDFBB83004757C5 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				2CE32AC32BDFBB91004757C5 /* DialoguePresenter.swift */,
+				2CE32AC42BDFBB91004757C5 /* DialogueProtocols.swift */,
+				2CE32AC52BDFBB91004757C5 /* DialogueInteractor.swift */,
+				2CE32AC62BDFBB91004757C5 /* DialogueView.swift */,
+				2CE32AC72BDFBB91004757C5 /* DialogueModel.swift */,
+				2CE32AC82BDFBB91004757C5 /* DialogueWireframe.swift */,
+				2CE32AD02BDFBB98004757C5 /* UI */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		2CE32AD02BDFBB98004757C5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2CE32AD12BDFBBA0004757C5 /* DialogueUI.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		2CEC7F9A2BD8D1210050E762 /* Register */ = {
@@ -1686,6 +1726,12 @@
 				2CACCDA52BD53241008178F8 /* Analytics.swift in Sources */,
 				2CACCDB02BD53B1B008178F8 /* Connectivity.swift in Sources */,
 				62F6CD9D2BDBC6D600C4775C /* PartnersPresenter.swift in Sources */,
+				2CE32AC92BDFBB91004757C5 /* DialoguePresenter.swift in Sources */,
+				2CE32ACA2BDFBB91004757C5 /* DialogueProtocols.swift in Sources */,
+				2CE32ACB2BDFBB91004757C5 /* DialogueInteractor.swift in Sources */,
+				2CE32ACC2BDFBB91004757C5 /* DialogueView.swift in Sources */,
+				2CE32ACD2BDFBB91004757C5 /* DialogueModel.swift in Sources */,
+				2CE32ACE2BDFBB91004757C5 /* DialogueWireframe.swift in Sources */,
 				62F6CD9E2BDBC6D600C4775C /* PartnersProtocols.swift in Sources */,
 				62F6CD9F2BDBC6D600C4775C /* PartnersInteractor.swift in Sources */,
 				62F6CDA02BDBC6D600C4775C /* PartnersView.swift in Sources */,
@@ -1816,6 +1862,7 @@
 				62214B022BD6E5D000ABF38E /* AppFontWeight.swift in Sources */,
 				627E92DA2BDA10A80016FF73 /* PasswordUI.swift in Sources */,
 				62F6CE652BDE6C9700C4775C /* LanguagePresenter.swift in Sources */,
+				2CE32AD42BDFBFBC004757C5 /* DialogueType.swift in Sources */,
 				62F6CE662BDE6C9700C4775C /* LanguageProtocols.swift in Sources */,
 				62F6CE672BDE6C9700C4775C /* LanguageInteractor.swift in Sources */,
 				62F6CE682BDE6C9700C4775C /* LanguageView.swift in Sources */,
@@ -1851,6 +1898,7 @@
 				2CEC7FBC2BD8D1810050E762 /* RegisterUI.swift in Sources */,
 				62F6CE992BDF519200C4775C /* AutomaticHeightCollectionView.swift in Sources */,
 				2CCF3AB12BD7B29300B3729E /* SignInPresenter.swift in Sources */,
+				2CE32AD22BDFBBA0004757C5 /* DialogueUI.swift in Sources */,
 				2CCF3AB22BD7B29300B3729E /* SignInProtocols.swift in Sources */,
 				2CEC7FBF2BD8F74D0050E762 /* CalendarInputField.swift in Sources */,
 				2CCF3AB32BD7B29300B3729E /* SignInInteractor.swift in Sources */,
