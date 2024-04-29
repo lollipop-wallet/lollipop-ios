@@ -36,4 +36,8 @@ class NewPartnerView: UIViewController, NewPartnerViewProtocol {
     @objc func onBackTap() {
         popBack(2)
     }
+    
+    @objc func onSendTap() {
+        
+    }
 }

@@ -97,9 +97,6 @@ class InputTextViewField: UIView {
     lazy var inputFieldSuplementaryLeftIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
-        }
         return imageView
     }()
     
@@ -111,7 +108,7 @@ class InputTextViewField: UIView {
         return textView
     }()
     
-    lazy var textViewdStack: UIStackView = {
+    lazy var textViewStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [inputFieldSuplementaryLeftIcon, textView])
         stack.axis = .horizontal
         stack.distribution = .fill
@@ -122,8 +119,8 @@ class InputTextViewField: UIView {
     
     lazy var textViewPlaceholder: UIView = {
         let view = UIView()
-        view.addSubview(textViewdStack)
-        textViewdStack.snp.makeConstraints { make in
+        view.addSubview(textViewStack)
+        textViewStack.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(12)
             make.trailing.equalToSuperview().offset(-12)
             make.top.equalToSuperview().offset(14)
@@ -141,7 +138,7 @@ class InputTextViewField: UIView {
         view.layer.borderWidth = 1
         view.layer.borderColor = AppColors.mediumGrey.cgColor
         view.snp.makeConstraints { make in
-            make.height.equalTo(124)
+            make.height.equalTo(96)
         }
         return view
     }()
@@ -164,8 +161,6 @@ class InputTextViewField: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-    }
     
     
     func setup() {
