@@ -69,3 +69,9 @@
 "favorite" = "Favorite";
 "cantSeeFavoriteBrand" = "Can't see favorite brand on the list?";
 "recommendLollipopPartner" = "Recommend Lollipop partner";
+"partnerDetails" = "Partner details";
+"shopName" = "Shop name";
+"enterShopMerchantName" = "Enter shop/merchant name";
+"additionalNote" = "Additional note";
+"enterAddress" = "Enter address";
+"max300Chars" = "Max 300 characters";

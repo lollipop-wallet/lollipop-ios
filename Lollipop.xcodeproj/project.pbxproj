@@ -75,6 +75,13 @@
 		2CDDA7402BDA367000B6C8B5 /* OTPInputProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA73F2BDA367000B6C8B5 /* OTPInputProtocols.swift */; };
 		2CE32AA72BDF66F5004757C5 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AA62BDF66F5004757C5 /* CustomSegmentedControl.swift */; };
 		2CE32AAA2BDF6B3F004757C5 /* PartnersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AA92BDF6B3E004757C5 /* PartnersCollectionViewCell.swift */; };
+		2CE32AB42BDF9E3B004757C5 /* NewPartnerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AAE2BDF9E3B004757C5 /* NewPartnerPresenter.swift */; };
+		2CE32AB52BDF9E3B004757C5 /* NewPartnerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AAF2BDF9E3B004757C5 /* NewPartnerProtocols.swift */; };
+		2CE32AB62BDF9E3B004757C5 /* NewPartnerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AB02BDF9E3B004757C5 /* NewPartnerInteractor.swift */; };
+		2CE32AB72BDF9E3B004757C5 /* NewPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AB12BDF9E3B004757C5 /* NewPartnerView.swift */; };
+		2CE32AB82BDF9E3B004757C5 /* NewPartnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AB22BDF9E3B004757C5 /* NewPartnerModel.swift */; };
+		2CE32AB92BDF9E3B004757C5 /* NewPartnerWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AB32BDF9E3B004757C5 /* NewPartnerWireframe.swift */; };
+		2CE32ABD2BDF9E4B004757C5 /* NewPartnerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32ABC2BDF9E4B004757C5 /* NewPartnerUI.swift */; };
 		2CEC7FB42BD8D1730050E762 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAD2BD8D1730050E762 /* RegisterPresenter.swift */; };
 		2CEC7FB52BD8D1730050E762 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAE2BD8D1730050E762 /* RegisterProtocols.swift */; };
 		2CEC7FB62BD8D1730050E762 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAF2BD8D1730050E762 /* RegisterInteractor.swift */; };
@@ -319,6 +326,13 @@
 		2CDDA73F2BDA367000B6C8B5 /* OTPInputProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputProtocols.swift; sourceTree = "<group>"; };
 		2CE32AA62BDF66F5004757C5 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		2CE32AA92BDF6B3E004757C5 /* PartnersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersCollectionViewCell.swift; sourceTree = "<group>"; };
+		2CE32AAE2BDF9E3B004757C5 /* NewPartnerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPartnerPresenter.swift; sourceTree = "<group>"; };
+		2CE32AAF2BDF9E3B004757C5 /* NewPartnerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPartnerProtocols.swift; sourceTree = "<group>"; };
+		2CE32AB02BDF9E3B004757C5 /* NewPartnerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPartnerInteractor.swift; sourceTree = "<group>"; };
+		2CE32AB12BDF9E3B004757C5 /* NewPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPartnerView.swift; sourceTree = "<group>"; };
+		2CE32AB22BDF9E3B004757C5 /* NewPartnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPartnerModel.swift; sourceTree = "<group>"; };
+		2CE32AB32BDF9E3B004757C5 /* NewPartnerWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPartnerWireframe.swift; sourceTree = "<group>"; };
+		2CE32ABC2BDF9E4B004757C5 /* NewPartnerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPartnerUI.swift; sourceTree = "<group>"; };
 		2CEC7FAD2BD8D1730050E762 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		2CEC7FAE2BD8D1730050E762 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
 		2CEC7FAF2BD8D1730050E762 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
@@ -836,6 +850,43 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		2CE32AAB2BDF9D0A004757C5 /* Partners */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CD972BDBC6D600C4775C /* PartnersPresenter.swift */,
+				62F6CD982BDBC6D600C4775C /* PartnersProtocols.swift */,
+				62F6CD992BDBC6D600C4775C /* PartnersInteractor.swift */,
+				62F6CD9A2BDBC6D600C4775C /* PartnersView.swift */,
+				62F6CD9B2BDBC6D600C4775C /* PartnersModel.swift */,
+				62F6CD9C2BDBC6D600C4775C /* PartnersWireframe.swift */,
+				62F6CDA42BDBC6DE00C4775C /* UI */,
+				2CE32AA82BDF6B33004757C5 /* Cells */,
+			);
+			path = Partners;
+			sourceTree = "<group>";
+		};
+		2CE32AAC2BDF9D18004757C5 /* New partner */ = {
+			isa = PBXGroup;
+			children = (
+				2CE32AAE2BDF9E3B004757C5 /* NewPartnerPresenter.swift */,
+				2CE32AAF2BDF9E3B004757C5 /* NewPartnerProtocols.swift */,
+				2CE32AB02BDF9E3B004757C5 /* NewPartnerInteractor.swift */,
+				2CE32AB12BDF9E3B004757C5 /* NewPartnerView.swift */,
+				2CE32AB22BDF9E3B004757C5 /* NewPartnerModel.swift */,
+				2CE32AB32BDF9E3B004757C5 /* NewPartnerWireframe.swift */,
+				2CE32ABB2BDF9E43004757C5 /* UI */,
+			);
+			path = "New partner";
+			sourceTree = "<group>";
+		};
+		2CE32ABB2BDF9E43004757C5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2CE32ABC2BDF9E4B004757C5 /* NewPartnerUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		2CEC7F9A2BD8D1210050E762 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -1086,14 +1137,8 @@
 		62F6CD952BDBC6C800C4775C /* Partners */ = {
 			isa = PBXGroup;
 			children = (
-				62F6CD972BDBC6D600C4775C /* PartnersPresenter.swift */,
-				62F6CD982BDBC6D600C4775C /* PartnersProtocols.swift */,
-				62F6CD992BDBC6D600C4775C /* PartnersInteractor.swift */,
-				62F6CD9A2BDBC6D600C4775C /* PartnersView.swift */,
-				62F6CD9B2BDBC6D600C4775C /* PartnersModel.swift */,
-				62F6CD9C2BDBC6D600C4775C /* PartnersWireframe.swift */,
-				62F6CDA42BDBC6DE00C4775C /* UI */,
-				2CE32AA82BDF6B33004757C5 /* Cells */,
+				2CE32AAB2BDF9D0A004757C5 /* Partners */,
+				2CE32AAC2BDF9D18004757C5 /* New partner */,
 			);
 			path = Partners;
 			sourceTree = "<group>";
@@ -1719,6 +1764,7 @@
 				2CDDA73B2BDA256100B6C8B5 /* OTPWireframe.swift in Sources */,
 				2CEC7FB42BD8D1730050E762 /* RegisterPresenter.swift in Sources */,
 				2CEC7FB52BD8D1730050E762 /* RegisterProtocols.swift in Sources */,
+				2CE32ABD2BDF9E4B004757C5 /* NewPartnerUI.swift in Sources */,
 				2CEC7FB62BD8D1730050E762 /* RegisterInteractor.swift in Sources */,
 				2CEC7FB72BD8D1730050E762 /* RegisterView.swift in Sources */,
 				2CEC7FB82BD8D1730050E762 /* RegisterModel.swift in Sources */,
@@ -1732,6 +1778,12 @@
 				2CACCDC22BD53D96008178F8 /* CellId.swift in Sources */,
 				2CACCD842BD528F7008178F8 /* LaunchModel.swift in Sources */,
 				627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */,
+				2CE32AB42BDF9E3B004757C5 /* NewPartnerPresenter.swift in Sources */,
+				2CE32AB52BDF9E3B004757C5 /* NewPartnerProtocols.swift in Sources */,
+				2CE32AB62BDF9E3B004757C5 /* NewPartnerInteractor.swift in Sources */,
+				2CE32AB72BDF9E3B004757C5 /* NewPartnerView.swift in Sources */,
+				2CE32AB82BDF9E3B004757C5 /* NewPartnerModel.swift in Sources */,
+				2CE32AB92BDF9E3B004757C5 /* NewPartnerWireframe.swift in Sources */,
 				2CACCDD02BD53E69008178F8 /* NSAttachment+Extension.swift in Sources */,
 				62F6CE412BDE683A00C4775C /* MyCardsPresenter.swift in Sources */,
 				62F6CE422BDE683A00C4775C /* MyCardsProtocols.swift in Sources */,

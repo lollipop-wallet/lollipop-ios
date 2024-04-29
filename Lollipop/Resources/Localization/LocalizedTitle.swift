@@ -80,6 +80,12 @@ enum LocalizedTitle: String {
     case favorite
     case cantSeeFavoriteBrand
     case recommendLollipopPartner
+    case partnerDetails
+    case shopName
+    case enterShopMerchantName
+    case additionalNote
+    case enterAddress
+    case max300Chars
     
 
     var localized: String {

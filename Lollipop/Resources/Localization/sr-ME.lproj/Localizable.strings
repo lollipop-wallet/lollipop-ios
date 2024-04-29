@@ -68,3 +68,9 @@
 "favorite" = "Omiljeno";
 "cantSeeFavoriteBrand" = "Ne vidite omiljeni brend na listi?";
 "recommendLollipopPartner" = "Preporučite Lollipop partnera";
+"partnerDetails" = "Detalji partnera";
+"shopName" = "Naziv radnje";
+"enterShopMerchantName" = "Upišite ime radnje/trgovca";
+"additionalNote" = "Dodatna napomena ";
+"enterAddress" = "Unesite adresu";
+"max300Chars" = "Maksimalno 300 karaktera";
