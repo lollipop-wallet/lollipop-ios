@@ -12,6 +12,7 @@ import UIKit
 class PartnersView: UIViewController, PartnersViewProtocol {
     
     var mainStackView = UIStackView()
+    var collectionView: AutomaticHeightCollectionView?
 
     var presenter: PartnersPresenterProtocol?
 

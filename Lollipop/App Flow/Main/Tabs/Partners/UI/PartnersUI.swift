@@ -40,6 +40,27 @@ extension PartnersView {
             return view
         }()
         
+        self.collectionView = AutomaticHeightCollectionView(frame: .zero, collectionViewLayout: self.createCompositionalLayout())
+        self.collectionView?.register(PartnersCollectionViewCell.self, forCellWithReuseIdentifier: CellId.partnersCell.rawValue)
+        self.collectionView?.delegate = presenter
+        self.collectionView?.dataSource = presenter
+        self.collectionView?.backgroundColor = AppColors.lightGrey
+        self.collectionView?.isScrollEnabled = false
+        self.collectionView?.snp.makeConstraints({ make in
+            make.width.equalTo(self.view.frame.width - 28)
+        })
+        
+        lazy var fillerView: UIView = {
+            let view = UIView()
+            return view
+        }()
+        
+        self.mainStackView = UIStackView(arrangedSubviews: [self.collectionView ?? UICollectionView(), fillerView])
+        self.mainStackView.axis = .vertical
+        self.mainStackView.distribution = .fill
+        self.mainStackView.alignment = .fill
+        self.mainStackView.spacing = 16
+        
         self.view.addSubview(segmentedControl)
         segmentedControl.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
@@ -63,10 +84,29 @@ extension PartnersView {
         
         contentView.addSubview(mainStackView)
         mainStackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(21)
-            make.leading.trailing.equalToSuperview()
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview().offset(6)
+            make.trailing.equalToSuperview().offset(-14)
             make.bottom.equalToSuperview()
         }
     }
 }
 
+extension PartnersView {
+    func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
+       return UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
+           return self.generateFlowLayout()
+      }
+   }
+   
+    private func generateFlowLayout() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.33), heightDimension: .fractionalWidth(0.23))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .init(top: 6, leading: 12, bottom: 6, trailing: 0)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(500))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .none
+        return section
+   }
+}
