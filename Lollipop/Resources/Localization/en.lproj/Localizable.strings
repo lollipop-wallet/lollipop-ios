@@ -64,3 +64,8 @@
 "mne" = "Montenegrin";
 "eng" = "English";
 "chooseAppLanguage" = "Choose app language";
+"ourPartners" = "Our partners";
+"all" = "All";
+"favorite" = "Favorite";
+"cantSeeFavoriteBrand" = "Can't see favorite brand on the list?";
+"recommendLollipopPartner" = "Recommend Lollipop partner";

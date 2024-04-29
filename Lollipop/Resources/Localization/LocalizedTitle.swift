@@ -75,6 +75,11 @@ enum LocalizedTitle: String {
     case mne
     case eng
     case chooseAppLanguage
+    case ourPartners
+    case all
+    case favorite
+    case cantSeeFavoriteBrand
+    case recommendLollipopPartner
     
 
     var localized: String {
