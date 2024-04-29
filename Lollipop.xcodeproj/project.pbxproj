@@ -73,6 +73,7 @@
 		2CDDA73B2BDA256100B6C8B5 /* OTPWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA7342BDA256100B6C8B5 /* OTPWireframe.swift */; };
 		2CDDA73E2BDA257600B6C8B5 /* OTPUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA73D2BDA257600B6C8B5 /* OTPUI.swift */; };
 		2CDDA7402BDA367000B6C8B5 /* OTPInputProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA73F2BDA367000B6C8B5 /* OTPInputProtocols.swift */; };
+		2CE32AA72BDF66F5004757C5 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AA62BDF66F5004757C5 /* CustomSegmentedControl.swift */; };
 		2CEC7FB42BD8D1730050E762 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAD2BD8D1730050E762 /* RegisterPresenter.swift */; };
 		2CEC7FB52BD8D1730050E762 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAE2BD8D1730050E762 /* RegisterProtocols.swift */; };
 		2CEC7FB62BD8D1730050E762 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FAF2BD8D1730050E762 /* RegisterInteractor.swift */; };
@@ -315,6 +316,7 @@
 		2CDDA7342BDA256100B6C8B5 /* OTPWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPWireframe.swift; sourceTree = "<group>"; };
 		2CDDA73D2BDA257600B6C8B5 /* OTPUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPUI.swift; sourceTree = "<group>"; };
 		2CDDA73F2BDA367000B6C8B5 /* OTPInputProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputProtocols.swift; sourceTree = "<group>"; };
+		2CE32AA62BDF66F5004757C5 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		2CEC7FAD2BD8D1730050E762 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		2CEC7FAE2BD8D1730050E762 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
 		2CEC7FAF2BD8D1730050E762 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
@@ -816,6 +818,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		2CE32AA52BDF66E8004757C5 /* UISegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				2CE32AA62BDF66F5004757C5 /* CustomSegmentedControl.swift */,
+			);
+			path = UISegmentedControl;
+			sourceTree = "<group>";
+		};
 		2CEC7F9A2BD8D1210050E762 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -900,6 +910,7 @@
 		627E92B82BD847750016FF73 /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
+				2CE32AA52BDF66E8004757C5 /* UISegmentedControl */,
 				62F6CE972BDF517200C4775C /* UICollectionView */,
 				62F6CDDE2BDD3AA800C4775C /* UITableView */,
 				627E92B92BD847820016FF73 /* Input fields */,
@@ -1623,6 +1634,7 @@
 				62F6CE8B2BDE6F7E00C4775C /* FavoriteShopsInteractor.swift in Sources */,
 				62F6CE8C2BDE6F7E00C4775C /* FavoriteShopsView.swift in Sources */,
 				62F6CE8D2BDE6F7E00C4775C /* FavoriteShopsModel.swift in Sources */,
+				2CE32AA72BDF66F5004757C5 /* CustomSegmentedControl.swift in Sources */,
 				62F6CE912BDE6F9000C4775C /* FavoriteShopsUI.swift in Sources */,
 				62F6CE8E2BDE6F7E00C4775C /* FavoriteShopsWireframe.swift in Sources */,
 				62F6CDA22BDBC6D600C4775C /* PartnersWireframe.swift in Sources */,
