@@ -12,6 +12,7 @@ class DialogueWireframe: DialogueWireframeProtocol {
     static var icon: String?
     static var title: String?
     static var subtitle: String?
+    static var buttonTitle: String?
     static var type: DialogueType?
     static var delegate: DialogueControllerProtocol? 
     

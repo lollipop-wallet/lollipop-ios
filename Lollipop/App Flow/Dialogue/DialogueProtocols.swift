@@ -29,7 +29,7 @@ protocol DialogueInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol DialogueOutputInteractorProtocol: AnyObject {
-    func takeDataWith(icon: String, title:  String, subtitle: String, type: DialogueType?, delegate: DialogueControllerProtocol?)
+    func takeDataWith(icon: String, title:  String, subtitle: String, buttonTitle: String?, type: DialogueType?, delegate: DialogueControllerProtocol?)
 }
 //MARK: View
 protocol DialogueViewProtocol: AnyObject {
@@ -46,6 +46,7 @@ protocol DialogueWireframeProtocol: AnyObject {
     static var icon: String? { get set }
     static var title: String? { get set }
     static var subtitle: String? { get set }
+    static var buttonTitle: String? { get set }
     static var type: DialogueType? { get set }
     static var delegate: DialogueControllerProtocol? { get set }
 }

@@ -27,12 +27,6 @@ class PartnersView: UIViewController, PartnersViewProtocol {
     }
     
     @objc func onRecommendPartnerTap() {
-        //presenter?.suggestPartner()
-        let vc = DialogueView()
-        DialogueWireframe.icon = AssetTitles.illustrationSuccessIcon
-        DialogueWireframe.title = LocalizedTitle.thanksForSuggestionTitle.localized
-        DialogueWireframe.subtitle = LocalizedTitle.thanksForSuggestionSubtitle.localized
-        DialogueWireframe.type = .dismissive
-        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+        presenter?.suggestPartner()
     }
 }
