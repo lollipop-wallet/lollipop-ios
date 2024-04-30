@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class MyShopsPresenter: MyShopsPresenterProtocol  {
+class MyShopsPresenter: NSObject, MyShopsPresenterProtocol  {
     
     var interactor : MyShopsInputInteractorProtocol?
     weak var view: MyShopsViewProtocol?
@@ -17,4 +17,20 @@ class MyShopsPresenter: MyShopsPresenterProtocol  {
 
 extension MyShopsPresenter: MyShopsOutputInteractorProtocol {
     
+}
+
+//MARK: UITableViewDelegate&Datasource
+extension MyShopsPresenter {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 9
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellId.myShopsCell.rawValue, for: indexPath) as! MyShopsTableViewCell
+        cell.configureWith(index: indexPath, delegate: self)
+        return cell
+    }
+    
+    func didSelectItemAt(index: IndexPath) {
+    }
 }

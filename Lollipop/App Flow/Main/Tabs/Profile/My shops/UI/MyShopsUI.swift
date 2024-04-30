@@ -40,11 +40,25 @@ extension MyShopsView {
             return label
         }()
         
+        self.tableView.separatorStyle = .none
+        self.tableView.register(MyShopsTableViewCell.self, forCellReuseIdentifier: CellId.myShopsCell.rawValue)
+        self.tableView.delegate = presenter
+        self.tableView.dataSource = presenter
+        self.tableView.backgroundColor = AppColors.lightGrey
+        
         self.view.addSubview(chooseFavoritesLabel)
         chooseFavoritesLabel.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(6)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
+        }
+        
+        self.view.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints { make in
+            make.top.equalTo(chooseFavoritesLabel.snp.bottom).offset(24)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview()
         }
     }
 }

@@ -6,11 +6,11 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol MyShopsPresenterProtocol: AnyObject {
+protocol MyShopsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, MyShopsCellProtocol{
     
     var interactor: MyShopsInputInteractorProtocol? { get set }
     var view: MyShopsViewProtocol? { get set }

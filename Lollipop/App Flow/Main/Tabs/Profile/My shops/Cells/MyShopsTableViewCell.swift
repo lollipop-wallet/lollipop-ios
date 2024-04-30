@@ -26,13 +26,23 @@ class MyShopsTableViewCell: UITableViewCell {
     
     lazy var shopImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.snp.makeConstraints { make in
-            make.width.equalTo(72)
-        }
-        imageView.layer.cornerRadius = 8
-        imageView.layer.masksToBounds = true
-        imageView.backgroundColor = .red
         return imageView
+    }()
+    
+    lazy var shopImageContainer: UIView = {
+        let view = UIView()
+        view.addSubview(shopImageView)
+        shopImageView.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+        view.layer.cornerRadius = 8
+        view.layer.masksToBounds = true
+        view.snp.makeConstraints { make in
+            make.width.equalTo(72)
+            make.height.equalTo(47)
+        }
+        view.backgroundColor = .red
+        return view
     }()
     
     lazy var checkBoxIcon: UIImageView = {
@@ -65,7 +75,7 @@ class MyShopsTableViewCell: UITableViewCell {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .inter(ofSize: 16, name: .regular)
+        label.font = .inter(ofSize: 18, name: .semibold)
         label.textColor = AppColors.black
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -75,11 +85,11 @@ class MyShopsTableViewCell: UITableViewCell {
     
     
     lazy var shopStackStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [shopImageView, titleLabel, checkBoxContainerView])
+        let stack = UIStackView(arrangedSubviews: [shopImageContainer, titleLabel, checkBoxContainerView])
         stack.axis = .horizontal
         stack.alignment = .center
         stack.distribution = .fill
-        stack.spacing = 13
+        stack.spacing = 16
         return stack
     }()
     
@@ -87,8 +97,8 @@ class MyShopsTableViewCell: UITableViewCell {
         let view = UIView()
         view.addSubview(shopStackStack)
         shopStackStack.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().offset(16)
-            make.bottom.trailing.equalToSuperview().offset(-16)
+            make.leading.top.equalToSuperview().offset(12)
+            make.bottom.trailing.equalToSuperview().offset(-12)
         }
         view.layer.cornerRadius = 12
         view.layer.masksToBounds = true
@@ -137,6 +147,8 @@ class MyShopsTableViewCell: UITableViewCell {
         //self.titleLabel.text = item.title
         //self.iconImageView.image = UIImage(named: item.flag)
         //self.checkBoxIcon.image = UIImage(named: item.selected ? AssetTitles.radioSelectedIcon : AssetTitles.radioUnselectedIcon)
+        self.titleLabel.text = "Dameo"
+        self.checkBoxIcon.image = UIImage(named: AssetTitles.checkBoxUnselectedIcon)
     }
     
     //MARK: Actions
