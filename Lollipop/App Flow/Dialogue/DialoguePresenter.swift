@@ -25,5 +25,9 @@ extension DialoguePresenter: DialogueOutputInteractorProtocol {
     func takeDataWith(icon: String, title:  String, subtitle: String, type: DialogueType?, delegate: DialogueControllerProtocol?){
         self.type = type
         self.delegate = delegate
+        self.view?.setIconWith(icon: icon)
+        self.view?.setTitleWith(title: title)
+        self.view?.setSubtitleWith(subtitle: subtitle)
+        self.view?.setButtonTitleWith(buttonTitle: type == .dismissive ? LocalizedTitle.ok.localized : LocalizedTitle.tryAgain.localized)
     }
 }

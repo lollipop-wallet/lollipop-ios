@@ -9,11 +9,11 @@ import UIKit
 
 class DialogueWireframe: DialogueWireframeProtocol {
     
-    static var icon: String? { get set }
-    static var title: String? { get set }
-    static var subtitle: String? { get set }
-    static var type: DialogueType? { get set }
-    static var delegate: DialogueControllerProtocol? { get set }
+    static var icon: String?
+    static var title: String?
+    static var subtitle: String?
+    static var type: DialogueType?
+    static var delegate: DialogueControllerProtocol? 
     
     static func createModule(DialogueRef: DialogueView) {
         let presenter: DialoguePresenterProtocol & DialogueOutputInteractorProtocol = DialoguePresenter()

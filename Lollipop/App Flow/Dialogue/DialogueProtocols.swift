@@ -36,6 +36,10 @@ protocol DialogueViewProtocol: AnyObject {
     
     var presenter: DialoguePresenterProtocol?  { get set }
     
+    func setIconWith(icon: String)
+    func setTitleWith(title: String)
+    func setSubtitleWith(subtitle: String)
+    func setButtonTitleWith(buttonTitle: String)
 }
 //MARK: Wireframe
 protocol DialogueWireframeProtocol: AnyObject {

@@ -24,6 +24,41 @@ class DialogueView: UIViewController, DialogueViewProtocol {
         presenter?.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    //MARK: DialogueView Protocol
+    
+    func setIconWith(icon: String){
+        DispatchQueue.main.async {
+            self.iconView.image = UIImage(named: icon)
+        }
+    }
+    
+    func setTitleWith(title: String){
+        DispatchQueue.main.async {
+            self.titleLabel.text = title
+        }
+    }
+    
+    func setSubtitleWith(subtitle: String){
+        DispatchQueue.main.async {
+            self.subtitleLabel.text = subtitle
+        }
+    }
+    
+    func setButtonTitleWith(buttonTitle: String){
+        DispatchQueue.main.async {
+            self.actionButton.setTitle(buttonTitle, for: .normal)
+        }
+    }
+    
     //MARK: Actions
     @objc func onBackTap() {
         popBack(2)
