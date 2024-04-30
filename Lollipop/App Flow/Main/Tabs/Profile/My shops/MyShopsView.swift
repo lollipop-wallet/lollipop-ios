@@ -10,6 +10,8 @@
 import UIKit
 
 class MyShopsView: UIViewController, MyShopsViewProtocol {
+    
+    var tableView = UITableView()
 
     var presenter: MyShopsPresenterProtocol?
 

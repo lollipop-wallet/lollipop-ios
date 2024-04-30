@@ -73,6 +73,7 @@
 		2CDDA73B2BDA256100B6C8B5 /* OTPWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA7342BDA256100B6C8B5 /* OTPWireframe.swift */; };
 		2CDDA73E2BDA257600B6C8B5 /* OTPUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA73D2BDA257600B6C8B5 /* OTPUI.swift */; };
 		2CDDA7402BDA367000B6C8B5 /* OTPInputProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA73F2BDA367000B6C8B5 /* OTPInputProtocols.swift */; };
+		2CE072272BE0F05300768C73 /* MyShopsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE072262BE0F05300768C73 /* MyShopsTableViewCell.swift */; };
 		2CE32AA72BDF66F5004757C5 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AA62BDF66F5004757C5 /* CustomSegmentedControl.swift */; };
 		2CE32AAA2BDF6B3F004757C5 /* PartnersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AA92BDF6B3E004757C5 /* PartnersCollectionViewCell.swift */; };
 		2CE32AB42BDF9E3B004757C5 /* NewPartnerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AAE2BDF9E3B004757C5 /* NewPartnerPresenter.swift */; };
@@ -333,6 +334,7 @@
 		2CDDA7342BDA256100B6C8B5 /* OTPWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPWireframe.swift; sourceTree = "<group>"; };
 		2CDDA73D2BDA257600B6C8B5 /* OTPUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPUI.swift; sourceTree = "<group>"; };
 		2CDDA73F2BDA367000B6C8B5 /* OTPInputProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputProtocols.swift; sourceTree = "<group>"; };
+		2CE072262BE0F05300768C73 /* MyShopsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsTableViewCell.swift; sourceTree = "<group>"; };
 		2CE32AA62BDF66F5004757C5 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		2CE32AA92BDF6B3E004757C5 /* PartnersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CE32AAE2BDF9E3B004757C5 /* NewPartnerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPartnerPresenter.swift; sourceTree = "<group>"; };
@@ -854,6 +856,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		2CE072252BE0F03E00768C73 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2CE072262BE0F05300768C73 /* MyShopsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		2CE32AA52BDF66E8004757C5 /* UISegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -1028,6 +1038,7 @@
 				626906AC2BE0A8D100BF5F62 /* MyShopsModel.swift */,
 				626906AD2BE0A8D100BF5F62 /* MyShopsWireframe.swift */,
 				626906B52BE0A8D800BF5F62 /* UI */,
+				2CE072252BE0F03E00768C73 /* Cells */,
 			);
 			path = "My shops";
 			sourceTree = "<group>";
@@ -1827,6 +1838,7 @@
 				2CACCDC82BD53DDD008178F8 /* StorageKeys.swift in Sources */,
 				62F6CE6D2BDE6CA600C4775C /* LanguageUI.swift in Sources */,
 				2CACCDC02BD53D7D008178F8 /* Helper.swift in Sources */,
+				2CE072272BE0F05300768C73 /* MyShopsTableViewCell.swift in Sources */,
 				2CACCDC22BD53D96008178F8 /* CellId.swift in Sources */,
 				2CACCD842BD528F7008178F8 /* LaunchModel.swift in Sources */,
 				627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */,
