@@ -13,8 +13,17 @@ class DialoguePresenter: DialoguePresenterProtocol  {
     weak var view: DialogueViewProtocol?
     var wireframe: DialogueWireframeProtocol?
     
+    var type: DialogueType?
+    var delegate: DialogueControllerProtocol?
+    
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
 }
 
 extension DialoguePresenter: DialogueOutputInteractorProtocol {
-    
+    func takeDataWith(icon: String, title:  String, subtitle: String, type: DialogueType?, delegate: DialogueControllerProtocol?){
+        self.type = type
+        self.delegate = delegate
+    }
 }

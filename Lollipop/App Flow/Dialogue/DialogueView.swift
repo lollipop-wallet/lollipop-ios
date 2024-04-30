@@ -21,6 +21,7 @@ class DialogueView: UIViewController, DialogueViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
     
     //MARK: Actions
