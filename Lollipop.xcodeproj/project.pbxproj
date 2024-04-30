@@ -74,6 +74,7 @@
 		2CDDA73E2BDA257600B6C8B5 /* OTPUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA73D2BDA257600B6C8B5 /* OTPUI.swift */; };
 		2CDDA7402BDA367000B6C8B5 /* OTPInputProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA73F2BDA367000B6C8B5 /* OTPInputProtocols.swift */; };
 		2CE072272BE0F05300768C73 /* MyShopsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE072262BE0F05300768C73 /* MyShopsTableViewCell.swift */; };
+		2CE0722A2BE0F73000768C73 /* MyCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE072292BE0F73000768C73 /* MyCardsTableViewCell.swift */; };
 		2CE32AA72BDF66F5004757C5 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AA62BDF66F5004757C5 /* CustomSegmentedControl.swift */; };
 		2CE32AAA2BDF6B3F004757C5 /* PartnersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AA92BDF6B3E004757C5 /* PartnersCollectionViewCell.swift */; };
 		2CE32AB42BDF9E3B004757C5 /* NewPartnerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE32AAE2BDF9E3B004757C5 /* NewPartnerPresenter.swift */; };
@@ -335,6 +336,7 @@
 		2CDDA73D2BDA257600B6C8B5 /* OTPUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPUI.swift; sourceTree = "<group>"; };
 		2CDDA73F2BDA367000B6C8B5 /* OTPInputProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputProtocols.swift; sourceTree = "<group>"; };
 		2CE072262BE0F05300768C73 /* MyShopsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsTableViewCell.swift; sourceTree = "<group>"; };
+		2CE072292BE0F73000768C73 /* MyCardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsTableViewCell.swift; sourceTree = "<group>"; };
 		2CE32AA62BDF66F5004757C5 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		2CE32AA92BDF6B3E004757C5 /* PartnersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CE32AAE2BDF9E3B004757C5 /* NewPartnerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPartnerPresenter.swift; sourceTree = "<group>"; };
@@ -860,6 +862,14 @@
 			isa = PBXGroup;
 			children = (
 				2CE072262BE0F05300768C73 /* MyShopsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2CE072282BE0F71C00768C73 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2CE072292BE0F73000768C73 /* MyCardsTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1428,6 +1438,7 @@
 				62F6CE3D2BDE683A00C4775C /* MyCardsView.swift */,
 				62F6CE3E2BDE683A00C4775C /* MyCardsModel.swift */,
 				62F6CE3F2BDE683A00C4775C /* MyCardsWireframe.swift */,
+				2CE072282BE0F71C00768C73 /* Cells */,
 				62F6CE472BDE684600C4775C /* UI */,
 			);
 			path = "My cards";
@@ -1881,6 +1892,7 @@
 				62F6CE932BDEA36100C4775C /* LanCode.swift in Sources */,
 				62F6CE692BDE6C9700C4775C /* LanguageModel.swift in Sources */,
 				62F6CE6A2BDE6C9700C4775C /* LanguageWireframe.swift in Sources */,
+				2CE0722A2BE0F73000768C73 /* MyCardsTableViewCell.swift in Sources */,
 				2CACCDE92BD540C9008178F8 /* RemoteConfigManager.swift in Sources */,
 				2CACCDCE2BD53E58008178F8 /* Int+Extension.swift in Sources */,
 				62F6CDAF2BDBC74B00C4775C /* LollipopPresenter.swift in Sources */,
