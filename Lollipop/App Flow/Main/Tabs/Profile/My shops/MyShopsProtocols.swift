@@ -42,3 +42,9 @@ protocol MyShopsWireframeProtocol: AnyObject {
 
     
 }
+
+
+//MARK: MyShopsCell protocol
+protocol MyShopsCellProtocol: AnyObject {
+    func didSelectItemAt(index: IndexPath)
+}
