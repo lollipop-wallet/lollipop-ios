@@ -46,7 +46,7 @@ class ProfileWireframe: ProfileWireframeProtocol {
     }
     
     func toMyShops(){
-        let vc = FavoriteShopsView()
+        let vc = MyShopsView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

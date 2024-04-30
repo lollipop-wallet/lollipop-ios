@@ -1,19 +1,19 @@
 
 //
-//  FavoriteShopsView.swift
+//  MyShopsView.swift
 //  Lollipop
 //
-//  Created Aleksandar Draskovic on 28/04/2024.
+//  Created Aleksandar Draskovic on 30/04/2024.
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 //
 import UIKit
 
-class FavoriteShopsView: UIViewController, FavoriteShopsViewProtocol {
+class MyShopsView: UIViewController, MyShopsViewProtocol {
 
-    var presenter: FavoriteShopsPresenterProtocol?
+    var presenter: MyShopsPresenterProtocol?
 
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
@@ -31,4 +31,5 @@ class FavoriteShopsView: UIViewController, FavoriteShopsViewProtocol {
     @objc func onBackTap() {
         popBack(2)
     }
+
 }

@@ -1,16 +1,16 @@
 //
-//  FavoriteShopsUI.swift
+//  MyShopsUI.swift
 //  Lollipop
 //
-//  Created by Aleksandar Draskovic on 28/04/2024.
+//  Created by Aleksandar Draskovic on 30/04/2024.
 //
 
 import UIKit
 
-extension FavoriteShopsView {
+extension MyShopsView {
     func setup() {
         self.view.backgroundColor = AppColors.lightGrey
-        FavoriteShopsWireframe.createModule(FavoriteShopsRef: self)
+        MyShopsWireframe.createModule(MyShopsRef: self)
         
         let appearance = UINavigationBarAppearance()
         appearance.largeTitleTextAttributes = [.foregroundColor: AppColors.black, .font : UIFont.inter(ofSize: 30, name: .bold)]
@@ -18,7 +18,7 @@ extension FavoriteShopsView {
         appearance.setBackIndicatorImage(imgBackArrow, transitionMaskImage: imgBackArrow)
         navigationItem.standardAppearance = appearance
         UINavigationBar.appearance().layoutMargins.left = 20
-        self.navigationItem.title = LocalizedTitle.favoriteShops.localized
+        self.navigationItem.title = LocalizedTitle.myShops.localized
         
         lazy var backButton: UIBarButtonItem = {
             let button = UIBarButtonItem()
