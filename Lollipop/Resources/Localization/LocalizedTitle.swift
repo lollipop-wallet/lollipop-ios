@@ -92,6 +92,7 @@ enum LocalizedTitle: String {
     case thanksForSuggestionSubtitle
     case ok
     case tryAgain
+    case chooseFavorites
 
     var localized: String {
         return self.rawValue.localized()

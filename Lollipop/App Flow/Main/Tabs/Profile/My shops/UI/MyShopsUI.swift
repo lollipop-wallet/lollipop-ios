@@ -30,5 +30,21 @@ extension MyShopsView {
         }()
         
         self.navigationItem.leftBarButtonItems = [backButton]
+        
+        lazy var chooseFavoritesLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .regular)
+            label.textAlignment = .left
+            label.textColor = AppColors.black
+            label.text = LocalizedTitle.chooseFavorites.localized
+            return label
+        }()
+        
+        self.view.addSubview(chooseFavoritesLabel)
+        chooseFavoritesLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(6)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+        }
     }
 }

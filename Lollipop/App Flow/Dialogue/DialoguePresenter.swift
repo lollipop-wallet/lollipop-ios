@@ -28,6 +28,6 @@ extension DialoguePresenter: DialogueOutputInteractorProtocol {
         self.view?.setIconWith(icon: icon)
         self.view?.setTitleWith(title: title)
         self.view?.setSubtitleWith(subtitle: subtitle)
-        self.view?.setButtonTitleWith(buttonTitle: buttonTitle)
+        self.view?.setButtonTitleWith(buttonTitle: buttonTitle ?? "")
     }
 }
