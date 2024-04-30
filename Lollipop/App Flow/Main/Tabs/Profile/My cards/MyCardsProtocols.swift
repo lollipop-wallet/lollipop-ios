@@ -42,3 +42,7 @@ protocol MyCardsWireframeProtocol: AnyObject {
 
     
 }
+
+//MARK: MyCardsCell Protocol
+protocol MyCardsCellProtocol: AnyObject {
+}
