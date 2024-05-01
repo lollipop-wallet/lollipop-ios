@@ -1,6 +1,6 @@
 
 //
-//  EditCardView.swift
+//  DeleteCardView.swift
 //  Lollipop
 //
 //  Created Aleksandar Draskovic on 1.5.24..
@@ -9,15 +9,9 @@
 //
 import UIKit
 
-class EditCardView: UIViewController, EditCardViewProtocol {
-    
-    var cardImageView = UIImageView()
-    var cardNameField = InputField()
-    var cardNumberField = InputField()
-    var cardBarcodeField = InputField()
-    var cardNotesField = InputTextViewField()
+class DeleteCardView: UIViewController, DeleteCardViewProtocol {
 
-    var presenter: EditCardPresenterProtocol?
+    var presenter: DeleteCardPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +32,12 @@ class EditCardView: UIViewController, EditCardViewProtocol {
         popBack(2)
     }
     
-    @objc func onDeleteTap() {
-        presenter?.delete()
-    }
-    
-    @objc func onSaveTap() {
+    @objc func onDeleteCardTap() {
         
     }
+    
+    @objc func onQuitTap() {
+        popBack(2)
+    }
+
 }

@@ -21,6 +21,13 @@
 		2CA1954F2BE23D8200CC10F5 /* EditCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195482BE23D8200CC10F5 /* EditCardModel.swift */; };
 		2CA195502BE23D8200CC10F5 /* EditCardWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195492BE23D8200CC10F5 /* EditCardWireframe.swift */; };
 		2CA195532BE23D9300CC10F5 /* EditCardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195522BE23D9300CC10F5 /* EditCardUI.swift */; };
+		2CA1955D2BE2475600CC10F5 /* DeleteCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195562BE2475600CC10F5 /* DeleteCardPresenter.swift */; };
+		2CA1955E2BE2475600CC10F5 /* DeleteCardProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195572BE2475600CC10F5 /* DeleteCardProtocols.swift */; };
+		2CA1955F2BE2475600CC10F5 /* DeleteCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195582BE2475600CC10F5 /* DeleteCardInteractor.swift */; };
+		2CA195602BE2475600CC10F5 /* DeleteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195592BE2475600CC10F5 /* DeleteCardView.swift */; };
+		2CA195612BE2475600CC10F5 /* DeleteCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA1955A2BE2475600CC10F5 /* DeleteCardModel.swift */; };
+		2CA195622BE2475600CC10F5 /* DeleteCardWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA1955B2BE2475600CC10F5 /* DeleteCardWireframe.swift */; };
+		2CA195652BE2476300CC10F5 /* DeleteCardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195642BE2476300CC10F5 /* DeleteCardUI.swift */; };
 		2CACCD2C2BD51C81008178F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD2B2BD51C81008178F8 /* AppDelegate.swift */; };
 		2CACCD352BD51C83008178F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CACCD342BD51C83008178F8 /* Assets.xcassets */; };
 		2CACCD382BD51C83008178F8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2CACCD372BD51C83008178F8 /* Base */; };
@@ -297,6 +304,13 @@
 		2CA195482BE23D8200CC10F5 /* EditCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardModel.swift; sourceTree = "<group>"; };
 		2CA195492BE23D8200CC10F5 /* EditCardWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardWireframe.swift; sourceTree = "<group>"; };
 		2CA195522BE23D9300CC10F5 /* EditCardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardUI.swift; sourceTree = "<group>"; };
+		2CA195562BE2475600CC10F5 /* DeleteCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCardPresenter.swift; sourceTree = "<group>"; };
+		2CA195572BE2475600CC10F5 /* DeleteCardProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCardProtocols.swift; sourceTree = "<group>"; };
+		2CA195582BE2475600CC10F5 /* DeleteCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCardInteractor.swift; sourceTree = "<group>"; };
+		2CA195592BE2475600CC10F5 /* DeleteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCardView.swift; sourceTree = "<group>"; };
+		2CA1955A2BE2475600CC10F5 /* DeleteCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCardModel.swift; sourceTree = "<group>"; };
+		2CA1955B2BE2475600CC10F5 /* DeleteCardWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCardWireframe.swift; sourceTree = "<group>"; };
+		2CA195642BE2476300CC10F5 /* DeleteCardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCardUI.swift; sourceTree = "<group>"; };
 		2CACCD282BD51C81008178F8 /* Lollipop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lollipop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CACCD2B2BD51C81008178F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CACCD342BD51C83008178F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -618,6 +632,28 @@
 			isa = PBXGroup;
 			children = (
 				2CA195522BE23D9300CC10F5 /* EditCardUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2CA195542BE2474900CC10F5 /* Delete card */ = {
+			isa = PBXGroup;
+			children = (
+				2CA195562BE2475600CC10F5 /* DeleteCardPresenter.swift */,
+				2CA195572BE2475600CC10F5 /* DeleteCardProtocols.swift */,
+				2CA195582BE2475600CC10F5 /* DeleteCardInteractor.swift */,
+				2CA195592BE2475600CC10F5 /* DeleteCardView.swift */,
+				2CA1955A2BE2475600CC10F5 /* DeleteCardModel.swift */,
+				2CA1955B2BE2475600CC10F5 /* DeleteCardWireframe.swift */,
+				2CA195632BE2475D00CC10F5 /* UI */,
+			);
+			path = "Delete card";
+			sourceTree = "<group>";
+		};
+		2CA195632BE2475D00CC10F5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2CA195642BE2476300CC10F5 /* DeleteCardUI.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1559,6 +1595,7 @@
 				62EB74B22BE1FFFD0088906A /* Reorder cards */,
 				2CA195302BE2139000CC10F5 /* Card details */,
 				2CA195422BE23D7200CC10F5 /* Edit card */,
+				2CA195542BE2474900CC10F5 /* Delete card */,
 			);
 			path = "My cards";
 			sourceTree = "<group>";
@@ -1938,6 +1975,12 @@
 				2CACCD802BD528F7008178F8 /* LaunchPresenter.swift in Sources */,
 				2CACCD812BD528F7008178F8 /* LaunchProtocols.swift in Sources */,
 				2CACCDC42BD53DAE008178F8 /* LinkType.swift in Sources */,
+				2CA1955D2BE2475600CC10F5 /* DeleteCardPresenter.swift in Sources */,
+				2CA1955E2BE2475600CC10F5 /* DeleteCardProtocols.swift in Sources */,
+				2CA1955F2BE2475600CC10F5 /* DeleteCardInteractor.swift in Sources */,
+				2CA195602BE2475600CC10F5 /* DeleteCardView.swift in Sources */,
+				2CA195612BE2475600CC10F5 /* DeleteCardModel.swift in Sources */,
+				2CA195622BE2475600CC10F5 /* DeleteCardWireframe.swift in Sources */,
 				62F6CDE32BDD3AE900C4775C /* ProfileTableViewCell.swift in Sources */,
 				2CACCD822BD528F7008178F8 /* LaunchInteractor.swift in Sources */,
 				62F6CDA62BDBC6E600C4775C /* PartnersUI.swift in Sources */,
@@ -1995,6 +2038,7 @@
 				2CACCDD02BD53E69008178F8 /* NSAttachment+Extension.swift in Sources */,
 				62F6CE412BDE683A00C4775C /* MyCardsPresenter.swift in Sources */,
 				626906AE2BE0A8D100BF5F62 /* MyShopsPresenter.swift in Sources */,
+				2CA195652BE2476300CC10F5 /* DeleteCardUI.swift in Sources */,
 				626906AF2BE0A8D100BF5F62 /* MyShopsProtocols.swift in Sources */,
 				626906B02BE0A8D100BF5F62 /* MyShopsInteractor.swift in Sources */,
 				626906B12BE0A8D100BF5F62 /* MyShopsView.swift in Sources */,

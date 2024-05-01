@@ -19,4 +19,9 @@ class EditCardWireframe: EditCardWireframeProtocol {
         EditCardRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toDelete(){
+        let vc = DeleteCardView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: self)
+    }
 }

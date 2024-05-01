@@ -16,6 +16,7 @@ protocol EditCardPresenterProtocol: AnyObject {
     var view: EditCardViewProtocol? { get set }
     var wireframe:EditCardWireframeProtocol? { get set }
     
+    func delete()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -39,6 +40,5 @@ protocol EditCardViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol EditCardWireframeProtocol: AnyObject {
-
-    
+    func toDelete()
 }

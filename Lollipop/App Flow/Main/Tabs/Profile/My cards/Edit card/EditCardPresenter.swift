@@ -13,6 +13,9 @@ class EditCardPresenter: EditCardPresenterProtocol  {
     weak var view: EditCardViewProtocol?
     var wireframe: EditCardWireframeProtocol?
     
+    func delete(){
+        wireframe?.toDelete()
+    }
 }
 
 extension EditCardPresenter: EditCardOutputInteractorProtocol {
