@@ -198,7 +198,7 @@ extension CardDetailsView {
         lazy var editButton: UIButton = {
             let button = UIButton()
             button.addTarget(self, action: #selector(onEditTap), for: .touchUpInside)
-            button.setTitle(LocalizedTitle.save.localized, for: .normal)
+            button.setTitle(LocalizedTitle.edit.localized, for: .normal)
             button.backgroundColor = AppColors.brandPrimary
             button.titleLabel?.font = .inter(ofSize: 16, name: .medium)
             button.setTitleColor(AppColors.white, for: .normal)
