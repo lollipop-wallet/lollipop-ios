@@ -93,6 +93,14 @@ enum LocalizedTitle: String {
     case ok
     case tryAgain
     case chooseFavorites
+    case handpickedCards
+    case otherCards
+    case sort
+    case sortCardBy
+    case cardName
+    case manually
+    case editCardsOrder
+    case done
 
     var localized: String {
         return self.rawValue.localized()
