@@ -90,3 +90,7 @@
 "editCardsOrder" = "Uredi raspored kartica";
 "done" = "Gotovo";
 "addCard" = "Dodaj karticu";
+"cardDetails" = "Detalji kartice";
+"barcode" = "Bar-kod broj";
+"notes" = "Bilješke";
+"edit" = "Uredi";

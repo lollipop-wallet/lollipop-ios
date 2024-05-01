@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CA195392BE213A000CC10F5 /* CardDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */; };
+		2CA1953A2BE213A000CC10F5 /* CardDetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */; };
+		2CA1953B2BE213A000CC10F5 /* CardDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */; };
+		2CA1953C2BE213A000CC10F5 /* CardDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195352BE213A000CC10F5 /* CardDetailsView.swift */; };
+		2CA1953D2BE213A000CC10F5 /* CardDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195362BE213A000CC10F5 /* CardDetailsModel.swift */; };
+		2CA1953E2BE213A000CC10F5 /* CardDetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195372BE213A000CC10F5 /* CardDetailsWireframe.swift */; };
+		2CA195412BE213B100CC10F5 /* CardDetailsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195402BE213B100CC10F5 /* CardDetailsUI.swift */; };
 		2CACCD2C2BD51C81008178F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD2B2BD51C81008178F8 /* AppDelegate.swift */; };
 		2CACCD352BD51C83008178F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CACCD342BD51C83008178F8 /* Assets.xcassets */; };
 		2CACCD382BD51C83008178F8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2CACCD372BD51C83008178F8 /* Base */; };
@@ -269,6 +276,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenter.swift; sourceTree = "<group>"; };
+		2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsProtocols.swift; sourceTree = "<group>"; };
+		2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsInteractor.swift; sourceTree = "<group>"; };
+		2CA195352BE213A000CC10F5 /* CardDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsView.swift; sourceTree = "<group>"; };
+		2CA195362BE213A000CC10F5 /* CardDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsModel.swift; sourceTree = "<group>"; };
+		2CA195372BE213A000CC10F5 /* CardDetailsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsWireframe.swift; sourceTree = "<group>"; };
+		2CA195402BE213B100CC10F5 /* CardDetailsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsUI.swift; sourceTree = "<group>"; };
 		2CACCD282BD51C81008178F8 /* Lollipop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lollipop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CACCD2B2BD51C81008178F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CACCD342BD51C83008178F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -550,6 +564,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CA195302BE2139000CC10F5 /* Card details */ = {
+			isa = PBXGroup;
+			children = (
+				2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */,
+				2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */,
+				2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */,
+				2CA195352BE213A000CC10F5 /* CardDetailsView.swift */,
+				2CA195362BE213A000CC10F5 /* CardDetailsModel.swift */,
+				2CA195372BE213A000CC10F5 /* CardDetailsWireframe.swift */,
+				2CA1953F2BE213A700CC10F5 /* UI */,
+			);
+			path = "Card details";
+			sourceTree = "<group>";
+		};
+		2CA1953F2BE213A700CC10F5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2CA195402BE213B100CC10F5 /* CardDetailsUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		2CACCD1F2BD51C81008178F8 = {
 			isa = PBXGroup;
 			children = (
@@ -1485,6 +1521,7 @@
 			children = (
 				62EB74B12BE1FFF10088906A /* My cards */,
 				62EB74B22BE1FFFD0088906A /* Reorder cards */,
+				2CA195302BE2139000CC10F5 /* Card details */,
 			);
 			path = "My cards";
 			sourceTree = "<group>";
@@ -1870,6 +1907,7 @@
 				62F6CDC52BDBC79400C4775C /* ProfileModel.swift in Sources */,
 				62F6CDC62BDBC79400C4775C /* ProfileWireframe.swift in Sources */,
 				2CACCDCA2BD53E00008178F8 /* Date+Extension.swift in Sources */,
+				2CA195412BE213B100CC10F5 /* CardDetailsUI.swift in Sources */,
 				2CACCDD42BD53EDE008178F8 /* UIFont+Extension.swift in Sources */,
 				2CACCDC62BD53DCB008178F8 /* SettingType.swift in Sources */,
 				2CACCDDA2BD53F5F008178F8 /* UILabel+Extension.swift in Sources */,
@@ -1929,6 +1967,12 @@
 				2CACCDEB2BD54120008178F8 /* PushNotificationsManager.swift in Sources */,
 				2CDDA7402BDA367000B6C8B5 /* OTPInputProtocols.swift in Sources */,
 				62214B0B2BD6F44D00ABF38E /* ContentViewUI.swift in Sources */,
+				2CA195392BE213A000CC10F5 /* CardDetailsPresenter.swift in Sources */,
+				2CA1953A2BE213A000CC10F5 /* CardDetailsProtocols.swift in Sources */,
+				2CA1953B2BE213A000CC10F5 /* CardDetailsInteractor.swift in Sources */,
+				2CA1953C2BE213A000CC10F5 /* CardDetailsView.swift in Sources */,
+				2CA1953D2BE213A000CC10F5 /* CardDetailsModel.swift in Sources */,
+				2CA1953E2BE213A000CC10F5 /* CardDetailsWireframe.swift in Sources */,
 				2CACCDE22BD53FC4008178F8 /* UIView+Extension.swift in Sources */,
 				2CCF3AB92BD7B2A100B3729E /* SignInUI.swift in Sources */,
 				62F6CDB82BDBC75900C4775C /* LollipopUI.swift in Sources */,
