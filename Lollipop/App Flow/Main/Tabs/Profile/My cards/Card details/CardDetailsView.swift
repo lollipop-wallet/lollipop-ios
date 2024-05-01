@@ -36,4 +36,8 @@ class CardDetailsView: UIViewController, CardDetailsViewProtocol {
     @objc func onBackTap() {
         popBack(2)
     }
+    
+    @objc func onEditTap() {
+        
+    }
 }

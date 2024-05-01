@@ -195,6 +195,17 @@ extension CardDetailsView {
         }()
         
         
+        lazy var editButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onEditTap), for: .touchUpInside)
+            button.setTitle(LocalizedTitle.save.localized, for: .normal)
+            button.backgroundColor = AppColors.brandPrimary
+            button.titleLabel?.font = .inter(ofSize: 16, name: .medium)
+            button.setTitleColor(AppColors.white, for: .normal)
+            button.layer.cornerRadius = 12
+            button.layer.masksToBounds = true
+            return button
+        }()
         
         self.view.addSubview(backgroundView)
         backgroundView.snp.makeConstraints { make in
@@ -205,6 +216,14 @@ extension CardDetailsView {
         backgroundView.addSubview(shaddowPlaceholderView)
         shaddowPlaceholderView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
+        }
+        
+        backgroundView.addSubview(editButton)
+        editButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-44)
+            make.height.equalTo(48)
         }
     }
 }
