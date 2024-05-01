@@ -18,7 +18,7 @@ extension DeleteCardView {
         appearance.setBackIndicatorImage(imgClose, transitionMaskImage: imgClose)
         navigationItem.standardAppearance = appearance
         UINavigationBar.appearance().layoutMargins.left = 20
-        self.navigationItem.title = LocalizedTitle.accountDeletion.localized
+        self.navigationItem.title = LocalizedTitle.cardDeletion.localized
         
         lazy var backButton: UIBarButtonItem = {
             let button = UIBarButtonItem()
@@ -45,7 +45,7 @@ extension DeleteCardView {
             label.font = .inter(ofSize: 24, name: .bold)
             label.textColor = AppColors.black
             label.textAlignment = .center
-            label.text = LocalizedTitle.deleteAccountTitle.localized
+            label.text = LocalizedTitle.cardDeletionTitle.localized
             label.numberOfLines = 0
             label.lineBreakMode = .byWordWrapping
             return label
@@ -56,7 +56,7 @@ extension DeleteCardView {
             label.font = .inter(ofSize: 16, name: .regular)
             label.textColor = AppColors.black
             label.textAlignment = .center
-            label.text = LocalizedTitle.deleteAccountSubtitle.localized
+            label.text = LocalizedTitle.cardDeletionSubtitle.localized
             label.numberOfLines = 0
             label.lineBreakMode = .byWordWrapping
             return label
@@ -83,7 +83,7 @@ extension DeleteCardView {
         lazy var deleteCardButton: UIButton = {
             let button = UIButton()
             button.addTarget(self, action: #selector(onDeleteCardTap), for: .touchUpInside)
-            button.setTitle(LocalizedTitle.deleteAccount.localized, for: .normal)
+            button.setTitle(LocalizedTitle.deleteCard.localized, for: .normal)
             button.backgroundColor = AppColors.error
             button.titleLabel?.font = .inter(ofSize: 16, name: .semibold)
             button.setTitleColor(AppColors.white, for: .normal)
