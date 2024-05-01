@@ -37,4 +37,8 @@ class MyCardsView: UIViewController, MyCardsViewProtocol {
     @objc func onSortTap() {
         presenter?.sort()
     }
+    
+    @objc func onNewCardTap() {
+        
+    }
 }
