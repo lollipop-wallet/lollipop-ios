@@ -10,6 +10,11 @@
 import UIKit
 
 class CardDetailsView: UIViewController, CardDetailsViewProtocol {
+    
+    var cardImageView = UIImageView()
+    var cardNameLabel = UILabel()
+    var cardBarcodeLabel = UILabel()
+    var cardNotesLabel = UILabel()
 
     var presenter: CardDetailsPresenterProtocol?
 

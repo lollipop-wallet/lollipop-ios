@@ -40,8 +40,7 @@ protocol MyCardsViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol MyCardsWireframeProtocol: AnyObject {
-
-    
+    func toDetails()
 }
 
 //MARK: MyCardsCell Protocol

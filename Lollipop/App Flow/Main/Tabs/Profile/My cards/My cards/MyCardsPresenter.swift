@@ -73,5 +73,6 @@ extension MyCardsPresenter {
     }
     
     func didSelectItemAt(index: IndexPath) {
+        wireframe?.toDetails()
     }
 }

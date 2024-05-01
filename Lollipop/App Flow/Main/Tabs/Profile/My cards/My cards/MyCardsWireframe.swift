@@ -19,4 +19,9 @@ class MyCardsWireframe: MyCardsWireframeProtocol {
         MyCardsRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toDetails() {
+        let vc = CardDetailsView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }
