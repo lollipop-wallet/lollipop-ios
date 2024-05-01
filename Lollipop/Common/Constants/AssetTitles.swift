@@ -56,4 +56,5 @@ struct AssetTitles {
     static let illustrationSuccessIcon = "ic_illustration_success"
     static let checkBoxUnselectedIcon = "ic_checkbox_unselected"
     static let checkBoxSelectedIcon = "ic_checkbox_selected"
+    static let reorderIcon = "ic_reorder"
 }
