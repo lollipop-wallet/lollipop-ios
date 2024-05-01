@@ -13,6 +13,19 @@ class MyCardsPresenter: NSObject, MyCardsPresenterProtocol  {
     weak var view: MyCardsViewProtocol?
     var wireframe: MyCardsWireframeProtocol?
     
+    func sort(){
+        UIApplication.topViewController()?.openAlert(title: LocalizedTitle.sortCardBy.localized, message: "", alertStyle: .actionSheet, actionTitles: [LocalizedTitle.cardName.localized, LocalizedTitle.manually.localized, LocalizedTitle.cancel.localized], actionColors: [.systemBlue, .systemBlue, .systemBlue], actionStyles: [.default, .default, .cancel], actions: [
+            { [weak self] _ in
+                guard let self = self  else {return}
+            },
+            { [weak self] _ in
+                guard let self = self  else {return}
+            },
+            {_ in
+                
+            }
+       ])
+    }
 }
 
 extension MyCardsPresenter: MyCardsOutputInteractorProtocol {

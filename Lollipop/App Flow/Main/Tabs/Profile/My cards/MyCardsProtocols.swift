@@ -16,6 +16,7 @@ protocol MyCardsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, M
     var view: MyCardsViewProtocol? { get set }
     var wireframe:MyCardsWireframeProtocol? { get set }
     
+    func sort()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR

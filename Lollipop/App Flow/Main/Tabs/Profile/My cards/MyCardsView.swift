@@ -33,4 +33,8 @@ class MyCardsView: UIViewController, MyCardsViewProtocol {
     @objc func onBackTap() {
         popBack(2)
     }
+    
+    @objc func onSortTap() {
+        presenter?.sort()
+    }
 }

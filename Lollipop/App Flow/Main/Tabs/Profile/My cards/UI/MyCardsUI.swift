@@ -29,7 +29,17 @@ extension MyCardsView {
             return button
         }()
         
+        lazy var sortButton: UIBarButtonItem = {
+            let button = UIBarButtonItem()
+            button.title = LocalizedTitle.sort.localized
+            button.tintColor = AppColors.link
+            button.action = #selector(self.onSortTap)
+            button.target = self
+            return button
+        }()
+        
         self.navigationItem.leftBarButtonItems = [backButton]
+        self.navigationItem.rightBarButtonItems = [sortButton]
         
         self.tableView.separatorStyle = .none
         self.tableView.register(MyCardsTableViewCell.self, forCellReuseIdentifier: CellId.myCardsCell.rawValue)
