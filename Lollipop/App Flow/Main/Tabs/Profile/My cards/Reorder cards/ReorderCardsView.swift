@@ -18,4 +18,11 @@ class ReorderCardsView: UIViewController, ReorderCardsViewProtocol {
         setup()
     }
 
+    //MARK: Actions
+    @objc func onBackTap() {
+        popBack(2)
+    }
+    
+    @objc func onDoneTap() {
+    }
 }
