@@ -141,6 +141,13 @@
 		627E92D72BDA10990016FF73 /* PasswordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92D02BDA10990016FF73 /* PasswordWireframe.swift */; };
 		627E92DA2BDA10A80016FF73 /* PasswordUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92D92BDA10A80016FF73 /* PasswordUI.swift */; };
 		627E92DD2BDA18560016FF73 /* OTPInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92DC2BDA18560016FF73 /* OTPInputField.swift */; };
+		62EB74BB2BE2000E0088906A /* ReorderCardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B42BE2000E0088906A /* ReorderCardsPresenter.swift */; };
+		62EB74BC2BE2000E0088906A /* ReorderCardsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B52BE2000E0088906A /* ReorderCardsProtocols.swift */; };
+		62EB74BD2BE2000E0088906A /* ReorderCardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B62BE2000E0088906A /* ReorderCardsInteractor.swift */; };
+		62EB74BE2BE2000E0088906A /* ReorderCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B72BE2000E0088906A /* ReorderCardsView.swift */; };
+		62EB74BF2BE2000E0088906A /* ReorderCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B82BE2000E0088906A /* ReorderCardsModel.swift */; };
+		62EB74C02BE2000E0088906A /* ReorderCardsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B92BE2000E0088906A /* ReorderCardsWireframe.swift */; };
+		62EB74C32BE2001E0088906A /* ReorderCardsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74C22BE2001E0088906A /* ReorderCardsUI.swift */; };
 		62F6CD782BDBBDFC00C4775C /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CD722BDBBDFC00C4775C /* MainPresenter.swift */; };
 		62F6CD792BDBBDFC00C4775C /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CD732BDBBDFC00C4775C /* MainProtocols.swift */; };
 		62F6CD7A2BDBBDFC00C4775C /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CD742BDBBDFC00C4775C /* MainInteractor.swift */; };
@@ -405,6 +412,13 @@
 		627E92D02BDA10990016FF73 /* PasswordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWireframe.swift; sourceTree = "<group>"; };
 		627E92D92BDA10A80016FF73 /* PasswordUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordUI.swift; sourceTree = "<group>"; };
 		627E92DC2BDA18560016FF73 /* OTPInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputField.swift; sourceTree = "<group>"; };
+		62EB74B42BE2000E0088906A /* ReorderCardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsPresenter.swift; sourceTree = "<group>"; };
+		62EB74B52BE2000E0088906A /* ReorderCardsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsProtocols.swift; sourceTree = "<group>"; };
+		62EB74B62BE2000E0088906A /* ReorderCardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsInteractor.swift; sourceTree = "<group>"; };
+		62EB74B72BE2000E0088906A /* ReorderCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsView.swift; sourceTree = "<group>"; };
+		62EB74B82BE2000E0088906A /* ReorderCardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsModel.swift; sourceTree = "<group>"; };
+		62EB74B92BE2000E0088906A /* ReorderCardsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsWireframe.swift; sourceTree = "<group>"; };
+		62EB74C22BE2001E0088906A /* ReorderCardsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsUI.swift; sourceTree = "<group>"; };
 		62F6CD722BDBBDFC00C4775C /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		62F6CD732BDBBDFC00C4775C /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
 		62F6CD742BDBBDFC00C4775C /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
@@ -1164,6 +1178,43 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		62EB74B12BE1FFF10088906A /* My cards */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CE3A2BDE683A00C4775C /* MyCardsPresenter.swift */,
+				62F6CE3B2BDE683A00C4775C /* MyCardsProtocols.swift */,
+				62F6CE3C2BDE683A00C4775C /* MyCardsInteractor.swift */,
+				62F6CE3D2BDE683A00C4775C /* MyCardsView.swift */,
+				62F6CE3E2BDE683A00C4775C /* MyCardsModel.swift */,
+				62F6CE3F2BDE683A00C4775C /* MyCardsWireframe.swift */,
+				2CE072282BE0F71C00768C73 /* Cells */,
+				62F6CE472BDE684600C4775C /* UI */,
+			);
+			path = "My cards";
+			sourceTree = "<group>";
+		};
+		62EB74B22BE1FFFD0088906A /* Reorder cards */ = {
+			isa = PBXGroup;
+			children = (
+				62EB74B42BE2000E0088906A /* ReorderCardsPresenter.swift */,
+				62EB74B52BE2000E0088906A /* ReorderCardsProtocols.swift */,
+				62EB74B62BE2000E0088906A /* ReorderCardsInteractor.swift */,
+				62EB74B72BE2000E0088906A /* ReorderCardsView.swift */,
+				62EB74B82BE2000E0088906A /* ReorderCardsModel.swift */,
+				62EB74B92BE2000E0088906A /* ReorderCardsWireframe.swift */,
+				62EB74C12BE200150088906A /* UI */,
+			);
+			path = "Reorder cards";
+			sourceTree = "<group>";
+		};
+		62EB74C12BE200150088906A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62EB74C22BE2001E0088906A /* ReorderCardsUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		62F6CD6F2BDBBDEC00C4775C /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -1432,14 +1483,8 @@
 		62F6CE382BDE682100C4775C /* My cards */ = {
 			isa = PBXGroup;
 			children = (
-				62F6CE3A2BDE683A00C4775C /* MyCardsPresenter.swift */,
-				62F6CE3B2BDE683A00C4775C /* MyCardsProtocols.swift */,
-				62F6CE3C2BDE683A00C4775C /* MyCardsInteractor.swift */,
-				62F6CE3D2BDE683A00C4775C /* MyCardsView.swift */,
-				62F6CE3E2BDE683A00C4775C /* MyCardsModel.swift */,
-				62F6CE3F2BDE683A00C4775C /* MyCardsWireframe.swift */,
-				2CE072282BE0F71C00768C73 /* Cells */,
-				62F6CE472BDE684600C4775C /* UI */,
+				62EB74B12BE1FFF10088906A /* My cards */,
+				62EB74B22BE1FFFD0088906A /* Reorder cards */,
 			);
 			path = "My cards";
 			sourceTree = "<group>";
@@ -1802,6 +1847,12 @@
 				2CACCDE42BD54039008178F8 /* UIViewController+Extension.swift in Sources */,
 				2CACCDD22BD53E82008178F8 /* String+Extension.swift in Sources */,
 				2CACCDBA2BD53C40008178F8 /* Configuration.swift in Sources */,
+				62EB74BB2BE2000E0088906A /* ReorderCardsPresenter.swift in Sources */,
+				62EB74BC2BE2000E0088906A /* ReorderCardsProtocols.swift in Sources */,
+				62EB74BD2BE2000E0088906A /* ReorderCardsInteractor.swift in Sources */,
+				62EB74BE2BE2000E0088906A /* ReorderCardsView.swift in Sources */,
+				62EB74BF2BE2000E0088906A /* ReorderCardsModel.swift in Sources */,
+				62EB74C02BE2000E0088906A /* ReorderCardsWireframe.swift in Sources */,
 				2CACCDEF2BD5422A008178F8 /* StorageManager.swift in Sources */,
 				2CACCDD62BD53F1B008178F8 /* UIImage+Extension.swift in Sources */,
 				2CACCD802BD528F7008178F8 /* LaunchPresenter.swift in Sources */,
@@ -1833,6 +1884,7 @@
 				2CDDA7372BDA256100B6C8B5 /* OTPProtocols.swift in Sources */,
 				2CDDA7382BDA256100B6C8B5 /* OTPInteractor.swift in Sources */,
 				2CDDA7392BDA256100B6C8B5 /* OTPView.swift in Sources */,
+				62EB74C32BE2001E0088906A /* ReorderCardsUI.swift in Sources */,
 				2CDDA73A2BDA256100B6C8B5 /* OTPModel.swift in Sources */,
 				2CDDA73B2BDA256100B6C8B5 /* OTPWireframe.swift in Sources */,
 				2CEC7FB42BD8D1730050E762 /* RegisterPresenter.swift in Sources */,
