@@ -13,6 +13,9 @@ class CardDetailsPresenter: CardDetailsPresenterProtocol  {
     weak var view: CardDetailsViewProtocol?
     var wireframe: CardDetailsWireframeProtocol?
     
+    func edit() {
+        wireframe?.toEdit()
+    }
 }
 
 extension CardDetailsPresenter: CardDetailsOutputInteractorProtocol {

@@ -72,6 +72,11 @@ class InputField: UIView {
         get { return false }
     }
     
+    open var leftSuplementaryIconTint: UIColor? {
+        set { self.inputFieldSuplementaryLeftIcon.tintColor = newValue ?? .clear }
+        get { return .black }
+    }
+    
     //MARK: Outlets
     
     lazy var inputTitleLabel: UILabel = {

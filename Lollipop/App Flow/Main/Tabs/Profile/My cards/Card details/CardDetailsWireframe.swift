@@ -19,4 +19,9 @@ class CardDetailsWireframe: CardDetailsWireframeProtocol {
         CardDetailsRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toEdit(){
+        let vc = EditCardView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

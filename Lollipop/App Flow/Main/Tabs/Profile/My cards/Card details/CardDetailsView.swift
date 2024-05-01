@@ -38,6 +38,6 @@ class CardDetailsView: UIViewController, CardDetailsViewProtocol {
     }
     
     @objc func onEditTap() {
-        
+        presenter?.edit()
     }
 }

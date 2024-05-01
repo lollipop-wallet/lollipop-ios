@@ -16,6 +16,7 @@ protocol CardDetailsPresenterProtocol: AnyObject {
     var view: CardDetailsViewProtocol? { get set }
     var wireframe:CardDetailsWireframeProtocol? { get set }
     
+    func edit()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -39,6 +40,5 @@ protocol CardDetailsViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol CardDetailsWireframeProtocol: AnyObject {
-
-    
+    func toEdit()
 }

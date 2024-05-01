@@ -10,6 +10,12 @@
 import UIKit
 
 class EditCardView: UIViewController, EditCardViewProtocol {
+    
+    var cardImageView = UIImageView()
+    var cardNameField = InputField()
+    var cardNumberField = InputField()
+    var cardBarcodeField = InputField()
+    var cardNotesField = InputTextViewField()
 
     var presenter: EditCardPresenterProtocol?
 

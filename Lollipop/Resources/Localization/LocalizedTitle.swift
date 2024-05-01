@@ -108,6 +108,7 @@ enum LocalizedTitle: String {
     case edit
     case cardTitle
     case delete
+    case cardNumber
 
     var localized: String {
         return self.rawValue.localized()
