@@ -101,6 +101,7 @@ enum LocalizedTitle: String {
     case manually
     case editCardsOrder
     case done
+    case addCard
 
     var localized: String {
         return self.rawValue.localized()
