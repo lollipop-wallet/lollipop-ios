@@ -55,7 +55,6 @@ extension MyCardsPresenter {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 64))
         
         let label = UILabel()
-        //label.frame = CGRect.init(x: 5, y: 0, width: headerView.frame.width - 10, height: 20)
         label.font = .inter(ofSize: 14, name: .regular)
         label.textAlignment = .left
         label.textColor = AppColors.black
@@ -69,6 +68,7 @@ extension MyCardsPresenter {
             make.top.equalToSuperview().offset(24)
         }
         headerView.backgroundColor = AppColors.lightGrey
+        
         return headerView
     }
     
