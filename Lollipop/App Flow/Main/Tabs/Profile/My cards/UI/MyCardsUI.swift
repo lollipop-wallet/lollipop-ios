@@ -30,5 +30,20 @@ extension MyCardsView {
         }()
         
         self.navigationItem.leftBarButtonItems = [backButton]
+        
+        self.tableView.separatorStyle = .none
+        self.tableView.register(MyCardsTableViewCell.self, forCellReuseIdentifier: CellId.myCardsCell.rawValue)
+        self.tableView.delegate = presenter
+        self.tableView.dataSource = presenter
+        self.tableView.backgroundColor = AppColors.lightGrey
+        self.tableView.sectionHeaderTopPadding = 0
+
+        self.view.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview()
+        }
     }
 }

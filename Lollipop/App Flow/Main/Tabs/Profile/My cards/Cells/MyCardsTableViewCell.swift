@@ -154,16 +154,20 @@ class MyCardsTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: MyCardsCellProtocol) {
+    func configureWith(index: IndexPath, delegate: MyCardsCellProtocol, isEditing: Bool) {
         self.index = index
         self.delegate = delegate
         //self.titleLabel.text = item.title
         //self.iconImageView.image = UIImage(named: item.flag)
         //self.checkBoxIcon.image = UIImage(named: item.selected ? AssetTitles.radioSelectedIcon : AssetTitles.radioUnselectedIcon)
+        self.rightSupplementaryIcon.image = UIImage(named: isEditing ? "" : AssetTitles.arrowRightIcon)
+        self.rightSupplementaryIcon.tintColor = isEditing ? AppColors.darkGrey : AppColors.black
         self.titleLabel.text = "Dameo"
+        self.subtitleLabel.text = "1231521321521321"
     }
     
     //MARK: Actions
     @objc func onCellTap() {
+        delegate?.didSelectItemAt(index: self.index)
     }
 }

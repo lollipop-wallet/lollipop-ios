@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class MyCardsPresenter: MyCardsPresenterProtocol  {
+class MyCardsPresenter: NSObject, MyCardsPresenterProtocol  {
     
     var interactor : MyCardsInputInteractorProtocol?
     weak var view: MyCardsViewProtocol?
@@ -17,4 +17,48 @@ class MyCardsPresenter: MyCardsPresenterProtocol  {
 
 extension MyCardsPresenter: MyCardsOutputInteractorProtocol {
     
+}
+
+
+
+//MARK: UITableViewDelegate&Datasource
+extension MyCardsPresenter {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return section == 0 ? 7 : 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellId.myCardsCell.rawValue, for: indexPath) as! MyCardsTableViewCell
+        cell.configureWith(index: indexPath, delegate: self, isEditing: false)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 64))
+        
+        let label = UILabel()
+        //label.frame = CGRect.init(x: 5, y: 0, width: headerView.frame.width - 10, height: 20)
+        label.font = .inter(ofSize: 14, name: .regular)
+        label.textAlignment = .left
+        label.textColor = AppColors.black
+        
+        label.text = section == 0 ? LocalizedTitle.handpickedCards.localized : LocalizedTitle.otherCards.localized
+        
+        headerView.addSubview(label)
+        label.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-12)
+            make.top.equalToSuperview().offset(24)
+        }
+        headerView.backgroundColor = AppColors.lightGrey
+        return headerView
+    }
+    
+    func didSelectItemAt(index: IndexPath) {
+    }
 }

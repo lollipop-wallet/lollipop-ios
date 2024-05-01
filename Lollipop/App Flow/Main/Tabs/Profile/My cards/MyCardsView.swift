@@ -10,6 +10,8 @@
 import UIKit
 
 class MyCardsView: UIViewController, MyCardsViewProtocol {
+    
+    var tableView = UITableView()
 
     var presenter: MyCardsPresenterProtocol?
 

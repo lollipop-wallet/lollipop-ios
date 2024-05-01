@@ -6,11 +6,11 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol MyCardsPresenterProtocol: AnyObject {
+protocol MyCardsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, MyCardsCellProtocol {
     
     var interactor: MyCardsInputInteractorProtocol? { get set }
     var view: MyCardsViewProtocol? { get set }
@@ -45,4 +45,5 @@ protocol MyCardsWireframeProtocol: AnyObject {
 
 //MARK: MyCardsCell Protocol
 protocol MyCardsCellProtocol: AnyObject {
+    func didSelectItemAt(index: IndexPath)
 }
