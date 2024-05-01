@@ -97,3 +97,7 @@
 "cardTitle" = "Ime kartice";
 "delete" = "Obriši";
 "cardNumber" = "Broj kartice";
+"cardDeletion" = "Brisanje kartice";
+"cardDeletionTitle" = "Da li ste sigurni da želite da obrišete ovu karticu?";
+"cardDeletionSubtitle" = "Ovom akcijom će biti obrisana kartica i svi podaci koju su za nju vezani.";
+"deleteCard" = "Obriši karticu";

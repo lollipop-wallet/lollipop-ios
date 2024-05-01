@@ -98,3 +98,7 @@
 "cardTitle" = "Card title";
 "delete" = "Delete";
 "cardNumber" = "Card number";
+"cardDeletion" = "Card deletion";
+"cardDeletionTitle" = "Are you sure you want to delete this card";
+"cardDeletionSubtitle" = "By doing this all card data will be deleted.";
+"deleteCard" = "Delete card";

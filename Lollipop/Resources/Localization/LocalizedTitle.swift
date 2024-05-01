@@ -109,6 +109,10 @@ enum LocalizedTitle: String {
     case cardTitle
     case delete
     case cardNumber
+    case cardDeletion
+    case cardDeletionTitle
+    case cardDeletionSubtitle
+    case deleteCard
 
     var localized: String {
         return self.rawValue.localized()
