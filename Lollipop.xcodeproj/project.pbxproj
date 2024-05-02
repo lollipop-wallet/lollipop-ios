@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2C4EE5F22BE3823800F16FD8 /* AddCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F12BE3823800F16FD8 /* AddCardComponent.swift */; };
 		2C4EE5F52BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */; };
+		2C4EE5F82BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */; };
+		2C4EE5FC2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5FB2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift */; };
 		2CA195392BE213A000CC10F5 /* CardDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */; };
 		2CA1953A2BE213A000CC10F5 /* CardDetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */; };
 		2CA1953B2BE213A000CC10F5 /* CardDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */; };
@@ -294,6 +296,8 @@
 /* Begin PBXFileReference section */
 		2C4EE5F12BE3823800F16FD8 /* AddCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardComponent.swift; sourceTree = "<group>"; };
 		2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardHomeTableViewCell.swift; sourceTree = "<group>"; };
+		2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewCell.swift; sourceTree = "<group>"; };
+		2C4EE5FB2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenter.swift; sourceTree = "<group>"; };
 		2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsProtocols.swift; sourceTree = "<group>"; };
 		2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsInteractor.swift; sourceTree = "<group>"; };
@@ -630,9 +634,27 @@
 		2C4EE5F32BE38F8400F16FD8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */,
+				2C4EE5FA2BE3B1A900F16FD8 /* Table cells */,
+				2C4EE5F92BE3B1A100F16FD8 /* Collection cells */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		2C4EE5F92BE3B1A100F16FD8 /* Collection cells */ = {
+			isa = PBXGroup;
+			children = (
+				2C4EE5FB2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift */,
+			);
+			path = "Collection cells";
+			sourceTree = "<group>";
+		};
+		2C4EE5FA2BE3B1A900F16FD8 /* Table cells */ = {
+			isa = PBXGroup;
+			children = (
+				2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */,
+				2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */,
+			);
+			path = "Table cells";
 			sourceTree = "<group>";
 		};
 		2CA195302BE2139000CC10F5 /* Card details */ = {
@@ -2054,6 +2076,7 @@
 				2CEC7FB52BD8D1730050E762 /* RegisterProtocols.swift in Sources */,
 				2CE32ABD2BDF9E4B004757C5 /* NewPartnerUI.swift in Sources */,
 				2CE32AC02BDFAAE1004757C5 /* InputTextViewField.swift in Sources */,
+				2C4EE5F82BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift in Sources */,
 				2CEC7FB62BD8D1730050E762 /* RegisterInteractor.swift in Sources */,
 				2CEC7FB72BD8D1730050E762 /* RegisterView.swift in Sources */,
 				2CEC7FB82BD8D1730050E762 /* RegisterModel.swift in Sources */,
@@ -2146,6 +2169,7 @@
 				2CEC7FBC2BD8D1810050E762 /* RegisterUI.swift in Sources */,
 				62F6CE992BDF519200C4775C /* AutomaticHeightCollectionView.swift in Sources */,
 				2CCF3AB12BD7B29300B3729E /* SignInPresenter.swift in Sources */,
+				2C4EE5FC2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift in Sources */,
 				2CE32AD22BDFBBA0004757C5 /* DialogueUI.swift in Sources */,
 				2CCF3AB22BD7B29300B3729E /* SignInProtocols.swift in Sources */,
 				2CEC7FBF2BD8F74D0050E762 /* CalendarInputField.swift in Sources */,

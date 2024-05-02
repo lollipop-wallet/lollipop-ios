@@ -10,7 +10,7 @@ import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddCardHomeCellProtocol {
+protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddCardHomeCellProtocol, HomeCardCellProtocol {
     
     var interactor: HomeInputInteractorProtocol? { get set }
     var view: HomeViewProtocol? { get set }
@@ -46,4 +46,14 @@ protocol HomeWireframeProtocol: AnyObject {
 //MARK: AddCardHomeCell protocol
 protocol AddCardHomeCellProtocol: AnyObject {
     func didTapAddCard()
+}
+
+//MARK: HomeCardCell protocol
+protocol HomeCardCellProtocol: AnyObject {
+    
+}
+
+//MARK: LoyaltyCardCell protocol
+protocol LoyaltyCardCellProtocol: AnyObject {
+    func didSelectItemAt(index: IndexPath)
 }

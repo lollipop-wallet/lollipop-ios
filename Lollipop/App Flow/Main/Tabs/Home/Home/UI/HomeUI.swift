@@ -120,6 +120,7 @@ extension HomeView {
         self.tableView.separatorStyle = .none
         self.tableView.backgroundColor = AppColors.lightGrey
         self.tableView.register(AddCardHomeTableViewCell.self, forCellReuseIdentifier: CellId.addCardHomeCell.rawValue)
+        self.tableView.register(HomeCardTableViewCell.self, forCellReuseIdentifier: CellId.homeCardCell.rawValue)
         self.tableView.delegate = presenter
         self.tableView.dataSource = presenter
         
