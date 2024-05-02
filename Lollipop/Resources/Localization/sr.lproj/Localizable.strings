@@ -101,3 +101,6 @@
 "cardDeletionTitle" = "Da li ste sigurni da želite da obrišete ovu karticu?";
 "cardDeletionSubtitle" = "Ovom akcijom će biti obrisana kartica i svi podaci koju su za nju vezani.";
 "deleteCard" = "Obriši karticu";
+"signIn" = "Prijavi se";
+"digitalizePlasticCardTitle" = "Digitalizuj plastičnu karticu";
+"digitalizePlasticCardSubtitle" = "Dodajte vašu prvu karticu u nekoliko sekundi";

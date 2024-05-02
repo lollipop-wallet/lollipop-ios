@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4EE5F22BE3823800F16FD8 /* AddCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F12BE3823800F16FD8 /* AddCardComponent.swift */; };
 		2CA195392BE213A000CC10F5 /* CardDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */; };
 		2CA1953A2BE213A000CC10F5 /* CardDetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */; };
 		2CA1953B2BE213A000CC10F5 /* CardDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */; };
@@ -290,6 +291,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C4EE5F12BE3823800F16FD8 /* AddCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardComponent.swift; sourceTree = "<group>"; };
 		2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenter.swift; sourceTree = "<group>"; };
 		2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsProtocols.swift; sourceTree = "<group>"; };
 		2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsInteractor.swift; sourceTree = "<group>"; };
@@ -609,8 +611,17 @@
 		2C4EE5EF2BE37CF500F16FD8 /* Custom app components */ = {
 			isa = PBXGroup;
 			children = (
+				2C4EE5F02BE381B800F16FD8 /* Home add card component */,
 			);
 			path = "Custom app components";
+			sourceTree = "<group>";
+		};
+		2C4EE5F02BE381B800F16FD8 /* Home add card component */ = {
+			isa = PBXGroup;
+			children = (
+				2C4EE5F12BE3823800F16FD8 /* AddCardComponent.swift */,
+			);
+			path = "Home add card component";
 			sourceTree = "<group>";
 		};
 		2CA195302BE2139000CC10F5 /* Card details */ = {
@@ -2015,6 +2026,7 @@
 				2CACCDDA2BD53F5F008178F8 /* UILabel+Extension.swift in Sources */,
 				2CDDA7362BDA256100B6C8B5 /* OTPPresenter.swift in Sources */,
 				62F6CD782BDBBDFC00C4775C /* MainPresenter.swift in Sources */,
+				2C4EE5F22BE3823800F16FD8 /* AddCardComponent.swift in Sources */,
 				62F6CD792BDBBDFC00C4775C /* MainProtocols.swift in Sources */,
 				62F6CD7A2BDBBDFC00C4775C /* MainInteractor.swift in Sources */,
 				62F6CD7B2BDBBDFC00C4775C /* MainView.swift in Sources */,

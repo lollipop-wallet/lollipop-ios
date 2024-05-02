@@ -102,3 +102,6 @@
 "cardDeletionTitle" = "Are you sure you want to delete this card";
 "cardDeletionSubtitle" = "By doing this all card data will be deleted.";
 "deleteCard" = "Delete card";
+"signIn" = "Sign in";
+"digitalizePlasticCardTitle" = "Digitalize plastic card";
+"digitalizePlasticCardSubtitle" = "Add your first card in few seconds";
