@@ -15,4 +15,5 @@ enum CellId : String {
     case partnersCell = "partnersCell"
     case myShopsCell = "myShopsCell"
     case myCardsCell = "myCardsCell"
+    case addCardHomeCell = "addCardHomeCell"
 }

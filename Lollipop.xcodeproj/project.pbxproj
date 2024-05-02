@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C4EE5F22BE3823800F16FD8 /* AddCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F12BE3823800F16FD8 /* AddCardComponent.swift */; };
+		2C4EE5F52BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */; };
 		2CA195392BE213A000CC10F5 /* CardDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */; };
 		2CA1953A2BE213A000CC10F5 /* CardDetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */; };
 		2CA1953B2BE213A000CC10F5 /* CardDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */; };
@@ -292,6 +293,7 @@
 
 /* Begin PBXFileReference section */
 		2C4EE5F12BE3823800F16FD8 /* AddCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardComponent.swift; sourceTree = "<group>"; };
+		2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardHomeTableViewCell.swift; sourceTree = "<group>"; };
 		2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenter.swift; sourceTree = "<group>"; };
 		2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsProtocols.swift; sourceTree = "<group>"; };
 		2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsInteractor.swift; sourceTree = "<group>"; };
@@ -604,6 +606,7 @@
 				62F6CD892BDBC69000C4775C /* HomeModel.swift */,
 				62F6CD8A2BDBC69000C4775C /* HomeWireframe.swift */,
 				62F6CD922BDBC69700C4775C /* UI */,
+				2C4EE5F32BE38F8400F16FD8 /* Cells */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -622,6 +625,14 @@
 				2C4EE5F12BE3823800F16FD8 /* AddCardComponent.swift */,
 			);
 			path = "Home add card component";
+			sourceTree = "<group>";
+		};
+		2C4EE5F32BE38F8400F16FD8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		2CA195302BE2139000CC10F5 /* Card details */ = {
@@ -2119,6 +2130,7 @@
 				2CA195532BE23D9300CC10F5 /* EditCardUI.swift in Sources */,
 				627E92C82BDA0E200016FF73 /* MainButton.swift in Sources */,
 				2CACCDB52BD53BEB008178F8 /* AssetTitles.swift in Sources */,
+				2C4EE5F52BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift in Sources */,
 				2CACCD902BD52E81008178F8 /* UIApplication+Extension.swift in Sources */,
 				2CACCDAD2BD53299008178F8 /* AppColors.swift in Sources */,
 				62F6CE052BDD55E900C4775C /* ProfileSettingsPresenter.swift in Sources */,

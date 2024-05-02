@@ -117,9 +117,11 @@ extension HomeView {
             return view
         }()
         
-        self.cardStackView.axis = .vertical
-        self.cardStackView.distribution = .fill
-        self.cardStackView.alignment = .fill
+        self.tableView.separatorStyle = .none
+        self.tableView.backgroundColor = AppColors.lightGrey
+        self.tableView.register(AddCardHomeTableViewCell.self, forCellReuseIdentifier: CellId.addCardHomeCell.rawValue)
+        self.tableView.delegate = presenter
+        self.tableView.dataSource = presenter
         
         self.view.addSubview(mainContentView)
         mainContentView.snp.makeConstraints { make in
@@ -127,9 +129,9 @@ extension HomeView {
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(16)
         }
         
-        mainContentView.addSubview(self.cardStackView)
-        self.cardStackView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview()
+        mainContentView.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
         }
     }
 }

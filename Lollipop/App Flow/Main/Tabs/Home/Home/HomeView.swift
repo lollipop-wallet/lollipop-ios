@@ -13,15 +13,19 @@ class HomeView: UIViewController, HomeViewProtocol {
     
     var avatarImageView = UIImageView()
     var avatarLabel = UILabel()
-    var cardStackView = UIStackView()
+    var tableView = UITableView()
 
     var presenter: HomePresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
-
+    
+    //MARK: HomeView Protocol
+    
+    
     //MARK: Actions
     @objc func onAvatarTap() {
         print("dwadwa")
