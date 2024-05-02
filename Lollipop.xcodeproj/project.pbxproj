@@ -592,6 +592,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C4EE5EE2BE36D7000F16FD8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				62F6CD852BDBC69000C4775C /* HomePresenter.swift */,
+				62F6CD862BDBC69000C4775C /* HomeProtocols.swift */,
+				62F6CD872BDBC69000C4775C /* HomeInteractor.swift */,
+				62F6CD882BDBC69000C4775C /* HomeView.swift */,
+				62F6CD892BDBC69000C4775C /* HomeModel.swift */,
+				62F6CD8A2BDBC69000C4775C /* HomeWireframe.swift */,
+				62F6CD922BDBC69700C4775C /* UI */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		2CA195302BE2139000CC10F5 /* Card details */ = {
 			isa = PBXGroup;
 			children = (
@@ -1368,13 +1382,7 @@
 		62F6CD832BDBC68800C4775C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				62F6CD852BDBC69000C4775C /* HomePresenter.swift */,
-				62F6CD862BDBC69000C4775C /* HomeProtocols.swift */,
-				62F6CD872BDBC69000C4775C /* HomeInteractor.swift */,
-				62F6CD882BDBC69000C4775C /* HomeView.swift */,
-				62F6CD892BDBC69000C4775C /* HomeModel.swift */,
-				62F6CD8A2BDBC69000C4775C /* HomeWireframe.swift */,
-				62F6CD922BDBC69700C4775C /* UI */,
+				2C4EE5EE2BE36D7000F16FD8 /* Home */,
 			);
 			path = Home;
 			sourceTree = "<group>";
