@@ -41,13 +41,20 @@ class HomeCardTableViewCell: UITableViewCell {
         return view
     }()
     
+    lazy var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.backgroundColor = .red
+        pageControl.numberOfPages = 10
+        return pageControl
+    }()
+    
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.createCompositionalLayout())
         collectionView.register(LoyaltyCardCollectionViewCell.self, forCellWithReuseIdentifier: CellId.loyaltyCardCell.rawValue)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.isUserInteractionEnabled = true
-        collectionView.backgroundColor = AppColors.white
+        collectionView.backgroundColor = AppColors.error
         return collectionView
     }()
     
@@ -57,13 +64,21 @@ class HomeCardTableViewCell: UITableViewCell {
         view.layer.masksToBounds = true
         view.backgroundColor = AppColors.white
         
+        view.addSubview(pageControl)
+        pageControl.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(32)
+            make.trailing.equalToSuperview().offset(-32)
+            make.bottom.equalToSuperview().offset(-12)
+            make.height.equalTo(8)
+        }
+        
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(32)
-            make.bottom.equalToSuperview().offset(-32)
+            make.bottom.equalTo(pageControl.snp.top).offset(-12)
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview()
-            make.height.equalTo(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 32) * 0.64)
+            make.height.equalTo(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 68) * 0.63)
         }
         return view
     }()
@@ -80,16 +95,6 @@ class HomeCardTableViewCell: UITableViewCell {
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalTo(topPaddingView.snp.bottom)
         }
-        
-//        view.addSubview(collectionView)
-//        collectionView.snp.makeConstraints { make in
-//            make.leading.top.equalToSuperview().offset(32)
-//            make.bottom.equalToSuperview().offset(-32)
-//            make.trailing.equalToSuperview()
-//            make.height.equalTo(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 32.0) * 0.64)
-//        }
-        
-        
         view.addSubview(dataContentView)
         dataContentView.snp.makeConstraints { make in
             make.leading.trailing.bottom.top.equalToSuperview()
