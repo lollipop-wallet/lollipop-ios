@@ -9,7 +9,7 @@ import UIKit
 
 extension HomeView {
     func setup() {
-        self.view.backgroundColor = AppColors.lightGrey
+        self.view.backgroundColor = AppColors.white
         HomeWireframe.createModule(HomeRef: self)
         
         
@@ -110,5 +110,26 @@ extension HomeView {
         self.navigationItem.rightBarButtonItems = [addButton]
         
         ///Content
+        
+        lazy var mainContentView: UIView = {
+            let view = UIView()
+            view.backgroundColor = AppColors.lightGrey
+            return view
+        }()
+        
+        self.cardStackView.axis = .vertical
+        self.cardStackView.distribution = .fill
+        self.cardStackView.alignment = .fill
+        
+        self.view.addSubview(mainContentView)
+        mainContentView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(16)
+        }
+        
+        mainContentView.addSubview(self.cardStackView)
+        self.cardStackView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+        }
     }
 }

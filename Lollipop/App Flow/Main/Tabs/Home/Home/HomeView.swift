@@ -13,6 +13,7 @@ class HomeView: UIViewController, HomeViewProtocol {
     
     var avatarImageView = UIImageView()
     var avatarLabel = UILabel()
+    var cardStackView = UIStackView()
 
     var presenter: HomePresenterProtocol?
 

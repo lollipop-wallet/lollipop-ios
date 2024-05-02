@@ -606,6 +606,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		2C4EE5EF2BE37CF500F16FD8 /* Custom app components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom app components";
+			sourceTree = "<group>";
+		};
 		2CA195302BE2139000CC10F5 /* Card details */ = {
 			isa = PBXGroup;
 			children = (
@@ -1200,6 +1207,7 @@
 		627E92B82BD847750016FF73 /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
+				2C4EE5EF2BE37CF500F16FD8 /* Custom app components */,
 				2CE32AA52BDF66E8004757C5 /* UISegmentedControl */,
 				62F6CE972BDF517200C4775C /* UICollectionView */,
 				62F6CDDE2BDD3AA800C4775C /* UITableView */,
