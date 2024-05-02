@@ -10,6 +10,9 @@
 import UIKit
 
 class HomeView: UIViewController, HomeViewProtocol {
+    
+    var avatarImageView = UIImageView()
+    var avatarLabel = UILabel()
 
     var presenter: HomePresenterProtocol?
 
@@ -18,4 +21,12 @@ class HomeView: UIViewController, HomeViewProtocol {
         setup()
     }
 
+    //MARK: Actions
+    @objc func onAvatarTap() {
+        print("dwadwa")
+    }
+    
+    @objc func onPlusTap() {
+        print("dwadwa")
+    }
 }
