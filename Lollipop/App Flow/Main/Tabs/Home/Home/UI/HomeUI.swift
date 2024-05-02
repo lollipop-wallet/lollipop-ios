@@ -12,6 +12,8 @@ extension HomeView {
         self.view.backgroundColor = AppColors.lightGrey
         HomeWireframe.createModule(HomeRef: self)
         
+        
+        ///Navigator
         self.avatarImageView.contentMode = .scaleAspectFill
         self.avatarImageView.image = UIImage(named: AssetTitles.avatarIcon)
         self.avatarImageView.snp.makeConstraints { make in
@@ -40,7 +42,7 @@ extension HomeView {
             let view = UIView()
             view.addSubview(avatarStack)
             avatarStack.snp.makeConstraints { make in
-                make.leading.trailing.top.bottom.equalToSuperview()
+                make.leading.trailing.top.equalToSuperview()
             }
             view.addSubview(leftBarButton)
             leftBarButton.snp.makeConstraints { make in
@@ -75,26 +77,38 @@ extension HomeView {
                 make.width.height.equalTo(24)
                 make.centerX.centerY.equalToSuperview()
             }
+            view.backgroundColor = AppColors.brandPrimary
+            view.layer.cornerRadius = 20
+            view.layer.masksToBounds = true
+            return view
+        }()
+        
+        lazy var addPlaceholder: UIView = {
+            let view = UIView()
+            view.addSubview(addButtonPlaceholder)
+            addButtonPlaceholder.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.bottom.equalToSuperview().offset(5)
+                make.width.height.equalTo(40)
+            }
             view.addSubview(rightBarButton)
             rightBarButton.snp.makeConstraints { make in
                 make.leading.trailing.top.bottom.equalToSuperview()
             }
-            view.backgroundColor = AppColors.brandPrimary
-            view.layer.cornerRadius = 20
-            view.layer.masksToBounds = true
             view.snp.makeConstraints { make in
-                make.width.height.equalTo(40)
+                make.width.height.equalTo(48)
             }
             return view
         }()
         
         lazy var addButton: UIBarButtonItem = {
-            let barButton = UIBarButtonItem(customView: addButtonPlaceholder)
+            let barButton = UIBarButtonItem(customView: addPlaceholder)
             return barButton
         }()
         
-        
         self.navigationItem.leftBarButtonItems = [avatarButton]
         self.navigationItem.rightBarButtonItems = [addButton]
+        
+        ///Content
     }
 }
