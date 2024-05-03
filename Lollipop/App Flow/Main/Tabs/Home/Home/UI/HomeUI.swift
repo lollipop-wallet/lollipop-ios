@@ -12,6 +12,12 @@ extension HomeView {
         self.view.backgroundColor = AppColors.white
         HomeWireframe.createModule(HomeRef: self)
         
+        let appearance = UINavigationBarAppearance()
+        //appearance.configureWithOpaqueBackground()
+        appearance.titleTextAttributes = [.foregroundColor: AppColors.black, .font : UIFont.inter(ofSize: 20, name: .bold)]
+        appearance.backgroundColor = AppColors.white
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
         
         ///Navigator
         self.avatarImageView.contentMode = .scaleAspectFill
