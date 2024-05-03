@@ -83,6 +83,7 @@
 		2CACCDEB2BD54120008178F8 /* PushNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDEA2BD54120008178F8 /* PushNotificationsManager.swift */; };
 		2CACCDED2BD541D3008178F8 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDEC2BD541D3008178F8 /* AppDelegate+Extension.swift */; };
 		2CACCDEF2BD5422A008178F8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDEE2BD5422A008178F8 /* StorageManager.swift */; };
+		2CBA985D2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA985C2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift */; };
 		2CCF3AB12BD7B29300B3729E /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAA2BD7B29300B3729E /* SignInPresenter.swift */; };
 		2CCF3AB22BD7B29300B3729E /* SignInProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAB2BD7B29300B3729E /* SignInProtocols.swift */; };
 		2CCF3AB32BD7B29300B3729E /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAC2BD7B29300B3729E /* SignInInteractor.swift */; };
@@ -379,6 +380,7 @@
 		2CACCDEA2BD54120008178F8 /* PushNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsManager.swift; sourceTree = "<group>"; };
 		2CACCDEC2BD541D3008178F8 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
 		2CACCDEE2BD5422A008178F8 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		2CBA985C2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePosterCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		2CCF3AAA2BD7B29300B3729E /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		2CCF3AAB2BD7B29300B3729E /* SignInProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInProtocols.swift; sourceTree = "<group>"; };
 		2CCF3AAC2BD7B29300B3729E /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
@@ -659,6 +661,7 @@
 				2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */,
 				2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */,
 				6212737B2BE4A08700FDA7D0 /* HomeCircleHorizontalCategoryTableViewCell.swift */,
+				2CBA985C2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift */,
 			);
 			path = "Table cells";
 			sourceTree = "<group>";
@@ -2185,6 +2188,7 @@
 				627E92C12BDA044F0016FF73 /* DropdownInputField.swift in Sources */,
 				2CCF3AB42BD7B29300B3729E /* SignInView.swift in Sources */,
 				2CCF3AB52BD7B29300B3729E /* SignInModel.swift in Sources */,
+				2CBA985D2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift in Sources */,
 				2CCF3AB62BD7B29300B3729E /* SignInWireframe.swift in Sources */,
 				2CACCDD82BD53F50008178F8 /* UIImageView+Extension.swift in Sources */,
 				2CACCD2C2BD51C81008178F8 /* AppDelegate.swift in Sources */,

@@ -151,7 +151,7 @@ extension HomeCircleHorizontalCategoryTableViewCell {
    }
    
     private func generateFlowLayout() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(1), heightDimension: .estimated(30))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(30))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
         let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(110), heightDimension: .estimated(114))

@@ -122,6 +122,7 @@ extension HomeView {
         self.tableView.register(AddCardHomeTableViewCell.self, forCellReuseIdentifier: CellId.addCardHomeCell.rawValue)
         self.tableView.register(HomeCardTableViewCell.self, forCellReuseIdentifier: CellId.homeCardCell.rawValue)
         self.tableView.register(HomeCircleHorizontalCategoryTableViewCell.self, forCellReuseIdentifier: CellId.homeCircleHorizontalCell.rawValue)
+        self.tableView.register(HomePosterCategoryTableViewCell.self, forCellReuseIdentifier: CellId.homePosterCell.rawValue)
         self.tableView.delegate = presenter
         self.tableView.dataSource = presenter
         

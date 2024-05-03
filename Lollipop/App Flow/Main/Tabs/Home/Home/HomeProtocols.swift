@@ -10,7 +10,7 @@ import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddCardHomeCellProtocol, HomeCardCellProtocol, CircledCategoryCellProtocol {
+protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddCardHomeCellProtocol, HomeCardCellProtocol, CircledCategoryCellProtocol, HomePosterCategoryCellProtocol {
     
     var interactor: HomeInputInteractorProtocol? { get set }
     var view: HomeViewProtocol? { get set }
@@ -55,6 +55,11 @@ protocol HomeCardCellProtocol: AnyObject {
 
 //MARK: CircledCategoryCell Protocol
 protocol CircledCategoryCellProtocol: AnyObject {
+    
+}
+
+//MARK: HomePosterCategoryCell Protocol
+protocol HomePosterCategoryCellProtocol: AnyObject {
     
 }
 
