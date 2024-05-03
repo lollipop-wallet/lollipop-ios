@@ -94,6 +94,13 @@
 		2CBA98702BE4FC1200B804E6 /* PromotionsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA986A2BE4FC1200B804E6 /* PromotionsWireframe.swift */; };
 		2CBA98742BE4FC2000B804E6 /* PromotionsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA98732BE4FC2000B804E6 /* PromotionsUI.swift */; };
 		2CBA98772BE4FFB700B804E6 /* PromotionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA98762BE4FFB700B804E6 /* PromotionsCollectionViewCell.swift */; };
+		2CBA98802BE5174F00B804E6 /* PromotionDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA987A2BE5174F00B804E6 /* PromotionDetailsPresenter.swift */; };
+		2CBA98812BE5174F00B804E6 /* PromotionDetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA987B2BE5174F00B804E6 /* PromotionDetailsProtocols.swift */; };
+		2CBA98822BE5174F00B804E6 /* PromotionDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA987C2BE5174F00B804E6 /* PromotionDetailsInteractor.swift */; };
+		2CBA98832BE5174F00B804E6 /* PromotionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA987D2BE5174F00B804E6 /* PromotionDetailsView.swift */; };
+		2CBA98842BE5174F00B804E6 /* PromotionDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA987E2BE5174F00B804E6 /* PromotionDetailsModel.swift */; };
+		2CBA98852BE5174F00B804E6 /* PromotionDetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA987F2BE5174F00B804E6 /* PromotionDetailsWireframe.swift */; };
+		2CBA98892BE5175D00B804E6 /* PromotionDetailsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA98882BE5175D00B804E6 /* PromotionDetailsUI.swift */; };
 		2CCF3AB12BD7B29300B3729E /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAA2BD7B29300B3729E /* SignInPresenter.swift */; };
 		2CCF3AB22BD7B29300B3729E /* SignInProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAB2BD7B29300B3729E /* SignInProtocols.swift */; };
 		2CCF3AB32BD7B29300B3729E /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAC2BD7B29300B3729E /* SignInInteractor.swift */; };
@@ -401,6 +408,13 @@
 		2CBA986A2BE4FC1200B804E6 /* PromotionsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsWireframe.swift; sourceTree = "<group>"; };
 		2CBA98732BE4FC2000B804E6 /* PromotionsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsUI.swift; sourceTree = "<group>"; };
 		2CBA98762BE4FFB700B804E6 /* PromotionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsCollectionViewCell.swift; sourceTree = "<group>"; };
+		2CBA987A2BE5174F00B804E6 /* PromotionDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailsPresenter.swift; sourceTree = "<group>"; };
+		2CBA987B2BE5174F00B804E6 /* PromotionDetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailsProtocols.swift; sourceTree = "<group>"; };
+		2CBA987C2BE5174F00B804E6 /* PromotionDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailsInteractor.swift; sourceTree = "<group>"; };
+		2CBA987D2BE5174F00B804E6 /* PromotionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailsView.swift; sourceTree = "<group>"; };
+		2CBA987E2BE5174F00B804E6 /* PromotionDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailsModel.swift; sourceTree = "<group>"; };
+		2CBA987F2BE5174F00B804E6 /* PromotionDetailsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailsWireframe.swift; sourceTree = "<group>"; };
+		2CBA98882BE5175D00B804E6 /* PromotionDetailsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailsUI.swift; sourceTree = "<group>"; };
 		2CCF3AAA2BD7B29300B3729E /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		2CCF3AAB2BD7B29300B3729E /* SignInProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInProtocols.swift; sourceTree = "<group>"; };
 		2CCF3AAC2BD7B29300B3729E /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
@@ -1025,6 +1039,7 @@
 			isa = PBXGroup;
 			children = (
 				2CBA98632BE4FC0700B804E6 /* Promotions */,
+				2CBA98782BE5173800B804E6 /* Promotion details */,
 			);
 			path = Promotions;
 			sourceTree = "<group>";
@@ -1058,6 +1073,28 @@
 				2CBA98762BE4FFB700B804E6 /* PromotionsCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		2CBA98782BE5173800B804E6 /* Promotion details */ = {
+			isa = PBXGroup;
+			children = (
+				2CBA987A2BE5174F00B804E6 /* PromotionDetailsPresenter.swift */,
+				2CBA987B2BE5174F00B804E6 /* PromotionDetailsProtocols.swift */,
+				2CBA987C2BE5174F00B804E6 /* PromotionDetailsInteractor.swift */,
+				2CBA987D2BE5174F00B804E6 /* PromotionDetailsView.swift */,
+				2CBA987E2BE5174F00B804E6 /* PromotionDetailsModel.swift */,
+				2CBA987F2BE5174F00B804E6 /* PromotionDetailsWireframe.swift */,
+				2CBA98872BE5175600B804E6 /* UI */,
+			);
+			path = "Promotion details";
+			sourceTree = "<group>";
+		};
+		2CBA98872BE5175600B804E6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2CBA98882BE5175D00B804E6 /* PromotionDetailsUI.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		2CCF3AA72BD7B24D00B3729E /* Registration */ = {
@@ -2094,6 +2131,7 @@
 				62F6CE7B2BDE6DF600C4775C /* TermsModel.swift in Sources */,
 				62F6CE7C2BDE6DF600C4775C /* TermsWireframe.swift in Sources */,
 				2CACCDA82BD53265008178F8 /* FirebaseEvents.swift in Sources */,
+				2CBA98892BE5175D00B804E6 /* PromotionDetailsUI.swift in Sources */,
 				2CACCDE42BD54039008178F8 /* UIViewController+Extension.swift in Sources */,
 				2CACCDD22BD53E82008178F8 /* String+Extension.swift in Sources */,
 				2CACCDBA2BD53C40008178F8 /* Configuration.swift in Sources */,
@@ -2201,6 +2239,12 @@
 				2CA195392BE213A000CC10F5 /* CardDetailsPresenter.swift in Sources */,
 				2CA1953A2BE213A000CC10F5 /* CardDetailsProtocols.swift in Sources */,
 				2CA1953B2BE213A000CC10F5 /* CardDetailsInteractor.swift in Sources */,
+				2CBA98802BE5174F00B804E6 /* PromotionDetailsPresenter.swift in Sources */,
+				2CBA98812BE5174F00B804E6 /* PromotionDetailsProtocols.swift in Sources */,
+				2CBA98822BE5174F00B804E6 /* PromotionDetailsInteractor.swift in Sources */,
+				2CBA98832BE5174F00B804E6 /* PromotionDetailsView.swift in Sources */,
+				2CBA98842BE5174F00B804E6 /* PromotionDetailsModel.swift in Sources */,
+				2CBA98852BE5174F00B804E6 /* PromotionDetailsWireframe.swift in Sources */,
 				2CA1953C2BE213A000CC10F5 /* CardDetailsView.swift in Sources */,
 				2CA1953D2BE213A000CC10F5 /* CardDetailsModel.swift in Sources */,
 				2CA1953E2BE213A000CC10F5 /* CardDetailsWireframe.swift in Sources */,
