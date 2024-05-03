@@ -19,7 +19,7 @@ class HomeCardTableViewCell: UITableViewCell {
     
     lazy var separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = AppColors.lightGrey
+        view.backgroundColor = .clear//AppColors.lightGrey
         return view
     }()
     
@@ -120,14 +120,15 @@ class HomeCardTableViewCell: UITableViewCell {
         cellContentView.addSubview(separatorView)
         separatorView.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.trailing.equalToSuperview().offset(32)
             make.leading.equalToSuperview()
             make.height.equalTo(32)
         }
         
         cellContentView.addSubview(shadowPlaceholderView)
         shadowPlaceholderView.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalToSuperview()
+            make.leading.trailing.top.equalToSuperview()
+            make.bottom.equalTo(separatorView.snp.top)
         }
         self.selectionStyle = .none
         
