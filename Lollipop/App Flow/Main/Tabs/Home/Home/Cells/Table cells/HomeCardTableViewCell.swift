@@ -54,7 +54,7 @@ class HomeCardTableViewCell: UITableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.isUserInteractionEnabled = true
-        collectionView.backgroundColor = AppColors.error
+        collectionView.backgroundColor = AppColors.white
         return collectionView
     }()
     
@@ -68,14 +68,14 @@ class HomeCardTableViewCell: UITableViewCell {
         pageControl.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
-            make.bottom.equalToSuperview().offset(-12)
+            make.bottom.equalToSuperview().offset(-24)
             make.height.equalTo(8)
         }
         
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(32)
-            make.bottom.equalTo(pageControl.snp.top).offset(-12)
+            make.bottom.equalTo(pageControl.snp.top).offset(-24)
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview()
             make.height.equalTo(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 68) * 0.63)
@@ -167,7 +167,7 @@ extension HomeCardTableViewCell {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(30))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 48), heightDimension: .estimated(192))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 48), heightDimension: .estimated(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 68) * 0.63))
         let group = NSCollectionLayoutGroup.vertical( layoutSize: groupSize, subitem: item, count: 1)
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0,trailing: 16)
         let section = NSCollectionLayoutSection(group: group)
