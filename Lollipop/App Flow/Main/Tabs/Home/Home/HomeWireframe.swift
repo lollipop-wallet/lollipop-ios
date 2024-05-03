@@ -19,4 +19,9 @@ class HomeWireframe: HomeWireframeProtocol {
         HomeRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toPromotions(){
+        let vc = PromotionsView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

@@ -121,7 +121,7 @@ class HomeRectHorizontalCategoryTableViewCell: UITableViewCell {
     
     //MARK: Actions
     @objc func onSeeAllTap() {
-        
+        delegate?.didTapSeeMoreFromRectCategory()
     }
 }
 

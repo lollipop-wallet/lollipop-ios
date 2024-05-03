@@ -39,8 +39,7 @@ protocol HomeViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol HomeWireframeProtocol: AnyObject {
-
-    
+    func toPromotions()
 }
 
 //MARK: AddCardHomeCell protocol
@@ -65,7 +64,7 @@ protocol HomePosterCategoryCellProtocol: AnyObject {
 
 //MARK: RectangleCategoryCell Protocol
 protocol RectangleCategoryCellProtocol: AnyObject {
-    
+    func didTapSeeMoreFromRectCategory()
 }
 
 //MARK: LoyaltyCardCell protocol

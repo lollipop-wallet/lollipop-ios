@@ -86,6 +86,13 @@
 		2CBA985D2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA985C2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift */; };
 		2CBA985F2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA985E2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift */; };
 		2CBA98612BE4E75D00B804E6 /* RectItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA98602BE4E75D00B804E6 /* RectItemCollectionViewCell.swift */; };
+		2CBA986B2BE4FC1200B804E6 /* PromotionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA98652BE4FC1200B804E6 /* PromotionsPresenter.swift */; };
+		2CBA986C2BE4FC1200B804E6 /* PromotionsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA98662BE4FC1200B804E6 /* PromotionsProtocols.swift */; };
+		2CBA986D2BE4FC1200B804E6 /* PromotionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA98672BE4FC1200B804E6 /* PromotionsInteractor.swift */; };
+		2CBA986E2BE4FC1200B804E6 /* PromotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA98682BE4FC1200B804E6 /* PromotionsView.swift */; };
+		2CBA986F2BE4FC1200B804E6 /* PromotionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA98692BE4FC1200B804E6 /* PromotionsModel.swift */; };
+		2CBA98702BE4FC1200B804E6 /* PromotionsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA986A2BE4FC1200B804E6 /* PromotionsWireframe.swift */; };
+		2CBA98742BE4FC2000B804E6 /* PromotionsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA98732BE4FC2000B804E6 /* PromotionsUI.swift */; };
 		2CCF3AB12BD7B29300B3729E /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAA2BD7B29300B3729E /* SignInPresenter.swift */; };
 		2CCF3AB22BD7B29300B3729E /* SignInProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAB2BD7B29300B3729E /* SignInProtocols.swift */; };
 		2CCF3AB32BD7B29300B3729E /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAC2BD7B29300B3729E /* SignInInteractor.swift */; };
@@ -385,6 +392,13 @@
 		2CBA985C2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePosterCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		2CBA985E2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRectHorizontalCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		2CBA98602BE4E75D00B804E6 /* RectItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		2CBA98652BE4FC1200B804E6 /* PromotionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsPresenter.swift; sourceTree = "<group>"; };
+		2CBA98662BE4FC1200B804E6 /* PromotionsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsProtocols.swift; sourceTree = "<group>"; };
+		2CBA98672BE4FC1200B804E6 /* PromotionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsInteractor.swift; sourceTree = "<group>"; };
+		2CBA98682BE4FC1200B804E6 /* PromotionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsView.swift; sourceTree = "<group>"; };
+		2CBA98692BE4FC1200B804E6 /* PromotionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsModel.swift; sourceTree = "<group>"; };
+		2CBA986A2BE4FC1200B804E6 /* PromotionsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsWireframe.swift; sourceTree = "<group>"; };
+		2CBA98732BE4FC2000B804E6 /* PromotionsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsUI.swift; sourceTree = "<group>"; };
 		2CCF3AAA2BD7B29300B3729E /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		2CCF3AAB2BD7B29300B3729E /* SignInProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInProtocols.swift; sourceTree = "<group>"; };
 		2CCF3AAC2BD7B29300B3729E /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
@@ -1005,6 +1019,36 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		2CBA98622BE4FBFD00B804E6 /* Promotions */ = {
+			isa = PBXGroup;
+			children = (
+				2CBA98632BE4FC0700B804E6 /* Promotions */,
+			);
+			path = Promotions;
+			sourceTree = "<group>";
+		};
+		2CBA98632BE4FC0700B804E6 /* Promotions */ = {
+			isa = PBXGroup;
+			children = (
+				2CBA98652BE4FC1200B804E6 /* PromotionsPresenter.swift */,
+				2CBA98662BE4FC1200B804E6 /* PromotionsProtocols.swift */,
+				2CBA98672BE4FC1200B804E6 /* PromotionsInteractor.swift */,
+				2CBA98682BE4FC1200B804E6 /* PromotionsView.swift */,
+				2CBA98692BE4FC1200B804E6 /* PromotionsModel.swift */,
+				2CBA986A2BE4FC1200B804E6 /* PromotionsWireframe.swift */,
+				2CBA98722BE4FC1900B804E6 /* UI */,
+			);
+			path = Promotions;
+			sourceTree = "<group>";
+		};
+		2CBA98722BE4FC1900B804E6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2CBA98732BE4FC2000B804E6 /* PromotionsUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		2CCF3AA72BD7B24D00B3729E /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -1450,6 +1494,7 @@
 			isa = PBXGroup;
 			children = (
 				2C4EE5EE2BE36D7000F16FD8 /* Home */,
+				2CBA98622BE4FBFD00B804E6 /* Promotions */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1985,6 +2030,7 @@
 				2CE32ACC2BDFBB91004757C5 /* DialogueView.swift in Sources */,
 				2CE32ACD2BDFBB91004757C5 /* DialogueModel.swift in Sources */,
 				2CE32ACE2BDFBB91004757C5 /* DialogueWireframe.swift in Sources */,
+				2CBA98742BE4FC2000B804E6 /* PromotionsUI.swift in Sources */,
 				62F6CD9E2BDBC6D600C4775C /* PartnersProtocols.swift in Sources */,
 				62F6CD9F2BDBC6D600C4775C /* PartnersInteractor.swift in Sources */,
 				62F6CDA02BDBC6D600C4775C /* PartnersView.swift in Sources */,
@@ -2133,6 +2179,12 @@
 				2CACCDBD2BD53D09008178F8 /* DataPasser.swift in Sources */,
 				2CACCDEB2BD54120008178F8 /* PushNotificationsManager.swift in Sources */,
 				2CDDA7402BDA367000B6C8B5 /* OTPInputProtocols.swift in Sources */,
+				2CBA986B2BE4FC1200B804E6 /* PromotionsPresenter.swift in Sources */,
+				2CBA986C2BE4FC1200B804E6 /* PromotionsProtocols.swift in Sources */,
+				2CBA986D2BE4FC1200B804E6 /* PromotionsInteractor.swift in Sources */,
+				2CBA986E2BE4FC1200B804E6 /* PromotionsView.swift in Sources */,
+				2CBA986F2BE4FC1200B804E6 /* PromotionsModel.swift in Sources */,
+				2CBA98702BE4FC1200B804E6 /* PromotionsWireframe.swift in Sources */,
 				62214B0B2BD6F44D00ABF38E /* ContentViewUI.swift in Sources */,
 				2CA195392BE213A000CC10F5 /* CardDetailsPresenter.swift in Sources */,
 				2CA1953A2BE213A000CC10F5 /* CardDetailsProtocols.swift in Sources */,
