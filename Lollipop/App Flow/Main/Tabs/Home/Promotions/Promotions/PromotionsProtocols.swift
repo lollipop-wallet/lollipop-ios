@@ -6,11 +6,11 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PromotionsPresenterProtocol: AnyObject {
+protocol PromotionsPresenterProtocol: UICollectionViewDelegate, UICollectionViewDataSource, PromotionsCellProtocol {
     
     var interactor: PromotionsInputInteractorProtocol? { get set }
     var view: PromotionsViewProtocol? { get set }
@@ -41,4 +41,9 @@ protocol PromotionsViewProtocol: AnyObject {
 protocol PromotionsWireframeProtocol: AnyObject {
 
     
+}
+
+//MARK: PromotionsCell Protocol
+protocol PromotionsCellProtocol: AnyObject {
+    func didSelectItemAt(index: IndexPath)
 }

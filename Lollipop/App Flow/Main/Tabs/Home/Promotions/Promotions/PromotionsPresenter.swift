@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class PromotionsPresenter: PromotionsPresenterProtocol  {
+class PromotionsPresenter: NSObject, PromotionsPresenterProtocol  {
     
     var interactor : PromotionsInputInteractorProtocol?
     weak var view: PromotionsViewProtocol?
@@ -17,4 +17,21 @@ class PromotionsPresenter: PromotionsPresenterProtocol  {
 
 extension PromotionsPresenter: PromotionsOutputInteractorProtocol {
     
+}
+
+extension PromotionsPresenter {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 11
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.promotionsCell.rawValue, for: indexPath) as! PromotionsCollectionViewCell
+        cell.configureWith(delegate: self, index: indexPath)
+        return cell
+    }
+    
+    
+    func didSelectItemAt(index: IndexPath) {
+        
+    }
 }
