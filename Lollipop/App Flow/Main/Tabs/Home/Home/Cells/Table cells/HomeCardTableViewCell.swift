@@ -19,7 +19,7 @@ class HomeCardTableViewCell: UITableViewCell {
     
     lazy var separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = .clear//AppColors.lightGrey
+        view.backgroundColor = AppColors.lightGrey
         return view
     }()
     
@@ -36,8 +36,8 @@ class HomeCardTableViewCell: UITableViewCell {
         view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         view.layer.shadowColor =  UIColor(red: 0.118, green: 0.118, blue: 0.118, alpha: 0.1).cgColor
         view.layer.shadowOpacity = 1
-        view.layer.shadowOffset = CGSize(width: 0, height: 8)
-        view.layer.shadowRadius = 34
+        view.layer.shadowOffset = CGSize(width: 0, height: 28)
+        view.layer.shadowRadius = 36
         return view
     }()
     
@@ -99,6 +99,7 @@ class HomeCardTableViewCell: UITableViewCell {
         dataContentView.snp.makeConstraints { make in
             make.leading.trailing.bottom.top.equalToSuperview()
         }
+        view.backgroundColor = AppColors.lightGrey
         return view
     }()
     

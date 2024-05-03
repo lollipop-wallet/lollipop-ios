@@ -26,6 +26,7 @@ class MainView: UITabBarController, MainViewProtocol {
         self.viewControllers = vcs
         tabBar.barTintColor = AppColors.white
         tabBar.isTranslucent = false
+        self.tabBar.backgroundColor = .white
     }
     
     //MARK: Actions

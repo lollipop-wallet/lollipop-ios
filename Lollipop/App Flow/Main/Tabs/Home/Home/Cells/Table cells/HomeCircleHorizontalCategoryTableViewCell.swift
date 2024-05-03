@@ -25,11 +25,11 @@ class HomeCircleHorizontalCategoryTableViewCell: UITableViewCell {
     
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.createCompositionalLayout())
-        collectionView.register(LoyaltyCardCollectionViewCell.self, forCellWithReuseIdentifier: CellId.loyaltyCardCell.rawValue)
+        collectionView.register(CircledItemCollectionViewCell.self, forCellWithReuseIdentifier: CellId.circledItemCell.rawValue)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.isUserInteractionEnabled = true
-        collectionView.backgroundColor = AppColors.white
+        //collectionView.isUserInteractionEnabled = true
+        collectionView.backgroundColor = .clear//AppColors.lightGrey
         return collectionView
     }()
     
@@ -38,6 +38,7 @@ class HomeCircleHorizontalCategoryTableViewCell: UITableViewCell {
         label.font = .inter(ofSize: 20, name: .bold)
         label.textColor = AppColors.black
         label.textAlignment = .left
+        label.text = "Popularno"
         return label
     }()
     
@@ -86,7 +87,9 @@ class HomeCircleHorizontalCategoryTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         //Do your cell set up
-        self.contentView.backgroundColor = AppColors.white
+        self.layer.backgroundColor = UIColor.clear.cgColor
+        self.contentView.backgroundColor = UIColor.clear
+        //self.contentView.backgroundColor = nil
         self.contentView.addSubview(cellContentView)
         cellContentView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
@@ -111,6 +114,7 @@ class HomeCircleHorizontalCategoryTableViewCell: UITableViewCell {
         
     }
     func configureWith(index: IndexPath, delegate: CircledCategoryCellProtocol) {
+        self.backgroundColor = .clear
         self.index = index
         self.delegate = delegate
     }
@@ -149,9 +153,10 @@ extension HomeCircleHorizontalCategoryTableViewCell {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(30))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 48), heightDimension: .estimated(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 68) * 0.63))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(140), heightDimension: .estimated(114))
+
         let group = NSCollectionLayoutGroup.vertical( layoutSize: groupSize, subitem: item, count: 1)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0,trailing: 16)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0,trailing: 20)
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         
