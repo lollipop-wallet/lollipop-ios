@@ -43,8 +43,8 @@ class HomeCardTableViewCell: UITableViewCell {
     
     lazy var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
-        pageControl.backgroundColor = .red
-        pageControl.numberOfPages = 10
+        pageControl.currentPageIndicatorTintColor = AppColors.brandPrimary
+        pageControl.pageIndicatorTintColor = AppColors.mediumGrey
         return pageControl
     }()
     
@@ -135,12 +135,13 @@ class HomeCardTableViewCell: UITableViewCell {
     func configureWith(index: IndexPath, delegate: HomeCardCellProtocol) {
         self.index = index
         self.delegate = delegate
+        self.pageControl.numberOfPages = 5
     }
     
     //MARK: Actions
 }
 
-extension HomeCardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, LoyaltyCardCellProtocol {
+extension HomeCardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, LoyaltyCardCellProtocol, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
@@ -150,6 +151,7 @@ extension HomeCardTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         cell.configureWith(delegate: self, index: indexPath)
         return cell
     }
+    
     
     func didSelectItemAt(index: IndexPath) {
         
@@ -171,6 +173,13 @@ extension HomeCardTableViewCell {
         let group = NSCollectionLayoutGroup.vertical( layoutSize: groupSize, subitem: item, count: 1)
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0,trailing: 16)
         let section = NSCollectionLayoutSection(group: group)
+
+        section.visibleItemsInvalidationHandler = { [weak self] (items, offset, env) -> Void in
+            guard let self = self, let itemWidth = items.last?.bounds.width else { return }
+            let page = round(offset.x / (itemWidth + section.interGroupSpacing))
+            self.pageControl.currentPage = Int(page)
+        }
+        
         section.orthogonalScrollingBehavior = .groupPaging
         
         return section
