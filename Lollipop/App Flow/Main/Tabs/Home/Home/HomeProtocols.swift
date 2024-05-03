@@ -57,3 +57,8 @@ protocol HomeCardCellProtocol: AnyObject {
 protocol LoyaltyCardCellProtocol: AnyObject {
     func didSelectItemAt(index: IndexPath)
 }
+
+//MARK: CircledItemCell Protocol
+protocol CircledItemCellProtocol: AnyObject {
+    func didSelectItemAt(index: IndexPath)
+}

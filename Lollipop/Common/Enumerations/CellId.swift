@@ -18,4 +18,6 @@ enum CellId : String {
     case addCardHomeCell = "addCardHomeCell"
     case homeCardCell = "homeCardCell"
     case loyaltyCardCell = "loyaltyCardCell"
+    case homeCircleHorizontalCell = "homeCircleHorizontalCell"
+    case circledItemCell = "circledItemCell"
 }
