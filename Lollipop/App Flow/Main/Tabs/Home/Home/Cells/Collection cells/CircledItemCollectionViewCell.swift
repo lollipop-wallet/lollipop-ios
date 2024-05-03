@@ -21,8 +21,6 @@ class CircledItemCollectionViewCell: UICollectionViewCell {
     lazy var photo: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = imageView.frame.height / 2
-        imageView.layer.masksToBounds = true
         imageView.backgroundColor = .red
         return imageView
     }()
@@ -57,6 +55,8 @@ class CircledItemCollectionViewCell: UICollectionViewCell {
             make.leading.trailing.top.equalToSuperview()
             make.bottom.equalTo(titleLabel.snp.top).offset(-6)
         }
+        photo.layer.cornerRadius = 44
+        
         
         view.addSubview(cellButton)
         cellButton.snp.makeConstraints { make in
@@ -95,6 +95,7 @@ class CircledItemCollectionViewCell: UICollectionViewCell {
     //MARK: Actions
     
     @objc func onCellTap(){
+        print("wdwda")
         delegate?.didSelectItemAt(index: self.index)
     }
 }
