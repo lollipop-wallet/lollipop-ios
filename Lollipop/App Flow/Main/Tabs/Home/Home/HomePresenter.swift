@@ -24,7 +24,7 @@ extension HomePresenter: HomeOutputInteractorProtocol {
 
 extension HomePresenter {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,8 +39,12 @@ extension HomePresenter {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homeCircleHorizontalCell.rawValue, for: indexPath) as! HomeCircleHorizontalCategoryTableViewCell
             cell.configureWith(index: indexPath, delegate: self)
             return cell
-        }else {
+        }else if indexPath.row == 2{
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homePosterCell.rawValue, for: indexPath) as! HomePosterCategoryTableViewCell
+            cell.configureWith(index: indexPath, delegate: self)
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homeRectItemCell.rawValue, for: indexPath) as! HomeRectHorizontalCategoryTableViewCell
             cell.configureWith(index: indexPath, delegate: self)
             return cell
         }

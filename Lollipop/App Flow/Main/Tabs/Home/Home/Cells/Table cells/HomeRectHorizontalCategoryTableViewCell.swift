@@ -24,7 +24,7 @@ class HomeRectHorizontalCategoryTableViewCell: UITableViewCell {
     
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.createCompositionalLayout())
-        collectionView.register(CircledItemCollectionViewCell.self, forCellWithReuseIdentifier: CellId.circledItemCell.rawValue)
+        collectionView.register(RectItemCollectionViewCell.self, forCellWithReuseIdentifier: CellId.rectItemCell.rawValue)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.isUserInteractionEnabled = true
@@ -37,7 +37,7 @@ class HomeRectHorizontalCategoryTableViewCell: UITableViewCell {
         label.font = .inter(ofSize: 20, name: .bold)
         label.textColor = AppColors.black
         label.textAlignment = .left
-        label.text = "Popularno"
+        label.text = "Promocije"
         return label
     }()
     
@@ -125,13 +125,13 @@ class HomeRectHorizontalCategoryTableViewCell: UITableViewCell {
     }
 }
 
-extension HomeRectHorizontalCategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, CircledItemCellProtocol {
+extension HomeRectHorizontalCategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, RectItemCellProtocol {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 11
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.circledItemCell.rawValue, for: indexPath) as! CircledItemCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.rectItemCell.rawValue, for: indexPath) as! RectItemCollectionViewCell
         cell.configureWith(delegate: self, index: indexPath)
         return cell
     }
@@ -153,10 +153,10 @@ extension HomeRectHorizontalCategoryTableViewCell {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(30))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(110), heightDimension: .estimated(216))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(170), heightDimension: .estimated(216))
 
         let group = NSCollectionLayoutGroup.vertical( layoutSize: groupSize, subitem: item, count: 1)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0,trailing: 20)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0,trailing: 12)
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         

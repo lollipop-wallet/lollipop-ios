@@ -22,4 +22,5 @@ enum CellId : String {
     case circledItemCell = "circledItemCell"
     case homePosterCell = "homePosterCell"
     case homeRectItemCell = "homeRectItemCell"
+    case rectItemCell = "rectItemCell"
 }
