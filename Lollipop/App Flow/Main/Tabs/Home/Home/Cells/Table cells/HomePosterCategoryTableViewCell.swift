@@ -14,6 +14,7 @@ class HomePosterCategoryTableViewCell: UITableViewCell {
     
     lazy var cellContentView: UIView = {
         let view = UIView()
+        view.backgroundColor = AppColors.lightGrey
         return view
     }()
     
@@ -94,6 +95,8 @@ class HomePosterCategoryTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(-20)
         }
+        view.layer.cornerRadius = 12
+        view.layer.masksToBounds = true
         return view
     }()
     

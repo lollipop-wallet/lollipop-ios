@@ -14,7 +14,7 @@ class RectItemCollectionViewCell: UICollectionViewCell {
     
     lazy var cellContentView: UIView = {
         let view = UIView()
-        view.backgroundColor = AppColors.white
+        view.backgroundColor = AppColors.lightGrey
         return view
     }()
     
@@ -93,6 +93,8 @@ class RectItemCollectionViewCell: UICollectionViewCell {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
+    
+        self.contentView.backgroundColor = AppColors.lightGrey
         
         self.contentView.addSubview(cellContentView)
         cellContentView.snp.makeConstraints { make in
