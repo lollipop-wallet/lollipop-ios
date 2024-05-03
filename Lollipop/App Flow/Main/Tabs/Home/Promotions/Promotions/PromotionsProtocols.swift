@@ -35,7 +35,7 @@ protocol PromotionsOutputInteractorProtocol: AnyObject {
 protocol PromotionsViewProtocol: AnyObject {
     
     var presenter: PromotionsPresenterProtocol?  { get set }
-    
+    func setNavBarColor(shouldChange: Bool)
 }
 //MARK: Wireframe
 protocol PromotionsWireframeProtocol: AnyObject {
