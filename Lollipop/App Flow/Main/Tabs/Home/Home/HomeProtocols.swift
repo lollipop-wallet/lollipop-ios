@@ -10,7 +10,7 @@ import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddCardHomeCellProtocol, HomeCardCellProtocol, CircledCategoryCellProtocol, HomePosterCategoryCellProtocol {
+protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddCardHomeCellProtocol, HomeCardCellProtocol, CircledCategoryCellProtocol, HomePosterCategoryCellProtocol, RectangleCategoryCellProtocol {
     
     var interactor: HomeInputInteractorProtocol? { get set }
     var view: HomeViewProtocol? { get set }
@@ -63,6 +63,11 @@ protocol HomePosterCategoryCellProtocol: AnyObject {
     
 }
 
+//MARK: RectangleCategoryCell Protocol
+protocol RectangleCategoryCellProtocol: AnyObject {
+    
+}
+
 //MARK: LoyaltyCardCell protocol
 protocol LoyaltyCardCellProtocol: AnyObject {
     func didSelectItemAt(index: IndexPath)
@@ -73,3 +78,7 @@ protocol CircledItemCellProtocol: AnyObject {
     func didSelectItemAt(index: IndexPath)
 }
 
+//MARK: RectItemCell Protocol
+protocol RectItemCellProtocol: AnyObject {
+    func didSelectItemAt(index: IndexPath)
+}

@@ -84,6 +84,8 @@
 		2CACCDED2BD541D3008178F8 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDEC2BD541D3008178F8 /* AppDelegate+Extension.swift */; };
 		2CACCDEF2BD5422A008178F8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCDEE2BD5422A008178F8 /* StorageManager.swift */; };
 		2CBA985D2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA985C2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift */; };
+		2CBA985F2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA985E2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift */; };
+		2CBA98612BE4E75D00B804E6 /* RectItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA98602BE4E75D00B804E6 /* RectItemCollectionViewCell.swift */; };
 		2CCF3AB12BD7B29300B3729E /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAA2BD7B29300B3729E /* SignInPresenter.swift */; };
 		2CCF3AB22BD7B29300B3729E /* SignInProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAB2BD7B29300B3729E /* SignInProtocols.swift */; };
 		2CCF3AB32BD7B29300B3729E /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAC2BD7B29300B3729E /* SignInInteractor.swift */; };
@@ -381,6 +383,8 @@
 		2CACCDEC2BD541D3008178F8 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
 		2CACCDEE2BD5422A008178F8 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		2CBA985C2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePosterCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		2CBA985E2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRectHorizontalCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		2CBA98602BE4E75D00B804E6 /* RectItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CCF3AAA2BD7B29300B3729E /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		2CCF3AAB2BD7B29300B3729E /* SignInProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInProtocols.swift; sourceTree = "<group>"; };
 		2CCF3AAC2BD7B29300B3729E /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
@@ -651,6 +655,7 @@
 			children = (
 				2C4EE5FB2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift */,
 				6212737D2BE4A0B500FDA7D0 /* CircledItemCollectionViewCell.swift */,
+				2CBA98602BE4E75D00B804E6 /* RectItemCollectionViewCell.swift */,
 			);
 			path = "Collection cells";
 			sourceTree = "<group>";
@@ -662,6 +667,7 @@
 				2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */,
 				6212737B2BE4A08700FDA7D0 /* HomeCircleHorizontalCategoryTableViewCell.swift */,
 				2CBA985C2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift */,
+				2CBA985E2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift */,
 			);
 			path = "Table cells";
 			sourceTree = "<group>";
@@ -2091,6 +2097,7 @@
 				2CEC7FB62BD8D1730050E762 /* RegisterInteractor.swift in Sources */,
 				2CEC7FB72BD8D1730050E762 /* RegisterView.swift in Sources */,
 				2CEC7FB82BD8D1730050E762 /* RegisterModel.swift in Sources */,
+				2CBA98612BE4E75D00B804E6 /* RectItemCollectionViewCell.swift in Sources */,
 				2CEC7FB92BD8D1730050E762 /* RegisterWireframe.swift in Sources */,
 				627E92C32BDA056B0016FF73 /* DropdownInputFieldProtocols.swift in Sources */,
 				2CACCDE02BD53FA9008178F8 /* UITextField+Extension.swift in Sources */,
@@ -2164,6 +2171,7 @@
 				2CA195532BE23D9300CC10F5 /* EditCardUI.swift in Sources */,
 				627E92C82BDA0E200016FF73 /* MainButton.swift in Sources */,
 				2CACCDB52BD53BEB008178F8 /* AssetTitles.swift in Sources */,
+				2CBA985F2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift in Sources */,
 				2C4EE5F52BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift in Sources */,
 				2CACCD902BD52E81008178F8 /* UIApplication+Extension.swift in Sources */,
 				2CACCDAD2BD53299008178F8 /* AppColors.swift in Sources */,
