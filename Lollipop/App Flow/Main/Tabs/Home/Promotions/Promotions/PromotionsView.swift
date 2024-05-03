@@ -10,6 +10,8 @@
 import UIKit
 
 class PromotionsView: UIViewController, PromotionsViewProtocol {
+    
+    var collectionView: UICollectionView?
 
     var presenter: PromotionsPresenterProtocol?
 

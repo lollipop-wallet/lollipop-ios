@@ -35,8 +35,8 @@ class PromotionsCollectionViewCell: UICollectionViewCell {
         label.textColor = AppColors.black
         label.textAlignment = .left
         label.text = "Vraća novac, na svakoj Petrol stanici"
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 3
+        label.lineBreakMode = .byTruncatingTail
         return label
     }()
     
@@ -65,9 +65,9 @@ class PromotionsCollectionViewCell: UICollectionViewCell {
     }()
     
     lazy var contentStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [promotionTitleLabel, titleFooterStack])
-        stack.axis = .horizontal
-        stack.alignment = .center
+        let stack = UIStackView(arrangedSubviews: [promotionTitleLabel, fillerView, titleFooterStack])
+        stack.axis = .vertical
+        stack.alignment = .fill
         stack.distribution = .fill
         stack.spacing = 8
         return stack
@@ -91,18 +91,26 @@ class PromotionsCollectionViewCell: UICollectionViewCell {
     
     lazy var mainPlaceholder: UIView = {
         let view = UIView()
-
-        view.addSubview(contentStack)
-        contentStack.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(12)
-            make.trailing.equalToSuperview().offset(-12)
-            make.bottom.equalToSuperview().offset(-12)
-        }
                 
         view.addSubview(photo)
         photo.snp.makeConstraints { make in
             make.leading.trailing.top.equalToSuperview()
-            make.bottom.equalTo(titleFooterStack.snp.top).offset(-12)
+            make.height.equalTo((((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 52) / 2))
+        }
+        
+        view.addSubview(promotionTitleLabel)
+        promotionTitleLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(12)
+            make.trailing.equalToSuperview().offset(-12)
+            make.top.equalTo(photo.snp.bottom).offset(12)
+        }
+        
+        view.addSubview(titleFooterStack)
+        titleFooterStack.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(12)
+            make.trailing.equalToSuperview().offset(-12)
+            make.bottom.equalTo(-12)
+            make.height.equalTo(32)
         }
             
         view.addSubview(cellButton)

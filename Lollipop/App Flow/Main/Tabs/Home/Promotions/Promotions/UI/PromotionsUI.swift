@@ -40,6 +40,40 @@ extension PromotionsView {
         }()
         
         self.navigationItem.leftBarButtonItems = [backButton]
+        
+        self.collectionView = AutomaticHeightCollectionView(frame: .zero, collectionViewLayout: self.createCompositionalLayout())
+        self.collectionView?.register(PromotionsCollectionViewCell.self, forCellWithReuseIdentifier: CellId.promotionsCell.rawValue)
+        self.collectionView?.delegate = presenter
+        self.collectionView?.dataSource = presenter
+        self.collectionView?.backgroundColor = AppColors.lightGrey
+        
+        self.view.addSubview(self.collectionView ?? UICollectionView())
+        (self.collectionView ?? UICollectionView()).snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(24)
+            make.leading.equalToSuperview().offset(14)
+            make.trailing.equalToSuperview().offset(-14)
+            make.bottom.equalToSuperview()
+        }
 
     }
+}
+
+extension PromotionsView {
+    func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
+       return UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
+           return self.generateFlowLayout()
+      }
+   }
+   
+    private func generateFlowLayout() -> NSCollectionLayoutSection {
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.85))
+       let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .init(top: 6, leading: 6, bottom: 6, trailing: 6)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(500))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+       let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .none
+       return section
+   }
 }
