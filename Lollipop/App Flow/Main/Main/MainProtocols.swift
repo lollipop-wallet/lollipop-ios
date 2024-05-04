@@ -17,6 +17,7 @@ protocol MainPresenterProtocol: AnyObject {
     var wireframe:MainWireframeProtocol? { get set }
  
     func viewDidLoad()
+    func scan()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -41,6 +42,5 @@ protocol MainViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol MainWireframeProtocol: AnyObject {
-
-    
+    func toWallet()
 }

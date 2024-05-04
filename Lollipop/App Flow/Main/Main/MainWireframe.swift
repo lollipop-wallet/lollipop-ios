@@ -19,4 +19,9 @@ class MainWireframe: MainWireframeProtocol {
         MainRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toWallet(){
+        let vc = WalletView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

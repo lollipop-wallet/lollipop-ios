@@ -46,6 +46,10 @@ class MainPresenter: MainPresenterProtocol  {
         
         view?.setControllersWith(vcs: [vc1Nav, vc2Nav, vc3Nav, vc4Nav, vc5Nav])
     }
+    
+    func scan() {
+        wireframe?.toWallet()
+    }
 }
 
 extension MainPresenter: MainOutputInteractorProtocol {

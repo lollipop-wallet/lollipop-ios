@@ -32,6 +32,6 @@ class MainView: UITabBarController, MainViewProtocol {
     //MARK: Actions
     
     @objc func onScanTap() {
-        
+        presenter?.scan()
     }
 }
