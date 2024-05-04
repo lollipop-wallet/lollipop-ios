@@ -17,13 +17,40 @@ class LoyaltyCard: UIView {
         return imageView
     }()
     
+    lazy var loyaltyPlaceholderHeader: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }()
+    
+    lazy var loyaltyPlaceholderFooter: UIView = {
+        let view = UIView()
+        view.backgroundColor = AppColors.brandPowder
+        return view
+    }()
+    
     lazy var loyaltyCardPlaceholder: UIView = {
         let view = UIView()
+        
+        view.addSubview(loyaltyPlaceholderHeader)
+        loyaltyPlaceholderHeader.snp.makeConstraints { make in
+            make.leading.trailing.top.equalToSuperview()
+            make.height.equalTo(24)
+        }
+        
+        view.addSubview(loyaltyPlaceholderFooter)
+        loyaltyPlaceholderFooter.snp.makeConstraints { make in
+            make.top.equalTo(loyaltyPlaceholderHeader.snp.bottom)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
+        
         view.addSubview(loyaltyCardImage)
         loyaltyCardImage.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
         }
-        view.backgroundColor = AppColors.brandPowder
+        view.snp.makeConstraints { make in
+            make.height.equalTo(view.snp.width).multipliedBy(0.63)
+        }
         return view
     }()
     
