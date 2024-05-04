@@ -58,18 +58,26 @@ class LoyaltyCard: UIView {
         let view = UIView()
         view.addSubview(pointsStackView)
         pointsStackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
             make.bottom.equalTo(-16)
             make.height.equalTo(32)
         }
         view.backgroundColor = AppColors.brandPowder
         view.layer.cornerRadius = 16
         view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        view.snp.makeConstraints { make in
+            make.height.equalTo(70)
+        }
         return view
     }()
     
     lazy var mainStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [loyaltyCardPlaceholder, pointsPlaceholder])
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        stack.spacing = 0
         return stack
     }()
     
@@ -87,5 +95,9 @@ class LoyaltyCard: UIView {
     
     
     func setup() {
+        self.addSubview(mainStackView)
+        mainStackView.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
     }
 }

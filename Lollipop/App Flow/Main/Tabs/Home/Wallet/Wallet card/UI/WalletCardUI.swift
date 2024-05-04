@@ -112,5 +112,13 @@ extension WalletCardView {
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
         }
+        
+        contentView.addSubview(self.loyaltyCard)
+        self.loyaltyCard.snp.makeConstraints { make in
+            make.top.equalTo(self.barcodeNumberLabel.snp.bottom).offset(32)
+            make.leading.equalToSuperview().offset(32)
+            make.trailing.equalToSuperview().offset(-32)
+            make.height.equalTo((self.view.frame.width - 64) * 0.84)
+        }
     }
 }

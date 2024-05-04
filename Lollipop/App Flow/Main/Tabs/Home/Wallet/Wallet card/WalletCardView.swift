@@ -13,6 +13,7 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
     
     var barcodeImageView = UIImageView()
     var barcodeNumberLabel = UILabel()
+    var loyaltyCard = LoyaltyCard()
 
     var presenter: WalletCardPresenterProtocol?
 
