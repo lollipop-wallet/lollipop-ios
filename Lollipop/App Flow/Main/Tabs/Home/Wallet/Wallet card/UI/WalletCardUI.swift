@@ -234,6 +234,15 @@ extension WalletCardView {
             return stack
         }()
         
+        lazy var saleSpotsLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 20, name: .bold)
+            label.textColor = AppColors.black
+            label.textAlignment = .left
+            label.text = LocalizedTitle.saleSpots.localized
+            return label
+        }()
+        
         view.addSubview(mainContentView)
         mainContentView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
@@ -290,6 +299,13 @@ extension WalletCardView {
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(self.loyaltyCard.snp.bottom).offset(32)
             make.height.equalTo(80)
+        }
+        
+        contentView.addSubview(saleSpotsLabel)
+        saleSpotsLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(28)
+            make.trailing.equalToSuperview().offset(-28)
+            make.top.equalTo(mainInfoStack.snp.bottom).offset(28)
         }
     }
 }

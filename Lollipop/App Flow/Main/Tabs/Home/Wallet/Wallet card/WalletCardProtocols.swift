@@ -42,3 +42,8 @@ protocol WalletCardWireframeProtocol: AnyObject {
 
     
 }
+
+//MARK: WalletCardShopCell Protocol
+protocol WalletCardShopCellProtocol: AnyObject {
+    func didSelectItemAt(index: IndexPath)
+}

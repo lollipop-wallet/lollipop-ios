@@ -121,6 +121,7 @@ enum LocalizedTitle: String {
     case locations
     case aboutProgramme
     case rules
+    case saleSpots
     
     var localized: String {
         return self.rawValue.localized()
