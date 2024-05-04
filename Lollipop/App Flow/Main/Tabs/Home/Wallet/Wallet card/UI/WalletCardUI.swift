@@ -69,6 +69,8 @@ extension WalletCardView {
         self.barcodeNumberLabel.textColor = AppColors.black
         self.barcodeNumberLabel.text = "231532321315123"
         
+        self.loyaltyCard.pointsHidden = true
+        
         
         view.addSubview(mainContentView)
         mainContentView.snp.makeConstraints { make in

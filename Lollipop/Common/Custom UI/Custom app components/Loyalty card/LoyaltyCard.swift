@@ -9,6 +9,34 @@ import UIKit
 
 class LoyaltyCard: UIView {
     
+    open var pointsHidden: Bool? {
+        set {
+            self.pointsMainStackView.isHidden = newValue ?? false
+            self.loyaltyPlaceholderFooter.backgroundColor = .clear
+        }
+        get { return true }
+    }
+    
+    open var imageUrl: String? {
+        set { self.loyaltyCardImage.imageFromURL(url: newValue ?? "") }
+        get { return "" }
+    }
+    
+    open var pointsTitle: String? {
+        set { self.pointsTitleLabel.text = newValue ?? "" }
+        get { return "" }
+    }
+    
+    open var points: String? {
+        set { self.pointsValueLabel.text = newValue ?? "" }
+        get { return "" }
+    }
+    
+    open var updatedAt: String? {
+        set { self.lastUpdateLabel.text = newValue ?? "" }
+        get { return "" }
+    }
+    
     lazy var loyaltyCardImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -99,8 +127,26 @@ class LoyaltyCard: UIView {
         return view
     }()
     
+    lazy var lastUpdateLabel: UILabel = {
+        let label = UILabel()
+        label.font = .inter(ofSize: 10, name: .regular)
+        label.textAlignment = .center
+        label.textColor = AppColors.darkGrey
+        label.text = "Posljednje ažuriranje podataka: 12.03.2024 u 08:42"
+        return label
+    }()
+    
+    lazy var pointsMainStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [pointsPlaceholder, lastUpdateLabel])
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        stack.spacing = 8
+        return stack
+    }()
+    
     lazy var mainStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [loyaltyCardPlaceholder, pointsPlaceholder])
+        let stack = UIStackView(arrangedSubviews: [loyaltyCardPlaceholder, pointsMainStackView])
         stack.axis = .vertical
         stack.alignment = .fill
         stack.distribution = .fill
