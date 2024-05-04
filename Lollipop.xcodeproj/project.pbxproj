@@ -97,6 +97,7 @@
 		2CBA7B342BE6126500C31FCD /* WalletCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B2D2BE6126500C31FCD /* WalletCardModel.swift */; };
 		2CBA7B352BE6126500C31FCD /* WalletCardWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B2E2BE6126500C31FCD /* WalletCardWireframe.swift */; };
 		2CBA7B382BE6127400C31FCD /* WalletCardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B372BE6127400C31FCD /* WalletCardUI.swift */; };
+		2CBA7B3B2BE61E5C00C31FCD /* LoyaltyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B3A2BE61E5C00C31FCD /* LoyaltyCard.swift */; };
 		2CBA985D2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA985C2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift */; };
 		2CBA985F2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA985E2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift */; };
 		2CBA98612BE4E75D00B804E6 /* RectItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA98602BE4E75D00B804E6 /* RectItemCollectionViewCell.swift */; };
@@ -426,6 +427,7 @@
 		2CBA7B2D2BE6126500C31FCD /* WalletCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardModel.swift; sourceTree = "<group>"; };
 		2CBA7B2E2BE6126500C31FCD /* WalletCardWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardWireframe.swift; sourceTree = "<group>"; };
 		2CBA7B372BE6127400C31FCD /* WalletCardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardUI.swift; sourceTree = "<group>"; };
+		2CBA7B3A2BE61E5C00C31FCD /* LoyaltyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyCard.swift; sourceTree = "<group>"; };
 		2CBA985C2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePosterCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		2CBA985E2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRectHorizontalCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		2CBA98602BE4E75D00B804E6 /* RectItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -688,6 +690,7 @@
 		2C4EE5EF2BE37CF500F16FD8 /* Custom app components */ = {
 			isa = PBXGroup;
 			children = (
+				2CBA7B392BE61E4B00C31FCD /* Loyalty card */,
 				2C4EE5F02BE381B800F16FD8 /* Home add card component */,
 			);
 			path = "Custom app components";
@@ -1117,6 +1120,14 @@
 				2CBA7B372BE6127400C31FCD /* WalletCardUI.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		2CBA7B392BE61E4B00C31FCD /* Loyalty card */ = {
+			isa = PBXGroup;
+			children = (
+				2CBA7B3A2BE61E5C00C31FCD /* LoyaltyCard.swift */,
+			);
+			path = "Loyalty card";
 			sourceTree = "<group>";
 		};
 		2CBA98622BE4FBFD00B804E6 /* Promotions */ = {
@@ -2190,6 +2201,7 @@
 				2CBA7B202BE606EA00C31FCD /* WalletInteractor.swift in Sources */,
 				2CBA7B212BE606EA00C31FCD /* WalletView.swift in Sources */,
 				2CBA7B222BE606EA00C31FCD /* WalletModel.swift in Sources */,
+				2CBA7B3B2BE61E5C00C31FCD /* LoyaltyCard.swift in Sources */,
 				2CBA7B232BE606EA00C31FCD /* WalletWireframe.swift in Sources */,
 				2CE32AA72BDF66F5004757C5 /* CustomSegmentedControl.swift in Sources */,
 				62F6CDA22BDBC6D600C4775C /* PartnersWireframe.swift in Sources */,
