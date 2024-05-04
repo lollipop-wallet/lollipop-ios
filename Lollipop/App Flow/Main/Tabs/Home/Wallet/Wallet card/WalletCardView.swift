@@ -10,6 +10,9 @@
 import UIKit
 
 class WalletCardView: UIViewController, WalletCardViewProtocol {
+    
+    var barcodeImageView = UIImageView()
+    var barcodeNumberLabel = UILabel()
 
     var presenter: WalletCardPresenterProtocol?
 

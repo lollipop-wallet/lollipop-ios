@@ -51,6 +51,25 @@ extension WalletCardView {
             return view
         }()
         
+        lazy var scrollView : UIScrollView = {
+            let scView = UIScrollView()
+            return scView
+        }()
+        
+        lazy var contentView : UIView = {
+            let view = UIView()
+            return view
+        }()
+        
+        self.barcodeImageView.contentMode = .scaleAspectFit
+        self.barcodeImageView.backgroundColor = .red
+        
+        self.barcodeNumberLabel.font = .inter(ofSize: 18, name: .regular)
+        self.barcodeNumberLabel.textAlignment = .center
+        self.barcodeNumberLabel.textColor = AppColors.black
+        self.barcodeNumberLabel.text = "231532321315123"
+        
+        
         view.addSubview(mainContentView)
         mainContentView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
@@ -66,6 +85,32 @@ extension WalletCardView {
         mainContentView.addSubview(mainContainerView)
         mainContainerView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
+        }
+        
+        mainContentView.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+        
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets.zero)
+            make.width.equalTo(scrollView)
+        }
+        
+        contentView.addSubview(self.barcodeImageView)
+        self.barcodeImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.height.equalTo(80)
+        }
+        
+        contentView.addSubview(self.barcodeNumberLabel)
+        self.barcodeNumberLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.barcodeImageView.snp.bottom).offset(7)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
         }
     }
 }
