@@ -10,8 +10,9 @@
 import UIKit
 
 class WalletView: UIViewController, WalletViewProtocol {
-
+    
     var presenter: WalletPresenterProtocol?
+    
 
 	override func viewDidLoad() {
         super.viewDidLoad()

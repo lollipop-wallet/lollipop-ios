@@ -6,11 +6,11 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol WalletPresenterProtocol: AnyObject {
+protocol WalletPresenterProtocol {
     
     var interactor: WalletInputInteractorProtocol? { get set }
     var view: WalletViewProtocol? { get set }

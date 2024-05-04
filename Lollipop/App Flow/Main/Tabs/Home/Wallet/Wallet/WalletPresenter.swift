@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class WalletPresenter: WalletPresenterProtocol  {
+class WalletPresenter: NSObject, WalletPresenterProtocol  {
     
     var interactor : WalletInputInteractorProtocol?
     weak var view: WalletViewProtocol?
@@ -18,3 +18,4 @@ class WalletPresenter: WalletPresenterProtocol  {
 extension WalletPresenter: WalletOutputInteractorProtocol {
     
 }
+

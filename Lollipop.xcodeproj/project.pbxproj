@@ -99,6 +99,7 @@
 		2CBA7B382BE6127400C31FCD /* WalletCardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B372BE6127400C31FCD /* WalletCardUI.swift */; };
 		2CBA7B3B2BE61E5C00C31FCD /* LoyaltyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B3A2BE61E5C00C31FCD /* LoyaltyCard.swift */; };
 		2CBA7B3E2BE639AA00C31FCD /* WalletCardShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B3D2BE639AA00C31FCD /* WalletCardShopTableViewCell.swift */; };
+		2CBA7B4A2BE65B1900C31FCD /* WalletCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B492BE65B1900C31FCD /* WalletCardCollectionViewCell.swift */; };
 		2CBA985D2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA985C2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift */; };
 		2CBA985F2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA985E2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift */; };
 		2CBA98612BE4E75D00B804E6 /* RectItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA98602BE4E75D00B804E6 /* RectItemCollectionViewCell.swift */; };
@@ -430,6 +431,7 @@
 		2CBA7B372BE6127400C31FCD /* WalletCardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardUI.swift; sourceTree = "<group>"; };
 		2CBA7B3A2BE61E5C00C31FCD /* LoyaltyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyCard.swift; sourceTree = "<group>"; };
 		2CBA7B3D2BE639AA00C31FCD /* WalletCardShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardShopTableViewCell.swift; sourceTree = "<group>"; };
+		2CBA7B492BE65B1900C31FCD /* WalletCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CBA985C2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePosterCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		2CBA985E2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRectHorizontalCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		2CBA98602BE4E75D00B804E6 /* RectItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1090,6 +1092,7 @@
 				2CBA7B1B2BE606EA00C31FCD /* WalletModel.swift */,
 				2CBA7B1C2BE606EA00C31FCD /* WalletWireframe.swift */,
 				2CBA7B242BE606F200C31FCD /* UI */,
+				2CBA7B482BE65B0900C31FCD /* Cells */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -1137,6 +1140,14 @@
 			isa = PBXGroup;
 			children = (
 				2CBA7B3D2BE639AA00C31FCD /* WalletCardShopTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2CBA7B482BE65B0900C31FCD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2CBA7B492BE65B1900C31FCD /* WalletCardCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2439,6 +2450,7 @@
 				2CBA985D2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift in Sources */,
 				2CCF3AB62BD7B29300B3729E /* SignInWireframe.swift in Sources */,
 				2CACCDD82BD53F50008178F8 /* UIImageView+Extension.swift in Sources */,
+				2CBA7B4A2BE65B1900C31FCD /* WalletCardCollectionViewCell.swift in Sources */,
 				2CACCD2C2BD51C81008178F8 /* AppDelegate.swift in Sources */,
 				2CACCDDE2BD53F85008178F8 /* UITapGestureRecognizer+Extension.swift in Sources */,
 				62214AE52BD6E17600ABF38E /* OnboardingPresenter.swift in Sources */,

@@ -25,4 +25,5 @@ enum CellId : String {
     case rectItemCell = "rectItemCell"
     case promotionsCell = "promotionsCell"
     case walletCardShopCell = "walletCardShopCell"
+    case walletCardCell = "walletCardCell"
 }
