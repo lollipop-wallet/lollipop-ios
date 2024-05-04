@@ -90,6 +90,13 @@
 		2CBA7B222BE606EA00C31FCD /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B1B2BE606EA00C31FCD /* WalletModel.swift */; };
 		2CBA7B232BE606EA00C31FCD /* WalletWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B1C2BE606EA00C31FCD /* WalletWireframe.swift */; };
 		2CBA7B262BE606F700C31FCD /* WalletUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B252BE606F700C31FCD /* WalletUI.swift */; };
+		2CBA7B302BE6126500C31FCD /* WalletCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B292BE6126500C31FCD /* WalletCardPresenter.swift */; };
+		2CBA7B312BE6126500C31FCD /* WalletCardProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B2A2BE6126500C31FCD /* WalletCardProtocols.swift */; };
+		2CBA7B322BE6126500C31FCD /* WalletCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B2B2BE6126500C31FCD /* WalletCardInteractor.swift */; };
+		2CBA7B332BE6126500C31FCD /* WalletCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B2C2BE6126500C31FCD /* WalletCardView.swift */; };
+		2CBA7B342BE6126500C31FCD /* WalletCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B2D2BE6126500C31FCD /* WalletCardModel.swift */; };
+		2CBA7B352BE6126500C31FCD /* WalletCardWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B2E2BE6126500C31FCD /* WalletCardWireframe.swift */; };
+		2CBA7B382BE6127400C31FCD /* WalletCardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA7B372BE6127400C31FCD /* WalletCardUI.swift */; };
 		2CBA985D2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA985C2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift */; };
 		2CBA985F2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA985E2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift */; };
 		2CBA98612BE4E75D00B804E6 /* RectItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA98602BE4E75D00B804E6 /* RectItemCollectionViewCell.swift */; };
@@ -412,6 +419,13 @@
 		2CBA7B1B2BE606EA00C31FCD /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
 		2CBA7B1C2BE606EA00C31FCD /* WalletWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletWireframe.swift; sourceTree = "<group>"; };
 		2CBA7B252BE606F700C31FCD /* WalletUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletUI.swift; sourceTree = "<group>"; };
+		2CBA7B292BE6126500C31FCD /* WalletCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardPresenter.swift; sourceTree = "<group>"; };
+		2CBA7B2A2BE6126500C31FCD /* WalletCardProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardProtocols.swift; sourceTree = "<group>"; };
+		2CBA7B2B2BE6126500C31FCD /* WalletCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardInteractor.swift; sourceTree = "<group>"; };
+		2CBA7B2C2BE6126500C31FCD /* WalletCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardView.swift; sourceTree = "<group>"; };
+		2CBA7B2D2BE6126500C31FCD /* WalletCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardModel.swift; sourceTree = "<group>"; };
+		2CBA7B2E2BE6126500C31FCD /* WalletCardWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardWireframe.swift; sourceTree = "<group>"; };
+		2CBA7B372BE6127400C31FCD /* WalletCardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardUI.swift; sourceTree = "<group>"; };
 		2CBA985C2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePosterCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		2CBA985E2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRectHorizontalCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		2CBA98602BE4E75D00B804E6 /* RectItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1056,6 +1070,7 @@
 			isa = PBXGroup;
 			children = (
 				2CBA7B152BE606E000C31FCD /* Wallet */,
+				2CBA7B272BE6125600C31FCD /* Wallet card */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -1078,6 +1093,28 @@
 			isa = PBXGroup;
 			children = (
 				2CBA7B252BE606F700C31FCD /* WalletUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2CBA7B272BE6125600C31FCD /* Wallet card */ = {
+			isa = PBXGroup;
+			children = (
+				2CBA7B292BE6126500C31FCD /* WalletCardPresenter.swift */,
+				2CBA7B2A2BE6126500C31FCD /* WalletCardProtocols.swift */,
+				2CBA7B2B2BE6126500C31FCD /* WalletCardInteractor.swift */,
+				2CBA7B2C2BE6126500C31FCD /* WalletCardView.swift */,
+				2CBA7B2D2BE6126500C31FCD /* WalletCardModel.swift */,
+				2CBA7B2E2BE6126500C31FCD /* WalletCardWireframe.swift */,
+				2CBA7B362BE6126B00C31FCD /* UI */,
+			);
+			path = "Wallet card";
+			sourceTree = "<group>";
+		};
+		2CBA7B362BE6126B00C31FCD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2CBA7B372BE6127400C31FCD /* WalletCardUI.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -2128,6 +2165,7 @@
 				2CACCDA52BD53241008178F8 /* Analytics.swift in Sources */,
 				2CACCDB02BD53B1B008178F8 /* Connectivity.swift in Sources */,
 				62F6CD9D2BDBC6D600C4775C /* PartnersPresenter.swift in Sources */,
+				2CBA7B382BE6127400C31FCD /* WalletCardUI.swift in Sources */,
 				2CE32AC92BDFBB91004757C5 /* DialoguePresenter.swift in Sources */,
 				2CE32ACA2BDFBB91004757C5 /* DialogueProtocols.swift in Sources */,
 				2CE32ACB2BDFBB91004757C5 /* DialogueInteractor.swift in Sources */,
@@ -2352,6 +2390,12 @@
 				62F6CE072BDD55E900C4775C /* ProfileSettingsInteractor.swift in Sources */,
 				62F6CE082BDD55E900C4775C /* ProfileSettingsView.swift in Sources */,
 				62F6CE092BDD55E900C4775C /* ProfileSettingsModel.swift in Sources */,
+				2CBA7B302BE6126500C31FCD /* WalletCardPresenter.swift in Sources */,
+				2CBA7B312BE6126500C31FCD /* WalletCardProtocols.swift in Sources */,
+				2CBA7B322BE6126500C31FCD /* WalletCardInteractor.swift in Sources */,
+				2CBA7B332BE6126500C31FCD /* WalletCardView.swift in Sources */,
+				2CBA7B342BE6126500C31FCD /* WalletCardModel.swift in Sources */,
+				2CBA7B352BE6126500C31FCD /* WalletCardWireframe.swift in Sources */,
 				62F6CE0A2BDD55E900C4775C /* ProfileSettingsWireframe.swift in Sources */,
 				2CE32AAA2BDF6B3F004757C5 /* PartnersCollectionViewCell.swift in Sources */,
 				2CACCD932BD52F84008178F8 /* LocalizationSystem.swift in Sources */,

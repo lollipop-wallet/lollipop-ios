@@ -1,5 +1,5 @@
 //
-//  WalletUI.swift
+//  WalletCardUI.swift
 //  Lollipop
 //
 //  Created by Aleksandar Draskovic on 4.5.24..
@@ -7,10 +7,10 @@
 
 import UIKit
 
-extension WalletView {
+extension WalletCardView {
     func setup() {
         self.view.backgroundColor = AppColors.white
-        WalletWireframe.createModule(WalletRef: self)
+        WalletCardWireframe.createModule(WalletCardRef: self)
         
         let appearance = UINavigationBarAppearance()
         let imgClose = UIImage(named: AssetTitles.closeIcon)?.withAlignmentRectInsets(UIEdgeInsets(top: 0, left: 0, bottom: 1.5, right: 0))
@@ -33,7 +33,7 @@ extension WalletView {
         
         lazy var mainContentView: UIView = {
             let view = UIView()
-            view.backgroundColor = AppColors.brandPrimary
+            view.backgroundColor = AppColors.lightGrey
             return view
         }()
         
@@ -42,6 +42,12 @@ extension WalletView {
             view.backgroundColor = AppColors.white
             view.layer.cornerRadius = 24
             view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+            return view
+        }()
+        
+        lazy var mainContainerView: UIView = {
+            let view = UIView()
+            view.backgroundColor = .clear
             return view
         }()
         
@@ -55,6 +61,11 @@ extension WalletView {
         curvedTopView.snp.makeConstraints { make in
             make.leading.trailing.top.equalToSuperview()
             make.height.equalTo(self.view.frame.height * 0.33)
+        }
+        
+        mainContentView.addSubview(mainContainerView)
+        mainContainerView.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
         }
     }
 }
