@@ -6,11 +6,11 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol WalletCardPresenterProtocol: AnyObject {
+protocol WalletCardPresenterProtocol: UITableViewDelegate, UITableViewDataSource, WalletCardShopCellProtocol {
     
     var interactor: WalletCardInputInteractorProtocol? { get set }
     var view: WalletCardViewProtocol? { get set }

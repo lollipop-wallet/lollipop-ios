@@ -51,6 +51,7 @@ class WalletCardShopTableViewCell: UITableViewCell {
         image.snp.makeConstraints { make in
             make.width.height.equalTo(24)
         }
+        image.tintColor = AppColors.black
         return image
     }()
     

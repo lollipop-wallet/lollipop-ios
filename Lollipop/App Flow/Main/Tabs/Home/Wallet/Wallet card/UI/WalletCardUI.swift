@@ -243,6 +243,12 @@ extension WalletCardView {
             return label
         }()
         
+        self.tableView.separatorStyle = .none
+        self.tableView.register(WalletCardShopTableViewCell.self, forCellReuseIdentifier: CellId.walletCardShopCell.rawValue)
+        self.tableView.delegate = presenter
+        self.tableView.dataSource = presenter
+        self.tableView.backgroundColor = AppColors.lightGrey
+        
         view.addSubview(mainContentView)
         mainContentView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
@@ -306,6 +312,14 @@ extension WalletCardView {
             make.leading.equalToSuperview().offset(28)
             make.trailing.equalToSuperview().offset(-28)
             make.top.equalTo(mainInfoStack.snp.bottom).offset(28)
+        }
+        
+        contentView.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(saleSpotsLabel.snp.bottom).offset(16)
+            make.bottom.equalToSuperview().offset(-20)
         }
     }
 }
