@@ -19,4 +19,9 @@ class PromotionsWireframe: PromotionsWireframeProtocol {
         PromotionsRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toDetails(){
+        let vc = PromotionDetailsView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

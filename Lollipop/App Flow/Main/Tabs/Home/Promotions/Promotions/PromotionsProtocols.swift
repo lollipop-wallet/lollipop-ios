@@ -39,8 +39,7 @@ protocol PromotionsViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol PromotionsWireframeProtocol: AnyObject {
-
-    
+    func toDetails()
 }
 
 //MARK: PromotionsCell Protocol

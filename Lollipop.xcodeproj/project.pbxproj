@@ -186,6 +186,7 @@
 		627E92D72BDA10990016FF73 /* PasswordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92D02BDA10990016FF73 /* PasswordWireframe.swift */; };
 		627E92DA2BDA10A80016FF73 /* PasswordUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92D92BDA10A80016FF73 /* PasswordUI.swift */; };
 		627E92DD2BDA18560016FF73 /* OTPInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92DC2BDA18560016FF73 /* OTPInputField.swift */; };
+		62BFFD282BE5E16300899800 /* Code resoruces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD272BE5E16300899800 /* Code resoruces.swift */; };
 		62EB74BB2BE2000E0088906A /* ReorderCardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B42BE2000E0088906A /* ReorderCardsPresenter.swift */; };
 		62EB74BC2BE2000E0088906A /* ReorderCardsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B52BE2000E0088906A /* ReorderCardsProtocols.swift */; };
 		62EB74BD2BE2000E0088906A /* ReorderCardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B62BE2000E0088906A /* ReorderCardsInteractor.swift */; };
@@ -502,6 +503,7 @@
 		627E92D02BDA10990016FF73 /* PasswordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWireframe.swift; sourceTree = "<group>"; };
 		627E92D92BDA10A80016FF73 /* PasswordUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordUI.swift; sourceTree = "<group>"; };
 		627E92DC2BDA18560016FF73 /* OTPInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputField.swift; sourceTree = "<group>"; };
+		62BFFD272BE5E16300899800 /* Code resoruces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Code resoruces.swift"; sourceTree = "<group>"; };
 		62EB74B42BE2000E0088906A /* ReorderCardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsPresenter.swift; sourceTree = "<group>"; };
 		62EB74B52BE2000E0088906A /* ReorderCardsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsProtocols.swift; sourceTree = "<group>"; };
 		62EB74B62BE2000E0088906A /* ReorderCardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsInteractor.swift; sourceTree = "<group>"; };
@@ -854,6 +856,7 @@
 			children = (
 				62214AEE2BD6E3BA00ABF38E /* Font */,
 				2CACCD912BD52F71008178F8 /* Localization */,
+				62BFFD262BE5E15200899800 /* Code ideas */,
 				2CACCD342BD51C83008178F8 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -1457,6 +1460,14 @@
 				62214AEB2BD6E18300ABF38E /* UI */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		62BFFD262BE5E15200899800 /* Code ideas */ = {
+			isa = PBXGroup;
+			children = (
+				62BFFD272BE5E16300899800 /* Code resoruces.swift */,
+			);
+			path = "Code ideas";
 			sourceTree = "<group>";
 		};
 		62EB74B12BE1FFF10088906A /* My cards */ = {
@@ -2293,6 +2304,7 @@
 				2CE32AAA2BDF6B3F004757C5 /* PartnersCollectionViewCell.swift in Sources */,
 				2CACCD932BD52F84008178F8 /* LocalizationSystem.swift in Sources */,
 				62F6CE492BDE684C00C4775C /* MyCardsUI.swift in Sources */,
+				62BFFD282BE5E16300899800 /* Code resoruces.swift in Sources */,
 				2CEC7FBC2BD8D1810050E762 /* RegisterUI.swift in Sources */,
 				62F6CE992BDF519200C4775C /* AutomaticHeightCollectionView.swift in Sources */,
 				2CCF3AB12BD7B29300B3729E /* SignInPresenter.swift in Sources */,

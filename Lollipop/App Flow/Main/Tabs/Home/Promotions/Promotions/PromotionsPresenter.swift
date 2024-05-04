@@ -32,15 +32,10 @@ extension PromotionsPresenter {
     
     
     func didSelectItemAt(index: IndexPath) {
-        
+        wireframe?.toDetails()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.view?.setNavBarColor(shouldChange: scrollView.contentOffset.y > 0)
-//        if (scrollView.contentOffset.y > 0) {
-//            self.view?.setNavBarColor(shouldChange: true)
-//        }else{
-//            
-//        }
     }
 }
