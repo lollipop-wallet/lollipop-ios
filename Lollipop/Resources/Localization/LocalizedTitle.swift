@@ -118,7 +118,10 @@ enum LocalizedTitle: String {
     case digitalizePlasticCardSubtitle
     case seeAll
     case allPromotions
-
+    case locations
+    case aboutProgramme
+    case rules
+    
     var localized: String {
         return self.rawValue.localized()
     }

@@ -35,4 +35,16 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
     @objc func onBackTap() {
         popBack(2)
     }
+    
+    @objc func onLocationsTap() {
+        
+    }
+    
+    @objc func onAboutProgrammeTap() {
+        
+    }
+    
+    @objc func onRulesTap() {
+        
+    }
 }

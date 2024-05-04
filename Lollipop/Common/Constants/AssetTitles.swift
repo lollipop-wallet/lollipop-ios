@@ -59,4 +59,5 @@ struct AssetTitles {
     static let reorderIcon = "ic_reorder"
     static let plusIcon = "ic_plus"
     static let inputFieldBarcodeIcon = "ic_barcode_field"
+    static let infoIcon = "ic_info"
 }

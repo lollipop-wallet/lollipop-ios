@@ -71,6 +71,168 @@ extension WalletCardView {
         
         self.loyaltyCard.pointsHidden = true
         
+        ///Locations
+        lazy var locationsIcon: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.locationPitIcon)
+            imageView.tintColor = AppColors.brandPrimary
+            imageView.snp.makeConstraints { make in
+                make.width.height.equalTo(24)
+            }
+            return imageView
+        }()
+        
+        lazy var locationsTitleLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 12, name: .semibold)
+            label.textColor = AppColors.black
+            label.textAlignment = .center
+            label.text = LocalizedTitle.locations.localized
+            return label
+        }()
+        
+        lazy var locationsButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onLocationsTap), for: .touchUpInside)
+            return button
+        }()
+        
+        lazy var locationsStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [locationsIcon, locationsTitleLabel])
+            stack.axis = .vertical
+            stack.alignment = .center
+            stack.distribution = .fill
+            stack.spacing = 10
+            return stack
+        }()
+        
+        lazy var locationsPlaceholderView: UIView = {
+            let view = UIView()
+            view.backgroundColor = AppColors.white
+            view.addSubview(locationsStack)
+            locationsStack.snp.makeConstraints { make in
+                make.centerX.centerY.equalToSuperview()
+            }
+            view.addSubview(locationsButton)
+            locationsButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
+            view.layer.cornerRadius = 12
+            view.layer.masksToBounds = true
+            return view
+        }()
+        
+        ///About
+        lazy var aboutIcon: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.infoIcon)
+            imageView.tintColor = AppColors.brandPrimary
+            imageView.snp.makeConstraints { make in
+                make.width.height.equalTo(24)
+            }
+            return imageView
+        }()
+        
+        lazy var aboutTitleLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 12, name: .semibold)
+            label.textColor = AppColors.black
+            label.textAlignment = .center
+            label.text = LocalizedTitle.aboutProgramme.localized
+            return label
+        }()
+        
+        lazy var aboutButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onAboutProgrammeTap), for: .touchUpInside)
+            return button
+        }()
+        
+        lazy var aboutStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [aboutIcon, aboutTitleLabel])
+            stack.axis = .vertical
+            stack.alignment = .center
+            stack.distribution = .fill
+            stack.spacing = 10
+            return stack
+        }()
+        
+        lazy var aboutPlaceholderView: UIView = {
+            let view = UIView()
+            view.backgroundColor = AppColors.white
+            view.addSubview(aboutStack)
+            aboutStack.snp.makeConstraints { make in
+                make.centerX.centerY.equalToSuperview()
+            }
+            view.addSubview(aboutButton)
+            aboutButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
+            view.layer.cornerRadius = 12
+            view.layer.masksToBounds = true
+            return view
+        }()
+        
+        
+        ///Rules
+        lazy var rulesIcon: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.termsIcon)
+            imageView.tintColor = AppColors.brandPrimary
+            imageView.snp.makeConstraints { make in
+                make.width.height.equalTo(24)
+            }
+            return imageView
+        }()
+        
+        lazy var rulesTitleLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 12, name: .semibold)
+            label.textColor = AppColors.black
+            label.textAlignment = .center
+            label.text = LocalizedTitle.rules.localized
+            return label
+        }()
+        
+        lazy var rulesButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onRulesTap), for: .touchUpInside)
+            return button
+        }()
+        
+        lazy var rulesStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [rulesIcon, rulesTitleLabel])
+            stack.axis = .vertical
+            stack.alignment = .center
+            stack.distribution = .fill
+            stack.spacing = 10
+            return stack
+        }()
+        
+        lazy var rulesPlaceholderView: UIView = {
+            let view = UIView()
+            view.backgroundColor = AppColors.white
+            view.addSubview(rulesStack)
+            rulesStack.snp.makeConstraints { make in
+                make.centerX.centerY.equalToSuperview()
+            }
+            view.addSubview(rulesButton)
+            rulesButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
+            view.layer.cornerRadius = 12
+            view.layer.masksToBounds = true
+            return view
+        }()
+        
+        lazy var mainInfoStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [locationsPlaceholderView, aboutPlaceholderView, rulesPlaceholderView])
+            stack.axis = .horizontal
+            stack.alignment = .fill
+            stack.distribution = .fillEqually
+            stack.spacing = 16
+            return stack
+        }()
         
         view.addSubview(mainContentView)
         mainContentView.snp.makeConstraints { make in
@@ -120,6 +282,14 @@ extension WalletCardView {
             make.top.equalTo(self.barcodeNumberLabel.snp.bottom).offset(32)
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
+        }
+        
+        contentView.addSubview(mainInfoStack)
+        mainInfoStack.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(self.loyaltyCard.snp.bottom).offset(32)
+            make.height.equalTo(80)
         }
     }
 }
