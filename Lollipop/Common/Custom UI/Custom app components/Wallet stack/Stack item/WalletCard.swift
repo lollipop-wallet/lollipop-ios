@@ -14,6 +14,18 @@ class WalletCard: UIView {
         get { return .white }
     }
     
+    open var logoIcon: String? {
+        set { self.cardLogoIcon.imageFromURL(url: newValue ?? "") }
+        get { return "" }
+    }
+    
+    open var cardBackgroundImage : String? {
+        set { self.cardImage.imageFromURL(url: newValue ?? "") }
+        get { return "" }
+    }
+    
+    var delegate: WalletCardProtocol?
+    
     lazy var cardLogoIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 12
@@ -57,6 +69,12 @@ class WalletCard: UIView {
         return imageView
     }()
     
+    lazy var cardButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(onCardTap), for: .touchUpInside)
+        return button
+    }()
+    
     lazy var mainPlaceholderView: UIView = {
         let view = UIView()
         view.addSubview(cardImage)
@@ -69,8 +87,11 @@ class WalletCard: UIView {
             make.leading.equalToSuperview().offset(2)
             make.height.equalTo(32)
         }
+        view.addSubview(cardButton)
+        cardButton.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
         view.layer.cornerRadius = 16
-        //view.layer.masksToBounds = true
         
         view.layer.shadowColor =  UIColor(red: 0.25, green: 0.129, blue: 0.444, alpha: 0.5).cgColor
         view.layer.shadowOpacity = 1
@@ -97,6 +118,13 @@ class WalletCard: UIView {
             make.leading.trailing.top.bottom.equalToSuperview()
         }
     }
+    
+    //MARK: Actions
+    @objc func onCardTap() {
+        delegate?.didTapCardWith(tag: self.tag)
+    }
 }
 
-
+protocol WalletCardProtocol: AnyObject {
+    func didTapCardWith(tag: Int)
+}
