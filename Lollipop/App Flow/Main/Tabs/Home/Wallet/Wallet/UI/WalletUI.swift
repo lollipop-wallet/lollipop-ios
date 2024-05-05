@@ -56,5 +56,12 @@ extension WalletView {
             make.leading.trailing.top.equalToSuperview()
             make.height.equalTo(self.view.frame.height * 0.33)
         }
+        
+        mainContentView.addSubview(self.cardView)
+        self.cardView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(30)
+        }
     }
 }

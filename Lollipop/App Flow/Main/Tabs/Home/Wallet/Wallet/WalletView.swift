@@ -11,6 +11,8 @@ import UIKit
 
 class WalletView: UIViewController, WalletViewProtocol {
     
+    var cardView = WalletStack()
+    
     var presenter: WalletPresenterProtocol?
     
 
