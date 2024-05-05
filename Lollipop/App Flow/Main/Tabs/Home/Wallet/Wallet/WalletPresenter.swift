@@ -21,5 +21,6 @@ extension WalletPresenter: WalletOutputInteractorProtocol {
 
 extension WalletPresenter {
     func didSelectLoyaltyCartAt(index: Int) {
+        wireframe?.toWalletCard()
     }
 }

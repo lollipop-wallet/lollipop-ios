@@ -39,6 +39,5 @@ protocol WalletViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol WalletWireframeProtocol: AnyObject {
-
-    
+    func toWalletCard()
 }

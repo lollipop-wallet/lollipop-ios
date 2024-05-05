@@ -19,4 +19,9 @@ class WalletWireframe: WalletWireframeProtocol {
         WalletRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toWalletCard(){
+        let vc = WalletCardView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }
