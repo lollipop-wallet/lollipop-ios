@@ -206,6 +206,13 @@
 		62BFFD282BE5E16300899800 /* Code resoruces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD272BE5E16300899800 /* Code resoruces.swift */; };
 		62BFFD2C2BE7391700899800 /* WalletCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD2B2BE7391700899800 /* WalletCard.swift */; };
 		62BFFD2E2BE7437300899800 /* WalletStackProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD2D2BE7437300899800 /* WalletStackProtocols.swift */; };
+		62BFFD382BE7457E00899800 /* LocationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD322BE7457E00899800 /* LocationsPresenter.swift */; };
+		62BFFD392BE7457E00899800 /* LocationsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD332BE7457E00899800 /* LocationsProtocols.swift */; };
+		62BFFD3A2BE7457E00899800 /* LocationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD342BE7457E00899800 /* LocationsInteractor.swift */; };
+		62BFFD3B2BE7457E00899800 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD352BE7457E00899800 /* LocationsView.swift */; };
+		62BFFD3C2BE7457E00899800 /* LocationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD362BE7457E00899800 /* LocationsModel.swift */; };
+		62BFFD3D2BE7457E00899800 /* LocationsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD372BE7457E00899800 /* LocationsWireframe.swift */; };
+		62BFFD412BE7458E00899800 /* LocationsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD402BE7458E00899800 /* LocationsUI.swift */; };
 		62EB74BB2BE2000E0088906A /* ReorderCardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B42BE2000E0088906A /* ReorderCardsPresenter.swift */; };
 		62EB74BC2BE2000E0088906A /* ReorderCardsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B52BE2000E0088906A /* ReorderCardsProtocols.swift */; };
 		62EB74BD2BE2000E0088906A /* ReorderCardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B62BE2000E0088906A /* ReorderCardsInteractor.swift */; };
@@ -542,6 +549,13 @@
 		62BFFD272BE5E16300899800 /* Code resoruces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Code resoruces.swift"; sourceTree = "<group>"; };
 		62BFFD2B2BE7391700899800 /* WalletCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCard.swift; sourceTree = "<group>"; };
 		62BFFD2D2BE7437300899800 /* WalletStackProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletStackProtocols.swift; sourceTree = "<group>"; };
+		62BFFD322BE7457E00899800 /* LocationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsPresenter.swift; sourceTree = "<group>"; };
+		62BFFD332BE7457E00899800 /* LocationsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsProtocols.swift; sourceTree = "<group>"; };
+		62BFFD342BE7457E00899800 /* LocationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsInteractor.swift; sourceTree = "<group>"; };
+		62BFFD352BE7457E00899800 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		62BFFD362BE7457E00899800 /* LocationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsModel.swift; sourceTree = "<group>"; };
+		62BFFD372BE7457E00899800 /* LocationsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsWireframe.swift; sourceTree = "<group>"; };
+		62BFFD402BE7458E00899800 /* LocationsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsUI.swift; sourceTree = "<group>"; };
 		62EB74B42BE2000E0088906A /* ReorderCardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsPresenter.swift; sourceTree = "<group>"; };
 		62EB74B52BE2000E0088906A /* ReorderCardsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsProtocols.swift; sourceTree = "<group>"; };
 		62EB74B62BE2000E0088906A /* ReorderCardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsInteractor.swift; sourceTree = "<group>"; };
@@ -1083,6 +1097,7 @@
 			children = (
 				2CBA7B152BE606E000C31FCD /* Wallet */,
 				2CBA7B272BE6125600C31FCD /* Wallet card */,
+				62BFFD2F2BE7456E00899800 /* Locations */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -1612,6 +1627,36 @@
 				62BFFD2B2BE7391700899800 /* WalletCard.swift */,
 			);
 			path = "Stack item";
+			sourceTree = "<group>";
+		};
+		62BFFD2F2BE7456E00899800 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				62BFFD302BE7457500899800 /* Locations */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
+		62BFFD302BE7457500899800 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				62BFFD322BE7457E00899800 /* LocationsPresenter.swift */,
+				62BFFD332BE7457E00899800 /* LocationsProtocols.swift */,
+				62BFFD342BE7457E00899800 /* LocationsInteractor.swift */,
+				62BFFD352BE7457E00899800 /* LocationsView.swift */,
+				62BFFD362BE7457E00899800 /* LocationsModel.swift */,
+				62BFFD372BE7457E00899800 /* LocationsWireframe.swift */,
+				62BFFD3F2BE7458500899800 /* UI */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
+		62BFFD3F2BE7458500899800 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62BFFD402BE7458E00899800 /* LocationsUI.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		62EB74B12BE1FFF10088906A /* My cards */ = {
@@ -2328,6 +2373,12 @@
 				62F6CDC42BDBC79400C4775C /* ProfileView.swift in Sources */,
 				62F6CDDD2BDD372800C4775C /* ProfileListModel.swift in Sources */,
 				62F6CDC52BDBC79400C4775C /* ProfileModel.swift in Sources */,
+				62BFFD382BE7457E00899800 /* LocationsPresenter.swift in Sources */,
+				62BFFD392BE7457E00899800 /* LocationsProtocols.swift in Sources */,
+				62BFFD3A2BE7457E00899800 /* LocationsInteractor.swift in Sources */,
+				62BFFD3B2BE7457E00899800 /* LocationsView.swift in Sources */,
+				62BFFD3C2BE7457E00899800 /* LocationsModel.swift in Sources */,
+				62BFFD3D2BE7457E00899800 /* LocationsWireframe.swift in Sources */,
 				62F6CDC62BDBC79400C4775C /* ProfileWireframe.swift in Sources */,
 				2CACCDCA2BD53E00008178F8 /* Date+Extension.swift in Sources */,
 				2CA195412BE213B100CC10F5 /* CardDetailsUI.swift in Sources */,
@@ -2478,6 +2529,7 @@
 				2CEC7FBF2BD8F74D0050E762 /* CalendarInputField.swift in Sources */,
 				2CCF3AB32BD7B29300B3729E /* SignInInteractor.swift in Sources */,
 				627E92C12BDA044F0016FF73 /* DropdownInputField.swift in Sources */,
+				62BFFD412BE7458E00899800 /* LocationsUI.swift in Sources */,
 				2CCF3AB42BD7B29300B3729E /* SignInView.swift in Sources */,
 				2CCF3AB52BD7B29300B3729E /* SignInModel.swift in Sources */,
 				2CBA985D2BE4CEA800B804E6 /* HomePosterCategoryTableViewCell.swift in Sources */,
