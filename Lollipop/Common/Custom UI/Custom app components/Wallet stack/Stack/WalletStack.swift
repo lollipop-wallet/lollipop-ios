@@ -22,22 +22,12 @@ class WalletStack: UIView {
     }
     
     func setup() {
-        let view1 = UIView()
-        let view2 = UIView()
-        let view3 = UIView()
-        let view4 = UIView()
-        let view5 = UIView()
+
+        let colors = [UIColor.red, UIColor.blue, UIColor.darkGray, UIColor.yellow, UIColor.green]
         
-        view1.backgroundColor = .red
-        view2.backgroundColor = .yellow
-        view3.backgroundColor = .orange
-        view4.backgroundColor = .blue
-        view5.backgroundColor = .darkGray
-        
-        let views = [view1, view2, view3, view4, view5]
-        
-        for i in 0..<views.count {
-            let view = views[i]
+        for i in 0..<5 {
+            let view = WalletCard()
+            view.background = colors[i]
             self.addSubview(view)
             view.snp.makeConstraints { make in
                 make.leading.trailing.equalToSuperview()

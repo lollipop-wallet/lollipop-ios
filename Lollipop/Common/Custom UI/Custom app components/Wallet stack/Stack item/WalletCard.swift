@@ -9,10 +9,16 @@ import UIKit
 
 class WalletCard: UIView {
     
+    open var background: UIColor? {
+        set { self.mainPlaceholderView.backgroundColor = newValue ?? .clear }
+        get { return .white }
+    }
+    
     lazy var cardLogoIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 12
         imageView.layer.masksToBounds = true
+        imageView.backgroundColor = .black
         return imageView
     }()
     
@@ -21,6 +27,7 @@ class WalletCard: UIView {
         label.font = .inter(ofSize: 14, name: .semibold)
         label.textColor = AppColors.white
         label.textAlignment = .left
+        label.text = "Petrol"
         return label
     }()
     
@@ -59,11 +66,16 @@ class WalletCard: UIView {
         view.addSubview(cardLogoPlaceholderView)
         cardLogoPlaceholderView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(2)
-            make.leading.equalToSuperview().offset(-2)
+            make.leading.equalToSuperview().offset(2)
             make.height.equalTo(32)
         }
         view.layer.cornerRadius = 16
-        view.layer.masksToBounds = true
+        //view.layer.masksToBounds = true
+        
+        view.layer.shadowColor =  UIColor(red: 0.25, green: 0.129, blue: 0.444, alpha: 0.5).cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = CGSize(width: 0, height: 12)
+        view.layer.shadowRadius = 24
         return view
     }()
     
@@ -86,3 +98,5 @@ class WalletCard: UIView {
         }
     }
 }
+
+
