@@ -38,7 +38,7 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
     }
     
     @objc func onLocationsTap() {
-        
+        presenter?.locations()
     }
     
     @objc func onAboutProgrammeTap() {

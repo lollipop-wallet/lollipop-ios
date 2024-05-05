@@ -19,4 +19,9 @@ class WalletCardWireframe: WalletCardWireframeProtocol {
         WalletCardRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toLocations() {
+        let vc = LocationsView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

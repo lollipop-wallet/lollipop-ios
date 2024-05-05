@@ -13,6 +13,9 @@ class WalletCardPresenter: NSObject, WalletCardPresenterProtocol  {
     weak var view: WalletCardViewProtocol?
     var wireframe: WalletCardWireframeProtocol?
     
+    func locations() {
+        wireframe?.toLocations()
+    }
 }
 
 extension WalletCardPresenter: WalletCardOutputInteractorProtocol {
