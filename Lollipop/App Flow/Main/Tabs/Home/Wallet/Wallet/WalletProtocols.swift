@@ -10,7 +10,7 @@ import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol WalletPresenterProtocol {
+protocol WalletPresenterProtocol: WalletStackProtocol{
     
     var interactor: WalletInputInteractorProtocol? { get set }
     var view: WalletViewProtocol? { get set }

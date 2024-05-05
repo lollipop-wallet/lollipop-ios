@@ -205,6 +205,7 @@
 		627E92DD2BDA18560016FF73 /* OTPInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92DC2BDA18560016FF73 /* OTPInputField.swift */; };
 		62BFFD282BE5E16300899800 /* Code resoruces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD272BE5E16300899800 /* Code resoruces.swift */; };
 		62BFFD2C2BE7391700899800 /* WalletCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD2B2BE7391700899800 /* WalletCard.swift */; };
+		62BFFD2E2BE7437300899800 /* WalletStackProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD2D2BE7437300899800 /* WalletStackProtocols.swift */; };
 		62EB74BB2BE2000E0088906A /* ReorderCardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B42BE2000E0088906A /* ReorderCardsPresenter.swift */; };
 		62EB74BC2BE2000E0088906A /* ReorderCardsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B52BE2000E0088906A /* ReorderCardsProtocols.swift */; };
 		62EB74BD2BE2000E0088906A /* ReorderCardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B62BE2000E0088906A /* ReorderCardsInteractor.swift */; };
@@ -540,6 +541,7 @@
 		627E92DC2BDA18560016FF73 /* OTPInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputField.swift; sourceTree = "<group>"; };
 		62BFFD272BE5E16300899800 /* Code resoruces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Code resoruces.swift"; sourceTree = "<group>"; };
 		62BFFD2B2BE7391700899800 /* WalletCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCard.swift; sourceTree = "<group>"; };
+		62BFFD2D2BE7437300899800 /* WalletStackProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletStackProtocols.swift; sourceTree = "<group>"; };
 		62EB74B42BE2000E0088906A /* ReorderCardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsPresenter.swift; sourceTree = "<group>"; };
 		62EB74B52BE2000E0088906A /* ReorderCardsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsProtocols.swift; sourceTree = "<group>"; };
 		62EB74B62BE2000E0088906A /* ReorderCardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsInteractor.swift; sourceTree = "<group>"; };
@@ -1599,6 +1601,7 @@
 			isa = PBXGroup;
 			children = (
 				2CBA7B4C2BE6630E00C31FCD /* WalletStack.swift */,
+				62BFFD2D2BE7437300899800 /* WalletStackProtocols.swift */,
 			);
 			path = Stack;
 			sourceTree = "<group>";
@@ -2368,6 +2371,7 @@
 				2CACCDC02BD53D7D008178F8 /* Helper.swift in Sources */,
 				2CE072272BE0F05300768C73 /* MyShopsTableViewCell.swift in Sources */,
 				2CACCDC22BD53D96008178F8 /* CellId.swift in Sources */,
+				62BFFD2E2BE7437300899800 /* WalletStackProtocols.swift in Sources */,
 				2CACCD842BD528F7008178F8 /* LaunchModel.swift in Sources */,
 				627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */,
 				2CE32AB42BDF9E3B004757C5 /* NewPartnerPresenter.swift in Sources */,

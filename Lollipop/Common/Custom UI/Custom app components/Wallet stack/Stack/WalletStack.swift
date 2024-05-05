@@ -9,6 +9,8 @@ import UIKit
 
 class WalletStack: UIView {
     
+    var delegate: WalletStackProtocol?
+    
     required init() {
         super.init(frame: .zero)
         setup()
@@ -44,5 +46,6 @@ class WalletStack: UIView {
 
 extension WalletStack: WalletCardProtocol {
     func didTapCardWith(tag: Int) {
+        delegate?.didSelectLoyaltyCartAt(index: tag)
     }
 }

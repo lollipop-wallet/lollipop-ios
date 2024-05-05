@@ -45,6 +45,8 @@ extension WalletView {
             return view
         }()
         
+        self.cardView.delegate = presenter
+        
         view.addSubview(mainContentView)
         mainContentView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
