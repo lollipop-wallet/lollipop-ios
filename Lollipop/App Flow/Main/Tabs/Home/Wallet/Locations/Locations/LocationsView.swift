@@ -10,6 +10,9 @@
 import UIKit
 
 class LocationsView: UIViewController, LocationsViewProtocol {
+    
+    var locationCityLabel = UILabel()
+    var locationShopLabel = UILabel()
 
     var presenter: LocationsPresenterProtocol?
 
