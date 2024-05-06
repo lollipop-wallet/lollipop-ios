@@ -10,6 +10,8 @@
 import UIKit
 
 class LocationsFilterView: UIViewController, LocationsFilterViewProtocol {
+    
+    var titleLabel = UILabel()
 
     var presenter: LocationsFilterPresenterProtocol?
 
@@ -17,6 +19,13 @@ class LocationsFilterView: UIViewController, LocationsFilterViewProtocol {
         super.viewDidLoad()
         setup()
         presenter?.viewDidLoad()
+    }
+    
+    //MARK: LocationsFilterView Protocol
+    func setTitleLabelWith(title: String){
+        DispatchQueue.main.async {
+            self.titleLabel.text = title
+        }
     }
 
     //MARK: Actions

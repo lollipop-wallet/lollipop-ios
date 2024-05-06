@@ -113,3 +113,5 @@
 "allCities" = "Svi gradovi";
 "allShops" = "Sve radnje";
 "locationsOverview" = "Pregled lokacija";
+"chooseShop" = "Odaberite radnju";
+"reset" = "Resetuj";

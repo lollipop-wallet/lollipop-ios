@@ -35,7 +35,7 @@ protocol LocationsFilterOutputInteractorProtocol: AnyObject {
 protocol LocationsFilterViewProtocol: AnyObject {
     
     var presenter: LocationsFilterPresenterProtocol?  { get set }
-    
+    func setTitleLabelWith(title: String)
 }
 //MARK: Wireframe
 protocol LocationsFilterWireframeProtocol: AnyObject {

@@ -25,5 +25,6 @@ extension LocationsFilterPresenter: LocationsFilterOutputInteractorProtocol {
     func takeDataWith(filterType: LocationFilterType?, delegate: LocationsFilterControllerProtocol?){
         self.filterType = filterType
         self.delegate = delegate
+        self.view?.setTitleLabelWith(title: filterType == .city ? LocalizedTitle.chooseCity.localized : LocalizedTitle.chooseShop.localized)
     }
 }

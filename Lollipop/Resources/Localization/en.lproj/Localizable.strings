@@ -114,3 +114,5 @@
 "allCities" = "All cities";
 "allShops" = "All shops";
 "locationsOverview" = "Locations overview";
+"chooseShop" = "Choose shop";
+"reset" = "Reset";
