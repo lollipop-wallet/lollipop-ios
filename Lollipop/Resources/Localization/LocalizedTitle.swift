@@ -133,6 +133,7 @@ enum LocalizedTitle: String {
     case iHaveCardSubtitle
     case iWantCardTitle
     case iWantCardSubtitle
+    case newPartnerCardInfo
     
     var localized: String {
         return self.rawValue.localized()

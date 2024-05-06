@@ -39,8 +39,7 @@ protocol PartnerCardViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol PartnerCardWireframeProtocol: AnyObject {
-
-    
+    func toPartnerNewCard()
 }
 
 //MARK: PartnerCardOptionCellProtocol

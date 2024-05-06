@@ -19,4 +19,9 @@ class PartnerCardWireframe: PartnerCardWireframeProtocol {
         PartnerCardRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toPartnerNewCard(){
+        let vc = PartnerCardSignupView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

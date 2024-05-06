@@ -32,6 +32,11 @@ extension PartnerCardPresenter {
     }
     
     func didSelectItemAt(index: IndexPath) {
-        
+        let item = self.datasource[index.row]
+        if item.option == .wantsCard {
+            wireframe?.toPartnerNewCard()
+        }else{
+            
+        }
     }
 }

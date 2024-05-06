@@ -10,6 +10,8 @@
 import UIKit
 
 class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
+    
+    var cardImageView = UIImageView()
 
     var presenter: PartnerCardSignupPresenterProtocol?
 
