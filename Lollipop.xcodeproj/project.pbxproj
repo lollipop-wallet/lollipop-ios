@@ -215,6 +215,13 @@
 		62730C862BE8EE3C004209B9 /* ProgrammeRulesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C7F2BE8EE3C004209B9 /* ProgrammeRulesModel.swift */; };
 		62730C872BE8EE3C004209B9 /* ProgrammeRulesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C802BE8EE3C004209B9 /* ProgrammeRulesWireframe.swift */; };
 		62730C8A2BE8EE4C004209B9 /* ProgrammeRulesUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C892BE8EE4C004209B9 /* ProgrammeRulesUI.swift */; };
+		62730C942BE8F121004209B9 /* PartnerDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C8D2BE8F121004209B9 /* PartnerDetailsPresenter.swift */; };
+		62730C952BE8F121004209B9 /* PartnerDetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C8E2BE8F121004209B9 /* PartnerDetailsProtocols.swift */; };
+		62730C962BE8F121004209B9 /* PartnerDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C8F2BE8F121004209B9 /* PartnerDetailsInteractor.swift */; };
+		62730C972BE8F121004209B9 /* PartnerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C902BE8F121004209B9 /* PartnerDetailsView.swift */; };
+		62730C982BE8F121004209B9 /* PartnerDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C912BE8F121004209B9 /* PartnerDetailsModel.swift */; };
+		62730C992BE8F121004209B9 /* PartnerDetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C922BE8F121004209B9 /* PartnerDetailsWireframe.swift */; };
+		62730C9C2BE8F138004209B9 /* PartnerDetailsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C9B2BE8F138004209B9 /* PartnerDetailsUI.swift */; };
 		627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92BD2BD847BB0016FF73 /* InputField.swift */; };
 		627E92C12BDA044F0016FF73 /* DropdownInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C02BDA044F0016FF73 /* DropdownInputField.swift */; };
 		627E92C32BDA056B0016FF73 /* DropdownInputFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */; };
@@ -582,6 +589,13 @@
 		62730C7F2BE8EE3C004209B9 /* ProgrammeRulesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeRulesModel.swift; sourceTree = "<group>"; };
 		62730C802BE8EE3C004209B9 /* ProgrammeRulesWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeRulesWireframe.swift; sourceTree = "<group>"; };
 		62730C892BE8EE4C004209B9 /* ProgrammeRulesUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeRulesUI.swift; sourceTree = "<group>"; };
+		62730C8D2BE8F121004209B9 /* PartnerDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsPresenter.swift; sourceTree = "<group>"; };
+		62730C8E2BE8F121004209B9 /* PartnerDetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsProtocols.swift; sourceTree = "<group>"; };
+		62730C8F2BE8F121004209B9 /* PartnerDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsInteractor.swift; sourceTree = "<group>"; };
+		62730C902BE8F121004209B9 /* PartnerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsView.swift; sourceTree = "<group>"; };
+		62730C912BE8F121004209B9 /* PartnerDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsModel.swift; sourceTree = "<group>"; };
+		62730C922BE8F121004209B9 /* PartnerDetailsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsWireframe.swift; sourceTree = "<group>"; };
+		62730C9B2BE8F138004209B9 /* PartnerDetailsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsUI.swift; sourceTree = "<group>"; };
 		627E92BD2BD847BB0016FF73 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		627E92C02BDA044F0016FF73 /* DropdownInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputField.swift; sourceTree = "<group>"; };
 		627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputFieldProtocols.swift; sourceTree = "<group>"; };
@@ -1634,6 +1648,28 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		62730C8B2BE8F10A004209B9 /* Partner details */ = {
+			isa = PBXGroup;
+			children = (
+				62730C8D2BE8F121004209B9 /* PartnerDetailsPresenter.swift */,
+				62730C8E2BE8F121004209B9 /* PartnerDetailsProtocols.swift */,
+				62730C8F2BE8F121004209B9 /* PartnerDetailsInteractor.swift */,
+				62730C902BE8F121004209B9 /* PartnerDetailsView.swift */,
+				62730C912BE8F121004209B9 /* PartnerDetailsModel.swift */,
+				62730C922BE8F121004209B9 /* PartnerDetailsWireframe.swift */,
+				62730C9A2BE8F128004209B9 /* UI */,
+			);
+			path = "Partner details";
+			sourceTree = "<group>";
+		};
+		62730C9A2BE8F128004209B9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62730C9B2BE8F138004209B9 /* PartnerDetailsUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		627E92B82BD847750016FF73 /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1897,6 +1933,7 @@
 			children = (
 				2CE32AAB2BDF9D0A004757C5 /* Partners */,
 				2CE32AAC2BDF9D18004757C5 /* New partner */,
+				62730C8B2BE8F10A004209B9 /* Partner details */,
 			);
 			path = Partners;
 			sourceTree = "<group>";
@@ -2410,6 +2447,12 @@
 				2CACCDB02BD53B1B008178F8 /* Connectivity.swift in Sources */,
 				62F6CD9D2BDBC6D600C4775C /* PartnersPresenter.swift in Sources */,
 				2CBA7B382BE6127400C31FCD /* WalletCardUI.swift in Sources */,
+				62730C942BE8F121004209B9 /* PartnerDetailsPresenter.swift in Sources */,
+				62730C952BE8F121004209B9 /* PartnerDetailsProtocols.swift in Sources */,
+				62730C962BE8F121004209B9 /* PartnerDetailsInteractor.swift in Sources */,
+				62730C972BE8F121004209B9 /* PartnerDetailsView.swift in Sources */,
+				62730C982BE8F121004209B9 /* PartnerDetailsModel.swift in Sources */,
+				62730C992BE8F121004209B9 /* PartnerDetailsWireframe.swift in Sources */,
 				2CE32AC92BDFBB91004757C5 /* DialoguePresenter.swift in Sources */,
 				2CE32ACA2BDFBB91004757C5 /* DialogueProtocols.swift in Sources */,
 				2CE32ACB2BDFBB91004757C5 /* DialogueInteractor.swift in Sources */,
@@ -2629,6 +2672,7 @@
 				62F6CE652BDE6C9700C4775C /* LanguagePresenter.swift in Sources */,
 				2CE32AD42BDFBFBC004757C5 /* DialogueType.swift in Sources */,
 				62F6CE662BDE6C9700C4775C /* LanguageProtocols.swift in Sources */,
+				62730C9C2BE8F138004209B9 /* PartnerDetailsUI.swift in Sources */,
 				62F6CE672BDE6C9700C4775C /* LanguageInteractor.swift in Sources */,
 				62F6CE682BDE6C9700C4775C /* LanguageView.swift in Sources */,
 				62F6CE932BDEA36100C4775C /* LanCode.swift in Sources */,

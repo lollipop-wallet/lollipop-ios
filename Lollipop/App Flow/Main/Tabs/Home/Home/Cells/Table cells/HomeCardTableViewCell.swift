@@ -76,7 +76,7 @@ class HomeCardTableViewCell: UITableViewCell {
         collectionView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(32)
             make.bottom.equalTo(pageControl.snp.top).offset(-24)
-            make.leading.equalToSuperview().offset(32)
+            make.leading.equalToSuperview().offset(0)
             make.trailing.equalToSuperview()
             make.height.equalTo(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 68) * 0.63)
         }
@@ -170,10 +170,11 @@ extension HomeCardTableViewCell {
     private func generateFlowLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(30))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        //item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 28, bottom: 0,trailing: 28)
 
         let groupSize = NSCollectionLayoutSize(widthDimension: .absolute((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 48), heightDimension: .estimated(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 68) * 0.63))
         let group = NSCollectionLayoutGroup.vertical( layoutSize: groupSize, subitem: item, count: 1)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0,trailing: 16)
+            group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 0,trailing: 8)
         let section = NSCollectionLayoutSection(group: group)
 
         section.visibleItemsInvalidationHandler = { [weak self] (items, offset, env) -> Void in
@@ -182,7 +183,7 @@ extension HomeCardTableViewCell {
             self.pageControl.currentPage = Int(page)
         }
         
-        section.orthogonalScrollingBehavior = .groupPaging
+        section.orthogonalScrollingBehavior = .groupPagingCentered
         
         return section
    }
