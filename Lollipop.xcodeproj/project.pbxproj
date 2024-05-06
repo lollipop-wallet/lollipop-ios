@@ -192,6 +192,14 @@
 		626906B32BE0A8D100BF5F62 /* MyShopsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906AD2BE0A8D100BF5F62 /* MyShopsWireframe.swift */; };
 		626906B72BE0A8E000BF5F62 /* MyShopsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906B62BE0A8E000BF5F62 /* MyShopsUI.swift */; };
 		62730C4F2BE8853F004209B9 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C4E2BE8853F004209B9 /* LocationTableViewCell.swift */; };
+		62730C592BE88B34004209B9 /* LocationsFilterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C522BE88B34004209B9 /* LocationsFilterPresenter.swift */; };
+		62730C5A2BE88B34004209B9 /* LocationsFilterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C532BE88B34004209B9 /* LocationsFilterProtocols.swift */; };
+		62730C5B2BE88B34004209B9 /* LocationsFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C542BE88B34004209B9 /* LocationsFilterInteractor.swift */; };
+		62730C5C2BE88B34004209B9 /* LocationsFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C552BE88B34004209B9 /* LocationsFilterView.swift */; };
+		62730C5D2BE88B34004209B9 /* LocationsFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C562BE88B34004209B9 /* LocationsFilterModel.swift */; };
+		62730C5E2BE88B34004209B9 /* LocationsFilterWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C572BE88B34004209B9 /* LocationsFilterWireframe.swift */; };
+		62730C612BE88BDB004209B9 /* LocationsFilterUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C602BE88BDB004209B9 /* LocationsFilterUI.swift */; };
+		62730C632BE88C67004209B9 /* LocationFilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C622BE88C67004209B9 /* LocationFilterType.swift */; };
 		627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92BD2BD847BB0016FF73 /* InputField.swift */; };
 		627E92C12BDA044F0016FF73 /* DropdownInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C02BDA044F0016FF73 /* DropdownInputField.swift */; };
 		627E92C32BDA056B0016FF73 /* DropdownInputFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */; };
@@ -536,6 +544,14 @@
 		626906AD2BE0A8D100BF5F62 /* MyShopsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsWireframe.swift; sourceTree = "<group>"; };
 		626906B62BE0A8E000BF5F62 /* MyShopsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsUI.swift; sourceTree = "<group>"; };
 		62730C4E2BE8853F004209B9 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		62730C522BE88B34004209B9 /* LocationsFilterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFilterPresenter.swift; sourceTree = "<group>"; };
+		62730C532BE88B34004209B9 /* LocationsFilterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFilterProtocols.swift; sourceTree = "<group>"; };
+		62730C542BE88B34004209B9 /* LocationsFilterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFilterInteractor.swift; sourceTree = "<group>"; };
+		62730C552BE88B34004209B9 /* LocationsFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFilterView.swift; sourceTree = "<group>"; };
+		62730C562BE88B34004209B9 /* LocationsFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFilterModel.swift; sourceTree = "<group>"; };
+		62730C572BE88B34004209B9 /* LocationsFilterWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFilterWireframe.swift; sourceTree = "<group>"; };
+		62730C602BE88BDB004209B9 /* LocationsFilterUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFilterUI.swift; sourceTree = "<group>"; };
+		62730C622BE88C67004209B9 /* LocationFilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFilterType.swift; sourceTree = "<group>"; };
 		627E92BD2BD847BB0016FF73 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		627E92C02BDA044F0016FF73 /* DropdownInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputField.swift; sourceTree = "<group>"; };
 		627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputFieldProtocols.swift; sourceTree = "<group>"; };
@@ -1031,6 +1047,7 @@
 				62F6CE112BDD56B600C4775C /* ProfileSettingsItem.swift */,
 				62F6CE922BDEA36100C4775C /* LanCode.swift */,
 				2CE32AD32BDFBFBC004757C5 /* DialogueType.swift */,
+				62730C622BE88C67004209B9 /* LocationFilterType.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -1510,6 +1527,28 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		62730C502BE88B21004209B9 /* Locations filter */ = {
+			isa = PBXGroup;
+			children = (
+				62730C522BE88B34004209B9 /* LocationsFilterPresenter.swift */,
+				62730C532BE88B34004209B9 /* LocationsFilterProtocols.swift */,
+				62730C542BE88B34004209B9 /* LocationsFilterInteractor.swift */,
+				62730C552BE88B34004209B9 /* LocationsFilterView.swift */,
+				62730C562BE88B34004209B9 /* LocationsFilterModel.swift */,
+				62730C572BE88B34004209B9 /* LocationsFilterWireframe.swift */,
+				62730C5F2BE88BD1004209B9 /* UI */,
+			);
+			path = "Locations filter";
+			sourceTree = "<group>";
+		};
+		62730C5F2BE88BD1004209B9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62730C602BE88BDB004209B9 /* LocationsFilterUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		627E92B82BD847750016FF73 /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1643,6 +1682,7 @@
 			isa = PBXGroup;
 			children = (
 				62BFFD302BE7457500899800 /* Locations */,
+				62730C502BE88B21004209B9 /* Locations filter */,
 			);
 			path = Locations;
 			sourceTree = "<group>";
@@ -2456,6 +2496,7 @@
 				62F6CE432BDE683A00C4775C /* MyCardsInteractor.swift in Sources */,
 				62F6CE442BDE683A00C4775C /* MyCardsView.swift in Sources */,
 				62F6CE452BDE683A00C4775C /* MyCardsModel.swift in Sources */,
+				62730C612BE88BDB004209B9 /* LocationsFilterUI.swift in Sources */,
 				62F6CE462BDE683A00C4775C /* MyCardsWireframe.swift in Sources */,
 				627E92DD2BDA18560016FF73 /* OTPInputField.swift in Sources */,
 				2CACCDBD2BD53D09008178F8 /* DataPasser.swift in Sources */,
@@ -2556,9 +2597,16 @@
 				62214AE72BD6E17600ABF38E /* OnboardingInteractor.swift in Sources */,
 				62F6CE242BDD5B0200C4775C /* ChangePasswordUI.swift in Sources */,
 				62214AE82BD6E17600ABF38E /* OnboardingView.swift in Sources */,
+				62730C592BE88B34004209B9 /* LocationsFilterPresenter.swift in Sources */,
+				62730C5A2BE88B34004209B9 /* LocationsFilterProtocols.swift in Sources */,
+				62730C5B2BE88B34004209B9 /* LocationsFilterInteractor.swift in Sources */,
+				62730C5C2BE88B34004209B9 /* LocationsFilterView.swift in Sources */,
+				62730C5D2BE88B34004209B9 /* LocationsFilterModel.swift in Sources */,
+				62730C5E2BE88B34004209B9 /* LocationsFilterWireframe.swift in Sources */,
 				62F6CD942BDBC69E00C4775C /* HomeUI.swift in Sources */,
 				62214AE92BD6E17600ABF38E /* OnboardingModel.swift in Sources */,
 				62214AEA2BD6E17600ABF38E /* OnboardingWireframe.swift in Sources */,
+				62730C632BE88C67004209B9 /* LocationFilterType.swift in Sources */,
 				62F6CD8B2BDBC69000C4775C /* HomePresenter.swift in Sources */,
 				62F6CE962BDEA40600C4775C /* LanguageTableViewCell.swift in Sources */,
 				62F6CD8C2BDBC69000C4775C /* HomeProtocols.swift in Sources */,

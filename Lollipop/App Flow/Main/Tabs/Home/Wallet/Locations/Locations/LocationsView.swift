@@ -35,4 +35,12 @@ class LocationsView: UIViewController, LocationsViewProtocol {
     @objc func onBackTap() {
         popBack(2)
     }
+    
+    @objc func onCityTap() {
+        self.presenter?.cityFilter()
+    }
+    
+    @objc func onShopTap() {
+        self.presenter?.shopFilter()
+    }
 }

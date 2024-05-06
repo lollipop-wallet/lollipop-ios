@@ -64,6 +64,12 @@ extension LocationsView {
             return stack
         }()
         
+        lazy var locationsCityButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onCityTap), for: .touchUpInside)
+            return button
+        }()
+        
         lazy var locationCityPlaceholderView: UIView = {
             let view = UIView()
             view.addSubview(locationCityStack)
@@ -72,6 +78,10 @@ extension LocationsView {
                 make.trailing.equalToSuperview().offset(-8)
                 make.top.equalToSuperview().offset(10)
                 make.bottom.equalToSuperview().offset(-10)
+            }
+            view.addSubview(locationsCityButton)
+            locationsCityButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
             }
             view.layer.cornerRadius = 8
             view.layer.masksToBounds = true
@@ -113,6 +123,12 @@ extension LocationsView {
             return stack
         }()
         
+        lazy var locationsShopButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onShopTap), for: .touchUpInside)
+            return button
+        }()
+        
         lazy var locationShopPlaceholderView: UIView = {
             let view = UIView()
             view.addSubview(locationShopStack)
@@ -121,6 +137,10 @@ extension LocationsView {
                 make.trailing.equalToSuperview().offset(-8)
                 make.top.equalToSuperview().offset(10)
                 make.bottom.equalToSuperview().offset(-10)
+            }
+            view.addSubview(locationsShopButton)
+            locationsShopButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
             }
             view.layer.cornerRadius = 8
             view.layer.masksToBounds = true

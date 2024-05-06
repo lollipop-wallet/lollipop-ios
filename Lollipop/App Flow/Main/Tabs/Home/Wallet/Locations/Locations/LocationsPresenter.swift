@@ -13,6 +13,13 @@ class LocationsPresenter: NSObject, LocationsPresenterProtocol  {
     weak var view: LocationsViewProtocol?
     var wireframe: LocationsWireframeProtocol?
     
+    func cityFilter(){
+        wireframe?.toFilterWith(filterType: .city)
+    }
+    
+    func shopFilter(){
+        wireframe?.toFilterWith(filterType: .shop)
+    }
 }
 
 extension LocationsPresenter: LocationsOutputInteractorProtocol {

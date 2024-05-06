@@ -16,6 +16,8 @@ protocol LocationsPresenterProtocol: UITableViewDelegate, UITableViewDataSource,
     var view: LocationsViewProtocol? { get set }
     var wireframe:LocationsWireframeProtocol? { get set }
     
+    func cityFilter()
+    func shopFilter()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -39,8 +41,7 @@ protocol LocationsViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol LocationsWireframeProtocol: AnyObject {
-
-    
+    func toFilterWith(filterType: LocationFilterType)
 }
 
 //MARK: LocationCell Protocol
