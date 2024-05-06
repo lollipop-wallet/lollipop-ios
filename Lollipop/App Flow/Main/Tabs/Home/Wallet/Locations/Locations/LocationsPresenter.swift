@@ -14,11 +14,11 @@ class LocationsPresenter: NSObject, LocationsPresenterProtocol  {
     var wireframe: LocationsWireframeProtocol?
     
     func cityFilter(){
-        wireframe?.toFilterWith(filterType: .city)
+        wireframe?.toFilterWith(filterType: .city, delegate: self)
     }
     
     func shopFilter(){
-        wireframe?.toFilterWith(filterType: .shop)
+        wireframe?.toFilterWith(filterType: .shop, delegate: self)
     }
 }
 
@@ -39,5 +39,16 @@ extension LocationsPresenter {
     }
     
     func didSelectItemAt(index: IndexPath) {
+    }
+}
+
+//MARK: LocationsFilter Delegate
+extension LocationsPresenter {
+    func filterLocationsByCities() {
+        
+    }
+    
+    func filterLocationsByShops() {
+        
     }
 }

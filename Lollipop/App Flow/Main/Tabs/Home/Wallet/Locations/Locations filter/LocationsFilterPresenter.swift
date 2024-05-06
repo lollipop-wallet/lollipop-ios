@@ -14,6 +14,7 @@ class LocationsFilterPresenter: LocationsFilterPresenterProtocol  {
     var wireframe: LocationsFilterWireframeProtocol?
     
     var filterType: LocationFilterType?
+    var delegate: LocationsFilterControllerProtocol?
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -21,7 +22,8 @@ class LocationsFilterPresenter: LocationsFilterPresenterProtocol  {
 }
 
 extension LocationsFilterPresenter: LocationsFilterOutputInteractorProtocol {
-    func takeDataWith(filterType: LocationFilterType?){
+    func takeDataWith(filterType: LocationFilterType?, delegate: LocationsFilterControllerProtocol?){
         self.filterType = filterType
+        self.delegate = delegate
     }
 }

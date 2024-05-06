@@ -10,7 +10,7 @@ import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol LocationsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, LocationCellProtocol {
+protocol LocationsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, LocationCellProtocol, LocationsFilterControllerProtocol {
     
     var interactor: LocationsInputInteractorProtocol? { get set }
     var view: LocationsViewProtocol? { get set }
@@ -41,7 +41,7 @@ protocol LocationsViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol LocationsWireframeProtocol: AnyObject {
-    func toFilterWith(filterType: LocationFilterType)
+    func toFilterWith(filterType: LocationFilterType, delegate: LocationsFilterControllerProtocol?)
 }
 
 //MARK: LocationCell Protocol

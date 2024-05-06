@@ -29,7 +29,7 @@ protocol LocationsFilterInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol LocationsFilterOutputInteractorProtocol: AnyObject {
-    func takeDataWith(filterType: LocationFilterType?)
+    func takeDataWith(filterType: LocationFilterType?, delegate: LocationsFilterControllerProtocol?)
 }
 //MARK: View
 protocol LocationsFilterViewProtocol: AnyObject {
@@ -40,4 +40,11 @@ protocol LocationsFilterViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol LocationsFilterWireframeProtocol: AnyObject {
     static var filterType: LocationFilterType? { get set }
+    static var delegate: LocationsFilterControllerProtocol? { get set }
+}
+
+//MARK: LocationsFilterController Protocol
+protocol LocationsFilterControllerProtocol: AnyObject {
+    func filterLocationsByCities()
+    func filterLocationsByShops()
 }

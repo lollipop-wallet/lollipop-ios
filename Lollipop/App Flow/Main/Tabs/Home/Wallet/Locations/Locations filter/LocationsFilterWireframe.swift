@@ -10,6 +10,7 @@ import UIKit
 class LocationsFilterWireframe: LocationsFilterWireframeProtocol {
     
     static var filterType: LocationFilterType?
+    static var delegate: LocationsFilterControllerProtocol?
     
     static func createModule(LocationsFilterRef: LocationsFilterView) {
         let presenter: LocationsFilterPresenterProtocol & LocationsFilterOutputInteractorProtocol = LocationsFilterPresenter()
