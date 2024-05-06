@@ -6,11 +6,11 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol LocationsFilterPresenterProtocol: AnyObject {
+protocol LocationsFilterPresenterProtocol: UITableViewDelegate, UITableViewDataSource,  LocationsFilterCellProtocol{
     
     var interactor: LocationsFilterInputInteractorProtocol? { get set }
     var view: LocationsFilterViewProtocol? { get set }
@@ -41,6 +41,11 @@ protocol LocationsFilterViewProtocol: AnyObject {
 protocol LocationsFilterWireframeProtocol: AnyObject {
     static var filterType: LocationFilterType? { get set }
     static var delegate: LocationsFilterControllerProtocol? { get set }
+}
+
+//MARK: LocationsFilterCell protocol
+protocol LocationsFilterCellProtocol: AnyObject {
+    func didSelectItemAt(index: IndexPath)
 }
 
 //MARK: LocationsFilterController Protocol

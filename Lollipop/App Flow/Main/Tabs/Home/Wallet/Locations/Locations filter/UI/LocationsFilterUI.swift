@@ -39,6 +39,13 @@ extension LocationsFilterView {
             return view
         }()
         
+        self.tableView.separatorStyle = .none
+        self.tableView.register(LocationsFilterTableViewCell.self, forCellReuseIdentifier: CellId.locationFilterCell.rawValue)
+        self.tableView.delegate = presenter
+        self.tableView.dataSource = presenter
+        self.tableView.backgroundColor = AppColors.white
+        self.tableView.sectionHeaderTopPadding = 0
+        
         self.view.addSubview(upperPullBar)
         upperPullBar.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(8)
@@ -65,6 +72,14 @@ extension LocationsFilterView {
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(self.titleLabel.snp.bottom).offset(16)
             make.height.equalTo(2)
+        }
+        
+        self.view.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+           // make.bottom.equalToSuperview()
+            make.top.equalTo(separator.snp.bottom)
         }
     }
 }

@@ -12,6 +12,7 @@ import UIKit
 class LocationsFilterView: UIViewController, LocationsFilterViewProtocol {
     
     var titleLabel = UILabel()
+    var tableView = AutomaticHeightTableView()
 
     var presenter: LocationsFilterPresenterProtocol?
 
