@@ -37,6 +37,7 @@ extension PartnerCardView {
             make.width.equalTo(self.view.frame.width - 66)
             make.height.equalTo((self.view.frame.width - 66) * 0.63)
         }
+        self.cardImageView.backgroundColor = .red
         
         lazy var optionsLabel: UILabel = {
             let label = UILabel()
@@ -51,7 +52,7 @@ extension PartnerCardView {
         self.tableView.register(PartnerCardTableViewCell.self, forCellReuseIdentifier: CellId.partnerCardCell.rawValue)
         self.tableView.delegate = presenter
         self.tableView.dataSource = presenter
-        self.tableView.backgroundColor = AppColors.lightGrey
+        self.tableView.backgroundColor = AppColors.white
         self.tableView.sectionHeaderTopPadding = 0
         
         lazy var partnerOptionsStack: UIStackView = {

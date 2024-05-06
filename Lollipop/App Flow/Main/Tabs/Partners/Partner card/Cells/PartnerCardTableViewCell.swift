@@ -25,6 +25,7 @@ class PartnerCardTableViewCell: UITableViewCell {
     
     lazy var optionImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.tintColor = AppColors.white
         return imageView
     }()
     
@@ -51,6 +52,7 @@ class PartnerCardTableViewCell: UITableViewCell {
             make.width.height.equalTo(24)
         }
         image.image = UIImage(named: AssetTitles.arrowRightIcon)
+        image.tintColor = AppColors.black
         return image
     }()
     
@@ -128,7 +130,7 @@ class PartnerCardTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         //Do your cell set up
-        self.contentView.backgroundColor = AppColors.lightGrey
+        self.contentView.backgroundColor = AppColors.white
         self.contentView.addSubview(cellContentView)
         cellContentView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
