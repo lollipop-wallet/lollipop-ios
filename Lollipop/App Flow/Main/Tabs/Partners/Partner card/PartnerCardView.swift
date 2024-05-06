@@ -12,6 +12,7 @@ import UIKit
 class PartnerCardView: UIViewController, PartnerCardViewProtocol {
     
     var cardImageView = UIImageView()
+    var tableView = AutomaticHeightTableView()
 
     var presenter: PartnerCardPresenterProtocol?
 

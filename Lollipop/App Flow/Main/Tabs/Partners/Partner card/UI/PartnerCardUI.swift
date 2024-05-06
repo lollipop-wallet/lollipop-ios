@@ -38,12 +38,40 @@ extension PartnerCardView {
             make.height.equalTo((self.view.frame.width - 66) * 0.63)
         }
         
+        lazy var optionsLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .regular)
+            label.textColor = AppColors.black
+            label.textAlignment = .left
+            label.text = "\(LocalizedTitle.options.localized):"
+            return label
+        }()
+        
+        self.tableView.separatorStyle = .none
+        self.tableView.register(PartnerCardTableViewCell.self, forCellReuseIdentifier: CellId.partnerCardCell.rawValue)
+        self.tableView.delegate = presenter
+        self.tableView.dataSource = presenter
+        self.tableView.backgroundColor = AppColors.lightGrey
+        self.tableView.sectionHeaderTopPadding = 0
+        
+        lazy var partnerOptionsStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [optionsLabel, self.tableView])
+            stack.axis = .vertical
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.spacing = 12
+            stack.snp.makeConstraints { make in
+                make.width.equalTo(self.view.frame.width - 66)
+            }
+            return stack
+        }()
+        
         lazy var mainStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [self.cardImageView])
+            let stack = UIStackView(arrangedSubviews: [self.cardImageView, partnerOptionsStack])
             stack.axis = .vertical
             stack.alignment = .center
             stack.distribution = .fill
-            stack.spacing = 24
+            stack.spacing = 36
             return stack
         }()
         
@@ -102,5 +130,22 @@ extension PartnerCardView {
 
             return view
         }()
+        
+        lazy var backgroundView: UIView = {
+            let view = UIView()
+            view.backgroundColor = AppColors.lightGrey
+            return view
+        }()
+        
+        self.view.addSubview(backgroundView)
+        backgroundView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide)
+        }
+        
+        backgroundView.addSubview(shaddowPlaceholderView)
+        shaddowPlaceholderView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+        }
     }
 }

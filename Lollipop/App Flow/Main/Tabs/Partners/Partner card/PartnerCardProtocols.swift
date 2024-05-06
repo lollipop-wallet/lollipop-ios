@@ -6,11 +6,11 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PartnerCardPresenterProtocol: AnyObject {
+protocol PartnerCardPresenterProtocol: UITableViewDelegate, UITableViewDataSource,  PartnerCardOptionCellProtocol{
     
     var interactor: PartnerCardInputInteractorProtocol? { get set }
     var view: PartnerCardViewProtocol? { get set }

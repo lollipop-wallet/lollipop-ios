@@ -155,11 +155,12 @@ class PartnerCardTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: PartnerCardOptionCellProtocol) {
+    func configureWith(model: PartnerCardOptionModel, index: IndexPath, delegate: PartnerCardOptionCellProtocol) {
         self.index = index
         self.delegate = delegate
-        self.titleLabel.text = "Dameo"
-        self.subtitleLabel.text = "1231521321521321"
+        self.titleLabel.text = model.title ?? ""
+        self.subtitleLabel.text = model.subtitile ?? ""
+        self.optionImageView.image = UIImage(named: model.icon ?? "")
     }
     
     //MARK: Actions

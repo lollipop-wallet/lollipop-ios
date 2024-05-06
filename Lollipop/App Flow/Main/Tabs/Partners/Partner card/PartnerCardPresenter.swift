@@ -7,14 +7,31 @@
 //
 import UIKit
 
-class PartnerCardPresenter: PartnerCardPresenterProtocol  {
+class PartnerCardPresenter: NSObject, PartnerCardPresenterProtocol  {
     
     var interactor : PartnerCardInputInteractorProtocol?
     weak var view: PartnerCardViewProtocol?
     var wireframe: PartnerCardWireframeProtocol?
     
+    var datasource = DefaultModels().partnerCardOptionsDatasource
 }
 
 extension PartnerCardPresenter: PartnerCardOutputInteractorProtocol {
     
+}
+
+extension PartnerCardPresenter {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return datasource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellId.partnerCardCell.rawValue, for: indexPath) as! PartnerCardTableViewCell
+        cell.configureWith(model: self.datasource[indexPath.row], index: indexPath, delegate: self)
+        return cell
+    }
+    
+    func didSelectItemAt(index: IndexPath) {
+        
+    }
 }
