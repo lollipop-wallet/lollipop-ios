@@ -201,6 +201,20 @@
 		62730C612BE88BDB004209B9 /* LocationsFilterUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C602BE88BDB004209B9 /* LocationsFilterUI.swift */; };
 		62730C632BE88C67004209B9 /* LocationFilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C622BE88C67004209B9 /* LocationFilterType.swift */; };
 		62730C662BE89832004209B9 /* LocationsFilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C652BE89832004209B9 /* LocationsFilterTableViewCell.swift */; };
+		62730C702BE8ED97004209B9 /* AboutProgrammePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C692BE8ED97004209B9 /* AboutProgrammePresenter.swift */; };
+		62730C712BE8ED97004209B9 /* AboutProgrammeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C6A2BE8ED97004209B9 /* AboutProgrammeProtocols.swift */; };
+		62730C722BE8ED97004209B9 /* AboutProgrammeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C6B2BE8ED97004209B9 /* AboutProgrammeInteractor.swift */; };
+		62730C732BE8ED97004209B9 /* AboutProgrammeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C6C2BE8ED97004209B9 /* AboutProgrammeView.swift */; };
+		62730C742BE8ED97004209B9 /* AboutProgrammeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C6D2BE8ED97004209B9 /* AboutProgrammeModel.swift */; };
+		62730C752BE8ED97004209B9 /* AboutProgrammeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C6E2BE8ED97004209B9 /* AboutProgrammeWireframe.swift */; };
+		62730C782BE8EDA9004209B9 /* AboutProgrammeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C772BE8EDA9004209B9 /* AboutProgrammeUI.swift */; };
+		62730C822BE8EE3C004209B9 /* ProgrammeRulesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C7B2BE8EE3C004209B9 /* ProgrammeRulesPresenter.swift */; };
+		62730C832BE8EE3C004209B9 /* ProgrammeRulesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C7C2BE8EE3C004209B9 /* ProgrammeRulesProtocols.swift */; };
+		62730C842BE8EE3C004209B9 /* ProgrammeRulesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C7D2BE8EE3C004209B9 /* ProgrammeRulesInteractor.swift */; };
+		62730C852BE8EE3C004209B9 /* ProgrammeRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C7E2BE8EE3C004209B9 /* ProgrammeRulesView.swift */; };
+		62730C862BE8EE3C004209B9 /* ProgrammeRulesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C7F2BE8EE3C004209B9 /* ProgrammeRulesModel.swift */; };
+		62730C872BE8EE3C004209B9 /* ProgrammeRulesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C802BE8EE3C004209B9 /* ProgrammeRulesWireframe.swift */; };
+		62730C8A2BE8EE4C004209B9 /* ProgrammeRulesUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C892BE8EE4C004209B9 /* ProgrammeRulesUI.swift */; };
 		627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92BD2BD847BB0016FF73 /* InputField.swift */; };
 		627E92C12BDA044F0016FF73 /* DropdownInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C02BDA044F0016FF73 /* DropdownInputField.swift */; };
 		627E92C32BDA056B0016FF73 /* DropdownInputFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */; };
@@ -554,6 +568,20 @@
 		62730C602BE88BDB004209B9 /* LocationsFilterUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFilterUI.swift; sourceTree = "<group>"; };
 		62730C622BE88C67004209B9 /* LocationFilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFilterType.swift; sourceTree = "<group>"; };
 		62730C652BE89832004209B9 /* LocationsFilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFilterTableViewCell.swift; sourceTree = "<group>"; };
+		62730C692BE8ED97004209B9 /* AboutProgrammePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutProgrammePresenter.swift; sourceTree = "<group>"; };
+		62730C6A2BE8ED97004209B9 /* AboutProgrammeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutProgrammeProtocols.swift; sourceTree = "<group>"; };
+		62730C6B2BE8ED97004209B9 /* AboutProgrammeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutProgrammeInteractor.swift; sourceTree = "<group>"; };
+		62730C6C2BE8ED97004209B9 /* AboutProgrammeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutProgrammeView.swift; sourceTree = "<group>"; };
+		62730C6D2BE8ED97004209B9 /* AboutProgrammeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutProgrammeModel.swift; sourceTree = "<group>"; };
+		62730C6E2BE8ED97004209B9 /* AboutProgrammeWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutProgrammeWireframe.swift; sourceTree = "<group>"; };
+		62730C772BE8EDA9004209B9 /* AboutProgrammeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutProgrammeUI.swift; sourceTree = "<group>"; };
+		62730C7B2BE8EE3C004209B9 /* ProgrammeRulesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeRulesPresenter.swift; sourceTree = "<group>"; };
+		62730C7C2BE8EE3C004209B9 /* ProgrammeRulesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeRulesProtocols.swift; sourceTree = "<group>"; };
+		62730C7D2BE8EE3C004209B9 /* ProgrammeRulesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeRulesInteractor.swift; sourceTree = "<group>"; };
+		62730C7E2BE8EE3C004209B9 /* ProgrammeRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeRulesView.swift; sourceTree = "<group>"; };
+		62730C7F2BE8EE3C004209B9 /* ProgrammeRulesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeRulesModel.swift; sourceTree = "<group>"; };
+		62730C802BE8EE3C004209B9 /* ProgrammeRulesWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeRulesWireframe.swift; sourceTree = "<group>"; };
+		62730C892BE8EE4C004209B9 /* ProgrammeRulesUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeRulesUI.swift; sourceTree = "<group>"; };
 		627E92BD2BD847BB0016FF73 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		627E92C02BDA044F0016FF73 /* DropdownInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputField.swift; sourceTree = "<group>"; };
 		627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputFieldProtocols.swift; sourceTree = "<group>"; };
@@ -1119,6 +1147,8 @@
 				2CBA7B152BE606E000C31FCD /* Wallet */,
 				2CBA7B272BE6125600C31FCD /* Wallet card */,
 				62BFFD2F2BE7456E00899800 /* Locations */,
+				62730C672BE8ED7C004209B9 /* About programme */,
+				62730C792BE8EE2D004209B9 /* Programme rules */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -1558,6 +1588,50 @@
 				62730C652BE89832004209B9 /* LocationsFilterTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		62730C672BE8ED7C004209B9 /* About programme */ = {
+			isa = PBXGroup;
+			children = (
+				62730C692BE8ED97004209B9 /* AboutProgrammePresenter.swift */,
+				62730C6A2BE8ED97004209B9 /* AboutProgrammeProtocols.swift */,
+				62730C6B2BE8ED97004209B9 /* AboutProgrammeInteractor.swift */,
+				62730C6C2BE8ED97004209B9 /* AboutProgrammeView.swift */,
+				62730C6D2BE8ED97004209B9 /* AboutProgrammeModel.swift */,
+				62730C6E2BE8ED97004209B9 /* AboutProgrammeWireframe.swift */,
+				62730C762BE8ED9E004209B9 /* UI */,
+			);
+			path = "About programme";
+			sourceTree = "<group>";
+		};
+		62730C762BE8ED9E004209B9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62730C772BE8EDA9004209B9 /* AboutProgrammeUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		62730C792BE8EE2D004209B9 /* Programme rules */ = {
+			isa = PBXGroup;
+			children = (
+				62730C7B2BE8EE3C004209B9 /* ProgrammeRulesPresenter.swift */,
+				62730C7C2BE8EE3C004209B9 /* ProgrammeRulesProtocols.swift */,
+				62730C7D2BE8EE3C004209B9 /* ProgrammeRulesInteractor.swift */,
+				62730C7E2BE8EE3C004209B9 /* ProgrammeRulesView.swift */,
+				62730C7F2BE8EE3C004209B9 /* ProgrammeRulesModel.swift */,
+				62730C802BE8EE3C004209B9 /* ProgrammeRulesWireframe.swift */,
+				62730C882BE8EE42004209B9 /* UI */,
+			);
+			path = "Programme rules";
+			sourceTree = "<group>";
+		};
+		62730C882BE8EE42004209B9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62730C892BE8EE4C004209B9 /* ProgrammeRulesUI.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		627E92B82BD847750016FF73 /* Custom UI */ = {
@@ -2379,6 +2453,12 @@
 				62F6CE302BDE0FDF00C4775C /* AccountDeletionInteractor.swift in Sources */,
 				62F6CE312BDE0FDF00C4775C /* AccountDeletionView.swift in Sources */,
 				62F6CE322BDE0FDF00C4775C /* AccountDeletionModel.swift in Sources */,
+				62730C822BE8EE3C004209B9 /* ProgrammeRulesPresenter.swift in Sources */,
+				62730C832BE8EE3C004209B9 /* ProgrammeRulesProtocols.swift in Sources */,
+				62730C842BE8EE3C004209B9 /* ProgrammeRulesInteractor.swift in Sources */,
+				62730C852BE8EE3C004209B9 /* ProgrammeRulesView.swift in Sources */,
+				62730C862BE8EE3C004209B9 /* ProgrammeRulesModel.swift in Sources */,
+				62730C872BE8EE3C004209B9 /* ProgrammeRulesWireframe.swift in Sources */,
 				62F6CE332BDE0FDF00C4775C /* AccountDeletionWireframe.swift in Sources */,
 				62F6CE212BDD5AF300C4775C /* ChangePasswordWireframe.swift in Sources */,
 				2CACCDED2BD541D3008178F8 /* AppDelegate+Extension.swift in Sources */,
@@ -2479,6 +2559,7 @@
 				2CACCDE02BD53FA9008178F8 /* UITextField+Extension.swift in Sources */,
 				2CACCD832BD528F7008178F8 /* LaunchView.swift in Sources */,
 				2CACCDC82BD53DDD008178F8 /* StorageKeys.swift in Sources */,
+				62730C782BE8EDA9004209B9 /* AboutProgrammeUI.swift in Sources */,
 				62F6CE6D2BDE6CA600C4775C /* LanguageUI.swift in Sources */,
 				2CBA98772BE4FFB700B804E6 /* PromotionsCollectionViewCell.swift in Sources */,
 				2CACCDC02BD53D7D008178F8 /* Helper.swift in Sources */,
@@ -2511,6 +2592,12 @@
 				62F6CE462BDE683A00C4775C /* MyCardsWireframe.swift in Sources */,
 				627E92DD2BDA18560016FF73 /* OTPInputField.swift in Sources */,
 				2CACCDBD2BD53D09008178F8 /* DataPasser.swift in Sources */,
+				62730C702BE8ED97004209B9 /* AboutProgrammePresenter.swift in Sources */,
+				62730C712BE8ED97004209B9 /* AboutProgrammeProtocols.swift in Sources */,
+				62730C722BE8ED97004209B9 /* AboutProgrammeInteractor.swift in Sources */,
+				62730C732BE8ED97004209B9 /* AboutProgrammeView.swift in Sources */,
+				62730C742BE8ED97004209B9 /* AboutProgrammeModel.swift in Sources */,
+				62730C752BE8ED97004209B9 /* AboutProgrammeWireframe.swift in Sources */,
 				2CACCDEB2BD54120008178F8 /* PushNotificationsManager.swift in Sources */,
 				2CDDA7402BDA367000B6C8B5 /* OTPInputProtocols.swift in Sources */,
 				2CBA986B2BE4FC1200B804E6 /* PromotionsPresenter.swift in Sources */,
@@ -2608,6 +2695,7 @@
 				62214AE72BD6E17600ABF38E /* OnboardingInteractor.swift in Sources */,
 				62F6CE242BDD5B0200C4775C /* ChangePasswordUI.swift in Sources */,
 				62214AE82BD6E17600ABF38E /* OnboardingView.swift in Sources */,
+				62730C8A2BE8EE4C004209B9 /* ProgrammeRulesUI.swift in Sources */,
 				62730C592BE88B34004209B9 /* LocationsFilterPresenter.swift in Sources */,
 				62730C5A2BE88B34004209B9 /* LocationsFilterProtocols.swift in Sources */,
 				62730C5B2BE88B34004209B9 /* LocationsFilterInteractor.swift in Sources */,

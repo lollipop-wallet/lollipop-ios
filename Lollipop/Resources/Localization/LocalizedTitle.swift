@@ -127,6 +127,7 @@ enum LocalizedTitle: String {
     case locationsOverview
     case chooseShop
     case reset
+    case programmeRules
     
     
     var localized: String {
