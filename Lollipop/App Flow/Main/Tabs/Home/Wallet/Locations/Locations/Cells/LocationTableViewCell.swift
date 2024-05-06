@@ -35,7 +35,8 @@ class LocationTableViewCell: UITableViewCell {
         let view = UIView()
         view.addSubview(locationImageView)
         locationImageView.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalToSuperview()
+            make.width.height.equalTo(24)
+            make.centerX.centerY.equalToSuperview()
         }
         view.layer.cornerRadius = 24
         view.layer.masksToBounds = true
@@ -52,6 +53,8 @@ class LocationTableViewCell: UITableViewCell {
         image.snp.makeConstraints { make in
             make.width.height.equalTo(24)
         }
+        image.image = UIImage(named: AssetTitles.arrowRightIcon)
+        image.tintColor = AppColors.black
         return image
     }()
     
@@ -83,6 +86,7 @@ class LocationTableViewCell: UITableViewCell {
             make.width.height.equalTo(12)
         }
         image.image = UIImage(named: AssetTitles.locationFilledIcon)
+        image.tintColor = AppColors.darkGrey
         return image
     }()
     
@@ -96,7 +100,7 @@ class LocationTableViewCell: UITableViewCell {
     }()
     
     lazy var textStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
+        let stack = UIStackView(arrangedSubviews: [titleLabel, subtitleStack])
         stack.axis = .vertical
         stack.alignment = .fill
         stack.distribution = .fill
@@ -106,7 +110,7 @@ class LocationTableViewCell: UITableViewCell {
     
     
     lazy var cardStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [locationImageContainer, subtitleStack, rightSupplementaryIcon])
+        let stack = UIStackView(arrangedSubviews: [locationImageContainer, textStack, rightSupplementaryIcon])
         stack.axis = .horizontal
         stack.alignment = .center
         stack.distribution = .fill

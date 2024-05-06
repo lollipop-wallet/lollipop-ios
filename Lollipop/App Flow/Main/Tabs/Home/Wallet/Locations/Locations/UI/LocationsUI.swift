@@ -137,12 +137,43 @@ extension LocationsView {
             return stack
         }()
         
+        lazy var locationsOverviewLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 14, name: .regular)
+            label.textAlignment = .left
+            label.textColor = AppColors.black
+            label.text = "\(LocalizedTitle.locationsOverview.localized):"
+            return label
+        }()
+        
+        self.tableView.separatorStyle = .none
+        self.tableView.register(LocationTableViewCell.self, forCellReuseIdentifier: CellId.locationCell.rawValue)
+        self.tableView.delegate = presenter
+        self.tableView.dataSource = presenter
+        self.tableView.backgroundColor = AppColors.lightGrey
+        self.tableView.sectionHeaderTopPadding = 0
+        
         self.view.addSubview(filterStack)
         filterStack.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(8)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(40)
+        }
+        
+        self.view.addSubview(locationsOverviewLabel)
+        locationsOverviewLabel.snp.makeConstraints { make in
+            make.top.equalTo(filterStack.snp.bottom).offset(24)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+        }
+        
+        self.view.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints { make in
+            make.top.equalTo(filterStack.snp.bottom).offset(16)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview()
         }
     }
 }

@@ -13,6 +13,7 @@ class LocationsView: UIViewController, LocationsViewProtocol {
     
     var locationCityLabel = UILabel()
     var locationShopLabel = UILabel()
+    var tableView = UITableView()
 
     var presenter: LocationsPresenterProtocol?
 

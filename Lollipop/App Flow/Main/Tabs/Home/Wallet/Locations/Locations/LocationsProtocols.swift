@@ -6,11 +6,11 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol LocationsPresenterProtocol: AnyObject {
+protocol LocationsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, LocationCellProtocol {
     
     var interactor: LocationsInputInteractorProtocol? { get set }
     var view: LocationsViewProtocol? { get set }

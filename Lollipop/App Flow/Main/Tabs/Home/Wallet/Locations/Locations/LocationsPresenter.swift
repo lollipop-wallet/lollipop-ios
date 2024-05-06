@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class LocationsPresenter: LocationsPresenterProtocol  {
+class LocationsPresenter: NSObject, LocationsPresenterProtocol  {
     
     var interactor : LocationsInputInteractorProtocol?
     weak var view: LocationsViewProtocol?
@@ -17,4 +17,20 @@ class LocationsPresenter: LocationsPresenterProtocol  {
 
 extension LocationsPresenter: LocationsOutputInteractorProtocol {
     
+}
+
+//MARK: UITableViewDelegate&Datasource
+extension LocationsPresenter {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 9
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellId.locationCell.rawValue, for: indexPath) as! LocationTableViewCell
+        cell.configureWith(index: indexPath, delegate: self)
+        return cell
+    }
+    
+    func didSelectItemAt(index: IndexPath) {
+    }
 }
