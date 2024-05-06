@@ -25,7 +25,7 @@ class LocationsWireframe: LocationsWireframeProtocol {
         let vc = LocationsFilterView()
         LocationsFilterWireframe.filterType = filterType
         LocationsFilterWireframe.delegate = delegate
-        let sheetController = SheetViewController(controller: vc, sizes: [.fixed(200)], options: Configuration().options)
+        let sheetController = SheetViewController(controller: vc, sizes: [.fixed(48 * 9 + 92.0)], options: Configuration().options)
         sheetController.allowPullingPastMaxHeight = false
         UIApplication.topViewController()?.present(sheetController, animated: true, completion: nil)
     }
