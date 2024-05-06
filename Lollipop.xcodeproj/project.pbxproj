@@ -222,6 +222,16 @@
 		62730C982BE8F121004209B9 /* PartnerDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C912BE8F121004209B9 /* PartnerDetailsModel.swift */; };
 		62730C992BE8F121004209B9 /* PartnerDetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C922BE8F121004209B9 /* PartnerDetailsWireframe.swift */; };
 		62730C9C2BE8F138004209B9 /* PartnerDetailsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C9B2BE8F138004209B9 /* PartnerDetailsUI.swift */; };
+		62730CA62BE8F97B004209B9 /* PartnerCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C9F2BE8F97B004209B9 /* PartnerCardPresenter.swift */; };
+		62730CA72BE8F97B004209B9 /* PartnerCardProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CA02BE8F97B004209B9 /* PartnerCardProtocols.swift */; };
+		62730CA82BE8F97B004209B9 /* PartnerCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CA12BE8F97B004209B9 /* PartnerCardInteractor.swift */; };
+		62730CA92BE8F97B004209B9 /* PartnerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CA22BE8F97B004209B9 /* PartnerCardView.swift */; };
+		62730CAA2BE8F97B004209B9 /* PartnerCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CA32BE8F97B004209B9 /* PartnerCardModel.swift */; };
+		62730CAB2BE8F97B004209B9 /* PartnerCardWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CA42BE8F97B004209B9 /* PartnerCardWireframe.swift */; };
+		62730CAE2BE8F98C004209B9 /* PartnerCardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CAD2BE8F98C004209B9 /* PartnerCardUI.swift */; };
+		62730CB12BE903E9004209B9 /* PartnerCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CB02BE903E9004209B9 /* PartnerCardTableViewCell.swift */; };
+		62730CB32BE90591004209B9 /* PartnerCardOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CB22BE90591004209B9 /* PartnerCardOptionModel.swift */; };
+		62730CB52BE905A9004209B9 /* PartnerCardOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CB42BE905A9004209B9 /* PartnerCardOption.swift */; };
 		627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92BD2BD847BB0016FF73 /* InputField.swift */; };
 		627E92C12BDA044F0016FF73 /* DropdownInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C02BDA044F0016FF73 /* DropdownInputField.swift */; };
 		627E92C32BDA056B0016FF73 /* DropdownInputFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */; };
@@ -596,6 +606,16 @@
 		62730C912BE8F121004209B9 /* PartnerDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsModel.swift; sourceTree = "<group>"; };
 		62730C922BE8F121004209B9 /* PartnerDetailsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsWireframe.swift; sourceTree = "<group>"; };
 		62730C9B2BE8F138004209B9 /* PartnerDetailsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsUI.swift; sourceTree = "<group>"; };
+		62730C9F2BE8F97B004209B9 /* PartnerCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardPresenter.swift; sourceTree = "<group>"; };
+		62730CA02BE8F97B004209B9 /* PartnerCardProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardProtocols.swift; sourceTree = "<group>"; };
+		62730CA12BE8F97B004209B9 /* PartnerCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardInteractor.swift; sourceTree = "<group>"; };
+		62730CA22BE8F97B004209B9 /* PartnerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardView.swift; sourceTree = "<group>"; };
+		62730CA32BE8F97B004209B9 /* PartnerCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardModel.swift; sourceTree = "<group>"; };
+		62730CA42BE8F97B004209B9 /* PartnerCardWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardWireframe.swift; sourceTree = "<group>"; };
+		62730CAD2BE8F98C004209B9 /* PartnerCardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardUI.swift; sourceTree = "<group>"; };
+		62730CB02BE903E9004209B9 /* PartnerCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardTableViewCell.swift; sourceTree = "<group>"; };
+		62730CB22BE90591004209B9 /* PartnerCardOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardOptionModel.swift; sourceTree = "<group>"; };
+		62730CB42BE905A9004209B9 /* PartnerCardOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardOption.swift; sourceTree = "<group>"; };
 		627E92BD2BD847BB0016FF73 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		627E92C02BDA044F0016FF73 /* DropdownInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputField.swift; sourceTree = "<group>"; };
 		627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputFieldProtocols.swift; sourceTree = "<group>"; };
@@ -1092,6 +1112,7 @@
 				62F6CE922BDEA36100C4775C /* LanCode.swift */,
 				2CE32AD32BDFBFBC004757C5 /* DialogueType.swift */,
 				62730C622BE88C67004209B9 /* LocationFilterType.swift */,
+				62730CB42BE905A9004209B9 /* PartnerCardOption.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -1670,6 +1691,38 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		62730C9D2BE8F96A004209B9 /* Partner card */ = {
+			isa = PBXGroup;
+			children = (
+				62730C9F2BE8F97B004209B9 /* PartnerCardPresenter.swift */,
+				62730CA02BE8F97B004209B9 /* PartnerCardProtocols.swift */,
+				62730CA12BE8F97B004209B9 /* PartnerCardInteractor.swift */,
+				62730CA22BE8F97B004209B9 /* PartnerCardView.swift */,
+				62730CA32BE8F97B004209B9 /* PartnerCardModel.swift */,
+				62730CB22BE90591004209B9 /* PartnerCardOptionModel.swift */,
+				62730CA42BE8F97B004209B9 /* PartnerCardWireframe.swift */,
+				62730CAC2BE8F982004209B9 /* UI */,
+				62730CAF2BE903C7004209B9 /* Cells */,
+			);
+			path = "Partner card";
+			sourceTree = "<group>";
+		};
+		62730CAC2BE8F982004209B9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62730CAD2BE8F98C004209B9 /* PartnerCardUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		62730CAF2BE903C7004209B9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				62730CB02BE903E9004209B9 /* PartnerCardTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		627E92B82BD847750016FF73 /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1934,6 +1987,7 @@
 				2CE32AAB2BDF9D0A004757C5 /* Partners */,
 				2CE32AAC2BDF9D18004757C5 /* New partner */,
 				62730C8B2BE8F10A004209B9 /* Partner details */,
+				62730C9D2BE8F96A004209B9 /* Partner card */,
 			);
 			path = Partners;
 			sourceTree = "<group>";
@@ -2542,6 +2596,12 @@
 				2CACCD802BD528F7008178F8 /* LaunchPresenter.swift in Sources */,
 				2CACCD812BD528F7008178F8 /* LaunchProtocols.swift in Sources */,
 				2CACCDC42BD53DAE008178F8 /* LinkType.swift in Sources */,
+				62730CA62BE8F97B004209B9 /* PartnerCardPresenter.swift in Sources */,
+				62730CA72BE8F97B004209B9 /* PartnerCardProtocols.swift in Sources */,
+				62730CA82BE8F97B004209B9 /* PartnerCardInteractor.swift in Sources */,
+				62730CA92BE8F97B004209B9 /* PartnerCardView.swift in Sources */,
+				62730CAA2BE8F97B004209B9 /* PartnerCardModel.swift in Sources */,
+				62730CAB2BE8F97B004209B9 /* PartnerCardWireframe.swift in Sources */,
 				2CA1955D2BE2475600CC10F5 /* DeleteCardPresenter.swift in Sources */,
 				2CA1955E2BE2475600CC10F5 /* DeleteCardProtocols.swift in Sources */,
 				2CA1955F2BE2475600CC10F5 /* DeleteCardInteractor.swift in Sources */,
@@ -2669,6 +2729,7 @@
 				62F6CDDB2BDD370400C4775C /* ProfileItem.swift in Sources */,
 				62214B022BD6E5D000ABF38E /* AppFontWeight.swift in Sources */,
 				627E92DA2BDA10A80016FF73 /* PasswordUI.swift in Sources */,
+				62730CB52BE905A9004209B9 /* PartnerCardOption.swift in Sources */,
 				62F6CE652BDE6C9700C4775C /* LanguagePresenter.swift in Sources */,
 				2CE32AD42BDFBFBC004757C5 /* DialogueType.swift in Sources */,
 				62F6CE662BDE6C9700C4775C /* LanguageProtocols.swift in Sources */,
@@ -2706,7 +2767,9 @@
 				62F6CE092BDD55E900C4775C /* ProfileSettingsModel.swift in Sources */,
 				2CBA7B302BE6126500C31FCD /* WalletCardPresenter.swift in Sources */,
 				2CBA7B312BE6126500C31FCD /* WalletCardProtocols.swift in Sources */,
+				62730CAE2BE8F98C004209B9 /* PartnerCardUI.swift in Sources */,
 				2CBA7B322BE6126500C31FCD /* WalletCardInteractor.swift in Sources */,
+				62730CB12BE903E9004209B9 /* PartnerCardTableViewCell.swift in Sources */,
 				2CBA7B332BE6126500C31FCD /* WalletCardView.swift in Sources */,
 				2CBA7B342BE6126500C31FCD /* WalletCardModel.swift in Sources */,
 				2CBA7B352BE6126500C31FCD /* WalletCardWireframe.swift in Sources */,
@@ -2745,6 +2808,7 @@
 				62730C5B2BE88B34004209B9 /* LocationsFilterInteractor.swift in Sources */,
 				62730C5C2BE88B34004209B9 /* LocationsFilterView.swift in Sources */,
 				62730C5D2BE88B34004209B9 /* LocationsFilterModel.swift in Sources */,
+				62730CB32BE90591004209B9 /* PartnerCardOptionModel.swift in Sources */,
 				62730C5E2BE88B34004209B9 /* LocationsFilterWireframe.swift in Sources */,
 				62F6CD942BDBC69E00C4775C /* HomeUI.swift in Sources */,
 				62214AE92BD6E17600ABF38E /* OnboardingModel.swift in Sources */,
