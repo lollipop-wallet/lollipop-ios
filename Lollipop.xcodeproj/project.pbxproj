@@ -191,6 +191,7 @@
 		626906B22BE0A8D100BF5F62 /* MyShopsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906AC2BE0A8D100BF5F62 /* MyShopsModel.swift */; };
 		626906B32BE0A8D100BF5F62 /* MyShopsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906AD2BE0A8D100BF5F62 /* MyShopsWireframe.swift */; };
 		626906B72BE0A8E000BF5F62 /* MyShopsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906B62BE0A8E000BF5F62 /* MyShopsUI.swift */; };
+		62730C4F2BE8853F004209B9 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730C4E2BE8853F004209B9 /* LocationTableViewCell.swift */; };
 		627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92BD2BD847BB0016FF73 /* InputField.swift */; };
 		627E92C12BDA044F0016FF73 /* DropdownInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C02BDA044F0016FF73 /* DropdownInputField.swift */; };
 		627E92C32BDA056B0016FF73 /* DropdownInputFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */; };
@@ -534,6 +535,7 @@
 		626906AC2BE0A8D100BF5F62 /* MyShopsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsModel.swift; sourceTree = "<group>"; };
 		626906AD2BE0A8D100BF5F62 /* MyShopsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsWireframe.swift; sourceTree = "<group>"; };
 		626906B62BE0A8E000BF5F62 /* MyShopsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsUI.swift; sourceTree = "<group>"; };
+		62730C4E2BE8853F004209B9 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		627E92BD2BD847BB0016FF73 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		627E92C02BDA044F0016FF73 /* DropdownInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputField.swift; sourceTree = "<group>"; };
 		627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputFieldProtocols.swift; sourceTree = "<group>"; };
@@ -1500,6 +1502,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		62730C4D2BE88533004209B9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				62730C4E2BE8853F004209B9 /* LocationTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		627E92B82BD847750016FF73 /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1647,6 +1657,7 @@
 				62BFFD362BE7457E00899800 /* LocationsModel.swift */,
 				62BFFD372BE7457E00899800 /* LocationsWireframe.swift */,
 				62BFFD3F2BE7458500899800 /* UI */,
+				62730C4D2BE88533004209B9 /* Cells */,
 			);
 			path = Locations;
 			sourceTree = "<group>";
@@ -2439,6 +2450,7 @@
 				626906B02BE0A8D100BF5F62 /* MyShopsInteractor.swift in Sources */,
 				626906B12BE0A8D100BF5F62 /* MyShopsView.swift in Sources */,
 				626906B22BE0A8D100BF5F62 /* MyShopsModel.swift in Sources */,
+				62730C4F2BE8853F004209B9 /* LocationTableViewCell.swift in Sources */,
 				626906B32BE0A8D100BF5F62 /* MyShopsWireframe.swift in Sources */,
 				62F6CE422BDE683A00C4775C /* MyCardsProtocols.swift in Sources */,
 				62F6CE432BDE683A00C4775C /* MyCardsInteractor.swift in Sources */,

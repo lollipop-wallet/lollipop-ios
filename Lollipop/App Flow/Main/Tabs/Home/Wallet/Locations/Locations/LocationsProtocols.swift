@@ -42,3 +42,8 @@ protocol LocationsWireframeProtocol: AnyObject {
 
     
 }
+
+//MARK: LocationCell Protocol
+protocol LocationCellProtocol: AnyObject {
+    func didSelectItemAt(index: IndexPath)
+}
