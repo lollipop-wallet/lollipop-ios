@@ -14,13 +14,7 @@ class LocationsFilterTableViewCell: UITableViewCell {
     
     lazy var cellContentView: UIView = {
         let view = UIView()
-        //view.backgroundColor = .clear
-        return view
-    }()
-    
-    lazy var separatorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = AppColors.lightGrey
+        view.backgroundColor = AppColors.white
         return view
     }()
     
@@ -119,18 +113,10 @@ class LocationsFilterTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview()
         }
         
-        cellContentView.addSubview(separatorView)
-        separatorView.snp.makeConstraints { make in
-            make.bottom.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.height.equalTo(8)
-        }
-        
         cellContentView.addSubview(locationCellPlaceholderView)
         locationCellPlaceholderView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.bottom.equalTo(separatorView.snp.top)
+            make.top.bottom.equalToSuperview()
+            //make.bottom.equalTo(separatorView.snp.top)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
