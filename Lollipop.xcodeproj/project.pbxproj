@@ -232,6 +232,13 @@
 		62730CB12BE903E9004209B9 /* PartnerCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CB02BE903E9004209B9 /* PartnerCardTableViewCell.swift */; };
 		62730CB32BE90591004209B9 /* PartnerCardOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CB22BE90591004209B9 /* PartnerCardOptionModel.swift */; };
 		62730CB52BE905A9004209B9 /* PartnerCardOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CB42BE905A9004209B9 /* PartnerCardOption.swift */; };
+		62730CBF2BE9174F004209B9 /* PartnerCardSignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CB82BE9174F004209B9 /* PartnerCardSignupPresenter.swift */; };
+		62730CC02BE9174F004209B9 /* PartnerCardSignupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CB92BE9174F004209B9 /* PartnerCardSignupProtocols.swift */; };
+		62730CC12BE9174F004209B9 /* PartnerCardSignupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CBA2BE9174F004209B9 /* PartnerCardSignupInteractor.swift */; };
+		62730CC22BE9174F004209B9 /* PartnerCardSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CBB2BE9174F004209B9 /* PartnerCardSignupView.swift */; };
+		62730CC32BE9174F004209B9 /* PartnerCardSignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CBC2BE9174F004209B9 /* PartnerCardSignupModel.swift */; };
+		62730CC42BE9174F004209B9 /* PartnerCardSignupWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CBD2BE9174F004209B9 /* PartnerCardSignupWireframe.swift */; };
+		62730CC72BE91761004209B9 /* PartnerCardSignupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CC62BE91761004209B9 /* PartnerCardSignupUI.swift */; };
 		627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92BD2BD847BB0016FF73 /* InputField.swift */; };
 		627E92C12BDA044F0016FF73 /* DropdownInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C02BDA044F0016FF73 /* DropdownInputField.swift */; };
 		627E92C32BDA056B0016FF73 /* DropdownInputFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */; };
@@ -616,6 +623,13 @@
 		62730CB02BE903E9004209B9 /* PartnerCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardTableViewCell.swift; sourceTree = "<group>"; };
 		62730CB22BE90591004209B9 /* PartnerCardOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardOptionModel.swift; sourceTree = "<group>"; };
 		62730CB42BE905A9004209B9 /* PartnerCardOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardOption.swift; sourceTree = "<group>"; };
+		62730CB82BE9174F004209B9 /* PartnerCardSignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardSignupPresenter.swift; sourceTree = "<group>"; };
+		62730CB92BE9174F004209B9 /* PartnerCardSignupProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardSignupProtocols.swift; sourceTree = "<group>"; };
+		62730CBA2BE9174F004209B9 /* PartnerCardSignupInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardSignupInteractor.swift; sourceTree = "<group>"; };
+		62730CBB2BE9174F004209B9 /* PartnerCardSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardSignupView.swift; sourceTree = "<group>"; };
+		62730CBC2BE9174F004209B9 /* PartnerCardSignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardSignupModel.swift; sourceTree = "<group>"; };
+		62730CBD2BE9174F004209B9 /* PartnerCardSignupWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardSignupWireframe.swift; sourceTree = "<group>"; };
+		62730CC62BE91761004209B9 /* PartnerCardSignupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardSignupUI.swift; sourceTree = "<group>"; };
 		627E92BD2BD847BB0016FF73 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		627E92C02BDA044F0016FF73 /* DropdownInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputField.swift; sourceTree = "<group>"; };
 		627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputFieldProtocols.swift; sourceTree = "<group>"; };
@@ -1723,6 +1737,28 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		62730CB62BE91736004209B9 /* Partner card signup */ = {
+			isa = PBXGroup;
+			children = (
+				62730CB82BE9174F004209B9 /* PartnerCardSignupPresenter.swift */,
+				62730CB92BE9174F004209B9 /* PartnerCardSignupProtocols.swift */,
+				62730CBA2BE9174F004209B9 /* PartnerCardSignupInteractor.swift */,
+				62730CBB2BE9174F004209B9 /* PartnerCardSignupView.swift */,
+				62730CBC2BE9174F004209B9 /* PartnerCardSignupModel.swift */,
+				62730CBD2BE9174F004209B9 /* PartnerCardSignupWireframe.swift */,
+				62730CC52BE91756004209B9 /* UI */,
+			);
+			path = "Partner card signup";
+			sourceTree = "<group>";
+		};
+		62730CC52BE91756004209B9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62730CC62BE91761004209B9 /* PartnerCardSignupUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		627E92B82BD847750016FF73 /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1988,6 +2024,7 @@
 				2CE32AAC2BDF9D18004757C5 /* New partner */,
 				62730C8B2BE8F10A004209B9 /* Partner details */,
 				62730C9D2BE8F96A004209B9 /* Partner card */,
+				62730CB62BE91736004209B9 /* Partner card signup */,
 			);
 			path = Partners;
 			sourceTree = "<group>";
@@ -2534,6 +2571,12 @@
 				2CBA7B222BE606EA00C31FCD /* WalletModel.swift in Sources */,
 				2CBA7B3B2BE61E5C00C31FCD /* LoyaltyCard.swift in Sources */,
 				2CBA7B232BE606EA00C31FCD /* WalletWireframe.swift in Sources */,
+				62730CBF2BE9174F004209B9 /* PartnerCardSignupPresenter.swift in Sources */,
+				62730CC02BE9174F004209B9 /* PartnerCardSignupProtocols.swift in Sources */,
+				62730CC12BE9174F004209B9 /* PartnerCardSignupInteractor.swift in Sources */,
+				62730CC22BE9174F004209B9 /* PartnerCardSignupView.swift in Sources */,
+				62730CC32BE9174F004209B9 /* PartnerCardSignupModel.swift in Sources */,
+				62730CC42BE9174F004209B9 /* PartnerCardSignupWireframe.swift in Sources */,
 				2CE32AA72BDF66F5004757C5 /* CustomSegmentedControl.swift in Sources */,
 				62F6CDA22BDBC6D600C4775C /* PartnersWireframe.swift in Sources */,
 				2CACCD892BD5290B008178F8 /* LaunchUI.swift in Sources */,
@@ -2818,6 +2861,7 @@
 				62F6CD8B2BDBC69000C4775C /* HomePresenter.swift in Sources */,
 				62F6CE962BDEA40600C4775C /* LanguageTableViewCell.swift in Sources */,
 				62F6CD8C2BDBC69000C4775C /* HomeProtocols.swift in Sources */,
+				62730CC72BE91761004209B9 /* PartnerCardSignupUI.swift in Sources */,
 				62F6CE102BDD560900C4775C /* ProfileSettingsTableViewCell.swift in Sources */,
 				62F6CD8D2BDBC69000C4775C /* HomeInteractor.swift in Sources */,
 				62F6CD8E2BDBC69000C4775C /* HomeView.swift in Sources */,

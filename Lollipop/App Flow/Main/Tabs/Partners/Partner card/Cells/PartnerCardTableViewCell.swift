@@ -93,7 +93,7 @@ class PartnerCardTableViewCell: UITableViewCell {
         stack.axis = .horizontal
         stack.alignment = .center
         stack.distribution = .fill
-        stack.spacing = 16
+        stack.spacing = 12
         return stack
     }()
     

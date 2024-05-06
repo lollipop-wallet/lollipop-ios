@@ -62,7 +62,7 @@ extension PartnerCardView {
             stack.distribution = .fill
             stack.spacing = 12
             stack.snp.makeConstraints { make in
-                make.width.equalTo(self.view.frame.width - 66)
+                make.width.equalTo(self.view.frame.width - 32)
             }
             return stack
         }()
