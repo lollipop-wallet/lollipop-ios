@@ -66,7 +66,7 @@ extension PartnerCardSignupView {
             mainStack.snp.makeConstraints { make in
                 make.leading.equalToSuperview().offset(20)
                 make.trailing.equalToSuperview().offset(-20)
-                make.bottom.equalToSuperview().offset(-40)
+                make.bottom.equalToSuperview().offset(-24)
                 make.top.equalToSuperview().offset(24)
             }
             view.backgroundColor = AppColors.white
@@ -94,7 +94,7 @@ extension PartnerCardSignupView {
             return view
         }()
         
-        lazy var shaddowPlaceholderView: UIView = {
+        lazy var shadowPlaceholderView: UIView = {
             let view = UIView()
             view.addSubview(topPaddingView)
             topPaddingView.snp.makeConstraints { make in
@@ -121,15 +121,64 @@ extension PartnerCardSignupView {
             return view
         }()
         
+        lazy var scrollView : UIScrollView = {
+            let scView = UIScrollView()
+            return scView
+        }()
+        
+        lazy var contentView : UIView = {
+            let view = UIView()
+            return view
+        }()
+        
+        self.nameField.title = "\(LocalizedTitle.nameAndSurname.localized):"
+        self.nameField.errorHidden = true
+        self.nameField.keyboardType = .default
+        self.nameField.background = AppColors.white
+        self.nameField.leftSuplementaryIconHidden = true
+        
+        self.cityField.title = "\(LocalizedTitle.city.localized):"
+        self.cityField.errorHidden = true
+        self.cityField.background = AppColors.white
+        self.cityField.text = LocalizedTitle.choose.localized
+        self.cityField.rightSuplementaryIconHidden = false
+        //self.cityField.delegate = presenter
+        
         self.view.addSubview(backgroundView)
         backgroundView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalTo(self.view.safeAreaLayoutGuide)
         }
         
-        backgroundView.addSubview(shaddowPlaceholderView)
-        shaddowPlaceholderView.snp.makeConstraints { make in
+        backgroundView.addSubview(shadowPlaceholderView)
+        shadowPlaceholderView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
+        }
+        
+        backgroundView.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(shadowPlaceholderView.snp.bottom)
+        }
+        
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets.zero)
+            make.width.equalTo(scrollView)
+        }
+        
+        contentView.addSubview(self.nameField)
+        self.nameField.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalToSuperview().offset(24)
+        }
+        
+        contentView.addSubview(self.cityField)
+        self.cityField.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(self.nameField.snp.bottom).offset(16)
         }
     }
 }
