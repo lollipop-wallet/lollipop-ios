@@ -117,3 +117,8 @@
 "chooseShop" = "Choose shop";
 "reset" = "Reset";
 "programmeRules" = "Programme rules";
+"options" = "Options";
+"ihaveCardTitle" = "I have card";
+"iHaveCardSubtitle" = "Digitalize your own card";
+"iWantCardTitle" = "I want a card";
+"iWantCardSubtitle" = "Sign up to become a club member";

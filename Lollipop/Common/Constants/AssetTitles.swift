@@ -66,4 +66,6 @@ struct AssetTitles {
     static let arrowDownIcon = "ic_arrow_down"
     static let backRoundedIcon = "ic_back_rounded"
     static let favoriteRoundedIcon = "ic_favorite_rounded"
+    static let cardFilledIcon = "ic_card_filled"
+    static let sendFilledIcon = "ic_send_filled"
 }

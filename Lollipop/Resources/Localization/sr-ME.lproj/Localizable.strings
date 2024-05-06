@@ -116,3 +116,8 @@
 "chooseShop" = "Odaberite radnju";
 "reset" = "Resetuj";
 "programmeRules" = "Pravila programa";
+"options" = "Opcije";
+"ihaveCardTitle" = "Imam karticu";
+"iHaveCardSubtitle" = "Digitalizuj svoju postojeću karticu";
+"iWantCardTitle" = "Želim karticu";
+"iWantCardSubtitle" = "Prijavi se da postaneš dio kluba";

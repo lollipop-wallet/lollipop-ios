@@ -128,7 +128,11 @@ enum LocalizedTitle: String {
     case chooseShop
     case reset
     case programmeRules
-    
+    case options
+    case ihaveCardTitle
+    case iHaveCardSubtitle
+    case iWantCardTitle
+    case iWantCardSubtitle
     
     var localized: String {
         return self.rawValue.localized()
