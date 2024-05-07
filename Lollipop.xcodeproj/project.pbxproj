@@ -1815,13 +1815,7 @@
 		62730CD82BEA500B004209B9 /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
-				62730CDA2BEA5017004209B9 /* ScannerPresenter.swift */,
-				62730CDB2BEA5017004209B9 /* ScannerProtocols.swift */,
-				62730CDC2BEA5017004209B9 /* ScannerInteractor.swift */,
-				62730CDD2BEA5017004209B9 /* ScannerView.swift */,
-				62730CDE2BEA5017004209B9 /* ScannerModel.swift */,
-				62730CDF2BEA5017004209B9 /* ScannerWireframe.swift */,
-				62730CE72BEA501F004209B9 /* UI */,
+				62730CEA2BEA636C004209B9 /* Scanner */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -1832,6 +1826,20 @@
 				62730CE82BEA5029004209B9 /* ScannerUI.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		62730CEA2BEA636C004209B9 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				62730CDA2BEA5017004209B9 /* ScannerPresenter.swift */,
+				62730CDB2BEA5017004209B9 /* ScannerProtocols.swift */,
+				62730CDC2BEA5017004209B9 /* ScannerInteractor.swift */,
+				62730CDD2BEA5017004209B9 /* ScannerView.swift */,
+				62730CDE2BEA5017004209B9 /* ScannerModel.swift */,
+				62730CDF2BEA5017004209B9 /* ScannerWireframe.swift */,
+				62730CE72BEA501F004209B9 /* UI */,
+			);
+			path = Scanner;
 			sourceTree = "<group>";
 		};
 		627E92B82BD847750016FF73 /* Custom UI */ = {
