@@ -47,3 +47,8 @@ protocol PartnerDetailsWireframeProtocol: AnyObject {
 protocol MainPartnerCellProtocol: AnyObject {
     
 }
+
+//MARK: MainPartnerCollectionCell Protocol
+protocol MainPartnerCollectionCellProtocol: AnyObject {
+    
+}
