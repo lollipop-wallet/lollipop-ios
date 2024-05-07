@@ -26,26 +26,14 @@ class PartnerDetailsCustomTableViewCell: UITableViewCell {
     
     lazy var cardImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.layer.cornerRadius = 12
+        imageView.layer.masksToBounds = true
+        imageView.snp.makeConstraints { make in
+            make.width.height.equalTo(24)
+        }
         return imageView
     }()
     
-    lazy var cardImageContainer: UIView = {
-        let view = UIView()
-        view.addSubview(cardImageView)
-        cardImageView.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalToSuperview()
-        }
-        view.layer.borderColor = AppColors.white.withAlphaComponent(0.2).cgColor
-        view.layer.borderWidth = 2
-        view.layer.cornerRadius = 8
-        view.layer.masksToBounds = true
-        view.snp.makeConstraints { make in
-            make.width.equalTo(72)
-            make.height.equalTo(47)
-        }
-        view.backgroundColor = .red
-        return view
-    }()
     
     lazy var rightSupplementaryIcon: UIImageView = {
         let image = UIImageView()
@@ -53,7 +41,7 @@ class PartnerDetailsCustomTableViewCell: UITableViewCell {
             make.width.height.equalTo(24)
         }
         image.image = UIImage(named: AssetTitles.arrowRightIcon)
-        image.tintColor = AppColors.white
+        image.tintColor = AppColors.black
         return image
     }()
     
@@ -61,7 +49,7 @@ class PartnerDetailsCustomTableViewCell: UITableViewCell {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .inter(ofSize: 18, name: .semibold)
-        label.textColor = AppColors.white
+        label.textColor = AppColors.black
         label.textAlignment = .left
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -69,7 +57,7 @@ class PartnerDetailsCustomTableViewCell: UITableViewCell {
     }()
     
     lazy var cardStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [cardImageContainer, titleLabel, rightSupplementaryIcon])
+        let stack = UIStackView(arrangedSubviews: [cardImageView, titleLabel, rightSupplementaryIcon])
         stack.axis = .horizontal
         stack.alignment = .center
         stack.distribution = .fill
@@ -94,9 +82,11 @@ class PartnerDetailsCustomTableViewCell: UITableViewCell {
         cellButton.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
         }
+        view.layer.borderColor = AppColors.brandPrimary.cgColor
+        view.layer.borderWidth = 1.0
         view.layer.cornerRadius = 12
         view.layer.masksToBounds = true
-        view.backgroundColor = AppColors.brandPrimary
+        view.backgroundColor = AppColors.white
         return view
     }()
     
@@ -128,8 +118,9 @@ class PartnerDetailsCustomTableViewCell: UITableViewCell {
         cardCellPlaceholderView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.bottom.equalTo(separatorView.snp.top)
-            make.leading.equalToSuperview().offset(12)
-            make.trailing.equalToSuperview().offset(-12)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+            make.height.equalTo(56)
         }
         
         self.selectionStyle = .none

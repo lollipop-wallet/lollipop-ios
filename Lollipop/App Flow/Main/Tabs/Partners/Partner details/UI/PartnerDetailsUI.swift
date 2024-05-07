@@ -19,6 +19,7 @@ extension PartnerDetailsView {
         self.tableView.register(PartnerDetailsOptionsTableViewCell.self, forCellReuseIdentifier: CellId.partnerDetailsOptionsCell.rawValue)
         self.tableView.register(HomePosterCategoryTableViewCell.self, forCellReuseIdentifier: CellId.homePosterCell.rawValue)
         self.tableView.register(HomeRectHorizontalCategoryTableViewCell.self, forCellReuseIdentifier: CellId.homeRectItemCell.rawValue)
+        self.tableView.register(PartnerDetailsCustomTableViewCell.self, forCellReuseIdentifier: CellId.partnerDetailsCustomCell.rawValue)
         self.tableView.delegate = presenter
         self.tableView.dataSource = presenter
         self.tableView.sectionHeaderTopPadding = 0

@@ -22,7 +22,7 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
 //MARK: UITableViewDelegate&Datasource
 extension PartnerDetailsPresenter {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,8 +42,12 @@ extension PartnerDetailsPresenter {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homePosterCell.rawValue, for: indexPath) as! HomePosterCategoryTableViewCell
             cell.configureWith(index: indexPath, delegate: self)
             return cell
-        }else{
+        }else if indexPath.row == 4{
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homeRectItemCell.rawValue, for: indexPath) as! HomeRectHorizontalCategoryTableViewCell
+            cell.configureWith(index: indexPath, delegate: self)
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellId.partnerDetailsCustomCell.rawValue, for: indexPath) as! PartnerDetailsCustomTableViewCell
             cell.configureWith(index: indexPath, delegate: self)
             return cell
         }
