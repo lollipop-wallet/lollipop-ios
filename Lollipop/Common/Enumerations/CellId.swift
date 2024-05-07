@@ -29,4 +29,5 @@ enum CellId : String {
     case locationCell = "locationCell"
     case locationFilterCell = "locationFilterCell"
     case partnerCardCell = "partnerCardCell"
+    case mainPartnerCell = "mainPartnerCell"
 }

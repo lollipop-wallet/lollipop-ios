@@ -1,0 +1,150 @@
+//
+//  MainPartnerDetailsTableViewCell.swift
+//  Lollipop
+//
+//  Created by Aleksandar Draskovic on 07/05/2024.
+//
+
+import UIKit
+
+class MainPartnerTableViewCell: UITableViewCell {
+    
+    var delegate: MainPartnerCellProtocol?
+    var index: IndexPath!
+    
+    lazy var cellContentView: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    lazy var separatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = AppColors.lightGrey
+        return view
+    }()
+        
+    lazy var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.currentPageIndicatorTintColor = AppColors.brandPrimary
+        pageControl.pageIndicatorTintColor = AppColors.mediumGrey
+        return pageControl
+    }()
+    
+    lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.createCompositionalLayout())
+        collectionView.register(LoyaltyCardCollectionViewCell.self, forCellWithReuseIdentifier: CellId.loyaltyCardCell.rawValue)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.isUserInteractionEnabled = true
+        collectionView.backgroundColor = AppColors.white
+        return collectionView
+    }()
+    
+    lazy var mainPlaceholderView: UIView = {
+        let view = UIView()
+        
+        view.addSubview(pageControl)
+        pageControl.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(32)
+            make.trailing.equalToSuperview().offset(-32)
+            make.bottom.equalToSuperview().offset(-24)
+            make.height.equalTo(8)
+        }
+        
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(32)
+            make.bottom.equalTo(pageControl.snp.top).offset(-24)
+            make.leading.equalToSuperview().offset(0)
+            make.trailing.equalToSuperview()
+            make.height.equalTo(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 68) * 0.63)
+        }
+        
+        view.backgroundColor = AppColors.lightGrey
+        return view
+    }()
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String!) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        //Do your cell set up
+        self.contentView.backgroundColor = AppColors.white
+        self.contentView.addSubview(cellContentView)
+        cellContentView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+        
+        cellContentView.addSubview(separatorView)
+        separatorView.snp.makeConstraints { make in
+            make.bottom.equalToSuperview()
+            make.trailing.equalToSuperview().offset(32)
+            make.leading.equalToSuperview()
+            make.height.equalTo(32)
+        }
+        
+        cellContentView.addSubview(mainPlaceholderView)
+        mainPlaceholderView.snp.makeConstraints { make in
+            make.leading.trailing.top.equalToSuperview()
+            make.bottom.equalTo(separatorView.snp.top)
+        }
+        self.selectionStyle = .none
+        
+    }
+    func configureWith(index: IndexPath, delegate: MainPartnerCellProtocol) {
+        self.index = index
+        self.delegate = delegate
+        self.pageControl.numberOfPages = 5
+    }
+    
+    //MARK: Actions
+}
+
+extension MainPartnerTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, LoyaltyCardCellProtocol, UIScrollViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.loyaltyCardCell.rawValue, for: indexPath) as! LoyaltyCardCollectionViewCell
+        cell.configureWith(delegate: self, index: indexPath)
+        return cell
+    }
+    
+    
+    func didSelectItemAt(index: IndexPath) {
+        
+    }
+}
+
+extension MainPartnerTableViewCell {
+    func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
+       return UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
+           return self.generateFlowLayout()
+      }
+   }
+   
+    private func generateFlowLayout() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(30))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 48), heightDimension: .estimated(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 68) * 0.63))
+        let group = NSCollectionLayoutGroup.vertical( layoutSize: groupSize, subitem: item, count: 1)
+            group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 0,trailing: 8)
+        let section = NSCollectionLayoutSection(group: group)
+
+        section.visibleItemsInvalidationHandler = { [weak self] (items, offset, env) -> Void in
+            guard let self = self, let itemWidth = items.last?.bounds.width else { return }
+            let page = round(offset.x / (itemWidth + section.interGroupSpacing))
+            self.pageControl.currentPage = Int(page)
+        }
+        
+        section.orthogonalScrollingBehavior = .groupPagingCentered
+        
+        return section
+   }
+}

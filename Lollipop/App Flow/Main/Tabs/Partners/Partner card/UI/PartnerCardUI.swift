@@ -83,7 +83,7 @@ extension PartnerCardView {
             mainStack.snp.makeConstraints { make in
                 make.leading.equalToSuperview().offset(20)
                 make.trailing.equalToSuperview().offset(-20)
-                make.bottom.equalToSuperview().offset(-40)
+                make.bottom.equalToSuperview().offset(-23)
                 make.top.equalToSuperview().offset(24)
             }
             view.backgroundColor = AppColors.white

@@ -10,6 +10,8 @@
 import UIKit
 
 class PartnerDetailsView: UIViewController, PartnerDetailsViewProtocol {
+    
+    var tableView = UITableView()
 
     var presenter: PartnerDetailsPresenterProtocol?
 
