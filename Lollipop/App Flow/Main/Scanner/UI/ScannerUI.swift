@@ -53,6 +53,38 @@ extension ScannerView {
         self.scannerContainerView.layer.cornerRadius = 16
         self.scannerContainerView.layer.masksToBounds = true
         
+        lazy var scanIcon: UIImageView = {
+            let imageView = UIImageView()
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = UIImage(named: AssetTitles.scannerIcon)
+            return imageView
+        }()
+        
+        lazy var subtitleLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .regular)
+            label.textColor = AppColors.black
+            label.textAlignment = .center
+            label.text = LocalizedTitle.cardDoesntHaveBarcode.localized
+            label.numberOfLines = 0
+            label.lineBreakMode = .byWordWrapping 
+            return label
+        }()
+        
+        lazy var enterManuallyButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onEnterManuallyTap), for: .touchUpInside)
+            button.backgroundColor = AppColors.white
+            button.setTitle(LocalizedTitle.enterManually.localized, for: .normal)
+            button.setTitleColor(AppColors.black, for: .normal)
+            button.titleLabel?.font = .inter(ofSize: 14, name: .semibold)
+            button.layer.borderWidth = 1.0
+            button.layer.borderColor = AppColors.brandPrimary.cgColor
+            button.layer.cornerRadius = 12
+            button.layer.masksToBounds = true
+            return button
+        }()
+        
         self.view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
@@ -82,6 +114,29 @@ extension ScannerView {
         scannerViewController.messageViewController.view.isHidden = true
         scannerViewController.messageViewController.imageView.isHidden = true
         scannerViewController.messageViewController.borderView.isHidden = true
+        
+        scannerPlaceholderView.addSubview(scanIcon)
+        scanIcon.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.width.equalTo(48)
+            make.height.equalTo(96)
+            make.bottom.equalTo(self.scannerContainerView.snp.top).offset(-40)
+        }
+        
+        self.view.addSubview(subtitleLabel)
+        subtitleLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(scannerPlaceholderView.snp.bottom).offset(32)
+        }
+        
+        self.view.addSubview(enterManuallyButton)
+        enterManuallyButton.snp.makeConstraints { make in
+            make.top.equalTo(subtitleLabel.snp.bottom).offset(24)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(40)
+            make.width.equalTo(114)
+        }
 
 //        scannerViewController.headerViewController.titleLabel.text = "Skeniranje"
 //        scannerViewController.headerViewController.closeButton.setTitle("Odustani", for: .normal)

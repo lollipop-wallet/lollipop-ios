@@ -35,5 +35,9 @@ class ScannerView: UIViewController, ScannerViewProtocol {
     @objc func onBackTap() {
         popBack(2)
     }
+    
+    @objc func onEnterManuallyTap() {
+        
+    }
 
 }
