@@ -32,8 +32,23 @@ class MainPartnerCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
+    lazy var partnerTitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .inter(ofSize: 22, name: .bold)
+        label.textColor = AppColors.black
+        label.textAlignment = .center
+        label.text = "Sport vision"
+        return label
+    }()
+    
     lazy var bottomRectView: UIView = {
         let view = UIView()
+        view.addSubview(partnerTitleLabel)
+        partnerTitleLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(8)
+            make.trailing.equalToSuperview().offset(-8)
+            make.bottom.equalToSuperview().offset(-24)
+        }
         view.backgroundColor = AppColors.white
         view.layer.cornerRadius = 12
         view.layer.masksToBounds = true

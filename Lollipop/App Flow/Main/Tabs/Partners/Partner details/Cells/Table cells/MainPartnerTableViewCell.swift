@@ -67,7 +67,7 @@ class MainPartnerTableViewCell: UITableViewCell {
 //        
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(152)
+            make.top.equalToSuperview().offset(176)
             make.bottom.equalTo(pageControl.snp.top).offset(-24)
             make.leading.equalToSuperview().offset(0)
             make.trailing.equalToSuperview()
