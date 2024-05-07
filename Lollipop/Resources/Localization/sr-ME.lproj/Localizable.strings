@@ -128,3 +128,7 @@
 "iAgreeWith" = "Saglasan/na sam sa";
 "termsString" = "uslovima korišćenja";
 "thisCard" = "ove kartice";
+"scan" = "Skeniraj";
+"scanBarcodeFromCard" = "Skenirajte bar-kod sa kartice";
+"cardDoesntHaveBarcode" = "Kartica nema bar-kod ili se ne može skenirati?";
+"enterManually" = "Unesi ručno";

@@ -13,17 +13,27 @@ import BarcodeScanner
 class ScannerView: UIViewController, ScannerViewProtocol {
     
     var scannerContainerView = UIView()
-    let scanner = BarcodeScannerViewController()
+    let scannerViewController = BarcodeScannerViewController()
 
     var presenter: ScannerPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        self.addChild(scanner)
-        scanner.view.frame = scannerContainerView.bounds
-        scannerContainerView.addSubview(scanner.view)
-        scanner.didMove(toParent: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    //MARK: Actions
+    @objc func onBackTap() {
+        popBack(2)
     }
 
 }

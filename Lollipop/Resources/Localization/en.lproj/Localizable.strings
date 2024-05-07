@@ -129,3 +129,7 @@
 "iAgreeWith" = "I agree with";
 "termsString" = "terms of use";
 "thisCard" = "of this card";
+"scan" = "Scan";
+"scanBarcodeFromCard" = "Scan barcode from the card";
+"cardDoesntHaveBarcode" = "There is no barcode on the card, or it is impossible to scan?";
+"enterManually" = "Enter manually";

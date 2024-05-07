@@ -140,6 +140,10 @@ enum LocalizedTitle: String {
     case iAgreeWith
     case termsString
     case thisCard
+    case scan
+    case scanBarcodeFromCard
+    case cardDoesntHaveBarcode
+    case enterManually
     
     var localized: String {
         return self.rawValue.localized()
