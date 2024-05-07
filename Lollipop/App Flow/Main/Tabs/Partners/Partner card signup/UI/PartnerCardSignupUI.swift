@@ -136,6 +136,7 @@ extension PartnerCardSignupView {
         self.nameField.keyboardType = .default
         self.nameField.background = AppColors.white
         self.nameField.leftSuplementaryIconHidden = true
+        self.nameField.placeholder = LocalizedTitle.enterNameAndSurname.localized
         
         self.cityField.title = "\(LocalizedTitle.city.localized):"
         self.cityField.errorHidden = true
@@ -143,6 +144,25 @@ extension PartnerCardSignupView {
         self.cityField.text = LocalizedTitle.choose.localized
         self.cityField.rightSuplementaryIconHidden = false
         //self.cityField.delegate = presenter
+        
+        self.phonePrefixField.title = "\(LocalizedTitle.phoneNumber.localized):"
+        self.phonePrefixField.errorHidden = true
+        self.phonePrefixField.background = AppColors.white
+        self.phonePrefixField.text = LocalizedTitle.choose.localized
+        self.phonePrefixField.rightSuplementaryIconHidden = false
+        
+        self.phoneField.title = " "
+        self.phoneField.errorHidden = true
+        self.phoneField.keyboardType = .phonePad
+        self.phoneField.background = AppColors.white
+        self.phoneField.leftSuplementaryIconHidden = true
+        self.phoneField.placeholder = "+382"
+        
+        self.emailField.title = "\(LocalizedTitle.email.localized):"
+        self.emailField.errorHidden = true
+        self.emailField.keyboardType = .emailAddress
+        self.emailField.background = AppColors.white
+        self.emailField.leftSuplementaryIconHidden = true
         
         self.view.addSubview(backgroundView)
         backgroundView.snp.makeConstraints { make in
@@ -179,6 +199,27 @@ extension PartnerCardSignupView {
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(self.nameField.snp.bottom).offset(16)
+        }
+        
+        contentView.addSubview(self.phonePrefixField)
+        self.phonePrefixField.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.top.equalTo(self.cityField.snp.bottom).offset(16)
+            make.width.equalTo(106)
+        }
+        
+        contentView.addSubview(self.phoneField)
+        self.phoneField.snp.makeConstraints { make in
+            make.leading.equalTo(self.phonePrefixField.snp.trailing).offset(16)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(self.cityField.snp.bottom).offset(16)
+        }
+        
+        contentView.addSubview(self.emailField)
+        self.emailField.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(self.phonePrefixField.snp.bottom).offset(16)
         }
     }
 }

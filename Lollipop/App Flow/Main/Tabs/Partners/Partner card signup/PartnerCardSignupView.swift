@@ -14,6 +14,9 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
     var cardImageView = UIImageView()
     var nameField = InputField()
     var cityField = DropdownInputField()
+    var phonePrefixField = DropdownInputField()
+    var phoneField = InputField()
+    var emailField = InputField()
 
     var presenter: PartnerCardSignupPresenterProtocol?
 
