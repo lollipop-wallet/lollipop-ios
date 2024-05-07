@@ -6,11 +6,11 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol ScanSuggestionPresenterProtocol: AnyObject {
+protocol ScanSuggestionPresenterProtocol: UITableViewDelegate, UITableViewDataSource, ScanSuggestionCellProtocol{
     
     var interactor: ScanSuggestionInputInteractorProtocol? { get set }
     var view: ScanSuggestionViewProtocol? { get set }
