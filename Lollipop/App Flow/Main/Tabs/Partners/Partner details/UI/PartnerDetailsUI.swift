@@ -13,10 +13,12 @@ extension PartnerDetailsView {
         PartnerDetailsWireframe.createModule(PartnerDetailsRef: self)
         
         self.tableView.separatorStyle = .none
-        self.tableView.backgroundColor = .blue//AppColors.lightGrey
+        self.tableView.backgroundColor = AppColors.lightGrey
         self.tableView.register(MainPartnerTableViewCell.self, forCellReuseIdentifier: CellId.mainPartnerCell.rawValue)
         self.tableView.register(PartnerDetailsCardTableViewCell.self, forCellReuseIdentifier: CellId.parnterDetailsCardCell.rawValue)
         self.tableView.register(PartnerDetailsOptionsTableViewCell.self, forCellReuseIdentifier: CellId.partnerDetailsOptionsCell.rawValue)
+        self.tableView.register(HomePosterCategoryTableViewCell.self, forCellReuseIdentifier: CellId.homePosterCell.rawValue)
+        self.tableView.register(HomeRectHorizontalCategoryTableViewCell.self, forCellReuseIdentifier: CellId.homeRectItemCell.rawValue)
         self.tableView.delegate = presenter
         self.tableView.dataSource = presenter
         self.tableView.sectionHeaderTopPadding = 0

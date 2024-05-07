@@ -22,7 +22,7 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
 //MARK: UITableViewDelegate&Datasource
 extension PartnerDetailsPresenter {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -34,10 +34,22 @@ extension PartnerDetailsPresenter {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.parnterDetailsCardCell.rawValue, for: indexPath) as! PartnerDetailsCardTableViewCell
             cell.configureWith(index: indexPath, delegate: self)
             return cell
-        }else{
+        }else if indexPath.row == 2{
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.partnerDetailsOptionsCell.rawValue, for: indexPath) as! PartnerDetailsOptionsTableViewCell
+            cell.configureWith(index: indexPath, delegate: self)
+            return cell
+        }else if indexPath.row == 3{
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homePosterCell.rawValue, for: indexPath) as! HomePosterCategoryTableViewCell
+            cell.configureWith(index: indexPath, delegate: self)
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homeRectItemCell.rawValue, for: indexPath) as! HomeRectHorizontalCategoryTableViewCell
             cell.configureWith(index: indexPath, delegate: self)
             return cell
         }
     }
+    
+    func didTapSeeMoreFromRectCategory() {
+    }
+    
 }
