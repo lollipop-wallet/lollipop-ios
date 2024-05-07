@@ -32,6 +32,38 @@ class MainPartnerCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
+    lazy var bottomRectView: UIView = {
+        let view = UIView()
+        view.backgroundColor = AppColors.white
+        view.layer.cornerRadius = 12
+        view.layer.masksToBounds = true
+        return view
+    }()
+    
+    lazy var circleView: UIView = {
+        let view = UIView()
+        view.backgroundColor = AppColors.error
+        view.layer.cornerRadius = view.frame.height / 2
+        view.layer.masksToBounds = true
+        return view
+    }()
+    
+    lazy var mainPlaceholderView: UIView = {
+        let view = UIView()
+        view.addSubview(bottomRectView)
+        bottomRectView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalToSuperview().offset(40)
+        }
+        view.addSubview(circleView)
+        circleView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.width.equalTo(circleView.snp.height)
+            make.top.equalToSuperview()
+        }
+        return view
+    }()
+    
     lazy var photoPlaceHolder: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 24
