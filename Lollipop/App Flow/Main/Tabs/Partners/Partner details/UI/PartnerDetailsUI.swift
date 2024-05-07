@@ -16,6 +16,7 @@ extension PartnerDetailsView {
         self.tableView.backgroundColor = .blue//AppColors.lightGrey
         self.tableView.register(MainPartnerTableViewCell.self, forCellReuseIdentifier: CellId.mainPartnerCell.rawValue)
         self.tableView.register(PartnerDetailsCardTableViewCell.self, forCellReuseIdentifier: CellId.parnterDetailsCardCell.rawValue)
+        self.tableView.register(PartnerDetailsOptionsTableViewCell.self, forCellReuseIdentifier: CellId.partnerDetailsOptionsCell.rawValue)
         self.tableView.delegate = presenter
         self.tableView.dataSource = presenter
         self.tableView.sectionHeaderTopPadding = 0

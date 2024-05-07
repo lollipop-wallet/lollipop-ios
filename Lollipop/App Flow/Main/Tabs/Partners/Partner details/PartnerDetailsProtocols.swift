@@ -10,7 +10,7 @@ import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PartnerDetailsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, MainPartnerCellProtocol, PartnerDetailsCardCellProtocol {
+protocol PartnerDetailsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, MainPartnerCellProtocol, PartnerDetailsCardCellProtocol, PartnerDetailsOptionsCellProtocol {
     
     var interactor: PartnerDetailsInputInteractorProtocol? { get set }
     var view: PartnerDetailsViewProtocol? { get set }
@@ -50,6 +50,11 @@ protocol MainPartnerCellProtocol: AnyObject {
 
 //MARK: PartnerDetailsCardCell Protocol
 protocol PartnerDetailsCardCellProtocol: AnyObject {
+    
+}
+
+//MARK: PartnerDetailsOptionsCell Protocol
+protocol PartnerDetailsOptionsCellProtocol: AnyObject {
     
 }
 
