@@ -18,5 +18,7 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Lollypop aplikacija traži dozvolu za korišćenje kamere za potrebe skeniranja loyalty kartica.</string>
 </dict>
 </plist>

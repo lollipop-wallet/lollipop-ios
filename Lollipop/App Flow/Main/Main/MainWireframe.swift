@@ -21,7 +21,7 @@ class MainWireframe: MainWireframeProtocol {
     }
     
     func toWallet(){
-        let vc = PartnerCardView()
+        let vc = ScannerView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }
