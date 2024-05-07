@@ -33,4 +33,5 @@ enum CellId : String {
     case mainPartnerCollectionCell = "mainPartnerCollectionCell"
     case parnterDetailsCardCell = "parnterDetailsCardCell"
     case partnerDetailsOptionsCell = "partnerDetailsOptionsCell"
+    case partnerDetailsCustomCell = "partnerDetailsCustomCell"
 }

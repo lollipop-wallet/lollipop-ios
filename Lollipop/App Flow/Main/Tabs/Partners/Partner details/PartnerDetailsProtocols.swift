@@ -58,6 +58,11 @@ protocol PartnerDetailsOptionsCellProtocol: AnyObject {
     
 }
 
+//MARK: PartnerDetailsCustomCell Protocol
+protocol PartnerDetailsCustomCellProtocol: AnyObject {
+    
+}
+
 //MARK: MainPartnerCollectionCell Protocol
 protocol MainPartnerCollectionCellProtocol: AnyObject {
     
