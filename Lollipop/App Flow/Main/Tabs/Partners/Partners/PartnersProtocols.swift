@@ -41,6 +41,7 @@ protocol PartnersViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol PartnersWireframeProtocol: AnyObject {
     func toNewPartner()
+    func toPartnerDetails()
 }
 
 //MARK: PartnersCell Protocol

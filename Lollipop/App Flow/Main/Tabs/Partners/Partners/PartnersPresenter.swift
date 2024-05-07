@@ -35,6 +35,6 @@ extension PartnersPresenter {
     }
     
     func didSelectItemAt(index: IndexPath) {
-        
+        wireframe?.toPartnerDetails()
     }
 }

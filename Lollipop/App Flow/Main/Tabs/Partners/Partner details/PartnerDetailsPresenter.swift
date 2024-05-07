@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class PartnerDetailsPresenter: PartnerDetailsPresenterProtocol  {
+class PartnerDetailsPresenter: NSObject, PartnerDetailsPresenterProtocol  {
     
     var interactor : PartnerDetailsInputInteractorProtocol?
     weak var view: PartnerDetailsViewProtocol?
@@ -17,4 +17,17 @@ class PartnerDetailsPresenter: PartnerDetailsPresenterProtocol  {
 
 extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
     
+}
+
+//MARK: UITableViewDelegate&Datasource
+extension PartnerDetailsPresenter {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellId.mainPartnerCell.rawValue, for: indexPath) as! MainPartnerTableViewCell
+        cell.configureWith(index: indexPath, delegate: self)
+        return cell
+    }
 }

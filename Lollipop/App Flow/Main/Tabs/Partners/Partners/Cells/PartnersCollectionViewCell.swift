@@ -75,5 +75,6 @@ class PartnersCollectionViewCell: UICollectionViewCell {
     
     //MARK: Actions
     @objc func onCellTap() {
+        delegate?.didSelectItemAt(index: self.index)
     }
 }

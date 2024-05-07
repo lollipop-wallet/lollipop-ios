@@ -22,6 +22,13 @@ class MainPartnerTableViewCell: UITableViewCell {
         view.backgroundColor = AppColors.lightGrey
         return view
     }()
+    
+    lazy var partnerBackgroundImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.backgroundColor = .red
+        return imageView
+    }()
         
     lazy var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
@@ -43,22 +50,29 @@ class MainPartnerTableViewCell: UITableViewCell {
     lazy var mainPlaceholderView: UIView = {
         let view = UIView()
         
+        view.addSubview(partnerBackgroundImage)
+        partnerBackgroundImage.snp.makeConstraints { make in
+            make.leading.trailing.top.equalToSuperview()
+            make.height.equalTo((UIApplication.topViewController()?.view.frame.width ?? 1.0) * 0.67)
+        }
+        
         view.addSubview(pageControl)
         pageControl.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
-            make.bottom.equalToSuperview().offset(-24)
+            make.bottom.equalToSuperview().offset(-4)
+            make.top.equalTo(partnerBackgroundImage.snp.bottom).offset(75)
             make.height.equalTo(8)
         }
-        
-        view.addSubview(collectionView)
-        collectionView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(32)
-            make.bottom.equalTo(pageControl.snp.top).offset(-24)
-            make.leading.equalToSuperview().offset(0)
-            make.trailing.equalToSuperview()
-            make.height.equalTo(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 68) * 0.63)
-        }
+//        
+//        view.addSubview(collectionView)
+//        collectionView.snp.makeConstraints { make in
+//            make.top.equalToSuperview().offset(32)
+//            make.bottom.equalTo(pageControl.snp.top).offset(-24)
+//            make.leading.equalToSuperview().offset(0)
+//            make.trailing.equalToSuperview()
+//            make.height.equalTo(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 68) * 0.63)
+//        }
         
         view.backgroundColor = AppColors.lightGrey
         return view
