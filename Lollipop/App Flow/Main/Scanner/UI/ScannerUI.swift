@@ -112,8 +112,9 @@ extension ScannerView {
         scannerContainerView.addSubview(scannerViewController.view)
         scannerViewController.didMove(toParent: self)
         scannerViewController.messageViewController.view.isHidden = true
-        scannerViewController.messageViewController.imageView.isHidden = true
-        scannerViewController.messageViewController.borderView.isHidden = true
+        scannerViewController.codeDelegate = presenter
+        scannerViewController.dismissalDelegate = presenter
+        scannerViewController.errorDelegate = presenter
         
         scannerPlaceholderView.addSubview(scanIcon)
         scanIcon.snp.makeConstraints { make in

@@ -6,11 +6,12 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import BarcodeScanner
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol ScannerPresenterProtocol: AnyObject {
+protocol ScannerPresenterProtocol: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
     
     var interactor: ScannerInputInteractorProtocol? { get set }
     var view: ScannerViewProtocol? { get set }
