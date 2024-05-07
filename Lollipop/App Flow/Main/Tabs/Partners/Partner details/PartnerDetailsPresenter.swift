@@ -22,12 +22,18 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
 //MARK: UITableViewDelegate&Datasource
 extension PartnerDetailsPresenter {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellId.mainPartnerCell.rawValue, for: indexPath) as! MainPartnerTableViewCell
-        cell.configureWith(index: indexPath, delegate: self)
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellId.mainPartnerCell.rawValue, for: indexPath) as! MainPartnerTableViewCell
+            cell.configureWith(index: indexPath, delegate: self)
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellId.parnterDetailsCardCell.rawValue, for: indexPath) as! PartnerDetailsCardTableViewCell
+            cell.configureWith(index: indexPath, delegate: self)
+            return cell
+        }
     }
 }

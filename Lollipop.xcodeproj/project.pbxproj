@@ -241,6 +241,7 @@
 		62730CC72BE91761004209B9 /* PartnerCardSignupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CC62BE91761004209B9 /* PartnerCardSignupUI.swift */; };
 		62730CCA2BE9E0C0004209B9 /* MainPartnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CC92BE9E0C0004209B9 /* MainPartnerTableViewCell.swift */; };
 		62730CCC2BE9EA6F004209B9 /* MainPartnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CCB2BE9EA6F004209B9 /* MainPartnerCollectionViewCell.swift */; };
+		62730CD22BE9F500004209B9 /* PartnerDetailsCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CD12BE9F500004209B9 /* PartnerDetailsCardTableViewCell.swift */; };
 		627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92BD2BD847BB0016FF73 /* InputField.swift */; };
 		627E92C12BDA044F0016FF73 /* DropdownInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C02BDA044F0016FF73 /* DropdownInputField.swift */; };
 		627E92C32BDA056B0016FF73 /* DropdownInputFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */; };
@@ -634,6 +635,7 @@
 		62730CC62BE91761004209B9 /* PartnerCardSignupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardSignupUI.swift; sourceTree = "<group>"; };
 		62730CC92BE9E0C0004209B9 /* MainPartnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPartnerTableViewCell.swift; sourceTree = "<group>"; };
 		62730CCB2BE9EA6F004209B9 /* MainPartnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPartnerCollectionViewCell.swift; sourceTree = "<group>"; };
+		62730CD12BE9F500004209B9 /* PartnerDetailsCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsCardTableViewCell.swift; sourceTree = "<group>"; };
 		627E92BD2BD847BB0016FF73 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		627E92C02BDA044F0016FF73 /* DropdownInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputField.swift; sourceTree = "<group>"; };
 		627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputFieldProtocols.swift; sourceTree = "<group>"; };
@@ -1777,6 +1779,7 @@
 			isa = PBXGroup;
 			children = (
 				62730CC92BE9E0C0004209B9 /* MainPartnerTableViewCell.swift */,
+				62730CD12BE9F500004209B9 /* PartnerDetailsCardTableViewCell.swift */,
 			);
 			path = "Table cells";
 			sourceTree = "<group>";
@@ -2771,6 +2774,7 @@
 				62730C702BE8ED97004209B9 /* AboutProgrammePresenter.swift in Sources */,
 				62730C712BE8ED97004209B9 /* AboutProgrammeProtocols.swift in Sources */,
 				62730C722BE8ED97004209B9 /* AboutProgrammeInteractor.swift in Sources */,
+				62730CD22BE9F500004209B9 /* PartnerDetailsCardTableViewCell.swift in Sources */,
 				62730C732BE8ED97004209B9 /* AboutProgrammeView.swift in Sources */,
 				62730C742BE8ED97004209B9 /* AboutProgrammeModel.swift in Sources */,
 				62730C752BE8ED97004209B9 /* AboutProgrammeWireframe.swift in Sources */,
