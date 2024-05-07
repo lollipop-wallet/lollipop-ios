@@ -39,11 +39,11 @@ class MainPartnerTableViewCell: UITableViewCell {
     
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.createCompositionalLayout())
-        collectionView.register(LoyaltyCardCollectionViewCell.self, forCellWithReuseIdentifier: CellId.loyaltyCardCell.rawValue)
+        collectionView.register(MainPartnerCollectionViewCell.self, forCellWithReuseIdentifier: CellId.mainPartnerCollectionCell.rawValue)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.isUserInteractionEnabled = true
-        collectionView.backgroundColor = AppColors.white
+        collectionView.backgroundColor = .clear//AppColors.white
         return collectionView
     }()
     
@@ -65,14 +65,14 @@ class MainPartnerTableViewCell: UITableViewCell {
             make.height.equalTo(8)
         }
 //        
-//        view.addSubview(collectionView)
-//        collectionView.snp.makeConstraints { make in
-//            make.top.equalToSuperview().offset(32)
-//            make.bottom.equalTo(pageControl.snp.top).offset(-24)
-//            make.leading.equalToSuperview().offset(0)
-//            make.trailing.equalToSuperview()
-//            make.height.equalTo(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 68) * 0.63)
-//        }
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(152)
+            make.bottom.equalTo(pageControl.snp.top).offset(-24)
+            make.leading.equalToSuperview().offset(0)
+            make.trailing.equalToSuperview()
+            make.height.equalTo(143)
+        }
         
         view.backgroundColor = AppColors.lightGrey
         return view
@@ -118,13 +118,13 @@ class MainPartnerTableViewCell: UITableViewCell {
     //MARK: Actions
 }
 
-extension MainPartnerTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, LoyaltyCardCellProtocol, UIScrollViewDelegate {
+extension MainPartnerTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, MainPartnerCollectionCellProtocol, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.loyaltyCardCell.rawValue, for: indexPath) as! LoyaltyCardCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.mainPartnerCollectionCell.rawValue, for: indexPath) as! MainPartnerCollectionViewCell
         cell.configureWith(delegate: self, index: indexPath)
         return cell
     }
@@ -146,7 +146,7 @@ extension MainPartnerTableViewCell {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(30))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 48), heightDimension: .estimated(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 68) * 0.63))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 142), heightDimension: .absolute(143))
         let group = NSCollectionLayoutGroup.vertical( layoutSize: groupSize, subitem: item, count: 1)
             group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 0,trailing: 8)
         let section = NSCollectionLayoutSection(group: group)

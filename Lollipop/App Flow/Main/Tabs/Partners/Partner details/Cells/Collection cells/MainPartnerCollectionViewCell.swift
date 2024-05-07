@@ -14,7 +14,7 @@ class MainPartnerCollectionViewCell: UICollectionViewCell {
     
     lazy var cellContentView: UIView = {
         let view = UIView()
-        view.backgroundColor = AppColors.white
+        view.backgroundColor = .clear//AppColors.white
         return view
     }()
     
@@ -42,8 +42,15 @@ class MainPartnerCollectionViewCell: UICollectionViewCell {
     
     lazy var circleView: UIView = {
         let view = UIView()
-        view.backgroundColor = AppColors.error
-        view.layer.cornerRadius = view.frame.height / 2
+        view.addSubview(photo)
+        photo.snp.makeConstraints { make in
+            make.leading.top.equalToSuperview().offset(4)
+            make.trailing.bottom.equalToSuperview().offset(-4)
+        }
+        view.backgroundColor = AppColors.white
+        view.layer.borderColor = AppColors.lightGrey.cgColor
+        view.layer.borderWidth = 4
+        view.layer.cornerRadius = 40
         view.layer.masksToBounds = true
         return view
     }()
@@ -58,28 +65,13 @@ class MainPartnerCollectionViewCell: UICollectionViewCell {
         view.addSubview(circleView)
         circleView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.width.equalTo(circleView.snp.height)
+            make.width.height.equalTo(80)
             make.top.equalToSuperview()
         }
+        view.backgroundColor = .clear
         return view
     }()
     
-    lazy var photoPlaceHolder: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 24
-        view.layer.masksToBounds = true
-        view.addSubview(photo)
-        photo.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalToSuperview()
-        }
-        
-        view.addSubview(cellButton)
-        cellButton.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalToSuperview()
-        }
-        view.backgroundColor = AppColors.brandPrimary
-        return view
-    }()
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -91,8 +83,8 @@ class MainPartnerCollectionViewCell: UICollectionViewCell {
             make.trailing.equalToSuperview()
         }
         
-        cellContentView.addSubview(photoPlaceHolder)
-        photoPlaceHolder.snp.makeConstraints { make in
+        cellContentView.addSubview(mainPlaceholderView)
+        mainPlaceholderView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
         }
     }
