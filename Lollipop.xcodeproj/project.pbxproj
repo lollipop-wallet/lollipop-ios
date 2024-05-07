@@ -251,6 +251,14 @@
 		62730CE52BEA5017004209B9 /* ScannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CDE2BEA5017004209B9 /* ScannerModel.swift */; };
 		62730CE62BEA5017004209B9 /* ScannerWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CDF2BEA5017004209B9 /* ScannerWireframe.swift */; };
 		62730CE92BEA5029004209B9 /* ScannerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CE82BEA5029004209B9 /* ScannerUI.swift */; };
+		62730CF42BEA726F004209B9 /* ScanSuggestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CED2BEA726F004209B9 /* ScanSuggestionPresenter.swift */; };
+		62730CF52BEA726F004209B9 /* ScanSuggestionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CEE2BEA726F004209B9 /* ScanSuggestionProtocols.swift */; };
+		62730CF62BEA726F004209B9 /* ScanSuggestionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CEF2BEA726F004209B9 /* ScanSuggestionInteractor.swift */; };
+		62730CF72BEA726F004209B9 /* ScanSuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CF02BEA726F004209B9 /* ScanSuggestionView.swift */; };
+		62730CF82BEA726F004209B9 /* ScanSuggestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CF12BEA726F004209B9 /* ScanSuggestionModel.swift */; };
+		62730CF92BEA726F004209B9 /* ScanSuggestionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CF22BEA726F004209B9 /* ScanSuggestionWireframe.swift */; };
+		62730CFD2BEA7285004209B9 /* ScanSuggestionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CFC2BEA7285004209B9 /* ScanSuggestionUI.swift */; };
+		62730D002BEA72F5004209B9 /* ScanSuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62730CFF2BEA72F5004209B9 /* ScanSuggestionTableViewCell.swift */; };
 		627E92BE2BD847BB0016FF73 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92BD2BD847BB0016FF73 /* InputField.swift */; };
 		627E92C12BDA044F0016FF73 /* DropdownInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C02BDA044F0016FF73 /* DropdownInputField.swift */; };
 		627E92C32BDA056B0016FF73 /* DropdownInputFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */; };
@@ -654,6 +662,14 @@
 		62730CDE2BEA5017004209B9 /* ScannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerModel.swift; sourceTree = "<group>"; };
 		62730CDF2BEA5017004209B9 /* ScannerWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerWireframe.swift; sourceTree = "<group>"; };
 		62730CE82BEA5029004209B9 /* ScannerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerUI.swift; sourceTree = "<group>"; };
+		62730CED2BEA726F004209B9 /* ScanSuggestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSuggestionPresenter.swift; sourceTree = "<group>"; };
+		62730CEE2BEA726F004209B9 /* ScanSuggestionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSuggestionProtocols.swift; sourceTree = "<group>"; };
+		62730CEF2BEA726F004209B9 /* ScanSuggestionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSuggestionInteractor.swift; sourceTree = "<group>"; };
+		62730CF02BEA726F004209B9 /* ScanSuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSuggestionView.swift; sourceTree = "<group>"; };
+		62730CF12BEA726F004209B9 /* ScanSuggestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSuggestionModel.swift; sourceTree = "<group>"; };
+		62730CF22BEA726F004209B9 /* ScanSuggestionWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSuggestionWireframe.swift; sourceTree = "<group>"; };
+		62730CFC2BEA7285004209B9 /* ScanSuggestionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSuggestionUI.swift; sourceTree = "<group>"; };
+		62730CFF2BEA72F5004209B9 /* ScanSuggestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSuggestionTableViewCell.swift; sourceTree = "<group>"; };
 		627E92BD2BD847BB0016FF73 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		627E92C02BDA044F0016FF73 /* DropdownInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputField.swift; sourceTree = "<group>"; };
 		627E92C22BDA056B0016FF73 /* DropdownInputFieldProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownInputFieldProtocols.swift; sourceTree = "<group>"; };
@@ -1815,6 +1831,7 @@
 		62730CD82BEA500B004209B9 /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
+				62730CEB2BEA725B004209B9 /* Scan suggestions */,
 				62730CEA2BEA636C004209B9 /* Scanner */,
 			);
 			path = Scanner;
@@ -1840,6 +1857,37 @@
 				62730CE72BEA501F004209B9 /* UI */,
 			);
 			path = Scanner;
+			sourceTree = "<group>";
+		};
+		62730CEB2BEA725B004209B9 /* Scan suggestions */ = {
+			isa = PBXGroup;
+			children = (
+				62730CED2BEA726F004209B9 /* ScanSuggestionPresenter.swift */,
+				62730CEE2BEA726F004209B9 /* ScanSuggestionProtocols.swift */,
+				62730CEF2BEA726F004209B9 /* ScanSuggestionInteractor.swift */,
+				62730CF02BEA726F004209B9 /* ScanSuggestionView.swift */,
+				62730CF12BEA726F004209B9 /* ScanSuggestionModel.swift */,
+				62730CF22BEA726F004209B9 /* ScanSuggestionWireframe.swift */,
+				62730CFB2BEA727A004209B9 /* UI */,
+				62730CFE2BEA72E7004209B9 /* Cells */,
+			);
+			path = "Scan suggestions";
+			sourceTree = "<group>";
+		};
+		62730CFB2BEA727A004209B9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62730CFC2BEA7285004209B9 /* ScanSuggestionUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		62730CFE2BEA72E7004209B9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				62730CFF2BEA72F5004209B9 /* ScanSuggestionTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		627E92B82BD847750016FF73 /* Custom UI */ = {
@@ -2625,6 +2673,7 @@
 				62730C942BE8F121004209B9 /* PartnerDetailsPresenter.swift in Sources */,
 				62730C952BE8F121004209B9 /* PartnerDetailsProtocols.swift in Sources */,
 				62730C962BE8F121004209B9 /* PartnerDetailsInteractor.swift in Sources */,
+				62730D002BEA72F5004209B9 /* ScanSuggestionTableViewCell.swift in Sources */,
 				62730C972BE8F121004209B9 /* PartnerDetailsView.swift in Sources */,
 				62730C982BE8F121004209B9 /* PartnerDetailsModel.swift in Sources */,
 				62730C992BE8F121004209B9 /* PartnerDetailsWireframe.swift in Sources */,
@@ -2811,6 +2860,7 @@
 				2CA195652BE2476300CC10F5 /* DeleteCardUI.swift in Sources */,
 				626906AF2BE0A8D100BF5F62 /* MyShopsProtocols.swift in Sources */,
 				626906B02BE0A8D100BF5F62 /* MyShopsInteractor.swift in Sources */,
+				62730CFD2BEA7285004209B9 /* ScanSuggestionUI.swift in Sources */,
 				626906B12BE0A8D100BF5F62 /* MyShopsView.swift in Sources */,
 				626906B22BE0A8D100BF5F62 /* MyShopsModel.swift in Sources */,
 				62730C4F2BE8853F004209B9 /* LocationTableViewCell.swift in Sources */,
@@ -2848,6 +2898,12 @@
 				2CA195392BE213A000CC10F5 /* CardDetailsPresenter.swift in Sources */,
 				2CA1953A2BE213A000CC10F5 /* CardDetailsProtocols.swift in Sources */,
 				2CA1953B2BE213A000CC10F5 /* CardDetailsInteractor.swift in Sources */,
+				62730CF42BEA726F004209B9 /* ScanSuggestionPresenter.swift in Sources */,
+				62730CF52BEA726F004209B9 /* ScanSuggestionProtocols.swift in Sources */,
+				62730CF62BEA726F004209B9 /* ScanSuggestionInteractor.swift in Sources */,
+				62730CF72BEA726F004209B9 /* ScanSuggestionView.swift in Sources */,
+				62730CF82BEA726F004209B9 /* ScanSuggestionModel.swift in Sources */,
+				62730CF92BEA726F004209B9 /* ScanSuggestionWireframe.swift in Sources */,
 				2CBA98802BE5174F00B804E6 /* PromotionDetailsPresenter.swift in Sources */,
 				2CBA98812BE5174F00B804E6 /* PromotionDetailsProtocols.swift in Sources */,
 				2CBA98822BE5174F00B804E6 /* PromotionDetailsInteractor.swift in Sources */,
