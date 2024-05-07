@@ -125,3 +125,6 @@
 "nameAndSurname" = "Ime i prezime";
 "phoneNumber" = "Broj telefona";
 "enterNameAndSurname" = "Unesite ime i prezime";
+"iAgreeWith" = "Saglasan/na sam sa";
+"termsString" = "uslovima korišćenja";
+"thisCard" = "ove kartice";

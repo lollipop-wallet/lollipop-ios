@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyAttributes
 
 extension PartnerCardSignupView {
     func setup() {
@@ -164,6 +165,60 @@ extension PartnerCardSignupView {
         self.emailField.background = AppColors.white
         self.emailField.leftSuplementaryIconHidden = true
         
+        self.checkBoxIcon.image = UIImage(named: AssetTitles.checkBoxUnselectedIcon)
+        
+        lazy var checkButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onCheckboxTap), for: .touchUpInside)
+            return button
+        }()
+        
+        lazy var checkBoxPlaceholder: UIView = {
+            let view = UIView()
+            view.addSubview(self.checkBoxIcon)
+            self.checkBoxIcon.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
+            view.addSubview(checkButton)
+            checkButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
+            view.backgroundColor = AppColors.white
+            view.snp.makeConstraints { make in
+                make.width.height.equalTo(24)
+            }
+            return view
+        }()
+        
+        self.termsLabel.attributedText = self.setupAttributedString()
+        self.termsLabel.textAlignment = .left
+        self.termsLabel.numberOfLines = 0
+        self.termsLabel.lineBreakMode = .byWordWrapping
+        self.termsLabel.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(PartnerCardSignupView.onTermsLabelTap))
+        self.termsLabel.addGestureRecognizer(tap)
+        
+        lazy var termsStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [checkBoxPlaceholder, self.termsLabel])
+            stack.axis = .horizontal
+            stack.alignment = .top
+            stack.distribution = .fill
+            stack.spacing = 14
+            return stack
+        }()
+        
+        lazy var sendButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onSendTap), for: .touchUpInside)
+            button.setTitle(LocalizedTitle.send.localized, for: .normal)
+            button.backgroundColor = AppColors.brandPrimary
+            button.titleLabel?.font = .inter(ofSize: 16, name: .medium)
+            button.setTitleColor(AppColors.white, for: .normal)
+            button.layer.cornerRadius = 12
+            button.layer.masksToBounds = true
+            return button
+        }()
+        
         self.view.addSubview(backgroundView)
         backgroundView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
@@ -221,5 +276,40 @@ extension PartnerCardSignupView {
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(self.phonePrefixField.snp.bottom).offset(16)
         }
+        
+        contentView.addSubview(termsStack)
+        termsStack.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(self.emailField.snp.bottom).offset(32)
+        }
+        
+        contentView.addSubview(sendButton)
+        sendButton.snp.makeConstraints { make in
+            make.top.equalTo(termsStack.snp.bottom).offset(32)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.height.equalTo(48)
+            make.bottom.equalToSuperview().offset(-69)
+        }
+    }
+    
+    func setupAttributedString() -> NSAttributedString {
+        let part1 = "\(LocalizedTitle.iAgreeWith.localized) ".withAttributes([
+            .textColor(AppColors.black),
+            .font(.inter(ofSize: 16, name: .regular))
+        ])
+        
+        let part2 = "\(LocalizedTitle.termsString.localized) ".withAttributes([
+            .textColor(AppColors.link),
+            .font(.inter(ofSize: 16, name: .bold)),
+        ])
+        
+        let part3 = LocalizedTitle.thisCard.localized.withAttributes([
+            .textColor(AppColors.black),
+            .font(.inter(ofSize: 16, name: .regular))
+        ])
+        
+        return part1 + part2 + part3
     }
 }

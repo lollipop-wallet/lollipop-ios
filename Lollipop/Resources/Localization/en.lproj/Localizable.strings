@@ -126,3 +126,6 @@
 "nameAndSurname" = "First and Last name";
 "phoneNumber" = "Phone number";
 "enterNameAndSurname" = "Enter first and last name";
+"iAgreeWith" = "I agree with";
+"termsString" = "terms of use";
+"thisCard" = "of this card";

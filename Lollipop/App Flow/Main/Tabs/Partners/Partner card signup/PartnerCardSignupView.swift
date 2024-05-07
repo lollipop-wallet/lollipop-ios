@@ -17,6 +17,8 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
     var phonePrefixField = DropdownInputField()
     var phoneField = InputField()
     var emailField = InputField()
+    var checkBoxIcon = UIImageView()
+    var termsLabel = UILabel()
 
     var presenter: PartnerCardSignupPresenterProtocol?
 
@@ -37,5 +39,20 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
     //MARK: Actions
     @objc func onBackTap() {
         popBack(2)
+    }
+    
+    @objc func onCheckboxTap() {
+        
+    }
+    
+    @objc func onSendTap() {
+        
+    }
+    
+    @objc func onTermsLabelTap(sender: UITapGestureRecognizer) {
+        if sender.didTapAttributedTextInLabel(label: termsLabel, targetText: LocalizedTitle.termsString.localized) {
+        } else {
+            print("Tapped none")
+        }
     }
 }
