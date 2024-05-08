@@ -69,4 +69,5 @@ struct AssetTitles {
     static let cardFilledIcon = "ic_card_filled"
     static let sendFilledIcon = "ic_send_filled"
     static let scannerIcon = "ic_scanner"
+    static let cameraIcon = "ic_camera"
 }
