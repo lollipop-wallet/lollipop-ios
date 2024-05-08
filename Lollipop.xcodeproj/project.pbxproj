@@ -11,6 +11,13 @@
 		2C4EE5F52BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */; };
 		2C4EE5F82BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */; };
 		2C4EE5FC2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5FB2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift */; };
+		2C5BD1E62BEB871C0051799E /* DisplayCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1E02BEB871C0051799E /* DisplayCardPresenter.swift */; };
+		2C5BD1E72BEB871C0051799E /* DisplayCardProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1E12BEB871C0051799E /* DisplayCardProtocols.swift */; };
+		2C5BD1E82BEB871C0051799E /* DisplayCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1E22BEB871C0051799E /* DisplayCardInteractor.swift */; };
+		2C5BD1E92BEB871C0051799E /* DisplayCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1E32BEB871C0051799E /* DisplayCardView.swift */; };
+		2C5BD1EA2BEB871C0051799E /* DisplayCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1E42BEB871C0051799E /* DisplayCardModel.swift */; };
+		2C5BD1EB2BEB871C0051799E /* DisplayCardWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1E52BEB871C0051799E /* DisplayCardWireframe.swift */; };
+		2C5BD1EF2BEB872B0051799E /* DisplayCardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1EE2BEB872B0051799E /* DisplayCardUI.swift */; };
 		2CA195392BE213A000CC10F5 /* CardDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */; };
 		2CA1953A2BE213A000CC10F5 /* CardDetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */; };
 		2CA1953B2BE213A000CC10F5 /* CardDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */; };
@@ -420,6 +427,13 @@
 		2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardHomeTableViewCell.swift; sourceTree = "<group>"; };
 		2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewCell.swift; sourceTree = "<group>"; };
 		2C4EE5FB2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		2C5BD1E02BEB871C0051799E /* DisplayCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardPresenter.swift; sourceTree = "<group>"; };
+		2C5BD1E12BEB871C0051799E /* DisplayCardProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardProtocols.swift; sourceTree = "<group>"; };
+		2C5BD1E22BEB871C0051799E /* DisplayCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardInteractor.swift; sourceTree = "<group>"; };
+		2C5BD1E32BEB871C0051799E /* DisplayCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardView.swift; sourceTree = "<group>"; };
+		2C5BD1E42BEB871C0051799E /* DisplayCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardModel.swift; sourceTree = "<group>"; };
+		2C5BD1E52BEB871C0051799E /* DisplayCardWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardWireframe.swift; sourceTree = "<group>"; };
+		2C5BD1EE2BEB872B0051799E /* DisplayCardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardUI.swift; sourceTree = "<group>"; };
 		2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenter.swift; sourceTree = "<group>"; };
 		2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsProtocols.swift; sourceTree = "<group>"; };
 		2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsInteractor.swift; sourceTree = "<group>"; };
@@ -908,6 +922,43 @@
 			path = "Table cells";
 			sourceTree = "<group>";
 		};
+		2C5BD1DD2BEB87020051799E /* Wallet card */ = {
+			isa = PBXGroup;
+			children = (
+				2CBA7B292BE6126500C31FCD /* WalletCardPresenter.swift */,
+				2CBA7B2A2BE6126500C31FCD /* WalletCardProtocols.swift */,
+				2CBA7B2B2BE6126500C31FCD /* WalletCardInteractor.swift */,
+				2CBA7B2C2BE6126500C31FCD /* WalletCardView.swift */,
+				2CBA7B2D2BE6126500C31FCD /* WalletCardModel.swift */,
+				2CBA7B2E2BE6126500C31FCD /* WalletCardWireframe.swift */,
+				2CBA7B362BE6126B00C31FCD /* UI */,
+				2CBA7B3C2BE6399800C31FCD /* Cells */,
+			);
+			path = "Wallet card";
+			sourceTree = "<group>";
+		};
+		2C5BD1DE2BEB870D0051799E /* Display card */ = {
+			isa = PBXGroup;
+			children = (
+				2C5BD1E02BEB871C0051799E /* DisplayCardPresenter.swift */,
+				2C5BD1E12BEB871C0051799E /* DisplayCardProtocols.swift */,
+				2C5BD1E22BEB871C0051799E /* DisplayCardInteractor.swift */,
+				2C5BD1E32BEB871C0051799E /* DisplayCardView.swift */,
+				2C5BD1E42BEB871C0051799E /* DisplayCardModel.swift */,
+				2C5BD1E52BEB871C0051799E /* DisplayCardWireframe.swift */,
+				2C5BD1ED2BEB87220051799E /* UI */,
+			);
+			path = "Display card";
+			sourceTree = "<group>";
+		};
+		2C5BD1ED2BEB87220051799E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2C5BD1EE2BEB872B0051799E /* DisplayCardUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		2CA195302BE2139000CC10F5 /* Card details */ = {
 			isa = PBXGroup;
 			children = (
@@ -1282,14 +1333,8 @@
 		2CBA7B272BE6125600C31FCD /* Wallet card */ = {
 			isa = PBXGroup;
 			children = (
-				2CBA7B292BE6126500C31FCD /* WalletCardPresenter.swift */,
-				2CBA7B2A2BE6126500C31FCD /* WalletCardProtocols.swift */,
-				2CBA7B2B2BE6126500C31FCD /* WalletCardInteractor.swift */,
-				2CBA7B2C2BE6126500C31FCD /* WalletCardView.swift */,
-				2CBA7B2D2BE6126500C31FCD /* WalletCardModel.swift */,
-				2CBA7B2E2BE6126500C31FCD /* WalletCardWireframe.swift */,
-				2CBA7B362BE6126B00C31FCD /* UI */,
-				2CBA7B3C2BE6399800C31FCD /* Cells */,
+				2C5BD1DD2BEB87020051799E /* Wallet card */,
+				2C5BD1DE2BEB870D0051799E /* Display card */,
 			);
 			path = "Wallet card";
 			sourceTree = "<group>";
@@ -2814,6 +2859,7 @@
 				2CACCDD62BD53F1B008178F8 /* UIImage+Extension.swift in Sources */,
 				2CACCD802BD528F7008178F8 /* LaunchPresenter.swift in Sources */,
 				2CACCD812BD528F7008178F8 /* LaunchProtocols.swift in Sources */,
+				2C5BD1EF2BEB872B0051799E /* DisplayCardUI.swift in Sources */,
 				2CACCDC42BD53DAE008178F8 /* LinkType.swift in Sources */,
 				62730CD72BEA00D5004209B9 /* PartnerDetailsCustomTableViewCell.swift in Sources */,
 				62730CA62BE8F97B004209B9 /* PartnerCardPresenter.swift in Sources */,
@@ -2974,6 +3020,12 @@
 				62F6CE682BDE6C9700C4775C /* LanguageView.swift in Sources */,
 				62F6CE932BDEA36100C4775C /* LanCode.swift in Sources */,
 				62F6CE692BDE6C9700C4775C /* LanguageModel.swift in Sources */,
+				2C5BD1E62BEB871C0051799E /* DisplayCardPresenter.swift in Sources */,
+				2C5BD1E72BEB871C0051799E /* DisplayCardProtocols.swift in Sources */,
+				2C5BD1E82BEB871C0051799E /* DisplayCardInteractor.swift in Sources */,
+				2C5BD1E92BEB871C0051799E /* DisplayCardView.swift in Sources */,
+				2C5BD1EA2BEB871C0051799E /* DisplayCardModel.swift in Sources */,
+				2C5BD1EB2BEB871C0051799E /* DisplayCardWireframe.swift in Sources */,
 				62F6CE6A2BDE6C9700C4775C /* LanguageWireframe.swift in Sources */,
 				2CE0722A2BE0F73000768C73 /* MyCardsTableViewCell.swift in Sources */,
 				2CACCDE92BD540C9008178F8 /* RemoteConfigManager.swift in Sources */,

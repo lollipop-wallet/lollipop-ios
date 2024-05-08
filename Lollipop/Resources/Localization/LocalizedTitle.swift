@@ -153,6 +153,7 @@ enum LocalizedTitle: String {
     case takeAPhoto
     case photoAlbum
     case photoOrAlbumDescription
+    case details
     
     
     var localized: String {
