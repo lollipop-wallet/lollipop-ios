@@ -75,12 +75,22 @@ extension NewLoyaltyCardView {
             return image
         }()
         
+        lazy var frontCameraButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onFrontCameraTap), for: .touchUpInside)
+            return button
+        }()
+        
         lazy var frontCameraYellowView: UIView = {
             let view = UIView()
             view.addSubview(frontCameraIcon)
             frontCameraIcon.snp.makeConstraints { make in
                 make.width.height.equalTo(24)
                 make.centerX.centerY.equalToSuperview()
+            }
+            view.addSubview(frontCameraButton)
+            frontCameraButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
             }
             view.backgroundColor = AppColors.yellow
             view.layer.cornerRadius = 24
@@ -149,12 +159,22 @@ extension NewLoyaltyCardView {
             return image
         }()
         
+        lazy var backCameraButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onBackCameraTap), for: .touchUpInside)
+            return button
+        }()
+        
         lazy var backCameraYellowView: UIView = {
             let view = UIView()
             view.addSubview(backCameraIcon)
             backCameraIcon.snp.makeConstraints { make in
                 make.width.height.equalTo(24)
                 make.centerX.centerY.equalToSuperview()
+            }
+            view.addSubview(backCameraButton)
+            backCameraButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
             }
             view.backgroundColor = AppColors.yellow
             view.layer.cornerRadius = 24

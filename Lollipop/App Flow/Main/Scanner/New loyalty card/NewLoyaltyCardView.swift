@@ -46,4 +46,12 @@ class NewLoyaltyCardView: UIViewController, NewLoyaltyCardViewProtocol {
     @objc func onSaveTap() {
         
     }
+    
+    @objc func onFrontCameraTap() {
+        
+    }
+    
+    @objc func onBackCameraTap() {
+        
+    }
 }
