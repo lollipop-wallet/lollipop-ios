@@ -48,10 +48,10 @@ class NewLoyaltyCardView: UIViewController, NewLoyaltyCardViewProtocol {
     }
     
     @objc func onFrontCameraTap() {
-        
+        presenter?.camera(isFront: true)
     }
     
     @objc func onBackCameraTap() {
-        
+        presenter?.camera(isFront: false)
     }
 }

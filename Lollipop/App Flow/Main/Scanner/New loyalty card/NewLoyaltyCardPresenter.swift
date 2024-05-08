@@ -13,6 +13,19 @@ class NewLoyaltyCardPresenter: NewLoyaltyCardPresenterProtocol  {
     weak var view: NewLoyaltyCardViewProtocol?
     var wireframe: NewLoyaltyCardWireframeProtocol?
     
+    func camera(isFront: Bool){
+        UIApplication.topViewController()?.openAlert(title: isFront ? LocalizedTitle.frontCardPage.localized : LocalizedTitle.backCardPage.localized, message: LocalizedTitle.photoOrAlbumDescription.localized, alertStyle: .actionSheet, actionTitles: [LocalizedTitle.takeAPhoto.localized, LocalizedTitle.photoAlbum.localized, LocalizedTitle.cancel.localized], actionColors: [.systemBlue, .systemBlue, .systemBlue], actionStyles: [.default, .default, .cancel], actions: [
+            { [weak self] _ in
+                guard let self = self  else {return}
+            },
+            { [weak self] _ in
+                guard let self = self  else {return}
+            },
+            {_ in
+                
+            }
+       ])
+    }
 }
 
 extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {

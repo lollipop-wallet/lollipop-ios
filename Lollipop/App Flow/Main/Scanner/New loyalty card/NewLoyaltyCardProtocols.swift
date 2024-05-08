@@ -16,6 +16,7 @@ protocol NewLoyaltyCardPresenterProtocol: AnyObject {
     var view: NewLoyaltyCardViewProtocol? { get set }
     var wireframe:NewLoyaltyCardWireframeProtocol? { get set }
     
+    func camera(isFront: Bool)
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
