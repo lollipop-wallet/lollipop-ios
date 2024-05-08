@@ -21,6 +21,7 @@ struct AppColors {
     static let link = UIColor(hexString: ColorHex.link)
     static let fb = UIColor(hexString: ColorHex.fb)
     static let darkestGrey = UIColor(hexString: ColorHex.darkestGrey)
+    static let yellow = UIColor(hexString: ColorHex.yellow)
 }
 
     
@@ -39,4 +40,5 @@ struct ColorHex {
     static let link = "#4288F0"
     static let fb = "#1877F2"
     static let darkestGrey = "#7C7F88"
+    static let yellow = "#FEC339"
 }

@@ -19,6 +19,8 @@ class NewLoyaltyCardView: UIViewController, NewLoyaltyCardViewProtocol {
     var nameOnTheCardField = InputField()
     var cardBarcodeField = InputField()
     var cardNotesField = InputTextViewField()
+    var frontCardCameraViewPlaceholder = UIView()
+    var backCardCameraViewPlaceholder = UIView()
 
     var presenter: NewLoyaltyCardPresenterProtocol?
 

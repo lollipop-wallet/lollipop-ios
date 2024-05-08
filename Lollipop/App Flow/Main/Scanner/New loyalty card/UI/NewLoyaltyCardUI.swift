@@ -54,6 +54,9 @@ extension NewLoyaltyCardView {
             label.textAlignment = .left
             label.textColor = AppColors.darkGrey
             label.text = LocalizedTitle.frontSide.localized
+            label.snp.makeConstraints { make in
+                make.height.equalTo(16)
+            }
             return label
         }()
         
@@ -66,6 +69,34 @@ extension NewLoyaltyCardView {
             return stack
         }()
         
+        lazy var frontCameraIcon: UIImageView = {
+            let image = UIImageView()
+            image.image = UIImage(named: AssetTitles.cameraIcon)
+            return image
+        }()
+        
+        lazy var frontCameraYellowView: UIView = {
+            let view = UIView()
+            view.addSubview(frontCameraIcon)
+            frontCameraIcon.snp.makeConstraints { make in
+                make.width.height.equalTo(24)
+                make.centerX.centerY.equalToSuperview()
+            }
+            view.backgroundColor = AppColors.yellow
+            view.layer.cornerRadius = 24
+            view.layer.masksToBounds = true
+            return view
+        }()
+        
+        self.frontCardCameraViewPlaceholder.layer.cornerRadius = 28
+        self.frontCardCameraViewPlaceholder.layer.masksToBounds = true
+        self.frontCardCameraViewPlaceholder.backgroundColor = AppColors.white
+        self.frontCardCameraViewPlaceholder.addSubview(frontCameraYellowView)
+        frontCameraYellowView.snp.makeConstraints { make in
+            make.leading.top.equalToSuperview().offset(4)
+            make.trailing.bottom.equalToSuperview().offset(-4)
+        }
+        
         lazy var frontPlaceholderView: UIView = {
             let view = UIView()
             view.addSubview(frontStack)
@@ -73,6 +104,11 @@ extension NewLoyaltyCardView {
                 make.leading.top.equalToSuperview()
                 make.bottom.equalToSuperview().offset(-4)
                 make.trailing.equalToSuperview().offset(-8)
+            }
+            view.addSubview(self.frontCardCameraViewPlaceholder)
+            self.frontCardCameraViewPlaceholder.snp.makeConstraints { make in
+                make.trailing.bottom.equalToSuperview()
+                make.width.height.equalTo(56)
             }
             return view
         }()
@@ -92,6 +128,9 @@ extension NewLoyaltyCardView {
             label.textAlignment = .left
             label.textColor = AppColors.darkGrey
             label.text = LocalizedTitle.backSide.localized
+            label.snp.makeConstraints { make in
+                make.height.equalTo(16)
+            }
             return label
         }()
         
@@ -104,6 +143,34 @@ extension NewLoyaltyCardView {
             return stack
         }()
         
+        lazy var backCameraIcon: UIImageView = {
+            let image = UIImageView()
+            image.image = UIImage(named: AssetTitles.cameraIcon)
+            return image
+        }()
+        
+        lazy var backCameraYellowView: UIView = {
+            let view = UIView()
+            view.addSubview(backCameraIcon)
+            backCameraIcon.snp.makeConstraints { make in
+                make.width.height.equalTo(24)
+                make.centerX.centerY.equalToSuperview()
+            }
+            view.backgroundColor = AppColors.yellow
+            view.layer.cornerRadius = 24
+            view.layer.masksToBounds = true
+            return view
+        }()
+        
+        self.backCardCameraViewPlaceholder.layer.cornerRadius = 28
+        self.backCardCameraViewPlaceholder.layer.masksToBounds = true
+        self.backCardCameraViewPlaceholder.backgroundColor = AppColors.white
+        self.backCardCameraViewPlaceholder.addSubview(backCameraYellowView)
+        backCameraYellowView.snp.makeConstraints { make in
+            make.leading.top.equalToSuperview().offset(4)
+            make.trailing.bottom.equalToSuperview().offset(-4)
+        }
+        
         lazy var backPlaceholderView: UIView = {
             let view = UIView()
             view.addSubview(backStack)
@@ -111,6 +178,11 @@ extension NewLoyaltyCardView {
                 make.leading.top.equalToSuperview()
                 make.bottom.equalToSuperview().offset(-4)
                 make.trailing.equalToSuperview().offset(-8)
+            }
+            view.addSubview(self.backCardCameraViewPlaceholder)
+            self.backCardCameraViewPlaceholder.snp.makeConstraints { make in
+                make.trailing.bottom.equalToSuperview()
+                make.width.height.equalTo(56)
             }
             return view
         }()
