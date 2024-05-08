@@ -148,6 +148,11 @@ enum LocalizedTitle: String {
     case nameOnTheCard
     case frontSide
     case backSide
+    case frontCardPage
+    case backCardPage
+    case takeAPhoto
+    case photoAlbum
+    case photoOrAlbumDescription
     
     
     var localized: String {

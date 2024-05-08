@@ -136,3 +136,8 @@
 "nameOnTheCard" = "Ime na kartici";
 "frontSide" = "Prednja strana";
 "backSide" = "Zadnja strana";
+"frontCardPage" = "Prednja strana kartice";
+"backCardPage" = "Zadnja strana kartice";
+"takeAPhoto" = "Slikaj kamerom";
+"photoAlbum" = "Foto album";
+"photoOrAlbumDescription" = "Slikajte ili odaberite neku fotografiju iz galerije.";

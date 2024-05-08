@@ -137,3 +137,8 @@
 "nameOnTheCard" = "Name on the card";
 "frontSide" = "Front side";
 "backSide" = "Back side";
+"frontCardPage" = "Front card side";
+"backCardPage" = "Back card side";
+"takeAPhoto" = "Take a photo";
+"photoAlbum" = "Photo album";
+"photoOrAlbumDescription" = "Take a photo or choose a photo from the gallery";
