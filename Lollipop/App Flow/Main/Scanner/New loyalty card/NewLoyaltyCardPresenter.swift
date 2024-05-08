@@ -9,6 +9,7 @@ import UIKit
 import Photos
 import PhotosUI
 
+
 class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
     
     var interactor : NewLoyaltyCardInputInteractorProtocol?
@@ -25,7 +26,13 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
         UIApplication.topViewController()?.openAlert(title: isFront ? LocalizedTitle.frontCardPage.localized : LocalizedTitle.backCardPage.localized, message: LocalizedTitle.photoOrAlbumDescription.localized, alertStyle: .actionSheet, actionTitles: [LocalizedTitle.takeAPhoto.localized, LocalizedTitle.photoAlbum.localized, LocalizedTitle.cancel.localized], actionColors: [.systemBlue, .systemBlue, .systemBlue], actionStyles: [.default, .default, .cancel], actions: [
             { [weak self] _ in
                 guard let self = self  else {return}
-
+                if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                    var imagePicker = UIImagePickerController()
+                    imagePicker.delegate = self
+                    imagePicker.sourceType = .camera;
+                    imagePicker.allowsEditing = false
+                    UIApplication.topViewController()?.present(imagePicker, animated: true, completion: nil)
+                }
             },
             { [weak self] _ in
                 guard let self = self  else {return}
@@ -35,7 +42,6 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
                 UIApplication.topViewController()?.present(pickerViewController, animated: true, completion: nil)
             },
             {_ in
-                
             }
        ])
     }
@@ -45,16 +51,16 @@ extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
     
 }
 
-//MARK: PHPickerController Delegate
+//MARK: PHPickerController Delegate & ImagePicker delegate
 extension NewLoyaltyCardPresenter {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true, completion: nil)
-
+        
         let imageItems = results.map { $0.itemProvider }.filter { $0.canLoadObject(ofClass: UIImage.self) }
-
+        
         let dispatchGroup = DispatchGroup()
         var images = [UIImage]()
-
+        
         for imageItem in imageItems {
             dispatchGroup.enter() // signal IN
             imageItem.loadObject(ofClass: UIImage.self) { image, _ in
@@ -70,5 +76,13 @@ extension NewLoyaltyCardPresenter {
                 self.view?.setFrontCardImageWith(image: images.first ?? UIImage(), isFront: self.isFrontCard)
             }
         }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        guard let image = info[.originalImage] as? UIImage else {
+            return
+        }
+        self.view?.setFrontCardImageWith(image: image, isFront: self.isFrontCard)
     }
 }

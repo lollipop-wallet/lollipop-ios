@@ -12,7 +12,7 @@ import PhotosUI
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol NewLoyaltyCardPresenterProtocol: PHPickerViewControllerDelegate {
+protocol NewLoyaltyCardPresenterProtocol: PHPickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var interactor: NewLoyaltyCardInputInteractorProtocol? { get set }
     var view: NewLoyaltyCardViewProtocol? { get set }
