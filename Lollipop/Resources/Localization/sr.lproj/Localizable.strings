@@ -134,3 +134,5 @@
 "enterManually" = "Unesi ručno";
 "loyaltyCards" = "Loyalty kartice";
 "nameOnTheCard" = "Ime na kartici";
+"frontSide" = "Prednja strana";
+"backSide" = "Zadnja strana";
