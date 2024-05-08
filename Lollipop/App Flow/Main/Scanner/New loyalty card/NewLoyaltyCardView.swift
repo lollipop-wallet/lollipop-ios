@@ -37,6 +37,18 @@ class NewLoyaltyCardView: UIViewController, NewLoyaltyCardViewProtocol {
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
+    //MARK: NewLoyaltyCardView protocol
+    
+    func setFrontCardImageWith(image: UIImage, isFront: Bool){
+        DispatchQueue.main.async {
+            if isFront {
+                self.cardImageFrontSideView.image = image
+            }else{
+                self.cardImageBackSideView.image = image
+            }
+        }
+    }
 
     //MARK: Actions
     @objc func onBackTap() {

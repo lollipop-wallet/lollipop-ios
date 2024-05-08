@@ -43,10 +43,7 @@ extension NewLoyaltyCardView {
         self.cardImageFrontSideView.layer.cornerRadius = 8
         self.cardImageFrontSideView.layer.borderWidth = 1
         self.cardImageFrontSideView.layer.borderColor = AppColors.brandPrimary.cgColor
-//        self.cardImageFrontSideView.snp.makeConstraints { make in
-//            make.height.equalTo(((self.view.frame.width - 64) / 2) * 0.64)
-//        }
-        self.cardImageFrontSideView.backgroundColor = .red
+        self.cardImageFrontSideView.clipsToBounds = true
         
         lazy var frontLabel: UILabel = {
             let label = UILabel()
@@ -127,10 +124,7 @@ extension NewLoyaltyCardView {
         self.cardImageBackSideView.layer.cornerRadius = 8
         self.cardImageBackSideView.layer.borderWidth = 1
         self.cardImageBackSideView.layer.borderColor = AppColors.brandPrimary.cgColor
-//        self.cardImageFrontSideView.snp.makeConstraints { make in
-//            make.height.equalTo(((self.view.frame.width - 64) / 2) * 0.64)
-//        }
-        self.cardImageBackSideView.backgroundColor = .blue
+        self.cardImageBackSideView.clipsToBounds = true
         
         lazy var backLabel: UILabel = {
             let label = UILabel()

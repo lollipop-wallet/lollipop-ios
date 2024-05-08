@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import PhotosUI
+
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol NewLoyaltyCardPresenterProtocol: AnyObject {
+protocol NewLoyaltyCardPresenterProtocol: PHPickerViewControllerDelegate {
     
     var interactor: NewLoyaltyCardInputInteractorProtocol? { get set }
     var view: NewLoyaltyCardViewProtocol? { get set }
@@ -36,7 +38,7 @@ protocol NewLoyaltyCardOutputInteractorProtocol: AnyObject {
 protocol NewLoyaltyCardViewProtocol: AnyObject {
     
     var presenter: NewLoyaltyCardPresenterProtocol?  { get set }
-    
+    func setFrontCardImageWith(image: UIImage, isFront: Bool)
 }
 //MARK: Wireframe
 protocol NewLoyaltyCardWireframeProtocol: AnyObject {
