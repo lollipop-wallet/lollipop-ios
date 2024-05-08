@@ -11,6 +11,8 @@ import UIKit
 
 class NewLoyaltyCardView: UIViewController, NewLoyaltyCardViewProtocol {
     
+    var cardImageFrontSideView = UIImageView()
+    var cardImageBackSideView = UIImageView()
     var cardImageView = UIImageView()
     var cardNameField = InputField()
     var cardNumberField = InputField()

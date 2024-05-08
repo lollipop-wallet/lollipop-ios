@@ -38,6 +38,83 @@ extension NewLoyaltyCardView {
             return view
         }()
         
+        
+        self.cardImageFrontSideView.contentMode = .scaleAspectFill
+        self.cardImageFrontSideView.layer.cornerRadius = 8
+        self.cardImageFrontSideView.layer.borderWidth = 1
+        self.cardImageFrontSideView.layer.borderColor = AppColors.brandPrimary.cgColor
+//        self.cardImageFrontSideView.snp.makeConstraints { make in
+//            make.height.equalTo(((self.view.frame.width - 64) / 2) * 0.64)
+//        }
+        self.cardImageFrontSideView.backgroundColor = .red
+        
+        lazy var frontLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 10, name: .medium)
+            label.textAlignment = .left
+            label.textColor = AppColors.darkGrey
+            label.text = LocalizedTitle.frontSide.localized
+            return label
+        }()
+        
+        lazy var frontStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [self.cardImageFrontSideView, frontLabel])
+            stack.axis = .vertical
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.spacing = 4
+            return stack
+        }()
+        
+        lazy var frontPlaceholderView: UIView = {
+            let view = UIView()
+            view.addSubview(frontStack)
+            frontStack.snp.makeConstraints { make in
+                make.leading.top.equalToSuperview()
+                make.bottom.equalToSuperview().offset(-4)
+                make.trailing.equalToSuperview().offset(-8)
+            }
+            return view
+        }()
+        
+        self.cardImageBackSideView.contentMode = .scaleAspectFill
+        self.cardImageBackSideView.layer.cornerRadius = 8
+        self.cardImageBackSideView.layer.borderWidth = 1
+        self.cardImageBackSideView.layer.borderColor = AppColors.brandPrimary.cgColor
+//        self.cardImageFrontSideView.snp.makeConstraints { make in
+//            make.height.equalTo(((self.view.frame.width - 64) / 2) * 0.64)
+//        }
+        self.cardImageBackSideView.backgroundColor = .blue
+        
+        lazy var backLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 10, name: .medium)
+            label.textAlignment = .left
+            label.textColor = AppColors.darkGrey
+            label.text = LocalizedTitle.backSide.localized
+            return label
+        }()
+        
+        lazy var backStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [self.cardImageBackSideView, backLabel])
+            stack.axis = .vertical
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.spacing = 4
+            return stack
+        }()
+        
+        lazy var backPlaceholderView: UIView = {
+            let view = UIView()
+            view.addSubview(backStack)
+            backStack.snp.makeConstraints { make in
+                make.leading.top.equalToSuperview()
+                make.bottom.equalToSuperview().offset(-4)
+                make.trailing.equalToSuperview().offset(-8)
+            }
+            return view
+        }()
+        
         self.cardImageView.contentMode = .scaleAspectFill
         self.cardImageView.layer.cornerRadius = 8
         self.cardImageView.layer.borderWidth = 1
@@ -49,11 +126,11 @@ extension NewLoyaltyCardView {
         self.cardImageView.backgroundColor = .red
         
         lazy var mainStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [self.cardImageView])
-            stack.axis = .vertical
-            stack.alignment = .center
-            stack.distribution = .fill
-            stack.spacing = 24
+            let stack = UIStackView(arrangedSubviews: [frontPlaceholderView, backPlaceholderView])
+            stack.axis = .horizontal
+            stack.alignment = .fill
+            stack.distribution = .fillEqually
+            stack.spacing = 16
             return stack
         }()
         
@@ -63,9 +140,10 @@ extension NewLoyaltyCardView {
             view.addSubview(mainStack)
             mainStack.snp.makeConstraints { make in
                 make.leading.equalToSuperview().offset(20)
-                make.trailing.equalToSuperview().offset(-20)
-                make.bottom.equalToSuperview().offset(-40)
+                make.trailing.equalToSuperview().offset(-12)
+                make.bottom.equalToSuperview().offset(-32)
                 make.top.equalToSuperview().offset(24)
+                make.height.equalTo(((self.view.frame.width - 40)) * 0.36)
             }
             view.backgroundColor = AppColors.white
             view.layer.cornerRadius = 32
