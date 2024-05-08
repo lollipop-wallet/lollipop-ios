@@ -15,8 +15,13 @@ class EditCardView: UIViewController, EditCardViewProtocol {
     var cardNameField = InputField()
     var cardNumberField = InputField()
     var cardBarcodeField = InputField()
+    var nameOnTheCardField = InputField()
     var cardNotesField = InputTextViewField()
-
+    var cardImageFrontSideView = UIImageView()
+    var cardImageBackSideView = UIImageView()
+    var frontCardCameraViewPlaceholder = UIView()
+    var backCardCameraViewPlaceholder = UIView()
+    
     var presenter: EditCardPresenterProtocol?
 
 	override func viewDidLoad() {
@@ -44,5 +49,13 @@ class EditCardView: UIViewController, EditCardViewProtocol {
     
     @objc func onSaveTap() {
         
+    }
+    
+    @objc func onFrontCameraTap() {
+        //presenter?.camera(isFront: true)
+    }
+    
+    @objc func onBackCameraTap() {
+        //presenter?.camera(isFront: false)
     }
 }
