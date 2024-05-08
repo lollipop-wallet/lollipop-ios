@@ -9,16 +9,18 @@ import UIKit
 
 extension NewLoyaltyCardView {
     func setup() {
-        self.view.backgroundColor = AppColors.lightGrey
+        self.view.backgroundColor = AppColors.white
         NewLoyaltyCardWireframe.createModule(NewLoyaltyCardRef: self)
         
         let appearance = UINavigationBarAppearance()
         let imgClose = UIImage(named: AssetTitles.closeIcon)?.withAlignmentRectInsets(UIEdgeInsets(top: 0, left: 0, bottom: 1.5, right: 0))
         appearance.titleTextAttributes = [.foregroundColor: AppColors.black, .font : UIFont.inter(ofSize: 20, name: .bold)]
         appearance.setBackIndicatorImage(imgClose, transitionMaskImage: imgClose)
+        appearance.backgroundColor = AppColors.white
         navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
         UINavigationBar.appearance().layoutMargins.left = 20
-        
+                
         lazy var backButton: UIBarButtonItem = {
             let button = UIBarButtonItem()
             button.image = UIImage(named: AssetTitles.backIcon)
@@ -134,6 +136,12 @@ extension NewLoyaltyCardView {
         self.cardNumberField.background = AppColors.white
         self.cardNumberField.leftSuplementaryIconHidden = true
         
+        self.nameOnTheCardField.title = "\(LocalizedTitle.nameOnTheCard.localized):"
+        self.nameOnTheCardField.errorHidden = true
+        self.nameOnTheCardField.keyboardType = .default
+        self.nameOnTheCardField.background = AppColors.white
+        self.nameOnTheCardField.leftSuplementaryIconHidden = true
+        
         self.cardBarcodeField.title = "\(LocalizedTitle.barcode.localized):"
         self.cardBarcodeField.errorHidden = true
         self.cardBarcodeField.keyboardType = .default
@@ -149,12 +157,22 @@ extension NewLoyaltyCardView {
         self.cardNotesField.background = AppColors.white
         
         lazy var fieldsStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [self.cardNameField, self.cardNumberField, self.cardBarcodeField, self.cardNotesField])
+            let stack = UIStackView(arrangedSubviews: [self.cardNameField, self.cardNumberField, self.nameOnTheCardField, self.cardBarcodeField, self.cardNotesField])
             stack.axis = .vertical
             stack.alignment = .fill
             stack.distribution = .fill
             stack.spacing = 16
             return stack
+        }()
+        
+        lazy var scrollView : UIScrollView = {
+            let scView = UIScrollView()
+            return scView
+        }()
+        
+        lazy var contentView : UIView = {
+            let view = UIView()
+            return view
         }()
         
         self.view.addSubview(backgroundView)
@@ -163,23 +181,41 @@ extension NewLoyaltyCardView {
             make.top.equalTo(self.view.safeAreaLayoutGuide)
         }
         
-        backgroundView.addSubview(shaddowPlaceholderView)
-        shaddowPlaceholderView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview()
+//        backgroundView.addSubview(shaddowPlaceholderView)
+//        shaddowPlaceholderView.snp.makeConstraints { make in
+//            make.top.leading.trailing.equalToSuperview()
+//        }
+        
+        backgroundView.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.top.equalToSuperview()
+            //make.top.equalTo(shaddowPlaceholderView.snp.bottom)
         }
         
-        backgroundView.addSubview(fieldsStack)
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets.zero)
+            make.width.equalTo(scrollView)
+        }
+        
+        contentView.addSubview(shaddowPlaceholderView)
+        shaddowPlaceholderView.snp.makeConstraints { make in
+            make.leading.trailing.top.equalToSuperview()
+        }
+        
+        contentView.addSubview(fieldsStack)
         fieldsStack.snp.makeConstraints { make in
-            make.top.equalTo(shaddowPlaceholderView.snp.bottom).offset(33)
+            make.top.equalTo(shaddowPlaceholderView.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
         }
         
-        backgroundView.addSubview(saveButton)
+        contentView.addSubview(saveButton)
         saveButton.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview().offset(-44)
+            make.top.equalTo(fieldsStack.snp.bottom).offset(32)
             make.height.equalTo(48)
         }
     }

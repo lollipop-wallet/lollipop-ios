@@ -145,6 +145,7 @@ enum LocalizedTitle: String {
     case cardDoesntHaveBarcode
     case enterManually
     case loyaltyCards
+    case nameOnTheCard
     
     
     var localized: String {

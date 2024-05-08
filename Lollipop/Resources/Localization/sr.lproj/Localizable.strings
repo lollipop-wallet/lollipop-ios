@@ -133,3 +133,4 @@
 "cardDoesntHaveBarcode" = "Kartica nema bar-kod ili se ne može skenirati?";
 "enterManually" = "Unesi ručno";
 "loyaltyCards" = "Loyalty kartice";
+"nameOnTheCard" = "Ime na kartici";
