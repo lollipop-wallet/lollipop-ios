@@ -16,6 +16,8 @@ extension HomeView {
         //appearance.configureWithOpaqueBackground()
         appearance.titleTextAttributes = [.foregroundColor: AppColors.black, .font : UIFont.inter(ofSize: 20, name: .bold)]
         appearance.backgroundColor = AppColors.white
+        appearance.shadowImage = nil
+        appearance.shadowColor = .clear
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
         
