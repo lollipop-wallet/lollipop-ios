@@ -12,6 +12,20 @@ extension ContentView {
         self.view.backgroundColor = AppColors.white
         self.artworkImageView.contentMode = .scaleAspectFit
         
+        let device = UIDevice.current.dc.deviceModel
+        
+        var topDistance = 114
+        var bottomDistance = -61
+        
+        switch device {
+        case .iPhone6, .iPhone6S, .iPhone6Plus, .iPhone6SPlus, .iPhone7, .iPhone7Plus, .iPhone8, .iPhone8Plus, .iPhoneSE2, .iPhoneSE3:
+            topDistance = 54
+            bottomDistance = -21
+        default:
+            topDistance = 114
+            bottomDistance = -61
+        }
+        
         self.titleLabel.font = .inter(ofSize: 30.0, name: .bold)
         self.titleLabel.textColor = AppColors.black
         self.titleLabel.textAlignment = .left
@@ -47,7 +61,7 @@ extension ContentView {
         self.artworkImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.top.equalToSuperview().offset(114)
+            make.top.equalToSuperview().offset(topDistance)
         }
         
         self.view.addSubview(self.titleLabel)
@@ -68,7 +82,7 @@ extension ContentView {
         self.proceedView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.bottom.equalToSuperview().offset(-61)
+            make.bottom.equalToSuperview().offset(bottomDistance)
             make.height.equalTo(48)
         }
     }

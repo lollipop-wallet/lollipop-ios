@@ -295,6 +295,13 @@
 		62BFFD3C2BE7457E00899800 /* LocationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD362BE7457E00899800 /* LocationsModel.swift */; };
 		62BFFD3D2BE7457E00899800 /* LocationsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD372BE7457E00899800 /* LocationsWireframe.swift */; };
 		62BFFD412BE7458E00899800 /* LocationsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD402BE7458E00899800 /* LocationsUI.swift */; };
+		62E24BC72BEC81D100F6D82B /* Identifier+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E24BC42BEC81D100F6D82B /* Identifier+Extension.swift */; };
+		62E24BC82BEC81D100F6D82B /* DeviceFamily+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E24BC52BEC81D100F6D82B /* DeviceFamily+Extension.swift */; };
+		62E24BC92BEC81D100F6D82B /* DeviceModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E24BC62BEC81D100F6D82B /* DeviceModel+Extension.swift */; };
+		62E24BCE2BEC81D900F6D82B /* Screen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E24BCA2BEC81D900F6D82B /* Screen+Extension.swift */; };
+		62E24BCF2BEC81D900F6D82B /* System+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E24BCB2BEC81D900F6D82B /* System+Extension.swift */; };
+		62E24BD02BEC81D900F6D82B /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E24BCC2BEC81D900F6D82B /* UIDevice+Extension.swift */; };
+		62E24BD12BEC81D900F6D82B /* UIDeviceComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E24BCD2BEC81D900F6D82B /* UIDeviceComplete.swift */; };
 		62EB74BB2BE2000E0088906A /* ReorderCardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B42BE2000E0088906A /* ReorderCardsPresenter.swift */; };
 		62EB74BC2BE2000E0088906A /* ReorderCardsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B52BE2000E0088906A /* ReorderCardsProtocols.swift */; };
 		62EB74BD2BE2000E0088906A /* ReorderCardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B62BE2000E0088906A /* ReorderCardsInteractor.swift */; };
@@ -720,6 +727,13 @@
 		62BFFD362BE7457E00899800 /* LocationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsModel.swift; sourceTree = "<group>"; };
 		62BFFD372BE7457E00899800 /* LocationsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsWireframe.swift; sourceTree = "<group>"; };
 		62BFFD402BE7458E00899800 /* LocationsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsUI.swift; sourceTree = "<group>"; };
+		62E24BC42BEC81D100F6D82B /* Identifier+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Identifier+Extension.swift"; sourceTree = "<group>"; };
+		62E24BC52BEC81D100F6D82B /* DeviceFamily+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceFamily+Extension.swift"; sourceTree = "<group>"; };
+		62E24BC62BEC81D100F6D82B /* DeviceModel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceModel+Extension.swift"; sourceTree = "<group>"; };
+		62E24BCA2BEC81D900F6D82B /* Screen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Screen+Extension.swift"; sourceTree = "<group>"; };
+		62E24BCB2BEC81D900F6D82B /* System+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "System+Extension.swift"; sourceTree = "<group>"; };
+		62E24BCC2BEC81D900F6D82B /* UIDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		62E24BCD2BEC81D900F6D82B /* UIDeviceComplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceComplete.swift; sourceTree = "<group>"; };
 		62EB74B42BE2000E0088906A /* ReorderCardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsPresenter.swift; sourceTree = "<group>"; };
 		62EB74B52BE2000E0088906A /* ReorderCardsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsProtocols.swift; sourceTree = "<group>"; };
 		62EB74B62BE2000E0088906A /* ReorderCardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsInteractor.swift; sourceTree = "<group>"; };
@@ -1195,6 +1209,7 @@
 				2CACCDE32BD54039008178F8 /* UIViewController+Extension.swift */,
 				2CACCDE52BD54058008178F8 /* UINavigationController+Extension.swift */,
 				2CACCDEC2BD541D3008178F8 /* AppDelegate+Extension.swift */,
+				62E24BC32BEC81B500F6D82B /* Device sizes */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2133,6 +2148,20 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		62E24BC32BEC81B500F6D82B /* Device sizes */ = {
+			isa = PBXGroup;
+			children = (
+				62E24BCA2BEC81D900F6D82B /* Screen+Extension.swift */,
+				62E24BCB2BEC81D900F6D82B /* System+Extension.swift */,
+				62E24BCC2BEC81D900F6D82B /* UIDevice+Extension.swift */,
+				62E24BCD2BEC81D900F6D82B /* UIDeviceComplete.swift */,
+				62E24BC52BEC81D100F6D82B /* DeviceFamily+Extension.swift */,
+				62E24BC62BEC81D100F6D82B /* DeviceModel+Extension.swift */,
+				62E24BC42BEC81D100F6D82B /* Identifier+Extension.swift */,
+			);
+			path = "Device sizes";
+			sourceTree = "<group>";
+		};
 		62EB74B12BE1FFF10088906A /* My cards */ = {
 			isa = PBXGroup;
 			children = (
@@ -2790,6 +2819,7 @@
 				62730D0D2BEA77F2004209B9 /* NewLoyaltyCardView.swift in Sources */,
 				62730D0E2BEA77F2004209B9 /* NewLoyaltyCardModel.swift in Sources */,
 				62730D0F2BEA77F2004209B9 /* NewLoyaltyCardWireframe.swift in Sources */,
+				62E24BD02BEC81D900F6D82B /* UIDevice+Extension.swift in Sources */,
 				2CBA7B3B2BE61E5C00C31FCD /* LoyaltyCard.swift in Sources */,
 				2CBA7B232BE606EA00C31FCD /* WalletWireframe.swift in Sources */,
 				62730CBF2BE9174F004209B9 /* PartnerCardSignupPresenter.swift in Sources */,
@@ -2800,8 +2830,10 @@
 				62730CC42BE9174F004209B9 /* PartnerCardSignupWireframe.swift in Sources */,
 				2CE32AA72BDF66F5004757C5 /* CustomSegmentedControl.swift in Sources */,
 				62F6CDA22BDBC6D600C4775C /* PartnersWireframe.swift in Sources */,
+				62E24BCE2BEC81D900F6D82B /* Screen+Extension.swift in Sources */,
 				2CACCD892BD5290B008178F8 /* LaunchUI.swift in Sources */,
 				62F6CDF62BDD456700C4775C /* PersonalDataUI.swift in Sources */,
+				62E24BC82BEC81D100F6D82B /* DeviceFamily+Extension.swift in Sources */,
 				2CACCDDC2BD53F71008178F8 /* UIStackView+Extension.swift in Sources */,
 				62214B052BD6F39C00ABF38E /* PageView.swift in Sources */,
 				62F6CE1C2BDD5AF300C4775C /* ChangePasswordPresenter.swift in Sources */,
@@ -2861,6 +2893,7 @@
 				2CACCD812BD528F7008178F8 /* LaunchProtocols.swift in Sources */,
 				2C5BD1EF2BEB872B0051799E /* DisplayCardUI.swift in Sources */,
 				2CACCDC42BD53DAE008178F8 /* LinkType.swift in Sources */,
+				62E24BC72BEC81D100F6D82B /* Identifier+Extension.swift in Sources */,
 				62730CD72BEA00D5004209B9 /* PartnerDetailsCustomTableViewCell.swift in Sources */,
 				62730CA62BE8F97B004209B9 /* PartnerCardPresenter.swift in Sources */,
 				62730CA72BE8F97B004209B9 /* PartnerCardProtocols.swift in Sources */,
@@ -2870,6 +2903,7 @@
 				62730CAB2BE8F97B004209B9 /* PartnerCardWireframe.swift in Sources */,
 				2CA1955D2BE2475600CC10F5 /* DeleteCardPresenter.swift in Sources */,
 				2CA1955E2BE2475600CC10F5 /* DeleteCardProtocols.swift in Sources */,
+				62E24BD12BEC81D900F6D82B /* UIDeviceComplete.swift in Sources */,
 				2CA1955F2BE2475600CC10F5 /* DeleteCardInteractor.swift in Sources */,
 				2CA195602BE2475600CC10F5 /* DeleteCardView.swift in Sources */,
 				2CA195612BE2475600CC10F5 /* DeleteCardModel.swift in Sources */,
@@ -3046,6 +3080,7 @@
 				2CACCDB52BD53BEB008178F8 /* AssetTitles.swift in Sources */,
 				2CBA985F2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift in Sources */,
 				2C4EE5F52BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift in Sources */,
+				62E24BC92BEC81D100F6D82B /* DeviceModel+Extension.swift in Sources */,
 				2CACCD902BD52E81008178F8 /* UIApplication+Extension.swift in Sources */,
 				2CACCDAD2BD53299008178F8 /* AppColors.swift in Sources */,
 				62730CCC2BE9EA6F004209B9 /* MainPartnerCollectionViewCell.swift in Sources */,
@@ -3110,6 +3145,7 @@
 				62F6CD8C2BDBC69000C4775C /* HomeProtocols.swift in Sources */,
 				62730CC72BE91761004209B9 /* PartnerCardSignupUI.swift in Sources */,
 				62F6CE102BDD560900C4775C /* ProfileSettingsTableViewCell.swift in Sources */,
+				62E24BCF2BEC81D900F6D82B /* System+Extension.swift in Sources */,
 				62F6CD8D2BDBC69000C4775C /* HomeInteractor.swift in Sources */,
 				62F6CD8E2BDBC69000C4775C /* HomeView.swift in Sources */,
 				62F6CD8F2BDBC69000C4775C /* HomeModel.swift in Sources */,
