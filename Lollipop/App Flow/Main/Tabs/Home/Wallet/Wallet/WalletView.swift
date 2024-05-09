@@ -12,6 +12,7 @@ import UIKit
 class WalletView: UIViewController, WalletViewProtocol {
     
     var cardView = WalletStack()
+    var allCardsButton = UIButton()
     
     var presenter: WalletPresenterProtocol?
     
@@ -33,5 +34,9 @@ class WalletView: UIViewController, WalletViewProtocol {
     //MARK: Actions
     @objc func onBackTap() {
         popBack(2)
+    }
+    
+    @objc func onSeeAllCardsTap() {
+        
     }
 }

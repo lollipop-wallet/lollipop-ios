@@ -59,11 +59,27 @@ extension WalletView {
             make.height.equalTo(self.view.frame.height * 0.33)
         }
         
+        self.allCardsButton.addTarget(self, action: #selector(onSeeAllCardsTap), for: .touchUpInside)
+        self.allCardsButton.setTitle(LocalizedTitle.seeAllCards.localized, for: .normal)
+        self.allCardsButton.backgroundColor = AppColors.white
+        self.allCardsButton.titleLabel?.font = .inter(ofSize: 14, name: .semibold)
+        self.allCardsButton.setTitleColor(AppColors.brandPrimary, for: .normal)
+        self.allCardsButton.layer.cornerRadius = 12
+        self.allCardsButton.layer.masksToBounds = true
+        
         mainContentView.addSubview(self.cardView)
         self.cardView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(30)
+        }
+        
+        mainContentView.addSubview(self.allCardsButton)
+        self.allCardsButton.snp.makeConstraints { make in
+            make.top.equalTo(self.cardView.snp.bottom).offset(48)
+            make.height.equalTo(40)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(170)
         }
     }
 }
