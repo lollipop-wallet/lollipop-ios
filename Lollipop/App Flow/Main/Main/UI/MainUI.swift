@@ -12,6 +12,16 @@ extension MainView {
         self.view.backgroundColor = AppColors.white
         MainWireframe.createModule(MainRef: self)
         
+        let device = UIDevice.current.dc.deviceModel
+        var bottomDistance = -21
+
+        switch device {
+        case .iPhone6, .iPhone6S, .iPhone6Plus, .iPhone6SPlus, .iPhone7, .iPhone7Plus, .iPhone8, .iPhone8Plus, .iPhoneSE2, .iPhoneSE3:
+            bottomDistance = 5
+        default:
+            bottomDistance = -21
+        }
+        
         self.tabBar.tintColor = AppColors.brandPrimary
         if let count = self.tabBar.items?.count {
             for i in 0...(count-1) {
@@ -34,7 +44,7 @@ extension MainView {
         scanButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.height.equalTo(80)
-            make.bottom.equalToSuperview().offset(-21)
+            make.bottom.equalToSuperview().offset(bottomDistance)
         }
     }
 }
