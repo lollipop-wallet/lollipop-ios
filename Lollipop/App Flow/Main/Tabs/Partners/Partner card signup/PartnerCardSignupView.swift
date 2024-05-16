@@ -19,6 +19,7 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
     var emailField = InputField()
     var checkBoxIcon = UIImageView()
     var termsLabel = UILabel()
+    var phoneStack = UIStackView()
 
     var presenter: PartnerCardSignupPresenterProtocol?
 

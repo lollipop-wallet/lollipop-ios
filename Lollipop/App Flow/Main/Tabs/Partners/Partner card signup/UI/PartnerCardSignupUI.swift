@@ -219,6 +219,16 @@ extension PartnerCardSignupView {
             return button
         }()
         
+        self.phonePrefixField.snp.makeConstraints { make in
+            make.width.equalTo(106)
+        }
+        
+        self.phoneStack = UIStackView(arrangedSubviews: [self.phonePrefixField, self.phoneField])
+        self.phoneStack.axis = .horizontal
+        self.phoneStack.distribution = .fill
+        self.phoneStack.alignment = .fill
+        self.phoneStack.spacing = 16
+        
         self.view.addSubview(backgroundView)
         backgroundView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
@@ -256,25 +266,32 @@ extension PartnerCardSignupView {
             make.top.equalTo(self.nameField.snp.bottom).offset(16)
         }
         
-        contentView.addSubview(self.phonePrefixField)
-        self.phonePrefixField.snp.makeConstraints { make in
+        contentView.addSubview(self.phoneStack)
+        self.phoneStack.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.top.equalTo(self.cityField.snp.bottom).offset(16)
-            make.width.equalTo(106)
+            make.trailing.equalToSuperview().offset(-20)
         }
         
-        contentView.addSubview(self.phoneField)
-        self.phoneField.snp.makeConstraints { make in
-            make.leading.equalTo(self.phonePrefixField.snp.trailing).offset(16)
-            make.trailing.equalToSuperview().offset(-20)
-            make.top.equalTo(self.cityField.snp.bottom).offset(16)
-        }
+//        contentView.addSubview(self.phonePrefixField)
+//        self.phonePrefixField.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(20)
+//            make.top.equalTo(self.cityField.snp.bottom).offset(16)
+//            make.width.equalTo(106)
+//        }
+//        
+//        contentView.addSubview(self.phoneField)
+//        self.phoneField.snp.makeConstraints { make in
+//            make.leading.equalTo(self.phonePrefixField.snp.trailing).offset(16)
+//            make.trailing.equalToSuperview().offset(-20)
+//            make.top.equalTo(self.cityField.snp.bottom).offset(16)
+//        }
         
         contentView.addSubview(self.emailField)
         self.emailField.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.top.equalTo(self.phonePrefixField.snp.bottom).offset(16)
+            make.top.equalTo(self.phoneStack.snp.bottom).offset(16)
         }
         
         contentView.addSubview(termsStack)
