@@ -16,6 +16,7 @@ protocol PartnerCardSignupPresenterProtocol: DropdownInputFieldProtocol {
     var view: PartnerCardSignupViewProtocol? { get set }
     var wireframe:PartnerCardSignupWireframeProtocol? { get set }
     
+    func handleDropDownTap()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR

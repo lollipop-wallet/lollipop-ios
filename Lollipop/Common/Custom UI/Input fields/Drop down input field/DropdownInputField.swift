@@ -66,12 +66,22 @@ class DropdownInputField: UIView {
         get { return AppColors.mediumGrey }
     }
     
+    open var borderWidth: CGFloat? {
+        set { self.titleFieldPlaceholder.layer.borderWidth = newValue ?? 1.0 }
+        get { return 1.0 }
+    }
+    
     open var delegate: DropdownInputFieldProtocol?
     
     var dropdownHidden: Bool = true
     
     open var isDropdownHidden: Bool? {
-        set {  }
+        set { 
+            UIView.animate(withDuration: 0.25, animations: {
+                self.inputFieldSuplementaryRightIcon.transform = self.inputFieldSuplementaryRightIcon.transform.rotated(by: (newValue ?? false) ? -.pi : .pi)
+                //self.dropdownHidden = !self.dropdownHidden
+            })
+        }
         get { return true }
     }
     
@@ -197,11 +207,8 @@ class DropdownInputField: UIView {
     
     @objc func onSuplementaryButtonTap() {
         //MARK: Delegat da se postavi date picker
-        //
-        UIView.animate(withDuration: 0.25, animations: {
-            self.inputFieldSuplementaryRightIcon.transform = self.inputFieldSuplementaryRightIcon.transform.rotated(by: self.dropdownHidden ? -.pi : .pi)
-            self.dropdownHidden = !self.dropdownHidden
-        })
+        self.titleFieldPlaceholder.layer.borderWidth = 2
+        self.titleFieldPlaceholder.layer.borderColor = AppColors.link.cgColor
         self.delegate?.showHideDropdown(isHidden: self.isDropdownHidden ?? false)
     }
 }

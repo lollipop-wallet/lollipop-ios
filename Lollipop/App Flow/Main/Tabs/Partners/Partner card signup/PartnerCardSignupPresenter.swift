@@ -13,6 +13,9 @@ class PartnerCardSignupPresenter: NSObject, PartnerCardSignupPresenterProtocol  
     weak var view: PartnerCardSignupViewProtocol?
     var wireframe: PartnerCardSignupWireframeProtocol?
     
+    func handleDropDownTap(){
+        view?.hidePrefixDropdown()
+    }
 }
 
 extension PartnerCardSignupPresenter: PartnerCardSignupOutputInteractorProtocol {

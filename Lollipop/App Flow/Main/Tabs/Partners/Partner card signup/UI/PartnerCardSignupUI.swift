@@ -152,7 +152,7 @@ extension PartnerCardSignupView {
         self.phonePrefixField.background = AppColors.white
         self.phonePrefixField.text = LocalizedTitle.choose.localized
         self.phonePrefixField.rightSuplementaryIconHidden = false
-        self.phonePrefixField.isDropdownHidden = true
+        //self.phonePrefixField.isDropdownHidden = true
         self.phonePrefixField.delegate = presenter
         
         self.phoneField.title = " "
@@ -245,6 +245,7 @@ extension PartnerCardSignupView {
         
         self.phoneCodeDropDown.selectionAction = { [weak self] (index, item) in
             guard let self = self else {return}
+            self.presenter?.handleDropDownTap()
         }
         
         self.phoneStack = UIStackView(arrangedSubviews: [self.phonePrefixField, self.phoneField])
