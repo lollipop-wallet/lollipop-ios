@@ -31,7 +31,7 @@ extension RegisterPresenter {
 
 //MARK: Dropdown field delegate
 extension RegisterPresenter {
-    func showDropdown() {
+    func showHideDropdown(isHidden: Bool) {
         
     }
 }

@@ -41,26 +41,14 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
     }
     
     //MARK: PartnerCardSignupView protocol
-    func setupAndOpenPhonePrefixDropdown(){
-        print("dwadwad")
-        DispatchQueue.main.async {
-
-        }
-
-        let datasource = ["dwa", "dwa","dwa","dwa","dwa","dwa"]
-        self.phoneCodeDropDown.dataSource = datasource
-        self.phoneCodeDropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
-            guard let cell = cell as? PhoneNumberPrefixTableViewCell else { return }
-            cell.countryFlagImageView.backgroundColor = .red
-            cell.countryNameLabel.text = "Crna Gora"
-            cell.countryCodeLabel.text = "+382"
-        }
-        
-        self.phoneCodeDropDown.selectionAction = { [weak self] (index, item) in
-            guard let self = self else {return}
-        }
-        
+    func setupAndOpenPhonePrefixDropdown(){        
         self.phoneCodeDropDown.show()
+        self.phonePrefixField.isDropdownHidden = true
+    }
+    
+    func hidePrefixDropdown(){
+        self.phoneCodeDropDown.hide()
+        self.phonePrefixField.isDropdownHidden = false
     }
     
     //MARK: Actions

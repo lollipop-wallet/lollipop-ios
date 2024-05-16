@@ -21,7 +21,12 @@ extension PartnerCardSignupPresenter: PartnerCardSignupOutputInteractorProtocol 
 
 //MARK: Input field protocols
 extension PartnerCardSignupPresenter {
-    func showDropdown() {
-        view?.setupAndOpenPhonePrefixDropdown()
+    func showHideDropdown(isHidden: Bool) {
+        print("Sakriven: ", isHidden ? "Jeste" : "Nije")
+        if isHidden {
+            view?.setupAndOpenPhonePrefixDropdown()
+        }else{
+            view?.hidePrefixDropdown()
+        }
     }
 }

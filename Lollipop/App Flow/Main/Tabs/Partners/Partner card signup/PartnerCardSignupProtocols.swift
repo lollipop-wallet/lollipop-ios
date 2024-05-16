@@ -36,6 +36,7 @@ protocol PartnerCardSignupViewProtocol: AnyObject {
     
     var presenter: PartnerCardSignupPresenterProtocol?  { get set }
     func setupAndOpenPhonePrefixDropdown()
+    func hidePrefixDropdown()
 }
 //MARK: Wireframe
 protocol PartnerCardSignupWireframeProtocol: AnyObject {

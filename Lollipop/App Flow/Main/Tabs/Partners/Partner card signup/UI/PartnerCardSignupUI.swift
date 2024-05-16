@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyAttributes
+import DropDown
 
 extension PartnerCardSignupView {
     func setup() {
@@ -151,6 +152,7 @@ extension PartnerCardSignupView {
         self.phonePrefixField.background = AppColors.white
         self.phonePrefixField.text = LocalizedTitle.choose.localized
         self.phonePrefixField.rightSuplementaryIconHidden = false
+        self.phonePrefixField.isDropdownHidden = true
         self.phonePrefixField.delegate = presenter
         
         self.phoneField.title = " "
@@ -230,7 +232,20 @@ extension PartnerCardSignupView {
         self.phoneCodeDropDown.direction = .bottom
         self.phoneCodeDropDown.backgroundColor = AppColors.white
         self.phoneCodeDropDown.cornerRadius = 8
+        self.phoneCodeDropDown.dismissMode = .manual
         
+        let datasource = ["dwa", "dwa","dwa","dwa","dwa","dwa"]
+        self.phoneCodeDropDown.dataSource = datasource
+        self.phoneCodeDropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let cell = cell as? PhoneNumberPrefixTableViewCell else { return }
+            cell.countryFlagImageView.backgroundColor = .red
+            cell.countryNameLabel.text = "Crna Gora"
+            cell.countryCodeLabel.text = "+382"
+        }
+        
+        self.phoneCodeDropDown.selectionAction = { [weak self] (index, item) in
+            guard let self = self else {return}
+        }
         
         self.phoneStack = UIStackView(arrangedSubviews: [self.phonePrefixField, self.phoneField])
         self.phoneStack.axis = .horizontal

@@ -8,6 +8,8 @@
 import UIKit
 
 class PersonalDataPresenter: NSObject, PersonalDataPresenterProtocol  {
+
+    
     var interactor : PersonalDataInputInteractorProtocol?
     weak var view: PersonalDataViewProtocol?
     var wireframe: PersonalDataWireframeProtocol?
@@ -30,7 +32,7 @@ extension PersonalDataPresenter {
 
 //MARK: Dropdown field delegate
 extension PersonalDataPresenter {
-    func showDropdown() {
+    func showHideDropdown(isHidden: Bool) {
         
     }
 }

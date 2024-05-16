@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DropdownInputFieldProtocol: AnyObject {
-    func showDropdown()
+    func showHideDropdown(isHidden: Bool)
 }

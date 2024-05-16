@@ -70,6 +70,11 @@ class DropdownInputField: UIView {
     
     var dropdownHidden: Bool = true
     
+    open var isDropdownHidden: Bool? {
+        set {  }
+        get { return true }
+    }
+    
     //MARK: Outlets
     
     lazy var inputLabel: UILabel = {
@@ -192,10 +197,11 @@ class DropdownInputField: UIView {
     
     @objc func onSuplementaryButtonTap() {
         //MARK: Delegat da se postavi date picker
+        //
         UIView.animate(withDuration: 0.25, animations: {
             self.inputFieldSuplementaryRightIcon.transform = self.inputFieldSuplementaryRightIcon.transform.rotated(by: self.dropdownHidden ? -.pi : .pi)
             self.dropdownHidden = !self.dropdownHidden
         })
-        delegate?.showDropdown()
+        self.delegate?.showHideDropdown(isHidden: self.isDropdownHidden ?? false)
     }
 }
