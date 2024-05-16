@@ -151,6 +151,7 @@ extension PartnerCardSignupView {
         self.phonePrefixField.background = AppColors.white
         self.phonePrefixField.text = LocalizedTitle.choose.localized
         self.phonePrefixField.rightSuplementaryIconHidden = false
+        self.phonePrefixField.delegate = presenter
         
         self.phoneField.title = " "
         self.phoneField.errorHidden = true
@@ -223,11 +224,20 @@ extension PartnerCardSignupView {
             make.width.equalTo(106)
         }
         
+        self.phoneCodeDropDown.cellNib = UINib(nibName: "PhoneNumberPrefixTableViewCell", bundle: nil)
+        self.phoneCodeDropDown.anchorView = self.emailField
+        self.phoneCodeDropDown.cellHeight = 48
+        self.phoneCodeDropDown.direction = .bottom
+        self.phoneCodeDropDown.backgroundColor = AppColors.white
+        self.phoneCodeDropDown.cornerRadius = 8
+        
+        
         self.phoneStack = UIStackView(arrangedSubviews: [self.phonePrefixField, self.phoneField])
         self.phoneStack.axis = .horizontal
         self.phoneStack.distribution = .fill
         self.phoneStack.alignment = .fill
         self.phoneStack.spacing = 16
+        
         
         self.view.addSubview(backgroundView)
         backgroundView.snp.makeConstraints { make in

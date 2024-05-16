@@ -191,6 +191,8 @@
 		62214B052BD6F39C00ABF38E /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214B042BD6F39C00ABF38E /* PageView.swift */; };
 		62214B072BD6F3BB00ABF38E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214B062BD6F3BB00ABF38E /* ContentView.swift */; };
 		62214B0B2BD6F44D00ABF38E /* ContentViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214B0A2BD6F44D00ABF38E /* ContentViewUI.swift */; };
+		623693692BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 623693682BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib */; };
+		6236936A2BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623693672BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift */; };
 		626906AE2BE0A8D100BF5F62 /* MyShopsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */; };
 		626906AF2BE0A8D100BF5F62 /* MyShopsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A92BE0A8D100BF5F62 /* MyShopsProtocols.swift */; };
 		626906B02BE0A8D100BF5F62 /* MyShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906AA2BE0A8D100BF5F62 /* MyShopsInteractor.swift */; };
@@ -623,6 +625,8 @@
 		62214B042BD6F39C00ABF38E /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		62214B062BD6F3BB00ABF38E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		62214B0A2BD6F44D00ABF38E /* ContentViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewUI.swift; sourceTree = "<group>"; };
+		623693672BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberPrefixTableViewCell.swift; sourceTree = "<group>"; };
+		623693682BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberPrefixTableViewCell.xib; sourceTree = "<group>"; };
 		626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsPresenter.swift; sourceTree = "<group>"; };
 		626906A92BE0A8D100BF5F62 /* MyShopsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsProtocols.swift; sourceTree = "<group>"; };
 		626906AA2BE0A8D100BF5F62 /* MyShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsInteractor.swift; sourceTree = "<group>"; };
@@ -1691,6 +1695,23 @@
 			path = "Content view";
 			sourceTree = "<group>";
 		};
+		623693652BF5BB9C00E23799 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				623693662BF5BBA800E23799 /* Phone number prefix cell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		623693662BF5BBA800E23799 /* Phone number prefix cell */ = {
+			isa = PBXGroup;
+			children = (
+				623693672BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift */,
+				623693682BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib */,
+			);
+			path = "Phone number prefix cell";
+			sourceTree = "<group>";
+		};
 		626906A62BE0A8C300BF5F62 /* My shops */ = {
 			isa = PBXGroup;
 			children = (
@@ -1862,6 +1883,7 @@
 				62730CBC2BE9174F004209B9 /* PartnerCardSignupModel.swift */,
 				62730CBD2BE9174F004209B9 /* PartnerCardSignupWireframe.swift */,
 				62730CC52BE91756004209B9 /* UI */,
+				623693652BF5BB9C00E23799 /* Cells */,
 			);
 			path = "Partner card signup";
 			sourceTree = "<group>";
@@ -2705,6 +2727,7 @@
 				62214B002BD6E3C500ABF38E /* Inter-Medium.ttf in Resources */,
 				62214AFF2BD6E3C500ABF38E /* Inter-Light.ttf in Resources */,
 				62214AFE2BD6E3C500ABF38E /* Inter-Thin.ttf in Resources */,
+				623693692BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib in Resources */,
 				62214AFB2BD6E3C500ABF38E /* Inter-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2843,6 +2866,7 @@
 				62F6CE202BDD5AF300C4775C /* ChangePasswordModel.swift in Sources */,
 				62F6CE2E2BDE0FDF00C4775C /* AccountDeletionPresenter.swift in Sources */,
 				62F6CE2F2BDE0FDF00C4775C /* AccountDeletionProtocols.swift in Sources */,
+				6236936A2BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift in Sources */,
 				62F6CE302BDE0FDF00C4775C /* AccountDeletionInteractor.swift in Sources */,
 				62F6CE312BDE0FDF00C4775C /* AccountDeletionView.swift in Sources */,
 				62F6CE322BDE0FDF00C4775C /* AccountDeletionModel.swift in Sources */,

@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class PartnerCardSignupPresenter: PartnerCardSignupPresenterProtocol  {
+class PartnerCardSignupPresenter: NSObject, PartnerCardSignupPresenterProtocol  {
     
     var interactor : PartnerCardSignupInputInteractorProtocol?
     weak var view: PartnerCardSignupViewProtocol?
@@ -17,4 +17,11 @@ class PartnerCardSignupPresenter: PartnerCardSignupPresenterProtocol  {
 
 extension PartnerCardSignupPresenter: PartnerCardSignupOutputInteractorProtocol {
     
+}
+
+//MARK: Input field protocols
+extension PartnerCardSignupPresenter {
+    func showDropdown() {
+        view?.setupAndOpenPhonePrefixDropdown()
+    }
 }

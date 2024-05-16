@@ -8,6 +8,7 @@
 //
 //
 import UIKit
+import DropDown
 
 class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
     
@@ -20,6 +21,8 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
     var checkBoxIcon = UIImageView()
     var termsLabel = UILabel()
     var phoneStack = UIStackView()
+    var phoneCodeDropDown = DropDown()
+
 
     var presenter: PartnerCardSignupPresenterProtocol?
 
@@ -35,6 +38,29 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    //MARK: PartnerCardSignupView protocol
+    func setupAndOpenPhonePrefixDropdown(){
+        print("dwadwad")
+        DispatchQueue.main.async {
+
+        }
+
+        let datasource = ["dwa", "dwa","dwa","dwa","dwa","dwa"]
+        self.phoneCodeDropDown.dataSource = datasource
+        self.phoneCodeDropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let cell = cell as? PhoneNumberPrefixTableViewCell else { return }
+            cell.countryFlagImageView.backgroundColor = .red
+            cell.countryNameLabel.text = "Crna Gora"
+            cell.countryCodeLabel.text = "+382"
+        }
+        
+        self.phoneCodeDropDown.selectionAction = { [weak self] (index, item) in
+            guard let self = self else {return}
+        }
+        
+        self.phoneCodeDropDown.show()
     }
     
     //MARK: Actions

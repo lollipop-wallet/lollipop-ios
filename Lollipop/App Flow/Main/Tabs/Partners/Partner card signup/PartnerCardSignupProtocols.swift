@@ -10,7 +10,7 @@ import Foundation
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PartnerCardSignupPresenterProtocol: AnyObject {
+protocol PartnerCardSignupPresenterProtocol: DropdownInputFieldProtocol {
     
     var interactor: PartnerCardSignupInputInteractorProtocol? { get set }
     var view: PartnerCardSignupViewProtocol? { get set }
@@ -35,7 +35,7 @@ protocol PartnerCardSignupOutputInteractorProtocol: AnyObject {
 protocol PartnerCardSignupViewProtocol: AnyObject {
     
     var presenter: PartnerCardSignupPresenterProtocol?  { get set }
-    
+    func setupAndOpenPhonePrefixDropdown()
 }
 //MARK: Wireframe
 protocol PartnerCardSignupWireframeProtocol: AnyObject {
