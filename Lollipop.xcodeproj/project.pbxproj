@@ -294,6 +294,13 @@
 		627E92D72BDA10990016FF73 /* PasswordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92D02BDA10990016FF73 /* PasswordWireframe.swift */; };
 		627E92DA2BDA10A80016FF73 /* PasswordUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92D92BDA10A80016FF73 /* PasswordUI.swift */; };
 		627E92DD2BDA18560016FF73 /* OTPInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E92DC2BDA18560016FF73 /* OTPInputField.swift */; };
+		628AA6A92BFB61C8009A3077 /* NewUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6A22BFB61C8009A3077 /* NewUserPresenter.swift */; };
+		628AA6AA2BFB61C8009A3077 /* NewUserProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6A32BFB61C8009A3077 /* NewUserProtocols.swift */; };
+		628AA6AB2BFB61C8009A3077 /* NewUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6A42BFB61C8009A3077 /* NewUserInteractor.swift */; };
+		628AA6AC2BFB61C8009A3077 /* NewUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6A52BFB61C8009A3077 /* NewUserView.swift */; };
+		628AA6AD2BFB61C8009A3077 /* NewUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6A62BFB61C8009A3077 /* NewUserModel.swift */; };
+		628AA6AE2BFB61C8009A3077 /* NewUserWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6A72BFB61C8009A3077 /* NewUserWireframe.swift */; };
+		628AA6B12BFB61D9009A3077 /* NewUserUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6B02BFB61D9009A3077 /* NewUserUI.swift */; };
 		62BFFD282BE5E16300899800 /* Code resoruces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD272BE5E16300899800 /* Code resoruces.swift */; };
 		62BFFD2C2BE7391700899800 /* WalletCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD2B2BE7391700899800 /* WalletCard.swift */; };
 		62BFFD2E2BE7437300899800 /* WalletStackProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD2D2BE7437300899800 /* WalletStackProtocols.swift */; };
@@ -735,6 +742,13 @@
 		627E92D02BDA10990016FF73 /* PasswordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWireframe.swift; sourceTree = "<group>"; };
 		627E92D92BDA10A80016FF73 /* PasswordUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordUI.swift; sourceTree = "<group>"; };
 		627E92DC2BDA18560016FF73 /* OTPInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputField.swift; sourceTree = "<group>"; };
+		628AA6A22BFB61C8009A3077 /* NewUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserPresenter.swift; sourceTree = "<group>"; };
+		628AA6A32BFB61C8009A3077 /* NewUserProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserProtocols.swift; sourceTree = "<group>"; };
+		628AA6A42BFB61C8009A3077 /* NewUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserInteractor.swift; sourceTree = "<group>"; };
+		628AA6A52BFB61C8009A3077 /* NewUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserView.swift; sourceTree = "<group>"; };
+		628AA6A62BFB61C8009A3077 /* NewUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserModel.swift; sourceTree = "<group>"; };
+		628AA6A72BFB61C8009A3077 /* NewUserWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserWireframe.swift; sourceTree = "<group>"; };
+		628AA6B02BFB61D9009A3077 /* NewUserUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserUI.swift; sourceTree = "<group>"; };
 		62BFFD272BE5E16300899800 /* Code resoruces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Code resoruces.swift"; sourceTree = "<group>"; };
 		62BFFD2B2BE7391700899800 /* WalletCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCard.swift; sourceTree = "<group>"; };
 		62BFFD2D2BE7437300899800 /* WalletStackProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletStackProtocols.swift; sourceTree = "<group>"; };
@@ -1480,6 +1494,7 @@
 			children = (
 				2CCF3AA82BD7B25600B3729E /* Sign in */,
 				2CEC7F9A2BD8D1210050E762 /* Register */,
+				623450D42BFB617200FE8E71 /* New user */,
 				627E92C92BDA108B0016FF73 /* Password */,
 				2CDDA72D2BDA255100B6C8B5 /* OTP */,
 			);
@@ -1730,6 +1745,20 @@
 				623450CB2BFAFB0A00FE8E71 /* DropDownCell.xib */,
 			);
 			path = Dropdown;
+			sourceTree = "<group>";
+		};
+		623450D42BFB617200FE8E71 /* New user */ = {
+			isa = PBXGroup;
+			children = (
+				628AA6A22BFB61C8009A3077 /* NewUserPresenter.swift */,
+				628AA6A32BFB61C8009A3077 /* NewUserProtocols.swift */,
+				628AA6A42BFB61C8009A3077 /* NewUserInteractor.swift */,
+				628AA6A52BFB61C8009A3077 /* NewUserView.swift */,
+				628AA6A62BFB61C8009A3077 /* NewUserModel.swift */,
+				628AA6A72BFB61C8009A3077 /* NewUserWireframe.swift */,
+				628AA6AF2BFB61CF009A3077 /* UI */,
+			);
+			path = "New user";
 			sourceTree = "<group>";
 		};
 		623693652BF5BB9C00E23799 /* Cells */ = {
@@ -2133,6 +2162,14 @@
 				2CDDA73F2BDA367000B6C8B5 /* OTPInputProtocols.swift */,
 			);
 			path = "OTP Input Field";
+			sourceTree = "<group>";
+		};
+		628AA6AF2BFB61CF009A3077 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				628AA6B02BFB61D9009A3077 /* NewUserUI.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		62903E222BD6E12700031D60 /* Onboarding */ = {
@@ -2859,6 +2896,7 @@
 				62F6CD9E2BDBC6D600C4775C /* PartnersProtocols.swift in Sources */,
 				62F6CD9F2BDBC6D600C4775C /* PartnersInteractor.swift in Sources */,
 				62F6CDA02BDBC6D600C4775C /* PartnersView.swift in Sources */,
+				628AA6B12BFB61D9009A3077 /* NewUserUI.swift in Sources */,
 				62F6CE532BDE6BBA00C4775C /* AboutPresenter.swift in Sources */,
 				2CBA7B3E2BE639AA00C31FCD /* WalletCardShopTableViewCell.swift in Sources */,
 				62F6CE542BDE6BBA00C4775C /* AboutProtocols.swift in Sources */,
@@ -2965,6 +3003,12 @@
 				62730CA92BE8F97B004209B9 /* PartnerCardView.swift in Sources */,
 				62730CAA2BE8F97B004209B9 /* PartnerCardModel.swift in Sources */,
 				62730CAB2BE8F97B004209B9 /* PartnerCardWireframe.swift in Sources */,
+				628AA6A92BFB61C8009A3077 /* NewUserPresenter.swift in Sources */,
+				628AA6AA2BFB61C8009A3077 /* NewUserProtocols.swift in Sources */,
+				628AA6AB2BFB61C8009A3077 /* NewUserInteractor.swift in Sources */,
+				628AA6AC2BFB61C8009A3077 /* NewUserView.swift in Sources */,
+				628AA6AD2BFB61C8009A3077 /* NewUserModel.swift in Sources */,
+				628AA6AE2BFB61C8009A3077 /* NewUserWireframe.swift in Sources */,
 				623450CC2BFAFB0A00FE8E71 /* DPDUIView+Extension.swift in Sources */,
 				2CA1955D2BE2475600CC10F5 /* DeleteCardPresenter.swift in Sources */,
 				2CA1955E2BE2475600CC10F5 /* DeleteCardProtocols.swift in Sources */,
