@@ -7,7 +7,7 @@
 
 import UIKit
 import SwiftyAttributes
-import DropDown
+//import DropDown
 
 extension PartnerCardSignupView {
     func setup() {

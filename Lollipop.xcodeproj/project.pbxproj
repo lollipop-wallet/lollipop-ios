@@ -191,6 +191,13 @@
 		62214B052BD6F39C00ABF38E /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214B042BD6F39C00ABF38E /* PageView.swift */; };
 		62214B072BD6F3BB00ABF38E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214B062BD6F3BB00ABF38E /* ContentView.swift */; };
 		62214B0B2BD6F44D00ABF38E /* ContentViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214B0A2BD6F44D00ABF38E /* ContentViewUI.swift */; };
+		623450CC2BFAFB0A00FE8E71 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623450C52BFAFB0900FE8E71 /* DPDUIView+Extension.swift */; };
+		623450CD2BFAFB0A00FE8E71 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623450C62BFAFB0900FE8E71 /* DropDownCell.swift */; };
+		623450CE2BFAFB0A00FE8E71 /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623450C72BFAFB0900FE8E71 /* DPDConstants.swift */; };
+		623450CF2BFAFB0A00FE8E71 /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623450C82BFAFB0900FE8E71 /* DropDown+Appearance.swift */; };
+		623450D02BFAFB0A00FE8E71 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623450C92BFAFB0900FE8E71 /* DropDown.swift */; };
+		623450D12BFAFB0A00FE8E71 /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623450CA2BFAFB0900FE8E71 /* DPDKeyboardListener.swift */; };
+		623450D22BFAFB0A00FE8E71 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 623450CB2BFAFB0A00FE8E71 /* DropDownCell.xib */; };
 		623693692BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 623693682BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib */; };
 		6236936A2BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623693672BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift */; };
 		626906AE2BE0A8D100BF5F62 /* MyShopsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */; };
@@ -625,6 +632,13 @@
 		62214B042BD6F39C00ABF38E /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		62214B062BD6F3BB00ABF38E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		62214B0A2BD6F44D00ABF38E /* ContentViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewUI.swift; sourceTree = "<group>"; };
+		623450C52BFAFB0900FE8E71 /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DPDUIView+Extension.swift"; sourceTree = "<group>"; };
+		623450C62BFAFB0900FE8E71 /* DropDownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
+		623450C72BFAFB0900FE8E71 /* DPDConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDConstants.swift; sourceTree = "<group>"; };
+		623450C82BFAFB0900FE8E71 /* DropDown+Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DropDown+Appearance.swift"; sourceTree = "<group>"; };
+		623450C92BFAFB0900FE8E71 /* DropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
+		623450CA2BFAFB0900FE8E71 /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDKeyboardListener.swift; sourceTree = "<group>"; };
+		623450CB2BFAFB0A00FE8E71 /* DropDownCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownCell.xib; sourceTree = "<group>"; };
 		623693672BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberPrefixTableViewCell.swift; sourceTree = "<group>"; };
 		623693682BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberPrefixTableViewCell.xib; sourceTree = "<group>"; };
 		626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsPresenter.swift; sourceTree = "<group>"; };
@@ -1179,6 +1193,7 @@
 				2CACCDA62BD5324A008178F8 /* Enumerations */,
 				2CACCD8E2BD52E59008178F8 /* Extensions */,
 				2CACCDBE2BD53D70008178F8 /* Helper */,
+				623450C32BFAFAC200FE8E71 /* Libraries */,
 				2CACCDE72BD540B2008178F8 /* Managers */,
 			);
 			path = Common;
@@ -1693,6 +1708,28 @@
 				62214B0A2BD6F44D00ABF38E /* ContentViewUI.swift */,
 			);
 			path = "Content view";
+			sourceTree = "<group>";
+		};
+		623450C32BFAFAC200FE8E71 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				623450C42BFAFACD00FE8E71 /* Dropdown */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		623450C42BFAFACD00FE8E71 /* Dropdown */ = {
+			isa = PBXGroup;
+			children = (
+				623450C72BFAFB0900FE8E71 /* DPDConstants.swift */,
+				623450CA2BFAFB0900FE8E71 /* DPDKeyboardListener.swift */,
+				623450C52BFAFB0900FE8E71 /* DPDUIView+Extension.swift */,
+				623450C92BFAFB0900FE8E71 /* DropDown.swift */,
+				623450C82BFAFB0900FE8E71 /* DropDown+Appearance.swift */,
+				623450C62BFAFB0900FE8E71 /* DropDownCell.swift */,
+				623450CB2BFAFB0A00FE8E71 /* DropDownCell.xib */,
+			);
+			path = Dropdown;
 			sourceTree = "<group>";
 		};
 		623693652BF5BB9C00E23799 /* Cells */ = {
@@ -2726,6 +2763,7 @@
 				62214AF82BD6E3C500ABF38E /* Inter-ExtraLight.ttf in Resources */,
 				62214B002BD6E3C500ABF38E /* Inter-Medium.ttf in Resources */,
 				62214AFF2BD6E3C500ABF38E /* Inter-Light.ttf in Resources */,
+				623450D22BFAFB0A00FE8E71 /* DropDownCell.xib in Resources */,
 				62214AFE2BD6E3C500ABF38E /* Inter-Thin.ttf in Resources */,
 				623693692BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib in Resources */,
 				62214AFB2BD6E3C500ABF38E /* Inter-SemiBold.ttf in Resources */,
@@ -2862,10 +2900,12 @@
 				62F6CE1C2BDD5AF300C4775C /* ChangePasswordPresenter.swift in Sources */,
 				62F6CE1D2BDD5AF300C4775C /* ChangePasswordProtocols.swift in Sources */,
 				62F6CE1E2BDD5AF300C4775C /* ChangePasswordInteractor.swift in Sources */,
+				623450D12BFAFB0A00FE8E71 /* DPDKeyboardListener.swift in Sources */,
 				62F6CE1F2BDD5AF300C4775C /* ChangePasswordView.swift in Sources */,
 				62F6CE202BDD5AF300C4775C /* ChangePasswordModel.swift in Sources */,
 				62F6CE2E2BDE0FDF00C4775C /* AccountDeletionPresenter.swift in Sources */,
 				62F6CE2F2BDE0FDF00C4775C /* AccountDeletionProtocols.swift in Sources */,
+				623450D02BFAFB0A00FE8E71 /* DropDown.swift in Sources */,
 				6236936A2BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift in Sources */,
 				62F6CE302BDE0FDF00C4775C /* AccountDeletionInteractor.swift in Sources */,
 				62F6CE312BDE0FDF00C4775C /* AccountDeletionView.swift in Sources */,
@@ -2925,6 +2965,7 @@
 				62730CA92BE8F97B004209B9 /* PartnerCardView.swift in Sources */,
 				62730CAA2BE8F97B004209B9 /* PartnerCardModel.swift in Sources */,
 				62730CAB2BE8F97B004209B9 /* PartnerCardWireframe.swift in Sources */,
+				623450CC2BFAFB0A00FE8E71 /* DPDUIView+Extension.swift in Sources */,
 				2CA1955D2BE2475600CC10F5 /* DeleteCardPresenter.swift in Sources */,
 				2CA1955E2BE2475600CC10F5 /* DeleteCardProtocols.swift in Sources */,
 				62E24BD12BEC81D900F6D82B /* UIDeviceComplete.swift in Sources */,
@@ -3009,10 +3050,12 @@
 				626906B02BE0A8D100BF5F62 /* MyShopsInteractor.swift in Sources */,
 				62730CFD2BEA7285004209B9 /* ScanSuggestionUI.swift in Sources */,
 				626906B12BE0A8D100BF5F62 /* MyShopsView.swift in Sources */,
+				623450CE2BFAFB0A00FE8E71 /* DPDConstants.swift in Sources */,
 				626906B22BE0A8D100BF5F62 /* MyShopsModel.swift in Sources */,
 				62730C4F2BE8853F004209B9 /* LocationTableViewCell.swift in Sources */,
 				626906B32BE0A8D100BF5F62 /* MyShopsWireframe.swift in Sources */,
 				62F6CE422BDE683A00C4775C /* MyCardsProtocols.swift in Sources */,
+				623450CF2BFAFB0A00FE8E71 /* DropDown+Appearance.swift in Sources */,
 				62F6CE432BDE683A00C4775C /* MyCardsInteractor.swift in Sources */,
 				62F6CE442BDE683A00C4775C /* MyCardsView.swift in Sources */,
 				62F6CE452BDE683A00C4775C /* MyCardsModel.swift in Sources */,
@@ -3164,6 +3207,7 @@
 				62214AEA2BD6E17600ABF38E /* OnboardingWireframe.swift in Sources */,
 				62730C662BE89832004209B9 /* LocationsFilterTableViewCell.swift in Sources */,
 				62730C632BE88C67004209B9 /* LocationFilterType.swift in Sources */,
+				623450CD2BFAFB0A00FE8E71 /* DropDownCell.swift in Sources */,
 				62F6CD8B2BDBC69000C4775C /* HomePresenter.swift in Sources */,
 				62F6CE962BDEA40600C4775C /* LanguageTableViewCell.swift in Sources */,
 				62F6CD8C2BDBC69000C4775C /* HomeProtocols.swift in Sources */,
