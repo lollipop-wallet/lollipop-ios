@@ -173,6 +173,9 @@ class DropdownInputField: UIView {
         inputFieldSuplementaryRightButton.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
         }
+        view.snp.makeConstraints { make in
+            make.width.height.equalTo(24)
+        }
         return view
     }()
     
@@ -191,8 +194,9 @@ class DropdownInputField: UIView {
         titleFieldStack.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(12)
             make.trailing.equalToSuperview().offset(-12)
-            make.top.equalToSuperview().offset(14)
-            make.bottom.equalToSuperview().offset(-14)
+            make.centerY.equalToSuperview()
+//            make.top.equalToSuperview().offset(14)
+//            make.bottom.equalToSuperview().offset(-14)
         }
         view.layer.cornerRadius = 8
         view.layer.masksToBounds = true
