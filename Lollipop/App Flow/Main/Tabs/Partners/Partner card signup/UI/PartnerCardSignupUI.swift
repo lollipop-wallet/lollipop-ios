@@ -139,12 +139,14 @@ extension PartnerCardSignupView {
         self.nameField.background = AppColors.white
         self.nameField.leftSuplementaryIconHidden = true
         self.nameField.placeholder = LocalizedTitle.enterNameAndSurname.localized
+        self.nameField.leftSuplementarylabelHidden = true
         
         self.cityField.title = "\(LocalizedTitle.city.localized):"
         self.cityField.errorHidden = true
         self.cityField.background = AppColors.white
         self.cityField.text = LocalizedTitle.choose.localized
         self.cityField.rightSuplementaryIconHidden = false
+        self.cityField.leftSuplementaryIconHidden = true
         //self.cityField.delegate = presenter
         
         self.phonePrefixField.title = "\(LocalizedTitle.phoneNumber.localized):"
@@ -160,13 +162,16 @@ extension PartnerCardSignupView {
         self.phoneField.keyboardType = .phonePad
         self.phoneField.background = AppColors.white
         self.phoneField.leftSuplementaryIconHidden = true
-        self.phoneField.placeholder = "+382"
+        self.phoneField.leftLabelSupplementaryText = "+382"
+        self.phoneField.leftSuplementarylabelHidden = false
         
         self.emailField.title = "\(LocalizedTitle.email.localized):"
         self.emailField.errorHidden = true
         self.emailField.keyboardType = .emailAddress
         self.emailField.background = AppColors.white
         self.emailField.leftSuplementaryIconHidden = true
+        self.emailField.leftSuplementarylabelHidden = true
+        self.emailField.placeholder = "\(LocalizedTitle.enterEmailAddress.localized):"
         
         self.checkBoxIcon.image = UIImage(named: AssetTitles.checkBoxUnselectedIcon)
         

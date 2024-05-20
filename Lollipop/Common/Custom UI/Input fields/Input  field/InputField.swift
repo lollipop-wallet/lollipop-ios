@@ -77,6 +77,16 @@ class InputField: UIView {
         get { return .black }
     }
     
+    open var leftLabelSupplementaryText: String? {
+        set { self.inputFieldSuplementaryLeftLabel.text = newValue ?? "" }
+        get { return "" }
+    }
+    
+    open var leftSuplementarylabelHidden: Bool? {
+        set { self.inputFieldSuplementaryLeftLabel.isHidden = newValue ?? false }
+        get { return true }
+    }
+    
     //MARK: Outlets
     
     lazy var inputTitleLabel: UILabel = {
@@ -117,8 +127,20 @@ class InputField: UIView {
         return textField
     }()
     
+    lazy var inputFieldSuplementaryLeftLabel: UILabel = {
+        let label = UILabel()
+        label.font = .inter(ofSize: 14, name: .regular)
+        label.textColor = AppColors.darkGrey
+        label.textAlignment = .left
+        label.snp.makeConstraints { make in
+            make.height.equalTo(14)
+        }
+        label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        return label
+    }()
+    
     lazy var textFieldStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [inputFieldSuplementaryLeftIcon, textField])
+        let stack = UIStackView(arrangedSubviews: [inputFieldSuplementaryLeftLabel ,inputFieldSuplementaryLeftIcon, textField])
         stack.axis = .horizontal
         stack.distribution = .fill
         stack.alignment = .center

@@ -155,6 +155,7 @@ enum LocalizedTitle: String {
     case photoOrAlbumDescription
     case details
     case seeAllCards
+    case enterEmailAddress
     
     var localized: String {
         return self.rawValue.localized()
