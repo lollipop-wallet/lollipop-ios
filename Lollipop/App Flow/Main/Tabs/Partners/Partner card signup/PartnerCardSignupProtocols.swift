@@ -10,7 +10,7 @@ import Foundation
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PartnerCardSignupPresenterProtocol: DropdownInputFieldProtocol {
+protocol PartnerCardSignupPresenterProtocol: DropdownInputFieldProtocol, DropdownProtocol {
     
     var interactor: PartnerCardSignupInputInteractorProtocol? { get set }
     var view: PartnerCardSignupViewProtocol? { get set }

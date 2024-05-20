@@ -232,7 +232,8 @@ extension PartnerCardSignupView {
         self.phoneCodeDropDown.direction = .bottom
         self.phoneCodeDropDown.backgroundColor = AppColors.white
         self.phoneCodeDropDown.cornerRadius = 8
-        self.phoneCodeDropDown.dismissMode = .manual
+        self.phoneCodeDropDown.dismissMode = .onTap
+        self.phoneCodeDropDown.delegate = presenter
         
         let datasource = ["dwa", "dwa","dwa","dwa","dwa","dwa"]
         self.phoneCodeDropDown.dataSource = datasource

@@ -43,7 +43,8 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
     //MARK: PartnerCardSignupView protocol
     func setupAndOpenPhonePrefixDropdown(){        
         self.phoneCodeDropDown.show()
-        self.phonePrefixField.isDropdownHidden = false
+        self.phonePrefixField.borderWidth = 2
+        self.phonePrefixField.borderColor = AppColors.link
     }
     
     func hidePrefixDropdown(){

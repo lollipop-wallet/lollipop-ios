@@ -14,7 +14,6 @@ class PartnerCardSignupPresenter: NSObject, PartnerCardSignupPresenterProtocol  
     var wireframe: PartnerCardSignupWireframeProtocol?
     
     func handleDropDownTap(){
-        view?.hidePrefixDropdown()
     }
 }
 
@@ -25,11 +24,18 @@ extension PartnerCardSignupPresenter: PartnerCardSignupOutputInteractorProtocol 
 //MARK: Input field protocols
 extension PartnerCardSignupPresenter {
     func showHideDropdown(isHidden: Bool) {
-        print("Sakriven: ", isHidden ? "Jeste" : "Nije")
-        if isHidden {
-            view?.setupAndOpenPhonePrefixDropdown()
-        }else{
-            view?.hidePrefixDropdown()
-        }
+        view?.setupAndOpenPhonePrefixDropdown()
+    }
+}
+
+
+//MARK: Dropdown protocol
+extension PartnerCardSignupPresenter {
+    func dropDownHidden() {
+        view?.hidePrefixDropdown()
+    }
+    
+    func dropDownShown() {
+        view?.setupAndOpenPhonePrefixDropdown()
     }
 }
