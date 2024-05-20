@@ -56,6 +56,26 @@ class DropdownInputField: UIView {
         get { return true }
     }
     
+    open var leftSuplementaryDefaultIcon: UIImage? {
+        set { self.inputFieldSuplementaryLeftIcon.image = newValue ?? UIImage() }
+        get { return UIImage() }
+    }
+    
+    open var leftSuplementaryIcon: String? {
+        set { self.inputFieldSuplementaryLeftIcon.imageFromURL(url: newValue ?? "") }
+        get { return "" }
+    }
+    
+    open var leftSuplementaryIconTintColor: UIColor? {
+        set { self.inputFieldSuplementaryLeftIcon.tintColor = newValue ?? AppColors.mediumGrey }
+        get { return AppColors.mediumGrey }
+    }
+    
+    open var leftSuplementaryIconHidden: Bool? {
+        set { self.inputFieldSuplementaryLeftIcon.isHidden = newValue ?? false }
+        get { return true }
+    }
+    
     open var textColor: UIColor? {
         set { self.inputLabel.textColor = newValue ?? AppColors.mediumGrey }
         get { return AppColors.mediumGrey }
@@ -126,6 +146,17 @@ class DropdownInputField: UIView {
         return imageView
     }()
     
+    lazy var inputFieldSuplementaryLeftIcon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.snp.makeConstraints { make in
+            make.width.height.equalTo(32)
+        }
+        imageView.layer.cornerRadius = 16
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
+    
     lazy var inputFieldSuplementaryRightButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(onSuplementaryButtonTap), for: .touchUpInside)
@@ -146,7 +177,7 @@ class DropdownInputField: UIView {
     }()
     
     lazy var titleFieldStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [inputLabel, inputFieldSuplementaryRightView])
+        let stack = UIStackView(arrangedSubviews: [inputFieldSuplementaryLeftIcon, inputLabel, inputFieldSuplementaryRightView])
         stack.axis = .horizontal
         stack.distribution = .fill
         stack.alignment = .center

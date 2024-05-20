@@ -150,9 +150,9 @@ extension PartnerCardSignupView {
         self.phonePrefixField.title = "\(LocalizedTitle.phoneNumber.localized):"
         self.phonePrefixField.errorHidden = true
         self.phonePrefixField.background = AppColors.white
-        self.phonePrefixField.text = LocalizedTitle.choose.localized
         self.phonePrefixField.rightSuplementaryIconHidden = false
-        //self.phonePrefixField.isDropdownHidden = true
+        self.phonePrefixField.leftSuplementaryIconHidden = false
+        self.phonePrefixField.leftSuplementaryDefaultIcon = UIImage(named: AssetTitles.flagMneIcon)
         self.phonePrefixField.delegate = presenter
         
         self.phoneField.title = " "
