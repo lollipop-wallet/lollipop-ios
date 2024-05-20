@@ -301,21 +301,18 @@
 		628AA6AD2BFB61C8009A3077 /* NewUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6A62BFB61C8009A3077 /* NewUserModel.swift */; };
 		628AA6AE2BFB61C8009A3077 /* NewUserWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6A72BFB61C8009A3077 /* NewUserWireframe.swift */; };
 		628AA6B12BFB61D9009A3077 /* NewUserUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6B02BFB61D9009A3077 /* NewUserUI.swift */; };
-		628AA6BA2BFB65CA009A3077 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 628AA6B32BFB65CA009A3077 /* Login.storyboard */; };
 		628AA6BB2BFB65CA009A3077 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6B42BFB65CA009A3077 /* LoginPresenter.swift */; };
 		628AA6BC2BFB65CA009A3077 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6B52BFB65CA009A3077 /* LoginProtocols.swift */; };
 		628AA6BD2BFB65CA009A3077 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6B62BFB65CA009A3077 /* LoginInteractor.swift */; };
 		628AA6BE2BFB65CA009A3077 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6B72BFB65CA009A3077 /* LoginView.swift */; };
 		628AA6BF2BFB65CA009A3077 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6B82BFB65CA009A3077 /* LoginModel.swift */; };
 		628AA6C02BFB65CA009A3077 /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6B92BFB65CA009A3077 /* LoginWireframe.swift */; };
-		628AA6C92BFB65E2009A3077 /* ForgotPwdEmail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 628AA6C22BFB65E2009A3077 /* ForgotPwdEmail.storyboard */; };
 		628AA6CA2BFB65E2009A3077 /* ForgotPwdEmailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6C32BFB65E2009A3077 /* ForgotPwdEmailPresenter.swift */; };
 		628AA6CB2BFB65E2009A3077 /* ForgotPwdEmailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6C42BFB65E2009A3077 /* ForgotPwdEmailProtocols.swift */; };
 		628AA6CC2BFB65E2009A3077 /* ForgotPwdEmailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6C52BFB65E2009A3077 /* ForgotPwdEmailInteractor.swift */; };
 		628AA6CD2BFB65E2009A3077 /* ForgotPwdEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6C62BFB65E2009A3077 /* ForgotPwdEmailView.swift */; };
 		628AA6CE2BFB65E2009A3077 /* ForgotPwdEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6C72BFB65E2009A3077 /* ForgotPwdEmailModel.swift */; };
 		628AA6CF2BFB65E2009A3077 /* ForgotPwdEmailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6C82BFB65E2009A3077 /* ForgotPwdEmailWireframe.swift */; };
-		628AA6D82BFB6600009A3077 /* NewPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 628AA6D12BFB6600009A3077 /* NewPassword.storyboard */; };
 		628AA6D92BFB6600009A3077 /* NewPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6D22BFB6600009A3077 /* NewPasswordPresenter.swift */; };
 		628AA6DA2BFB6600009A3077 /* NewPasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6D32BFB6600009A3077 /* NewPasswordProtocols.swift */; };
 		628AA6DB2BFB6600009A3077 /* NewPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6D42BFB6600009A3077 /* NewPasswordInteractor.swift */; };
@@ -770,21 +767,18 @@
 		628AA6A62BFB61C8009A3077 /* NewUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserModel.swift; sourceTree = "<group>"; };
 		628AA6A72BFB61C8009A3077 /* NewUserWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserWireframe.swift; sourceTree = "<group>"; };
 		628AA6B02BFB61D9009A3077 /* NewUserUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserUI.swift; sourceTree = "<group>"; };
-		628AA6B32BFB65CA009A3077 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		628AA6B42BFB65CA009A3077 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		628AA6B52BFB65CA009A3077 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		628AA6B62BFB65CA009A3077 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		628AA6B72BFB65CA009A3077 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		628AA6B82BFB65CA009A3077 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		628AA6B92BFB65CA009A3077 /* LoginWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
-		628AA6C22BFB65E2009A3077 /* ForgotPwdEmail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPwdEmail.storyboard; sourceTree = "<group>"; };
 		628AA6C32BFB65E2009A3077 /* ForgotPwdEmailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwdEmailPresenter.swift; sourceTree = "<group>"; };
 		628AA6C42BFB65E2009A3077 /* ForgotPwdEmailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwdEmailProtocols.swift; sourceTree = "<group>"; };
 		628AA6C52BFB65E2009A3077 /* ForgotPwdEmailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwdEmailInteractor.swift; sourceTree = "<group>"; };
 		628AA6C62BFB65E2009A3077 /* ForgotPwdEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwdEmailView.swift; sourceTree = "<group>"; };
 		628AA6C72BFB65E2009A3077 /* ForgotPwdEmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwdEmailModel.swift; sourceTree = "<group>"; };
 		628AA6C82BFB65E2009A3077 /* ForgotPwdEmailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwdEmailWireframe.swift; sourceTree = "<group>"; };
-		628AA6D12BFB6600009A3077 /* NewPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPassword.storyboard; sourceTree = "<group>"; };
 		628AA6D22BFB6600009A3077 /* NewPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordPresenter.swift; sourceTree = "<group>"; };
 		628AA6D32BFB6600009A3077 /* NewPasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordProtocols.swift; sourceTree = "<group>"; };
 		628AA6D42BFB6600009A3077 /* NewPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordInteractor.swift; sourceTree = "<group>"; };
@@ -2220,7 +2214,6 @@
 		628AA6B22BFB65BC009A3077 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				628AA6B32BFB65CA009A3077 /* Login.storyboard */,
 				628AA6B42BFB65CA009A3077 /* LoginPresenter.swift */,
 				628AA6B52BFB65CA009A3077 /* LoginProtocols.swift */,
 				628AA6B62BFB65CA009A3077 /* LoginInteractor.swift */,
@@ -2234,7 +2227,6 @@
 		628AA6C12BFB65CE009A3077 /* Forgot password email */ = {
 			isa = PBXGroup;
 			children = (
-				628AA6C22BFB65E2009A3077 /* ForgotPwdEmail.storyboard */,
 				628AA6C32BFB65E2009A3077 /* ForgotPwdEmailPresenter.swift */,
 				628AA6C42BFB65E2009A3077 /* ForgotPwdEmailProtocols.swift */,
 				628AA6C52BFB65E2009A3077 /* ForgotPwdEmailInteractor.swift */,
@@ -2248,7 +2240,6 @@
 		628AA6D02BFB65E7009A3077 /* New password */ = {
 			isa = PBXGroup;
 			children = (
-				628AA6D12BFB6600009A3077 /* NewPassword.storyboard */,
 				628AA6D22BFB6600009A3077 /* NewPasswordPresenter.swift */,
 				628AA6D32BFB6600009A3077 /* NewPasswordProtocols.swift */,
 				628AA6D42BFB6600009A3077 /* NewPasswordInteractor.swift */,
@@ -2881,13 +2872,10 @@
 				62214AFD2BD6E3C500ABF38E /* Inter-Black.ttf in Resources */,
 				2CACCD352BD51C83008178F8 /* Assets.xcassets in Resources */,
 				62214AFC2BD6E3C500ABF38E /* Inter-Bold.ttf in Resources */,
-				628AA6D82BFB6600009A3077 /* NewPassword.storyboard in Resources */,
-				628AA6C92BFB65E2009A3077 /* ForgotPwdEmail.storyboard in Resources */,
 				2CACCDA02BD530A5008178F8 /* Localizable.strings in Resources */,
 				2CACCD382BD51C83008178F8 /* Base in Resources */,
 				62214AFA2BD6E3C500ABF38E /* Inter-Regular.ttf in Resources */,
 				62214AF82BD6E3C500ABF38E /* Inter-ExtraLight.ttf in Resources */,
-				628AA6BA2BFB65CA009A3077 /* Login.storyboard in Resources */,
 				62214B002BD6E3C500ABF38E /* Inter-Medium.ttf in Resources */,
 				62214AFF2BD6E3C500ABF38E /* Inter-Light.ttf in Resources */,
 				623450D22BFAFB0A00FE8E71 /* DropDownCell.xib in Resources */,
