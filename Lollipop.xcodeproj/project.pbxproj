@@ -14,6 +14,7 @@
 		2C3ACCD62BFC666C0030907E /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ACCD12BFC666C0030907E /* APIRouter.swift */; };
 		2C3ACCD82BFC6B6B0030907E /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ACCD72BFC6B6B0030907E /* ConfigModel.swift */; };
 		2C3ACCDA2BFC75A40030907E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ACCD92BFC75A40030907E /* Config.swift */; };
+		2C3ACCDD2BFCD3110030907E /* LoginUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ACCDC2BFCD3110030907E /* LoginUI.swift */; };
 		2C4EE5F22BE3823800F16FD8 /* AddCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F12BE3823800F16FD8 /* AddCardComponent.swift */; };
 		2C4EE5F52BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */; };
 		2C4EE5F82BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */; };
@@ -478,6 +479,7 @@
 		2C3ACCD12BFC666C0030907E /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		2C3ACCD72BFC6B6B0030907E /* ConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModel.swift; sourceTree = "<group>"; };
 		2C3ACCD92BFC75A40030907E /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		2C3ACCDC2BFCD3110030907E /* LoginUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUI.swift; sourceTree = "<group>"; };
 		2C4EE5F12BE3823800F16FD8 /* AddCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardComponent.swift; sourceTree = "<group>"; };
 		2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardHomeTableViewCell.swift; sourceTree = "<group>"; };
 		2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewCell.swift; sourceTree = "<group>"; };
@@ -964,6 +966,14 @@
 				2C3ACCD12BFC666C0030907E /* APIRouter.swift */,
 			);
 			path = "API layer";
+			sourceTree = "<group>";
+		};
+		2C3ACCDB2BFCD30A0030907E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2C3ACCDC2BFCD3110030907E /* LoginUI.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		2C4EE5EE2BE36D7000F16FD8 /* Home */ = {
@@ -2249,6 +2259,7 @@
 				628AA6B72BFB65CA009A3077 /* LoginView.swift */,
 				628AA6B82BFB65CA009A3077 /* LoginModel.swift */,
 				628AA6B92BFB65CA009A3077 /* LoginWireframe.swift */,
+				2C3ACCDB2BFCD30A0030907E /* UI */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -3090,6 +3101,7 @@
 				62F6CE782BDE6DF600C4775C /* TermsProtocols.swift in Sources */,
 				62F6CE792BDE6DF600C4775C /* TermsInteractor.swift in Sources */,
 				62F6CE7A2BDE6DF600C4775C /* TermsView.swift in Sources */,
+				2C3ACCDD2BFCD3110030907E /* LoginUI.swift in Sources */,
 				62F6CE7B2BDE6DF600C4775C /* TermsModel.swift in Sources */,
 				62F6CE7C2BDE6DF600C4775C /* TermsWireframe.swift in Sources */,
 				2CACCDA82BD53265008178F8 /* FirebaseEvents.swift in Sources */,
