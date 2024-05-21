@@ -16,6 +16,13 @@ class LoginPresenter: NSObject, LoginPresenterProtocol  {
     func register() {
         wireframe?.toNewUser()
     }
+    
+    func login(email: String, password: String){
+        guard !email.isEmpty, !password.isEmpty else {
+            view?.validate(isEmailEmpty: email.isEmpty, isPwdEmpty: password.isEmpty)
+            return
+        }
+    }
 }
 
 extension LoginPresenter: LoginOutputInteractorProtocol {

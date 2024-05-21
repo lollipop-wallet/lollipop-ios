@@ -36,6 +36,13 @@ class LoginView: UIViewController, LoginViewProtocol {
         self.passwordField.rightSuplementaryIcon = UIImage(named: (self.passwordField.isSecureTextEntry ?? false) ? AssetTitles.passwordShownIcon : AssetTitles.passwordHiddenIcon)
     }
     
+    func validate(isEmailEmpty: Bool, isPwdEmpty: Bool){
+        self.emailField.borderWidth = 1
+        self.emailField.borderColor = isEmailEmpty ? AppColors.error : AppColors.black
+        self.passwordField.borderWidth = 1
+        self.passwordField.borderColor = isPwdEmpty ? AppColors.error : AppColors.black
+    }
+    
     //MARK: Actions
     
     @objc func onBackTap() {
@@ -46,7 +53,7 @@ class LoginView: UIViewController, LoginViewProtocol {
     }
 
     @objc func onProceedTap() {
-        //presenter?.proceed()
+        presenter?.login(email: self.emailField.textField.text ?? "", password: self.passwordField.textField.text ?? "")
     }
     
     @objc func onNoLollyAccountButtonTap() {

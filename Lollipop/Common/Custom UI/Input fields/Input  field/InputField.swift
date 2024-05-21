@@ -102,6 +102,16 @@ class InputField: UIView {
         get { return true }
     }
     
+    open var borderColor: UIColor? {
+        set { self.textFieldPlaceholder.layer.borderColor = newValue?.cgColor ?? AppColors.mediumGrey.cgColor }
+        get { return AppColors.mediumGrey }
+    }
+    
+    open var borderWidth: CGFloat? {
+        set { self.textFieldPlaceholder.layer.borderWidth = newValue ?? 1.0 }
+        get { return 1.0 }
+    }
+    
     open var delegate: InputFieldProtocol?
     //MARK: Outlets
     

@@ -17,6 +17,7 @@ protocol LoginPresenterProtocol: InputFieldProtocol {
     var wireframe:LoginWireframeProtocol? { get set }
     
     func register()
+    func login(email: String, password: String)
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -37,6 +38,7 @@ protocol LoginViewProtocol: AnyObject {
     
     var presenter: LoginPresenterProtocol?  { get set }
     func setShowHidePassword()
+    func validate(isEmailEmpty: Bool, isPwdEmpty: Bool)
 }
 //MARK: Wireframe
 protocol LoginWireframeProtocol: AnyObject {
