@@ -12,4 +12,8 @@ import UIKit
 class LaunchInteractor: LaunchInputInteractorProtocol {
     
     weak var presenter: LaunchOutputInteractorProtocol?
+    
+    func getConfig(){
+        
+    }
 }

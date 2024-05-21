@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -23,13 +24,13 @@ protocol LaunchPresenterProtocol: AnyObject {
 protocol LaunchInputInteractorProtocol: AnyObject {
     
     var presenter: LaunchOutputInteractorProtocol?  { get set }
-    
+    func getConfig()
    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol LaunchOutputInteractorProtocol: AnyObject {
-    
+    func parseConfigData(result: Result<ConfigModel, AFError>)
 
 }
 //MARK: View
