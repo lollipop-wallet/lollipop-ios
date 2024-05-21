@@ -161,6 +161,8 @@ enum LocalizedTitle: String {
     case notice
     case unknownError
     case forgottenPwd
+    case noLollypopAccount
+    case register
     
     var localized: String {
         return self.rawValue.localized()

@@ -43,5 +43,9 @@ class LoginView: UIViewController, LoginViewProtocol {
     @objc func onProceedTap() {
         //presenter?.proceed()
     }
+    
+    @objc func onNoLollyAccountButtonTap() {
+        
+    }
 
 }

@@ -150,3 +150,5 @@
 "notice" = "Notice";
 "unknownError" = "An unknown error has occurred";
 "forgottenPwd" = "Forgotten password?";
+"noLollypopAccount" = "No Lollypop account?";
+"register" = "Register";

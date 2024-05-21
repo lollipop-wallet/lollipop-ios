@@ -149,3 +149,5 @@
 "notice" = "Obavještenje";
 "unknownError" = "Desila se nepoznata greška";
 "forgottenPwd" = "Zaboravljena šifra?";
+"noLollypopAccount" = "Nemate nalog na Lollypop-u?";
+"register" = "Registrujte se";

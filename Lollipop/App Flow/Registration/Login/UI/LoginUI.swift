@@ -74,6 +74,77 @@ extension LoginView {
             button.layer.masksToBounds = true
             return button
         }()
+        
+        lazy var noLollyAccountLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .regular)
+            label.textColor = AppColors.black
+            label.text = LocalizedTitle.noLollypopAccount.localized
+            label.textAlignment = .left
+            return label
+        }()
+        
+        lazy var registerLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .bold)
+            label.textColor = AppColors.link
+            label.text = LocalizedTitle.register.localized
+            label.textAlignment = .left
+            return label
+        }()
+        
+        lazy var noLollyAccountTextStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [noLollyAccountLabel, registerLabel])
+            stack.axis = .vertical
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.spacing = 4
+            return stack
+        }()
+        
+        lazy var arrowIcon: UIImageView = {
+            let image = UIImageView()
+            image.image = UIImage(named: AssetTitles.arrowRightIcon)
+            image.snp.makeConstraints { make in
+                make.width.height.equalTo(24)
+            }
+            image.tintColor = AppColors.black
+            return image
+        }()
+        
+        lazy var noLollyAccountMainStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [noLollyAccountTextStack, arrowIcon])
+            stack.axis = .horizontal
+            stack.alignment = .center
+            stack.distribution = .fill
+            stack.spacing = 8
+            return stack
+        }()
+        
+        lazy var noLollyAccountButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onNoLollyAccountButtonTap), for: .touchUpInside)
+            return button
+        }()
+
+        lazy var noLollyAccountPlaceholderView: UIView = {
+            let view = UIView()
+            view.backgroundColor = AppColors.brandPowder
+            view.layer.cornerRadius = 16
+            view.layer.masksToBounds = true
+            view.addSubview(noLollyAccountMainStack)
+            noLollyAccountMainStack.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(12)
+                make.trailing.equalToSuperview().offset(-12)
+                make.top.equalToSuperview().offset(16)
+                make.bottom.equalToSuperview().offset(-16)
+            }
+            view.addSubview(noLollyAccountButton)
+            noLollyAccountButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
+            return view
+        }()
 
         self.view.addSubview(mainStack)
         mainStack.snp.makeConstraints { make in
@@ -95,6 +166,14 @@ extension LoginView {
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(forgottenPwdButton.snp.bottom).offset(32)
             make.height.equalTo(48)
+        }
+        
+        self.view.addSubview(noLollyAccountPlaceholderView)
+        noLollyAccountPlaceholderView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(proceedButton.snp.bottom).offset(32)
+            make.height.equalTo(74)
         }
     }
 }
