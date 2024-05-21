@@ -8,9 +8,9 @@
 import Foundation
 
 struct ConfigModel: Codable {
-    let genders: [String]
-    let cities: [String]
-    let languages: [Language]
+    var genders: [String]?
+    var cities: [String]?
+    var languages: [Language]?
 }
 
 struct Language: Codable {
