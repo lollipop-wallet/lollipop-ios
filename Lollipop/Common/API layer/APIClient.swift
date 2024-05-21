@@ -26,7 +26,7 @@ class APIClient {
     private static func performRequest<T:Decodable>(route:APIRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T, AFError>)->Void) -> DataRequest {
         if !Connectivity.isConnectedToInternet(){
             UIApplication.root().view.hideSpinner()
-            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning, text: Titles.checkInternet, shouldDismiss: false)
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: LocalizedTitle.noInternet.localized, shouldDismiss: false)
             return sharedClient.APISession.request("")
         }
           return sharedClient.APISession.request(route)
@@ -41,7 +41,7 @@ class APIClient {
                 case 401:
                     print("Unknown")
                 case 403, 404, 500:
-                    Alert().alertMessageNoNavigator(title: Titles.notice, text: Titles.unknownError, shouldDismiss: false)
+                    Alert().alertMessageNoNavigator(title: LocalizedTitle.notice.localized, text: LocalizedTitle.unknownError.localized, shouldDismiss: false)
                     UIApplication.root().view.hideSpinner()
                     print("Unknown")
                 default:
@@ -53,7 +53,7 @@ class APIClient {
       }
         
    //MARK: API methods
-     static func getconfig(completion:@escaping (Result<SubscribeModel, AFError>)->Void){
+     static func getconfig(completion:@escaping (Result<ConfigModel, AFError>)->Void){
          performRequest(route: APIRouter.getconfig, completion: completion)
      }
     
