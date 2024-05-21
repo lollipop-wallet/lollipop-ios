@@ -26,7 +26,6 @@ class MainPresenter: MainPresenterProtocol  {
         vc2.navigationController?.title = LocalizedTitle.partners.localized
         let vc2Nav = UINavigationController(rootViewController: vc2)
         vc2Nav.isNavigationBarHidden = false
-        
         let vc3 = UIViewController()
         vc3.tabBarItem = UITabBarItem(title: "", image: nil, selectedImage: nil)
         let vc3Nav = UINavigationController(rootViewController: vc3)
@@ -44,7 +43,13 @@ class MainPresenter: MainPresenterProtocol  {
         let vc5Nav = UINavigationController(rootViewController: vc5)
         vc5Nav.isNavigationBarHidden = false
         
-        view?.setControllersWith(vcs: [vc1Nav, vc2Nav, vc3Nav, vc4Nav, vc5Nav])
+        let vc6 = SignInView()
+        vc6.tabBarItem = UITabBarItem(title: LocalizedTitle.profile.localized, image: UIImage(named: AssetTitles.profileUnselectedIcon), selectedImage: UIImage(named: AssetTitles.profileSelectedIcon))
+        vc5.navigationController?.title = LocalizedTitle.profile.localized
+        let vc6Nav = UINavigationController(rootViewController: vc6)
+        vc5Nav.isNavigationBarHidden = false
+        
+        view?.setControllersWith(vcs: [vc1Nav, vc2Nav, vc3Nav, vc4Nav, Manager.isRegistered ? vc5Nav : vc6Nav])
     }
     
     func scan() {

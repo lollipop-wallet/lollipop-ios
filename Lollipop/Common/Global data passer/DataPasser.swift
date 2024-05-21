@@ -12,4 +12,5 @@ struct Manager {
     static var userIMEI = String()
     static var sessionsCount = Int()
     static var selectedLanguageCode = String()
+    static var isRegistered = Bool()
 }

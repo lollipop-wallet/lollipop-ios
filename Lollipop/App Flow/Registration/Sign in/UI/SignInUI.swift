@@ -31,10 +31,26 @@ extension SignInView {
         
         lazy var lollipopLabel: UILabel = {
             let label = UILabel()
-            label.font = .inter(ofSize: 24, name: .bold)
+            label.font = .inter(ofSize: 16, name: .semibold)
             label.text = LocalizedTitle.lollipop.localized.uppercased()
-            label.textAlignment = .left
+            label.textAlignment = .center
+            label.textColor = AppColors.white
             return label
+        }()
+        
+        lazy var lollypopPlaceholder: UIView = {
+            let view = UIView()
+            view.addSubview(lollipopLabel)
+            lollipopLabel.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(16)
+                make.top.equalToSuperview().offset(8)
+                make.trailing.equalToSuperview().offset(-16)
+                make.bottom.equalToSuperview().offset(-8)
+            }
+            view.backgroundColor = AppColors.brandSecondary.withAlphaComponent(0.5)
+            view.layer.cornerRadius = 16
+            view.layer.masksToBounds = true
+            return view
         }()
         
         lazy var lollipopStack: UIStackView = {
@@ -362,18 +378,19 @@ extension SignInView {
             make.bottom.equalTo(separatorStack.snp.top).offset(-16)
         }
         
-        self.view.addSubview(closeButton)
-        closeButton.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(24)
-            make.top.equalToSuperview().offset(60)
-            make.width.height.equalTo(48)
-        }
+//        self.view.addSubview(closeButton)
+//        closeButton.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(24)
+//            make.top.equalToSuperview().offset(60)
+//            make.width.height.equalTo(48)
+//        }
         
-        self.view.addSubview(lollipopStack)
-        lollipopStack.snp.makeConstraints { make in
+        self.view.addSubview(lollypopPlaceholder)
+        lollypopPlaceholder.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(60)
             make.centerX.equalToSuperview()
-            make.centerY.equalTo(closeButton)
+            make.width.equalTo(115)
+            make.height.equalTo(36)
         }
     }
     
