@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class LoginPresenter: LoginPresenterProtocol  {
+class LoginPresenter: NSObject, LoginPresenterProtocol  {
     
     var interactor : LoginInputInteractorProtocol?
     weak var view: LoginViewProtocol?
@@ -17,4 +17,11 @@ class LoginPresenter: LoginPresenterProtocol  {
 
 extension LoginPresenter: LoginOutputInteractorProtocol {
     
+}
+
+//MARK: InputField Delegate
+extension LoginPresenter {
+    func showHidePassword() {
+        view?.setShowHidePassword()
+    }
 }

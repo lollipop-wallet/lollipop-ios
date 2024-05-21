@@ -10,7 +10,7 @@ import Foundation
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol LoginPresenterProtocol: AnyObject {
+protocol LoginPresenterProtocol: InputFieldProtocol {
     
     var interactor: LoginInputInteractorProtocol? { get set }
     var view: LoginViewProtocol? { get set }
@@ -35,7 +35,7 @@ protocol LoginOutputInteractorProtocol: AnyObject {
 protocol LoginViewProtocol: AnyObject {
     
     var presenter: LoginPresenterProtocol?  { get set }
-    
+    func setShowHidePassword()
 }
 //MARK: Wireframe
 protocol LoginWireframeProtocol: AnyObject {

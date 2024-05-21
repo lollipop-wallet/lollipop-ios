@@ -15,6 +15,7 @@
 		2C3ACCD82BFC6B6B0030907E /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ACCD72BFC6B6B0030907E /* ConfigModel.swift */; };
 		2C3ACCDA2BFC75A40030907E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ACCD92BFC75A40030907E /* Config.swift */; };
 		2C3ACCDD2BFCD3110030907E /* LoginUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ACCDC2BFCD3110030907E /* LoginUI.swift */; };
+		2C3ACCDF2BFCE1570030907E /* InputFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ACCDE2BFCE1570030907E /* InputFieldProtocols.swift */; };
 		2C4EE5F22BE3823800F16FD8 /* AddCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F12BE3823800F16FD8 /* AddCardComponent.swift */; };
 		2C4EE5F52BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */; };
 		2C4EE5F82BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */; };
@@ -480,6 +481,7 @@
 		2C3ACCD72BFC6B6B0030907E /* ConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModel.swift; sourceTree = "<group>"; };
 		2C3ACCD92BFC75A40030907E /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		2C3ACCDC2BFCD3110030907E /* LoginUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUI.swift; sourceTree = "<group>"; };
+		2C3ACCDE2BFCE1570030907E /* InputFieldProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldProtocols.swift; sourceTree = "<group>"; };
 		2C4EE5F12BE3823800F16FD8 /* AddCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardComponent.swift; sourceTree = "<group>"; };
 		2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardHomeTableViewCell.swift; sourceTree = "<group>"; };
 		2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewCell.swift; sourceTree = "<group>"; };
@@ -2182,6 +2184,7 @@
 			isa = PBXGroup;
 			children = (
 				627E92BD2BD847BB0016FF73 /* InputField.swift */,
+				2C3ACCDE2BFCE1570030907E /* InputFieldProtocols.swift */,
 			);
 			path = "Input  field";
 			sourceTree = "<group>";
@@ -3017,6 +3020,7 @@
 				628AA6B12BFB61D9009A3077 /* NewUserUI.swift in Sources */,
 				62F6CE532BDE6BBA00C4775C /* AboutPresenter.swift in Sources */,
 				2CBA7B3E2BE639AA00C31FCD /* WalletCardShopTableViewCell.swift in Sources */,
+				2C3ACCDF2BFCE1570030907E /* InputFieldProtocols.swift in Sources */,
 				62F6CE542BDE6BBA00C4775C /* AboutProtocols.swift in Sources */,
 				62F6CE552BDE6BBA00C4775C /* AboutInteractor.swift in Sources */,
 				62F6CE562BDE6BBA00C4775C /* AboutView.swift in Sources */,

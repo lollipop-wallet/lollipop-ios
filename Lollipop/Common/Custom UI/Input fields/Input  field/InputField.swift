@@ -69,7 +69,7 @@ class InputField: UIView {
     
     open var isSecureTextEntry: Bool? {
         set { self.textField.isSecureTextEntry = newValue ?? false }
-        get { return false }
+        get { return !self.textField.isSecureTextEntry }
     }
     
     open var leftSuplementaryIconTint: UIColor? {
@@ -102,6 +102,7 @@ class InputField: UIView {
         get { return true }
     }
     
+    open var delegate: InputFieldProtocol?
     //MARK: Outlets
     
     lazy var inputTitleLabel: UILabel = {
@@ -240,8 +241,7 @@ class InputField: UIView {
     //MARK: Actions
     
     @objc func onSuplementaryButtonTap() {
-        //MARK: Delegat da se postavi date picker
-       // delegate?.showCalendar()
+        delegate?.showHidePassword()
     }
     
 }

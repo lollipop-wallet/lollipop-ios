@@ -30,6 +30,12 @@ class LoginView: UIViewController, LoginViewProtocol {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    //MARK: LoginView protocol
+    func setShowHidePassword(){
+        self.passwordField.isSecureTextEntry = (self.passwordField.isSecureTextEntry ?? false)
+        self.passwordField.rightSuplementaryIcon = UIImage(named: (self.passwordField.isSecureTextEntry ?? false) ? AssetTitles.passwordShownIcon : AssetTitles.passwordHiddenIcon)
+    }
+    
     //MARK: Actions
     
     @objc func onBackTap() {
@@ -37,7 +43,6 @@ class LoginView: UIViewController, LoginViewProtocol {
     }
     
     @objc func onForgotPwdTap() {
-        
     }
 
     @objc func onProceedTap() {

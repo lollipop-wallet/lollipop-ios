@@ -46,6 +46,7 @@ extension LoginView {
         self.passwordField.isSecureTextEntry = true
         self.passwordField.rightSuplementaryIconHidden = false
         self.passwordField.rightSuplementaryIcon = UIImage(named: AssetTitles.passwordHiddenIcon)
+        self.passwordField.delegate = presenter
         
         lazy var mainStack: UIStackView = {
             let stack = UIStackView(arrangedSubviews: [self.emailField, self.passwordField])
