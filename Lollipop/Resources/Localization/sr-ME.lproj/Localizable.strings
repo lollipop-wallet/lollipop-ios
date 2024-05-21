@@ -151,3 +151,5 @@
 "forgottenPwd" = "Zaboravljena šifra?";
 "noLollypopAccount" = "Nemate nalog na Lollypop-u?";
 "register" = "Registrujte se";
+"cityYouLiveIn" = "Grad u kome živite";
+"alreadyHaveAnAccount" = "Već imate nalog na Lollypop-u?";

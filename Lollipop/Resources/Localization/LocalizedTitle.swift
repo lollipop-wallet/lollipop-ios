@@ -163,6 +163,8 @@ enum LocalizedTitle: String {
     case forgottenPwd
     case noLollypopAccount
     case register
+    case cityYouLiveIn
+    case alreadyHaveAnAccount
     
     var localized: String {
         return self.rawValue.localized()

@@ -152,3 +152,5 @@
 "forgottenPwd" = "Forgotten password?";
 "noLollypopAccount" = "No Lollypop account?";
 "register" = "Register";
+"cityYouLiveIn" = "City you live in";
+"alreadyHaveAnAccount" = "You already have a Lollypop account?";

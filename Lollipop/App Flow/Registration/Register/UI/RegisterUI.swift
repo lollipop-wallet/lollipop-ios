@@ -36,18 +36,24 @@ extension RegisterView {
         self.nameField.keyboardType = .default
         self.nameField.background = AppColors.white
         self.nameField.leftSuplementaryIconHidden = true
+        self.nameField.rightSuplementaryIconHidden = true
+        self.nameField.leftSuplementarylabelHidden = true
         
         self.surnameField.title = "\(LocalizedTitle.surname.localized):"
         self.surnameField.errorHidden = true
         self.surnameField.keyboardType = .default
         self.surnameField.background = AppColors.white
         self.surnameField.leftSuplementaryIconHidden = true
-
+        self.surnameField.rightSuplementaryIconHidden = true
+        self.surnameField.leftSuplementarylabelHidden = true
+        
         self.emailField.title = "\(LocalizedTitle.email.localized):"
         self.emailField.errorHidden = true
         self.emailField.keyboardType = .emailAddress
         self.emailField.background = AppColors.white
         self.emailField.leftSuplementaryIconHidden = true
+        self.emailField.leftSuplementarylabelHidden = true
+        self.emailField.rightSuplementaryIconHidden = true
         
         self.calendarField.title = "\(LocalizedTitle.dateOfBirh.localized):"
         self.calendarField.errorHidden = true
@@ -68,6 +74,7 @@ extension RegisterView {
         self.genderField.background = AppColors.white
         self.genderField.text = LocalizedTitle.choose.localized
         self.genderField.rightSuplementaryIconHidden = false
+        self.genderField.leftSuplementaryIconHidden = true
         self.genderField.delegate = presenter
         
         lazy var midStack: UIStackView = {
@@ -98,11 +105,12 @@ extension RegisterView {
         self.datePickerStackView.alignment = .fill
         self.datePickerStackView.isHidden = true
         
-        self.cityField.title = "\(LocalizedTitle.city.localized)(\(LocalizedTitle.optional.localized):"
+        self.cityField.title = "\(LocalizedTitle.cityYouLiveIn.localized) (\(LocalizedTitle.optional.localized)):"
         self.cityField.errorHidden = true
         self.cityField.background = AppColors.white
         self.cityField.text = LocalizedTitle.choose.localized
         self.cityField.rightSuplementaryIconHidden = false
+        self.cityField.leftSuplementaryIconHidden = true
         self.cityField.delegate = presenter
         
         lazy var mainStack: UIStackView = {
@@ -126,6 +134,77 @@ extension RegisterView {
             return button
         }()
         
+        lazy var alreadyHaveAccountLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .regular)
+            label.textColor = AppColors.black
+            label.text = LocalizedTitle.alreadyHaveAnAccount.localized
+            label.textAlignment = .left
+            return label
+        }()
+        
+        lazy var signInLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .bold)
+            label.textColor = AppColors.link
+            label.text = LocalizedTitle.signIn.localized
+            label.textAlignment = .left
+            return label
+        }()
+        
+        lazy var alreadyHaveAccountStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [alreadyHaveAccountLabel, signInLabel])
+            stack.axis = .vertical
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.spacing = 4
+            return stack
+        }()
+        
+        lazy var arrowIcon: UIImageView = {
+            let image = UIImageView()
+            image.image = UIImage(named: AssetTitles.arrowRightIcon)
+            image.snp.makeConstraints { make in
+                make.width.height.equalTo(24)
+            }
+            image.tintColor = AppColors.black
+            return image
+        }()
+        
+        lazy var alreadyHaveAccountMainStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [alreadyHaveAccountStack, arrowIcon])
+            stack.axis = .horizontal
+            stack.alignment = .center
+            stack.distribution = .fill
+            stack.spacing = 8
+            return stack
+        }()
+        
+        lazy var alreadyHaveAccountButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onAlreadyHaveAccountTap), for: .touchUpInside)
+            return button
+        }()
+
+        lazy var alreadyHaveAnAccountPlaceholderView: UIView = {
+            let view = UIView()
+            view.backgroundColor = AppColors.brandPowder
+            view.layer.cornerRadius = 16
+            view.layer.masksToBounds = true
+            view.addSubview(alreadyHaveAccountMainStack)
+            alreadyHaveAccountMainStack.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(12)
+                make.trailing.equalToSuperview().offset(-12)
+                make.top.equalToSuperview().offset(16)
+                make.bottom.equalToSuperview().offset(-16)
+            }
+            view.addSubview(alreadyHaveAccountButton)
+            alreadyHaveAccountButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
+            return view
+        }()
+        
         self.view.addSubview(mainStack)
         mainStack.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
@@ -145,8 +224,16 @@ extension RegisterView {
         proceedButton.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.top.equalTo(mainStack.snp.bottom).offset(54.5)
+            make.top.equalTo(mainStack.snp.bottom).offset(32)
             make.height.equalTo(48)
+        }
+        
+        self.view.addSubview(alreadyHaveAnAccountPlaceholderView)
+        alreadyHaveAnAccountPlaceholderView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(proceedButton.snp.bottom).offset(32)
+            make.height.equalTo(74)
         }
     }
 }

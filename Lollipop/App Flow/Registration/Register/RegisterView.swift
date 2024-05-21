@@ -60,4 +60,8 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     @objc func onProceedTap() {
         presenter?.proceed()
     }
+    
+    @objc func onAlreadyHaveAccountTap() {
+        popBack(2)
+    }
 }
