@@ -35,6 +35,13 @@ class LoginView: UIViewController, LoginViewProtocol {
     @objc func onBackTap() {
         popBack(2)
     }
+    
+    @objc func onForgotPwdTap() {
+        
+    }
 
+    @objc func onProceedTap() {
+        //presenter?.proceed()
+    }
 
 }

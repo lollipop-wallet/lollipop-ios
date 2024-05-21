@@ -148,3 +148,4 @@
 "noInternet" = "Provjerite internet konekciju i pokušajte ponovo.";
 "notice" = "Obavještenje";
 "unknownError" = "Desila se nepoznata greška";
+"forgottenPwd" = "Zaboravljena šifra?";

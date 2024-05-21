@@ -160,6 +160,7 @@ enum LocalizedTitle: String {
     case noInternet
     case notice
     case unknownError
+    case forgottenPwd
     
     var localized: String {
         return self.rawValue.localized()

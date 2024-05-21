@@ -149,3 +149,4 @@
 "noInternet" = "Check your internet connection and try again.";
 "notice" = "Notice";
 "unknownError" = "An unknown error has occurred";
+"forgottenPwd" = "Forgotten password?";

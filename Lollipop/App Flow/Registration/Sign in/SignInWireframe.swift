@@ -21,7 +21,7 @@ class SignInWireframe: SignInWireframeProtocol {
     }
     
     func toManualSignIn() {
-        let vc = RegisterView()
+        let vc = LoginView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }
