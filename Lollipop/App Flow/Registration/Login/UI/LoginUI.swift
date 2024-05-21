@@ -36,6 +36,7 @@ extension LoginView {
         self.emailField.keyboardType = .emailAddress
         self.emailField.background = AppColors.white
         self.emailField.leftSuplementaryIconHidden = true
+        self.emailField.rightSuplementaryIconHidden = true
         
         self.passwordField.title = "\(LocalizedTitle.enterPassword.localized):"
         self.passwordField.errorHidden = true
@@ -43,6 +44,8 @@ extension LoginView {
         self.passwordField.background = AppColors.white
         self.passwordField.leftSuplementaryIconHidden = true
         self.passwordField.isSecureTextEntry = true
+        self.passwordField.rightSuplementaryIconHidden = false
+        self.passwordField.rightSuplementaryIcon = UIImage(named: AssetTitles.passwordHiddenIcon)
         
         lazy var mainStack: UIStackView = {
             let stack = UIStackView(arrangedSubviews: [self.emailField, self.passwordField])

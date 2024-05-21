@@ -87,6 +87,21 @@ class InputField: UIView {
         get { return true }
     }
     
+    open var rightSuplementaryIcon: UIImage? {
+        set { self.inputFieldSuplementaryRightIcon.image = newValue ?? UIImage() }
+        get { return UIImage() }
+    }
+    
+    open var rightSuplementaryIconTintColor: UIColor? {
+        set { self.inputFieldSuplementaryRightIcon.tintColor = newValue ?? AppColors.mediumGrey }
+        get { return AppColors.mediumGrey }
+    }
+    
+    open var rightSuplementaryIconHidden: Bool? {
+        set { self.inputFieldSuplementaryRightView.isHidden = newValue ?? false }
+        get { return true }
+    }
+    
     //MARK: Outlets
     
     lazy var inputTitleLabel: UILabel = {
@@ -120,6 +135,31 @@ class InputField: UIView {
         return imageView
     }()
     
+    lazy var inputFieldSuplementaryRightIcon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    lazy var inputFieldSuplementaryRightButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(onSuplementaryButtonTap), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var inputFieldSuplementaryRightView: UIView = {
+        let view = UIView()
+        view.addSubview(inputFieldSuplementaryRightIcon)
+        inputFieldSuplementaryRightIcon.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+        view.addSubview(inputFieldSuplementaryRightButton)
+        inputFieldSuplementaryRightButton.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+        return view
+    }()
+    
     lazy var textField: UITextField = {
         let textField = UITextField()
         textField.font = .inter(ofSize: 14, name: .light)
@@ -140,7 +180,7 @@ class InputField: UIView {
     }()
     
     lazy var textFieldStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [inputFieldSuplementaryLeftLabel ,inputFieldSuplementaryLeftIcon, textField])
+        let stack = UIStackView(arrangedSubviews: [inputFieldSuplementaryLeftLabel ,inputFieldSuplementaryLeftIcon, textField, inputFieldSuplementaryRightView])
         stack.axis = .horizontal
         stack.distribution = .fill
         stack.alignment = .center
@@ -198,6 +238,11 @@ class InputField: UIView {
     }
     
     //MARK: Actions
+    
+    @objc func onSuplementaryButtonTap() {
+        //MARK: Delegat da se postavi date picker
+       // delegate?.showCalendar()
+    }
     
 }
 
