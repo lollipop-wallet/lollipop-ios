@@ -144,3 +144,7 @@
 "details" = "Detalji";
 "seeAllCards" = "Pogledaj sve kartice";
 "enterEmailAddress" = "Upišite email adresu";
+"warning" = "Upozorenje";
+"noInternet" = "Proverite internet konekciju i pokušajte ponovo."
+"notice" = "Obaveštenje";
+"unknownError" = "Desila se nepoznata greška";

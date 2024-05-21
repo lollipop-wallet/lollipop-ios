@@ -145,3 +145,7 @@
 "details" = "Details";
 "seeAllCards" = "See all cards";
 "enterEmailAddress" = "Enter email address";
+"warning" = "Warning";
+"noInternet" = "Check your internet connection and try again."
+"notice" = "Notice";
+"unknownError" = "An unknown error has occurred";

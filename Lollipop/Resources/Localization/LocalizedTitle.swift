@@ -156,6 +156,10 @@ enum LocalizedTitle: String {
     case details
     case seeAllCards
     case enterEmailAddress
+    case warning
+    case noInternet
+    case notice
+    case unknownError
     
     var localized: String {
         return self.rawValue.localized()

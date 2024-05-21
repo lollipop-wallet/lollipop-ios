@@ -16,9 +16,9 @@ struct Configuration {
     static var productionServerBaseURL: String {
         get {
             #if PROD
-                return "https://avatarai-backend.herokuapp.com/api/\(currentAPIVersion)"
+                return "https://lollipop.strangehollow.cc/api"
             #else
-                return "https://avatarai-backend-dev.herokuapp.com/api/\(currentAPIVersion)"
+                return "https://lollipop.strangehollow.cc/api"
             #endif
         }
     }

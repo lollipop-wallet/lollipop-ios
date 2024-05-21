@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C3ACCD22BFC666C0030907E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ACCCD2BFC666C0030907E /* APIClient.swift */; };
+		2C3ACCD32BFC666C0030907E /* APIHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ACCCE2BFC666C0030907E /* APIHeader.swift */; };
+		2C3ACCD42BFC666C0030907E /* APIContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ACCCF2BFC666C0030907E /* APIContentType.swift */; };
+		2C3ACCD52BFC666C0030907E /* APIParameterKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ACCD02BFC666C0030907E /* APIParameterKey.swift */; };
+		2C3ACCD62BFC666C0030907E /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ACCD12BFC666C0030907E /* APIRouter.swift */; };
 		2C4EE5F22BE3823800F16FD8 /* AddCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F12BE3823800F16FD8 /* AddCardComponent.swift */; };
 		2C4EE5F52BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */; };
 		2C4EE5F82BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */; };
@@ -464,6 +469,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C3ACCCD2BFC666C0030907E /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		2C3ACCCE2BFC666C0030907E /* APIHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHeader.swift; sourceTree = "<group>"; };
+		2C3ACCCF2BFC666C0030907E /* APIContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIContentType.swift; sourceTree = "<group>"; };
+		2C3ACCD02BFC666C0030907E /* APIParameterKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIParameterKey.swift; sourceTree = "<group>"; };
+		2C3ACCD12BFC666C0030907E /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		2C4EE5F12BE3823800F16FD8 /* AddCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardComponent.swift; sourceTree = "<group>"; };
 		2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardHomeTableViewCell.swift; sourceTree = "<group>"; };
 		2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewCell.swift; sourceTree = "<group>"; };
@@ -940,6 +950,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C3ACCCC2BFC66570030907E /* API layer */ = {
+			isa = PBXGroup;
+			children = (
+				2C3ACCCD2BFC666C0030907E /* APIClient.swift */,
+				2C3ACCCF2BFC666C0030907E /* APIContentType.swift */,
+				2C3ACCCE2BFC666C0030907E /* APIHeader.swift */,
+				2C3ACCD02BFC666C0030907E /* APIParameterKey.swift */,
+				2C3ACCD12BFC666C0030907E /* APIRouter.swift */,
+			);
+			path = "API layer";
+			sourceTree = "<group>";
+		};
 		2C4EE5EE2BE36D7000F16FD8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -1235,6 +1257,7 @@
 				2CACCD8B2BD52E33008178F8 /* Alert */,
 				2CACCDA32BD5322F008178F8 /* Analytics */,
 				2CACCDAB2BD5328A008178F8 /* App Colors */,
+				2C3ACCCC2BFC66570030907E /* API layer */,
 				2CACCDAE2BD53AFE008178F8 /* Connectivity */,
 				2CACCDB12BD53BD6008178F8 /* Constants */,
 				2CACCDB82BD53C33008178F8 /* Configuration */,
@@ -3025,6 +3048,7 @@
 				6236936A2BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift in Sources */,
 				62F6CE302BDE0FDF00C4775C /* AccountDeletionInteractor.swift in Sources */,
 				62F6CE312BDE0FDF00C4775C /* AccountDeletionView.swift in Sources */,
+				2C3ACCD32BFC666C0030907E /* APIHeader.swift in Sources */,
 				62F6CE322BDE0FDF00C4775C /* AccountDeletionModel.swift in Sources */,
 				628AA6CA2BFB65E2009A3077 /* ForgotPwdEmailPresenter.swift in Sources */,
 				628AA6CB2BFB65E2009A3077 /* ForgotPwdEmailProtocols.swift in Sources */,
@@ -3120,9 +3144,11 @@
 				62F6CDC62BDBC79400C4775C /* ProfileWireframe.swift in Sources */,
 				2CACCDCA2BD53E00008178F8 /* Date+Extension.swift in Sources */,
 				2CA195412BE213B100CC10F5 /* CardDetailsUI.swift in Sources */,
+				2C3ACCD62BFC666C0030907E /* APIRouter.swift in Sources */,
 				2CACCDD42BD53EDE008178F8 /* UIFont+Extension.swift in Sources */,
 				2CACCDC62BD53DCB008178F8 /* SettingType.swift in Sources */,
 				2CACCDDA2BD53F5F008178F8 /* UILabel+Extension.swift in Sources */,
+				2C3ACCD42BFC666C0030907E /* APIContentType.swift in Sources */,
 				2CDDA7362BDA256100B6C8B5 /* OTPPresenter.swift in Sources */,
 				62F6CD782BDBBDFC00C4775C /* MainPresenter.swift in Sources */,
 				2C4EE5F22BE3823800F16FD8 /* AddCardComponent.swift in Sources */,
@@ -3209,6 +3235,7 @@
 				2CBA986B2BE4FC1200B804E6 /* PromotionsPresenter.swift in Sources */,
 				2CBA986C2BE4FC1200B804E6 /* PromotionsProtocols.swift in Sources */,
 				2CBA986D2BE4FC1200B804E6 /* PromotionsInteractor.swift in Sources */,
+				2C3ACCD52BFC666C0030907E /* APIParameterKey.swift in Sources */,
 				2CBA986E2BE4FC1200B804E6 /* PromotionsView.swift in Sources */,
 				2CBA986F2BE4FC1200B804E6 /* PromotionsModel.swift in Sources */,
 				62730CE12BEA5017004209B9 /* ScannerPresenter.swift in Sources */,
@@ -3271,6 +3298,7 @@
 				2CE0722A2BE0F73000768C73 /* MyCardsTableViewCell.swift in Sources */,
 				2CACCDE92BD540C9008178F8 /* RemoteConfigManager.swift in Sources */,
 				2CACCDCE2BD53E58008178F8 /* Int+Extension.swift in Sources */,
+				2C3ACCD22BFC666C0030907E /* APIClient.swift in Sources */,
 				62F6CDAF2BDBC74B00C4775C /* LollipopPresenter.swift in Sources */,
 				62F6CDB02BDBC74B00C4775C /* LollipopProtocols.swift in Sources */,
 				62F6CDB12BDBC74B00C4775C /* LollipopInteractor.swift in Sources */,
