@@ -9,4 +9,6 @@ import Foundation
 
 struct APIParameterKey {
     static let name = "name"
+    static let email = "email"
+    static let password = "password"
 }

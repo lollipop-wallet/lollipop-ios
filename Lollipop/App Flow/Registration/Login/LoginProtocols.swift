@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -24,14 +25,12 @@ protocol LoginPresenterProtocol: InputFieldProtocol {
 protocol LoginInputInteractorProtocol: AnyObject {
     
     var presenter: LoginOutputInteractorProtocol?  { get set }
-    
-   
+    func login(email: String, password: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol LoginOutputInteractorProtocol: AnyObject {
-    
-
+    func parseLoginData(result: Result<LoginModel, AFError>)
 }
 //MARK: View
 protocol LoginViewProtocol: AnyObject {

@@ -9,6 +9,6 @@
 import Foundation
 
 struct LoginModel : Codable {
-    
+    let message: String?
 }
 

@@ -57,4 +57,8 @@ class APIClient {
          performRequest(route: APIRouter.getconfig, completion: completion)
      }
     
+    static func login(email: String, password: String, completion:@escaping (Result<LoginModel, AFError>)->Void){
+        performRequest(route: APIRouter.login(email: email, password: password), completion: completion)
+    }
+    
 }

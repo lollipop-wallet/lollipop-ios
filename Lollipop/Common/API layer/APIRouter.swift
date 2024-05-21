@@ -12,7 +12,7 @@ import Alamofire
 enum APIRouter: URLRequestConvertible, Equatable {
     
     case getconfig
-
+    case login(email: String, password: String)
 
     
     // MARK: - HTTPMethod
@@ -20,6 +20,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
         switch self {
         case .getconfig:
             return .get
+        case .login:
+            return .post
         }
     }
     
@@ -28,6 +30,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
         switch self {
         case .getconfig:
             return "details"
+        case .login:
+            return "login"
         }
     }
     
@@ -36,6 +40,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
         switch self {
         case .getconfig:
             return nil
+        case .login(let email, let password):
+            return [APIParameterKey.email : email, APIParameterKey.password : password]
         }
     }
         
