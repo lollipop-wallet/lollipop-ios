@@ -50,7 +50,7 @@ class LoginView: UIViewController, LoginViewProtocol {
     }
     
     @objc func onNoLollyAccountButtonTap() {
-        
+        presenter?.register()
     }
 
 }

@@ -19,4 +19,9 @@ class LoginWireframe: LoginWireframeProtocol {
         LoginRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toNewUser(){
+        let vc = RegisterView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

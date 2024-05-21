@@ -16,6 +16,7 @@ protocol LoginPresenterProtocol: InputFieldProtocol {
     var view: LoginViewProtocol? { get set }
     var wireframe:LoginWireframeProtocol? { get set }
     
+    func register()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -39,6 +40,5 @@ protocol LoginViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol LoginWireframeProtocol: AnyObject {
-
-    
+    func toNewUser()
 }

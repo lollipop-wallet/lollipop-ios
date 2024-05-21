@@ -13,6 +13,9 @@ class LoginPresenter: NSObject, LoginPresenterProtocol  {
     weak var view: LoginViewProtocol?
     var wireframe: LoginWireframeProtocol?
     
+    func register() {
+        wireframe?.toNewUser()
+    }
 }
 
 extension LoginPresenter: LoginOutputInteractorProtocol {
