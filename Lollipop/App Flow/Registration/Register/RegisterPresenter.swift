@@ -15,16 +15,18 @@ class RegisterPresenter: NSObject, RegisterPresenterProtocol  {
     var wireframe: RegisterWireframeProtocol?
     
     var tag = Int()
+    var selectedGender: Gender?
     
     func proceed(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String){
         guard !firstname.isEmpty, !lastname.isEmpty, !dob.isEmpty, !email.isEmpty, !gender.isEmpty else {
             view?.validate(isFirstNameEmpty: firstname.isEmpty, isLastNameEmpty: lastname.isEmpty, isEmailEmpty: email.isEmpty, isGenderEmpty: gender == LocalizedTitle.choose.localized, isDoBEmpty: dob == LocalizedTitle.choose.localized)
             return
         }
-        wireframe?.toPWdWith(firstname: firstname, lastname: lastname, email: email, dob: dob, gender: gender, city: city)
+        wireframe?.toPWdWith(firstname: firstname, lastname: lastname, email: email, dob: dob, gender: self.selectedGender?.code ?? "", city: city)
     }
     
     func handleGenderDropdownTapWith(item: Gender){
+        self.selectedGender = item
         view?.setGenderWith(item: item.label ?? "")
     }
     
