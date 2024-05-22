@@ -13,7 +13,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
     
     case getconfig
     case login(email: String, password: String)
-    case register(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String)
+    case register(name: String, email: String, dob: String, gender: String, city: String)
 
     
     // MARK: - HTTPMethod
@@ -45,8 +45,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return nil
         case .login(let email, let password):
             return [APIParameterKey.email : email, APIParameterKey.password : password]
-        case .register(let firstname, let lastname, let email, let dob, let gender, let city)
-            return []
+        case .register(let name, let email, let dob, let gender, let city):
+            return [APIParameterKey.name : name, APIParameterKey.email : email, APIParameterKey.dob : dob, APIParameterKey.gender : gender, APIParameterKey.city : city]
         }
     }
         
