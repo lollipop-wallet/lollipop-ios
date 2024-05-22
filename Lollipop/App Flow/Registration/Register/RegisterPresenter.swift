@@ -13,8 +13,18 @@ class RegisterPresenter: NSObject, RegisterPresenterProtocol  {
     weak var view: RegisterViewProtocol?
     var wireframe: RegisterWireframeProtocol?
     
+    var tag = Int()
+    
     func proceed() {
         wireframe?.toPWd()
+    }
+    
+    func handleGenderDropdownTapWith(item: Gender){
+        view?.setGenderWith(item: item.label ?? "")
+    }
+    
+    func handleCityDropdownTapWith(item: String){
+        view?.setCityWith(item: item)
     }
 }
 
@@ -31,7 +41,19 @@ extension RegisterPresenter {
 
 //MARK: Dropdown field delegate
 extension RegisterPresenter {
-    func showHideDropdown(isHidden: Bool) {
-        
+    func showHideDropdown(tag: Int) {
+        self.tag = tag
+        view?.showDropdownWith(tag: tag)
+    }
+}
+
+//MARK: Dropdown delegate
+extension RegisterPresenter {
+    func dropDownHidden(tag: Int) {
+        view?.hideDropdownWith(tag: tag)
+    }
+    
+    func dropDownShown(tag: Int) {
+        view?.showDropdownWith(tag: tag)
     }
 }

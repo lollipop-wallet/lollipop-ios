@@ -75,6 +75,7 @@ extension RegisterView {
         self.genderField.text = LocalizedTitle.choose.localized
         self.genderField.rightSuplementaryIconHidden = false
         self.genderField.leftSuplementaryIconHidden = true
+        self.genderField.tag = 0
         self.genderField.delegate = presenter
         
         lazy var midStack: UIStackView = {
@@ -111,6 +112,7 @@ extension RegisterView {
         self.cityField.text = LocalizedTitle.choose.localized
         self.cityField.rightSuplementaryIconHidden = false
         self.cityField.leftSuplementaryIconHidden = true
+        self.cityField.tag = 1
         self.cityField.delegate = presenter
         
         lazy var mainStack: UIStackView = {
@@ -204,6 +206,54 @@ extension RegisterView {
             }
             return view
         }()
+        
+        self.genderDropdown.cellNib = UINib(nibName: "GenderTableViewCell", bundle: nil)
+        self.genderDropdown.anchorView = self.genderField
+        self.genderDropdown.cellHeight = 48
+        self.genderDropdown.direction = .bottom
+        self.genderDropdown.backgroundColor = AppColors.white
+        self.genderDropdown.cornerRadius = 8
+        self.genderDropdown.dismissMode = .onTap
+        self.genderDropdown.tag = 0
+        self.genderDropdown.delegate = presenter
+        
+        let genderDatasource = (Config.model.genders ?? []).map { $0.label ?? "" }
+        self.genderDropdown.dataSource = genderDatasource
+        
+        self.genderDropdown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let cell = cell as? GenderTableViewCell else { return }
+            cell.genderLabel.text = item
+        }
+//        
+        self.genderDropdown.selectionAction = { [weak self] (index, item) in
+            print("dwadwa")
+            guard let self = self else {return}
+            print("dwadwa1")
+            self.presenter?.handleGenderDropdownTapWith(item: (Config.model.genders ?? [])[index])
+        }
+        
+        self.cityDropdown.cellNib = UINib(nibName: "CityTableViewCell", bundle: nil)
+        self.cityDropdown.anchorView = self.cityField
+        self.cityDropdown.cellHeight = 48
+        self.cityDropdown.direction = .bottom
+        self.cityDropdown.backgroundColor = AppColors.white
+        self.cityDropdown.cornerRadius = 8
+        self.cityDropdown.dismissMode = .onTap
+        self.cityDropdown.tag = 1
+        self.cityDropdown.delegate = presenter
+        
+        let cityDatasource = (Config.model.cities ?? [])
+        self.cityDropdown.dataSource = cityDatasource
+        
+        self.cityDropdown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let cell = cell as? CityTableViewCell else { return }
+            cell.cityNameLabel.text = item
+        }
+//
+        self.cityDropdown.selectionAction = { [weak self] (index, item) in
+            guard let self = self else {return}
+            self.presenter?.handleCityDropdownTapWith(item: item)
+        }
         
         self.view.addSubview(mainStack)
         mainStack.snp.makeConstraints { make in

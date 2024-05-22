@@ -17,8 +17,8 @@ public typealias CellConfigurationClosure = (Index, String, DropDownCell) -> Voi
 private typealias ComputeLayoutTuple = (x: CGFloat, y: CGFloat, width: CGFloat, offscreenHeight: CGFloat)
 
 public protocol DropdownProtocol: AnyObject {
-    func dropDownHidden()
-    func dropDownShown()
+    func dropDownHidden(tag: Int)
+    func dropDownShown(tag: Int)
 }
 
 /// Can be `UIView` or `UIBarButtonItem`.
@@ -889,7 +889,7 @@ extension DropDown {
 
 		//deselectRows(at: selectedRowIndices)
 		selectRows(at: selectedRowIndices)
-        delegate?.dropDownShown()
+        delegate?.dropDownShown(tag: self.tag)
 
 		return (layout.canBeDisplayed, layout.offscreenHeight)
 	}
@@ -906,7 +906,7 @@ extension DropDown {
 
 	/// Hides the drop down.
 	public func hide() {
-        delegate?.dropDownHidden()
+        delegate?.dropDownHidden(tag: self.tag)
 		if self == DropDown.VisibleDropDown {
 			/*
 			If one drop down is showed and another one is not

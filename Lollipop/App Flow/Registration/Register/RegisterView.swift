@@ -19,6 +19,8 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     var datePickerStackView = UIStackView()
     var genderField = DropdownInputField()
     var cityField = DropdownInputField()
+    var cityDropdown = DropDown()
+    var genderDropdown = DropDown()
 
     var presenter: RegisterPresenterProtocol?
 
@@ -40,6 +42,43 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     func displayCalendar(){
         DispatchQueue.main.async {
             self.datePickerStackView.isHidden = !self.datePickerStackView.isHidden
+        }
+    }
+    
+    func showDropdownWith(tag: Int){
+        if tag == 0 {
+            self.genderDropdown.show()
+            self.genderField.borderWidth = 2
+            self.genderField.borderColor = AppColors.link
+        }else{
+            self.cityDropdown.show()
+            self.cityField.borderWidth = 2
+            self.cityField.borderColor = AppColors.link
+        }
+    }
+    
+    func hideDropdownWith(tag: Int){
+        print("aco", tag)
+        if tag == 0 {
+            self.genderField.isDropdownHidden = true
+            self.genderField.borderWidth = 1
+            self.genderField.borderColor = AppColors.mediumGrey
+        }else{
+            self.cityField.isDropdownHidden = true
+            self.cityField.borderWidth = 1
+            self.cityField.borderColor = AppColors.mediumGrey
+        }
+    }
+    
+    func setGenderWith(item: String){
+        //DispatchQueue.main.async {
+            self.genderField.inputLabel.text = item
+        //}
+    }
+    
+    func setCityWith(item: String){
+        DispatchQueue.main.async {
+            self.cityField.inputLabel.text = item
         }
     }
     

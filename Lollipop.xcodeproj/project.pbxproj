@@ -21,6 +21,10 @@
 		2C4EE5F82BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */; };
 		2C4EE5FC2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5FB2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift */; };
 		2C55694B2BFE14A300E12208 /* ExceptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C55694A2BFE14A300E12208 /* ExceptionModel.swift */; };
+		2C5569502BFE19BB00E12208 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C55694F2BFE19BB00E12208 /* CityTableViewCell.xib */; };
+		2C5569512BFE19BB00E12208 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C55694E2BFE19BB00E12208 /* CityTableViewCell.swift */; };
+		2C5569552BFE1A6F00E12208 /* GenderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C5569542BFE1A6F00E12208 /* GenderTableViewCell.xib */; };
+		2C5569562BFE1A6F00E12208 /* GenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5569532BFE1A6F00E12208 /* GenderTableViewCell.swift */; };
 		2C5BD1E62BEB871C0051799E /* DisplayCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1E02BEB871C0051799E /* DisplayCardPresenter.swift */; };
 		2C5BD1E72BEB871C0051799E /* DisplayCardProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1E12BEB871C0051799E /* DisplayCardProtocols.swift */; };
 		2C5BD1E82BEB871C0051799E /* DisplayCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1E22BEB871C0051799E /* DisplayCardInteractor.swift */; };
@@ -488,6 +492,10 @@
 		2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewCell.swift; sourceTree = "<group>"; };
 		2C4EE5FB2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		2C55694A2BFE14A300E12208 /* ExceptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionModel.swift; sourceTree = "<group>"; };
+		2C55694E2BFE19BB00E12208 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		2C55694F2BFE19BB00E12208 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
+		2C5569532BFE1A6F00E12208 /* GenderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderTableViewCell.swift; sourceTree = "<group>"; };
+		2C5569542BFE1A6F00E12208 /* GenderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderTableViewCell.xib; sourceTree = "<group>"; };
 		2C5BD1E02BEB871C0051799E /* DisplayCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardPresenter.swift; sourceTree = "<group>"; };
 		2C5BD1E12BEB871C0051799E /* DisplayCardProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardProtocols.swift; sourceTree = "<group>"; };
 		2C5BD1E22BEB871C0051799E /* DisplayCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardInteractor.swift; sourceTree = "<group>"; };
@@ -1050,6 +1058,33 @@
 				2C55694A2BFE14A300E12208 /* ExceptionModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2C55694C2BFE19A600E12208 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2C55694D2BFE19AF00E12208 /* City cell */,
+				2C5569522BFE1A6000E12208 /* Gender cell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2C55694D2BFE19AF00E12208 /* City cell */ = {
+			isa = PBXGroup;
+			children = (
+				2C55694E2BFE19BB00E12208 /* CityTableViewCell.swift */,
+				2C55694F2BFE19BB00E12208 /* CityTableViewCell.xib */,
+			);
+			path = "City cell";
+			sourceTree = "<group>";
+		};
+		2C5569522BFE1A6000E12208 /* Gender cell */ = {
+			isa = PBXGroup;
+			children = (
+				2C5569532BFE1A6F00E12208 /* GenderTableViewCell.swift */,
+				2C5569542BFE1A6F00E12208 /* GenderTableViewCell.xib */,
+			);
+			path = "Gender cell";
 			sourceTree = "<group>";
 		};
 		2C5BD1DD2BEB87020051799E /* Wallet card */ = {
@@ -1745,6 +1780,7 @@
 				2CEC7FB12BD8D1730050E762 /* RegisterModel.swift */,
 				2CEC7FB22BD8D1730050E762 /* RegisterWireframe.swift */,
 				2CEC7FBA2BD8D17A0050E762 /* UI */,
+				2C55694C2BFE19A600E12208 /* Cells */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -2922,6 +2958,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5569552BFE1A6F00E12208 /* GenderTableViewCell.xib in Resources */,
 				62214AF92BD6E3C500ABF38E /* Inter-ExtraBold.ttf in Resources */,
 				62214AFD2BD6E3C500ABF38E /* Inter-Black.ttf in Resources */,
 				2CACCD352BD51C83008178F8 /* Assets.xcassets in Resources */,
@@ -2932,6 +2969,7 @@
 				62214AF82BD6E3C500ABF38E /* Inter-ExtraLight.ttf in Resources */,
 				62214B002BD6E3C500ABF38E /* Inter-Medium.ttf in Resources */,
 				62214AFF2BD6E3C500ABF38E /* Inter-Light.ttf in Resources */,
+				2C5569502BFE19BB00E12208 /* CityTableViewCell.xib in Resources */,
 				623450D22BFAFB0A00FE8E71 /* DropDownCell.xib in Resources */,
 				62214AFE2BD6E3C500ABF38E /* Inter-Thin.ttf in Resources */,
 				623693692BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib in Resources */,
@@ -3064,6 +3102,7 @@
 				62F6CDA22BDBC6D600C4775C /* PartnersWireframe.swift in Sources */,
 				62E24BCE2BEC81D900F6D82B /* Screen+Extension.swift in Sources */,
 				2CACCD892BD5290B008178F8 /* LaunchUI.swift in Sources */,
+				2C5569512BFE19BB00E12208 /* CityTableViewCell.swift in Sources */,
 				62F6CDF62BDD456700C4775C /* PersonalDataUI.swift in Sources */,
 				62E24BC82BEC81D100F6D82B /* DeviceFamily+Extension.swift in Sources */,
 				2CACCDDC2BD53F71008178F8 /* UIStackView+Extension.swift in Sources */,
@@ -3168,6 +3207,7 @@
 				62F6CDCA2BDBC7A300C4775C /* ProfileUI.swift in Sources */,
 				62F6CDC42BDBC79400C4775C /* ProfileView.swift in Sources */,
 				62F6CDDD2BDD372800C4775C /* ProfileListModel.swift in Sources */,
+				2C5569562BFE1A6F00E12208 /* GenderTableViewCell.swift in Sources */,
 				62F6CDC52BDBC79400C4775C /* ProfileModel.swift in Sources */,
 				62BFFD382BE7457E00899800 /* LocationsPresenter.swift in Sources */,
 				62BFFD392BE7457E00899800 /* LocationsProtocols.swift in Sources */,

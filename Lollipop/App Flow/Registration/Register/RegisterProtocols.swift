@@ -10,13 +10,15 @@ import Foundation
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol RegisterPresenterProtocol: CalendarInputProtocol, DropdownInputFieldProtocol {
+protocol RegisterPresenterProtocol: CalendarInputProtocol, DropdownInputFieldProtocol, DropdownProtocol {
     
     var interactor: RegisterInputInteractorProtocol? { get set }
     var view: RegisterViewProtocol? { get set }
     var wireframe:RegisterWireframeProtocol? { get set }
     
     func proceed()
+    func handleGenderDropdownTapWith(item: Gender)
+    func handleCityDropdownTapWith(item: String)
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -37,6 +39,10 @@ protocol RegisterViewProtocol: AnyObject {
     
     var presenter: RegisterPresenterProtocol?  { get set }
     func displayCalendar()
+    func showDropdownWith(tag: Int)
+    func hideDropdownWith(tag: Int)
+    func setGenderWith(item: String)
+    func setCityWith(item: String)
 }
 //MARK: Wireframe
 protocol RegisterWireframeProtocol: AnyObject {

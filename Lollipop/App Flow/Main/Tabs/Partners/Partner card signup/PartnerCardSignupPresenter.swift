@@ -23,7 +23,7 @@ extension PartnerCardSignupPresenter: PartnerCardSignupOutputInteractorProtocol 
 
 //MARK: Input field protocols
 extension PartnerCardSignupPresenter {
-    func showHideDropdown(isHidden: Bool) {
+    func showHideDropdown(tag: Int) {
         view?.setupAndOpenPhonePrefixDropdown()
     }
 }
@@ -31,11 +31,11 @@ extension PartnerCardSignupPresenter {
 
 //MARK: Dropdown protocol
 extension PartnerCardSignupPresenter {
-    func dropDownHidden() {
+    func dropDownHidden(tag: Int) {
         view?.hidePrefixDropdown()
     }
     
-    func dropDownShown() {
+    func dropDownShown(tag: Int) {
         view?.setupAndOpenPhonePrefixDropdown()
     }
 }

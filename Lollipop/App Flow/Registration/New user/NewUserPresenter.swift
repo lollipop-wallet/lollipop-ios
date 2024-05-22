@@ -32,7 +32,7 @@ extension NewUserPresenter {
 
 //MARK: Dropdown field delegate
 extension NewUserPresenter {
-    func showHideDropdown(isHidden: Bool) {
+    func showHideDropdown(tag: Int) {
         
     }
 }

@@ -241,13 +241,10 @@ class DropdownInputField: UIView {
     
     @objc func onSuplementaryButtonTap() {
         //MARK: Delegat da se postavi date picker
-//        self.titleFieldPlaceholder.layer.borderWidth = 2
-//        self.titleFieldPlaceholder.layer.borderColor = AppColors.link.cgColor
         if (self.isDropdownHidden ?? false) {
-            self.delegate?.showHideDropdown(isHidden: false)
+            self.delegate?.showHideDropdown(tag: self.tag)
             UIView.animate(withDuration: 0.25, animations: {
                 self.inputFieldSuplementaryRightIcon.transform = self.inputFieldSuplementaryRightIcon.transform.rotated(by: .pi)
-                //self.dropdownHidden = !self.dropdownHidden
             })
         }
     }

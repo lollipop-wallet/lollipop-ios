@@ -32,7 +32,7 @@ extension PersonalDataPresenter {
 
 //MARK: Dropdown field delegate
 extension PersonalDataPresenter {
-    func showHideDropdown(isHidden: Bool) {
+    func showHideDropdown(tag: Int) {
         
     }
 }

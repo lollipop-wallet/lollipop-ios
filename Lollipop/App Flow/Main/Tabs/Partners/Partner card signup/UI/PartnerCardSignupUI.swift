@@ -155,6 +155,7 @@ extension PartnerCardSignupView {
         self.phonePrefixField.rightSuplementaryIconHidden = false
         self.phonePrefixField.leftSuplementaryIconHidden = false
         self.phonePrefixField.leftSuplementaryDefaultIcon = UIImage(named: AssetTitles.flagMneIcon)
+        self.phonePrefixField.tag = 0
         self.phonePrefixField.delegate = presenter
         
         self.phoneField.title = " "
