@@ -20,7 +20,7 @@ class RegisterWireframe: RegisterWireframeProtocol {
         
     }
     
-    func toPWd(){
+    func toPWdWith(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String){
         let vc = PasswordView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }

@@ -26,13 +26,11 @@ protocol RegisterPresenterProtocol: CalendarInputProtocol, DropdownInputFieldPro
 protocol RegisterInputInteractorProtocol: AnyObject {
     
     var presenter: RegisterOutputInteractorProtocol?  { get set }
-    func register(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String)
    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol RegisterOutputInteractorProtocol: AnyObject {
-    func parseRegisterData(result: Result<RegisterModel, AFError>)
 }
 //MARK: View
 protocol RegisterViewProtocol: AnyObject {
@@ -48,5 +46,5 @@ protocol RegisterViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol RegisterWireframeProtocol: AnyObject {
-    func toPWd()
+    func toPWdWith(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String)
 }
