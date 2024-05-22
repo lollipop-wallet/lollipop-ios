@@ -211,6 +211,7 @@ extension RegisterView {
         self.genderDropdown.anchorView = self.genderField
         self.genderDropdown.cellHeight = 48
         self.genderDropdown.direction = .bottom
+        self.genderDropdown.bottomOffset = CGPoint(x: 0, y: 85)
         self.genderDropdown.backgroundColor = AppColors.white
         self.genderDropdown.cornerRadius = 8
         self.genderDropdown.dismissMode = .onTap
@@ -226,9 +227,7 @@ extension RegisterView {
         }
 //        
         self.genderDropdown.selectionAction = { [weak self] (index, item) in
-            print("dwadwa")
             guard let self = self else {return}
-            print("dwadwa1")
             self.presenter?.handleGenderDropdownTapWith(item: (Config.model.genders ?? [])[index])
         }
         
@@ -236,6 +235,7 @@ extension RegisterView {
         self.cityDropdown.anchorView = self.cityField
         self.cityDropdown.cellHeight = 48
         self.cityDropdown.direction = .bottom
+        self.cityDropdown.bottomOffset = CGPoint(x: 0, y: 85)
         self.cityDropdown.backgroundColor = AppColors.white
         self.cityDropdown.cornerRadius = 8
         self.cityDropdown.dismissMode = .onTap
