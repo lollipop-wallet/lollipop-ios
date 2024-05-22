@@ -16,6 +16,7 @@ protocol PasswordPresenterProtocol: AnyObject {
     var view: PasswordViewProtocol? { get set }
     var wireframe:PasswordWireframeProtocol? { get set }
     
+    func viewDidLoad()
     func proceed()
 }
 //MARK: Interactor
@@ -23,14 +24,13 @@ protocol PasswordPresenterProtocol: AnyObject {
 protocol PasswordInputInteractorProtocol: AnyObject {
     
     var presenter: PasswordOutputInteractorProtocol?  { get set }
-    
+    func viewDidLoad()
    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol PasswordOutputInteractorProtocol: AnyObject {
-    
-
+    func takeDataWith(firstName: String, lastName: String, email: String, dob: String, gender: String, city: String)
 }
 //MARK: View
 protocol PasswordViewProtocol: AnyObject {
@@ -40,5 +40,12 @@ protocol PasswordViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol PasswordWireframeProtocol: AnyObject {
+    static var firstName: String? { get set }
+    static var lastName: String? { get set }
+    static var email: String? { get set }
+    static var gender: String? { get set }
+    static var dob: String? { get set }
+    static var city: String? { get set }
+
     func toOtp()
 }

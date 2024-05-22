@@ -9,6 +9,12 @@ import UIKit
 
 class PasswordWireframe: PasswordWireframeProtocol {
     
+    static var firstName: String?
+    static var lastName: String?
+    static var email: String?
+    static var gender: String?
+    static var dob: String?
+    static var city: String? 
     
     static func createModule(PasswordRef: PasswordView) {
         let presenter: PasswordPresenterProtocol & PasswordOutputInteractorProtocol = PasswordPresenter()
