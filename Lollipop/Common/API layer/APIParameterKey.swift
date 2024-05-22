@@ -11,4 +11,8 @@ struct APIParameterKey {
     static let name = "name"
     static let email = "email"
     static let password = "password"
+    static let passwordConfirmation = "password_confirmation"
+    static let city = "city"
+    static let dob = "date_of_birth"
+    static let gender = "gender"
 }

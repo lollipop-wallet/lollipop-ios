@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -16,7 +17,7 @@ protocol RegisterPresenterProtocol: CalendarInputProtocol, DropdownInputFieldPro
     var view: RegisterViewProtocol? { get set }
     var wireframe:RegisterWireframeProtocol? { get set }
     
-    func proceed()
+    func proceed(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String)
     func handleGenderDropdownTapWith(item: Gender)
     func handleCityDropdownTapWith(item: String)
 }
@@ -25,14 +26,13 @@ protocol RegisterPresenterProtocol: CalendarInputProtocol, DropdownInputFieldPro
 protocol RegisterInputInteractorProtocol: AnyObject {
     
     var presenter: RegisterOutputInteractorProtocol?  { get set }
-    
+    func register(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String)
    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol RegisterOutputInteractorProtocol: AnyObject {
-    
-
+    func parseRegisterData(result: Result<RegisterModel, AFError>)
 }
 //MARK: View
 protocol RegisterViewProtocol: AnyObject {
@@ -43,6 +43,8 @@ protocol RegisterViewProtocol: AnyObject {
     func hideDropdownWith(tag: Int)
     func setGenderWith(item: String)
     func setCityWith(item: String)
+    func validate(isFirstNameEmpty: Bool, isLastNameEmpty: Bool, isEmailEmpty: Bool, isGenderEmpty: Bool, isDoBEmpty: Bool)
+
 }
 //MARK: Wireframe
 protocol RegisterWireframeProtocol: AnyObject {

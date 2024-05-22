@@ -81,6 +81,18 @@ class RegisterView: UIViewController, RegisterViewProtocol {
         }
     }
     
+    func validate(isFirstNameEmpty: Bool, isLastNameEmpty: Bool, isEmailEmpty: Bool, isGenderEmpty: Bool, isDoBEmpty: Bool){
+        self.nameField.borderWidth = 1
+        self.nameField.borderColor = isFirstNameEmpty ? AppColors.error : AppColors.black
+        self.surnameField.borderWidth = 1
+        self.surnameField.borderColor = isLastNameEmpty ? AppColors.error : AppColors.black
+        self.emailField.borderWidth = 1
+        self.emailField.borderColor = isEmailEmpty ? AppColors.error : AppColors.black
+        self.genderField.borderWidth = 1
+        self.genderField.borderColor = isGenderEmpty ? AppColors.error : AppColors.black
+        self.calendarField.borderWidth = 1
+        self.calendarField.borderColor = isDoBEmpty ? AppColors.error : AppColors.black
+    }
     //MARK: Actions
     
     @objc func onBackTap() {
@@ -96,7 +108,7 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     }
     
     @objc func onProceedTap() {
-        presenter?.proceed()
+        presenter?.proceed(firstname: nameField.textField.text ?? "", lastname: surnameField.textField.text ?? "", email: emailField.textField.text ?? "", dob: calendarField.inputLabel.text ?? "", gender: genderField.inputLabel.text ?? "", city: cityField.inputLabel.text ?? "")
     }
     
     @objc func onAlreadyHaveAccountTap() {

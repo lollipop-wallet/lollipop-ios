@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 class RegisterPresenter: NSObject, RegisterPresenterProtocol  {
     
@@ -15,8 +16,13 @@ class RegisterPresenter: NSObject, RegisterPresenterProtocol  {
     
     var tag = Int()
     
-    func proceed() {
-        wireframe?.toPWd()
+    func proceed(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String){
+        guard !firstname.isEmpty, !lastname.isEmpty, !dob.isEmpty, !email.isEmpty, !gender.isEmpty else {
+            view?.validate(isFirstNameEmpty: firstname.isEmpty, isLastNameEmpty: lastname.isEmpty, isEmailEmpty: email.isEmpty, isGenderEmpty: gender == LocalizedTitle.choose.localized, isDoBEmpty: dob == LocalizedTitle.choose.localized)
+            return
+        }
+        interactor?.register(firstname: firstname, lastname: lastname, email: email, dob: dob, gender: gender, city: city)
+        //wireframe?.toPWd()
     }
     
     func handleGenderDropdownTapWith(item: Gender){
@@ -29,7 +35,14 @@ class RegisterPresenter: NSObject, RegisterPresenterProtocol  {
 }
 
 extension RegisterPresenter: RegisterOutputInteractorProtocol {
-    
+    func parseRegisterData(result: Result<RegisterModel, AFError>){
+        switch result {
+        case .success(let model):
+            print("success")
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
 }
 
 //MARK: InputCalendarField delegate

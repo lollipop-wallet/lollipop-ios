@@ -12,4 +12,8 @@ import UIKit
 class RegisterInteractor: RegisterInputInteractorProtocol {
     
     weak var presenter: RegisterOutputInteractorProtocol?
+    
+    func register(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String) {
+        UIApplication.topViewController()?.view.showSpinner()
+    }
 }

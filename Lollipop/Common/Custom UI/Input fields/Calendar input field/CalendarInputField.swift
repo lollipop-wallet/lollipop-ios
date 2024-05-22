@@ -66,6 +66,11 @@ class CalendarInputField: UIView {
         get { return AppColors.mediumGrey }
     }
     
+    open var borderWidth: CGFloat? {
+        set { self.titleFieldPlaceholder.layer.borderWidth = newValue ?? 1.0 }
+        get { return 1.0 }
+    }
+    
     open var delegate: CalendarInputProtocol?
     
     //MARK: Outlets
