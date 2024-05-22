@@ -58,7 +58,6 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     }
     
     func hideDropdownWith(tag: Int){
-        print("aco", tag)
         if tag == 0 {
             self.genderField.isDropdownHidden = true
             self.genderField.borderWidth = 1
@@ -71,14 +70,14 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     }
     
     func setGenderWith(item: String){
-        //DispatchQueue.main.async {
-            self.genderField.inputLabel.text = item
-        //}
+        DispatchQueue.main.async {
+            self.genderField.text = item
+        }
     }
     
     func setCityWith(item: String){
         DispatchQueue.main.async {
-            self.cityField.inputLabel.text = item
+            self.cityField.text = item
         }
     }
     

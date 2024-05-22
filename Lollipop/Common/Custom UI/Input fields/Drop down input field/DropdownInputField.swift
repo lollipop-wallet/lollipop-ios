@@ -22,7 +22,11 @@ class DropdownInputField: UIView {
     }
     
     open var text: String? {
-        set { self.inputLabel.text = newValue ?? "" }
+        set {
+            self.inputLabel.text = newValue ?? ""
+            self.inputLabel.textColor = (newValue ?? "") == LocalizedTitle.choose.localized ? AppColors.darkGrey : AppColors.black
+            self.titleFieldPlaceholder.layer.borderColor = (newValue ?? "") == LocalizedTitle.choose.localized ? AppColors.mediumGrey.cgColor : AppColors.black.cgColor
+        }
         get { return inputLabel.text }
     }
     
