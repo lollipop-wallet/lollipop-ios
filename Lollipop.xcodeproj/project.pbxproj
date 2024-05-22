@@ -20,6 +20,7 @@
 		2C4EE5F52BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */; };
 		2C4EE5F82BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */; };
 		2C4EE5FC2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5FB2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift */; };
+		2C55694B2BFE14A300E12208 /* ExceptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C55694A2BFE14A300E12208 /* ExceptionModel.swift */; };
 		2C5BD1E62BEB871C0051799E /* DisplayCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1E02BEB871C0051799E /* DisplayCardPresenter.swift */; };
 		2C5BD1E72BEB871C0051799E /* DisplayCardProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1E12BEB871C0051799E /* DisplayCardProtocols.swift */; };
 		2C5BD1E82BEB871C0051799E /* DisplayCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1E22BEB871C0051799E /* DisplayCardInteractor.swift */; };
@@ -486,6 +487,7 @@
 		2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardHomeTableViewCell.swift; sourceTree = "<group>"; };
 		2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewCell.swift; sourceTree = "<group>"; };
 		2C4EE5FB2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		2C55694A2BFE14A300E12208 /* ExceptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionModel.swift; sourceTree = "<group>"; };
 		2C5BD1E02BEB871C0051799E /* DisplayCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardPresenter.swift; sourceTree = "<group>"; };
 		2C5BD1E12BEB871C0051799E /* DisplayCardProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardProtocols.swift; sourceTree = "<group>"; };
 		2C5BD1E22BEB871C0051799E /* DisplayCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardInteractor.swift; sourceTree = "<group>"; };
@@ -1042,6 +1044,14 @@
 			path = "Table cells";
 			sourceTree = "<group>";
 		};
+		2C5569492BFE149700E12208 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C55694A2BFE14A300E12208 /* ExceptionModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2C5BD1DD2BEB87020051799E /* Wallet card */ = {
 			isa = PBXGroup;
 			children = (
@@ -1284,6 +1294,7 @@
 				2CACCDBE2BD53D70008178F8 /* Helper */,
 				623450C32BFAFAC200FE8E71 /* Libraries */,
 				2CACCDE72BD540B2008178F8 /* Managers */,
+				2C5569492BFE149700E12208 /* Models */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -3077,6 +3088,7 @@
 				628AA6CD2BFB65E2009A3077 /* ForgotPwdEmailView.swift in Sources */,
 				628AA6CE2BFB65E2009A3077 /* ForgotPwdEmailModel.swift in Sources */,
 				628AA6CF2BFB65E2009A3077 /* ForgotPwdEmailWireframe.swift in Sources */,
+				2C55694B2BFE14A300E12208 /* ExceptionModel.swift in Sources */,
 				62730C822BE8EE3C004209B9 /* ProgrammeRulesPresenter.swift in Sources */,
 				62730C832BE8EE3C004209B9 /* ProgrammeRulesProtocols.swift in Sources */,
 				62730C842BE8EE3C004209B9 /* ProgrammeRulesInteractor.swift in Sources */,

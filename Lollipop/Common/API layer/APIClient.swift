@@ -40,6 +40,12 @@ class APIClient {
                     completion(response.result)
                 case 401:
                     print("Unknown")
+                case 422:
+                    UIApplication.topViewController()?.view.hideSpinner()
+                    let decoder = JSONDecoder()
+                    if let exception = try? decoder.decode(ExceptionModel.self, from: response.data ?? Data()) {
+                        Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: exception.message ?? "", shouldDismiss: false)
+                    }
                 case 403, 404, 500:
                     Alert().alertMessageNoNavigator(title: LocalizedTitle.notice.localized, text: LocalizedTitle.unknownError.localized, shouldDismiss: false)
                     UIApplication.root().view.hideSpinner()
