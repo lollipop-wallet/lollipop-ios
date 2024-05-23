@@ -9,6 +9,6 @@
 import Foundation
 
 struct RegisterModel : Codable {
-    
+    let message: String?
 }
 

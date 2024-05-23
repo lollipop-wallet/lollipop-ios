@@ -13,7 +13,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
     
     case getconfig
     case login(email: String, password: String)
-    case register(name: String, email: String, dob: String, gender: String, city: String)
+    case register(name: String, email: String, dob: String, gender: String, city: String, password: String, confirmPassword: String)
 
     
     // MARK: - HTTPMethod
@@ -45,8 +45,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return nil
         case .login(let email, let password):
             return [APIParameterKey.email : email, APIParameterKey.password : password]
-        case .register(let name, let email, let dob, let gender, let city):
-            return [APIParameterKey.name : name, APIParameterKey.email : email, APIParameterKey.dob : dob, APIParameterKey.gender : gender, APIParameterKey.city : city]
+        case .register(let name, let email, let dob, let gender, let city, let password, let confirmPassword):
+            return [APIParameterKey.name : name, APIParameterKey.email : email, APIParameterKey.dob : dob, APIParameterKey.gender : gender, APIParameterKey.city : city, APIParameterKey.password : password, APIParameterKey.passwordConfirmation :  confirmPassword]
         }
     }
         
@@ -57,6 +57,9 @@ enum APIRouter: URLRequestConvertible, Equatable {
             urlRequest.httpMethod = method.rawValue
             urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
             urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
+            if Manager.authTypeHeader == APIAuthTypeHeader.bearerToken.authIdentifier {
+                urlRequest.setValue("Bearer \(Manager.token)", forHTTPHeaderField: HTTPHeaderField.authorization.rawValue)
+            }
             // Parameters
             print("Parametri su:", parameters ?? [:])
             if let parameters = parameters {

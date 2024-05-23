@@ -154,3 +154,4 @@
 "register" = "Register";
 "cityYouLiveIn" = "City you live in";
 "alreadyHaveAnAccount" = "You already have a Lollypop account?";
+"passwordsDontMatch" = "Passwords don't match. Check your entry and try again."

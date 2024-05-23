@@ -8,8 +8,8 @@
 import Foundation
 
 enum HTTPHeaderField: String {
-    case authentication = "Authorization"
-    case authorization = "Firebase-Auth"
+    case authorization = "Authorization"
+    case firauthorization = "Firebase-Auth"
     case contentType = "Content-Type"
     case acceptType = "Accept"
     case acceptEncoding = "Accept-Encoding"

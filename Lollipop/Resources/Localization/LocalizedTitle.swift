@@ -165,6 +165,7 @@ enum LocalizedTitle: String {
     case register
     case cityYouLiveIn
     case alreadyHaveAnAccount
+    case passwordsDontMatch
     
     var localized: String {
         return self.rawValue.localized()

@@ -22,4 +22,19 @@ class PasswordInteractor: PasswordInputInteractorProtocol {
         let city = PasswordWireframe.city ?? ""
         self.presenter?.takeDataWith(firstName: firstName, lastName: lastName, email: email, dob: dob, gender: gender, city: city)
     }
+    
+    func register(name: String, email: String, dob: String, gender: String, city: String, password: String, confirmPassword: String) {
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.register(name: name, email: email, dob: dob, gender: gender, city: city, password: password, confirmPassword: confirmPassword) { [weak self] result in
+            guard let self = self else { return }
+            presenter?.parseRegisterDataWith(result: result)
+        }
+    }
+    
+    func login(email: String, password: String) {
+        APIClient.login(email: email, password: password) { [weak self] result in
+            guard let self = self else {return}
+            self.presenter?.parseLoginData(result: result)
+        }
+    }
 }

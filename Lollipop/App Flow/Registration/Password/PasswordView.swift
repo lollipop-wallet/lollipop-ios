@@ -41,6 +41,14 @@ class PasswordView: UIViewController, PasswordViewProtocol {
             self.confirmPasswordField.rightSuplementaryIcon = UIImage(named: (self.confirmPasswordField.isSecureTextEntry ?? false) ? AssetTitles.passwordShownIcon : AssetTitles.passwordHiddenIcon)
         }
     }
+    
+    func validate(isPwdEmpty: Bool, isConfirmPwdEmpty: Bool){
+        self.passwordField.borderWidth = 1
+        self.passwordField.borderColor = isPwdEmpty ? AppColors.error : AppColors.black
+        self.confirmPasswordField.borderWidth = 1
+        self.confirmPasswordField.borderColor = isPwdEmpty ? AppColors.error : AppColors.black
+    }
+
 
     //MARK: Actions
     
@@ -49,6 +57,6 @@ class PasswordView: UIViewController, PasswordViewProtocol {
     }
     
     @objc func onProceedTap() {
-        presenter?.proceed()
+        presenter?.proceed(password: self.passwordField.textField.text ?? "", confirmPassword: self.confirmPasswordField.textField.text ?? "")
     }
 }

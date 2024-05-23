@@ -13,4 +13,6 @@ struct Manager {
     static var sessionsCount = Int()
     static var selectedLanguageCode = String()
     static var isRegistered = Bool()
+    static var token = String()
+    static var authTypeHeader = String()
 }

@@ -67,8 +67,8 @@ class APIClient {
         performRequest(route: APIRouter.login(email: email, password: password), completion: completion)
     }
     
-    static func register(name: String, email: String, dob: String, gender: String, city: String, completion:@escaping (Result<RegisterModel, AFError>)->Void){
-        performRequest(route: APIRouter.register(name: name, email: email, dob: dob, gender: gender, city: city), completion: completion)
+    static func register(name: String, email: String, dob: String, gender: String, city: String, password: String, confirmPassword: String, completion:@escaping (Result<RegisterModel, AFError>)->Void){
+        performRequest(route: APIRouter.register(name: name, email: email, dob: dob, gender: gender, city: city, password: password, confirmPassword: confirmPassword), completion: completion)
     }
     
 }
