@@ -42,4 +42,5 @@ protocol LoginViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol LoginWireframeProtocol: AnyObject {
     func toNewUser()
+    func toMain()
 }

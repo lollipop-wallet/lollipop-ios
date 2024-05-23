@@ -69,7 +69,7 @@ extension PasswordPresenter: PasswordOutputInteractorProtocol {
             print("success")
             Manager.token = model.token ?? ""
             self.userId = model.id ?? 0
-            wireframe?.toOtp(id: model.id ?? 0, email: self.email, delegate: self)
+            wireframe?.toOtp(id: model.id ?? 0, email: self.email)
         case .failure(let error):
             UIApplication.topViewController()?.view.hideSpinner()
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
@@ -81,12 +81,5 @@ extension PasswordPresenter: PasswordOutputInteractorProtocol {
 extension PasswordPresenter {
     func showHidePassword(tag: Int) {
         view?.setShowHidePassword(tag: tag)
-    }
-}
-
-//MARK: OTPController delegate
-extension PasswordPresenter {
-    func dismissAndPop() {
-        UIApplication.topViewController()?.popBackSpecific(toControllerType: LoginView.self)
     }
 }

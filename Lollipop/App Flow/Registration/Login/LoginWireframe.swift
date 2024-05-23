@@ -24,4 +24,12 @@ class LoginWireframe: LoginWireframeProtocol {
         let vc = RegisterView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toMain(){
+        let mainVC = MainView()
+        let navigationController = UINavigationController(rootViewController: mainVC)
+        navigationController.isNavigationBarHidden = true
+        UIApplication.shared.keyWindow?.rootViewController = navigationController
+        UIApplication.shared.keyWindow?.makeKeyAndVisible()
+    }
 }

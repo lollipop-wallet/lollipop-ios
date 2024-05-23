@@ -43,6 +43,8 @@ extension OTPPresenter: OTPOutputInteractorProtocol {
         switch result {
         case .success(let model):
             if self.otpType == .registration {
+                UserDefaults.standard.set(Manager.token, forKey: StorageKeys.accessToken.rawValue)
+                UserDefaults.standard.synchronize()
                 Manager.isRegistered = true
                 wireframe?.toMain()
             }else{

@@ -32,6 +32,11 @@ extension LoginPresenter: LoginOutputInteractorProtocol {
         switch result {
         case .success(let model):
             print("success")
+            Manager.token = model.token ?? ""
+            UserDefaults.standard.set(Manager.token, forKey: StorageKeys.accessToken.rawValue)
+            UserDefaults.standard.synchronize()
+            Manager.isRegistered = true
+            wireframe?.toMain()
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }

@@ -11,7 +11,7 @@ import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PasswordPresenterProtocol: InputFieldProtocol, OTPControllerProtocol {
+protocol PasswordPresenterProtocol: InputFieldProtocol {
     
     var interactor: PasswordInputInteractorProtocol? { get set }
     var view: PasswordViewProtocol? { get set }
@@ -54,5 +54,5 @@ protocol PasswordWireframeProtocol: AnyObject {
     static var dob: String? { get set }
     static var city: String? { get set }
 
-    func toOtp(id: Int, email: String, delegate: OTPControllerProtocol?)
+    func toOtp(id: Int, email: String)
 }

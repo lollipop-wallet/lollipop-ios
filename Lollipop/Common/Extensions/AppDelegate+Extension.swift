@@ -26,6 +26,14 @@ extension AppDelegate {
             Localize.setCurrentLanguage(LanCode.mne.rawValue)
             Manager.selectedLanguageCode = LanCode.mne.rawValue
         }
+        
+        //MARK: Check if user is registered/signed in or not
+        if let token = UserDefaults.standard.string(forKey: StorageKeys.accessToken.rawValue){
+            Manager.token = token
+            Manager.isRegistered = true
+        }else{
+            Manager.isRegistered = false
+        }
 
         //MARK: Defaults
         Manager.sessionsCount = 1
