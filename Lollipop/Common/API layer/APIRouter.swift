@@ -14,6 +14,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
     case getconfig
     case login(email: String, password: String)
     case register(name: String, email: String, dob: String, gender: String, city: String, password: String, confirmPassword: String)
+    case registrationotp
 
     
     // MARK: - HTTPMethod
@@ -21,7 +22,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
         switch self {
         case .getconfig:
             return .get
-        case .login, .register:
+        case .login, .register, .registrationotp:
             return .post
         }
     }
@@ -35,13 +36,15 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return "login"
         case .register:
             return "register"
+        case .registrationotp:
+            return "email/verification-notification"
         }
     }
     
     // MARK: - Parameters
     private var parameters: Parameters? {
         switch self {
-        case .getconfig:
+        case .getconfig, .registrationotp:
             return nil
         case .login(let email, let password):
             return [APIParameterKey.email : email, APIParameterKey.password : password]
