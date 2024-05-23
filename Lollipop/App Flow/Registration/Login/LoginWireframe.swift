@@ -32,4 +32,10 @@ class LoginWireframe: LoginWireframeProtocol {
         UIApplication.shared.keyWindow?.rootViewController = navigationController
         UIApplication.shared.keyWindow?.makeKeyAndVisible()
     }
+    
+    func toForgotPassword(){
+        let vc = ForgotPwdEmailView()
+        let navVC = UINavigationController(rootViewController: vc)
+        UIApplication.topViewController()?.present(navVC, animated: true)
+    }
 }

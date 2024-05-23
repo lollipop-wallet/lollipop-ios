@@ -50,6 +50,7 @@ class LoginView: UIViewController, LoginViewProtocol {
     }
     
     @objc func onForgotPwdTap() {
+        presenter?.forgotPassword()
     }
 
     @objc func onProceedTap() {

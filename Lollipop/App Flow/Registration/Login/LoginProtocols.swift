@@ -19,6 +19,7 @@ protocol LoginPresenterProtocol: InputFieldProtocol {
     
     func register()
     func login(email: String, password: String)
+    func forgotPassword()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -43,4 +44,5 @@ protocol LoginViewProtocol: AnyObject {
 protocol LoginWireframeProtocol: AnyObject {
     func toNewUser()
     func toMain()
+    func toForgotPassword()
 }

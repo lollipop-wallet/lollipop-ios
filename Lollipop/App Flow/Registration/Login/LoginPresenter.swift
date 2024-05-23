@@ -25,6 +25,10 @@ class LoginPresenter: NSObject, LoginPresenterProtocol  {
         }
         interactor?.login(email: email, password: password)
     }
+    
+    func forgotPassword() {
+        wireframe?.toForgotPassword()
+    }
 }
 
 extension LoginPresenter: LoginOutputInteractorProtocol {

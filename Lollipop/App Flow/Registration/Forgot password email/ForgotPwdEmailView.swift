@@ -10,6 +10,8 @@
 import UIKit
 
 class ForgotPwdEmailView: UIViewController, ForgotPwdEmailViewProtocol {
+    
+    var emailField = InputField()
 
     var presenter: ForgotPwdEmailPresenterProtocol?
 
@@ -18,4 +20,11 @@ class ForgotPwdEmailView: UIViewController, ForgotPwdEmailViewProtocol {
         setup()
     }
 
+    //MARK: Actions
+    @objc func onCloseTap() {
+        dismiss(animated: true)
+    }
+    
+    @objc func onProceedTap() {
+    }
 }
