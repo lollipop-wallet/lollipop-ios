@@ -28,6 +28,8 @@ class OTPPresenter: NSObject, OTPPresenterProtocol  {
             view?.validate(firstFieldEmpty: firstChar.isEmpty, secondFieldEmpty: secondChar.isEmpty, thirdFieldEmpty: thirdChar.isEmpty, fourthFieldEmpty: fourthChar.isEmpty)
             return
         }
+        let code = "\(firstChar)\(secondChar)\(thirdChar)\(fourthChar)"
+        interactor?.verify(id: self.id, code: code)
     }
 }
 

@@ -33,6 +33,7 @@ class PasswordInteractor: PasswordInputInteractorProtocol {
     
     func login(email: String, password: String) {
         APIClient.login(email: email, password: password) { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
             guard let self = self else {return}
             self.presenter?.parseLoginData(result: result)
         }

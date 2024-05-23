@@ -22,5 +22,11 @@ class OTPInteractor: OTPInputInteractorProtocol {
     }
     
     func verify(id: Int, code: String) {
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.verify(id: id, code: code) { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self = self else {return}
+            self.presenter?.parseVerificationData(result: result)
+        }
     }
 }

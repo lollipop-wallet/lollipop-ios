@@ -35,8 +35,8 @@ class APIClient {
                   print("API URL: ", response.request?.url?.absoluteString ?? "")
                   let json = JSON(response.data ?? Data())
                   print("API result: ", json)
-                switch response.response?.statusCode{
-                case 200, 201:
+                switch response.response?.statusCode ?? 0{
+                case 200...300:
                     completion(response.result)
                 case 401:
                     print("Unknown")
