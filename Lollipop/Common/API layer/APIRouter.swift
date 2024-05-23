@@ -16,6 +16,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
     case register(name: String, email: String, dob: String, gender: String, city: String, password: String, confirmPassword: String)
     case registrationotp
     case verifyemail(id: Int, code: String)
+    case verifyresetpassword(code: String, email: String, password: String, confirmPassword: String)
+
 
     
     // MARK: - HTTPMethod
@@ -23,7 +25,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
         switch self {
         case .getconfig, .verifyemail:
             return .get
-        case .login, .register, .registrationotp:
+        case .login, .register, .registrationotp, .verifyresetpassword:
             return .post
         }
     }
@@ -41,6 +43,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return "email/verification-notification"
         case .verifyemail(let id, let code):
             return "verify-email/\(id)/\(code)"
+        case .verifyresetpassword:
+            return "reset-password-otp"
         }
     }
     
@@ -53,6 +57,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return [APIParameterKey.email : email, APIParameterKey.password : password]
         case .register(let name, let email, let dob, let gender, let city, let password, let confirmPassword):
             return [APIParameterKey.name : name, APIParameterKey.email : email, APIParameterKey.dob : dob, APIParameterKey.gender : gender, APIParameterKey.city : city, APIParameterKey.password : password, APIParameterKey.passwordConfirmation :  confirmPassword]
+        case .verifyresetpassword(let code, let email, let password, let confirmPassword):
+            return [APIParameterKey.otp : code, APIParameterKey.email :  email, APIParameterKey.password : password, APIParameterKey.passwordConfirmation : confirmPassword]
         }
     }
         
