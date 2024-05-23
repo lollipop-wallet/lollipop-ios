@@ -55,6 +55,7 @@
 		2CA195652BE2476300CC10F5 /* DeleteCardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195642BE2476300CC10F5 /* DeleteCardUI.swift */; };
 		2CA5D3262BFF0488006DB45E /* APIAuthTypeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5D3252BFF0488006DB45E /* APIAuthTypeHeader.swift */; };
 		2CA5D3282BFF2376006DB45E /* OTPType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5D3272BFF2376006DB45E /* OTPType.swift */; };
+		2CA5D32B2BFF51DA006DB45E /* ForgotPasswordEmailUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5D32A2BFF51DA006DB45E /* ForgotPasswordEmailUI.swift */; };
 		2CACCD2C2BD51C81008178F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CACCD2B2BD51C81008178F8 /* AppDelegate.swift */; };
 		2CACCD352BD51C83008178F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CACCD342BD51C83008178F8 /* Assets.xcassets */; };
 		2CACCD382BD51C83008178F8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2CACCD372BD51C83008178F8 /* Base */; };
@@ -528,6 +529,7 @@
 		2CA195642BE2476300CC10F5 /* DeleteCardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCardUI.swift; sourceTree = "<group>"; };
 		2CA5D3252BFF0488006DB45E /* APIAuthTypeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthTypeHeader.swift; sourceTree = "<group>"; };
 		2CA5D3272BFF2376006DB45E /* OTPType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPType.swift; sourceTree = "<group>"; };
+		2CA5D32A2BFF51DA006DB45E /* ForgotPasswordEmailUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordEmailUI.swift; sourceTree = "<group>"; };
 		2CACCD282BD51C81008178F8 /* Lollipop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lollipop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CACCD2B2BD51C81008178F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CACCD342BD51C83008178F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1191,6 +1193,14 @@
 			isa = PBXGroup;
 			children = (
 				2CA195642BE2476300CC10F5 /* DeleteCardUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2CA5D3292BFF51CE006DB45E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2CA5D32A2BFF51DA006DB45E /* ForgotPasswordEmailUI.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -2329,6 +2339,7 @@
 				628AA6C62BFB65E2009A3077 /* ForgotPwdEmailView.swift */,
 				628AA6C72BFB65E2009A3077 /* ForgotPwdEmailModel.swift */,
 				628AA6C82BFB65E2009A3077 /* ForgotPwdEmailWireframe.swift */,
+				2CA5D3292BFF51CE006DB45E /* UI */,
 			);
 			path = "Forgot password email";
 			sourceTree = "<group>";
@@ -3048,6 +3059,7 @@
 			files = (
 				2CACCD8D2BD52E38008178F8 /* Alert.swift in Sources */,
 				62F6CE362BDE0FF000C4775C /* AccountDeletionUI.swift in Sources */,
+				2CA5D32B2BFF51DA006DB45E /* ForgotPasswordEmailUI.swift in Sources */,
 				62214B072BD6F3BB00ABF38E /* ContentView.swift in Sources */,
 				2CACCDCC2BD53E44008178F8 /* DispatchQueue+Extension.swift in Sources */,
 				62214AED2BD6E19000ABF38E /* OnboardingUI.swift in Sources */,

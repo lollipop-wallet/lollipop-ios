@@ -11,10 +11,11 @@ import UIKit
 
 class ForgotPwdEmailView: UIViewController, ForgotPwdEmailViewProtocol {
 
-	 var presenter: ForgotPwdEmailPresenterProtocol?
+    var presenter: ForgotPwdEmailPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
     }
 
 }
