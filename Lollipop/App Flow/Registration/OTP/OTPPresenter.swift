@@ -41,9 +41,9 @@ extension OTPPresenter: OTPOutputInteractorProtocol {
         self.view?.setSubtitleWith(subtitle: self.setupSubtitleWith(email: email))
     }
     
-    func parseVerificationData(result: Result<OTPModel, AFError>){
+    func parseVerificationData(result: Result<Empty, AFError>){
         switch result {
-        case .success(let model):
+        case .success(_):
             if self.otpType == .registration {
                 UserDefaults.standard.set(Manager.token, forKey: StorageKeys.accessToken.rawValue)
                 UserDefaults.standard.synchronize()

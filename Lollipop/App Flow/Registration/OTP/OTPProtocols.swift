@@ -32,7 +32,7 @@ protocol OTPInputInteractorProtocol: AnyObject {
 //INTERACTOR TO PRESENTER
 protocol OTPOutputInteractorProtocol: AnyObject {
     func takeData(id: Int, email: String, otpType: OTPType?, delegate: OTPControllerProtocol?)
-    func parseVerificationData(result: Result<OTPModel, AFError>)
+    func parseVerificationData(result: Result<Empty, AFError>)
 }
 //MARK: View
 protocol OTPViewProtocol: AnyObject {
