@@ -8,5 +8,5 @@
 import Foundation
 
 protocol InputFieldProtocol: AnyObject {
-    func showHidePassword()
+    func showHidePassword(tag: Int)
 }

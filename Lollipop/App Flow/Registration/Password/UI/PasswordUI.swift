@@ -37,6 +37,10 @@ extension PasswordView {
         self.passwordField.background = AppColors.white
         self.passwordField.leftSuplementaryIconHidden = true
         self.passwordField.isSecureTextEntry = true
+        self.passwordField.rightSuplementaryIconHidden = false
+        self.passwordField.rightSuplementaryIcon = UIImage(named: AssetTitles.passwordHiddenIcon)
+        self.passwordField.tag = 0
+        self.passwordField.delegate = presenter
         
         self.confirmPasswordField.title = "\(LocalizedTitle.confirmPassword.localized):"
         self.confirmPasswordField.errorHidden = true
@@ -44,6 +48,11 @@ extension PasswordView {
         self.confirmPasswordField.background = AppColors.white
         self.confirmPasswordField.leftSuplementaryIconHidden = true
         self.confirmPasswordField.isSecureTextEntry = true
+        self.confirmPasswordField.rightSuplementaryIconHidden = false
+        self.confirmPasswordField.rightSuplementaryIcon = UIImage(named: AssetTitles.passwordHiddenIcon)
+        self.confirmPasswordField.tag = 1
+        self.confirmPasswordField.delegate = presenter
+        
         
         lazy var mainStack: UIStackView = {
             let stack = UIStackView(arrangedSubviews: [self.passwordField, self.confirmPasswordField])

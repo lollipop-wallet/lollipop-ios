@@ -30,6 +30,17 @@ class PasswordView: UIViewController, PasswordViewProtocol {
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
+    //MARK: PasswordView protocol
+    func setShowHidePassword(tag: Int){
+        if tag == 0 {
+            self.passwordField.isSecureTextEntry = (self.passwordField.isSecureTextEntry ?? false)
+            self.passwordField.rightSuplementaryIcon = UIImage(named: (self.passwordField.isSecureTextEntry ?? false) ? AssetTitles.passwordShownIcon : AssetTitles.passwordHiddenIcon)
+        }else{
+            self.confirmPasswordField.isSecureTextEntry = (self.confirmPasswordField.isSecureTextEntry ?? false)
+            self.confirmPasswordField.rightSuplementaryIcon = UIImage(named: (self.confirmPasswordField.isSecureTextEntry ?? false) ? AssetTitles.passwordShownIcon : AssetTitles.passwordHiddenIcon)
+        }
+    }
 
     //MARK: Actions
     

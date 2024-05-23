@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class PasswordPresenter: PasswordPresenterProtocol  {
+class PasswordPresenter:NSObject, PasswordPresenterProtocol  {
     
     var interactor : PasswordInputInteractorProtocol?
     weak var view: PasswordViewProtocol?
@@ -37,5 +37,12 @@ extension PasswordPresenter: PasswordOutputInteractorProtocol {
         self.dob = dob
         self.gender = gender
         self.city = city
+    }
+}
+
+//MARK: InputField Delegate
+extension PasswordPresenter {
+    func showHidePassword(tag: Int) {
+        view?.setShowHidePassword(tag: tag)
     }
 }

@@ -251,7 +251,7 @@ class InputField: UIView {
     //MARK: Actions
     
     @objc func onSuplementaryButtonTap() {
-        delegate?.showHidePassword()
+        delegate?.showHidePassword(tag: self.tag)
     }
     
 }

@@ -10,7 +10,7 @@ import Foundation
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PasswordPresenterProtocol: AnyObject {
+protocol PasswordPresenterProtocol: InputFieldProtocol {
     
     var interactor: PasswordInputInteractorProtocol? { get set }
     var view: PasswordViewProtocol? { get set }
@@ -36,7 +36,8 @@ protocol PasswordOutputInteractorProtocol: AnyObject {
 protocol PasswordViewProtocol: AnyObject {
     
     var presenter: PasswordPresenterProtocol?  { get set }
-    
+    func setShowHidePassword(tag: Int)
+
 }
 //MARK: Wireframe
 protocol PasswordWireframeProtocol: AnyObject {

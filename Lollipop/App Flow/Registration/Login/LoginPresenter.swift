@@ -40,7 +40,7 @@ extension LoginPresenter: LoginOutputInteractorProtocol {
 
 //MARK: InputField Delegate
 extension LoginPresenter {
-    func showHidePassword() {
+    func showHidePassword(tag: Int) {
         view?.setShowHidePassword()
     }
 }
