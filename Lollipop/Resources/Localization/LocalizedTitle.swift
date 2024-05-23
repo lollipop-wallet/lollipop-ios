@@ -166,6 +166,10 @@ enum LocalizedTitle: String {
     case cityYouLiveIn
     case alreadyHaveAnAccount
     case passwordsDontMatch
+    case enterEmailForPwdChange
+    case enterNewPwd
+    case confirmNewPwd
+    case createNewPwd
     
     var localized: String {
         return self.rawValue.localized()

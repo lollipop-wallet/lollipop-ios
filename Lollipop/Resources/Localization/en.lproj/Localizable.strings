@@ -155,3 +155,7 @@
 "cityYouLiveIn" = "City you live in";
 "alreadyHaveAnAccount" = "You already have a Lollypop account?";
 "passwordsDontMatch" = "Passwords don't match. Check your entry and try again.";
+"enterEmailForPwdChange" = "Enter email to change password";
+"enterNewPwd" = "Enter new password";
+"confirmNewPwd" = "Confirm new password";
+"createNewPwd" = "Create new password";

@@ -154,3 +154,7 @@
 "cityYouLiveIn" = "Grad u kome živite";
 "alreadyHaveAnAccount" = "Već imate nalog na Lollypop-u?";
 "passwordsDontMatch" = "Šifre se ne podudaraju. Provjerite unos i pokušajte ponovo.";
+"enterEmailForPwdChange" = "Unesi email za promjenu šifre";
+"enterNewPwd" = "Unesi novu šifru";
+"confirmNewPwd" = "Potvrdi novu šifru";
+"createNewPwd" = "Kreiraj novu šifru";
