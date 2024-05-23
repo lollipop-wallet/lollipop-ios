@@ -7,6 +7,7 @@
 //
 import UIKit
 import SwiftyAttributes
+import Alamofire
 
 class OTPPresenter: NSObject, OTPPresenterProtocol  {
     
@@ -14,13 +15,45 @@ class OTPPresenter: NSObject, OTPPresenterProtocol  {
     weak var view: OTPViewProtocol?
     var wireframe: OTPWireframeProtocol?
     
+    var id = Int()
+    var otpType: OTPType?
+    var delegate: OTPControllerProtocol?
+    
     func viewDidLoad() {
-        self.view?.setSubtitleWith(subtitle: self.setupSubtitleWith(email: "test@gmail.com"))
+        interactor?.viewDidLoad()
+    }
+    
+    func proceed(firstChar: String, secondChar: String, thirdChar: String, fourthChar: String){
+        guard !firstChar.isEmpty, !secondChar.isEmpty, !thirdChar.isEmpty, !fourthChar.isEmpty else {
+            view?.validate(firstFieldEmpty: firstChar.isEmpty, secondFieldEmpty: secondChar.isEmpty, thirdFieldEmpty: thirdChar.isEmpty, fourthFieldEmpty: fourthChar.isEmpty)
+            return
+        }
     }
 }
 
 extension OTPPresenter: OTPOutputInteractorProtocol {
+    func takeData(id: Int, email: String, otpType: OTPType?, delegate: OTPControllerProtocol?){
+        self.id = id
+        self.otpType = otpType
+        self.delegate = delegate
+        self.view?.setSubtitleWith(subtitle: self.setupSubtitleWith(email: email))
+    }
     
+    func parseVerificationData(result: Result<OTPModel, AFError>){
+        switch result {
+        case .success(let model):
+            if self.otpType == .registration {
+                Manager.isRegistered = true
+                wireframe?.toMain()
+            }else{
+                UIApplication.topViewController()?.dismiss(animated: true, completion: {
+                    self.delegate?.dismissAndPop()
+                })
+            }
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
 }
 
 //MARK: OTPField Delegate

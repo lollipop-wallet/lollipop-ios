@@ -10,6 +10,17 @@
 import UIKit
 
 class OTPInteractor: OTPInputInteractorProtocol {
-    
+
     weak var presenter: OTPOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        let id = OTPWireframe.id ?? 0
+        let email = OTPWireframe.email ?? ""
+        let otpType = OTPWireframe.otpType
+        let delegate = OTPWireframe.delegate
+        presenter?.takeData(id: id, email: email, otpType: otpType, delegate: delegate)
+    }
+    
+    func verify(id: Int, code: String) {
+    }
 }

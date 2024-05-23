@@ -66,6 +66,20 @@ class OTPView: UIViewController, OTPViewProtocol {
             self.fourthOTPField.textField.resignFirstResponder()
         }
     }
+    
+    func validate(firstFieldEmpty: Bool, secondFieldEmpty: Bool, thirdFieldEmpty: Bool, fourthFieldEmpty: Bool){
+        self.firstOTPField.borderWidth = 1
+        self.firstOTPField.borderColor = firstFieldEmpty ? AppColors.error : AppColors.black
+        
+        self.secondOTPField.borderWidth = 1
+        self.secondOTPField.borderColor = secondFieldEmpty ? AppColors.error : AppColors.black
+        
+        self.thirdOTPField.borderWidth = 1
+        self.thirdOTPField.borderColor = thirdFieldEmpty ? AppColors.error : AppColors.black
+        
+        self.fourthOTPField.borderWidth = 1
+        self.fourthOTPField.borderColor = fourthFieldEmpty ? AppColors.error : AppColors.black
+    }
 
     //MARK: Actions
     @objc func onCloseTap() {
@@ -73,6 +87,6 @@ class OTPView: UIViewController, OTPViewProtocol {
     }
     
     @objc func onProceedTap() {
-        
+        presenter?.proceed(firstChar: firstOTPField.textField.text ?? "", secondChar: secondOTPField.textField.text ?? "", thirdChar: thirdOTPField.textField.text ?? "", fourthChar: fourthOTPField.textField.text ?? "")
     }
 }

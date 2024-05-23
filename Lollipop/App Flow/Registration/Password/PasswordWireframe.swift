@@ -26,8 +26,12 @@ class PasswordWireframe: PasswordWireframeProtocol {
         
     }
     
-    func toOtp(){
+    func toOtp(id: Int, email: String, delegate: OTPControllerProtocol?){
         let vc = OTPView()
+        OTPWireframe.id = id
+        OTPWireframe.email = email
+        OTPWireframe.delegate = delegate
+        OTPWireframe.otpType = .registration
         let navVC = UINavigationController(rootViewController: vc)
         UIApplication.topViewController()?.present(navVC, animated: true)
     }

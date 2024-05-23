@@ -71,5 +71,9 @@ class APIClient {
         performRequest(route: APIRouter.register(name: name, email: email, dob: dob, gender: gender, city: city, password: password, confirmPassword: confirmPassword), completion: completion)
     }
     
+    static func verify(id: Int, code: String, completion:@escaping (Result<OTPModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.verifyemail(id: id, code: code), completion: completion)
+    }
 }
 
