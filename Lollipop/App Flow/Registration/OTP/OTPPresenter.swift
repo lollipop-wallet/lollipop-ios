@@ -18,6 +18,8 @@ class OTPPresenter: NSObject, OTPPresenterProtocol  {
     var id = Int()
     var otpType: OTPType?
     var delegate: OTPControllerProtocol?
+    var email = String()
+    var otp = String()
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -29,7 +31,12 @@ class OTPPresenter: NSObject, OTPPresenterProtocol  {
             return
         }
         let code = "\(firstChar)\(secondChar)\(thirdChar)\(fourthChar)"
-        interactor?.verify(id: self.id, code: code)
+        self.otp = code
+        if self.otpType == .registration {
+            interactor?.verify(id: self.id, code: code)
+        }else{
+            wireframe?.toNewPasswordWith(email: self.email, otp: self.otp)
+        }
     }
 }
 
@@ -37,6 +44,7 @@ extension OTPPresenter: OTPOutputInteractorProtocol {
     func takeData(id: Int, email: String, otpType: OTPType?, delegate: OTPControllerProtocol?){
         self.id = id
         self.otpType = otpType
+        self.email = email
         self.delegate = delegate
         self.view?.setSubtitleWith(subtitle: self.setupSubtitleWith(email: email))
     }
@@ -44,16 +52,10 @@ extension OTPPresenter: OTPOutputInteractorProtocol {
     func parseVerificationData(result: Result<Empty, AFError>){
         switch result {
         case .success(_):
-            if self.otpType == .registration {
-                UserDefaults.standard.set(Manager.token, forKey: StorageKeys.accessToken.rawValue)
-                UserDefaults.standard.synchronize()
-                Manager.isRegistered = true
-                wireframe?.toMain()
-            }else{
-                UIApplication.topViewController()?.dismiss(animated: true, completion: {
-                    self.delegate?.dismissAndPop()
-                })
-            }
+            UserDefaults.standard.set(Manager.token, forKey: StorageKeys.accessToken.rawValue)
+            UserDefaults.standard.synchronize()
+            Manager.isRegistered = true
+            wireframe?.toMain()
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }

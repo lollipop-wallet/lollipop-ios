@@ -9,6 +9,8 @@ import UIKit
 
 class NewPasswordWireframe: NewPasswordWireframeProtocol {
     
+    static var email: String?
+    static var otp: String? 
     
     static func createModule(NewPasswordRef: NewPasswordView) {
         let presenter: NewPasswordPresenterProtocol & NewPasswordOutputInteractorProtocol = NewPasswordPresenter()

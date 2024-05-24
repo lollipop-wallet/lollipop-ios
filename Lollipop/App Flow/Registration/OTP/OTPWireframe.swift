@@ -31,4 +31,11 @@ class OTPWireframe: OTPWireframeProtocol {
         UIApplication.shared.keyWindow?.rootViewController = navigationController
         UIApplication.shared.keyWindow?.makeKeyAndVisible()
     }
+    
+    func toNewPasswordWith(email: String, otp: String){
+        let vc = NewPasswordView()
+        NewPasswordWireframe.email = email
+        NewPasswordWireframe.otp = otp
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

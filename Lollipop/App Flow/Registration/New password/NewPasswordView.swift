@@ -18,6 +18,8 @@ class NewPasswordView: UIViewController, NewPasswordViewProtocol {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+        presenter?.viewDidLoad()
     }
     
     //MARK: NewPasswordView protocol

@@ -52,6 +52,7 @@ protocol OTPWireframeProtocol: AnyObject {
     static var otpType: OTPType? { get set }
     static var delegate: OTPControllerProtocol? { get set }
     func toMain()
+    func toNewPasswordWith(email: String, otp: String)
 }
 
 //MARK: OTPController protocol

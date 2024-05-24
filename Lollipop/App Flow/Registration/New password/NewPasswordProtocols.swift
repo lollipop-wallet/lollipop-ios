@@ -16,6 +16,7 @@ protocol NewPasswordPresenterProtocol: InputFieldProtocol {
     var view: NewPasswordViewProtocol? { get set }
     var wireframe:NewPasswordWireframeProtocol? { get set }
     
+    func viewDidLoad()
     func proceed(password: String, confirmPassword: String)
 
 }
@@ -24,14 +25,12 @@ protocol NewPasswordPresenterProtocol: InputFieldProtocol {
 protocol NewPasswordInputInteractorProtocol: AnyObject {
     
     var presenter: NewPasswordOutputInteractorProtocol?  { get set }
-    
-   
+    func viewDidLoad()
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol NewPasswordOutputInteractorProtocol: AnyObject {
-    
-
+    func takeDataWith(email: String, otp: String)
 }
 //MARK: View
 protocol NewPasswordViewProtocol: AnyObject {
@@ -42,6 +41,6 @@ protocol NewPasswordViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol NewPasswordWireframeProtocol: AnyObject {
-
-    
+    static var email: String? { get set }
+    static var otp: String? { get set }
 }

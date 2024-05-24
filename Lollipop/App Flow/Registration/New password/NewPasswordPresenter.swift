@@ -13,6 +13,13 @@ class NewPasswordPresenter: NSObject, NewPasswordPresenterProtocol  {
     weak var view: NewPasswordViewProtocol?
     var wireframe: NewPasswordWireframeProtocol?
     
+    var email = String()
+    var otp = String()
+    
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
+    
     func proceed(password: String, confirmPassword: String){
         guard !password.isEmpty, !confirmPassword.isEmpty else {
             view?.validate(isPwdEmpty: password.isEmpty, isConfirmPwdEmpty: confirmPassword.isEmpty)
@@ -26,7 +33,10 @@ class NewPasswordPresenter: NSObject, NewPasswordPresenterProtocol  {
 }
 
 extension NewPasswordPresenter: NewPasswordOutputInteractorProtocol {
-    
+    func takeDataWith(email: String, otp: String){
+        self.email = email
+        self.otp = otp
+    }
 }
 
 //MARK: InputField Delegate
