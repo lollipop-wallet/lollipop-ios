@@ -72,4 +72,5 @@ struct AssetTitles {
     static let cameraIcon = "ic_camera"
     static let passwordHiddenIcon = "ic_pwd_hidden"
     static let passwordShownIcon = "ic_pwd_shown"
+    static let signOutIcon = "ic_sign_out"
 }

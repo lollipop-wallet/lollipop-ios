@@ -13,4 +13,5 @@ enum ProfileItem {
     case about
     case language
     case terms
+    case signout
 }

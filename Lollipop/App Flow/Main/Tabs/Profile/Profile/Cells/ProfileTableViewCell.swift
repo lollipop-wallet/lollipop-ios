@@ -128,6 +128,10 @@ class ProfileTableViewCell: UITableViewCell {
         self.delegate = delegate
         self.titleLabel.text = item.title
         self.iconImageView.image = UIImage(named: item.icon)
+        self.profileCellPlaceholderView.backgroundColor = item.item == .signout ? .clear : AppColors.white
+        self.arrowIcon.isHidden = item.item == .signout
+        self.titleLabel.textColor = item.item == .signout ? AppColors.link : AppColors.black
+        self.titleLabel.font = .inter(ofSize: 16, name: item.item == .signout ? .semibold : .regular)
     }
     
     //MARK: Actions

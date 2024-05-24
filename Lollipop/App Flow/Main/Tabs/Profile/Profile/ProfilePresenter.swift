@@ -49,6 +49,8 @@ extension ProfilePresenter {
             wireframe?.toLanguage()
         case .terms:
             wireframe?.toTerms()
+        case .signout:
+            print()
         }
     }
 }

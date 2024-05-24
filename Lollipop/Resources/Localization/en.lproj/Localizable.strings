@@ -159,3 +159,4 @@
 "enterNewPwd" = "Enter new password";
 "confirmNewPwd" = "Confirm new password";
 "createNewPwd" = "Create new password";
+"signOut" = "Sign out";

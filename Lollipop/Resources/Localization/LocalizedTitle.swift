@@ -170,7 +170,7 @@ enum LocalizedTitle: String {
     case enterNewPwd
     case confirmNewPwd
     case createNewPwd
-    
+    case signOut
     
     var localized: String {
         return self.rawValue.localized()
