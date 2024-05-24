@@ -9,6 +9,6 @@
 import Foundation
 
 struct ForgotPwdEmailModel : Codable {
-    
+    let message: String?
 }
 

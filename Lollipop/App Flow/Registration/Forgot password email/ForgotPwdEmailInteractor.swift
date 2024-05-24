@@ -12,4 +12,13 @@ import UIKit
 class ForgotPwdEmailInteractor: ForgotPwdEmailInputInteractorProtocol {
     
     weak var presenter: ForgotPwdEmailOutputInteractorProtocol?
+    
+    func sendOtpWith(email: String) {
+        UIApplication.topViewController()?.view?.showSpinner()
+        APIClient.sendforgotpwdotp(email: email) { [weak self] result in
+            UIApplication.topViewController()?.view?.hideSpinner()
+            guard let self = self else {return}
+            self.presenter?.parseOTPDataWith(result: result)
+        }
+    }
 }

@@ -19,6 +19,12 @@ class ForgotPwdEmailView: UIViewController, ForgotPwdEmailViewProtocol {
         super.viewDidLoad()
         setup()
     }
+    
+    //MARK: ForgotPwdEmailView Protocol
+    func validate(isEmailEmpty: Bool){
+        self.emailField.borderWidth = 1
+        self.emailField.borderColor = isEmailEmpty ? AppColors.error : AppColors.black
+    }
 
     //MARK: Actions
     @objc func onCloseTap() {
@@ -26,5 +32,6 @@ class ForgotPwdEmailView: UIViewController, ForgotPwdEmailViewProtocol {
     }
     
     @objc func onProceedTap() {
+        presenter?.proceed(email: self.emailField.textField.text ?? "")
     }
 }

@@ -77,8 +77,13 @@ class APIClient {
     }
     
     static func verifyresetpassword(code: String, email: String, password: String, confirmPassword: String, completion:@escaping (Result<Empty, AFError>)->Void){
-        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        Manager.authTypeHeader = ""
         performRequest(route: APIRouter.verifyresetpassword(code: code, email: email, password: password, confirmPassword: confirmPassword), completion: completion)
+    }
+    
+    static func sendforgotpwdotp(email: String, completion:@escaping (Result<ForgotPwdEmailModel, AFError>)->Void){
+        Manager.authTypeHeader = ""
+        performRequest(route: APIRouter.sendforgotpwdotp(email: email), completion: completion)
     }
 }
 

@@ -19,4 +19,11 @@ class ForgotPwdEmailWireframe: ForgotPwdEmailWireframeProtocol {
         ForgotPwdEmailRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toOTPWith(email: String){
+        let vc = OTPView()
+        OTPWireframe.email = email
+        OTPWireframe.otpType = .resetpwd
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

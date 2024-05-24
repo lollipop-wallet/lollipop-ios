@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -16,29 +17,28 @@ protocol ForgotPwdEmailPresenterProtocol: AnyObject {
     var view: ForgotPwdEmailViewProtocol? { get set }
     var wireframe:ForgotPwdEmailWireframeProtocol? { get set }
     
+    func proceed(email: String)
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
 protocol ForgotPwdEmailInputInteractorProtocol: AnyObject {
     
     var presenter: ForgotPwdEmailOutputInteractorProtocol?  { get set }
-    
-   
+    func sendOtpWith(email: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol ForgotPwdEmailOutputInteractorProtocol: AnyObject {
-    
-
+    func parseOTPDataWith(result: Result<ForgotPwdEmailModel, AFError>)
 }
 //MARK: View
 protocol ForgotPwdEmailViewProtocol: AnyObject {
     
     var presenter: ForgotPwdEmailPresenterProtocol?  { get set }
-    
+    func validate(isEmailEmpty: Bool)
+
 }
 //MARK: Wireframe
 protocol ForgotPwdEmailWireframeProtocol: AnyObject {
-
-    
+    func toOTPWith(email: String)
 }
