@@ -29,7 +29,17 @@ extension NewPasswordView {
             return button
         }()
         
-        self.navigationItem.leftBarButtonItems = [closeButton]
+        lazy var backButton: UIBarButtonItem = {
+            let button = UIBarButtonItem()
+            button.image = UIImage(named: AssetTitles.backIcon)
+            button.tintColor = AppColors.black
+            button.action = #selector(self.onBackTap)
+            button.target = self
+            return button
+        }()
+        
+        self.navigationItem.leftBarButtonItems = [backButton]
+        self.navigationItem.rightBarButtonItems = [closeButton]
 
         lazy var titleLabel: UILabel = {
             let label = UILabel()

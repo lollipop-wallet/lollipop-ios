@@ -17,6 +17,7 @@ class OTPView: UIViewController, OTPViewProtocol {
     var secondOTPField = OTPInputField()
     var thirdOTPField = OTPInputField()
     var fourthOTPField = OTPInputField()
+    var backButton = UIBarButtonItem()
 
     var presenter: OTPPresenterProtocol?
 
@@ -80,10 +81,20 @@ class OTPView: UIViewController, OTPViewProtocol {
         self.fourthOTPField.borderWidth = 1
         self.fourthOTPField.borderColor = fourthFieldEmpty ? AppColors.error : AppColors.black
     }
+    
+    func setBackButtonToLeftBarButtonItems(shouldSet: Bool){
+        DispatchQueue.main.async {
+            self.navigationItem.leftBarButtonItems = shouldSet ? [self.backButton] : []
+        }
+    }
 
     //MARK: Actions
     @objc func onCloseTap() {
         dismiss(animated: true)
+    }
+    
+    @objc func onBackTap() {
+        popBack(2)
     }
     
     @objc func onProceedTap() {

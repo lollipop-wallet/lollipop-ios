@@ -47,6 +47,7 @@ extension OTPPresenter: OTPOutputInteractorProtocol {
         self.email = email
         self.delegate = delegate
         self.view?.setSubtitleWith(subtitle: self.setupSubtitleWith(email: email))
+        self.view?.setBackButtonToLeftBarButtonItems(shouldSet: otpType == .resetpwd)
     }
     
     func parseVerificationData(result: Result<Empty, AFError>){

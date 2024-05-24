@@ -44,6 +44,7 @@ protocol OTPViewProtocol: AnyObject {
     func activateFourthField()
     func resignFirstResponder()
     func validate(firstFieldEmpty: Bool, secondFieldEmpty: Bool, thirdFieldEmpty: Bool, fourthFieldEmpty: Bool)
+    func setBackButtonToLeftBarButtonItems(shouldSet: Bool)
 }
 //MARK: Wireframe
 protocol OTPWireframeProtocol: AnyObject {

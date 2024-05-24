@@ -28,8 +28,13 @@ extension OTPView {
             button.target = self
             return button
         }()
+
+        self.backButton.image = UIImage(named: AssetTitles.backIcon)
+        self.backButton.tintColor = AppColors.black
+        self.backButton.action = #selector(self.onBackTap)
+        self.backButton.target = self
         
-        self.navigationItem.leftBarButtonItems = [closeButton]
+        self.navigationItem.rightBarButtonItems = [closeButton]
 
         lazy var titleLabel: UILabel = {
             let label = UILabel()

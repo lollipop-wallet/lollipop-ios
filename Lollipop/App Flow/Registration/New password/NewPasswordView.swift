@@ -45,6 +45,10 @@ class NewPasswordView: UIViewController, NewPasswordViewProtocol {
         dismiss(animated: true)
     }
     
+    @objc func onBackTap() {
+        popBack(2)
+    }
+    
     @objc func onProceedTap() {
         presenter?.proceed(password: self.passwordField.textField.text ?? "", confirmPassword: self.confirmPasswordField.textField.text ?? "")
     }
