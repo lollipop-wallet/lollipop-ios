@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 class NewPasswordPresenter: NSObject, NewPasswordPresenterProtocol  {
     
@@ -29,6 +30,7 @@ class NewPasswordPresenter: NSObject, NewPasswordPresenterProtocol  {
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: LocalizedTitle.passwordsDontMatch.localized, shouldDismiss: false)
             return
         }
+        interactor?.changePassword(email: self.email, otp: self.otp, password: password, confirmPassword: confirmPassword)
     }
 }
 
@@ -36,6 +38,15 @@ extension NewPasswordPresenter: NewPasswordOutputInteractorProtocol {
     func takeDataWith(email: String, otp: String){
         self.email = email
         self.otp = otp
+    }
+    
+    func parseChangePwdData(result: Result<NewPasswordModel, AFError>){
+        switch result {
+        case .success(let model):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.notice.localized, text: model.message ?? "", shouldDismiss: true)
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
     }
 }
 

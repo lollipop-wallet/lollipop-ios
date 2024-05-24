@@ -76,7 +76,7 @@ class APIClient {
         performRequest(route: APIRouter.verifyemail(id: id, code: code), completion: completion)
     }
     
-    static func verifyresetpassword(code: String, email: String, password: String, confirmPassword: String, completion:@escaping (Result<Empty, AFError>)->Void){
+    static func verifyresetpassword(code: String, email: String, password: String, confirmPassword: String, completion:@escaping (Result<NewPasswordModel, AFError>)->Void){
         Manager.authTypeHeader = ""
         performRequest(route: APIRouter.verifyresetpassword(code: code, email: email, password: password, confirmPassword: confirmPassword), completion: completion)
     }

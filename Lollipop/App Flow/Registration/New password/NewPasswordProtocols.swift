@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -26,11 +27,13 @@ protocol NewPasswordInputInteractorProtocol: AnyObject {
     
     var presenter: NewPasswordOutputInteractorProtocol?  { get set }
     func viewDidLoad()
+    func changePassword(email: String, otp: String, password: String, confirmPassword: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol NewPasswordOutputInteractorProtocol: AnyObject {
     func takeDataWith(email: String, otp: String)
+    func parseChangePwdData(result: Result<NewPasswordModel, AFError>)
 }
 //MARK: View
 protocol NewPasswordViewProtocol: AnyObject {

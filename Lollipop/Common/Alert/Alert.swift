@@ -11,21 +11,7 @@ class Alert {
     func alertMessage(title : String, text: String, shouldDismiss: Bool, nav: UINavigationController) {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: title, message: text, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) {
-                UIAlertAction in
-                if shouldDismiss{
-                    nav.popViewController(animated: true)
-                }
-            }
-            alertController.addAction(okAction)
-            UIApplication.topViewController()?.present(alertController, animated: true, completion: nil)
-        }
-    }
-    
-    func alertMessageBF(title : String, text: String, shouldDismiss: Bool, nav: UINavigationController) {
-        DispatchQueue.main.async {
-            let alertController = UIAlertController(title: title, message: text, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Close", style: UIAlertAction.Style.default) {
+            let okAction = UIAlertAction(title: LocalizedTitle.ok.localized, style: UIAlertAction.Style.default) {
                 UIAlertAction in
                 if shouldDismiss{
                     nav.popViewController(animated: true)
@@ -39,7 +25,7 @@ class Alert {
     func alertMessageNoNavigator(title : String, text: String, shouldDismiss: Bool) {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: title, message: text, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) {
+            let okAction = UIAlertAction(title: LocalizedTitle.ok.localized, style: UIAlertAction.Style.default) {
                 UIAlertAction in
                 if shouldDismiss{
                     UIApplication.topViewController()?.dismiss(animated: true, completion: nil)
