@@ -97,11 +97,18 @@ extension NewPasswordView {
             make.top.equalTo(self.view.safeAreaLayoutGuide)
         }
         
+        containerView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(16)
+        }
+        
         containerView.addSubview(mainStack)
         mainStack.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(24)
+            make.top.equalTo(titleLabel.snp.bottom).offset(32)
         }
         
         containerView.addSubview(proceedButton)

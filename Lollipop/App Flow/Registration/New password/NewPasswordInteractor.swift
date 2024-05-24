@@ -18,4 +18,13 @@ class NewPasswordInteractor: NewPasswordInputInteractorProtocol {
         let otp = NewPasswordWireframe.otp ?? ""
         self.presenter?.takeDataWith(email: email, otp: otp)
     }
+    
+    func changePassword(email: String, otp: String, password: String, confirmPassword: String) {
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.verifyresetpassword(code: otp, email: email, password: password, confirmPassword: confirmPassword) { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self  = self else {return}
+            self.presenter?.parseChangePwdData(result: result)
+        }
+    }
 }
