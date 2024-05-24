@@ -20,6 +20,7 @@
 		2C4EE5F52BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */; };
 		2C4EE5F82BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */; };
 		2C4EE5FC2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EE5FB2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift */; };
+		2C501E0F2C005A99003FE7D6 /* NewPasswordUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C501E0E2C005A99003FE7D6 /* NewPasswordUI.swift */; };
 		2C55694B2BFE14A300E12208 /* ExceptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C55694A2BFE14A300E12208 /* ExceptionModel.swift */; };
 		2C5569502BFE19BB00E12208 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C55694F2BFE19BB00E12208 /* CityTableViewCell.xib */; };
 		2C5569512BFE19BB00E12208 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C55694E2BFE19BB00E12208 /* CityTableViewCell.swift */; };
@@ -494,6 +495,7 @@
 		2C4EE5F42BE38F9800F16FD8 /* AddCardHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardHomeTableViewCell.swift; sourceTree = "<group>"; };
 		2C4EE5F72BE3AFBE00F16FD8 /* HomeCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewCell.swift; sourceTree = "<group>"; };
 		2C4EE5FB2BE3B1C200F16FD8 /* LoyaltyCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		2C501E0E2C005A99003FE7D6 /* NewPasswordUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordUI.swift; sourceTree = "<group>"; };
 		2C55694A2BFE14A300E12208 /* ExceptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionModel.swift; sourceTree = "<group>"; };
 		2C55694E2BFE19BB00E12208 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		2C55694F2BFE19BB00E12208 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
@@ -1057,6 +1059,14 @@
 				2CBA985E2BE4E60A00B804E6 /* HomeRectHorizontalCategoryTableViewCell.swift */,
 			);
 			path = "Table cells";
+			sourceTree = "<group>";
+		};
+		2C501E0D2C005A93003FE7D6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2C501E0E2C005A99003FE7D6 /* NewPasswordUI.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		2C5569492BFE149700E12208 /* Models */ = {
@@ -2353,6 +2363,7 @@
 				628AA6D52BFB6600009A3077 /* NewPasswordView.swift */,
 				628AA6D62BFB6600009A3077 /* NewPasswordModel.swift */,
 				628AA6D72BFB6600009A3077 /* NewPasswordWireframe.swift */,
+				2C501E0D2C005A93003FE7D6 /* UI */,
 			);
 			path = "New password";
 			sourceTree = "<group>";
@@ -3179,6 +3190,7 @@
 				62F6CE7C2BDE6DF600C4775C /* TermsWireframe.swift in Sources */,
 				2CACCDA82BD53265008178F8 /* FirebaseEvents.swift in Sources */,
 				2CBA98892BE5175D00B804E6 /* PromotionDetailsUI.swift in Sources */,
+				2C501E0F2C005A99003FE7D6 /* NewPasswordUI.swift in Sources */,
 				2CACCDE42BD54039008178F8 /* UIViewController+Extension.swift in Sources */,
 				2CACCDD22BD53E82008178F8 /* String+Extension.swift in Sources */,
 				2CACCDBA2BD53C40008178F8 /* Configuration.swift in Sources */,

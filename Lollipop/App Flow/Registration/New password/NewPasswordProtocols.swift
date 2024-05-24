@@ -10,12 +10,14 @@ import Foundation
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol NewPasswordPresenterProtocol: AnyObject {
+protocol NewPasswordPresenterProtocol: InputFieldProtocol {
     
     var interactor: NewPasswordInputInteractorProtocol? { get set }
     var view: NewPasswordViewProtocol? { get set }
     var wireframe:NewPasswordWireframeProtocol? { get set }
     
+    func proceed(password: String, confirmPassword: String)
+
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -35,7 +37,8 @@ protocol NewPasswordOutputInteractorProtocol: AnyObject {
 protocol NewPasswordViewProtocol: AnyObject {
     
     var presenter: NewPasswordPresenterProtocol?  { get set }
-    
+    func setShowHidePassword(tag: Int)
+    func validate(isPwdEmpty: Bool, isConfirmPwdEmpty: Bool)
 }
 //MARK: Wireframe
 protocol NewPasswordWireframeProtocol: AnyObject {
