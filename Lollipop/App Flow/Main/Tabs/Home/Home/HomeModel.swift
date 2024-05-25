@@ -9,8 +9,13 @@
 import Foundation
 
 struct HomeModel : Codable {
+    let cards: [Card]?
     let brands: [Brand]?
     let elements: [Element]?
+}
+
+struct Card: Codable {
+    
 }
 
 struct Brand: Codable {

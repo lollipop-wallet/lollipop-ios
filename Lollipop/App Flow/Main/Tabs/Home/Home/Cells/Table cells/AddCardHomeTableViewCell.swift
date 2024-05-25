@@ -144,6 +144,8 @@ class AddCardHomeTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 40) * 0.64)
         }
+        view.backgroundColor = AppColors.lightGrey
+
 //        view.addSubview(dataPlaceholderView)
 //        dataPlaceholderView.snp.makeConstraints { make in
 //            make.leading.trailing.top.bottom.equalToSuperview()
@@ -177,7 +179,8 @@ class AddCardHomeTableViewCell: UITableViewCell {
         
         cellContentView.addSubview(shadowPlaceholderView)
         shadowPlaceholderView.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalToSuperview()
+            make.bottom.equalTo(separatorView.snp.top)
+            make.leading.trailing.top.equalToSuperview()
         }
         self.selectionStyle = .none
         
