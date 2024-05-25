@@ -40,14 +40,15 @@ extension ProfileView {
             view.addSubview(editIcon)
             editIcon.snp.makeConstraints { make in
                 make.width.height.equalTo(16)
-                make.leading.top.equalToSuperview().offset(8)
-                make.trailing.bottom.equalToSuperview().offset(-8)
+                make.centerX.centerY.equalToSuperview()
+//                make.leading.top.equalToSuperview().offset(8)
+//                make.trailing.bottom.equalToSuperview().offset(-8)
             }
             view.addSubview(editButton)
             editButton.snp.makeConstraints { make in
                 make.leading.trailing.top.bottom.equalToSuperview()
             }
-            view.layer.cornerRadius = 12
+            view.layer.cornerRadius = 16
             view.layer.masksToBounds = true
             view.backgroundColor = AppColors.white
             return view
@@ -57,11 +58,13 @@ extension ProfileView {
             let view = UIView()
             view.addSubview(editIconPlaceholder)
             editIconPlaceholder.snp.makeConstraints { make in
-                make.leading.top.equalToSuperview().offset(4)
-                make.trailing.bottom.equalToSuperview().offset(-4)
+//                make.leading.top.equalToSuperview().offset(4)
+//                make.trailing.bottom.equalToSuperview().offset(-4)
+                make.width.height.equalTo(32)
+                make.centerX.centerY.equalToSuperview()
             }
             view.backgroundColor = AppColors.brandPrimary
-            view.layer.cornerRadius = 16
+            view.layer.cornerRadius = 20
             view.layer.masksToBounds = true
             return view
         }()
@@ -77,7 +80,7 @@ extension ProfileView {
             editContainerView.snp.makeConstraints { make in
                 make.trailing.equalToSuperview()
                 make.bottom.equalToSuperview().offset(4)
-                make.width.height.equalTo(36)
+                make.width.height.equalTo(40)
             }
             view.snp.makeConstraints { make in
                 make.width.equalTo(88)
@@ -86,7 +89,7 @@ extension ProfileView {
             return view
         }()
         
-        self.nameLabel.font = .inter(ofSize: 24, name: .bold)
+        self.nameLabel.font = .inter(ofSize: 18, name: .bold)
         self.nameLabel.textAlignment = .left
         self.nameLabel.textColor = AppColors.white
         self.nameLabel.text = "Aco Draskovic"
