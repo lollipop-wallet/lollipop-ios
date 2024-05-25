@@ -26,18 +26,26 @@ extension ProfilePresenter: ProfileOutputInteractorProtocol {
 
 //MARK: UITableViewDelegate&Datasource
 extension ProfilePresenter {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.datasource.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return datasource.count
+        return datasource[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellId.profileCell.rawValue, for: indexPath) as! ProfileTableViewCell
-        cell.configureWith(item: self.datasource[indexPath.row], index: indexPath, delegate: self)
+        cell.configureWith(item: self.datasource[indexPath.section][indexPath.row], index: indexPath, delegate: self)
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 32
+    }
+    
     func didSelectItemAt(index: IndexPath) {
-        let item = self.datasource[index.row]
+        let item = self.datasource[index.section][index.row]
         switch item.item {
         case .settings:
             wireframe?.toPersonalData()
@@ -49,7 +57,7 @@ extension ProfilePresenter {
             wireframe?.toLanguage()
         case .terms:
             wireframe?.toTerms()
-        case .signout:
+        case .shops:
             print()
         }
     }
