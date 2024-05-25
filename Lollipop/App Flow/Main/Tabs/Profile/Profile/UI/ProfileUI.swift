@@ -41,8 +41,6 @@ extension ProfileView {
             editIcon.snp.makeConstraints { make in
                 make.width.height.equalTo(16)
                 make.centerX.centerY.equalToSuperview()
-//                make.leading.top.equalToSuperview().offset(8)
-//                make.trailing.bottom.equalToSuperview().offset(-8)
             }
             view.addSubview(editButton)
             editButton.snp.makeConstraints { make in
@@ -58,8 +56,6 @@ extension ProfileView {
             let view = UIView()
             view.addSubview(editIconPlaceholder)
             editIconPlaceholder.snp.makeConstraints { make in
-//                make.leading.top.equalToSuperview().offset(4)
-//                make.trailing.bottom.equalToSuperview().offset(-4)
                 make.width.height.equalTo(32)
                 make.centerX.centerY.equalToSuperview()
             }
@@ -279,6 +275,12 @@ extension ProfileView {
             return view
         }()
         
+        lazy var bottomView : UIView = {
+            let view = UIView()
+            view.backgroundColor = AppColors.lightGrey
+            return view
+        }()
+        
         self.view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
@@ -301,42 +303,16 @@ extension ProfileView {
         
         contentView.addSubview(tableViewPlaceholder)
         tableViewPlaceholder.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
             make.top.equalTo(avatarSectionPlaceholderView.snp.bottom).offset(32)
         }
         
+        contentView.addSubview(bottomView)
+        bottomView.snp.makeConstraints { make in
+            make.top.equalTo(tableViewPlaceholder.snp.bottom)
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(100)
+        }
         
-//        self.view.addSubview(avatarContainerView)
-//        avatarContainerView.snp.makeConstraints { make in
-//            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
-//            make.centerX.equalToSuperview()
-//            make.width.height.equalTo(104)
-//        }
-//        
-//        self.view.addSubview(self.nameLabel)
-//        self.nameLabel.snp.makeConstraints { make in
-//            make.leading.equalToSuperview().offset(20)
-//            make.trailing.equalToSuperview().offset(-20)
-//            make.top.equalTo(avatarContainerView.snp.bottom).offset(12)
-//        }
-//        
-//        self.view.addSubview(self.phoneLabel)
-//        self.phoneLabel.snp.makeConstraints { make in
-//            make.leading.equalToSuperview().offset(20)
-//            make.trailing.equalToSuperview().offset(-20)
-//            make.top.equalTo(self.nameLabel.snp.bottom).offset(2)
-//        }
-//        
-//        self.view.addSubview(favoriteShopsPlaceholderView)
-//        favoriteShopsPlaceholderView.snp.makeConstraints { make in
-//            make.leading.equalToSuperview().offset(16)
-//            make.trailing.equalToSuperview().offset(-16)
-//            make.top.equalTo(self.phoneLabel.snp.bottom).offset(24)
-//        }
-//        
-//        self.view.addSubview(tableViewPlaceholder)
-//        tableViewPlaceholder.snp.makeConstraints { make in
-//            make.leading.trailing.bottom.equalToSuperview()
-//        }
     }
 }
