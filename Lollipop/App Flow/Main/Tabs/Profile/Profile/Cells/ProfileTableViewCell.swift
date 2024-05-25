@@ -96,20 +96,21 @@ class ProfileTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview()
         }
         
-        cellContentView.addSubview(separatorView)
-        separatorView.snp.makeConstraints { make in
-            make.bottom.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.height.equalTo(1)
-        }
+//        cellContentView.addSubview(separatorView)
+//        separatorView.snp.makeConstraints { make in
+//            make.bottom.equalToSuperview()
+//            make.trailing.equalToSuperview()
+//            make.leading.equalToSuperview()
+//            make.height.equalTo(1)
+//        }
         
         cellContentView.addSubview(profileCellPlaceholderView)
         profileCellPlaceholderView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.bottom.equalTo(separatorView.snp.top)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.leading.trailing.top.bottom.equalToSuperview()
+//            make.top.equalToSuperview()
+//            make.bottom.equalTo(separatorView.snp.top)
+//            make.leading.equalToSuperview()
+//            make.trailing.equalToSuperview()
         }
         
         
@@ -126,11 +127,7 @@ class ProfileTableViewCell: UITableViewCell {
         self.delegate = delegate
         self.titleLabel.text = item.title
         self.iconImageView.image = UIImage(named: item.icon)
-        self.separatorView.isHidden = item.separatorHidden
-//        self.profileCellPlaceholderView.backgroundColor = item.item == .signout ? .clear : AppColors.white
-//        self.arrowIcon.isHidden = item.item == .signout
-//        self.titleLabel.textColor = item.item == .signout ? AppColors.link : AppColors.black
-//        self.titleLabel.font = .inter(ofSize: 16, name: item.item == .signout ? .semibold : .regular)
+        self.separatorView.backgroundColor = item.separatorHidden ? AppColors.lightGrey : AppColors.black.withAlphaComponent(0.1)
     }
     
     //MARK: Actions

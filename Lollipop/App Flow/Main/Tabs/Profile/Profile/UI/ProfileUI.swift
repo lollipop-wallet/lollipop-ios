@@ -191,13 +191,16 @@ extension ProfileView {
             return view
         }()
         
-        self.tableView.separatorStyle = .none
+        self.tableView.separatorStyle = .singleLine
         self.tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: CellId.profileCell.rawValue)
         self.tableView.delegate = presenter
         self.tableView.dataSource = presenter
         self.tableView.sectionHeaderTopPadding = .zero
         self.tableView.sectionFooterHeight = 0
         self.tableView.backgroundColor = AppColors.lightGrey
+        //self.tableView.layoutMargins = .zero
+        self.tableView.separatorInset = .zero
+        self.tableView.separatorColor = AppColors.black.withAlphaComponent(0.2)
         
         lazy var tableViewPlaceholder: UIView = {
             let view = UIView()
