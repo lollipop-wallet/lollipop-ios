@@ -198,23 +198,74 @@ extension ProfileView {
         self.tableView.sectionHeaderTopPadding = .zero
         self.tableView.sectionFooterHeight = 0
         self.tableView.backgroundColor = AppColors.lightGrey
-        //self.tableView.layoutMargins = .zero
         self.tableView.separatorInset = .zero
         self.tableView.separatorColor = AppColors.black.withAlphaComponent(0.2)
-        
+        tableView.tableFooterView = UIView(frame: CGRect(x: CGFloat.leastNonzeroMagnitude, y: CGFloat.leastNonzeroMagnitude, width: tableView.bounds.size.width, height: CGFloat.leastNonzeroMagnitude))
+
         lazy var tableViewPlaceholder: UIView = {
             let view = UIView()
             view.backgroundColor = AppColors.lightGrey
             view.addSubview(self.tableView)
             self.tableView.snp.makeConstraints { make in
                 make.leading.trailing.equalToSuperview()
-                //make.trailing.equalToSuperview().offset(-16)
                 make.top.equalToSuperview().offset(24)
-                make.bottom.equalToSuperview().offset(-13)
             }
+            
+            view.addSubview(logoutPlaceholderView)
+            logoutPlaceholderView.snp.makeConstraints { make in
+                make.leading.trailing.equalToSuperview()
+                make.top.equalTo(self.tableView.snp.bottom)
+                make.height.equalTo(56)
+                make.bottom.equalToSuperview()
+            }
+            
+            
             view.layer.cornerRadius = 32
             view.layer.masksToBounds = true
             view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            return view
+        }()
+        
+        lazy var logoutIcon: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.signOutIcon)
+            imageView.contentMode = .scaleAspectFit
+            return imageView
+        }()
+        
+        lazy var logoutLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .semibold)
+            label.textColor = AppColors.link
+            label.textAlignment = .left
+            label.text = LocalizedTitle.signOut.localized
+            return label
+        }()
+        
+        lazy var logoutButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onLogoutTap), for: .touchUpInside)
+            return button
+        }()
+        
+        lazy var logoutPlaceholderView: UIView = {
+            let view = UIView()
+            view.addSubview(logoutIcon)
+            logoutIcon.snp.makeConstraints { make in
+                make.width.height.equalTo(24)
+                make.leading.equalToSuperview().offset(16)
+                make.centerY.equalToSuperview()
+            }
+            view.addSubview(logoutLabel)
+            logoutLabel.snp.makeConstraints { make in
+                make.leading.equalTo(logoutIcon.snp.trailing).offset(12)
+                make.trailing.equalToSuperview()
+                make.centerY.equalToSuperview()
+            }
+            view.addSubview(logoutButton)
+            logoutButton.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
             return view
         }()
         
@@ -253,6 +304,7 @@ extension ProfileView {
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalTo(avatarSectionPlaceholderView.snp.bottom).offset(32)
         }
+        
         
 //        self.view.addSubview(avatarContainerView)
 //        avatarContainerView.snp.makeConstraints { make in

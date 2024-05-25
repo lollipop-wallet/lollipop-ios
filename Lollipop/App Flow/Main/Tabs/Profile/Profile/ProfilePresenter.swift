@@ -46,8 +46,13 @@ extension ProfilePresenter {
         return view
     }
     
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 0 : 32
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+         return CGFloat.leastNonzeroMagnitude
     }
     
     func didSelectItemAt(index: IndexPath) {
