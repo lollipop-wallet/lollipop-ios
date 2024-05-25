@@ -18,7 +18,7 @@ extension ProfileView {
         UINavigationBar.appearance().layoutMargins.left = 20
         self.navigationItem.title = LocalizedTitle.myProfile.localized
         
-        self.avatarImageView.layer.cornerRadius = 52
+        self.avatarImageView.layer.cornerRadius = 38
         self.avatarImageView.layer.masksToBounds = true
         self.avatarImageView.image = UIImage(named: AssetTitles.avatarIcon)
         
@@ -47,7 +47,7 @@ extension ProfileView {
             editButton.snp.makeConstraints { make in
                 make.leading.trailing.top.bottom.equalToSuperview()
             }
-            view.layer.cornerRadius = 14
+            view.layer.cornerRadius = 12
             view.layer.masksToBounds = true
             view.backgroundColor = AppColors.white
             return view
@@ -61,7 +61,7 @@ extension ProfileView {
                 make.trailing.bottom.equalToSuperview().offset(-4)
             }
             view.backgroundColor = AppColors.brandPrimary
-            view.layer.cornerRadius = 18
+            view.layer.cornerRadius = 16
             view.layer.masksToBounds = true
             return view
         }()
@@ -70,7 +70,8 @@ extension ProfileView {
             let view = UIView()
             view.addSubview(self.avatarImageView)
             self.avatarImageView.snp.makeConstraints { make in
-                make.leading.trailing.top.bottom.equalToSuperview()
+                make.leading.top.bottom.equalToSuperview()
+                make.width.equalTo(76)
             }
             view.addSubview(editContainerView)
             editContainerView.snp.makeConstraints { make in
@@ -78,18 +79,53 @@ extension ProfileView {
                 make.bottom.equalToSuperview().offset(4)
                 make.width.height.equalTo(36)
             }
+            view.snp.makeConstraints { make in
+                make.width.equalTo(88)
+                make.height.equalTo(76)
+            }
             return view
         }()
         
         self.nameLabel.font = .inter(ofSize: 24, name: .bold)
-        self.nameLabel.textAlignment = .center
+        self.nameLabel.textAlignment = .left
         self.nameLabel.textColor = AppColors.white
         self.nameLabel.text = "Aco Draskovic"
         
         self.phoneLabel.font = .inter(ofSize: 14, name: .regular)
-        self.phoneLabel.textAlignment = .center
+        self.phoneLabel.textAlignment = .left
         self.phoneLabel.textColor = AppColors.white.withAlphaComponent(0.6)
         self.phoneLabel.text = "+382 67 231 868"
+        
+        lazy var avatarTextStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [self.nameLabel, self.phoneLabel])
+            stack.axis = .vertical
+            stack.distribution = .fill
+            stack.alignment = .fill
+            stack.spacing = 2
+            return stack
+        }()
+        
+        lazy var avatarMainStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [avatarContainerView, avatarTextStack])
+            stack.axis = .horizontal
+            stack.alignment = .center
+            stack.distribution = .fillProportionally
+            stack.spacing = 12
+            return stack
+        }()
+        
+        lazy var avatarSectionPlaceholderView: UIView = {
+            let view = UIView()
+            view.backgroundColor = AppColors.white.withAlphaComponent(0.2)
+            view.layer.cornerRadius = 12
+            view.layer.masksToBounds = true
+            view.addSubview(avatarMainStack)
+            avatarMainStack.snp.makeConstraints { make in
+                make.leading.top.equalToSuperview().offset(12)
+                make.trailing.bottom.equalToSuperview().offset(-12)
+            }
+            return view
+        }()
         
         lazy var heartIcon: UIImageView = {
             let imageView = UIImageView()
@@ -173,37 +209,67 @@ extension ProfileView {
             return view
         }()
         
-        self.view.addSubview(avatarContainerView)
-        avatarContainerView.snp.makeConstraints { make in
-            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
-            make.centerX.equalToSuperview()
-            make.width.height.equalTo(104)
-        }
+        lazy var scrollView : UIScrollView = {
+            let scView = UIScrollView()
+            return scView
+        }()
         
-        self.view.addSubview(self.nameLabel)
-        self.nameLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-            make.top.equalTo(avatarContainerView.snp.bottom).offset(12)
-        }
+        lazy var contentView : UIView = {
+            let view = UIView()
+            return view
+        }()
         
-        self.view.addSubview(self.phoneLabel)
-        self.phoneLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-            make.top.equalTo(self.nameLabel.snp.bottom).offset(2)
-        }
-        
-        self.view.addSubview(favoriteShopsPlaceholderView)
-        favoriteShopsPlaceholderView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
-            make.top.equalTo(self.phoneLabel.snp.bottom).offset(24)
-        }
-        
-        self.view.addSubview(tableViewPlaceholder)
-        tableViewPlaceholder.snp.makeConstraints { make in
+        self.view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide)
         }
+        
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets.zero)
+            make.width.equalTo(scrollView)
+        }
+        
+        contentView.addSubview(avatarSectionPlaceholderView)
+        avatarSectionPlaceholderView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(15)
+            make.trailing.equalToSuperview().offset(-15)
+            make.top.equalToSuperview().offset(30)
+            make.height.equalTo(100)
+        }
+        
+//        self.view.addSubview(avatarContainerView)
+//        avatarContainerView.snp.makeConstraints { make in
+//            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
+//            make.centerX.equalToSuperview()
+//            make.width.height.equalTo(104)
+//        }
+//        
+//        self.view.addSubview(self.nameLabel)
+//        self.nameLabel.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(20)
+//            make.trailing.equalToSuperview().offset(-20)
+//            make.top.equalTo(avatarContainerView.snp.bottom).offset(12)
+//        }
+//        
+//        self.view.addSubview(self.phoneLabel)
+//        self.phoneLabel.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(20)
+//            make.trailing.equalToSuperview().offset(-20)
+//            make.top.equalTo(self.nameLabel.snp.bottom).offset(2)
+//        }
+//        
+//        self.view.addSubview(favoriteShopsPlaceholderView)
+//        favoriteShopsPlaceholderView.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(16)
+//            make.trailing.equalToSuperview().offset(-16)
+//            make.top.equalTo(self.phoneLabel.snp.bottom).offset(24)
+//        }
+//        
+//        self.view.addSubview(tableViewPlaceholder)
+//        tableViewPlaceholder.snp.makeConstraints { make in
+//            make.leading.trailing.bottom.equalToSuperview()
+//        }
     }
 }
