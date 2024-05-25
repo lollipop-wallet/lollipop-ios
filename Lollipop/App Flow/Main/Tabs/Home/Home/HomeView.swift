@@ -24,7 +24,11 @@ class HomeView: UIViewController, HomeViewProtocol {
     }
     
     //MARK: HomeView Protocol
-    
+    func reload(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
     
     //MARK: Actions
     @objc func onAvatarTap() {

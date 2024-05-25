@@ -36,6 +36,7 @@ protocol HomeOutputInteractorProtocol: AnyObject {
 protocol HomeViewProtocol: AnyObject {
     
     var presenter: HomePresenterProtocol?  { get set }
+    func reload()
 }
 //MARK: Wireframe
 protocol HomeWireframeProtocol: AnyObject {

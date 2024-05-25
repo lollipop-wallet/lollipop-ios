@@ -218,6 +218,7 @@
 		623450D22BFAFB0A00FE8E71 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 623450CB2BFAFB0A00FE8E71 /* DropDownCell.xib */; };
 		623693692BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 623693682BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib */; };
 		6236936A2BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623693672BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift */; };
+		625C15282C025FFA001760C3 /* HomeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C15272C025FFA001760C3 /* HomeListModel.swift */; };
 		626906AE2BE0A8D100BF5F62 /* MyShopsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */; };
 		626906AF2BE0A8D100BF5F62 /* MyShopsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A92BE0A8D100BF5F62 /* MyShopsProtocols.swift */; };
 		626906B02BE0A8D100BF5F62 /* MyShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906AA2BE0A8D100BF5F62 /* MyShopsInteractor.swift */; };
@@ -703,6 +704,7 @@
 		623450CB2BFAFB0A00FE8E71 /* DropDownCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownCell.xib; sourceTree = "<group>"; };
 		623693672BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberPrefixTableViewCell.swift; sourceTree = "<group>"; };
 		623693682BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberPrefixTableViewCell.xib; sourceTree = "<group>"; };
+		625C15272C025FFA001760C3 /* HomeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListModel.swift; sourceTree = "<group>"; };
 		626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsPresenter.swift; sourceTree = "<group>"; };
 		626906A92BE0A8D100BF5F62 /* MyShopsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsProtocols.swift; sourceTree = "<group>"; };
 		626906AA2BE0A8D100BF5F62 /* MyShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsInteractor.swift; sourceTree = "<group>"; };
@@ -1007,6 +1009,7 @@
 				62F6CD872BDBC69000C4775C /* HomeInteractor.swift */,
 				62F6CD882BDBC69000C4775C /* HomeView.swift */,
 				62F6CD892BDBC69000C4775C /* HomeModel.swift */,
+				625C15272C025FFA001760C3 /* HomeListModel.swift */,
 				62F6CD8A2BDBC69000C4775C /* HomeWireframe.swift */,
 				62F6CD922BDBC69700C4775C /* UI */,
 				2C4EE5F32BE38F8400F16FD8 /* Cells */,
@@ -3123,6 +3126,7 @@
 				62730D0F2BEA77F2004209B9 /* NewLoyaltyCardWireframe.swift in Sources */,
 				62E24BD02BEC81D900F6D82B /* UIDevice+Extension.swift in Sources */,
 				2CBA7B3B2BE61E5C00C31FCD /* LoyaltyCard.swift in Sources */,
+				625C15282C025FFA001760C3 /* HomeListModel.swift in Sources */,
 				2CBA7B232BE606EA00C31FCD /* WalletWireframe.swift in Sources */,
 				62730CBF2BE9174F004209B9 /* PartnerCardSignupPresenter.swift in Sources */,
 				62730CC02BE9174F004209B9 /* PartnerCardSignupProtocols.swift in Sources */,
