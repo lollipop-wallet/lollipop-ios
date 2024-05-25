@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 class HomePresenter: NSObject, HomePresenterProtocol  {
     
@@ -14,12 +15,19 @@ class HomePresenter: NSObject, HomePresenterProtocol  {
     var wireframe: HomeWireframeProtocol?
     
     func viewDidLoad() {
-        
+        interactor?.viewDidLoad()
     }
 }
 
 extension HomePresenter: HomeOutputInteractorProtocol {
-    
+    func parseHomeData(result: Result<HomeModel, AFError>){
+        switch result {
+        case .success(let model):
+            print("success")
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
 }
 
 extension HomePresenter {

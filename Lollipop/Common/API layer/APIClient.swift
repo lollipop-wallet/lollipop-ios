@@ -85,5 +85,9 @@ class APIClient {
         Manager.authTypeHeader = ""
         performRequest(route: APIRouter.sendforgotpwdotp(email: email), completion: completion)
     }
+    
+    static func gethome(completion:@escaping (Result<HomeModel, AFError>)->Void){
+        performRequest(route: APIRouter.gethome, completion: completion)
+    }
 }
 

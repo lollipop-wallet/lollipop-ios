@@ -18,13 +18,13 @@ enum APIRouter: URLRequestConvertible, Equatable {
     case verifyemail(id: Int, code: String)
     case sendforgotpwdotp(email: String)
     case verifyresetpassword(code: String, email: String, password: String, confirmPassword: String)
-
+    case gethome
 
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
-        case .getconfig, .verifyemail:
+        case .getconfig, .verifyemail, .gethome:
             return .get
         case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp:
             return .post
@@ -48,13 +48,15 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return "reset-password-otp"
         case .sendforgotpwdotp:
             return "forgot-password-otp"
+        case .gethome:
+            return "homepage"
         }
     }
     
     // MARK: - Parameters
     private var parameters: Parameters? {
         switch self {
-        case .getconfig, .registrationotp, .verifyemail:
+        case .getconfig, .registrationotp, .verifyemail, .gethome:
             return nil
         case .login(let email, let password):
             return [APIParameterKey.email : email, APIParameterKey.password : password]

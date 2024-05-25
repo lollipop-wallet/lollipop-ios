@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -23,14 +24,13 @@ protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddC
 protocol HomeInputInteractorProtocol: AnyObject {
     
     var presenter: HomeOutputInteractorProtocol?  { get set }
-    
+    func viewDidLoad()
    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol HomeOutputInteractorProtocol: AnyObject {
-    
-
+    func parseHomeData(result: Result<HomeModel, AFError>)
 }
 //MARK: View
 protocol HomeViewProtocol: AnyObject {
