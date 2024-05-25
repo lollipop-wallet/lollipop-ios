@@ -354,6 +354,7 @@
 		62E24BCF2BEC81D900F6D82B /* System+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E24BCB2BEC81D900F6D82B /* System+Extension.swift */; };
 		62E24BD02BEC81D900F6D82B /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E24BCC2BEC81D900F6D82B /* UIDevice+Extension.swift */; };
 		62E24BD12BEC81D900F6D82B /* UIDeviceComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E24BCD2BEC81D900F6D82B /* UIDeviceComplete.swift */; };
+		62E477402C01A6380077BA84 /* HomeItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E4773F2C01A6380077BA84 /* HomeItemType.swift */; };
 		62EB74BB2BE2000E0088906A /* ReorderCardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B42BE2000E0088906A /* ReorderCardsPresenter.swift */; };
 		62EB74BC2BE2000E0088906A /* ReorderCardsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B52BE2000E0088906A /* ReorderCardsProtocols.swift */; };
 		62EB74BD2BE2000E0088906A /* ReorderCardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EB74B62BE2000E0088906A /* ReorderCardsInteractor.swift */; };
@@ -838,6 +839,7 @@
 		62E24BCB2BEC81D900F6D82B /* System+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "System+Extension.swift"; sourceTree = "<group>"; };
 		62E24BCC2BEC81D900F6D82B /* UIDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		62E24BCD2BEC81D900F6D82B /* UIDeviceComplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceComplete.swift; sourceTree = "<group>"; };
+		62E4773F2C01A6380077BA84 /* HomeItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemType.swift; sourceTree = "<group>"; };
 		62EB74B42BE2000E0088906A /* ReorderCardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsPresenter.swift; sourceTree = "<group>"; };
 		62EB74B52BE2000E0088906A /* ReorderCardsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsProtocols.swift; sourceTree = "<group>"; };
 		62EB74B62BE2000E0088906A /* ReorderCardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsInteractor.swift; sourceTree = "<group>"; };
@@ -1427,6 +1429,7 @@
 				62730C622BE88C67004209B9 /* LocationFilterType.swift */,
 				62730CB42BE905A9004209B9 /* PartnerCardOption.swift */,
 				2CA5D3272BFF2376006DB45E /* OTPType.swift */,
+				62E4773F2C01A6380077BA84 /* HomeItemType.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -3135,6 +3138,7 @@
 				62F6CDF62BDD456700C4775C /* PersonalDataUI.swift in Sources */,
 				62E24BC82BEC81D100F6D82B /* DeviceFamily+Extension.swift in Sources */,
 				2CACCDDC2BD53F71008178F8 /* UIStackView+Extension.swift in Sources */,
+				62E477402C01A6380077BA84 /* HomeItemType.swift in Sources */,
 				62214B052BD6F39C00ABF38E /* PageView.swift in Sources */,
 				62F6CE1C2BDD5AF300C4775C /* ChangePasswordPresenter.swift in Sources */,
 				62F6CE1D2BDD5AF300C4775C /* ChangePasswordProtocols.swift in Sources */,
