@@ -40,8 +40,14 @@ extension ProfilePresenter {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = AppColors.lightGrey
+        return view
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 32
+        return section == 0 ? 0 : 16
     }
     
     func didSelectItemAt(index: IndexPath) {
@@ -58,7 +64,7 @@ extension ProfilePresenter {
         case .terms:
             wireframe?.toTerms()
         case .shops:
-            print()
+            wireframe?.toMyShops()
         }
     }
 }

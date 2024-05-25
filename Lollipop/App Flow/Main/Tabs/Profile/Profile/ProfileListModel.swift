@@ -11,4 +11,7 @@ struct ProfileListModel {
     let icon: String
     let title: String
     let item: ProfileItem
+    var separatorHidden: Bool {
+        return item == .shops || item == .terms
+    }
 }

@@ -195,14 +195,17 @@ extension ProfileView {
         self.tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: CellId.profileCell.rawValue)
         self.tableView.delegate = presenter
         self.tableView.dataSource = presenter
+        self.tableView.sectionHeaderTopPadding = .zero
+        self.tableView.sectionFooterHeight = 0
+        self.tableView.backgroundColor = AppColors.lightGrey
         
         lazy var tableViewPlaceholder: UIView = {
             let view = UIView()
             view.backgroundColor = AppColors.lightGrey
             view.addSubview(self.tableView)
             self.tableView.snp.makeConstraints { make in
-                make.leading.equalToSuperview().offset(16)
-                make.trailing.equalToSuperview().offset(-16)
+                make.leading.trailing.equalToSuperview()
+                //make.trailing.equalToSuperview().offset(-16)
                 make.top.equalToSuperview().offset(24)
                 make.bottom.equalToSuperview().offset(-13)
             }
@@ -240,6 +243,12 @@ extension ProfileView {
             make.trailing.equalToSuperview().offset(-15)
             make.top.equalToSuperview().offset(30)
             make.height.equalTo(100)
+        }
+        
+        contentView.addSubview(tableViewPlaceholder)
+        tableViewPlaceholder.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(avatarSectionPlaceholderView.snp.bottom).offset(32)
         }
         
 //        self.view.addSubview(avatarContainerView)

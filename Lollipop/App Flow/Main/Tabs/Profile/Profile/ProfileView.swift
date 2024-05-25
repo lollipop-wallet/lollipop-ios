@@ -14,7 +14,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
     var avatarImageView = UIImageView()
     var nameLabel = UILabel()
     var phoneLabel = UILabel()
-    var tableView = AutomaticHeightTableView()
+    var tableView = AutomaticHeightTableView(frame: .zero, style: .insetGrouped)
 
     var presenter: ProfilePresenterProtocol?
 

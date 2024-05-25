@@ -20,7 +20,7 @@ class ProfileTableViewCell: UITableViewCell {
     
     lazy var separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = AppColors.lightGrey
+        view.backgroundColor = AppColors.black.withAlphaComponent(0.1)
         return view
     }()
     
@@ -71,8 +71,6 @@ class ProfileTableViewCell: UITableViewCell {
             make.leading.top.equalToSuperview().offset(16)
             make.bottom.trailing.equalToSuperview().offset(-16)
         }
-        view.layer.cornerRadius = 12
-        view.layer.masksToBounds = true
         view.backgroundColor = AppColors.white
         return view
     }()
@@ -103,7 +101,7 @@ class ProfileTableViewCell: UITableViewCell {
             make.bottom.equalToSuperview()
             make.trailing.equalToSuperview()
             make.leading.equalToSuperview()
-            make.height.equalTo(8)
+            make.height.equalTo(1)
         }
         
         cellContentView.addSubview(profileCellPlaceholderView)
@@ -128,10 +126,11 @@ class ProfileTableViewCell: UITableViewCell {
         self.delegate = delegate
         self.titleLabel.text = item.title
         self.iconImageView.image = UIImage(named: item.icon)
-        self.profileCellPlaceholderView.backgroundColor = item.item == .signout ? .clear : AppColors.white
-        self.arrowIcon.isHidden = item.item == .signout
-        self.titleLabel.textColor = item.item == .signout ? AppColors.link : AppColors.black
-        self.titleLabel.font = .inter(ofSize: 16, name: item.item == .signout ? .semibold : .regular)
+        self.separatorView.isHidden = item.separatorHidden
+//        self.profileCellPlaceholderView.backgroundColor = item.item == .signout ? .clear : AppColors.white
+//        self.arrowIcon.isHidden = item.item == .signout
+//        self.titleLabel.textColor = item.item == .signout ? AppColors.link : AppColors.black
+//        self.titleLabel.font = .inter(ofSize: 16, name: item.item == .signout ? .semibold : .regular)
     }
     
     //MARK: Actions
