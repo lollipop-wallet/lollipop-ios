@@ -73,4 +73,6 @@ struct AssetTitles {
     static let passwordHiddenIcon = "ic_pwd_hidden"
     static let passwordShownIcon = "ic_pwd_shown"
     static let signOutIcon = "ic_sign_out"
+    static let profileCardsFilledIcon = "ic_profile_cards_filled"
+    static let profileFavoriteShopsFilledIcon = "ic_profile_favorite_shops_filled"
 }
