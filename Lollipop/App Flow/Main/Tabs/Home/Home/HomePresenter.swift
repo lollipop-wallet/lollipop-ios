@@ -99,6 +99,10 @@ extension HomePresenter {
         
     }
     
+    func didTapSeeMoreFromCircleCategory(){
+
+    }
+    
     func didTapSeeMoreFromRectCategory(){
         wireframe?.toPromotions()
     }

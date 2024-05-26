@@ -23,7 +23,7 @@ public protocol DropdownProtocol: AnyObject {
 
 /// Can be `UIView` or `UIBarButtonItem`.
 @objc
-public protocol AnchorView: class {
+public protocol AnchorView: AnyObject {
 
 	var plainView: UIView { get }
 

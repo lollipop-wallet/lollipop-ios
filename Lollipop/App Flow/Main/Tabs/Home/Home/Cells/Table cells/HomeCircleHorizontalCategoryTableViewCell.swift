@@ -125,7 +125,7 @@ class HomeCircleHorizontalCategoryTableViewCell: UITableViewCell {
     
     //MARK: Actions
     @objc func onSeeAllTap() {
-        
+        delegate?.didTapSeeMoreFromCircleCategory()
     }
 }
 

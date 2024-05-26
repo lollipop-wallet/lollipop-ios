@@ -55,7 +55,7 @@ protocol HomeCardCellProtocol: AnyObject {
 
 //MARK: CircledCategoryCell Protocol
 protocol CircledCategoryCellProtocol: AnyObject {
-    
+    func didTapSeeMoreFromCircleCategory()
 }
 
 //MARK: HomePosterCategoryCell Protocol

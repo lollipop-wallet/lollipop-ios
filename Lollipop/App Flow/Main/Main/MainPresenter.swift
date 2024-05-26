@@ -21,21 +21,22 @@ class MainPresenter: MainPresenterProtocol  {
         let vc1Nav = UINavigationController(rootViewController: vc1)
         vc1Nav.isNavigationBarHidden = false
         
-        let vc2 = PartnersView()
-        vc2.tabBarItem = UITabBarItem(title: LocalizedTitle.partners.localized, image: UIImage(named: AssetTitles.partnersUnselectedIcon), selectedImage: UIImage(named: AssetTitles.partnersSelectedIcon))
-        vc2.navigationController?.title = LocalizedTitle.partners.localized
+        let vc2 = LollipopView()
+        vc2.tabBarItem = UITabBarItem(title: LocalizedTitle.lollipop.localized, image: UIImage(named: AssetTitles.lollipopUnselectedIcon), selectedImage: UIImage(named: AssetTitles.lollipopSelectedIcon))
+        vc2.navigationController?.title = LocalizedTitle.lollipop.localized
         let vc2Nav = UINavigationController(rootViewController: vc2)
         vc2Nav.isNavigationBarHidden = false
+        
+        let vc4 = PartnersView()
+        vc4.tabBarItem = UITabBarItem(title: LocalizedTitle.partners.localized, image: UIImage(named: AssetTitles.partnersUnselectedIcon), selectedImage: UIImage(named: AssetTitles.partnersSelectedIcon))
+        vc4.navigationController?.title = LocalizedTitle.partners.localized
+        let vc4Nav = UINavigationController(rootViewController: vc4)
+        vc4Nav.isNavigationBarHidden = false
+        
         let vc3 = UIViewController()
         vc3.tabBarItem = UITabBarItem(title: "", image: nil, selectedImage: nil)
         let vc3Nav = UINavigationController(rootViewController: vc3)
         vc3Nav.isNavigationBarHidden = true
-        
-        let vc4 = LollipopView()
-        vc4.tabBarItem = UITabBarItem(title: LocalizedTitle.lollipop.localized, image: UIImage(named: AssetTitles.lollipopUnselectedIcon), selectedImage: UIImage(named: AssetTitles.lollipopSelectedIcon))
-        vc4.navigationController?.title = LocalizedTitle.lollipop.localized
-        let vc4Nav = UINavigationController(rootViewController: vc4)
-        vc4Nav.isNavigationBarHidden = false
         
         let vc5 = ProfileView()
         vc5.tabBarItem = UITabBarItem(title: LocalizedTitle.profile.localized, image: UIImage(named: AssetTitles.profileUnselectedIcon), selectedImage: UIImage(named: AssetTitles.profileSelectedIcon))
