@@ -56,7 +56,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
         case .getbrands:
             return "brands"
         case .getfavoritebrands:
-            return "brands/favorites"
+            return "brands/user-favorites"
         case .getpromotions:
             return "banners?includes=brand"
         }

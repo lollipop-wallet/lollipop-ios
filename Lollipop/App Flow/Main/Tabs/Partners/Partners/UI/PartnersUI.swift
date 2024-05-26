@@ -158,6 +158,7 @@ extension PartnersView {
             view.snp.makeConstraints { make in
                 make.width.height.equalTo(40)
             }
+            view.tintColor = AppColors.black
             return view
         }()
         
