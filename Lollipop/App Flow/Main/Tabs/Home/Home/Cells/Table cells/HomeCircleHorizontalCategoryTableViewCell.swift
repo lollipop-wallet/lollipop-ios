@@ -11,6 +11,7 @@ class HomeCircleHorizontalCategoryTableViewCell: UITableViewCell {
     
     var delegate: CircledCategoryCellProtocol?
     var index: IndexPath!
+    var datasource = [Brand]()
     
     lazy var cellContentView: UIView = {
         let view = UIView()
@@ -75,7 +76,7 @@ class HomeCircleHorizontalCategoryTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview()
             make.top.equalTo(titleStack.snp.bottom).offset(24)
             make.bottom.equalToSuperview()
-            make.height.equalTo(114)
+            make.height.equalTo(134)
         }
         return view
     }()
@@ -113,10 +114,11 @@ class HomeCircleHorizontalCategoryTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: CircledCategoryCellProtocol) {
+    func configureWith(brands: [Brand], index: IndexPath, delegate: CircledCategoryCellProtocol) {
         self.backgroundColor = .clear
         self.index = index
         self.delegate = delegate
+        self.datasource = brands
         self.collectionView.reloadData()
     }
     
@@ -128,12 +130,12 @@ class HomeCircleHorizontalCategoryTableViewCell: UITableViewCell {
 
 extension HomeCircleHorizontalCategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, CircledItemCellProtocol {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 11
+        return self.datasource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.circledItemCell.rawValue, for: indexPath) as! CircledItemCollectionViewCell
-        cell.configureWith(delegate: self, index: indexPath)
+        cell.configureWith(brand: self.datasource[indexPath.row], delegate: self, index: indexPath)
         return cell
     }
     
@@ -154,7 +156,7 @@ extension HomeCircleHorizontalCategoryTableViewCell {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(30))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(110), heightDimension: .estimated(114))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(110), heightDimension: .estimated(134))
 
         let group = NSCollectionLayoutGroup.vertical( layoutSize: groupSize, subitem: item, count: 1)
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0,trailing: 20)

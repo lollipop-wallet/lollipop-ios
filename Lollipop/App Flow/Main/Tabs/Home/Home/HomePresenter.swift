@@ -75,7 +75,7 @@ extension HomePresenter {
         }
         else if self.datasource[indexPath.row].itemType == .brand {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homeCircleHorizontalCell.rawValue, for: indexPath) as! HomeCircleHorizontalCategoryTableViewCell
-            cell.configureWith(index: indexPath, delegate: self)
+            cell.configureWith(brands: self.datasource[indexPath.row].brands ?? [] ,index: indexPath, delegate: self)
             return cell
         }else if self.datasource[indexPath.row].itemType == .poster {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homePosterCell.rawValue, for: indexPath) as! HomePosterCategoryTableViewCell

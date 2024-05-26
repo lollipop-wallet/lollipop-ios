@@ -21,7 +21,7 @@ class CircledItemCollectionViewCell: UICollectionViewCell {
     lazy var photo: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .red
+        //imageView.backgroundColor = .red
         return imageView
     }()
     
@@ -30,7 +30,9 @@ class CircledItemCollectionViewCell: UICollectionViewCell {
         label.font = .inter(ofSize: 14, name: .regular)
         label.textColor = AppColors.black
         label.textAlignment = .center
-        label.text = "Sport Vision"
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        //label.text = "Sport Vision"
         return label
     }()
 
@@ -48,15 +50,16 @@ class CircledItemCollectionViewCell: UICollectionViewCell {
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
-            make.height.equalTo(20)
+            //make.height.equalTo(20)
         }
         view.addSubview(photo)
         photo.snp.makeConstraints { make in
             make.leading.trailing.top.equalToSuperview()
             make.bottom.equalTo(titleLabel.snp.top).offset(-6)
+            make.width.height.equalTo(88)
         }
         photo.layer.cornerRadius = 44
-        
+        photo.layer.masksToBounds = true
         
         view.addSubview(cellButton)
         cellButton.snp.makeConstraints { make in
@@ -86,9 +89,11 @@ class CircledItemCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
-    func configureWith(delegate: CircledItemCellProtocol, index: IndexPath) {
+    func configureWith(brand: Brand, delegate: CircledItemCellProtocol, index: IndexPath) {
         self.delegate = delegate
         self.index = index
+        self.titleLabel.text = brand.name ?? ""
+        self.photo.imageFromURL(url: brand.logo ?? "")
     }
     
     
