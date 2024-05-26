@@ -95,5 +95,10 @@ class APIClient {
         Manager.authTypeHeader = ""
         performRequest(route: APIRouter.getbrands, completion: completion)
     }
+    
+    static func getfavoritebrands(completion:@escaping (Result<[Brand], AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.getfavoritebrands, completion: completion)
+    }
 }
 

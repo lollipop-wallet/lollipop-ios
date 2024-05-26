@@ -20,12 +20,13 @@ enum APIRouter: URLRequestConvertible, Equatable {
     case verifyresetpassword(code: String, email: String, password: String, confirmPassword: String)
     case gethome
     case getbrands
+    case getfavoritebrands
 
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
-        case .getconfig, .verifyemail, .gethome, .getbrands:
+        case .getconfig, .verifyemail, .gethome, .getbrands, .getfavoritebrands:
             return .get
         case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp:
             return .post
@@ -53,13 +54,15 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return "homepage"
         case .getbrands:
             return "brands"
+        case .getfavoritebrands:
+            return "brands/favorites"
         }
     }
     
     // MARK: - Parameters
     private var parameters: Parameters? {
         switch self {
-        case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands:
+        case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands:
             return nil
         case .login(let email, let password):
             return [APIParameterKey.email : email, APIParameterKey.password : password]

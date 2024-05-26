@@ -32,7 +32,17 @@ extension PartnersPresenter: PartnersOutputInteractorProtocol {
         switch result {
         case .success(let data):
             self.completeDatasource = data
-            self.datasource = data
+            interactor?.getFavoriteParnters()
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
+    
+    func parseFavoritePartnersData(result: Result<[Brand], AFError>){
+        switch result {
+        case .success(let data):
+            self.favoriteDatasource = data
+            self.datasource = self.completeDatasource
             self.view?.reload()
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)

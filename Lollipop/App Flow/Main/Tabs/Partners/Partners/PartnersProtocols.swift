@@ -27,11 +27,13 @@ protocol PartnersInputInteractorProtocol: AnyObject {
     var presenter: PartnersOutputInteractorProtocol?  { get set }
     
     func viewDidLoad()
+    func getFavoriteParnters()
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol PartnersOutputInteractorProtocol: AnyObject {
     func parsePartnersData(result: Result<[Brand], AFError>)
+    func parseFavoritePartnersData(result: Result<[Brand], AFError>)
 }
 //MARK: View
 protocol PartnersViewProtocol: AnyObject {

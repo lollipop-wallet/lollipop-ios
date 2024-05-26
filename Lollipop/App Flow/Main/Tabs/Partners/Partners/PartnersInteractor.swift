@@ -20,4 +20,12 @@ class PartnersInteractor: PartnersInputInteractorProtocol {
             self.presenter?.parsePartnersData(result: result)
         }
     }
+    
+    func getFavoriteParnters() {
+        APIClient.getfavoritebrands { [weak self] result in
+            UIApplication.topViewController()?.view?.hideSpinner()
+            guard let self = self else {return}
+            self.presenter?.parseFavoritePartnersData(result: result)
+        }
+    }
 }

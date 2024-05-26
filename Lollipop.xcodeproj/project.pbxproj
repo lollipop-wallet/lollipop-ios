@@ -985,11 +985,11 @@
 		2C3ACCCC2BFC66570030907E /* API layer */ = {
 			isa = PBXGroup;
 			children = (
+				2C3ACCD12BFC666C0030907E /* APIRouter.swift */,
 				2C3ACCCD2BFC666C0030907E /* APIClient.swift */,
+				2C3ACCD02BFC666C0030907E /* APIParameterKey.swift */,
 				2C3ACCCF2BFC666C0030907E /* APIContentType.swift */,
 				2C3ACCCE2BFC666C0030907E /* APIHeader.swift */,
-				2C3ACCD02BFC666C0030907E /* APIParameterKey.swift */,
-				2C3ACCD12BFC666C0030907E /* APIRouter.swift */,
 				2CA5D3252BFF0488006DB45E /* APIAuthTypeHeader.swift */,
 			);
 			path = "API layer";

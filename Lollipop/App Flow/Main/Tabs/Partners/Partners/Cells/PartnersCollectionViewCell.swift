@@ -20,7 +20,7 @@ class PartnersCollectionViewCell: UICollectionViewCell {
     
     lazy var partnerImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
