@@ -114,8 +114,9 @@ class HomeCircleHorizontalCategoryTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(brands: [Brand], index: IndexPath, delegate: CircledCategoryCellProtocol) {
+    func configureWith(brands: [Brand], sectionTitle: String, index: IndexPath, delegate: CircledCategoryCellProtocol) {
         self.backgroundColor = .clear
+        self.titleLabel.text = sectionTitle
         self.index = index
         self.delegate = delegate
         self.datasource = brands
