@@ -13,6 +13,7 @@ class HomePresenter: NSObject, HomePresenterProtocol  {
     var interactor : HomeInputInteractorProtocol?
     weak var view: HomeViewProtocol?
     var wireframe: HomeWireframeProtocol?
+    var delegate: HomeControllerProtocol?
     
     var datasource = [HomeListModel]()
     
@@ -22,7 +23,8 @@ class HomePresenter: NSObject, HomePresenterProtocol  {
 }
 
 extension HomePresenter: HomeOutputInteractorProtocol {
-    func parseHomeData(result: Result<HomeModel, AFError>){
+    func parseHomeData(result: Result<HomeModel, AFError>, delegate: HomeControllerProtocol?){
+        self.delegate = delegate
         switch result {
         case .success(let model):
             print("success")
@@ -100,7 +102,7 @@ extension HomePresenter {
     }
     
     func didTapSeeMoreFromCircleCategory(){
-
+        delegate?.toPartnersTab()
     }
     
     func didTapSeeMoreFromRectCategory(){

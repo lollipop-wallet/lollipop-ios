@@ -29,6 +29,12 @@ class MainView: UITabBarController, MainViewProtocol {
         self.tabBar.backgroundColor = .white
     }
     
+    func toPartnersTab(){
+        DispatchQueue.main.async {
+            self.selectedIndex = TabBarIndex.partners.rawValue
+        }
+    }
+    
     //MARK: Actions
     
     @objc func onScanTap() {

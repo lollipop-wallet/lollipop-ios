@@ -150,6 +150,7 @@
 		2CCF3AB52BD7B29300B3729E /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAE2BD7B29300B3729E /* SignInModel.swift */; };
 		2CCF3AB62BD7B29300B3729E /* SignInWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAF2BD7B29300B3729E /* SignInWireframe.swift */; };
 		2CCF3AB92BD7B2A100B3729E /* SignInUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AB82BD7B2A100B3729E /* SignInUI.swift */; };
+		2CD069092C034DA20098B029 /* TabBarIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD069082C034DA20098B029 /* TabBarIndex.swift */; };
 		2CDDA7362BDA256100B6C8B5 /* OTPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA72F2BDA256100B6C8B5 /* OTPPresenter.swift */; };
 		2CDDA7372BDA256100B6C8B5 /* OTPProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA7302BDA256100B6C8B5 /* OTPProtocols.swift */; };
 		2CDDA7382BDA256100B6C8B5 /* OTPInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA7312BDA256100B6C8B5 /* OTPInteractor.swift */; };
@@ -634,6 +635,7 @@
 		2CCF3AAE2BD7B29300B3729E /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		2CCF3AAF2BD7B29300B3729E /* SignInWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWireframe.swift; sourceTree = "<group>"; };
 		2CCF3AB82BD7B2A100B3729E /* SignInUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUI.swift; sourceTree = "<group>"; };
+		2CD069082C034DA20098B029 /* TabBarIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIndex.swift; sourceTree = "<group>"; };
 		2CDDA72F2BDA256100B6C8B5 /* OTPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPPresenter.swift; sourceTree = "<group>"; };
 		2CDDA7302BDA256100B6C8B5 /* OTPProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPProtocols.swift; sourceTree = "<group>"; };
 		2CDDA7312BDA256100B6C8B5 /* OTPInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInteractor.swift; sourceTree = "<group>"; };
@@ -1433,6 +1435,7 @@
 				62730CB42BE905A9004209B9 /* PartnerCardOption.swift */,
 				2CA5D3272BFF2376006DB45E /* OTPType.swift */,
 				62E4773F2C01A6380077BA84 /* HomeItemType.swift */,
+				2CD069082C034DA20098B029 /* TabBarIndex.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -3244,6 +3247,7 @@
 				62F6CDC32BDBC79400C4775C /* ProfileInteractor.swift in Sources */,
 				62F6CDCA2BDBC7A300C4775C /* ProfileUI.swift in Sources */,
 				62F6CDC42BDBC79400C4775C /* ProfileView.swift in Sources */,
+				2CD069092C034DA20098B029 /* TabBarIndex.swift in Sources */,
 				62F6CDDD2BDD372800C4775C /* ProfileListModel.swift in Sources */,
 				2C5569562BFE1A6F00E12208 /* GenderTableViewCell.swift in Sources */,
 				62F6CDC52BDBC79400C4775C /* ProfileModel.swift in Sources */,

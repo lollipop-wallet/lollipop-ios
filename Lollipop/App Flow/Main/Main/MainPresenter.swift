@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class MainPresenter: MainPresenterProtocol  {
+class MainPresenter: NSObject, MainPresenterProtocol  {
     
     var interactor : MainInputInteractorProtocol?
     weak var view: MainViewProtocol?
@@ -16,6 +16,7 @@ class MainPresenter: MainPresenterProtocol  {
     
     func viewDidLoad(){
         let vc1 = HomeView()
+        HomeWireframe.delegate = self
         vc1.tabBarItem = UITabBarItem(title: LocalizedTitle.home.localized, image: UIImage(named: AssetTitles.homeUnselectedIcon), selectedImage: UIImage(named: AssetTitles.homeSelectedIcon))
         vc1.navigationController?.title = LocalizedTitle.home.localized
         let vc1Nav = UINavigationController(rootViewController: vc1)
@@ -28,8 +29,8 @@ class MainPresenter: MainPresenterProtocol  {
         vc2Nav.isNavigationBarHidden = false
         
         let vc4 = PartnersView()
-        vc4.tabBarItem = UITabBarItem(title: LocalizedTitle.partners.localized, image: UIImage(named: AssetTitles.partnersUnselectedIcon), selectedImage: UIImage(named: AssetTitles.partnersSelectedIcon))
-        vc4.navigationController?.title = LocalizedTitle.partners.localized
+        vc4.tabBarItem = UITabBarItem(title: LocalizedTitle.stores.localized, image: UIImage(named: AssetTitles.partnersUnselectedIcon), selectedImage: UIImage(named: AssetTitles.partnersSelectedIcon))
+        vc4.navigationController?.title = LocalizedTitle.stores.localized
         let vc4Nav = UINavigationController(rootViewController: vc4)
         vc4Nav.isNavigationBarHidden = false
         
@@ -60,4 +61,11 @@ class MainPresenter: MainPresenterProtocol  {
 
 extension MainPresenter: MainOutputInteractorProtocol {
     
+}
+
+//MARK: HomeController Delegate
+extension MainPresenter {
+    func toPartnersTab() {
+        view?.toPartnersTab()
+    }
 }

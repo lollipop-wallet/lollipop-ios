@@ -10,7 +10,7 @@ import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol MainPresenterProtocol: AnyObject {
+protocol MainPresenterProtocol: HomeControllerProtocol {
     
     var interactor: MainInputInteractorProtocol? { get set }
     var view: MainViewProtocol? { get set }
@@ -38,7 +38,7 @@ protocol MainViewProtocol: AnyObject {
     
     var presenter: MainPresenterProtocol?  { get set }
     func setControllersWith(vcs: [UINavigationController])
-
+    func toPartnersTab()
 }
 //MARK: Wireframe
 protocol MainWireframeProtocol: AnyObject {

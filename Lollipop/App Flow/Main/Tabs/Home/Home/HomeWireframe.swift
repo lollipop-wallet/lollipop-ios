@@ -9,6 +9,7 @@ import UIKit
 
 class HomeWireframe: HomeWireframeProtocol {
     
+    static var delegate: HomeControllerProtocol?
     
     static func createModule(HomeRef: HomeView) {
         let presenter: HomePresenterProtocol & HomeOutputInteractorProtocol = HomePresenter()

@@ -25,12 +25,12 @@ protocol HomeInputInteractorProtocol: AnyObject {
     
     var presenter: HomeOutputInteractorProtocol?  { get set }
     func viewDidLoad()
-   
+    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol HomeOutputInteractorProtocol: AnyObject {
-    func parseHomeData(result: Result<HomeModel, AFError>)
+    func parseHomeData(result: Result<HomeModel, AFError>, delegate: HomeControllerProtocol?)
 }
 //MARK: View
 protocol HomeViewProtocol: AnyObject {
@@ -40,7 +40,13 @@ protocol HomeViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol HomeWireframeProtocol: AnyObject {
+    static var delegate: HomeControllerProtocol? { get set }
     func toPromotions()
+}
+
+//MARK: HomeController protocol
+protocol HomeControllerProtocol: AnyObject {
+    func toPartnersTab()
 }
 
 //MARK: AddCardHomeCell protocol
