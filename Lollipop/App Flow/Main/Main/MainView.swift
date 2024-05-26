@@ -29,9 +29,9 @@ class MainView: UITabBarController, MainViewProtocol {
         self.tabBar.backgroundColor = .white
     }
     
-    func toPartnersTab(){
+    func switchTabWith(index: TabBarIndex){
         DispatchQueue.main.async {
-            self.selectedIndex = TabBarIndex.partners.rawValue
+            self.selectedIndex = index.rawValue
         }
     }
     

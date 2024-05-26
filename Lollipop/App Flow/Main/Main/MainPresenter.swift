@@ -66,6 +66,13 @@ extension MainPresenter: MainOutputInteractorProtocol {
 //MARK: HomeController Delegate
 extension MainPresenter {
     func toPartnersTab() {
-        view?.toPartnersTab()
+        view?.switchTabWith(index: .partners)
+    }
+}
+
+//MARK: PartnersController Delegate
+extension MainPresenter {
+    func toProfileTab() {
+        view?.switchTabWith(index: .profile)
     }
 }

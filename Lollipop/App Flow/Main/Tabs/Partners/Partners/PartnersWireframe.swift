@@ -9,6 +9,7 @@ import UIKit
 
 class PartnersWireframe: PartnersWireframeProtocol {
     
+    static var delegate: PartnersControllerProtocol?
     
     static func createModule(PartnersRef: PartnersView) {
         let presenter: PartnersPresenterProtocol & PartnersOutputInteractorProtocol = PartnersPresenter()

@@ -13,6 +13,7 @@ class PartnersPresenter: NSObject, PartnersPresenterProtocol  {
     var interactor : PartnersInputInteractorProtocol?
     weak var view: PartnersViewProtocol?
     var wireframe: PartnersWireframeProtocol?
+    var delegate: PartnersControllerProtocol?
     
     var datasource = [Brand]()
     var completeDatasource = [Brand]()
@@ -37,10 +38,19 @@ class PartnersPresenter: NSObject, PartnersPresenterProtocol  {
             self.view?.setEmptyStackHidden(isHidden: !favoriteDatasource.isEmpty)
         }
     }
+    
+    func addFavoriteShow(){
+        if Manager.isRegistered {
+            
+        }else{
+            delegate?.toProfileTab()
+        }
+    }
 }
 
 extension PartnersPresenter: PartnersOutputInteractorProtocol {
-    func parsePartnersData(result: Result<[Brand], AFError>) {
+    func parsePartnersData(result: Result<[Brand], AFError>, delegate: PartnersControllerProtocol?){
+        self.delegate = delegate
         switch result {
         case .success(let data):
             self.completeDatasource = data

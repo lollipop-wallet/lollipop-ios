@@ -14,10 +14,12 @@ class PartnersInteractor: PartnersInputInteractorProtocol {
     weak var presenter: PartnersOutputInteractorProtocol?
     
     func viewDidLoad() {
+        let delegate = PartnersWireframe.delegate
+        
         UIApplication.topViewController()?.view.showSpinner()
         APIClient.getbrands { [weak self] result in
             guard let self = self else {return}
-            self.presenter?.parsePartnersData(result: result)
+            self.presenter?.parsePartnersData(result: result, delegate: delegate)
         }
     }
     

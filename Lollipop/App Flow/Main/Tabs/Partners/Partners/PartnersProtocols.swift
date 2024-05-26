@@ -20,6 +20,7 @@ protocol PartnersPresenterProtocol: UICollectionViewDelegate, UICollectionViewDa
     func viewDidLoad()
     func suggestPartner()
     func changeSegment(segment: Int)
+    func addFavoriteShow()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -33,7 +34,7 @@ protocol PartnersInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol PartnersOutputInteractorProtocol: AnyObject {
-    func parsePartnersData(result: Result<[Brand], AFError>)
+    func parsePartnersData(result: Result<[Brand], AFError>, delegate: PartnersControllerProtocol?)
     func parseFavoritePartnersData(result: Result<[Brand], AFError>)
 }
 //MARK: View
@@ -45,12 +46,18 @@ protocol PartnersViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol PartnersWireframeProtocol: AnyObject {
+    static var delegate: PartnersControllerProtocol? { get set }
+    
     func toNewPartner()
     func toPartnerDetails()
 }
 
-//MARK: PartnersCell Protocol
+//MARK: PartnerController Protocol
+protocol PartnersControllerProtocol: AnyObject {
+    func toProfileTab()
+}
 
+//MARK: PartnersCell Protocol
 protocol PartnersCellProtocol: AnyObject {
     func didSelectItemAt(index: IndexPath)
 }
