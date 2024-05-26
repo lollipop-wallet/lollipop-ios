@@ -87,7 +87,13 @@ class APIClient {
     }
     
     static func gethome(completion:@escaping (Result<HomeModel, AFError>)->Void){
+        Manager.authTypeHeader = ""
         performRequest(route: APIRouter.gethome, completion: completion)
+    }
+    
+    static func getbrands(completion:@escaping (Result<[Brand], AFError>)->Void){
+        Manager.authTypeHeader = ""
+        performRequest(route: APIRouter.getbrands, completion: completion)
     }
 }
 

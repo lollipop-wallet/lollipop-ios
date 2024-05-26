@@ -19,6 +19,14 @@ class PartnersView: UIViewController, PartnersViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
+    }
+    
+    //MARK: PartnersView protocol
+    func reload() {
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+        }
     }
     
     //MARK: Actions

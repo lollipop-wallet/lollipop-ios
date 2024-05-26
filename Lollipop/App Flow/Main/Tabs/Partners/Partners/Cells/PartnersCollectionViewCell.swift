@@ -67,9 +67,10 @@ class PartnersCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
-    func configureWith( index: IndexPath, delegate: PartnersCellProtocol){
+    func configureWith(item: Brand?, index: IndexPath, delegate: PartnersCellProtocol){
         self.delegate = delegate
         self.index = index
+        self.partnerImageView.imageFromURL(url: item?.logo ?? "")
     }
     
     
