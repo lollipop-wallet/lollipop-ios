@@ -13,6 +13,7 @@ class PartnersView: UIViewController, PartnersViewProtocol {
     
     var mainStackView = UIStackView()
     var collectionView: AutomaticHeightCollectionView?
+    var noFavoritesStackView = UIStackView()
 
     var presenter: PartnersPresenterProtocol?
 
@@ -36,5 +37,9 @@ class PartnersView: UIViewController, PartnersViewProtocol {
     
     @objc func onRecommendPartnerTap() {
         presenter?.suggestPartner()
+    }
+    
+    @objc func onAddFavoriteShop() {
+        
     }
 }

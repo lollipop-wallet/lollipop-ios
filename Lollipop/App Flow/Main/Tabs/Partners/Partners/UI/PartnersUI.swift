@@ -152,7 +152,49 @@ extension PartnersView {
         self.mainStackView.alignment = .fill
         self.mainStackView.spacing = 32
         
+        lazy var heartIcon: UIImageView = {
+            let view = UIImageView()
+            view.image = UIImage(named: AssetTitles.outlinedHeartIcon)
+            view.snp.makeConstraints { make in
+                make.width.height.equalTo(40)
+            }
+            return view
+        }()
         
+        lazy var emptyFavTitleLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 18, name: .semibold)
+            label.textColor = AppColors.black
+            label.textAlignment = .center
+            label.text = LocalizedTitle.yourListIsEmpty.localized
+            return label
+        }()
+        
+        lazy var emptyFavButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onAddFavoriteShop), for: .touchUpInside)
+            button.titleLabel?.font = .inter(ofSize: 16, name: .semibold)
+            button.setTitleColor(AppColors.link, for: .normal)
+            button.setTitle(LocalizedTitle.addFavoriteShops.localized, for: .normal)
+            return button
+        }()
+
+        lazy var emptyTextStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [emptyFavTitleLabel, emptyFavButton])
+            stack.axis = .vertical
+            stack.distribution = .fill
+            stack.alignment = .fill
+            stack.spacing = 12
+            return stack
+        }()
+        
+        self.noFavoritesStackView = UIStackView(arrangedSubviews: [heartIcon, emptyTextStack])
+        self.noFavoritesStackView.axis = .vertical
+        self.noFavoritesStackView.distribution = .fill
+        self.noFavoritesStackView.alignment = .center
+        self.noFavoritesStackView.spacing = 24
+        self.noFavoritesStackView.isHidden = true
+
         self.view.addSubview(segmentedControl)
         segmentedControl.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
@@ -180,6 +222,11 @@ extension PartnersView {
             make.leading.equalToSuperview().offset(6)
             make.trailing.equalToSuperview().offset(-14)
             make.bottom.equalToSuperview()
+        }
+        
+        self.view.addSubview(self.noFavoritesStackView)
+        self.noFavoritesStackView.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
         }
     }
 }
