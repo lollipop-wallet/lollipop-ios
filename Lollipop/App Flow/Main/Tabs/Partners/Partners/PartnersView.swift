@@ -30,9 +30,16 @@ class PartnersView: UIViewController, PartnersViewProtocol {
         }
     }
     
+    func setEmptyStackHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.noFavoritesStackView.isHidden = isHidden
+            self.mainStackView.isHidden = !isHidden
+        }
+    }
+    
     //MARK: Actions
     @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
-        //presenter?.onSegmentTapWith(segmentId: segmentedControl.selectedSegmentIndex)
+        presenter?.changeSegment(segment: segmentedControl.selectedSegmentIndex)
     }
     
     @objc func onRecommendPartnerTap() {

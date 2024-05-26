@@ -25,6 +25,18 @@ class PartnersPresenter: NSObject, PartnersPresenterProtocol  {
     func suggestPartner() {
         wireframe?.toNewPartner()
     }
+    
+    func changeSegment(segment: Int){
+        if segment == 0 {
+            self.datasource = completeDatasource
+            self.view?.reload()
+            self.view?.setEmptyStackHidden(isHidden: true)
+        }else{
+            self.datasource = favoriteDatasource
+            self.view?.reload()
+            self.view?.setEmptyStackHidden(isHidden: !favoriteDatasource.isEmpty)
+        }
+    }
 }
 
 extension PartnersPresenter: PartnersOutputInteractorProtocol {

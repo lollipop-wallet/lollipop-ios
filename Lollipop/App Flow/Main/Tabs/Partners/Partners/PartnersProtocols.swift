@@ -19,6 +19,7 @@ protocol PartnersPresenterProtocol: UICollectionViewDelegate, UICollectionViewDa
     
     func viewDidLoad()
     func suggestPartner()
+    func changeSegment(segment: Int)
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -40,6 +41,7 @@ protocol PartnersViewProtocol: AnyObject {
     
     var presenter: PartnersPresenterProtocol?  { get set }
     func reload()
+    func setEmptyStackHidden(isHidden: Bool)
 }
 //MARK: Wireframe
 protocol PartnersWireframeProtocol: AnyObject {
