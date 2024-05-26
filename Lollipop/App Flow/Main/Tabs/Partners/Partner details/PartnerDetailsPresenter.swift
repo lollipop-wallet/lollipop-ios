@@ -44,7 +44,7 @@ extension PartnerDetailsPresenter {
             return cell
         }else if indexPath.row == 4{
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homeRectItemCell.rawValue, for: indexPath) as! HomeRectHorizontalCategoryTableViewCell
-            cell.configureWith(index: indexPath, delegate: self)
+            cell.configureWith(datasource: [], index: indexPath, delegate: self)
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.partnerDetailsCustomCell.rawValue, for: indexPath) as! PartnerDetailsCustomTableViewCell

@@ -90,7 +90,7 @@ extension HomePresenter {
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homeRectItemCell.rawValue, for: indexPath) as! HomeRectHorizontalCategoryTableViewCell
-            cell.configureWith(index: indexPath, delegate: self)
+            cell.configureWith(datasource: self.datasource[indexPath.row].banners ?? [], index: indexPath, delegate: self)
             return cell
         }
     }

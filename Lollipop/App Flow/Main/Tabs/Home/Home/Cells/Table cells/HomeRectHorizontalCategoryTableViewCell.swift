@@ -10,6 +10,7 @@ class HomeRectHorizontalCategoryTableViewCell: UITableViewCell {
     
     var delegate: RectangleCategoryCellProtocol?
     var index: IndexPath!
+    var datasource = [Banner]()
     
     lazy var cellContentView: UIView = {
         let view = UIView()
@@ -112,10 +113,11 @@ class HomeRectHorizontalCategoryTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: RectangleCategoryCellProtocol) {
+    func configureWith(datasource: [Banner], index: IndexPath, delegate: RectangleCategoryCellProtocol) {
         self.backgroundColor = .clear
         self.index = index
         self.delegate = delegate
+        self.datasource = datasource
         self.collectionView.reloadData()
     }
     
@@ -127,12 +129,12 @@ class HomeRectHorizontalCategoryTableViewCell: UITableViewCell {
 
 extension HomeRectHorizontalCategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, RectItemCellProtocol {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 11
+        return self.datasource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.rectItemCell.rawValue, for: indexPath) as! RectItemCollectionViewCell
-        cell.configureWith(delegate: self, index: indexPath)
+        cell.configureWith(item: self.datasource[indexPath.row], delegate: self, index: indexPath)
         return cell
     }
     
