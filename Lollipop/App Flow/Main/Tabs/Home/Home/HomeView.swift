@@ -30,6 +30,16 @@ class HomeView: UIViewController, HomeViewProtocol {
         }
     }
     
+    func setUserNameWith(name: String){
+        DispatchQueue.main.async {
+            self.avatarLabel.text = name
+        }
+    }
+    
+    func setUserAvatarWith(avatar: String){
+        self.avatarImageView.imageFromURL(url: avatar)
+    }
+    
     //MARK: Actions
     @objc func onAvatarTap() {
         print("dwadwa")

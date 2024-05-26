@@ -9,9 +9,21 @@
 import Foundation
 
 struct HomeModel : Codable {
+    let user: User?
     let cards: [Card]?
     let brands: [Brand]?
     let elements: [Element]?
+}
+
+struct User: Codable {
+    let name: String?
+    let email: String?
+    let phone: String?
+    let date_of_birth: String?
+    let country: String?
+    let gender: String?
+    let avatar: String?
+    let language: Language?
 }
 
 struct Card: Codable {

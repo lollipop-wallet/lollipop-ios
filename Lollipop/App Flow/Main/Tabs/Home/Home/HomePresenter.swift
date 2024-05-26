@@ -27,8 +27,6 @@ extension HomePresenter: HomeOutputInteractorProtocol {
         self.delegate = delegate
         switch result {
         case .success(let model):
-            print("success")
-            
             if !(model.cards ?? []).isEmpty {
                 let homeItem = HomeListModel(cards: model.cards ?? [], brands: [], featuredBanner: nil, banners: [], itemType: .cards)
                 self.datasource.append(homeItem)
@@ -61,6 +59,10 @@ extension HomePresenter: HomeOutputInteractorProtocol {
                 }
             }
             self.view?.reload()
+            self.view?.setUserNameWith(name: (model.user?.name ?? "").isEmpty ? LocalizedTitle.signIn.localized : model.user?.name ?? "")
+            if !(model.user?.avatar ?? "").isEmpty{
+                self.view?.setUserAvatarWith(avatar: model.user?.avatar ?? "")
+            }
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }

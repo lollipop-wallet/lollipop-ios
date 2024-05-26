@@ -9,6 +9,13 @@
 import Foundation
 
 struct ProfileModel : Codable {
-    
+    let name: String?
+    let email: String?
+    let phone: String?
+    let date_of_birth: String?
+    let country: String?
+    let gender: String?
+    let avatar: String?
+    let language: Language?
 }
 

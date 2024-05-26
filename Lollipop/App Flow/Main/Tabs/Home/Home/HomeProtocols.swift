@@ -37,6 +37,8 @@ protocol HomeViewProtocol: AnyObject {
     
     var presenter: HomePresenterProtocol?  { get set }
     func reload()
+    func setUserNameWith(name: String)
+    func setUserAvatarWith(avatar: String)
 }
 //MARK: Wireframe
 protocol HomeWireframeProtocol: AnyObject {
