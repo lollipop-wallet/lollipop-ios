@@ -28,6 +28,7 @@ class HomePosterCategoryTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 20
+        imageView.layer.masksToBounds = true
         imageView.backgroundColor = .red
         imageView.snp.makeConstraints { make in
             make.width.height.equalTo(40)
@@ -48,6 +49,7 @@ class HomePosterCategoryTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 8
+        imageView.layer.masksToBounds = true
         imageView.backgroundColor = .blue
         return imageView
     }()
@@ -144,9 +146,13 @@ class HomePosterCategoryTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: HomePosterCategoryCellProtocol) {
+    func configureWith(item: FeaturedBanner?, index: IndexPath, delegate: HomePosterCategoryCellProtocol) {
         self.index = index
         self.delegate = delegate
+        self.posterHeaderIcon.imageFromURL(url: item?.brand?.featured_image ?? "")
+        self.posterImage.imageFromURL(url: item?.featured_image ?? "")
+        self.posterHeaderTitleLabel.text = item?.brand?.name ?? ""
+        self.posterTitleLabel.text = item?.title ?? ""
     }
     
     //MARK: Actions

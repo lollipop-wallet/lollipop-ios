@@ -30,12 +30,13 @@ struct Brand: Codable {
 }
 
 struct FeaturedBanner: Codable {
-    let title: String?
-    let alias: String?
-    let description: String?
-    let external_link: String?
-    let external_link_label: String?
-    let status: String?
+    var title: String?
+    var alias: String?
+    var featured_image: String?
+    var description: String?
+    var external_link: String?
+    var external_link_label: String?
+    var status: String?
     let brand: Brand?
 }
 

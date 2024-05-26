@@ -43,7 +43,14 @@ extension HomePresenter: HomeOutputInteractorProtocol {
             for i in 0..<elements.count {
                 let element = elements[i]
                 if element.featured_banner != nil {
-                    let homeItem = HomeListModel(cards: [], brands: [], featuredBanner: element.featured_banner, banners: [], itemType: .poster)
+                    var featuredBanner = element.featured_banner
+                    if !(element.title ?? "").isEmpty {
+                        featuredBanner?.title = element.title ?? ""
+                    }
+                    if !(element.featured_image ?? "").isEmpty {
+                        featuredBanner?.featured_image = element.featured_image
+                    }
+                    let homeItem = HomeListModel(cards: [], brands: [], featuredBanner: featuredBanner, banners: [], itemType: .poster)
                     self.datasource.append(homeItem)
                 }
                 if !(element.banners ?? []).isEmpty {
@@ -79,7 +86,7 @@ extension HomePresenter {
             return cell
         }else if self.datasource[indexPath.row].itemType == .poster {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homePosterCell.rawValue, for: indexPath) as! HomePosterCategoryTableViewCell
-            cell.configureWith(index: indexPath, delegate: self)
+            cell.configureWith(item: self.datasource[indexPath.row].featuredBanner, index: indexPath, delegate: self)
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homeRectItemCell.rawValue, for: indexPath) as! HomeRectHorizontalCategoryTableViewCell
