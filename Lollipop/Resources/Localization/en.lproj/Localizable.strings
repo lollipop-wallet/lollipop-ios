@@ -163,3 +163,6 @@
 "stores" = "Stores";
 "yourListIsEmpty" = "Your list is empty";
 "addFavoriteShops" = "Add favorite shops";
+"markShopsYouLike" = "Mark stores you like";
+"favoriteStores" = "Favorite stores";
+"seeMore" = "See more";

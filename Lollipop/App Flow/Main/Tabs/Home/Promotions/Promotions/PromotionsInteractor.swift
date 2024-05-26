@@ -12,4 +12,13 @@ import UIKit
 class PromotionsInteractor: PromotionsInputInteractorProtocol {
     
     weak var presenter: PromotionsOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.getpromotions { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self = self else {return}
+            self.presenter?.parsePromotionsData(result: result)
+        }
+    }
 }

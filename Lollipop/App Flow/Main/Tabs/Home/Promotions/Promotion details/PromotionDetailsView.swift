@@ -8,23 +8,32 @@
 //
 //
 import UIKit
+import WebKit
 
 class PromotionDetailsView: UIViewController, PromotionDetailsViewProtocol {
-
+    
+    var webView = WKWebView()
+    var titleLabel = UILabel()
+    
     var presenter: PromotionDetailsPresenterProtocol?
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
+    }
+    
+    //MARK: PromotionDetailsView Protocol
+    func setTitleWith(title: String){
+        DispatchQueue.main.async {
+            self.titleLabel.text = title
+        }
+    }
+    
+    func setContentWith(content: String){
+        DispatchQueue.main.async {
+            self.webView.loadHTMLString(content, baseURL: nil)
+        }
     }
     
     
@@ -32,5 +41,8 @@ class PromotionDetailsView: UIViewController, PromotionDetailsViewProtocol {
     @objc func onBackTap() {
         popBack(2)
     }
-
+    
+    @objc func onSeeMoreTap() {
+        presenter?.seeMore()
+    }
 }

@@ -174,6 +174,9 @@ enum LocalizedTitle: String {
     case stores
     case yourListIsEmpty
     case addFavoriteShops
+    case markShopsYouLike
+    case favoriteStores
+    case seeMore
     
     var localized: String {
         return self.rawValue.localized()

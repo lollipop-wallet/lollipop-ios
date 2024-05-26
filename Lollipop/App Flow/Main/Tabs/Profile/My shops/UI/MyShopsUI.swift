@@ -18,7 +18,7 @@ extension MyShopsView {
         appearance.setBackIndicatorImage(imgBackArrow, transitionMaskImage: imgBackArrow)
         navigationItem.standardAppearance = appearance
         UINavigationBar.appearance().layoutMargins.left = 20
-        self.navigationItem.title = LocalizedTitle.myShops.localized
+        self.navigationItem.title = LocalizedTitle.favoriteStores.localized
         
         lazy var backButton: UIBarButtonItem = {
             let button = UIBarButtonItem()
@@ -36,7 +36,7 @@ extension MyShopsView {
             label.font = .inter(ofSize: 16, name: .regular)
             label.textAlignment = .left
             label.textColor = AppColors.black
-            label.text = LocalizedTitle.chooseFavorites.localized
+            label.text = LocalizedTitle.markShopsYouLike.localized
             return label
         }()
         

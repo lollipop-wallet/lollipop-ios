@@ -140,7 +140,8 @@ extension HomeRectHorizontalCategoryTableViewCell: UICollectionViewDelegate, UIC
     
     
     func didSelectItemAt(index: IndexPath) {
-        
+        let item = self.datasource[index.row]
+        delegate?.didTapBannerWith(banner: item)
     }
 }
 

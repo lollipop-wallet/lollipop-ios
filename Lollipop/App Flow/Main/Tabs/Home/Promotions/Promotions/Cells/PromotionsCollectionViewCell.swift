@@ -26,6 +26,7 @@ class PromotionsCollectionViewCell: UICollectionViewCell {
             make.width.height.equalTo(32)
         }
         imageView.layer.cornerRadius = 16
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     
@@ -146,9 +147,13 @@ class PromotionsCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
-    func configureWith(delegate: PromotionsCellProtocol, index: IndexPath) {
+    func configureWith(item: Banner?, delegate: PromotionsCellProtocol, index: IndexPath) {
         self.delegate = delegate
         self.index = index
+        self.logo.imageFromURL(url: item?.brand?.logo ?? "")
+        self.photo.imageFromURL(url: item?.featured_image ?? "")
+        self.partnerTitle.text = item?.brand?.name ?? ""
+        self.promotionTitleLabel.text = item?.title ?? ""
     }
     
     

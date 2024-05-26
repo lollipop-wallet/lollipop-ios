@@ -16,7 +16,7 @@ struct DefaultModels {
     let selected = [AssetTitles.homeSelectedIcon, AssetTitles.partnersSelectedIcon, "", AssetTitles.lollipopSelectedIcon, AssetTitles.profileSelectedIcon]
     
     let profileDatasource = [[ProfileListModel(icon: AssetTitles.profileCardsFilledIcon, title: LocalizedTitle.myCards.localized, item: .cards),
-                              ProfileListModel(icon: AssetTitles.profileFavoriteShopsFilledIcon, title: LocalizedTitle.favoriteShops.localized, item: .shops)],
+                              ProfileListModel(icon: AssetTitles.profileFavoriteShopsFilledIcon, title: LocalizedTitle.favoriteStores.localized, item: .shops)],
                              
                              [ProfileListModel(icon: AssetTitles.settingsIcon, title: LocalizedTitle.profileSettings.localized, item: .settings),
                             ProfileListModel(icon: AssetTitles.aboutIcon, title: LocalizedTitle.aboutApp.localized, item: .about),

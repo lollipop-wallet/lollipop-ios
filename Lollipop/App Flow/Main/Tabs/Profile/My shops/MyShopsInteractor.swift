@@ -12,4 +12,8 @@ import UIKit
 class MyShopsInteractor: MyShopsInputInteractorProtocol {
     
     weak var presenter: MyShopsOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        
+    }
 }

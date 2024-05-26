@@ -12,4 +12,9 @@ import UIKit
 class PromotionDetailsInteractor: PromotionDetailsInputInteractorProtocol {
     
     weak var presenter: PromotionDetailsOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        let banner = PromotionDetailsWireframe.banner
+        presenter?.takeDataWith(banner: banner)
+    }
 }

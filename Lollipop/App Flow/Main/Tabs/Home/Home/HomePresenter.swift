@@ -104,10 +104,18 @@ extension HomePresenter {
     }
     
     func didTapSeeMoreFromCircleCategory(){
-        delegate?.toPartnersTab()
+        delegate?.toPartnersTabFromHome()
     }
     
     func didTapSeeMoreFromRectCategory(){
-        wireframe?.toPromotions()
+        if Manager.isRegistered {
+            wireframe?.toPromotions()
+        }else{
+            delegate?.toProfileTabFromHome()
+        }
+    }
+    
+    func didTapBannerWith(banner: Banner?){
+        wireframe?.toPromotionDetailsWith(banner: banner)
     }
 }

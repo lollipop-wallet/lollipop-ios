@@ -19,6 +19,7 @@ class PromotionsView: UIViewController, PromotionsViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +38,12 @@ class PromotionsView: UIViewController, PromotionsViewProtocol {
         standardAppearance.backgroundColor = shouldChange ? AppColors.brandPrimary : AppColors.lightGrey
         navigationItem.standardAppearance = standardAppearance
         self.backButton.tintColor = shouldChange ? AppColors.white : AppColors.black
+    }
+    
+    func reload(){
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+        }
     }
 
     //MARK: Actions

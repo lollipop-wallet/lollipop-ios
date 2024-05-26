@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 class PromotionsPresenter: NSObject, PromotionsPresenterProtocol  {
     
@@ -13,26 +14,40 @@ class PromotionsPresenter: NSObject, PromotionsPresenterProtocol  {
     weak var view: PromotionsViewProtocol?
     var wireframe: PromotionsWireframeProtocol?
     
+    var datasource = [Banner]()
+    
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
 }
 
 extension PromotionsPresenter: PromotionsOutputInteractorProtocol {
-    
+    func parsePromotionsData(result: Result<[Banner], AFError>){
+        switch result {
+        case .success(let data):
+            self.datasource = data
+            self.view?.reload()
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
 }
 
 extension PromotionsPresenter {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 11
+        return self.datasource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.promotionsCell.rawValue, for: indexPath) as! PromotionsCollectionViewCell
-        cell.configureWith(delegate: self, index: indexPath)
+        cell.configureWith(item: self.datasource[indexPath.row], delegate: self, index: indexPath)
         return cell
     }
     
     
     func didSelectItemAt(index: IndexPath) {
-        wireframe?.toDetails()
+        let item = self.datasource[index.row]
+        wireframe?.toDetailsWith(banner: item)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

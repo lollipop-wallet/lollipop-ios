@@ -16,13 +16,14 @@ protocol MyShopsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, M
     var view: MyShopsViewProtocol? { get set }
     var wireframe:MyShopsWireframeProtocol? { get set }
     
+    func viewDidLoad()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
 protocol MyShopsInputInteractorProtocol: AnyObject {
     
     var presenter: MyShopsOutputInteractorProtocol?  { get set }
-    
+    func viewDidLoad()
    
 }
 //MARK: Interactor
@@ -39,12 +40,16 @@ protocol MyShopsViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol MyShopsWireframeProtocol: AnyObject {
-
-    
+    static var delegate: MyShopsControllerProtocol? { get set }
 }
 
 
 //MARK: MyShopsCell protocol
 protocol MyShopsCellProtocol: AnyObject {
     func didSelectItemAt(index: IndexPath)
+}
+
+//MARK: MyShopsController protocol
+protocol MyShopsControllerProtocol: AnyObject {
+    func favoriteShopsUpdated()
 }

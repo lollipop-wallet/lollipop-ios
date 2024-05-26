@@ -13,6 +13,9 @@ class MyShopsPresenter: NSObject, MyShopsPresenterProtocol  {
     weak var view: MyShopsViewProtocol?
     var wireframe: MyShopsWireframeProtocol?
     
+    func viewDidLoad(){
+        interactor?.viewDidLoad()
+    }
 }
 
 extension MyShopsPresenter: MyShopsOutputInteractorProtocol {

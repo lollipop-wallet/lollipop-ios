@@ -56,4 +56,8 @@ extension PartnerDetailsPresenter {
     func didTapSeeMoreFromRectCategory() {
     }
     
+    func didTapBannerWith(banner: Banner?) {
+    }
+    
+    
 }

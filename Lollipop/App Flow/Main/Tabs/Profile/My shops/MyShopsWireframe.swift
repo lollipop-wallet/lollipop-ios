@@ -9,6 +9,7 @@ import UIKit
 
 class MyShopsWireframe: MyShopsWireframeProtocol {
     
+    static var delegate: MyShopsControllerProtocol?
     
     static func createModule(MyShopsRef: MyShopsView) {
         let presenter: MyShopsPresenterProtocol & MyShopsOutputInteractorProtocol = MyShopsPresenter()

@@ -44,11 +44,13 @@ protocol HomeViewProtocol: AnyObject {
 protocol HomeWireframeProtocol: AnyObject {
     static var delegate: HomeControllerProtocol? { get set }
     func toPromotions()
+    func toPromotionDetailsWith(banner: Banner?)
 }
 
 //MARK: HomeController protocol
 protocol HomeControllerProtocol: AnyObject {
-    func toPartnersTab()
+    func toPartnersTabFromHome()
+    func toProfileTabFromHome()
 }
 
 //MARK: AddCardHomeCell protocol
@@ -74,6 +76,7 @@ protocol HomePosterCategoryCellProtocol: AnyObject {
 //MARK: RectangleCategoryCell Protocol
 protocol RectangleCategoryCellProtocol: AnyObject {
     func didTapSeeMoreFromRectCategory()
+    func didTapBannerWith(banner: Banner?)
 }
 
 //MARK: LoyaltyCardCell protocol

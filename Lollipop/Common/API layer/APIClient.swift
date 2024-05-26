@@ -100,5 +100,10 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.getfavoritebrands, completion: completion)
     }
+    
+    static func getpromotions(completion:@escaping (Result<[Banner], AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.getpromotions, completion: completion)
+    }
 }
 

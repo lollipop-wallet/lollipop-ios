@@ -25,4 +25,10 @@ class HomeWireframe: HomeWireframeProtocol {
         let vc = PromotionsView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toPromotionDetailsWith(banner: Banner?){
+        let vc = PromotionDetailsView()
+        PromotionDetailsWireframe.banner = banner
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }
