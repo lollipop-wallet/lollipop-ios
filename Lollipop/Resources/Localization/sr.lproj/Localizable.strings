@@ -160,3 +160,5 @@
 "createNewPwd" = "Kreiraj novu šifru";
 "signOut" = "Odjavi se";
 "stores" = "Radnje";
+"yourListIsEmpty" = "Vaša lista je trenutno prazna";
+"addFavoriteShops" = "Dodaj omiljene radnje";
