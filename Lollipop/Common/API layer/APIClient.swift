@@ -118,5 +118,10 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.togglefavorite(alias: alias), completion: completion)
     }
+    
+    static func suggestshop(name: String, country: String, city: String, address: String, description: String, completion:@escaping (Result<NewPartnerModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.suggestshop(name: name, country: country, city: city, address: address, description: description), completion: completion)
+    }
 }
 

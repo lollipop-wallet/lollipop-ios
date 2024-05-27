@@ -18,4 +18,7 @@ struct APIParameterKey {
     static let otp = "otp"
     static let alias = "alias"
     static let brandAlias = "brand_alias"
+    static let country = "country"
+    static let address = "address"
+    static let description = "description"
 }
