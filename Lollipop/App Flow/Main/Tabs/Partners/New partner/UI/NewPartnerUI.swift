@@ -54,12 +54,25 @@ extension NewPartnerView {
         self.shopNameField.background = AppColors.white
         self.shopNameField.leftSuplementaryIconHidden = true
         
-        self.cityField.title = "\(LocalizedTitle.city.localized) (\(LocalizedTitle.optional.localized)):"
+        self.cityField.title = "\(LocalizedTitle.cityYouLiveIn.localized) (\(LocalizedTitle.optional.localized)):"
         self.cityField.errorHidden = true
         self.cityField.background = AppColors.white
         self.cityField.text = LocalizedTitle.choose.localized
         self.cityField.rightSuplementaryIconHidden = false
-        //self.cityField.delegate = presenter
+        self.cityField.leftSuplementaryIconHidden = true
+        self.cityField.tag = 1
+        self.cityField.delegate = presenter
+        
+        self.cityDropdown.cellNib = UINib(nibName: "CityTableViewCell", bundle: nil)
+        self.cityDropdown.anchorView = self.cityField
+        self.cityDropdown.cellHeight = 48
+        self.cityDropdown.direction = .bottom
+        self.cityDropdown.bottomOffset = CGPoint(x: 0, y: 85)
+        self.cityDropdown.backgroundColor = AppColors.white
+        self.cityDropdown.cornerRadius = 8
+        self.cityDropdown.dismissMode = .onTap
+        self.cityDropdown.tag = 1
+        self.cityDropdown.delegate = presenter
         
         self.addressField.title = "\(LocalizedTitle.address.localized) (\(LocalizedTitle.optional.localized)):"
         self.addressField.placeholder = "\(LocalizedTitle.enterAddress.localized)"
@@ -74,6 +87,7 @@ extension NewPartnerView {
         self.noteField.errorHidden = true
         self.noteField.leftSuplementaryIconHidden = true
         self.noteField.background = AppColors.white
+        
         
         lazy var sendButton: UIButton = {
             let button = UIButton()

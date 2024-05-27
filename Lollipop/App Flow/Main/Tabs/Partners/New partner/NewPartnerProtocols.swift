@@ -10,7 +10,7 @@ import Foundation
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol NewPartnerPresenterProtocol: AnyObject {
+protocol NewPartnerPresenterProtocol:  DropdownInputFieldProtocol, DropdownProtocol {
     
     var interactor: NewPartnerInputInteractorProtocol? { get set }
     var view: NewPartnerViewProtocol? { get set }
@@ -36,6 +36,9 @@ protocol NewPartnerViewProtocol: AnyObject {
     
     var presenter: NewPartnerPresenterProtocol?  { get set }
     
+    func showDropdownWith(tag: Int)
+    func hideDropdownWith(tag: Int)
+    func setCityWith(item: String)
 }
 //MARK: Wireframe
 protocol NewPartnerWireframeProtocol: AnyObject {
