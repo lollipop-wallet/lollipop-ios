@@ -30,6 +30,7 @@ class MyShopsView: UIViewController, MyShopsViewProtocol {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    
     //MARK: MyShopsView protocol
     func reload(){
         DispatchQueue.main.async {

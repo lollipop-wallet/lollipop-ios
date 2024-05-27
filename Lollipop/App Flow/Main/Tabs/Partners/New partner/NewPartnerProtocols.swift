@@ -17,15 +17,15 @@ protocol NewPartnerPresenterProtocol:  DropdownInputFieldProtocol, DropdownProto
     var wireframe:NewPartnerWireframeProtocol? { get set }
     
     func handleCityDropdownTapWith(item: String)
-
+    func send(shopName: String, city: String, address: String, note: String)
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
 protocol NewPartnerInputInteractorProtocol: AnyObject {
     
     var presenter: NewPartnerOutputInteractorProtocol?  { get set }
-    
-   
+    func send(shopName: String, country: String, city: String, address: String, note: String)
+
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
@@ -41,6 +41,7 @@ protocol NewPartnerViewProtocol: AnyObject {
     func showDropdownWith(tag: Int)
     func hideDropdownWith(tag: Int)
     func setCityWith(item: String)
+    func validate(isShopNameEmpty: Bool)
 }
 //MARK: Wireframe
 protocol NewPartnerWireframeProtocol: AnyObject {

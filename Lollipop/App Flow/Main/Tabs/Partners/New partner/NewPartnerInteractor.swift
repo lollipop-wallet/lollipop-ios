@@ -12,4 +12,8 @@ import UIKit
 class NewPartnerInteractor: NewPartnerInputInteractorProtocol {
     
     weak var presenter: NewPartnerOutputInteractorProtocol?
+    
+    func send(shopName: String, country: String, city: String, address: String, note: String) {
+        
+    }
 }

@@ -52,6 +52,11 @@ class NewPartnerView: UIViewController, NewPartnerViewProtocol {
             self.cityField.text = item
         }
     }
+    
+    func validate(isShopNameEmpty: Bool){
+        self.shopNameField.borderWidth = 1
+        self.shopNameField.borderColor = isShopNameEmpty ? AppColors.error : AppColors.black
+    }
 
     //MARK: Actions
     @objc func onBackTap() {
@@ -59,6 +64,6 @@ class NewPartnerView: UIViewController, NewPartnerViewProtocol {
     }
     
     @objc func onSendTap() {
-        
+        presenter?.send(shopName: self.shopNameField.textField.text ?? "", city: self.cityField.text ?? "", address: self.addressField.textField.text ?? "", note: self.noteField.textView.text ?? "")
     }
 }

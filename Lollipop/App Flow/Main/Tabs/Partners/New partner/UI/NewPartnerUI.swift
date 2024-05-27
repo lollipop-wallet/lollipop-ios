@@ -54,10 +54,10 @@ extension NewPartnerView {
         self.shopNameField.background = AppColors.white
         self.shopNameField.leftSuplementaryIconHidden = true
         
-        self.cityField.title = "\(LocalizedTitle.cityYouLiveIn.localized) (\(LocalizedTitle.optional.localized)):"
+        self.cityField.title = "\(LocalizedTitle.cityYouLiveIn.localized)"
         self.cityField.errorHidden = true
         self.cityField.background = AppColors.white
-        self.cityField.text = LocalizedTitle.choose.localized
+        self.cityField.text = "Podgorica"
         self.cityField.rightSuplementaryIconHidden = false
         self.cityField.leftSuplementaryIconHidden = true
         self.cityField.tag = 1
@@ -102,6 +102,7 @@ extension NewPartnerView {
         self.noteField.errorHidden = true
         self.noteField.leftSuplementaryIconHidden = true
         self.noteField.background = AppColors.white
+        
         
         
         lazy var sendButton: UIButton = {

@@ -16,6 +16,14 @@ class NewPartnerPresenter: NSObject, NewPartnerPresenterProtocol  {
     func handleCityDropdownTapWith(item: String){
         view?.setCityWith(item: item)
     }
+    
+    func send(shopName: String, city: String, address: String, note: String){
+        guard !shopName.isEmpty else {
+            view?.validate(isShopNameEmpty: shopName.isEmpty)
+            return
+        }
+        interactor?.send(shopName: shopName, country: "Montenegro", city: city, address: address, note: note)
+    }
 }
 
 extension NewPartnerPresenter: NewPartnerOutputInteractorProtocol {
