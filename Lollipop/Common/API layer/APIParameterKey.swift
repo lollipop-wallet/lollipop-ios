@@ -16,4 +16,5 @@ struct APIParameterKey {
     static let dob = "date_of_birth"
     static let gender = "gender"
     static let otp = "otp"
+    static let alias = "alias"
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -29,14 +30,13 @@ protocol MyShopsInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol MyShopsOutputInteractorProtocol: AnyObject {
-    
-
+    func parseShopsData(result: Result<MyShopsModel, AFError>)
 }
 //MARK: View
 protocol MyShopsViewProtocol: AnyObject {
     
     var presenter: MyShopsPresenterProtocol?  { get set }
-    
+    func reload()
 }
 //MARK: Wireframe
 protocol MyShopsWireframeProtocol: AnyObject {

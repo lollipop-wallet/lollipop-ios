@@ -22,14 +22,16 @@ enum APIRouter: URLRequestConvertible, Equatable {
     case getbrands
     case getfavoritebrands
     case getpromotions
+    case getfavoriteshops
+    case togglefavorite(alias: String)
 
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
-        case .getconfig, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions:
+        case .getconfig, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops:
             return .get
-        case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp:
+        case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite:
             return .post
         }
     }
@@ -59,13 +61,17 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return "brands/user-favorites"
         case .getpromotions:
             return "banners?includes=brand"
+        case .getfavoriteshops:
+            return "brands/favorites"
+        case .togglefavorite:
+            return "brands/user-favorites"
         }
     }
     
     // MARK: - Parameters
     private var parameters: Parameters? {
         switch self {
-        case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions:
+        case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops:
             return nil
         case .login(let email, let password):
             return [APIParameterKey.email : email, APIParameterKey.password : password]
@@ -75,6 +81,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return [APIParameterKey.otp : code, APIParameterKey.email :  email, APIParameterKey.password : password, APIParameterKey.passwordConfirmation : confirmPassword]
         case .sendforgotpwdotp(let email):
             return [APIParameterKey.email : email]
+        case .togglefavorite(let alias):
+            return [APIParameterKey.alias : alias]
         }
     }
         

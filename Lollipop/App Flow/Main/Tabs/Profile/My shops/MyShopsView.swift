@@ -18,6 +18,7 @@ class MyShopsView: UIViewController, MyShopsViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,6 +28,13 @@ class MyShopsView: UIViewController, MyShopsViewProtocol {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    //MARK: MyShopsView protocol
+    func reload(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     //MARK: Actions

@@ -105,5 +105,15 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.getpromotions, completion: completion)
     }
+    
+    static func getfavoriteshops(completion:@escaping (Result<MyShopsModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.getfavoriteshops, completion: completion)
+    }
+    
+    static func togglefavorite(alias: String, completion:@escaping (Result<SetToFavoriteModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.togglefavorite(alias: alias), completion: completion)
+    }
 }
 

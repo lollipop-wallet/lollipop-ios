@@ -339,6 +339,7 @@
 		628AA6DC2BFB6600009A3077 /* NewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6D52BFB6600009A3077 /* NewPasswordView.swift */; };
 		628AA6DD2BFB6600009A3077 /* NewPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6D62BFB6600009A3077 /* NewPasswordModel.swift */; };
 		628AA6DE2BFB6600009A3077 /* NewPasswordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6D72BFB6600009A3077 /* NewPasswordWireframe.swift */; };
+		62B48DA82C043AB40035AD22 /* SetToFavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B48DA72C043AB40035AD22 /* SetToFavoriteModel.swift */; };
 		62BFFD282BE5E16300899800 /* Code resoruces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD272BE5E16300899800 /* Code resoruces.swift */; };
 		62BFFD2C2BE7391700899800 /* WalletCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD2B2BE7391700899800 /* WalletCard.swift */; };
 		62BFFD2E2BE7437300899800 /* WalletStackProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD2D2BE7437300899800 /* WalletStackProtocols.swift */; };
@@ -826,6 +827,7 @@
 		628AA6D52BFB6600009A3077 /* NewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordView.swift; sourceTree = "<group>"; };
 		628AA6D62BFB6600009A3077 /* NewPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordModel.swift; sourceTree = "<group>"; };
 		628AA6D72BFB6600009A3077 /* NewPasswordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordWireframe.swift; sourceTree = "<group>"; };
+		62B48DA72C043AB40035AD22 /* SetToFavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetToFavoriteModel.swift; sourceTree = "<group>"; };
 		62BFFD272BE5E16300899800 /* Code resoruces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Code resoruces.swift"; sourceTree = "<group>"; };
 		62BFFD2B2BE7391700899800 /* WalletCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCard.swift; sourceTree = "<group>"; };
 		62BFFD2D2BE7437300899800 /* WalletStackProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletStackProtocols.swift; sourceTree = "<group>"; };
@@ -1948,6 +1950,7 @@
 				626906AA2BE0A8D100BF5F62 /* MyShopsInteractor.swift */,
 				626906AB2BE0A8D100BF5F62 /* MyShopsView.swift */,
 				626906AC2BE0A8D100BF5F62 /* MyShopsModel.swift */,
+				62B48DA72C043AB40035AD22 /* SetToFavoriteModel.swift */,
 				626906AD2BE0A8D100BF5F62 /* MyShopsWireframe.swift */,
 				626906B52BE0A8D800BF5F62 /* UI */,
 				2CE072252BE0F03E00768C73 /* Cells */,
@@ -3283,6 +3286,7 @@
 				2CDDA73B2BDA256100B6C8B5 /* OTPWireframe.swift in Sources */,
 				6212737C2BE4A08700FDA7D0 /* HomeCircleHorizontalCategoryTableViewCell.swift in Sources */,
 				2CEC7FB42BD8D1730050E762 /* RegisterPresenter.swift in Sources */,
+				62B48DA82C043AB40035AD22 /* SetToFavoriteModel.swift in Sources */,
 				2CEC7FB52BD8D1730050E762 /* RegisterProtocols.swift in Sources */,
 				2CE32ABD2BDF9E4B004757C5 /* NewPartnerUI.swift in Sources */,
 				2CE32AC02BDFAAE1004757C5 /* InputTextViewField.swift in Sources */,

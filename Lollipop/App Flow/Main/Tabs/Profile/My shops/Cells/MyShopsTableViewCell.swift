@@ -26,6 +26,7 @@ class MyShopsTableViewCell: UITableViewCell {
     
     lazy var shopImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -141,14 +142,13 @@ class MyShopsTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: MyShopsCellProtocol) {
+    func configureWith(item: Shop?, index: IndexPath, delegate: MyShopsCellProtocol) {
         self.index = index
         self.delegate = delegate
-        //self.titleLabel.text = item.title
-        //self.iconImageView.image = UIImage(named: item.flag)
-        //self.checkBoxIcon.image = UIImage(named: item.selected ? AssetTitles.radioSelectedIcon : AssetTitles.radioUnselectedIcon)
-        self.titleLabel.text = "Dameo"
-        self.checkBoxIcon.image = UIImage(named: AssetTitles.checkBoxUnselectedIcon)
+        self.shopImageView.imageFromURL(url: item?.logo ?? "")
+        self.titleLabel.text = item?.name ?? ""
+        self.checkBoxIcon.image = item?.favoriteIcon
+        self.checkBoxIcon.tintColor = item?.favoriteIconTintColor
     }
     
     //MARK: Actions
