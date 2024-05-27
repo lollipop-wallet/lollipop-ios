@@ -18,6 +18,7 @@ class PartnersPresenter: NSObject, PartnersPresenterProtocol  {
     var datasource = [Brand]()
     var completeDatasource = [Brand]()
     var favoriteDatasource = [Brand]()
+    var selectedSegment = Int()
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -28,6 +29,7 @@ class PartnersPresenter: NSObject, PartnersPresenterProtocol  {
     }
     
     func changeSegment(segment: Int){
+        self.selectedSegment = segment
         if segment == 0 {
             self.datasource = completeDatasource
             self.view?.reload()
@@ -41,7 +43,7 @@ class PartnersPresenter: NSObject, PartnersPresenterProtocol  {
     
     func addFavoriteShow(){
         if Manager.isRegistered {
-            
+            wireframe?.toMyShops(delegate: self)
         }else{
             delegate?.toProfileTab()
         }
@@ -86,5 +88,23 @@ extension PartnersPresenter {
     
     func didSelectItemAt(index: IndexPath) {
         wireframe?.toPartnerDetails()
+    }
+}
+
+//MARK: MyShopsController delegate
+extension PartnersPresenter {
+    func favoriteShopsUpdated(brands: [Brand]) {
+        self.completeDatasource = brands
+        self.favoriteDatasource = brands.filter { ($0.is_favorite ?? 0) == 1 }
+        
+        if self.selectedSegment == 0 {
+            self.datasource = self.completeDatasource
+            self.view?.reload()
+            self.view?.setEmptyStackHidden(isHidden: true)
+        }else{
+            self.datasource = self.favoriteDatasource
+            self.view?.reload()
+            self.view?.setEmptyStackHidden(isHidden: !self.favoriteDatasource.isEmpty)
+        }
     }
 }

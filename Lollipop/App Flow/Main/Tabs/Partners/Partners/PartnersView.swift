@@ -47,6 +47,6 @@ class PartnersView: UIViewController, PartnersViewProtocol {
     }
     
     @objc func onAddFavoriteShop() {
-        
+        presenter?.addFavoriteShow()
     }
 }

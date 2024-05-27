@@ -14,11 +14,13 @@ class MyShopsInteractor: MyShopsInputInteractorProtocol {
     weak var presenter: MyShopsOutputInteractorProtocol?
     
     func viewDidLoad() {
+        let delegate = MyShopsWireframe.delegate
+        
         UIApplication.topViewController()?.view.showSpinner()
         APIClient.getfavoriteshops { [weak self] result in
             UIApplication.topViewController()?.view.hideSpinner()
             guard let self = self else {return}
-            self.presenter?.parseShopsData(result: result)
+            self.presenter?.parseShopsData(result: result, delegate: delegate)
         }
     }
     

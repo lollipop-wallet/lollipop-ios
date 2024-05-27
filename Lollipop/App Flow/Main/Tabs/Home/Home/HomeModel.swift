@@ -6,7 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct HomeModel : Codable {
     let user: User?
@@ -31,14 +31,21 @@ struct Card: Codable {
 }
 
 struct Brand: Codable {
-    let id: Int?
-    let name: String?
-    let alias: String?
-    let featured_image: String?
-    let logo: String?
-    let external_link: String?
-    let external_link_label: String?
-    let status: String?
+    var id: Int?
+    var name: String?
+    var alias: String?
+    var featured_image: String?
+    var logo: String?
+    var external_link: String?
+    var external_link_label: String?
+    var status: String?
+    var is_favorite: Int?
+    var favoriteIcon: UIImage {
+        return UIImage(named: (is_favorite ?? 0) == 1 ? AssetTitles.heartIcon : AssetTitles.outlinedHeartIcon)!
+    }
+    var favoriteIconTintColor: UIColor {
+        return (is_favorite ?? 0) == 1 ? AppColors.brandPrimary : AppColors.darkGrey
+    }
 }
 
 struct FeaturedBanner: Codable {

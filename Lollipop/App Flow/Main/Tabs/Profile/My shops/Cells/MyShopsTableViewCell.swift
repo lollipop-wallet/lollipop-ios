@@ -142,7 +142,7 @@ class MyShopsTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(item: Shop?, index: IndexPath, delegate: MyShopsCellProtocol) {
+    func configureWith(item: Brand?, index: IndexPath, delegate: MyShopsCellProtocol) {
         self.index = index
         self.delegate = delegate
         self.shopImageView.imageFromURL(url: item?.logo ?? "")

@@ -13,8 +13,9 @@ class MyShopsPresenter: NSObject, MyShopsPresenterProtocol  {
     var interactor : MyShopsInputInteractorProtocol?
     weak var view: MyShopsViewProtocol?
     var wireframe: MyShopsWireframeProtocol?
+    var delegate: MyShopsControllerProtocol?
     
-    var datasource = [Shop]()
+    var datasource = [Brand]()
     var selectedIndex = Int()
     
     func viewDidLoad(){
@@ -23,7 +24,8 @@ class MyShopsPresenter: NSObject, MyShopsPresenterProtocol  {
 }
 
 extension MyShopsPresenter: MyShopsOutputInteractorProtocol {
-    func parseShopsData(result: Result<MyShopsModel, AFError>){
+    func parseShopsData(result: Result<MyShopsModel, AFError>, delegate: MyShopsControllerProtocol?){
+        self.delegate = delegate
         switch result {
         case .success(let model):
             self.datasource = model.data ?? []
@@ -38,6 +40,7 @@ extension MyShopsPresenter: MyShopsOutputInteractorProtocol {
         case .success(let model):
             self.datasource[self.selectedIndex].is_favorite = (model.favorite ?? 0)
             self.view?.reload()
+            self.delegate?.favoriteShopsUpdated(brands: self.datasource)
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }

@@ -30,4 +30,10 @@ class PartnersWireframe: PartnersWireframeProtocol {
         let vc = PartnerDetailsView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toMyShops(delegate: MyShopsControllerProtocol?){
+        let vc = MyShopsView()
+        MyShopsWireframe.delegate = delegate
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

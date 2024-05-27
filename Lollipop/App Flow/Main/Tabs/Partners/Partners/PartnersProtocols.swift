@@ -11,7 +11,7 @@ import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PartnersPresenterProtocol: UICollectionViewDelegate, UICollectionViewDataSource, PartnersCellProtocol{
+protocol PartnersPresenterProtocol: UICollectionViewDelegate, UICollectionViewDataSource, PartnersCellProtocol, MyShopsControllerProtocol{
     
     var interactor: PartnersInputInteractorProtocol? { get set }
     var view: PartnersViewProtocol? { get set }
@@ -50,6 +50,7 @@ protocol PartnersWireframeProtocol: AnyObject {
     
     func toNewPartner()
     func toPartnerDetails()
+    func toMyShops(delegate: MyShopsControllerProtocol?)
 }
 
 //MARK: PartnerController Protocol
