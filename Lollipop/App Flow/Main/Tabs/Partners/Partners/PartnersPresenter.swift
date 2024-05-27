@@ -21,6 +21,7 @@ class PartnersPresenter: NSObject, PartnersPresenterProtocol  {
     var selectedSegment = Int()
     
     func viewDidLoad() {
+        MyShopsWireframe.delegate = self
         interactor?.viewDidLoad()
     }
     
