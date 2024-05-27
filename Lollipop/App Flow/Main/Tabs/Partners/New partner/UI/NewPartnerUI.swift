@@ -74,6 +74,19 @@ extension NewPartnerView {
         self.cityDropdown.tag = 1
         self.cityDropdown.delegate = presenter
         
+        let cityDatasource = (Config.model.cities ?? [])
+        self.cityDropdown.dataSource = cityDatasource
+        
+        self.cityDropdown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let cell = cell as? CityTableViewCell else { return }
+            cell.cityNameLabel.text = item
+        }
+//
+        self.cityDropdown.selectionAction = { [weak self] (index, item) in
+            guard let self = self else {return}
+            self.presenter?.handleCityDropdownTapWith(item: item)
+        }
+        
         self.addressField.title = "\(LocalizedTitle.address.localized) (\(LocalizedTitle.optional.localized)):"
         self.addressField.placeholder = "\(LocalizedTitle.enterAddress.localized)"
         self.addressField.errorHidden = true
@@ -81,6 +94,8 @@ extension NewPartnerView {
         self.addressField.background = AppColors.white
         self.addressField.leftSuplementaryIconHidden = false
         self.addressField.leftSuplementaryIcon = UIImage(named: AssetTitles.locationPitIcon)
+        self.addressField.leftSuplementaryIconTint = AppColors.black
+        self.addressField.leftSuplementarylabelHidden = true
         
         self.noteField.title = "\(LocalizedTitle.additionalNote.localized) (\(LocalizedTitle.optional.localized)):"
         self.noteField.placeholder = "\(LocalizedTitle.max300Chars.localized)"

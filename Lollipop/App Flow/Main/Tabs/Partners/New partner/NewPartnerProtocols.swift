@@ -16,6 +16,8 @@ protocol NewPartnerPresenterProtocol:  DropdownInputFieldProtocol, DropdownProto
     var view: NewPartnerViewProtocol? { get set }
     var wireframe:NewPartnerWireframeProtocol? { get set }
     
+    func handleCityDropdownTapWith(item: String)
+
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR

@@ -12,6 +12,10 @@ class NewPartnerPresenter: NSObject, NewPartnerPresenterProtocol  {
     var interactor : NewPartnerInputInteractorProtocol?
     weak var view: NewPartnerViewProtocol?
     var wireframe: NewPartnerWireframeProtocol?
+    
+    func handleCityDropdownTapWith(item: String){
+        view?.setCityWith(item: item)
+    }
 }
 
 extension NewPartnerPresenter: NewPartnerOutputInteractorProtocol {
