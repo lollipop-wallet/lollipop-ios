@@ -48,8 +48,11 @@ class APIClient {
                     }
                 case 403, 404, 500:
                     Alert().alertMessageNoNavigator(title: LocalizedTitle.notice.localized, text: LocalizedTitle.unknownError.localized, shouldDismiss: false)
-                    UIApplication.root().view.hideSpinner()
-                    print("Unknown")
+                    if let vc = UIApplication.topViewController() {
+                        vc.view.hideSpinner()
+                    }else{
+                        UIApplication.root().view.hideSpinner()
+                    }
                 default:
                     UIApplication.root().view.hideSpinner()
                 }

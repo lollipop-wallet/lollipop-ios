@@ -25,12 +25,13 @@ protocol MyShopsInputInteractorProtocol: AnyObject {
     
     var presenter: MyShopsOutputInteractorProtocol?  { get set }
     func viewDidLoad()
-   
+    func toggleFavoriteWith(alias: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol MyShopsOutputInteractorProtocol: AnyObject {
     func parseShopsData(result: Result<MyShopsModel, AFError>)
+    func parseFavoriteData(result: Result<SetToFavoriteModel, AFError>)
 }
 //MARK: View
 protocol MyShopsViewProtocol: AnyObject {

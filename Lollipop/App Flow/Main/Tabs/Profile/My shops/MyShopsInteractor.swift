@@ -21,4 +21,13 @@ class MyShopsInteractor: MyShopsInputInteractorProtocol {
             self.presenter?.parseShopsData(result: result)
         }
     }
+    
+    func toggleFavoriteWith(alias: String) {
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.togglefavorite(alias: alias) { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self = self else {return}
+            self.presenter?.parseFavoriteData(result: result)
+        }
+    }
 }

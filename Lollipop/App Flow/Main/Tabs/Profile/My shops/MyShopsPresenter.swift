@@ -15,6 +15,7 @@ class MyShopsPresenter: NSObject, MyShopsPresenterProtocol  {
     var wireframe: MyShopsWireframeProtocol?
     
     var datasource = [Shop]()
+    var selectedIndex = Int()
     
     func viewDidLoad(){
         interactor?.viewDidLoad()
@@ -26,6 +27,16 @@ extension MyShopsPresenter: MyShopsOutputInteractorProtocol {
         switch result {
         case .success(let model):
             self.datasource = model.data ?? []
+            self.view?.reload()
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
+    
+    func parseFavoriteData(result: Result<SetToFavoriteModel, AFError>){
+        switch result {
+        case .success(let model):
+            self.datasource[self.selectedIndex].is_favorite = (model.favorite ?? 0)
             self.view?.reload()
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
@@ -46,5 +57,7 @@ extension MyShopsPresenter {
     }
     
     func didSelectItemAt(index: IndexPath) {
+        self.selectedIndex = index.row
+        interactor?.toggleFavoriteWith(alias: self.datasource[index.row].alias ?? "")
     }
 }

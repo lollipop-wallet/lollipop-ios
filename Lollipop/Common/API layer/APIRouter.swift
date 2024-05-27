@@ -82,7 +82,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
         case .sendforgotpwdotp(let email):
             return [APIParameterKey.email : email]
         case .togglefavorite(let alias):
-            return [APIParameterKey.alias : alias]
+            return [APIParameterKey.brandAlias : alias]
         }
     }
         
