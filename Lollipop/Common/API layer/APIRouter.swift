@@ -26,12 +26,13 @@ enum APIRouter: URLRequestConvertible, Equatable {
     case togglefavorite(alias: String)
     case suggestshop(name: String, country: String, city: String, address: String, description: String)
     case getcardtemplates
+    case getusercards
 
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
-        case .getconfig, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates:
+        case .getconfig, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards:
             return .get
         case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop:
             return .post
@@ -71,13 +72,15 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return "suggestions"
         case .getcardtemplates:
             return "card-templates?includes=partner"
+        case .getusercards:
+            return "cards?includes=partner"
         }
     }
     
     // MARK: - Parameters
     private var parameters: Parameters? {
         switch self {
-        case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates:
+        case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards:
             return nil
         case .login(let email, let password):
             return [APIParameterKey.email : email, APIParameterKey.password : password]

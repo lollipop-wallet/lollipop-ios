@@ -128,5 +128,10 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.getcardtemplates, completion: completion)
     }
+    
+    static func getusercards(completion:@escaping (Result<[Card], AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.getusercards, completion: completion)
+    }
 }
 

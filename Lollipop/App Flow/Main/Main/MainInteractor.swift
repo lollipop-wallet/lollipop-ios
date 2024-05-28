@@ -12,4 +12,13 @@ import UIKit
 class MainInteractor: MainInputInteractorProtocol {
     
     weak var presenter: MainOutputInteractorProtocol?
+    
+    func getWalletCards() {
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.getusercards { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self = self else { return }
+            self.presenter?.parseWalletCards(result: result)
+        }
+    }
 }

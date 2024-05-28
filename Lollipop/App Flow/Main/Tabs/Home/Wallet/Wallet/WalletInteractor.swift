@@ -12,4 +12,9 @@ import UIKit
 class WalletInteractor: WalletInputInteractorProtocol {
     
     weak var presenter: WalletOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        let cards = WalletWireframe.cards ?? []
+        presenter?.takeDataWith(cards: cards)
+    }
 }

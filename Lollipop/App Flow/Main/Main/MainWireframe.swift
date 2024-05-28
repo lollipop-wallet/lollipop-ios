@@ -20,8 +20,9 @@ class MainWireframe: MainWireframeProtocol {
         
     }
     
-    func toWallet(){
+    func toWalletWith(cards: [Card]){
         let vc = WalletView()
+        WalletWireframe.cards = cards
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

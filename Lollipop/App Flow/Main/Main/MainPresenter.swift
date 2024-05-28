@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 class MainPresenter: NSObject, MainPresenterProtocol  {
     
@@ -55,12 +56,33 @@ class MainPresenter: NSObject, MainPresenterProtocol  {
     }
     
     func scan() {
-        wireframe?.toWallet()
+        if Manager.isRegistered {
+            interactor?.getWalletCards()
+        }else{
+            view?.switchTabWith(index: .profile)
+        }
     }
 }
 
 extension MainPresenter: MainOutputInteractorProtocol {
-    
+    func parseWalletCards(result: Result<[Card], AFError>){
+        switch result {
+        case .success(let cards):
+            if cards.isEmpty {
+                
+            }else{
+                let walletCards = cards.filter { ($0.is_favorite ?? 0) == 1 }
+                if walletCards.isEmpty {
+                    
+                }else{
+                    wireframe?.toWalletWith(cards: walletCards)
+                }
+            }
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
+
 }
 
 //MARK: HomeController Delegate

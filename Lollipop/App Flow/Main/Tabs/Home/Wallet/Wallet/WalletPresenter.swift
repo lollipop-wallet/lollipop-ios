@@ -13,10 +13,17 @@ class WalletPresenter: NSObject, WalletPresenterProtocol  {
     weak var view: WalletViewProtocol?
     var wireframe: WalletWireframeProtocol?
     
+    var datasource = [Card]()
+ 
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
 }
 
 extension WalletPresenter: WalletOutputInteractorProtocol {
-    
+    func takeDataWith(cards: [Card]) {
+        self.datasource = cards
+    }
 }
 
 extension WalletPresenter {

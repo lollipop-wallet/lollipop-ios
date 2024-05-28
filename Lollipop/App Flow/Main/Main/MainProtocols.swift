@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -22,16 +23,13 @@ protocol MainPresenterProtocol: HomeControllerProtocol, PartnersControllerProtoc
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
 protocol MainInputInteractorProtocol: AnyObject {
-    
     var presenter: MainOutputInteractorProtocol?  { get set }
-    
-   
+    func getWalletCards()
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol MainOutputInteractorProtocol: AnyObject {
-    
-
+    func parseWalletCards(result: Result<[Card], AFError>)
 }
 //MARK: View
 protocol MainViewProtocol: AnyObject {
@@ -42,5 +40,5 @@ protocol MainViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol MainWireframeProtocol: AnyObject {
-    func toWallet()
+    func toWalletWith(cards: [Card])
 }

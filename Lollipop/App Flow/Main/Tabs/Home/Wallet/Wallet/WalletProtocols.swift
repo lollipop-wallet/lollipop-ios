@@ -16,20 +16,20 @@ protocol WalletPresenterProtocol: WalletStackProtocol{
     var view: WalletViewProtocol? { get set }
     var wireframe:WalletWireframeProtocol? { get set }
     
+    func viewDidLoad()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
 protocol WalletInputInteractorProtocol: AnyObject {
     
     var presenter: WalletOutputInteractorProtocol?  { get set }
-    
+    func viewDidLoad()
    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol WalletOutputInteractorProtocol: AnyObject {
-    
-
+    func takeDataWith(cards: [Card])
 }
 //MARK: View
 protocol WalletViewProtocol: AnyObject {
@@ -39,5 +39,6 @@ protocol WalletViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol WalletWireframeProtocol: AnyObject {
+    static var cards: [Card]? { get set }
     func toWalletCard()
 }

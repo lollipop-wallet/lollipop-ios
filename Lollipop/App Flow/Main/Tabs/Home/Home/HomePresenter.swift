@@ -78,7 +78,7 @@ extension HomePresenter: HomeOutputInteractorProtocol {
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }
-    }
+    }    
 }
 
 extension HomePresenter {

@@ -9,6 +9,7 @@ import UIKit
 
 class WalletWireframe: WalletWireframeProtocol {
     
+    static var cards: [Card]?
     
     static func createModule(WalletRef: WalletView) {
         let presenter: WalletPresenterProtocol & WalletOutputInteractorProtocol = WalletPresenter()

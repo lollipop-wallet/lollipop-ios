@@ -27,7 +27,6 @@ protocol HomeInputInteractorProtocol: AnyObject {
     
     var presenter: HomeOutputInteractorProtocol?  { get set }
     func viewDidLoad()
-    func getWalletCards()
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
