@@ -19,4 +19,16 @@ class NewPartnerWireframe: NewPartnerWireframeProtocol {
         NewPartnerRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toDialogue(delegate: DialogueControllerProtocol?){
+        let vc = DialogueView()
+        DialogueWireframe.type = .dismissive
+        DialogueWireframe.buttonTitle = LocalizedTitle.ok.localized
+        DialogueWireframe.title = LocalizedTitle.thanksForSuggestionTitle.localized
+        DialogueWireframe.subtitle = LocalizedTitle.thanksForSuggestionSubtitle.localized
+        DialogueWireframe.icon = AssetTitles.illustrationSuccessIcon
+        DialogueWireframe.popAmount = 3
+        DialogueWireframe.delegate = delegate
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

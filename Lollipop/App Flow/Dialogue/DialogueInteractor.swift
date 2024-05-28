@@ -19,8 +19,9 @@ class DialogueInteractor: DialogueInputInteractorProtocol {
         let subtitle = DialogueWireframe.subtitle ?? ""
         let buttonTitle = DialogueWireframe.buttonTitle ?? ""
         let type = DialogueWireframe.type
+        let popAmount = DialogueWireframe.popAmount ?? 0
         let delegate = DialogueWireframe.delegate
         
-        presenter?.takeDataWith(icon: icon, title: title, subtitle: subtitle, buttonTitle: buttonTitle, type: type, delegate: delegate)
+        presenter?.takeDataWith(icon: icon, title: title, subtitle: subtitle, buttonTitle: buttonTitle, type: type, popAmount: popAmount, delegate: delegate)
     }
 }

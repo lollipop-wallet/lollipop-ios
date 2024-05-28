@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol NewPartnerPresenterProtocol:  DropdownInputFieldProtocol, DropdownProtocol {
+protocol NewPartnerPresenterProtocol:  DropdownInputFieldProtocol, DropdownProtocol, DialogueControllerProtocol {
     
     var interactor: NewPartnerInputInteractorProtocol? { get set }
     var view: NewPartnerViewProtocol? { get set }
@@ -30,8 +31,7 @@ protocol NewPartnerInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol NewPartnerOutputInteractorProtocol: AnyObject {
-    
-
+    func parseSuggestionResult(result: Result<NewPartnerModel, AFError>)
 }
 //MARK: View
 protocol NewPartnerViewProtocol: AnyObject {
@@ -45,6 +45,5 @@ protocol NewPartnerViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol NewPartnerWireframeProtocol: AnyObject {
-
-    
+    func toDialogue(delegate: DialogueControllerProtocol?)
 }

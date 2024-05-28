@@ -65,6 +65,6 @@ class DialogueView: UIViewController, DialogueViewProtocol {
     }
     
     @objc func onActionTap() {
-        
+        presenter?.action()
     }
 }

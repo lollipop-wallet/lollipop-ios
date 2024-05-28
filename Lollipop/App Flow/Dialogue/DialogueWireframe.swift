@@ -14,7 +14,8 @@ class DialogueWireframe: DialogueWireframeProtocol {
     static var subtitle: String?
     static var buttonTitle: String?
     static var type: DialogueType?
-    static var delegate: DialogueControllerProtocol? 
+    static var popAmount: Int?
+    static var delegate: DialogueControllerProtocol?
     
     static func createModule(DialogueRef: DialogueView) {
         let presenter: DialoguePresenterProtocol & DialogueOutputInteractorProtocol = DialoguePresenter()

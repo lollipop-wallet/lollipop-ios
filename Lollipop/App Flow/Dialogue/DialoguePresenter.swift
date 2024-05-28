@@ -15,16 +15,26 @@ class DialoguePresenter: DialoguePresenterProtocol  {
     
     var type: DialogueType?
     var delegate: DialogueControllerProtocol?
+    var popAmount = Int()
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
     }
+    
+    func action(){
+        if self.type == .dismissive {
+            UIApplication.topViewController()?.popBack(self.popAmount)
+        }else{
+            //MARK: ToDo
+        }
+    }
 }
 
 extension DialoguePresenter: DialogueOutputInteractorProtocol {
-    func takeDataWith(icon: String, title:  String, subtitle: String, buttonTitle: String?, type: DialogueType?, delegate: DialogueControllerProtocol?){
+    func takeDataWith(icon: String, title:  String, subtitle: String, buttonTitle: String?, type: DialogueType?, popAmount: Int, delegate: DialogueControllerProtocol?){
         self.type = type
         self.delegate = delegate
+        self.popAmount = popAmount 
         self.view?.setIconWith(icon: icon)
         self.view?.setTitleWith(title: title)
         self.view?.setSubtitleWith(subtitle: subtitle)

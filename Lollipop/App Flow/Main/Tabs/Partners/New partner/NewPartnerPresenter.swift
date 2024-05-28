@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 class NewPartnerPresenter: NSObject, NewPartnerPresenterProtocol  {
     
@@ -27,7 +28,14 @@ class NewPartnerPresenter: NSObject, NewPartnerPresenterProtocol  {
 }
 
 extension NewPartnerPresenter: NewPartnerOutputInteractorProtocol {
-    
+    func parseSuggestionResult(result: Result<NewPartnerModel, AFError>){
+        switch result {
+        case .success(let model):
+            wireframe?.toDialogue(delegate: self)
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
 }
 
 //MARK: Dropdown field delegate
@@ -46,4 +54,9 @@ extension NewPartnerPresenter {
     func dropDownShown(tag: Int) {
         view?.showDropdownWith(tag: tag)
     }
+}
+
+//MARK: Dialogue controler delegate
+extension NewPartnerPresenter {
+    
 }

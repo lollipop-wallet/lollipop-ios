@@ -14,6 +14,11 @@ class NewPartnerInteractor: NewPartnerInputInteractorProtocol {
     weak var presenter: NewPartnerOutputInteractorProtocol?
     
     func send(shopName: String, country: String, city: String, address: String, note: String) {
-        
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.suggestshop(name: shopName, country: country, city: city, address: address, description: note) { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self = self else {return}
+            presenter?.parseSuggestionResult(result: result)
+        }
     }
 }
