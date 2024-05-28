@@ -27,7 +27,24 @@ struct User: Codable {
 }
 
 struct Card: Codable {
-    
+    let name: String?
+    let alias: String?
+    let name_on_card: String?
+    let front_image: String?
+    let back_image: String?
+    let code: String?
+    let type: String?
+    let is_favorite: Int?
+    let card_template: CardTemplate?
+}
+
+struct CardTemplate: Codable {
+    let id: Int?
+    let name: String?
+    let image_front: String?
+    let image_back: String?
+    let code_type: String?
+    let cta_links_to: String?
 }
 
 struct Brand: Codable {
