@@ -11,6 +11,7 @@ class HomeCardTableViewCell: UITableViewCell {
     
     var delegate: HomeCardCellProtocol?
     var index: IndexPath!
+    var datasource = [Card]()
     
     lazy var cellContentView: UIView = {
         let view = UIView()
@@ -134,10 +135,12 @@ class HomeCardTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: HomeCardCellProtocol) {
+    func configureWith(cards: [Card], index: IndexPath, delegate: HomeCardCellProtocol) {
         self.index = index
         self.delegate = delegate
-        self.pageControl.numberOfPages = 5
+        self.datasource = cards
+        self.collectionView.reloadData()
+        self.pageControl.numberOfPages = cards.count
     }
     
     //MARK: Actions
@@ -145,12 +148,12 @@ class HomeCardTableViewCell: UITableViewCell {
 
 extension HomeCardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, LoyaltyCardCellProtocol, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.datasource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.loyaltyCardCell.rawValue, for: indexPath) as! LoyaltyCardCollectionViewCell
-        cell.configureWith(delegate: self, index: indexPath)
+        cell.configureWith(item: self.datasource[indexPath.row], delegate: self, index: indexPath)
         return cell
     }
     

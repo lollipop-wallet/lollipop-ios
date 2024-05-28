@@ -90,7 +90,7 @@ class APIClient {
     }
     
     static func gethome(completion:@escaping (Result<HomeModel, AFError>)->Void){
-        Manager.authTypeHeader = ""
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.gethome, completion: completion)
     }
     

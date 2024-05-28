@@ -69,9 +69,10 @@ class LoyaltyCardCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
-    func configureWith(delegate: LoyaltyCardCellProtocol, index: IndexPath) {
+    func configureWith(item: Card?, delegate: LoyaltyCardCellProtocol, index: IndexPath) {
         self.delegate = delegate
         self.index = index
+        self.photo.imageFromURL(url: item?.card_template?.image_front ?? "")
     }
     
     

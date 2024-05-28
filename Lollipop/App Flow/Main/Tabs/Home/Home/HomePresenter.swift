@@ -77,7 +77,7 @@ extension HomePresenter {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if self.datasource[indexPath.row].itemType == .cards {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homeCardCell.rawValue, for: indexPath) as! HomeCardTableViewCell
-            cell.configureWith(index: indexPath, delegate: self)
+            cell.configureWith(cards: self.datasource[indexPath.row].cards ?? [], index: indexPath, delegate: self)
             return cell
         }else if self.datasource[indexPath.row].itemType == .addcard {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.addCardHomeCell.rawValue, for: indexPath) as! AddCardHomeTableViewCell
