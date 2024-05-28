@@ -20,6 +20,18 @@ class HomePresenter: NSObject, HomePresenterProtocol  {
     func viewDidLoad() {
         interactor?.viewDidLoad()
     }
+    
+    func avatar() {
+        delegate?.toProfileTabFromHome()
+    }
+    
+    func add() {
+       if Manager.isRegistered {
+           wireframe?.toCardTemplates()
+        }else{
+            delegate?.toProfileTabFromHome()
+        }
+    }
 }
 
 extension HomePresenter: HomeOutputInteractorProtocol {

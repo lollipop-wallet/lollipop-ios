@@ -18,6 +18,8 @@ protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddC
     var wireframe:HomeWireframeProtocol? { get set }
     
     func viewDidLoad()
+    func avatar()
+    func add()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -25,7 +27,7 @@ protocol HomeInputInteractorProtocol: AnyObject {
     
     var presenter: HomeOutputInteractorProtocol?  { get set }
     func viewDidLoad()
-    
+    func getWalletCards()
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
@@ -45,6 +47,7 @@ protocol HomeWireframeProtocol: AnyObject {
     static var delegate: HomeControllerProtocol? { get set }
     func toPromotions()
     func toPromotionDetailsWith(banner: Banner?)
+    func toCardTemplates()
 }
 
 //MARK: HomeController protocol

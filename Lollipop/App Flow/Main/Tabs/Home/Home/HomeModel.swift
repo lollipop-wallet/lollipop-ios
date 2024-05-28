@@ -36,6 +36,7 @@ struct Card: Codable {
     let type: String?
     let is_favorite: Int?
     let card_template: CardTemplate?
+    let partner: Partner?
 }
 
 struct CardTemplate: Codable {
@@ -45,6 +46,16 @@ struct CardTemplate: Codable {
     let image_back: String?
     let code_type: String?
     let cta_links_to: String?
+}
+
+struct Partner: Codable {
+    let id: Int?
+    let name: String?
+    let alias: String?
+    let logo: String?
+    let status: String?
+    let is_featured: Int?
+    let is_official: Int?
 }
 
 struct Brand: Codable {

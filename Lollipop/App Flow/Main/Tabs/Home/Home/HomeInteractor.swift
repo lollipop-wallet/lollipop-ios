@@ -23,4 +23,8 @@ class HomeInteractor: HomeInputInteractorProtocol {
             self.presenter?.parseHomeData(result: result, delegate: delegate)
         }
     }
+    
+    func getWalletCards(){
+        
+    }
 }

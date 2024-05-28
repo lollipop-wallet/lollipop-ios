@@ -123,5 +123,10 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.suggestshop(name: name, country: country, city: city, address: address, description: description), completion: completion)
     }
+    
+    static func getcardtemplates(completion:@escaping (Result<[Card], AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.getcardtemplates, completion: completion)
+    }
 }
 

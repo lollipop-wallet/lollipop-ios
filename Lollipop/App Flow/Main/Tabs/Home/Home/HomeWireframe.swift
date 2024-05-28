@@ -31,4 +31,9 @@ class HomeWireframe: HomeWireframeProtocol {
         PromotionDetailsWireframe.banner = banner
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toCardTemplates(){
+        let vc = ScanSuggestionView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

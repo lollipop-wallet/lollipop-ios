@@ -42,11 +42,11 @@ class HomeView: UIViewController, HomeViewProtocol {
     
     //MARK: Actions
     @objc func onAvatarTap() {
-        print("dwadwa")
+        presenter?.avatar()
     }
     
     @objc func onPlusTap() {
-        print("dwadwa")
+        presenter?.add()
     }
 }
 
