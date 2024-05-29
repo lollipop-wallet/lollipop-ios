@@ -35,7 +35,7 @@ protocol WalletOutputInteractorProtocol: AnyObject {
 protocol WalletViewProtocol: AnyObject {
     
     var presenter: WalletPresenterProtocol?  { get set }
-    
+    func setCardsWith(cards: [Card])
 }
 //MARK: Wireframe
 protocol WalletWireframeProtocol: AnyObject {

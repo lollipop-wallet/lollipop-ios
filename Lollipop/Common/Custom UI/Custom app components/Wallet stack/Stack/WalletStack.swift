@@ -11,9 +11,13 @@ class WalletStack: UIView {
     
     var delegate: WalletStackProtocol?
     
+    open var datasource: [Card]? {
+        set { self.setup(cards: newValue ?? []) }
+        get { return [] }
+    }
+    
     required init() {
         super.init(frame: .zero)
-        setup()
     }
 
     required init?(coder: NSCoder) {
@@ -23,20 +27,21 @@ class WalletStack: UIView {
     override func layoutSubviews() {
     }
     
-    func setup() {
-        let colors = [UIColor.red, UIColor.blue, UIColor.darkGray, UIColor.yellow, UIColor.green]
-        let views = [WalletCard(), WalletCard(), WalletCard(), WalletCard(), WalletCard()]
-        for i in 0..<views.count{
-            let view = views[i]
-            view.background = colors[i]
+    func setup(cards: [Card]) {
+        for i in 0..<cards.count{
+            let card = cards[i]
+            let view = WalletCard()
             view.delegate = self
+            view.cardLogoIcon.imageFromURL(url: card.partner?.logo ?? "")
+            view.cardImage.imageFromURL(url: card.card_template?.image_front ?? "")
+            view.partnerName = card.partner?.name ?? ""
             view.tag = i
             self.addSubview(view)
             view.snp.makeConstraints { make in
                 make.leading.trailing.equalToSuperview()
                 make.height.equalTo(view.snp.width).multipliedBy(0.645)
                 make.top.equalToSuperview().offset(i == 0 ? 0 : (i * 86))
-                if i == views.count - 1 {
+                if i == cards.count - 1 {
                     make.bottom.equalToSuperview()
                 }
             }

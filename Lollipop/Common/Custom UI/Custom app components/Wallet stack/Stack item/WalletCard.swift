@@ -24,6 +24,11 @@ class WalletCard: UIView {
         get { return "" }
     }
     
+    open var partnerName : String? {
+        set { self.cardLogoTitleLabel.text = newValue ?? "" }
+        get { return "" }
+    }
+    
     var delegate: WalletCardProtocol?
     
     lazy var cardLogoIcon: UIImageView = {
@@ -66,6 +71,8 @@ class WalletCard: UIView {
     
     lazy var cardImage: UIImageView = {
         let imageView = UIImageView()
+        imageView.layer.cornerRadius = 16
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     
@@ -122,7 +129,7 @@ class WalletCard: UIView {
     //MARK: Actions
     @objc func onCardTap() {
         delegate?.didTapCardWith(tag: self.tag)
-    }
+    }    
 }
 
 protocol WalletCardProtocol: AnyObject {

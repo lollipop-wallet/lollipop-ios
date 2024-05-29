@@ -31,6 +31,14 @@ class WalletView: UIViewController, WalletViewProtocol {
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
+    //MARK: WalletView Protocol
+    
+    func setCardsWith(cards: [Card]) {
+        DispatchQueue.main.async {
+            self.cardView.datasource = cards
+        }
+    }
 
     //MARK: Actions
     @objc func onBackTap() {

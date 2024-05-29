@@ -23,6 +23,7 @@ class WalletPresenter: NSObject, WalletPresenterProtocol  {
 extension WalletPresenter: WalletOutputInteractorProtocol {
     func takeDataWith(cards: [Card]) {
         self.datasource = cards
+        self.view?.setCardsWith(cards: cards)
     }
 }
 
