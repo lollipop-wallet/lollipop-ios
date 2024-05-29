@@ -29,7 +29,7 @@ protocol FavoriteCardsInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol FavoriteCardsOutputInteractorProtocol: AnyObject {
-    func takeData(cards: [Card], delegate: FavoriteControllerProtocol?)
+    func takeData(cards: [Card], delegate: FavoriteCardsControllerProtocol?)
 }
 //MARK: View
 protocol FavoriteCardsViewProtocol: AnyObject {
@@ -40,7 +40,7 @@ protocol FavoriteCardsViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol FavoriteCardsWireframeProtocol: AnyObject {
     static var cards: [Card]? { get set }
-    static var delegate: FavoriteControllerProtocol? { get set }
+    static var delegate: FavoriteCardsControllerProtocol? { get set }
 }
 
 //MARK: FavoriteCardCell Protocol
@@ -49,6 +49,6 @@ protocol FavoriteCardCellProtocol: AnyObject {
 }
 
 //MARK: FavoriteController protocol
-protocol FavoriteControllerProtocol: AnyObject {
+protocol FavoriteCardsControllerProtocol: AnyObject {
     func updateCardsWith(cards: [Card])
 }

@@ -11,7 +11,7 @@ import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol MyCardsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, MyCardsCellProtocol {
+protocol MyCardsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, MyCardsCellProtocol, FavoriteCardsControllerProtocol, ReorderCardsControllerProtocol {
     
     var interactor: MyCardsInputInteractorProtocol? { get set }
     var view: MyCardsViewProtocol? { get set }
@@ -42,6 +42,8 @@ protocol MyCardsViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol MyCardsWireframeProtocol: AnyObject {
+    func toFavoriteCardsWith(cards: [Card], delegate: FavoriteCardsControllerProtocol?)
+    func toReorderCardsWith(cards: [Card], delegate: ReorderCardsControllerProtocol?)
     func toDetails()
 }
 

@@ -18,7 +18,7 @@ class FavoriteCardsView: UIViewController, FavoriteCardsViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        viewDidLoad()
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {

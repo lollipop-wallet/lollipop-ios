@@ -24,4 +24,15 @@ class MyCardsWireframe: MyCardsWireframeProtocol {
         let vc = CardDetailsView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toFavoriteCardsWith(cards: [Card], delegate: FavoriteCardsControllerProtocol?){
+        let vc = FavoriteCardsView()
+        FavoriteCardsWireframe.cards = cards
+        FavoriteCardsWireframe.delegate = delegate
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func toReorderCardsWith(cards: [Card], delegate: ReorderCardsControllerProtocol?){
+        
+    }
 }

@@ -31,6 +31,7 @@ extension FavoriteCardsView {
             return button
         }()
         
+        
         self.navigationItem.leftBarButtonItems = [backButton]
         
         lazy var subtitleLabel: UILabel = {

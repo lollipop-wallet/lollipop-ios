@@ -14,7 +14,7 @@ class FavoriteCardsPresenter: NSObject, FavoriteCardsPresenterProtocol  {
     var wireframe: FavoriteCardsWireframeProtocol?
     
     var datasource = [Card]()
-    var delegate: FavoriteControllerProtocol?
+    var delegate: FavoriteCardsControllerProtocol?
     var selectedIndex = Int()
 
     func viewDidLoad() {
@@ -23,7 +23,7 @@ class FavoriteCardsPresenter: NSObject, FavoriteCardsPresenterProtocol  {
 }
 
 extension FavoriteCardsPresenter: FavoriteCardsOutputInteractorProtocol {
-    func takeData(cards: [Card], delegate: FavoriteControllerProtocol?){
+    func takeData(cards: [Card], delegate: FavoriteCardsControllerProtocol?){
         self.datasource = cards
         self.delegate = delegate
         self.view?.reload()

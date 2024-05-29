@@ -20,21 +20,16 @@ class MyCardsPresenter: NSObject, MyCardsPresenterProtocol  {
     var selectedSegment = Int()
     
     func viewDidLoad() {
+        self.selectedSegment = 0
         interactor?.viewDidLoad()
     }
     
     func edit(){
-        UIApplication.topViewController()?.openAlert(title: LocalizedTitle.sortCardBy.localized, message: "", alertStyle: .actionSheet, actionTitles: [LocalizedTitle.cardName.localized, LocalizedTitle.manually.localized, LocalizedTitle.cancel.localized], actionColors: [.systemBlue, .systemBlue, .systemBlue], actionStyles: [.default, .default, .cancel], actions: [
-            { [weak self] _ in
-                guard let self = self  else {return}
-            },
-            { [weak self] _ in
-                guard let self = self  else {return}
-            },
-            {_ in
-                
-            }
-       ])
+        if self.selectedSegment == 0 {
+            wireframe?.toFavoriteCardsWith(cards: self.allCards, delegate: self)
+        }else{
+            wireframe?.toReorderCardsWith(cards: self.favoriteCards, delegate: self)
+        }
     }
     
     func changeSegment(segment: Int){
@@ -52,7 +47,6 @@ extension MyCardsPresenter: MyCardsOutputInteractorProtocol {
             self.favoriteCards = favCards
             self.allCards = cards
             self.datasource = cards
-            print("Ima ih: ", self.datasource.count)
             self.view?.reload()
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
@@ -77,5 +71,22 @@ extension MyCardsPresenter {
     
     func didSelectItemAt(index: IndexPath) {
         wireframe?.toDetails()
+    }
+}
+
+//MARK: FavoriteCardsController delegate & ReorderCardsController delegate
+extension MyCardsPresenter {
+    func updateCardsWith(cards: [Card]) {
+        let favCards = cards.filter { ($0.is_favorite ?? 0) == 1}
+        self.favoriteCards = favCards
+        self.allCards = cards
+        self.datasource = cards
+        self.view?.reload()
+    }
+    
+    func updateFavoriteCardsWith(cards: [Card]) {
+        self.favoriteCards = cards
+        self.datasource = cards
+        self.view?.reload()
     }
 }

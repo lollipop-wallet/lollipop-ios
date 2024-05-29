@@ -40,5 +40,9 @@ protocol ReorderCardsViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol ReorderCardsWireframeProtocol: AnyObject {
 
-    
+}
+
+//MARK: ReorderCardsController Protocol
+protocol ReorderCardsControllerProtocol: AnyObject {
+    func updateFavoriteCardsWith(cards: [Card])
 }
