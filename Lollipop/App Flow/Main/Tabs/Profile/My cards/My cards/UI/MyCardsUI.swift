@@ -16,7 +16,9 @@ extension MyCardsView {
         appearance.largeTitleTextAttributes = [.foregroundColor: AppColors.black, .font : UIFont.inter(ofSize: 30, name: .bold)]
         let imgBackArrow = UIImage(named: AssetTitles.backIcon)?.withAlignmentRectInsets(UIEdgeInsets(top: 0, left: 0, bottom: 1.5, right: 0))
         appearance.setBackIndicatorImage(imgBackArrow, transitionMaskImage: imgBackArrow)
+        appearance.backgroundColor = AppColors.lightGrey
         navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
         UINavigationBar.appearance().layoutMargins.left = 20
         self.navigationItem.title = LocalizedTitle.myCards.localized
         

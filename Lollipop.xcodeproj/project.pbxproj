@@ -219,6 +219,13 @@
 		623450D22BFAFB0A00FE8E71 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 623450CB2BFAFB0A00FE8E71 /* DropDownCell.xib */; };
 		623693692BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 623693682BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib */; };
 		6236936A2BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623693672BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift */; };
+		62373F612C07A2A800FCEED0 /* FavoriteCardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62373F5B2C07A2A800FCEED0 /* FavoriteCardsPresenter.swift */; };
+		62373F622C07A2A800FCEED0 /* FavoriteCardsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62373F5C2C07A2A800FCEED0 /* FavoriteCardsProtocols.swift */; };
+		62373F632C07A2A800FCEED0 /* FavoriteCardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62373F5D2C07A2A800FCEED0 /* FavoriteCardsInteractor.swift */; };
+		62373F642C07A2A800FCEED0 /* FavoriteCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62373F5E2C07A2A800FCEED0 /* FavoriteCardsView.swift */; };
+		62373F652C07A2A800FCEED0 /* FavoriteCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62373F5F2C07A2A800FCEED0 /* FavoriteCardsModel.swift */; };
+		62373F662C07A2A800FCEED0 /* FavoriteCardsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62373F602C07A2A800FCEED0 /* FavoriteCardsWireframe.swift */; };
+		62373F6A2C07A3B100FCEED0 /* FavoriteCardsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62373F692C07A3B100FCEED0 /* FavoriteCardsUI.swift */; };
 		625C15282C025FFA001760C3 /* HomeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C15272C025FFA001760C3 /* HomeListModel.swift */; };
 		626906AE2BE0A8D100BF5F62 /* MyShopsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */; };
 		626906AF2BE0A8D100BF5F62 /* MyShopsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A92BE0A8D100BF5F62 /* MyShopsProtocols.swift */; };
@@ -707,6 +714,13 @@
 		623450CB2BFAFB0A00FE8E71 /* DropDownCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownCell.xib; sourceTree = "<group>"; };
 		623693672BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberPrefixTableViewCell.swift; sourceTree = "<group>"; };
 		623693682BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberPrefixTableViewCell.xib; sourceTree = "<group>"; };
+		62373F5B2C07A2A800FCEED0 /* FavoriteCardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardsPresenter.swift; sourceTree = "<group>"; };
+		62373F5C2C07A2A800FCEED0 /* FavoriteCardsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardsProtocols.swift; sourceTree = "<group>"; };
+		62373F5D2C07A2A800FCEED0 /* FavoriteCardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardsInteractor.swift; sourceTree = "<group>"; };
+		62373F5E2C07A2A800FCEED0 /* FavoriteCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardsView.swift; sourceTree = "<group>"; };
+		62373F5F2C07A2A800FCEED0 /* FavoriteCardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardsModel.swift; sourceTree = "<group>"; };
+		62373F602C07A2A800FCEED0 /* FavoriteCardsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardsWireframe.swift; sourceTree = "<group>"; };
+		62373F692C07A3B100FCEED0 /* FavoriteCardsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardsUI.swift; sourceTree = "<group>"; };
 		625C15272C025FFA001760C3 /* HomeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListModel.swift; sourceTree = "<group>"; };
 		626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsPresenter.swift; sourceTree = "<group>"; };
 		626906A92BE0A8D100BF5F62 /* MyShopsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsProtocols.swift; sourceTree = "<group>"; };
@@ -1942,6 +1956,28 @@
 			path = "Phone number prefix cell";
 			sourceTree = "<group>";
 		};
+		62373F592C07A27A00FCEED0 /* Favorite cards */ = {
+			isa = PBXGroup;
+			children = (
+				62373F5B2C07A2A800FCEED0 /* FavoriteCardsPresenter.swift */,
+				62373F5C2C07A2A800FCEED0 /* FavoriteCardsProtocols.swift */,
+				62373F5D2C07A2A800FCEED0 /* FavoriteCardsInteractor.swift */,
+				62373F5E2C07A2A800FCEED0 /* FavoriteCardsView.swift */,
+				62373F5F2C07A2A800FCEED0 /* FavoriteCardsModel.swift */,
+				62373F602C07A2A800FCEED0 /* FavoriteCardsWireframe.swift */,
+				62373F682C07A3A800FCEED0 /* UI */,
+			);
+			path = "Favorite cards";
+			sourceTree = "<group>";
+		};
+		62373F682C07A3A800FCEED0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62373F692C07A3B100FCEED0 /* FavoriteCardsUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		626906A62BE0A8C300BF5F62 /* My shops */ = {
 			isa = PBXGroup;
 			children = (
@@ -2772,6 +2808,7 @@
 			isa = PBXGroup;
 			children = (
 				62EB74B12BE1FFF10088906A /* My cards */,
+				62373F592C07A27A00FCEED0 /* Favorite cards */,
 				62EB74B22BE1FFFD0088906A /* Reorder cards */,
 				2CA195302BE2139000CC10F5 /* Card details */,
 				2CA195422BE23D7200CC10F5 /* Edit card */,
@@ -3318,6 +3355,12 @@
 				2CE32AB82BDF9E3B004757C5 /* NewPartnerModel.swift in Sources */,
 				2CE32AB92BDF9E3B004757C5 /* NewPartnerWireframe.swift in Sources */,
 				2CACCDD02BD53E69008178F8 /* NSAttachment+Extension.swift in Sources */,
+				62373F612C07A2A800FCEED0 /* FavoriteCardsPresenter.swift in Sources */,
+				62373F622C07A2A800FCEED0 /* FavoriteCardsProtocols.swift in Sources */,
+				62373F632C07A2A800FCEED0 /* FavoriteCardsInteractor.swift in Sources */,
+				62373F642C07A2A800FCEED0 /* FavoriteCardsView.swift in Sources */,
+				62373F652C07A2A800FCEED0 /* FavoriteCardsModel.swift in Sources */,
+				62373F662C07A2A800FCEED0 /* FavoriteCardsWireframe.swift in Sources */,
 				62F6CE412BDE683A00C4775C /* MyCardsPresenter.swift in Sources */,
 				626906AE2BE0A8D100BF5F62 /* MyShopsPresenter.swift in Sources */,
 				2CA195652BE2476300CC10F5 /* DeleteCardUI.swift in Sources */,
@@ -3343,6 +3386,7 @@
 				628AA6C02BFB65CA009A3077 /* LoginWireframe.swift in Sources */,
 				62F6CE462BDE683A00C4775C /* MyCardsWireframe.swift in Sources */,
 				627E92DD2BDA18560016FF73 /* OTPInputField.swift in Sources */,
+				62373F6A2C07A3B100FCEED0 /* FavoriteCardsUI.swift in Sources */,
 				2CACCDBD2BD53D09008178F8 /* DataPasser.swift in Sources */,
 				62730C702BE8ED97004209B9 /* AboutProgrammePresenter.swift in Sources */,
 				62730C712BE8ED97004209B9 /* AboutProgrammeProtocols.swift in Sources */,
