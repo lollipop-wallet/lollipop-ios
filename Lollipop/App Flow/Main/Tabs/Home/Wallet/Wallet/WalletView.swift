@@ -46,10 +46,10 @@ class WalletView: UIViewController, WalletViewProtocol {
     }
     
     @objc func onAddCardTap() {
-        
+        presenter?.addCard()
     }
     
     @objc func onSeeAllCardsTap() {
-        
+        presenter?.allCards()
     }
 }

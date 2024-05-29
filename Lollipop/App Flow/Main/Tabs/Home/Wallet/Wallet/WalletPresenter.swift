@@ -18,6 +18,14 @@ class WalletPresenter: NSObject, WalletPresenterProtocol  {
     func viewDidLoad() {
         interactor?.viewDidLoad()
     }
+    
+    func allCards() {
+        wireframe?.toMyCards()
+    }
+    
+    func addCard(){
+        wireframe?.toCardSuggestions()
+    }
 }
 
 extension WalletPresenter: WalletOutputInteractorProtocol {

@@ -45,7 +45,7 @@ extension ScanSuggestionPresenter {
         label.textAlignment = .left
         label.textColor = AppColors.black
         
-        label.text = section == 0 ? LocalizedTitle.handpickedCards.localized : LocalizedTitle.otherCards.localized
+        label.text = section == 0 ? LocalizedTitle.lollypopPartners.localized : LocalizedTitle.otherCards.localized
         
         headerView.addSubview(label)
         label.snp.makeConstraints { make in

@@ -17,6 +17,8 @@ protocol WalletPresenterProtocol: WalletStackProtocol{
     var wireframe:WalletWireframeProtocol? { get set }
     
     func viewDidLoad()
+    func allCards()
+    func addCard()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -41,4 +43,6 @@ protocol WalletViewProtocol: AnyObject {
 protocol WalletWireframeProtocol: AnyObject {
     static var cards: [Card]? { get set }
     func toWalletCard()
+    func toMyCards()
+    func toCardSuggestions()
 }

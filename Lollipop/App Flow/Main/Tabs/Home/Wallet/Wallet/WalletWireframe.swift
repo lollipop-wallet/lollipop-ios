@@ -25,4 +25,14 @@ class WalletWireframe: WalletWireframeProtocol {
         let vc = WalletCardView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toMyCards(){
+        let vc = MyCardsView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func toCardSuggestions(){
+        let vc = ScanSuggestionView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }
