@@ -11,7 +11,7 @@ import UIKit
 
 class ScanSuggestionView: UIViewController, ScanSuggestionViewProtocol {
     
-    var tableView = UITableView()
+    var tableView = AutomaticHeightTableView()
 
     var presenter: ScanSuggestionPresenterProtocol?
 

@@ -14,11 +14,15 @@ extension ScanSuggestionView {
         
         let appearance = UINavigationBarAppearance()
         appearance.largeTitleTextAttributes = [.foregroundColor: AppColors.black, .font : UIFont.inter(ofSize: 30, name: .bold)]
+        appearance.titleTextAttributes = [.foregroundColor: AppColors.black, .font : UIFont.inter(ofSize: 20, name: .bold)]
         let imgBackArrow = UIImage(named: AssetTitles.backIcon)?.withAlignmentRectInsets(UIEdgeInsets(top: 0, left: 0, bottom: 1.5, right: 0))
         appearance.setBackIndicatorImage(imgBackArrow, transitionMaskImage: imgBackArrow)
+        appearance.backgroundColor = AppColors.lightGrey
         navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
         UINavigationBar.appearance().layoutMargins.left = 20
-        self.navigationItem.title = LocalizedTitle.myCards.localized
+        
+        self.navigationItem.title = LocalizedTitle.loyaltyCards.localized
         
         lazy var backButton: UIBarButtonItem = {
             let button = UIBarButtonItem()
@@ -30,6 +34,16 @@ extension ScanSuggestionView {
         }()
         
         self.navigationItem.leftBarButtonItems = [backButton]
+        
+        lazy var scrollView : UIScrollView = {
+            let scView = UIScrollView()
+            return scView
+        }()
+        
+        lazy var contentView : UIView = {
+            let view = UIView()
+            return view
+        }()
 
         self.tableView.separatorStyle = .none
         self.tableView.register(ScanSuggestionTableViewCell.self, forCellReuseIdentifier: CellId.scanSuggestionCell.rawValue)
@@ -89,21 +103,50 @@ extension ScanSuggestionView {
             view.layer.masksToBounds = true
             return view
         }()
-
-        self.view.addSubview(self.tableView)
-        self.tableView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-            make.bottom.equalToSuperview()
+        
+        lazy var mainStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [self.tableView])
+            stack.axis = .vertical
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.spacing = 24
+            return stack
+        }()
+        
+        self.view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.top.equalToSuperview()
+            //make.top.equalTo(self.view.safeAreaLayoutGuide)
         }
         
-        self.view.addSubview(addCardPlaceholderView)
-        addCardPlaceholderView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-40)
-            make.height.equalTo(40)
-            make.width.equalTo(160)
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets.zero)
+            make.width.equalTo(scrollView)
         }
+        
+        contentView.addSubview(mainStack)
+        mainStack.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-61)
+            make.top.equalToSuperview().offset(24)
+        }
+
+//        self.view.addSubview(self.tableView)
+//        self.tableView.snp.makeConstraints { make in
+//            make.top.equalToSuperview()
+//            make.leading.equalToSuperview().offset(20)
+//            make.trailing.equalToSuperview().offset(-20)
+//            make.bottom.equalToSuperview()
+//        }
+//        
+//        self.view.addSubview(addCardPlaceholderView)
+//        addCardPlaceholderView.snp.makeConstraints { make in
+//            make.centerX.equalToSuperview()
+//            make.bottom.equalToSuperview().offset(-40)
+//            make.height.equalTo(40)
+//            make.width.equalTo(160)
+//        }
     }
 }
