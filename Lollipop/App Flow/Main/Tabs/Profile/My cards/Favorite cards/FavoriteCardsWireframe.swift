@@ -9,6 +9,8 @@ import UIKit
 
 class FavoriteCardsWireframe: FavoriteCardsWireframeProtocol {
     
+    static var cards: [Card]?
+    static var delegate: FavoriteControllerProtocol? 
     
     static func createModule(FavoriteCardsRef: FavoriteCardsView) {
         let presenter: FavoriteCardsPresenterProtocol & FavoriteCardsOutputInteractorProtocol = FavoriteCardsPresenter()

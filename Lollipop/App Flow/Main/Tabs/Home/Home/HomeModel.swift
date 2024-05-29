@@ -37,6 +37,12 @@ struct Card: Codable {
     let is_favorite: Int?
     let card_template: CardTemplate?
     let partner: Partner?
+    var favoriteIcon: UIImage {
+        return UIImage(named: (is_favorite ?? 0) == 1 ? AssetTitles.heartIcon : AssetTitles.outlinedHeartIcon)!
+    }
+    var favoriteIconTintColor: UIColor {
+        return (is_favorite ?? 0) == 1 ? AppColors.brandPrimary : AppColors.darkGrey
+    }
 }
 
 struct CardTemplate: Codable {

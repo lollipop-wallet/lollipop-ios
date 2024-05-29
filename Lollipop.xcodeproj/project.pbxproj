@@ -226,6 +226,7 @@
 		62373F652C07A2A800FCEED0 /* FavoriteCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62373F5F2C07A2A800FCEED0 /* FavoriteCardsModel.swift */; };
 		62373F662C07A2A800FCEED0 /* FavoriteCardsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62373F602C07A2A800FCEED0 /* FavoriteCardsWireframe.swift */; };
 		62373F6A2C07A3B100FCEED0 /* FavoriteCardsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62373F692C07A3B100FCEED0 /* FavoriteCardsUI.swift */; };
+		62373F6D2C07A7C100FCEED0 /* FavoriteCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62373F6C2C07A7C100FCEED0 /* FavoriteCardTableViewCell.swift */; };
 		625C15282C025FFA001760C3 /* HomeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C15272C025FFA001760C3 /* HomeListModel.swift */; };
 		626906AE2BE0A8D100BF5F62 /* MyShopsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */; };
 		626906AF2BE0A8D100BF5F62 /* MyShopsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A92BE0A8D100BF5F62 /* MyShopsProtocols.swift */; };
@@ -721,6 +722,7 @@
 		62373F5F2C07A2A800FCEED0 /* FavoriteCardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardsModel.swift; sourceTree = "<group>"; };
 		62373F602C07A2A800FCEED0 /* FavoriteCardsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardsWireframe.swift; sourceTree = "<group>"; };
 		62373F692C07A3B100FCEED0 /* FavoriteCardsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardsUI.swift; sourceTree = "<group>"; };
+		62373F6C2C07A7C100FCEED0 /* FavoriteCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardTableViewCell.swift; sourceTree = "<group>"; };
 		625C15272C025FFA001760C3 /* HomeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListModel.swift; sourceTree = "<group>"; };
 		626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsPresenter.swift; sourceTree = "<group>"; };
 		626906A92BE0A8D100BF5F62 /* MyShopsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsProtocols.swift; sourceTree = "<group>"; };
@@ -1966,6 +1968,7 @@
 				62373F5F2C07A2A800FCEED0 /* FavoriteCardsModel.swift */,
 				62373F602C07A2A800FCEED0 /* FavoriteCardsWireframe.swift */,
 				62373F682C07A3A800FCEED0 /* UI */,
+				62373F6B2C07A7B400FCEED0 /* Cells */,
 			);
 			path = "Favorite cards";
 			sourceTree = "<group>";
@@ -1976,6 +1979,14 @@
 				62373F692C07A3B100FCEED0 /* FavoriteCardsUI.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		62373F6B2C07A7B400FCEED0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				62373F6C2C07A7C100FCEED0 /* FavoriteCardTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		626906A62BE0A8C300BF5F62 /* My shops */ = {
@@ -3216,6 +3227,7 @@
 				62730C872BE8EE3C004209B9 /* ProgrammeRulesWireframe.swift in Sources */,
 				62F6CE332BDE0FDF00C4775C /* AccountDeletionWireframe.swift in Sources */,
 				62F6CE212BDD5AF300C4775C /* ChangePasswordWireframe.swift in Sources */,
+				62373F6D2C07A7C100FCEED0 /* FavoriteCardTableViewCell.swift in Sources */,
 				2CACCDED2BD541D3008178F8 /* AppDelegate+Extension.swift in Sources */,
 				2CACCDB72BD53C0B008178F8 /* DefaultModels.swift in Sources */,
 				2CEC7FC22BD935A50050E762 /* CalendarInputProtocols.swift in Sources */,

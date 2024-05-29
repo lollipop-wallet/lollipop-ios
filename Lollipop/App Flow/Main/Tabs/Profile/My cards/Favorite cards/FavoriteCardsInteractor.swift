@@ -12,4 +12,10 @@ import UIKit
 class FavoriteCardsInteractor: FavoriteCardsInputInteractorProtocol {
     
     weak var presenter: FavoriteCardsOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        let cards = FavoriteCardsWireframe.cards ?? []
+        let delegate = FavoriteCardsWireframe.delegate
+        presenter?.takeData(cards: cards, delegate: delegate)
+    }
 }

@@ -36,4 +36,5 @@ enum CellId : String {
     case partnerDetailsCustomCell = "partnerDetailsCustomCell"
     case scanSuggestionCell = "scanSuggestionCell"
     case phoneNumberPrefixCell = "phoneNumberPrefixCell"
+    case favoriteCardCell = "favoriteCardCell"
 }
