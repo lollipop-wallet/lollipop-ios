@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 class ScanSuggestionPresenter: NSObject, ScanSuggestionPresenterProtocol  {
     
@@ -13,26 +14,41 @@ class ScanSuggestionPresenter: NSObject, ScanSuggestionPresenterProtocol  {
     weak var view: ScanSuggestionViewProtocol?
     var wireframe: ScanSuggestionWireframeProtocol?
     
+    var datasource = [[Card]]()
+    
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
 }
 
 extension ScanSuggestionPresenter: ScanSuggestionOutputInteractorProtocol {
-    
+    func parseCardsData(result: Result<[Card], AFError>) {
+        switch result {
+        case .success(let model):
+            let officialCards = model.filter { ($0.partner?.is_official ?? 0) == 1 }
+            let nonOfficialCards = model.filter { ($0.partner?.is_official ?? 0) == 0 }
+            self.datasource = [officialCards, nonOfficialCards]
+            self.view?.reload()
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
 }
 
 
 //MARK: UITableViewDelegate&Datasource
 extension ScanSuggestionPresenter {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return datasource.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 7 : 2
+        return self.datasource[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellId.scanSuggestionCell.rawValue, for: indexPath) as! ScanSuggestionTableViewCell
-        cell.configureWith(index: indexPath, delegate: self)
+        cell.configureWith(item: self.datasource[indexPath.section][indexPath.row], index: indexPath, delegate: self)
         return cell
     }
     

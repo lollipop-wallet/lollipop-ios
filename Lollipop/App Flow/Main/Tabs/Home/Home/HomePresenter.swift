@@ -112,7 +112,11 @@ extension HomePresenter {
     }
     
     func didTapAddCard() {
-        
+        if Manager.isRegistered {
+            wireframe?.toCardTemplates()
+        }else{
+            delegate?.toProfileTabFromHome()
+        }
     }
     
     func didTapSeeMoreFromCircleCategory(){

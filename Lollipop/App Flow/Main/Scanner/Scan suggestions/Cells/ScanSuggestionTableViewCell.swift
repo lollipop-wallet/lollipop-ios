@@ -136,10 +136,11 @@ class ScanSuggestionTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: ScanSuggestionCellProtocol) {
+    func configureWith(item: Card?, index: IndexPath, delegate: ScanSuggestionCellProtocol) {
         self.index = index
         self.delegate = delegate
-        self.titleLabel.text = "Dameo"
+        self.titleLabel.text = item?.name ?? ""
+        self.cardImageView.imageFromURL(url: (item?.partner?.is_official ?? 0) == 1 ? (item?.back_image ?? "") : (item?.partner?.logo ?? ""))
     }
     
     //MARK: Actions

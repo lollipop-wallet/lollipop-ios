@@ -41,6 +41,16 @@ extension MyCardsView {
         self.navigationItem.leftBarButtonItems = [backButton]
         self.navigationItem.rightBarButtonItems = [sortButton]
         
+        lazy var segmentedControl: CustomSegmentedControl = {
+            let control = CustomSegmentedControl(items: [LocalizedTitle.allCards.localized, LocalizedTitle.favoriteCards.localized])
+            control.selectedSegmentIndex = 0
+            control.backgroundColor = AppColors.white
+            control.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
+            control.setTitleTextAttributes([.foregroundColor: AppColors.darkGrey, NSAttributedString.Key.font: UIFont.inter(ofSize: 14, name: .semibold)], for: .normal)
+            control.setTitleTextAttributes([.foregroundColor: AppColors.white, NSAttributedString.Key.font:  UIFont.inter(ofSize: 14, name: .semibold)], for: .selected)
+            return control
+        }()
+        
         self.tableView.separatorStyle = .none
         self.tableView.register(MyCardsTableViewCell.self, forCellReuseIdentifier: CellId.myCardsCell.rawValue)
         self.tableView.delegate = presenter
@@ -48,72 +58,20 @@ extension MyCardsView {
         self.tableView.backgroundColor = AppColors.lightGrey
         self.tableView.sectionHeaderTopPadding = 0
         
-        lazy var addIcon: UIImageView = {
-            let imageView = UIImageView()
-            imageView.image = UIImage(named: AssetTitles.plusIcon)
-            imageView.tintColor = AppColors.white
-            imageView.snp.makeConstraints { make in
-                make.width.height.equalTo(24)
-            }
-            return imageView
-        }()
-        
-        lazy var addLabel: UILabel = {
-            let label = UILabel()
-            label.font = .inter(ofSize: 14, name: .semibold)
-            label.textColor = AppColors.white
-            label.textAlignment = .center
-            label.text = LocalizedTitle.addCard.localized
-            return label
-        }()
-        
-        lazy var addCardStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [addIcon, addLabel])
-            stack.axis = .horizontal
-            stack.distribution = .fill
-            stack.alignment = .center
-            stack.spacing = 8
-            return stack
-        }()
-        
-        lazy var newCardButton: UIButton = {
-            let button = UIButton()
-            button.addTarget(self, action: #selector(onNewCardTap), for: .touchUpInside)
-            return button
-        }()
-        
-        lazy var addCardPlaceholderView: UIView = {
-            let view = UIView()
-            view.backgroundColor = AppColors.brandPrimary
-            view.addSubview(addCardStack)
-            addCardStack.snp.makeConstraints { make in
-                make.top.equalToSuperview().offset(10)
-                make.bottom.equalToSuperview().offset(-10)
-                make.centerX.centerY.equalToSuperview()
-            }
-            view.addSubview(newCardButton)
-            newCardButton.snp.makeConstraints { make in
-                make.leading.trailing.top.bottom.equalToSuperview()
-            }
-            view.layer.cornerRadius = 12
-            view.layer.masksToBounds = true
-            return view
-        }()
+        self.view.addSubview(segmentedControl)
+        segmentedControl.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(16)
+            make.height.equalTo(47)
+        }
 
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalTo(segmentedControl.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview()
-        }
-        
-        self.view.addSubview(addCardPlaceholderView)
-        addCardPlaceholderView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-40)
-            make.height.equalTo(40)
-            make.width.equalTo(160)
         }
     }
 }

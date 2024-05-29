@@ -38,7 +38,8 @@ class MyCardsView: UIViewController, MyCardsViewProtocol {
         presenter?.sort()
     }
     
-    @objc func onNewCardTap() {
-        
+    //MARK: Actions
+    @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
+        //presenter?.changeSegment(segment: segmentedControl.selectedSegmentIndex)
     }
 }

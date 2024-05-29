@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -16,26 +17,26 @@ protocol ScanSuggestionPresenterProtocol: UITableViewDelegate, UITableViewDataSo
     var view: ScanSuggestionViewProtocol? { get set }
     var wireframe:ScanSuggestionWireframeProtocol? { get set }
     
+    func viewDidLoad()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
 protocol ScanSuggestionInputInteractorProtocol: AnyObject {
     
     var presenter: ScanSuggestionOutputInteractorProtocol?  { get set }
-    
+    func viewDidLoad()
    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol ScanSuggestionOutputInteractorProtocol: AnyObject {
-    
-
+    func parseCardsData(result: Result<[Card], AFError>)
 }
 //MARK: View
 protocol ScanSuggestionViewProtocol: AnyObject {
     
     var presenter: ScanSuggestionPresenterProtocol?  { get set }
-    
+    func reload()
 }
 //MARK: Wireframe
 protocol ScanSuggestionWireframeProtocol: AnyObject {
