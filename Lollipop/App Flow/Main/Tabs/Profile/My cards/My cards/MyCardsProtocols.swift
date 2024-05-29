@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -16,27 +17,28 @@ protocol MyCardsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, M
     var view: MyCardsViewProtocol? { get set }
     var wireframe:MyCardsWireframeProtocol? { get set }
     
-    func sort()
+    func viewDidLoad()
+    func edit()
+    func changeSegment(segment: Int)
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
 protocol MyCardsInputInteractorProtocol: AnyObject {
     
     var presenter: MyCardsOutputInteractorProtocol?  { get set }
-    
+    func viewDidLoad()
    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol MyCardsOutputInteractorProtocol: AnyObject {
-    
-
+    func parseCardsData(result: Result<[Card], AFError>)
 }
 //MARK: View
 protocol MyCardsViewProtocol: AnyObject {
     
     var presenter: MyCardsPresenterProtocol?  { get set }
-    
+    func reload()
 }
 //MARK: Wireframe
 protocol MyCardsWireframeProtocol: AnyObject {

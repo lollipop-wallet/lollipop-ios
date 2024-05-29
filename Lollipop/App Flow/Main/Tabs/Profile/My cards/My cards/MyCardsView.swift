@@ -18,6 +18,7 @@ class MyCardsView: UIViewController, MyCardsViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,17 +30,25 @@ class MyCardsView: UIViewController, MyCardsViewProtocol {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    //MARK: MyCardsView Protocol
+    
+    func reload(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     //MARK: Actions
     @objc func onBackTap() {
         popBack(2)
     }
     
-    @objc func onSortTap() {
-        presenter?.sort()
+    @objc func onEditTap() {
+        presenter?.edit()
     }
     
     //MARK: Actions
     @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
-        //presenter?.changeSegment(segment: segmentedControl.selectedSegmentIndex)
+        presenter?.changeSegment(segment: segmentedControl.selectedSegmentIndex)
     }
 }

@@ -31,9 +31,9 @@ extension MyCardsView {
         
         lazy var sortButton: UIBarButtonItem = {
             let button = UIBarButtonItem()
-            button.title = LocalizedTitle.sort.localized
+            button.title = LocalizedTitle.edit.localized
             button.tintColor = AppColors.link
-            button.action = #selector(self.onSortTap)
+            button.action = #selector(self.onEditTap)
             button.target = self
             return button
         }()
