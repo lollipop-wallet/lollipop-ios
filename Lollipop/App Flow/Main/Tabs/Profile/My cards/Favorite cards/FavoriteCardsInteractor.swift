@@ -18,4 +18,13 @@ class FavoriteCardsInteractor: FavoriteCardsInputInteractorProtocol {
         let delegate = FavoriteCardsWireframe.delegate
         presenter?.takeData(cards: cards, delegate: delegate)
     }
+    
+    func toggleFavoriteWith(alias: String) {
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.togglecardfavorite(alias: alias) { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self = self else {return}
+            self.presenter?.parseFavoriteData(result: result)
+        }
+    }
 }

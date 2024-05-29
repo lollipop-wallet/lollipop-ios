@@ -136,7 +136,8 @@ class FavoriteCardTableViewCell: UITableViewCell {
         }
         view.addSubview(cellButton)
         cellButton.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalToSuperview()
+            make.leading.top.bottom.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-36)
         }
         view.layer.cornerRadius = 12
         view.layer.masksToBounds = true
@@ -197,6 +198,7 @@ class FavoriteCardTableViewCell: UITableViewCell {
     }
     
     @objc func onCheckBoxTap() {
+        print("dwadwadawdwa")
         delegate?.didSelectItemAt(index: self.index)
     }
 }

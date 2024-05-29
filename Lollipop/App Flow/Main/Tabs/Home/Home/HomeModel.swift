@@ -34,7 +34,7 @@ struct Card: Codable {
     let back_image: String?
     let code: String?
     let type: String?
-    let is_favorite: Int?
+    var is_favorite: Int?
     let card_template: CardTemplate?
     let partner: Partner?
     var favoriteIcon: UIImage {

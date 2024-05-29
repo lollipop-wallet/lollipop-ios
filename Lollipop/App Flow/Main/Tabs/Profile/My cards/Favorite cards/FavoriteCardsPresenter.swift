@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 class FavoriteCardsPresenter: NSObject, FavoriteCardsPresenterProtocol  {
     
@@ -28,6 +29,17 @@ extension FavoriteCardsPresenter: FavoriteCardsOutputInteractorProtocol {
         self.delegate = delegate
         self.view?.reload()
     }
+    
+    func parseFavoriteData(result: Result<FavoriteCardsModel, AFError>){
+        switch result {
+        case .success(let model):
+            self.datasource[self.selectedIndex].is_favorite = (model.favorite ?? 0)
+            self.view?.reload()
+            self.delegate?.updateCardsWith(cards: self.datasource)
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
 }
 
 
@@ -45,6 +57,6 @@ extension FavoriteCardsPresenter {
     
     func didSelectItemAt(index: IndexPath) {
         self.selectedIndex = index.row
-        //interactor?.toggleFavoriteWith(alias: self.datasource[index.row].alias ?? "")
+        interactor?.toggleFavoriteWith(alias: self.datasource[index.row].alias ?? "")
     }
 }

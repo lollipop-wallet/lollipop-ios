@@ -133,5 +133,10 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.getusercards, completion: completion)
     }
+    
+    static func togglecardfavorite(alias: String, completion:@escaping (Result<FavoriteCardsModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.togglecardfavorite(alias: alias), completion: completion)
+    }
 }
 

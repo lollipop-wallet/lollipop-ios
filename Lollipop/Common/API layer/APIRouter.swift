@@ -27,6 +27,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
     case suggestshop(name: String, country: String, city: String, address: String, description: String)
     case getcardtemplates
     case getusercards
+    case togglecardfavorite(alias: String)
 
     
     // MARK: - HTTPMethod
@@ -34,7 +35,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
         switch self {
         case .getconfig, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards:
             return .get
-        case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop:
+        case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite:
             return .post
         }
     }
@@ -74,6 +75,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return "card-templates?includes=partner"
         case .getusercards:
             return "cards?includes=partner"
+        case .togglecardfavorite:
+            return "cards/favorites"
         }
     }
     
@@ -94,6 +97,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return [APIParameterKey.brandAlias : alias]
         case .suggestshop(let name, let country, let city, let address, let description):
             return [APIParameterKey.name : name, APIParameterKey.country : country, APIParameterKey.city : city, APIParameterKey.address : address, APIParameterKey.description : description]
+        case .togglecardfavorite(let alias):
+            return [APIParameterKey.cardAlias : alias]
         }
     }
         

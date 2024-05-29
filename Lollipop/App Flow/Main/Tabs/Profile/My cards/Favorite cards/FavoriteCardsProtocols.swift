@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -24,12 +25,13 @@ protocol FavoriteCardsInputInteractorProtocol: AnyObject {
     
     var presenter: FavoriteCardsOutputInteractorProtocol?  { get set }
     func viewDidLoad()
-   
+    func toggleFavoriteWith(alias: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol FavoriteCardsOutputInteractorProtocol: AnyObject {
     func takeData(cards: [Card], delegate: FavoriteCardsControllerProtocol?)
+    func parseFavoriteData(result: Result<FavoriteCardsModel, AFError>)
 }
 //MARK: View
 protocol FavoriteCardsViewProtocol: AnyObject {

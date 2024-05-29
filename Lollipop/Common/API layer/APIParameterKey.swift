@@ -21,4 +21,5 @@ struct APIParameterKey {
     static let country = "country"
     static let address = "address"
     static let description = "description"
+    static let cardAlias = "card_alias"
 }

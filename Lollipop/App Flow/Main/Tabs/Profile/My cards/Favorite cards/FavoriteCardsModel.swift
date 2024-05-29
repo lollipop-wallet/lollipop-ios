@@ -9,6 +9,7 @@
 import Foundation
 
 struct FavoriteCardsModel : Codable {
-    
+    let favorite: Int?
+    let message: String?
 }
 
