@@ -45,6 +45,10 @@ class WalletView: UIViewController, WalletViewProtocol {
         popBack(2)
     }
     
+    @objc func onAddCardTap() {
+        
+    }
+    
     @objc func onSeeAllCardsTap() {
         
     }

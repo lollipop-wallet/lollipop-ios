@@ -29,7 +29,16 @@ extension WalletView {
             return button
         }()
         
+        lazy var addCardButton: UIBarButtonItem = {
+            let button = UIBarButtonItem()
+            button.image = UIImage(named: AssetTitles.addCardWalletIcon)?.withRenderingMode(.alwaysOriginal)
+            button.action = #selector(self.onAddCardTap)
+            button.target = self
+            return button
+        }()
+        
         self.navigationItem.leftBarButtonItems = [backButton]
+        self.navigationItem.rightBarButtonItems = [addCardButton]
         
         lazy var mainContentView: UIView = {
             let view = UIView()
