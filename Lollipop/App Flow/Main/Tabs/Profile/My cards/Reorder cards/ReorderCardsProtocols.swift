@@ -46,3 +46,8 @@ protocol ReorderCardsWireframeProtocol: AnyObject {
 protocol ReorderCardsControllerProtocol: AnyObject {
     func updateFavoriteCardsWith(cards: [Card])
 }
+
+//MARK: ReorderCardsCell Protocol
+protocol ReorderCardsCellProtocol: AnyObject {
+    
+}

@@ -227,6 +227,7 @@
 		62373F662C07A2A800FCEED0 /* FavoriteCardsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62373F602C07A2A800FCEED0 /* FavoriteCardsWireframe.swift */; };
 		62373F6A2C07A3B100FCEED0 /* FavoriteCardsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62373F692C07A3B100FCEED0 /* FavoriteCardsUI.swift */; };
 		62373F6D2C07A7C100FCEED0 /* FavoriteCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62373F6C2C07A7C100FCEED0 /* FavoriteCardTableViewCell.swift */; };
+		623C1D332C082C6400296759 /* ReorderCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C1D322C082C6400296759 /* ReorderCardsTableViewCell.swift */; };
 		625C15282C025FFA001760C3 /* HomeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C15272C025FFA001760C3 /* HomeListModel.swift */; };
 		626906AE2BE0A8D100BF5F62 /* MyShopsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */; };
 		626906AF2BE0A8D100BF5F62 /* MyShopsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A92BE0A8D100BF5F62 /* MyShopsProtocols.swift */; };
@@ -723,6 +724,7 @@
 		62373F602C07A2A800FCEED0 /* FavoriteCardsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardsWireframe.swift; sourceTree = "<group>"; };
 		62373F692C07A3B100FCEED0 /* FavoriteCardsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardsUI.swift; sourceTree = "<group>"; };
 		62373F6C2C07A7C100FCEED0 /* FavoriteCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardTableViewCell.swift; sourceTree = "<group>"; };
+		623C1D322C082C6400296759 /* ReorderCardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCardsTableViewCell.swift; sourceTree = "<group>"; };
 		625C15272C025FFA001760C3 /* HomeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListModel.swift; sourceTree = "<group>"; };
 		626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsPresenter.swift; sourceTree = "<group>"; };
 		626906A92BE0A8D100BF5F62 /* MyShopsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsProtocols.swift; sourceTree = "<group>"; };
@@ -1989,6 +1991,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		623C1D312C082C5200296759 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				623C1D322C082C6400296759 /* ReorderCardsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		626906A62BE0A8C300BF5F62 /* My shops */ = {
 			isa = PBXGroup;
 			children = (
@@ -2538,6 +2548,7 @@
 				62EB74B82BE2000E0088906A /* ReorderCardsModel.swift */,
 				62EB74B92BE2000E0088906A /* ReorderCardsWireframe.swift */,
 				62EB74C12BE200150088906A /* UI */,
+				623C1D312C082C5200296759 /* Cells */,
 			);
 			path = "Reorder cards";
 			sourceTree = "<group>";
@@ -3381,6 +3392,7 @@
 				62730CFD2BEA7285004209B9 /* ScanSuggestionUI.swift in Sources */,
 				626906B12BE0A8D100BF5F62 /* MyShopsView.swift in Sources */,
 				623450CE2BFAFB0A00FE8E71 /* DPDConstants.swift in Sources */,
+				623C1D332C082C6400296759 /* ReorderCardsTableViewCell.swift in Sources */,
 				626906B22BE0A8D100BF5F62 /* MyShopsModel.swift in Sources */,
 				62730C4F2BE8853F004209B9 /* LocationTableViewCell.swift in Sources */,
 				626906B32BE0A8D100BF5F62 /* MyShopsWireframe.swift in Sources */,
