@@ -9,6 +9,8 @@ import UIKit
 
 class ReorderCardsWireframe: ReorderCardsWireframeProtocol {
     
+    static var cards: [Card]?
+    static var delegate: ReorderCardsControllerProtocol? 
     
     static func createModule(ReorderCardsRef: ReorderCardsView) {
         let presenter: ReorderCardsPresenterProtocol & ReorderCardsOutputInteractorProtocol = ReorderCardsPresenter()

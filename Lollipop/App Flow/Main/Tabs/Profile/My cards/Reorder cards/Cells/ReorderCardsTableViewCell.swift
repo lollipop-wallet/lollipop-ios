@@ -45,15 +45,6 @@ class ReorderCardsTableViewCell: UITableViewCell {
         return view
     }()
     
-    lazy var rightSupplementaryIcon: UIImageView = {
-        let image = UIImageView()
-        image.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
-        }
-        return image
-    }()
-    
-    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .inter(ofSize: 18, name: .semibold)

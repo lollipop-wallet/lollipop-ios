@@ -7,14 +7,40 @@
 //
 import UIKit
 
-class ReorderCardsPresenter: ReorderCardsPresenterProtocol  {
+class ReorderCardsPresenter: NSObject, ReorderCardsPresenterProtocol  {
     
     var interactor : ReorderCardsInputInteractorProtocol?
     weak var view: ReorderCardsViewProtocol?
     var wireframe: ReorderCardsWireframeProtocol?
     
+    var datasource = [Card]()
+    var delegate: ReorderCardsControllerProtocol?
+    
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
 }
 
 extension ReorderCardsPresenter: ReorderCardsOutputInteractorProtocol {
+    func takeData(cards: [Card], delegate: ReorderCardsControllerProtocol?) {
+        self.datasource = cards
+        self.delegate = delegate
+        self.view?.reload()
+    }
+}
+
+//MARK: UITableView Delegate&Datasource
+extension ReorderCardsPresenter {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.datasource.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellId.reorderCardCell.rawValue, for: indexPath) as! ReorderCardsTableViewCell
+        cell.configureWith(item: self.datasource[indexPath.row], index: indexPath, delegate: self)
+        return cell
+    }
+    
+    func didSelectItemAt(index: IndexPath) {
+    }
 }

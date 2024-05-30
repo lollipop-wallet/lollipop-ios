@@ -12,4 +12,10 @@ import UIKit
 class ReorderCardsInteractor: ReorderCardsInputInteractorProtocol {
     
     weak var presenter: ReorderCardsOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        let cards = ReorderCardsWireframe.cards ?? []
+        let delegate = ReorderCardsWireframe.delegate
+        presenter?.takeData(cards: cards, delegate: delegate)
+    }
 }

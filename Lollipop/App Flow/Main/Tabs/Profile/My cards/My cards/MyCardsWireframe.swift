@@ -33,6 +33,9 @@ class MyCardsWireframe: MyCardsWireframeProtocol {
     }
     
     func toReorderCardsWith(cards: [Card], delegate: ReorderCardsControllerProtocol?){
-        
+        let vc = ReorderCardsView()
+        ReorderCardsWireframe.cards = cards
+        ReorderCardsWireframe.delegate = delegate
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }
