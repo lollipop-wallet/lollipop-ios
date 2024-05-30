@@ -19,6 +19,11 @@ class ReorderCardsPresenter: NSObject, ReorderCardsPresenterProtocol  {
     func viewDidLoad() {
         interactor?.viewDidLoad()
     }
+    
+    func updateDatasourceWith(datasource: [Card]){
+        self.datasource = datasource
+        self.view?.reload()
+    }
 }
 
 extension ReorderCardsPresenter: ReorderCardsOutputInteractorProtocol {
@@ -26,6 +31,7 @@ extension ReorderCardsPresenter: ReorderCardsOutputInteractorProtocol {
         self.datasource = cards
         self.delegate = delegate
         self.view?.reload()
+        self.view?.updateDatasource(cards: cards)
     }
 }
 

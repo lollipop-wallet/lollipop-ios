@@ -18,7 +18,7 @@ protocol ReorderCardsPresenterProtocol: UITableViewDelegate, UITableViewDataSour
     var wireframe:ReorderCardsWireframeProtocol? { get set }
     
     func viewDidLoad()
-
+    func updateDatasourceWith(datasource: [Card])
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -39,6 +39,7 @@ protocol ReorderCardsViewProtocol: AnyObject {
     
     var presenter: ReorderCardsPresenterProtocol?  { get set }
     func reload()
+    func updateDatasource(cards: [Card])
 }
 //MARK: Wireframe
 protocol ReorderCardsWireframeProtocol: AnyObject {

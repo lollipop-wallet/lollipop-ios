@@ -12,8 +12,9 @@ import UIKit
 class ReorderCardsView: UIViewController, ReorderCardsViewProtocol {
     
     var tableView = UITableView()
-
+    
     var presenter: ReorderCardsPresenterProtocol?
+    var datasource = [Card]()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,10 @@ class ReorderCardsView: UIViewController, ReorderCardsViewProtocol {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+    }
+    
+    func updateDatasource(cards: [Card]){
+        self.datasource = cards
     }
 
     //MARK: Actions

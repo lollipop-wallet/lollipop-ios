@@ -41,6 +41,9 @@ extension ReorderCardsView {
         self.tableView.dataSource = presenter
         self.tableView.backgroundColor = AppColors.lightGrey
         
+        let longpress = UILongPressGestureRecognizer(target: self, action: #selector(ReorderCardsView.longPressGestureRecognized(_:)))
+        tableView.addGestureRecognizer(longpress)
+        
         view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
