@@ -9,6 +9,6 @@
 import Foundation
 
 struct ReorderCardsModel : Codable {
-    
+    let message: String?
 }
 

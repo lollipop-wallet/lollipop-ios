@@ -27,12 +27,13 @@ protocol ReorderCardsInputInteractorProtocol: AnyObject {
     var presenter: ReorderCardsOutputInteractorProtocol?  { get set }
     
     func viewDidLoad()
-   
+    func reorder(parameters: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol ReorderCardsOutputInteractorProtocol: AnyObject {
     func takeData(cards: [Card], delegate: ReorderCardsControllerProtocol?)
+    func parseReorderCardsData(model: ReorderCardsModel)
 }
 //MARK: View
 protocol ReorderCardsViewProtocol: AnyObject {

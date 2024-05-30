@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct PositionModel {
-    var alias: String?
-    var position: Int?
+struct MainPositionsModel: Codable {
+    var cards: [PositionModel]
+}
+
+struct PositionModel: Codable {
+    var alias: String
+    var position: Int
 }

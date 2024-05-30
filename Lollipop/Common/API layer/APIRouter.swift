@@ -28,6 +28,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
     case getcardtemplates
     case getusercards
     case togglecardfavorite(alias: String)
+    case reordercards(cards: String)
 
     
     // MARK: - HTTPMethod
@@ -35,7 +36,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
         switch self {
         case .getconfig, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards:
             return .get
-        case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite:
+        case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards:
             return .post
         }
     }
@@ -77,6 +78,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return "cards?includes=partner"
         case .togglecardfavorite:
             return "cards/favorites"
+        case .reordercards:
+            return "cards/positions"
         }
     }
     
@@ -99,6 +102,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return [APIParameterKey.name : name, APIParameterKey.country : country, APIParameterKey.city : city, APIParameterKey.address : address, APIParameterKey.description : description]
         case .togglecardfavorite(let alias):
             return [APIParameterKey.cardAlias : alias]
+        case .reordercards(let cards):
+            return [APIParameterKey.cards : cards]
         }
     }
         
@@ -119,6 +124,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
                 do {
                     urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
                 } catch {
+                    print("ovo")
                     throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
                 }
             }

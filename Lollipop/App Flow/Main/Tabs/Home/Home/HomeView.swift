@@ -8,6 +8,8 @@
 //
 //
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class HomeView: UIViewController, HomeViewProtocol {
     
@@ -16,12 +18,14 @@ class HomeView: UIViewController, HomeViewProtocol {
     var tableView = UITableView()
 
     var presenter: HomePresenterProtocol?
+    var parameters = String()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         presenter?.viewDidLoad()
     }
+
     
     //MARK: HomeView Protocol
     func reload(){

@@ -37,6 +37,7 @@ struct Card: Codable {
     var is_favorite: Int?
     let card_template: CardTemplate?
     let partner: Partner?
+    let position: Int?
     var favoriteIcon: UIImage {
         return UIImage(named: (is_favorite ?? 0) == 1 ? AssetTitles.heartIcon : AssetTitles.outlinedHeartIcon)!
     }

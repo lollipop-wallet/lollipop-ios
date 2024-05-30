@@ -142,5 +142,10 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.togglecardfavorite(alias: alias), completion: completion)
     }
+    
+    static func reordercards(cards: String, completion:@escaping (Result<ReorderCardsModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.reordercards(cards: cards), completion: completion)
+    }
 }
 
