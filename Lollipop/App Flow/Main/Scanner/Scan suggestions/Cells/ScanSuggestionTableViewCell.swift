@@ -140,7 +140,7 @@ class ScanSuggestionTableViewCell: UITableViewCell {
         self.index = index
         self.delegate = delegate
         self.titleLabel.text = item?.name ?? ""
-        self.cardImageView.imageFromURL(url: (item?.partner?.is_official ?? 0) == 1 ? (item?.back_image ?? "") : (item?.partner?.logo ?? ""))
+        self.cardImageView.imageFromURL(url: (item?.partner?.is_official ?? 0) == 1 ? (item?.card_template?.image_front ?? "") : (item?.partner?.logo ?? ""))
     }
     
     //MARK: Actions

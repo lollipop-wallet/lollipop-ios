@@ -26,6 +26,7 @@ class MyCardsTableViewCell: UITableViewCell {
     
     lazy var cardImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -161,6 +162,7 @@ class MyCardsTableViewCell: UITableViewCell {
         self.rightSupplementaryIcon.tintColor = AppColors.darkGrey
         self.titleLabel.text = item?.name ?? ""
         self.subtitleLabel.text = item?.code ?? ""
+        self.cardImageView.imageFromURL(url: item?.card_template?.image_front ?? "")
     }
     
     //MARK: Actions
