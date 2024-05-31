@@ -14,6 +14,11 @@ class ProfileInteractor: ProfileInputInteractorProtocol {
     weak var presenter: ProfileOutputInteractorProtocol?
     
     func viewDidLoad() {
-        
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.getprofile { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self = self else {return}
+            self.presenter?.parseUserData(result: result)
+        }
     }
 }

@@ -108,7 +108,7 @@ extension ProfileView {
             let stack = UIStackView(arrangedSubviews: [avatarContainerView, avatarTextStack])
             stack.axis = .horizontal
             stack.alignment = .center
-            stack.distribution = .fillProportionally
+            stack.distribution = .fill
             stack.spacing = 12
             return stack
         }()

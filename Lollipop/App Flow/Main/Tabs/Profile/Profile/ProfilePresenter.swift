@@ -29,7 +29,7 @@ extension ProfilePresenter: ProfileOutputInteractorProtocol {
     func parseUserData(result: Result<ProfileModel, AFError>) {
         switch result {
         case .success(let model):
-            self.view?.setUserNameWith(name: (model.name ?? "").isEmpty ? LocalizedTitle.signIn.localized : model.name ?? "")
+            self.view?.setUserNameWith(name: model.name ?? "")
             if !(model.avatar ?? "").isEmpty{
                 self.view?.setUserAvatarWith(avatar: model.avatar ?? "")
             }

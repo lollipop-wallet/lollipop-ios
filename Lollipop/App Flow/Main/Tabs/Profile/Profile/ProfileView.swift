@@ -21,7 +21,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        viewDidLoad()
+        presenter?.viewDidLoad()
     }
     
     //MARK: ProfileView Protocol

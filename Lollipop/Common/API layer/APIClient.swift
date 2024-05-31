@@ -152,4 +152,9 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.updateloyaltycard(cardAlias: cardAlias, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, codeType: codeType, nameOnTheCard: nameOnTheCard, notes: notes), completion: completion)
     }
+    
+    static func getprofile(completion:@escaping (Result<ProfileModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.getprofile, completion: completion)
+    }
 }
