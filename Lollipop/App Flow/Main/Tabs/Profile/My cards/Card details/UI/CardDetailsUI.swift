@@ -36,16 +36,122 @@ extension CardDetailsView {
             view.backgroundColor = AppColors.lightGrey
             return view
         }()
+//        
+//        self.cardImageView.contentMode = .scaleAspectFill
+//        self.cardImageView.layer.cornerRadius = 8
+//        self.cardImageView.layer.borderWidth = 1
+//        self.cardImageView.layer.borderColor = AppColors.brandPrimary.cgColor
+//        self.cardImageView.snp.makeConstraints { make in
+//            make.width.equalTo(198)
+//            make.height.equalTo(128)
+//        }
+//        self.cardImageView.backgroundColor = .red
         
-        self.cardImageView.contentMode = .scaleAspectFill
-        self.cardImageView.layer.cornerRadius = 8
-        self.cardImageView.layer.borderWidth = 1
-        self.cardImageView.layer.borderColor = AppColors.brandPrimary.cgColor
-        self.cardImageView.snp.makeConstraints { make in
-            make.width.equalTo(198)
-            make.height.equalTo(128)
-        }
-        self.cardImageView.backgroundColor = .red
+        self.cardImageFrontSideView.contentMode = .scaleAspectFill
+        self.cardImageFrontSideView.layer.cornerRadius = 8
+        self.cardImageFrontSideView.layer.borderWidth = 1
+        self.cardImageFrontSideView.layer.borderColor = AppColors.brandPrimary.cgColor
+        self.cardImageFrontSideView.clipsToBounds = true
+        
+        lazy var frontLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 10, name: .medium)
+            label.textAlignment = .left
+            label.textColor = AppColors.darkGrey
+            label.text = LocalizedTitle.frontSide.localized
+            label.snp.makeConstraints { make in
+                make.height.equalTo(16)
+            }
+            return label
+        }()
+        
+        lazy var frontStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [self.cardImageFrontSideView, frontLabel])
+            stack.axis = .vertical
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.spacing = 4
+            return stack
+        }()
+        
+        lazy var frontPlaceholderView: UIView = {
+            let view = UIView()
+            view.addSubview(frontStack)
+            frontStack.snp.makeConstraints { make in
+                make.leading.top.equalToSuperview()
+                make.bottom.equalToSuperview().offset(-4)
+                make.trailing.equalToSuperview().offset(-8)
+            }
+            return view
+        }()
+        
+        self.cardImageBackSideView.contentMode = .scaleAspectFill
+        self.cardImageBackSideView.layer.cornerRadius = 8
+        self.cardImageBackSideView.layer.borderWidth = 1
+        self.cardImageBackSideView.layer.borderColor = AppColors.brandPrimary.cgColor
+        self.cardImageBackSideView.clipsToBounds = true
+        
+        lazy var backLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 10, name: .medium)
+            label.textAlignment = .left
+            label.textColor = AppColors.darkGrey
+            label.text = LocalizedTitle.backSide.localized
+            label.snp.makeConstraints { make in
+                make.height.equalTo(16)
+            }
+            return label
+        }()
+        
+        lazy var backStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [self.cardImageBackSideView, backLabel])
+            stack.axis = .vertical
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.spacing = 4
+            return stack
+        }()
+        
+        lazy var backPlaceholderView: UIView = {
+            let view = UIView()
+            view.addSubview(backStack)
+            backStack.snp.makeConstraints { make in
+                make.leading.top.equalToSuperview()
+                make.bottom.equalToSuperview().offset(-4)
+                make.trailing.equalToSuperview().offset(-8)
+            }
+            return view
+        }()
+        
+        lazy var mainCardStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [frontPlaceholderView, backPlaceholderView])
+            stack.axis = .horizontal
+            stack.alignment = .fill
+            stack.distribution = .fillEqually
+            stack.spacing = 16
+            stack.snp.makeConstraints { make in
+                make.height.equalTo(((self.view.frame.width - 40)) * 0.36)
+                make.width.equalTo(self.view.frame.width - 40)
+            }
+            return stack
+        }()
+        
+        
+        lazy var dataCardPlaceholderView: UIView = {
+            let view = UIView()
+            view.addSubview(mainCardStack)
+            mainCardStack.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(20)
+                make.trailing.equalToSuperview().offset(-12)
+                make.bottom.equalToSuperview().offset(-32)
+                make.top.equalToSuperview().offset(24)
+                make.height.equalTo(((self.view.frame.width - 40)) * 0.36)
+            }
+            view.backgroundColor = AppColors.white
+            view.layer.cornerRadius = 32
+            view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+            return view
+        }()
         
         ///Card name
         lazy var staticCartNameLabel: UILabel = {
@@ -130,7 +236,7 @@ extension CardDetailsView {
         }()
         
         lazy var mainStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [self.cardImageView, cardNameStack, barcodeStack, notesStack])
+            let stack = UIStackView(arrangedSubviews: [mainCardStack, cardNameStack, barcodeStack, notesStack])
             stack.axis = .vertical
             stack.alignment = .center
             stack.distribution = .fill

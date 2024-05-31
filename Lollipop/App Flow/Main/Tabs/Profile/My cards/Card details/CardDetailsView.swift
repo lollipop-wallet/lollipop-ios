@@ -15,7 +15,9 @@ class CardDetailsView: UIViewController, CardDetailsViewProtocol {
     var cardNameLabel = UILabel()
     var cardBarcodeLabel = UILabel()
     var cardNotesLabel = UILabel()
-
+    var cardImageFrontSideView = UIImageView()
+    var cardImageBackSideView = UIImageView()
+    
     var presenter: CardDetailsPresenterProtocol?
 
 	override func viewDidLoad() {
