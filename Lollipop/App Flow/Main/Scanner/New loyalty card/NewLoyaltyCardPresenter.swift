@@ -80,7 +80,7 @@ extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
     func parseNewCardData(result: Result<NewLoyaltyCardModel, AFError>){
         switch result {
         case .success(let model):
-            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: model.message ?? "", shouldDismiss: false)
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.notice.localized, text: model.message ?? "", shouldDismiss: false)
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }
