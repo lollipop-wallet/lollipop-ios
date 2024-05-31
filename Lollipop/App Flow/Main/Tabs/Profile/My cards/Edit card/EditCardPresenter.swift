@@ -36,5 +36,7 @@ extension EditCardPresenter: EditCardOutputInteractorProtocol {
         self.view?.setBarcodeWith(barcode: card?.code ?? "")
         self.view?.setNameOnTheCardWith(nameOnTheCard: card?.name_on_card ?? "")
         self.view?.setNotesWith(notes: card?.notes ?? "")
+        self.view?.setFrontCameraControlHidden(isHidden: card?.cardType == .loyalty)
+        self.view?.setBackCameraControlHidden(isHidden: card?.cardType == .loyalty)
     }
 }

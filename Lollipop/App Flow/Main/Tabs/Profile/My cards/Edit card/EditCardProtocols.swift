@@ -42,6 +42,8 @@ protocol EditCardViewProtocol: AnyObject {
     func setCardNumberWith(number: String)
     func setNameOnTheCardWith(nameOnTheCard: String)
     func setNotesWith(notes: String)
+    func setFrontCameraControlHidden(isHidden: Bool)
+    func setBackCameraControlHidden(isHidden: Bool)
 }
 //MARK: Wireframe
 protocol EditCardWireframeProtocol: AnyObject {
