@@ -29,6 +29,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
     case getusercards
     case togglecardfavorite(alias: String)
     case reordercards(cards: String)
+    case updateloyaltycard(cardAlias: String, cardName: String, cardNumber: String, cardBarCode: String, codeType: String, nameOnTheCard: String, notes: String)
 
     
     // MARK: - HTTPMethod
@@ -36,7 +37,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
         switch self {
         case .getconfig, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards:
             return .get
-        case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards:
+        case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards, .updateloyaltycard:
             return .post
         }
     }
@@ -80,6 +81,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return "cards/favorites"
         case .reordercards:
             return "cards/positions"
+        case .updateloyaltycard(let alias,_,_,_,_,_,_):
+            return "card/\(alias)"
         }
     }
     
@@ -104,6 +107,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return [APIParameterKey.cardAlias : alias]
         case .reordercards(let cards):
             return [APIParameterKey.cards : cards]
+        case .updateloyaltycard(_, let cardName, let cardNumber, let cardBarCode, let codeType, let nameOnTheCard, let notes):
+            return [APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : notes]
         }
     }
         

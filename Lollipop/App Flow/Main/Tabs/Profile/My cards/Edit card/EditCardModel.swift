@@ -9,6 +9,7 @@
 import Foundation
 
 struct EditCardModel : Codable {
-    
+    let message: String?
+    let data: Card?
 }
 
