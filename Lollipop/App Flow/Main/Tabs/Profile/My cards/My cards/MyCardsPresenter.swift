@@ -18,10 +18,11 @@ class MyCardsPresenter: NSObject, MyCardsPresenterProtocol  {
     var allCards = [Card]()
     var favoriteCards = [Card]()
     var selectedSegment = Int()
+    var selectedIndex = Int()
     
     func viewDidLoad() {
         self.selectedSegment = 0
-        interactor?.viewDidLoad()
+        interactor?.viewDidLoad(showSpinner: true)
     }
     
     func edit(){
@@ -46,7 +47,7 @@ extension MyCardsPresenter: MyCardsOutputInteractorProtocol {
             let favCards = cards.filter { ($0.is_favorite ?? 0) == 1}
             self.favoriteCards = favCards
             self.allCards = cards
-            self.datasource = cards
+            self.datasource = self.selectedSegment == 0 ? allCards : favoriteCards
             self.view?.reload()
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
@@ -70,6 +71,7 @@ extension MyCardsPresenter {
 
     
     func didSelectItemAt(index: IndexPath) {
+        self.selectedIndex = index.row
         let item = self.datasource[index.row]
         wireframe?.toDetails(card: item, delegate: self)
     }
@@ -94,5 +96,7 @@ extension MyCardsPresenter {
 
 //MARK: CardDetailsController delegate
 extension MyCardsPresenter {
-    
+    func updateCards(){
+        interactor?.viewDidLoad(showSpinner: false)
+    }
 }

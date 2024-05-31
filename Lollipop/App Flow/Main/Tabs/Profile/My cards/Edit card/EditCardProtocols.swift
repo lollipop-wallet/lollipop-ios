@@ -6,7 +6,8 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -18,6 +19,7 @@ protocol EditCardPresenterProtocol: AnyObject {
     
     func viewDidLoad()
     func delete()
+    func save(frontImage: UIImage, backImage: UIImage, cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String)
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -26,11 +28,13 @@ protocol EditCardInputInteractorProtocol: AnyObject {
     var presenter: EditCardOutputInteractorProtocol?  { get set }
     
     func viewDidLoad()
+    func updateCard(cardAlias: String, cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol EditCardOutputInteractorProtocol: AnyObject {
     func takeData(card: Card?, delegate: EditCardControllerProtocol?)
+    func parseUpdatedCardData(result: Result<EditCardModel, AFError>)
 }
 //MARK: View
 protocol EditCardViewProtocol: AnyObject {
@@ -44,6 +48,7 @@ protocol EditCardViewProtocol: AnyObject {
     func setNotesWith(notes: String)
     func setFrontCameraControlHidden(isHidden: Bool)
     func setBackCameraControlHidden(isHidden: Bool)
+    func validate(cardNameIsEmpty: Bool, cardCodeIsEmpty: Bool)
 }
 //MARK: Wireframe
 protocol EditCardWireframeProtocol: AnyObject {

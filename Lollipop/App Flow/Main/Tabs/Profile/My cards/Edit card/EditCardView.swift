@@ -91,6 +91,13 @@ class EditCardView: UIViewController, EditCardViewProtocol {
             self.backCardCameraViewPlaceholder.isHidden = isHidden
         }
     }
+    
+    func validate(cardNameIsEmpty: Bool, cardCodeIsEmpty: Bool){
+        self.cardNameField.borderWidth = 1
+        self.cardNameField.borderColor = cardNameIsEmpty ? AppColors.error : AppColors.black
+        self.cardBarcodeField.borderWidth = 1
+        self.cardBarcodeField.borderColor = cardCodeIsEmpty ? AppColors.error : AppColors.black
+    }
 
     //MARK: Actions
     @objc func onBackTap() {
@@ -102,7 +109,7 @@ class EditCardView: UIViewController, EditCardViewProtocol {
     }
     
     @objc func onSaveTap() {
-        
+        presenter?.save(frontImage: self.cardImageFrontSideView.image ?? UIImage(), backImage: self.cardImageBackSideView.image ?? UIImage(), cardName: self.cardNameField.textField.text ?? "", cardNumber: self.cardNumberField.textField.text ?? "", cardBarcode: self.cardBarcodeField.textField.text ?? "", nameOnCard: self.nameOnTheCardField.textField.text ?? "", note: self.cardNotesField.textView.text ?? "")
     }
     
     @objc func onFrontCameraTap() {

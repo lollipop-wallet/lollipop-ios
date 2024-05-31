@@ -82,7 +82,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
         case .reordercards:
             return "cards/positions"
         case .updateloyaltycard(let alias,_,_,_,_,_,_):
-            return "card/\(alias)"
+            return "cards/\(alias)?includes=partner"
         }
     }
     
@@ -108,7 +108,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
         case .reordercards(let cards):
             return [APIParameterKey.cards : cards]
         case .updateloyaltycard(_, let cardName, let cardNumber, let cardBarCode, let codeType, let nameOnTheCard, let notes):
-            return [APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : notes]
+            return [APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : notes, APIParameterKey.nameOnTheCard : nameOnTheCard]
         }
     }
         

@@ -27,7 +27,11 @@ class InputTextViewField: UIView {
     }
     
     open var text: String? {
-        set { self.textView.text = newValue ?? "" }
+        set {
+            self.textView.text = newValue ?? ""
+            self.textViewPlaceholder.layer.borderColor = (newValue ?? "").isEmpty ? AppColors.mediumGrey.cgColor : AppColors.black.cgColor
+            self.placeholderLabel.isHidden = !(newValue ?? "").isEmpty
+        }
         get { return textView.text }
     }
     
@@ -121,9 +125,9 @@ class InputTextViewField: UIView {
         let view = UIView()
         view.addSubview(textViewStack)
         textViewStack.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(12)
+            make.leading.equalToSuperview().offset(8)
             make.trailing.equalToSuperview().offset(-12)
-            make.top.equalToSuperview().offset(14)
+            make.top.equalToSuperview().offset(8)
             make.bottom.equalToSuperview().offset(-14)
         }
         view.addSubview(placeholderLabel)

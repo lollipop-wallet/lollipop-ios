@@ -26,7 +26,7 @@ protocol MyCardsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, M
 protocol MyCardsInputInteractorProtocol: AnyObject {
     
     var presenter: MyCardsOutputInteractorProtocol?  { get set }
-    func viewDidLoad()
+    func viewDidLoad(showSpinner: Bool)
    
 }
 //MARK: Interactor

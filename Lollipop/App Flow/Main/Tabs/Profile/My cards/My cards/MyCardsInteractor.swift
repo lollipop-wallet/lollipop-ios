@@ -13,10 +13,14 @@ class MyCardsInteractor: MyCardsInputInteractorProtocol {
     
     weak var presenter: MyCardsOutputInteractorProtocol?
     
-    func viewDidLoad() {
-        UIApplication.topViewController()?.view.showSpinner()
+    func viewDidLoad(showSpinner: Bool){
+        if showSpinner {
+            UIApplication.topViewController()?.view.showSpinner()
+        }
         APIClient.getusercards { [weak self] result in
-            UIApplication.topViewController()?.view.hideSpinner()
+            if showSpinner {
+                UIApplication.topViewController()?.view.hideSpinner()
+            }
             guard let self = self else {return}
             self.presenter?.parseCardsData(result: result)
         }

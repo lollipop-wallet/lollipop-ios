@@ -34,7 +34,7 @@ struct Card: Codable {
     let back_image: String?
     let code: String?
     let cardNumber: String?
-    let notes: String?
+    let note: String?
     let type: String?
     var is_favorite: Int?
     let card_template: CardTemplate?
@@ -59,7 +59,7 @@ struct Card: Codable {
         return (cardNumber ?? "").isEmpty
     }
     var isNotesHidden: Bool {
-        return (notes ?? "").isEmpty
+        return (note ?? "").isEmpty
     }
     var cardType: CardType {
         return (type ?? "") == "loyalty" ? .loyalty : .display

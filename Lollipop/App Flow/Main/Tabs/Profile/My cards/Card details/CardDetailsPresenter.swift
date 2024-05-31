@@ -39,7 +39,7 @@ extension CardDetailsPresenter: CardDetailsOutputInteractorProtocol {
         self.view?.setBarcodeHidden(isHidden: card?.isBarcodeHidden ?? false)
         self.view?.setNameOnTheCardWith(nameOnTheCard: card?.name_on_card ?? "")
         self.view?.setNameOnTheCardHidden(isHidden: card?.isNameOnTheCardHidden ?? false)
-        self.view?.setNotesWith(notes: card?.notes ?? "")
+        self.view?.setNotesWith(notes: card?.note ?? "")
         self.view?.setNotesHidden(isHidden: card?.isNotesHidden ?? false)
     }
 }
@@ -58,7 +58,8 @@ extension CardDetailsPresenter {
         self.view?.setBarcodeHidden(isHidden: card?.isBarcodeHidden ?? false)
         self.view?.setNameOnTheCardWith(nameOnTheCard: card?.name_on_card ?? "")
         self.view?.setNameOnTheCardHidden(isHidden: card?.isNameOnTheCardHidden ?? false)
-        self.view?.setNotesWith(notes: card?.notes ?? "")
+        self.view?.setNotesWith(notes: card?.note ?? "")
         self.view?.setNotesHidden(isHidden: card?.isNotesHidden ?? false)
+        self.delegate?.updateCards()
     }
 }
