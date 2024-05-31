@@ -30,7 +30,7 @@ protocol MyShopsInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol MyShopsOutputInteractorProtocol: AnyObject {
-    func parseShopsData(result: Result<MyShopsModel, AFError>, delegate: MyShopsControllerProtocol?)
+    func parseShopsData(result: Result<[Brand], AFError>, delegate: MyShopsControllerProtocol?)
     func parseFavoriteData(result: Result<SetToFavoriteModel, AFError>)
 }
 //MARK: View

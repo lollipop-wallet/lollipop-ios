@@ -113,7 +113,7 @@ class APIClient {
         performRequest(route: APIRouter.getpromotions, completion: completion)
     }
     
-    static func getfavoriteshops(completion:@escaping (Result<MyShopsModel, AFError>)->Void){
+    static func getfavoriteshops(completion:@escaping (Result<[Brand], AFError>)->Void){
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.getfavoriteshops, completion: completion)
     }

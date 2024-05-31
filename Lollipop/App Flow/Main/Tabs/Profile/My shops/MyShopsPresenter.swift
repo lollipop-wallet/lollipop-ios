@@ -24,11 +24,11 @@ class MyShopsPresenter: NSObject, MyShopsPresenterProtocol  {
 }
 
 extension MyShopsPresenter: MyShopsOutputInteractorProtocol {
-    func parseShopsData(result: Result<MyShopsModel, AFError>, delegate: MyShopsControllerProtocol?){
+    func parseShopsData(result: Result<[Brand], AFError>, delegate: MyShopsControllerProtocol?){
         self.delegate = delegate
         switch result {
         case .success(let model):
-            self.datasource = model.data ?? []
+            self.datasource = model
             self.view?.reload()
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)

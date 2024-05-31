@@ -10,6 +10,8 @@ import Alamofire
 
 
 enum APIRouter: URLRequestConvertible, Equatable {
+
+    
     
     case getconfig
     case login(email: String, password: String)
