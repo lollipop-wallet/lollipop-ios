@@ -8,10 +8,11 @@
 
 import UIKit
 import Alamofire
+import PhotosUI
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol ProfilePresenterProtocol: UITableViewDelegate, UITableViewDataSource, ProfileCellProtocol {
+protocol ProfilePresenterProtocol: UITableViewDelegate, UITableViewDataSource, ProfileCellProtocol, PHPickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var interactor: ProfileInputInteractorProtocol? { get set }
     var view: ProfileViewProtocol? { get set }
@@ -19,6 +20,7 @@ protocol ProfilePresenterProtocol: UITableViewDelegate, UITableViewDataSource, P
     
     func viewDidLoad()
     func myShops()
+    func editAvatar()
     
 }
 //MARK: Interactor
@@ -42,7 +44,7 @@ protocol ProfileViewProtocol: AnyObject {
     func setUserPhoneWith(phone: String)
     func setPhoneHidden(isHidden: Bool)
     func setUserAvatarWith(avatar: String)
-    
+    func setUserAvatarWithImage(image: UIImage)
 }
 //MARK: Wireframe
 protocol ProfileWireframeProtocol: AnyObject {

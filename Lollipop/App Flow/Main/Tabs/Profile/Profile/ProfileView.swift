@@ -46,9 +46,15 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         }
     }
     
+    func setUserAvatarWithImage(image: UIImage){
+        DispatchQueue.main.async {
+            self.avatarImageView.image = image
+        }
+    }
+    
     //MARK: Actions
     @objc func onEditAvatarTap() {
-        
+        presenter?.editAvatar()
     }
     
     @objc func onFavoriteShopsTap() {
