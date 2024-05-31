@@ -9,6 +9,8 @@ import UIKit
 
 class CardDetailsWireframe: CardDetailsWireframeProtocol {
     
+    static var card: Card?
+    static var delegate: CardDetailsControllerProtocol?
     
     static func createModule(CardDetailsRef: CardDetailsView) {
         let presenter: CardDetailsPresenterProtocol & CardDetailsOutputInteractorProtocol = CardDetailsPresenter()

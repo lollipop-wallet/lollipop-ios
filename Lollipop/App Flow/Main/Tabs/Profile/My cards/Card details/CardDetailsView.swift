@@ -42,6 +42,75 @@ class CardDetailsView: UIViewController, CardDetailsViewProtocol {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    //MARK: CardDetailsView Protocol
+    
+    func setFrontCardImageWith(image: String){
+        self.cardImageFrontSideView.imageFromURL(url: image)
+    }
+    
+    func setBackCardImageWith(image: String){
+        self.cardImageBackSideView.imageFromURL(url: image)
+    }
+    
+    func setCardNameWith(name: String){
+        DispatchQueue.main.async {
+            self.cardNameLabel.text = name
+        }
+    }
+    
+    func setCardNameHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.cardNameStack.isHidden = isHidden
+        }
+    }
+    
+    func setBarcodeWith(barcode: String){
+        DispatchQueue.main.async {
+            self.cardBarcodeLabel.text = barcode
+        }
+    }
+    func setBarcodeHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.barCodeStack.isHidden = isHidden
+        }
+    }
+    
+    func setCardNumberWith(number: String){
+        DispatchQueue.main.async {
+            self.cardNumberLabel.text = number
+        }
+    }
+    
+    func setCardNumberHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.cardNumberStack.isHidden = isHidden
+        }
+    }
+    
+    func setNameOnTheCardWith(nameOnTheCard: String){
+        DispatchQueue.main.async {
+            self.nameOnTheCardLabel.text = nameOnTheCard
+        }
+    }
+    
+    func setNameOnTheCardHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.nameOnTheCardStack.isHidden = isHidden
+        }
+    }
+    
+    func setNotesWith(notes: String){
+        DispatchQueue.main.async {
+            self.cardNotesLabel.text = notes
+        }
+    }
+    
+    func setNotesHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.notesStack.isHidden = isHidden
+        }
+    }
+    
     //MARK: Actions
     @objc func onBackTap() {
         popBack(2)

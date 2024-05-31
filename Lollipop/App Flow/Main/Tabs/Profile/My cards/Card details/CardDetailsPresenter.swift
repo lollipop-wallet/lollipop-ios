@@ -13,11 +13,23 @@ class CardDetailsPresenter: CardDetailsPresenterProtocol  {
     weak var view: CardDetailsViewProtocol?
     var wireframe: CardDetailsWireframeProtocol?
     
+    var card: Card?
+    var delegate: CardDetailsControllerProtocol?
+    
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
+    
     func edit() {
         wireframe?.toEdit()
     }
 }
 
 extension CardDetailsPresenter: CardDetailsOutputInteractorProtocol {
-    
+    func takeData(card: Card?, delegate: CardDetailsControllerProtocol?){
+        self.card = card
+        self.delegate = delegate
+    }
 }
+
+
