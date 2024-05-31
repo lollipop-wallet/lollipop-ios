@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -16,6 +17,7 @@ protocol ProfilePresenterProtocol: UITableViewDelegate, UITableViewDataSource, P
     var view: ProfileViewProtocol? { get set }
     var wireframe:ProfileWireframeProtocol? { get set }
     
+    func viewDidLoad()
     func myShops()
     
 }
@@ -24,19 +26,22 @@ protocol ProfilePresenterProtocol: UITableViewDelegate, UITableViewDataSource, P
 protocol ProfileInputInteractorProtocol: AnyObject {
     
     var presenter: ProfileOutputInteractorProtocol?  { get set }
-    
+    func viewDidLoad()
    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol ProfileOutputInteractorProtocol: AnyObject {
-    
-
+    func parseUserData(result: Result<ProfileModel, AFError>)
 }
 //MARK: View
 protocol ProfileViewProtocol: AnyObject {
     
     var presenter: ProfilePresenterProtocol?  { get set }
+    func setUserNameWith(name: String)
+    func setUserPhoneWith(phone: String)
+    func setPhoneHidden(isHidden: Bool)
+    func setUserAvatarWith(avatar: String)
     
 }
 //MARK: Wireframe

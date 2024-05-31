@@ -88,12 +88,12 @@ extension ProfileView {
         self.nameLabel.font = .inter(ofSize: 18, name: .bold)
         self.nameLabel.textAlignment = .left
         self.nameLabel.textColor = AppColors.white
-        self.nameLabel.text = "Aco Draskovic"
+        self.nameLabel.numberOfLines = 0
+        self.nameLabel.lineBreakMode = .byWordWrapping
         
         self.phoneLabel.font = .inter(ofSize: 14, name: .regular)
         self.phoneLabel.textAlignment = .left
         self.phoneLabel.textColor = AppColors.white.withAlphaComponent(0.6)
-        self.phoneLabel.text = "+382 67 231 868"
         
         lazy var avatarTextStack: UIStackView = {
             let stack = UIStackView(arrangedSubviews: [self.nameLabel, self.phoneLabel])

@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 class ProfilePresenter: NSObject, ProfilePresenterProtocol  {
     
@@ -18,10 +19,26 @@ class ProfilePresenter: NSObject, ProfilePresenterProtocol  {
     func myShops(){
         wireframe?.toMyShops()
     }
+    
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
 }
 
 extension ProfilePresenter: ProfileOutputInteractorProtocol {
-    
+    func parseUserData(result: Result<ProfileModel, AFError>) {
+        switch result {
+        case .success(let model):
+            self.view?.setUserNameWith(name: (model.name ?? "").isEmpty ? LocalizedTitle.signIn.localized : model.name ?? "")
+            if !(model.avatar ?? "").isEmpty{
+                self.view?.setUserAvatarWith(avatar: model.avatar ?? "")
+            }
+            self.view?.setUserPhoneWith(phone: model.phone ?? "")
+            self.view?.setPhoneHidden(isHidden: !(model.phone ?? "").isEmpty)
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
 }
 
 //MARK: UITableViewDelegate&Datasource

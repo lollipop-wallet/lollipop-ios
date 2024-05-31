@@ -21,6 +21,29 @@ class ProfileView: UIViewController, ProfileViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        viewDidLoad()
+    }
+    
+    //MARK: ProfileView Protocol
+    func setUserNameWith(name: String){
+        DispatchQueue.main.async {
+            self.nameLabel.text = name
+        }
+    }
+    func setUserPhoneWith(phone: String){
+        DispatchQueue.main.async {
+            self.phoneLabel.text = phone
+        }
+    }
+    func setPhoneHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.phoneLabel.isHidden = isHidden
+        }
+    }
+    func setUserAvatarWith(avatar: String){
+        DispatchQueue.main.async {
+            self.avatarImageView.imageFromURL(url: avatar)
+        }
     }
     
     //MARK: Actions

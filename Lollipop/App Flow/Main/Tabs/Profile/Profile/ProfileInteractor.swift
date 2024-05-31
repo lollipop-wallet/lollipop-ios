@@ -12,4 +12,8 @@ import UIKit
 class ProfileInteractor: ProfileInputInteractorProtocol {
     
     weak var presenter: ProfileOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        
+    }
 }
