@@ -33,7 +33,10 @@ class InputField: UIView {
     }
     
     open var text: String? {
-        set { self.textField.text = newValue ?? "" }
+        set 
+            {   self.textField.text = newValue ?? ""
+                self.textFieldPlaceholder.layer.borderColor = (newValue ?? "").isEmpty ? AppColors.mediumGrey.cgColor : AppColors.black.cgColor
+            }
         get { return textField.text }
     }
     
