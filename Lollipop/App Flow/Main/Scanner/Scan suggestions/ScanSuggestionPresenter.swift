@@ -75,5 +75,7 @@ extension ScanSuggestionPresenter {
     }
     
     func didSelectItemAt(index: IndexPath) {
+        let item = self.datasource[index.section][index.row]
+        wireframe?.toScannerWith(card: item)
     }
 }

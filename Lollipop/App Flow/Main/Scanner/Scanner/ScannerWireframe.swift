@@ -9,6 +9,7 @@ import UIKit
 
 class ScannerWireframe: ScannerWireframeProtocol {
     
+    static var card: Card?
     
     static func createModule(ScannerRef: ScannerView) {
         let presenter: ScannerPresenterProtocol & ScannerOutputInteractorProtocol = ScannerPresenter()

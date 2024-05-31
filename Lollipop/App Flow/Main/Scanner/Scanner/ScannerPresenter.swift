@@ -13,11 +13,17 @@ class ScannerPresenter: NSObject, ScannerPresenterProtocol  {
     var interactor : ScannerInputInteractorProtocol?
     weak var view: ScannerViewProtocol?
     var wireframe: ScannerWireframeProtocol?
+    var card: Card?
     
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
 }
 
 extension ScannerPresenter: ScannerOutputInteractorProtocol {
-    
+    func takeDataWith(card: Card?){
+        self.card = card
+    }
 }
 
 //MARK: Barcodescanner delegate

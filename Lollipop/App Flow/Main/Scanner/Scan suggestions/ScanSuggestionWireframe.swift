@@ -19,4 +19,10 @@ class ScanSuggestionWireframe: ScanSuggestionWireframeProtocol {
         ScanSuggestionRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toScannerWith(card: Card?){
+        let vc = ScannerView()
+        ScannerWireframe.card = card
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

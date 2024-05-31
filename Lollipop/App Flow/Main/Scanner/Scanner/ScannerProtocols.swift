@@ -17,20 +17,20 @@ protocol ScannerPresenterProtocol: BarcodeScannerCodeDelegate, BarcodeScannerErr
     var view: ScannerViewProtocol? { get set }
     var wireframe:ScannerWireframeProtocol? { get set }
     
+    func viewDidLoad()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
 protocol ScannerInputInteractorProtocol: AnyObject {
     
     var presenter: ScannerOutputInteractorProtocol?  { get set }
-    
+    func viewDidLoad()
    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol ScannerOutputInteractorProtocol: AnyObject {
-    
-
+    func takeDataWith(card: Card?)
 }
 //MARK: View
 protocol ScannerViewProtocol: AnyObject {
@@ -40,6 +40,5 @@ protocol ScannerViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol ScannerWireframeProtocol: AnyObject {
-
-    
+    static var card: Card? { get set }
 }

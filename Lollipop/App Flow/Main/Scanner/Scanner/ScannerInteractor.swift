@@ -12,4 +12,9 @@ import UIKit
 class ScannerInteractor: ScannerInputInteractorProtocol {
     
     weak var presenter: ScannerOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        let card = ScannerWireframe.card
+        presenter?.takeDataWith(card: card)
+    }
 }
