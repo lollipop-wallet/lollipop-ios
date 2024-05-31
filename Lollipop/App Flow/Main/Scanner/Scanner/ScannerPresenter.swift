@@ -30,6 +30,7 @@ extension ScannerPresenter: ScannerOutputInteractorProtocol {
 extension ScannerPresenter {
     func scanner(_ controller: BarcodeScanner.BarcodeScannerViewController, didCaptureCode code: String, type: String) {
         print("ovo je kod: ", code)
+        wireframe?.toNewCardWith(card: self.card, barcode: code)
     }
     
     func scanner(_ controller: BarcodeScanner.BarcodeScannerViewController, didReceiveError error: any Error) {

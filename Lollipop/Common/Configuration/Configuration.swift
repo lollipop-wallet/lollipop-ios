@@ -70,6 +70,9 @@ struct Configuration {
         }
     }
     
+    //MARK: Static loyalty card type
+    static let loyaltyType = "loyalty"
+    
     //MARK: Current app id
     static let currentAppId = "1"
     

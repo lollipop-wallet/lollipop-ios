@@ -9,6 +9,8 @@ import UIKit
 
 class NewLoyaltyCardWireframe: NewLoyaltyCardWireframeProtocol {
     
+    static var card: Card?
+    static var barcode: String?
     
     static func createModule(NewLoyaltyCardRef: NewLoyaltyCardView) {
         let presenter: NewLoyaltyCardPresenterProtocol & NewLoyaltyCardOutputInteractorProtocol = NewLoyaltyCardPresenter()

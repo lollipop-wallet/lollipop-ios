@@ -12,4 +12,10 @@ import UIKit
 class NewLoyaltyCardInteractor: NewLoyaltyCardInputInteractorProtocol {
     
     weak var presenter: NewLoyaltyCardOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        let card = NewLoyaltyCardWireframe.card
+        let barcode = NewLoyaltyCardWireframe.barcode ?? ""
+        presenter?.takeDataWith(card: card, barcode: barcode)
+    }
 }

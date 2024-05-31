@@ -196,4 +196,9 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performUpload(route: APIRouter.updateavatar(avatar: avatar), completion: completion)
     }
+    
+    static func createloyaltycard(cardName: String, cardNumber: String, cardBarCode: String, nameOnTheCard: String, note: String, partnerAlias: String, templateId: String, completion:@escaping (Result<NewLoyaltyCardModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.createloyaltycard(cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, nameOnTheCard: nameOnTheCard, note: note, partnerAlias: partnerAlias, templateId: templateId), completion: completion)
+    }
 }

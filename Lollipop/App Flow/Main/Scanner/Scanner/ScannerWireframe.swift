@@ -20,4 +20,11 @@ class ScannerWireframe: ScannerWireframeProtocol {
         ScannerRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toNewCardWith(card: Card?, barcode: String){
+        let vc = NewLoyaltyCardView()
+        NewLoyaltyCardWireframe.card = card
+        NewLoyaltyCardWireframe.barcode = barcode
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

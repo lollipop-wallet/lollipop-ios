@@ -9,6 +9,7 @@
 import Foundation
 
 struct NewLoyaltyCardModel : Codable {
-    
+    let message: String?
+    let data: Card?
 }
 

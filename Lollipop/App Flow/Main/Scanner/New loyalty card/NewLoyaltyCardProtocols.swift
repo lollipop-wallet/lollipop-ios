@@ -18,6 +18,7 @@ protocol NewLoyaltyCardPresenterProtocol: PHPickerViewControllerDelegate, UIImag
     var view: NewLoyaltyCardViewProtocol? { get set }
     var wireframe:NewLoyaltyCardWireframeProtocol? { get set }
     
+    func viewDidLoad()
     func camera(isFront: Bool)
 }
 //MARK: Interactor
@@ -25,23 +26,28 @@ protocol NewLoyaltyCardPresenterProtocol: PHPickerViewControllerDelegate, UIImag
 protocol NewLoyaltyCardInputInteractorProtocol: AnyObject {
     
     var presenter: NewLoyaltyCardOutputInteractorProtocol?  { get set }
-    
-   
+    func viewDidLoad()
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol NewLoyaltyCardOutputInteractorProtocol: AnyObject {
-    
-
+    func takeDataWith(card: Card?, barcode: String)
 }
 //MARK: View
 protocol NewLoyaltyCardViewProtocol: AnyObject {
     
     var presenter: NewLoyaltyCardPresenterProtocol?  { get set }
     func setFrontCardImageWith(image: UIImage, isFront: Bool)
+    
+    func setFrontCardImageWith(image: String)
+    func setBackCardImageWith(image: String)
+    func setCardNameWith(name: String)
+    func setBarcodeWith(barcode: String)
+    func setFrontCameraControlHidden(isHidden: Bool)
+    func setBackCameraControlHidden(isHidden: Bool)
 }
 //MARK: Wireframe
 protocol NewLoyaltyCardWireframeProtocol: AnyObject {
-
-    
+    static var card: Card? { get set }
+    static var barcode: String? { get set }
 }

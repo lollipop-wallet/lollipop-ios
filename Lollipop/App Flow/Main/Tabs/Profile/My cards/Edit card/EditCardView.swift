@@ -80,6 +80,7 @@ class EditCardView: UIViewController, EditCardViewProtocol {
             self.cardNotesField.text = notes
         }
     }
+    
     func setFrontCameraControlHidden(isHidden: Bool){
         DispatchQueue.main.async {
             self.frontCardCameraViewPlaceholder.isHidden = isHidden

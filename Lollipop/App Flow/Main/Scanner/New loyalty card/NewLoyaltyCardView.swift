@@ -27,6 +27,7 @@ class NewLoyaltyCardView: UIViewController, NewLoyaltyCardViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +48,42 @@ class NewLoyaltyCardView: UIViewController, NewLoyaltyCardViewProtocol {
             }else{
                 self.cardImageBackSideView.image = image
             }
+        }
+    }
+    
+    func setFrontCardImageWith(image: String){
+        DispatchQueue.main.async {
+            self.cardImageFrontSideView.imageFromURL(url: image)
+        }
+    }
+    
+    func setBackCardImageWith(image: String){
+        DispatchQueue.main.async {
+            self.cardImageBackSideView.imageFromURL(url: image)
+        }
+    }
+    
+    func setCardNameWith(name: String){
+        DispatchQueue.main.async {
+            self.cardNameField.text = name
+        }
+    }
+    
+    func setBarcodeWith(barcode: String){
+        DispatchQueue.main.async {
+            self.cardBarcodeField.text = barcode
+        }
+    }
+    
+    func setFrontCameraControlHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.frontCardCameraViewPlaceholder.isHidden = isHidden
+        }
+    }
+    
+    func setBackCameraControlHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.backCardCameraViewPlaceholder.isHidden = isHidden
         }
     }
 

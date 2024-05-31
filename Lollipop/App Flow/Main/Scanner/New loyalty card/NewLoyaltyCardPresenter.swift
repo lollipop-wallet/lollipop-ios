@@ -16,8 +16,14 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
     weak var view: NewLoyaltyCardViewProtocol?
     var wireframe: NewLoyaltyCardWireframeProtocol?
     
+    var card: Card?
+    var barcode: String?
     var isFrontCard = Bool()
     var config = PHPickerConfiguration(photoLibrary: .shared())
+    
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
 
     func camera(isFront: Bool){
         config.selectionLimit = 1
@@ -27,7 +33,7 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
             { [weak self] _ in
                 guard let self = self  else {return}
                 if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                    var imagePicker = UIImagePickerController()
+                    let imagePicker = UIImagePickerController()
                     imagePicker.delegate = self
                     imagePicker.sourceType = .camera;
                     imagePicker.allowsEditing = false
@@ -48,7 +54,16 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
 }
 
 extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
-    
+    func takeDataWith(card: Card?, barcode: String) {
+        self.card = card
+        self.barcode = barcode
+        self.view?.setFrontCardImageWith(image: card?.cardType == .loyalty ? card?.image_front ?? "" : card?.image_front ?? "")
+        self.view?.setBackCardImageWith(image: card?.cardType == .loyalty ? card?.image_back ?? "" : card?.image_back ?? "")
+        self.view?.setCardNameWith(name: card?.name ?? "")
+        self.view?.setBarcodeWith(barcode: barcode)
+        self.view?.setFrontCameraControlHidden(isHidden: card?.cardType == .loyalty)
+        self.view?.setBackCameraControlHidden(isHidden: card?.cardType == .loyalty)
+    }
 }
 
 //MARK: PHPickerController Delegate & ImagePicker delegate

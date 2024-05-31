@@ -41,4 +41,5 @@ protocol ScannerViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol ScannerWireframeProtocol: AnyObject {
     static var card: Card? { get set }
+    func toNewCardWith(card: Card?, barcode: String)
 }
