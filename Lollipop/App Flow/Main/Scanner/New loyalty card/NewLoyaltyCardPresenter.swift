@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 import PhotosUI
-
+import Alamofire
 
 class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
     
@@ -51,6 +51,18 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
             }
        ])
     }
+    
+    func save(frontImage: UIImage, backImage: UIImage, cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String) {
+        if self.card?.cardType == .loyalty {
+            guard !cardName.isEmpty, !cardBarcode.isEmpty else {
+                view?.validate(cardNameIsEmpty: cardName.isEmpty, cardCodeIsEmpty: cardBarcode.isEmpty)
+                return
+            }
+            interactor?.createCard(cardName: cardName, cardNumber: cardNumber, cardBarcode: self.barcode ?? "", nameOnCard: nameOnCard, note: note, partnerAlias: card?.partner?.alias ?? "", cardTemplateId: card?.id ?? 0)
+        }else{
+            
+        }
+    }
 }
 
 extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
@@ -63,6 +75,15 @@ extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
         self.view?.setBarcodeWith(barcode: barcode)
         self.view?.setFrontCameraControlHidden(isHidden: card?.cardType == .loyalty)
         self.view?.setBackCameraControlHidden(isHidden: card?.cardType == .loyalty)
+    }
+    
+    func parseNewCardData(result: Result<NewLoyaltyCardModel, AFError>){
+        switch result {
+        case .success(let model):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: model.message ?? "", shouldDismiss: false)
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
     }
 }
 

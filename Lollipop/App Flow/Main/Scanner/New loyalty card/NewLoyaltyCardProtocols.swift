@@ -8,7 +8,7 @@
 
 import Foundation
 import PhotosUI
-
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -20,6 +20,8 @@ protocol NewLoyaltyCardPresenterProtocol: PHPickerViewControllerDelegate, UIImag
     
     func viewDidLoad()
     func camera(isFront: Bool)
+    func save(frontImage: UIImage, backImage: UIImage, cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String)
+
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -27,11 +29,13 @@ protocol NewLoyaltyCardInputInteractorProtocol: AnyObject {
     
     var presenter: NewLoyaltyCardOutputInteractorProtocol?  { get set }
     func viewDidLoad()
+    func createCard(cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String, partnerAlias: String, cardTemplateId: Int)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol NewLoyaltyCardOutputInteractorProtocol: AnyObject {
     func takeDataWith(card: Card?, barcode: String)
+    func parseNewCardData(result: Result<NewLoyaltyCardModel, AFError>)
 }
 //MARK: View
 protocol NewLoyaltyCardViewProtocol: AnyObject {
@@ -45,6 +49,8 @@ protocol NewLoyaltyCardViewProtocol: AnyObject {
     func setBarcodeWith(barcode: String)
     func setFrontCameraControlHidden(isHidden: Bool)
     func setBackCameraControlHidden(isHidden: Bool)
+    func validate(cardNameIsEmpty: Bool, cardCodeIsEmpty: Bool)
+
 }
 //MARK: Wireframe
 protocol NewLoyaltyCardWireframeProtocol: AnyObject {

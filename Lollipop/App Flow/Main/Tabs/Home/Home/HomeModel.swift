@@ -27,6 +27,7 @@ struct User: Codable {
 }
 
 struct Card: Codable {
+    let id: Int?
     let name: String?
     let alias: String?
     let name_on_card: String?

@@ -31,4 +31,5 @@ struct APIParameterKey {
     static let avatar = "avatar"
     static let partnerAlias = "partner_alias"
     static let cardTemplateId = "card_template_id"
+    static let type = "type"
 }

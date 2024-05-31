@@ -32,7 +32,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
     case updateloyaltycard(cardAlias: String, cardName: String, cardNumber: String, cardBarCode: String, codeType: String, nameOnTheCard: String, notes: String)
     case getprofile
     case updateavatar(avatar: Data)
-    case createloyaltycard(cardName: String, cardNumber: String, cardBarCode: String, nameOnTheCard: String, note: String, partnerAlias: String, templateId: String)
+    case createloyaltycard(cardName: String, cardNumber: String, cardBarCode: String, nameOnTheCard: String, codeType: String, note: String, partnerAlias: String, templateId: String)
 
     
     // MARK: - HTTPMethod
@@ -118,8 +118,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return [APIParameterKey.cards : cards]
         case .updateloyaltycard(_, let cardName, let cardNumber, let cardBarCode, let codeType, let nameOnTheCard, let notes):
             return [APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : notes, APIParameterKey.nameOnTheCard : nameOnTheCard]
-        case .createloyaltycard(let cardName, let cardNumber, let cardBarCode, let nameOnTheCard, let note, let partnerAlias, let templateId):
-            return [APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : Configuration.loyaltyType, APIParameterKey.note : note, APIParameterKey.partnerAlias : partnerAlias, APIParameterKey.cardTemplateId : templateId]
+        case .createloyaltycard(let cardName, let cardNumber, let cardBarCode, let nameOnTheCard, let codeType, let note, let partnerAlias, let templateId):
+            return [APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : note, APIParameterKey.partnerAlias : partnerAlias, APIParameterKey.cardTemplateId : templateId, APIParameterKey.type : Configuration.loyaltyType]
         }
     }
         
