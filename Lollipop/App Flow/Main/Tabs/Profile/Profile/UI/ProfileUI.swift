@@ -20,6 +20,8 @@ extension ProfileView {
         
         self.avatarImageView.layer.cornerRadius = 38
         self.avatarImageView.layer.masksToBounds = true
+        self.avatarImageView.clipsToBounds = true
+        self.avatarImageView.contentMode = .scaleAspectFill
         self.avatarImageView.image = UIImage(named: AssetTitles.avatarIcon)
         
         lazy var editIcon: UIImageView = {
