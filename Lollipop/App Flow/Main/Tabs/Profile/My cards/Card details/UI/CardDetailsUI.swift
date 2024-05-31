@@ -167,20 +167,16 @@ extension CardDetailsView {
         self.cardNameLabel.textColor = AppColors.black
         self.cardNameLabel.textAlignment = .left
         
-        lazy var cardNameStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [staticCartNameLabel, self.cardNameLabel])
-            stack.axis = .vertical
-            stack.alignment = .fill
-            stack.distribution = .fill
-            stack.spacing = 8
-            stack.snp.makeConstraints { make in
-                make.width.equalTo(self.view.frame.width - 40)
-            }
-            return stack
-        }()
+        self.cardNameStack = UIStackView(arrangedSubviews: [staticCartNameLabel, self.cardNameLabel])
+        self.cardNameStack.axis = .vertical
+        self.cardNameStack.alignment = .fill
+        self.cardNameStack.distribution = .fill
+        self.cardNameStack.spacing = 8
+        self.cardNameStack.snp.makeConstraints { make in
+            make.width.equalTo(self.view.frame.width - 40)
+        }
         
         ///Barcode
-        
         lazy var staticBarcodeLabel: UILabel = {
             let label = UILabel()
             label.font = .inter(ofSize: 16, name: .semibold)
@@ -194,17 +190,61 @@ extension CardDetailsView {
         self.cardBarcodeLabel.textColor = AppColors.black
         self.cardBarcodeLabel.textAlignment = .left
         
-        lazy var barcodeStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [staticBarcodeLabel, self.cardBarcodeLabel])
-            stack.axis = .vertical
-            stack.alignment = .fill
-            stack.distribution = .fill
-            stack.spacing = 8
-            stack.snp.makeConstraints { make in
-                make.width.equalTo(self.view.frame.width - 40)
-            }
-            return stack
+        self.barCodeStack = UIStackView(arrangedSubviews: [staticBarcodeLabel, self.cardBarcodeLabel])
+        self.barCodeStack.axis = .vertical
+        self.barCodeStack.alignment = .fill
+        self.barCodeStack.distribution = .fill
+        self.barCodeStack.spacing = 8
+        self.barCodeStack.snp.makeConstraints { make in
+            make.width.equalTo(self.view.frame.width - 40)
+        }
+
+        
+        ///Card number
+        lazy var staticCardNumberLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .semibold)
+            label.textColor = AppColors.black
+            label.textAlignment = .left
+            label.text = "\(LocalizedTitle.cardNumber.localized):"
+            return label
         }()
+        
+        self.cardNumberLabel.font = .inter(ofSize: 14, name: .regular)
+        self.cardNumberLabel.textColor = AppColors.black
+        self.cardNumberLabel.textAlignment = .left
+        
+        self.cardNumberStack = UIStackView(arrangedSubviews: [staticCardNumberLabel, self.cardNumberLabel])
+        self.cardNumberStack.axis = .vertical
+        self.cardNumberStack.alignment = .fill
+        self.cardNumberStack.distribution = .fill
+        self.cardNumberStack.spacing = 8
+        self.cardNumberStack.snp.makeConstraints { make in
+            make.width.equalTo(self.view.frame.width - 40)
+        }
+        
+        ///Name on the card
+        lazy var staticNameOnTheCardLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .semibold)
+            label.textColor = AppColors.black
+            label.textAlignment = .left
+            label.text = "\(LocalizedTitle.nameOnTheCard.localized):"
+            return label
+        }()
+        
+        self.nameOnTheCardLabel.font = .inter(ofSize: 14, name: .regular)
+        self.nameOnTheCardLabel.textColor = AppColors.black
+        self.nameOnTheCardLabel.textAlignment = .left
+        
+        self.nameOnTheCardStack = UIStackView(arrangedSubviews: [staticNameOnTheCardLabel, self.nameOnTheCardLabel])
+        self.nameOnTheCardStack.axis = .vertical
+        self.nameOnTheCardStack.alignment = .fill
+        self.nameOnTheCardStack.distribution = .fill
+        self.nameOnTheCardStack.spacing = 8
+        self.nameOnTheCardStack.snp.makeConstraints { make in
+            make.width.equalTo(self.view.frame.width - 40)
+        }
         
         ///Notes
         lazy var staticNotesLabel: UILabel = {
@@ -223,20 +263,17 @@ extension CardDetailsView {
         self.cardNotesLabel.lineBreakMode = .byWordWrapping
         self.cardNotesLabel.text = "Volutpat tempus mi sed vitae nunc amet diam integer. Interdum congue suspendisse in sit amet. Nisi vitae sed cras eget massa vel sagittis. Ultrices tristique eu varius mauris blandit aliquam. Vitae pharetra auctor sit eget quam sapien tempor."
         
-        lazy var notesStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [staticNotesLabel, self.cardNotesLabel])
-            stack.axis = .vertical
-            stack.alignment = .fill
-            stack.distribution = .fill
-            stack.spacing = 8
-            stack.snp.makeConstraints { make in
-                make.width.equalTo(self.view.frame.width - 40)
-            }
-            return stack
-        }()
+        self.notesStack = UIStackView(arrangedSubviews: [staticNotesLabel, self.cardNotesLabel])
+        self.notesStack.axis = .vertical
+        self.notesStack.alignment = .fill
+        self.notesStack.distribution = .fill
+        self.notesStack.spacing = 8
+        self.notesStack.snp.makeConstraints { make in
+            make.width.equalTo(self.view.frame.width - 40)
+        }
         
         lazy var mainStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [mainCardStack, cardNameStack, barcodeStack, notesStack])
+            let stack = UIStackView(arrangedSubviews: [mainCardStack, self.cardNameStack, self.cardNumberStack, self.nameOnTheCardStack, self.barCodeStack, self.notesStack])
             stack.axis = .vertical
             stack.alignment = .center
             stack.distribution = .fill

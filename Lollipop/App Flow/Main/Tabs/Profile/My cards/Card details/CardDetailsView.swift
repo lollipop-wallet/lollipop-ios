@@ -17,6 +17,14 @@ class CardDetailsView: UIViewController, CardDetailsViewProtocol {
     var cardNotesLabel = UILabel()
     var cardImageFrontSideView = UIImageView()
     var cardImageBackSideView = UIImageView()
+    var nameOnTheCardLabel = UILabel()
+    var cardNumberLabel = UILabel()
+    
+    var nameOnTheCardStack = UIStackView()
+    var barCodeStack = UIStackView()
+    var notesStack = UIStackView()
+    var cardNumberStack = UIStackView()
+    var cardNameStack = UIStackView()
     
     var presenter: CardDetailsPresenterProtocol?
 
