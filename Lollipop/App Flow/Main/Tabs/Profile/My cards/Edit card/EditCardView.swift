@@ -27,6 +27,7 @@ class EditCardView: UIViewController, EditCardViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +37,48 @@ class EditCardView: UIViewController, EditCardViewProtocol {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    //MARK: EditCardView Protocol
+    
+    func setFrontCardImageWith(image: String){
+        self.cardImageFrontSideView.imageFromURL(url: image)
+    }
+    
+    func setBackCardImageWith(image: String){
+        self.cardImageBackSideView.imageFromURL(url: image)
+    }
+    
+    func setCardNameWith(name: String){
+        DispatchQueue.main.async {
+            self.cardNameField.text = name
+        }
+    }
+    
+    func setBarcodeWith(barcode: String){
+        DispatchQueue.main.async {
+            self.cardBarcodeField.text = barcode
+        }
+    }
+    
+    func setCardNumberWith(number: String){
+        DispatchQueue.main.async {
+            self.cardNumberField.text = number
+        }
+    }
+    
+    
+    func setNameOnTheCardWith(nameOnTheCard: String){
+        DispatchQueue.main.async {
+            self.nameOnTheCardField.text = nameOnTheCard
+        }
+    }
+    
+    
+    func setNotesWith(notes: String){
+        DispatchQueue.main.async {
+            self.cardNotesField.text = notes
+        }
     }
 
     //MARK: Actions

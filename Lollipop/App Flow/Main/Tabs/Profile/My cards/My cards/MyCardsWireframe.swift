@@ -20,8 +20,10 @@ class MyCardsWireframe: MyCardsWireframeProtocol {
         
     }
     
-    func toDetails() {
+    func toDetails(card: Card?, delegate: CardDetailsControllerProtocol?){
         let vc = CardDetailsView()
+        CardDetailsWireframe.card = card
+        CardDetailsWireframe.delegate = delegate
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -12,4 +12,10 @@ import UIKit
 class EditCardInteractor: EditCardInputInteractorProtocol {
     
     weak var presenter: EditCardOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        let card = EditCardWireframe.card
+        let delegate = EditCardWireframe.delegate
+        presenter?.takeData(card: card, delegate: delegate)
+    }
 }

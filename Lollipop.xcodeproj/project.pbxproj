@@ -231,6 +231,7 @@
 		623C1D362C08380E00296759 /* Reorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C1D352C08380E00296759 /* Reorder.swift */; };
 		623C1D382C083B1000296759 /* PositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C1D372C083B1000296759 /* PositionModel.swift */; };
 		623C1D3A2C08CAA200296759 /* JSONEncoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C1D392C08CAA200296759 /* JSONEncoder+Extension.swift */; };
+		623C1D3C2C09B4C900296759 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C1D3B2C09B4C900296759 /* CardType.swift */; };
 		625C15282C025FFA001760C3 /* HomeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C15272C025FFA001760C3 /* HomeListModel.swift */; };
 		626906AE2BE0A8D100BF5F62 /* MyShopsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */; };
 		626906AF2BE0A8D100BF5F62 /* MyShopsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A92BE0A8D100BF5F62 /* MyShopsProtocols.swift */; };
@@ -731,6 +732,7 @@
 		623C1D352C08380E00296759 /* Reorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reorder.swift; sourceTree = "<group>"; };
 		623C1D372C083B1000296759 /* PositionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionModel.swift; sourceTree = "<group>"; };
 		623C1D392C08CAA200296759 /* JSONEncoder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Extension.swift"; sourceTree = "<group>"; };
+		623C1D3B2C09B4C900296759 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
 		625C15272C025FFA001760C3 /* HomeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListModel.swift; sourceTree = "<group>"; };
 		626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsPresenter.swift; sourceTree = "<group>"; };
 		626906A92BE0A8D100BF5F62 /* MyShopsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsProtocols.swift; sourceTree = "<group>"; };
@@ -1463,6 +1465,7 @@
 				2CA5D3272BFF2376006DB45E /* OTPType.swift */,
 				62E4773F2C01A6380077BA84 /* HomeItemType.swift */,
 				2CD069082C034DA20098B029 /* TabBarIndex.swift */,
+				623C1D3B2C09B4C900296759 /* CardType.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -3569,6 +3572,7 @@
 				62214AE52BD6E17600ABF38E /* OnboardingPresenter.swift in Sources */,
 				62F6CE7F2BDE6E0400C4775C /* TermsUI.swift in Sources */,
 				62214AE62BD6E17600ABF38E /* OnboardingProtocols.swift in Sources */,
+				623C1D3C2C09B4C900296759 /* CardType.swift in Sources */,
 				2CDDA73E2BDA257600B6C8B5 /* OTPUI.swift in Sources */,
 				62214AE72BD6E17600ABF38E /* OnboardingInteractor.swift in Sources */,
 				62F6CE242BDD5B0200C4775C /* ChangePasswordUI.swift in Sources */,

@@ -33,6 +33,8 @@ struct Card: Codable {
     let front_image: String?
     let back_image: String?
     let code: String?
+    let cardNumber: String?
+    let notes: String?
     let type: String?
     var is_favorite: Int?
     let card_template: CardTemplate?
@@ -43,6 +45,24 @@ struct Card: Codable {
     }
     var favoriteIconTintColor: UIColor {
         return (is_favorite ?? 0) == 1 ? AppColors.brandPrimary : AppColors.darkGrey
+    }
+    var isCardNameHidden: Bool {
+        return (name ?? "").isEmpty
+    }
+    var isNameOnTheCardHidden: Bool {
+        return (name_on_card ?? "").isEmpty
+    }
+    var isBarcodeHidden: Bool {
+        return (code ?? "").isEmpty
+    }
+    var isCardNumberHidden: Bool {
+        return (cardNumber ?? "").isEmpty
+    }
+    var isNotesHidden: Bool {
+        return (notes ?? "").isEmpty
+    }
+    var cardType: CardType {
+        return (type ?? "") == "loyalty" ? .loyalty : .display
     }
 }
 

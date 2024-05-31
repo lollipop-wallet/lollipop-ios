@@ -22,8 +22,10 @@ class CardDetailsWireframe: CardDetailsWireframeProtocol {
         
     }
     
-    func toEdit(){
+    func toEdit(card: Card?, delegate: EditCardControllerProtocol?){
         let vc = EditCardView()
+        EditCardWireframe.card = card
+        EditCardWireframe.delegate = delegate
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

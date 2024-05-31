@@ -9,6 +9,8 @@ import UIKit
 
 class EditCardWireframe: EditCardWireframeProtocol {
     
+    static var card: Card?
+    static var delegate: EditCardControllerProtocol?
     
     static func createModule(EditCardRef: EditCardView) {
         let presenter: EditCardPresenterProtocol & EditCardOutputInteractorProtocol = EditCardPresenter()

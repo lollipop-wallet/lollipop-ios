@@ -70,7 +70,8 @@ extension MyCardsPresenter {
 
     
     func didSelectItemAt(index: IndexPath) {
-        wireframe?.toDetails()
+        let item = self.datasource[index.row]
+        wireframe?.toDetails(card: item, delegate: self)
     }
 }
 
@@ -89,4 +90,9 @@ extension MyCardsPresenter {
         self.datasource = cards
         self.view?.reload()
     }
+}
+
+//MARK: CardDetailsController delegate
+extension MyCardsPresenter {
+    
 }

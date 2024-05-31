@@ -10,7 +10,7 @@ import Foundation
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol CardDetailsPresenterProtocol: AnyObject {
+protocol CardDetailsPresenterProtocol: EditCardControllerProtocol {
     
     var interactor: CardDetailsInputInteractorProtocol? { get set }
     var view: CardDetailsViewProtocol? { get set }
@@ -53,10 +53,9 @@ protocol CardDetailsViewProtocol: AnyObject {
 protocol CardDetailsWireframeProtocol: AnyObject {
     static var card: Card? { get set }
     static var delegate: CardDetailsControllerProtocol? { get set }
-    func toEdit()
+    func toEdit(card: Card?, delegate: EditCardControllerProtocol?)
 }
 
 //MARK: CardDetailsController protocol
 protocol CardDetailsControllerProtocol: AnyObject {
-    func updateCardWith(card: Card?)
 }

@@ -16,6 +16,7 @@ protocol EditCardPresenterProtocol: AnyObject {
     var view: EditCardViewProtocol? { get set }
     var wireframe:EditCardWireframeProtocol? { get set }
     
+    func viewDidLoad()
     func delete()
 }
 //MARK: Interactor
@@ -24,21 +25,32 @@ protocol EditCardInputInteractorProtocol: AnyObject {
     
     var presenter: EditCardOutputInteractorProtocol?  { get set }
     
-   
+    func viewDidLoad()
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol EditCardOutputInteractorProtocol: AnyObject {
-    
-
+    func takeData(card: Card?, delegate: EditCardControllerProtocol?)
 }
 //MARK: View
 protocol EditCardViewProtocol: AnyObject {
-    
     var presenter: EditCardPresenterProtocol?  { get set }
-    
+    func setFrontCardImageWith(image: String)
+    func setBackCardImageWith(image: String)
+    func setCardNameWith(name: String)
+    func setBarcodeWith(barcode: String)
+    func setCardNumberWith(number: String)
+    func setNameOnTheCardWith(nameOnTheCard: String)
+    func setNotesWith(notes: String)
 }
 //MARK: Wireframe
 protocol EditCardWireframeProtocol: AnyObject {
+    static var card: Card? { get set }
+    static var delegate: EditCardControllerProtocol? { get set }
     func toDelete()
+}
+
+//MARK: EditCardController protocol
+protocol EditCardControllerProtocol: AnyObject {
+    func updateCardWith(card: Card?)
 }

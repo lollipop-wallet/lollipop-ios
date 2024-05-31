@@ -63,6 +63,7 @@ extension ReorderCardsPresenter: ReorderCardsOutputInteractorProtocol {
     
     func parseReorderCardsData(model: ReorderCardsModel){
         Alert().alertMessageNoNavigator(title: LocalizedTitle.notice.localized, text: model.message ?? "", shouldDismiss: false)
+        self.delegate?.updateFavoriteCardsWith(cards: self.reorderedDatasource)
     }
 }
 
