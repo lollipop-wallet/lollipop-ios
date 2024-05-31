@@ -18,6 +18,7 @@ protocol ScanSuggestionPresenterProtocol: UITableViewDelegate, UITableViewDataSo
     var wireframe:ScanSuggestionWireframeProtocol? { get set }
     
     func viewDidLoad()
+    func newCard()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -41,6 +42,7 @@ protocol ScanSuggestionViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol ScanSuggestionWireframeProtocol: AnyObject {
     func toScannerWith(card: Card?)
+    func toNewCard()
 }
 
 //MARK: ScanSuggestionCell Protocol

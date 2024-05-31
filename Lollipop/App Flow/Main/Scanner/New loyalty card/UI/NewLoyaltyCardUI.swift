@@ -294,13 +294,13 @@ extension NewLoyaltyCardView {
         self.cardNameField.background = AppColors.white
         self.cardNameField.leftSuplementaryIconHidden = true
         
-        self.cardNumberField.title = "\(LocalizedTitle.cardNumber.localized) \(LocalizedTitle.optional.localized):"
+        self.cardNumberField.title = "\(LocalizedTitle.cardNumber.localized) (\(LocalizedTitle.optional.localized)):"
         self.cardNumberField.errorHidden = true
         self.cardNumberField.keyboardType = .default
         self.cardNumberField.background = AppColors.white
         self.cardNumberField.leftSuplementaryIconHidden = true
         
-        self.nameOnTheCardField.title = "\(LocalizedTitle.nameOnTheCard.localized):"
+        self.nameOnTheCardField.title = "\(LocalizedTitle.nameOnTheCard.localized) (\(LocalizedTitle.optional.localized)):"
         self.nameOnTheCardField.errorHidden = true
         self.nameOnTheCardField.keyboardType = .default
         self.nameOnTheCardField.background = AppColors.white

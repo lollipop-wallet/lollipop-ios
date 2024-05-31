@@ -43,6 +43,6 @@ class ScanSuggestionView: UIViewController, ScanSuggestionViewProtocol {
     }
     
     @objc func onNewCardTap() {
-        
+        presenter?.newCard()
     }
 }

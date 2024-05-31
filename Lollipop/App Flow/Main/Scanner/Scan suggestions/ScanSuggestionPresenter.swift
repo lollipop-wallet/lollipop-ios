@@ -19,6 +19,10 @@ class ScanSuggestionPresenter: NSObject, ScanSuggestionPresenterProtocol  {
     func viewDidLoad() {
         interactor?.viewDidLoad()
     }
+    
+    func newCard() {
+        wireframe?.toNewCard()
+    }
 }
 
 extension ScanSuggestionPresenter: ScanSuggestionOutputInteractorProtocol {
