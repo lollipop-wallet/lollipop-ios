@@ -29,8 +29,8 @@ extension CardDetailsPresenter: CardDetailsOutputInteractorProtocol {
     func takeData(card: Card?, delegate: CardDetailsControllerProtocol?){
         self.card = card
         self.delegate = delegate
-        self.view?.setFrontCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_front ?? "" : card?.front_image ?? "")
-        self.view?.setBackCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_back ?? "" : card?.back_image ?? "")
+        self.view?.setFrontCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_front ?? "" : card?.image_front ?? "")
+        self.view?.setBackCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_back ?? "" : card?.image_back ?? "")
         self.view?.setCardNameWith(name: card?.name ?? "")
         self.view?.setCardNameHidden(isHidden: card?.isCardNameHidden ?? false)
         self.view?.setCardNumberWith(number: card?.cardNumber ?? "")
@@ -48,8 +48,8 @@ extension CardDetailsPresenter: CardDetailsOutputInteractorProtocol {
 extension CardDetailsPresenter {
     func updateCardWith(card: Card?){
         self.card = card
-        self.view?.setFrontCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_front ?? "" : card?.front_image ?? "")
-        self.view?.setBackCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_back ?? "" : card?.back_image ?? "")
+        self.view?.setFrontCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_front ?? "" : card?.image_front ?? "")
+        self.view?.setBackCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_back ?? "" : card?.image_back ?? "")
         self.view?.setCardNameWith(name: card?.name ?? "")
         self.view?.setCardNameHidden(isHidden: card?.isCardNameHidden ?? false)
         self.view?.setCardNumberWith(number: card?.cardNumber ?? "")

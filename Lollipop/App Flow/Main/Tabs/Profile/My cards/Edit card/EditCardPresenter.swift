@@ -42,8 +42,8 @@ extension EditCardPresenter: EditCardOutputInteractorProtocol {
     func takeData(card: Card?, delegate: EditCardControllerProtocol?){
         self.card = card
         self.delegate = delegate
-        self.view?.setFrontCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_front ?? "" : card?.front_image ?? "")
-        self.view?.setBackCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_back ?? "" : card?.back_image ?? "")
+        self.view?.setFrontCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_front ?? "" : card?.image_front ?? "")
+        self.view?.setBackCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_back ?? "" : card?.image_back ?? "")
         self.view?.setCardNameWith(name: card?.name ?? "")
         self.view?.setCardNumberWith(number: card?.cardNumber ?? "")
         self.view?.setBarcodeWith(barcode: card?.code ?? "")

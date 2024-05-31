@@ -30,8 +30,8 @@ struct Card: Codable {
     let name: String?
     let alias: String?
     let name_on_card: String?
-    let front_image: String?
-    let back_image: String?
+    let image_front: String?
+    let image_back: String?
     let code: String?
     let cardNumber: String?
     let note: String?
