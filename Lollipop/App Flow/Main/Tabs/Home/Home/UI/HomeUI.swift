@@ -27,6 +27,10 @@ extension HomeView {
         self.avatarImageView.snp.makeConstraints { make in
             make.width.height.equalTo(48)
         }
+        self.avatarImageView.layer.cornerRadius = 24
+        self.avatarImageView.layer.masksToBounds = true
+        self.avatarImageView.clipsToBounds = true
+        
         self.avatarLabel.textAlignment = .left
         self.avatarLabel.textColor = AppColors.black
         self.avatarLabel.text = "Prijavi se"

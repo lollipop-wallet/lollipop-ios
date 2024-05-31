@@ -14,11 +14,21 @@ class ProfileInteractor: ProfileInputInteractorProtocol {
     weak var presenter: ProfileOutputInteractorProtocol?
     
     func viewDidLoad() {
+        let delegate = ProfileWireframe.delegate
         UIApplication.topViewController()?.view.showSpinner()
         APIClient.getprofile { [weak self] result in
             UIApplication.topViewController()?.view.hideSpinner()
             guard let self = self else {return}
-            self.presenter?.parseUserData(result: result)
+            self.presenter?.parseUserData(result: result, delegate: delegate)
+        }
+    }
+    
+    func updateAvatar(avatar: Data){
+        UIApplication.root().view.showSpinner()
+        APIClient.updateavatar(avatar: avatar) { [weak self] result in
+            UIApplication.root().view.hideSpinner()
+            guard let self = self else { return }
+            self.presenter?.parseUpdatedAvatarData(result: result)
         }
     }
 }

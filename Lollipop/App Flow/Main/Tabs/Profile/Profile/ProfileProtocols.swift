@@ -29,12 +29,13 @@ protocol ProfileInputInteractorProtocol: AnyObject {
     
     var presenter: ProfileOutputInteractorProtocol?  { get set }
     func viewDidLoad()
-   
+    func updateAvatar(avatar: Data)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol ProfileOutputInteractorProtocol: AnyObject {
-    func parseUserData(result: Result<ProfileModel, AFError>)
+    func parseUserData(result: Result<ProfileModel, AFError>, delegate: ProfileControllerProtocol?)
+    func parseUpdatedAvatarData(result: Result<UpdateAvatarModel, AFError>)
 }
 //MARK: View
 protocol ProfileViewProtocol: AnyObject {
@@ -48,6 +49,8 @@ protocol ProfileViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol ProfileWireframeProtocol: AnyObject {
+    static var delegate: ProfileControllerProtocol? { get set }
+    
     func toMyShops()
     func toPersonalData()
     func toMyCards()
@@ -59,4 +62,9 @@ protocol ProfileWireframeProtocol: AnyObject {
 //MARK: ProfileCell Protocol
 protocol ProfileCellProtocol: AnyObject {
     func didSelectItemAt(index: IndexPath)
+}
+
+//MARK: ProfileController Protocol
+protocol ProfileControllerProtocol: AnyObject {
+    func updateAvatar(avatar: String)
 }

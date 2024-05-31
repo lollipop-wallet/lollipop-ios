@@ -18,6 +18,7 @@ class HomePresenter: NSObject, HomePresenterProtocol  {
     var datasource = [HomeListModel]()
     
     func viewDidLoad() {
+        ProfileWireframe.delegate = self
         interactor?.viewDidLoad()
     }
     
@@ -133,5 +134,12 @@ extension HomePresenter {
     
     func didTapBannerWith(banner: Banner?){
         wireframe?.toPromotionDetailsWith(banner: banner)
+    }
+}
+
+//MARK: ProfileController delegate
+extension HomePresenter {
+    func updateAvatar(avatar: String) {
+        view?.setUserAvatarWith(avatar: avatar)
     }
 }

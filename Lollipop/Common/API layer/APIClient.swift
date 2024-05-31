@@ -64,6 +64,40 @@ class APIClient {
             //print("Odgovor:",response.value)
           }
       }
+    
+    @discardableResult
+    private static func performUpload<T:Decodable>(route: APIRouter, decoder: JSONDecoder = JSONDecoder(), completion: @escaping (Result<T, AFError>) -> Void) -> DataRequest {
+        return AF.upload(multipartFormData: { (multipartFormData) in
+            let parameters = route.multipartFormData()
+            for (key, value) in (parameters ?? [:]) {
+                if let image = value as? Data {
+                    multipartFormData.append(image, withName: key, fileName: "image.jpeg", mimeType: "file")
+                }
+            }
+//            for i in 0..<photos.count {
+//                multipartFormData.append(photos[i], withName: "images[]", fileName: "image_\(i).jpeg", mimeType: "file")
+//            }
+//            if isFastAvatar {
+//                multipartFormData.append(photoGroupType.data(using: .utf8) ?? Data(), withName: APIParameterKey.subjectType)
+//                multipartFormData.append(title.data(using: .utf8) ?? Data(), withName: APIParameterKey.title)
+//                multipartFormData.append(prompt.data(using: .utf8) ?? Data(), withName: APIParameterKey.prompt)
+//            }else{
+//                multipartFormData.append(photoGroupType.data(using: .utf8) ?? Data(), withName: APIParameterKey.modelFor)
+//            }
+        }, with: route)
+            .responseDecodable (decoder: decoder) { (response: DataResponse<T, AFError>) in
+                print("API response code: ",response.response?.statusCode ?? "")
+                print("API URL: ", response.request?.url?.absoluteString ?? "")
+                let json = JSON(response.data ?? Data())
+                print("API result: ", json)
+                if response.response?.statusCode == 200{
+                    completion(response.result)
+                }
+                else {
+                    Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: LocalizedTitle.unknownError.localized, shouldDismiss: false)
+                }
+            }
+    }
         
    //MARK: API methods
      static func getconfig(completion:@escaping (Result<ConfigModel, AFError>)->Void){
@@ -156,5 +190,10 @@ class APIClient {
     static func getprofile(completion:@escaping (Result<ProfileModel, AFError>)->Void){
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.getprofile, completion: completion)
+    }
+    
+    static func updateavatar(avatar: Data, completion:@escaping (Result<UpdateAvatarModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performUpload(route: APIRouter.updateavatar(avatar: avatar), completion: completion)
     }
 }

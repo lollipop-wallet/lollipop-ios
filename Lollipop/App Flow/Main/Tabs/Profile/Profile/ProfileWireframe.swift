@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileWireframe: ProfileWireframeProtocol {
     
+    static var delegate: ProfileControllerProtocol?
     
     static func createModule(ProfileRef: ProfileView) {
         let presenter: ProfilePresenterProtocol & ProfileOutputInteractorProtocol = ProfilePresenter()

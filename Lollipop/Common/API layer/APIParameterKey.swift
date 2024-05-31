@@ -28,4 +28,5 @@ struct APIParameterKey {
     static let code = "code"
     static let codeType = "code_type"
     static let note = "note"
+    static let avatar = "avatar"
 }

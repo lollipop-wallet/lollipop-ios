@@ -15,6 +15,7 @@ class ProfilePresenter: NSObject, ProfilePresenterProtocol  {
     var interactor : ProfileInputInteractorProtocol?
     weak var view: ProfileViewProtocol?
     var wireframe: ProfileWireframeProtocol?
+    var delegate: ProfileControllerProtocol?
     
     let datasource = DefaultModels().profileDatasource
     var config = PHPickerConfiguration(photoLibrary: .shared())
@@ -56,7 +57,8 @@ class ProfilePresenter: NSObject, ProfilePresenterProtocol  {
 }
 
 extension ProfilePresenter: ProfileOutputInteractorProtocol {
-    func parseUserData(result: Result<ProfileModel, AFError>) {
+    func parseUserData(result: Result<ProfileModel, AFError>, delegate: ProfileControllerProtocol?){
+        self.delegate = delegate
         switch result {
         case .success(let model):
             self.view?.setUserNameWith(name: model.name ?? "")
@@ -65,6 +67,16 @@ extension ProfilePresenter: ProfileOutputInteractorProtocol {
             }
             self.view?.setUserPhoneWith(phone: model.phone ?? "")
             self.view?.setPhoneHidden(isHidden: !(model.phone ?? "").isEmpty)
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
+    
+    func parseUpdatedAvatarData(result: Result<UpdateAvatarModel, AFError>){
+        switch result {
+        case .success(let model):
+            self.view?.setUserAvatarWith(avatar: model.data?.avatar ?? "")
+            self.delegate?.updateAvatar(avatar: model.data?.avatar ?? "")
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }
@@ -144,7 +156,8 @@ extension ProfilePresenter {
         dispatchGroup.notify(queue: .main) {
             if !images.isEmpty{
                 self.userImage = images.first ?? UIImage()
-                self.view?.setUserAvatarWithImage(image: self.userImage)
+                let imageData = self.userImage.jpegData(compressionQuality: 0.6)
+                self.interactor?.updateAvatar(avatar: imageData ?? Data())
             }
         }
     }
@@ -155,6 +168,7 @@ extension ProfilePresenter {
             return
         }
         self.userImage = image
-        self.view?.setUserAvatarWithImage(image: self.userImage)
+        let imageData = self.userImage.jpegData(compressionQuality: 0.4)
+        self.interactor?.updateAvatar(avatar: imageData ?? Data())
     }
 }
