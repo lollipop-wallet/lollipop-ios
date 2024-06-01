@@ -223,4 +223,9 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performUpload(route: APIRouter.createdisplaycard(frontImage: frontImage, backImage: backImage, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, nameOnTheCard: nameOnTheCard, codeType: codeType, note: note), completion: completion)
     }
+    
+    static func getcarddetails(alias: String, completion:@escaping (Result<Card, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.getcarddetails(alias: alias), completion: completion)
+    }
 }
