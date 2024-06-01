@@ -171,3 +171,4 @@
 "allCards" = "All";
 "favoriteCards" = "Favorite";
 "markFavoriteCards" = "Mark favorite cards (up to 5)";
+"cardImagesNotSet" = "Front or back side of card has not been set. Please set front and back side of card and try again.";

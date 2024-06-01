@@ -18,8 +18,11 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
     
     var card: Card?
     var barcode: String?
+    var isFromTemplate: Bool?
     var isFrontCard = Bool()
     var config = PHPickerConfiguration(photoLibrary: .shared())
+    var frontImage: UIImage?
+    var backImage: UIImage?
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -53,28 +56,39 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
     }
     
     func save(frontImage: UIImage, backImage: UIImage, cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String) {
-        if self.card?.cardType == .loyalty {
+        if (self.isFromTemplate ?? false){
             guard !cardName.isEmpty, !cardBarcode.isEmpty else {
                 view?.validate(cardNameIsEmpty: cardName.isEmpty, cardCodeIsEmpty: cardBarcode.isEmpty)
                 return
             }
             interactor?.createCard(cardName: cardName, cardNumber: cardNumber, cardBarcode: self.barcode ?? "", nameOnCard: nameOnCard, note: note, partnerAlias: card?.partner?.alias ?? "", cardTemplateId: card?.id ?? 0)
         }else{
+            guard !cardName.isEmpty, !cardBarcode.isEmpty else {
+                view?.validate(cardNameIsEmpty: cardName.isEmpty, cardCodeIsEmpty: cardBarcode.isEmpty)
+                return
+            }
             
+            guard self.frontImage != nil, self.backImage != nil else {
+                Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: LocalizedTitle.cardImagesNotSet.localized, shouldDismiss: false)
+                return
+            }
         }
     }
 }
 
 extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
-    func takeDataWith(card: Card?, barcode: String) {
+    func takeDataWith(card: Card?, barcode: String, isFromTemplate: Bool) {
         self.card = card
         self.barcode = barcode
-        self.view?.setFrontCardImageWith(image: card?.cardType == .loyalty ? card?.image_front ?? "" : card?.image_front ?? "")
-        self.view?.setBackCardImageWith(image: card?.cardType == .loyalty ? card?.image_back ?? "" : card?.image_back ?? "")
-        self.view?.setCardNameWith(name: card?.name ?? "")
-        self.view?.setBarcodeWith(barcode: barcode)
-        self.view?.setFrontCameraControlHidden(isHidden: card?.cardType == .loyalty)
-        self.view?.setBackCameraControlHidden(isHidden: card?.cardType == .loyalty)
+        self.isFromTemplate = isFromTemplate
+        if isFromTemplate {
+            self.view?.setFrontCardImageWith(image: card?.image_front ?? "")
+            self.view?.setBackCardImageWith(image: card?.image_back ?? "")
+            self.view?.setCardNameWith(name: card?.name ?? "")
+            self.view?.setBarcodeWith(barcode: barcode)
+        }
+        self.view?.setFrontCameraControlHidden(isHidden: isFromTemplate)
+        self.view?.setBackCameraControlHidden(isHidden: isFromTemplate)
     }
     
     func parseNewCardData(result: Result<NewLoyaltyCardModel, AFError>){
@@ -110,6 +124,11 @@ extension NewLoyaltyCardPresenter {
         dispatchGroup.notify(queue: .main) {
             if !images.isEmpty{
                 self.view?.setFrontCardImageWith(image: images.first ?? UIImage(), isFront: self.isFrontCard)
+                if self.isFrontCard {
+                    self.frontImage = images.first ?? UIImage()
+                }else{
+                    self.backImage = images.first ?? UIImage()
+                }
             }
         }
     }
@@ -120,5 +139,10 @@ extension NewLoyaltyCardPresenter {
             return
         }
         self.view?.setFrontCardImageWith(image: image, isFront: self.isFrontCard)
+        if self.isFrontCard {
+            self.frontImage = image
+        }else{
+            self.backImage = image
+        }
     }
 }

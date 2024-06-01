@@ -34,7 +34,7 @@ protocol NewLoyaltyCardInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol NewLoyaltyCardOutputInteractorProtocol: AnyObject {
-    func takeDataWith(card: Card?, barcode: String)
+    func takeDataWith(card: Card?, barcode: String, isFromTemplate: Bool)
     func parseNewCardData(result: Result<NewLoyaltyCardModel, AFError>)
 }
 //MARK: View
@@ -56,4 +56,5 @@ protocol NewLoyaltyCardViewProtocol: AnyObject {
 protocol NewLoyaltyCardWireframeProtocol: AnyObject {
     static var card: Card? { get set }
     static var barcode: String? { get set }
+    static var isFromTemplate: Bool? { get set }
 }

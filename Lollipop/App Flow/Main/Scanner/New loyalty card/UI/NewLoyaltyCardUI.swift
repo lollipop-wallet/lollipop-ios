@@ -44,6 +44,7 @@ extension NewLoyaltyCardView {
         self.cardImageFrontSideView.layer.borderWidth = 1
         self.cardImageFrontSideView.layer.borderColor = AppColors.brandPrimary.cgColor
         self.cardImageFrontSideView.clipsToBounds = true
+        self.cardImageFrontSideView.image = UIImage(named: AssetTitles.cardTemplateFrontIcon)
         
         lazy var frontLabel: UILabel = {
             let label = UILabel()
@@ -125,7 +126,8 @@ extension NewLoyaltyCardView {
         self.cardImageBackSideView.layer.borderWidth = 1
         self.cardImageBackSideView.layer.borderColor = AppColors.brandPrimary.cgColor
         self.cardImageBackSideView.clipsToBounds = true
-        
+        self.cardImageBackSideView.image = UIImage(named: AssetTitles.cardTemplateBackIcon)
+
         lazy var backLabel: UILabel = {
             let label = UILabel()
             label.font = .inter(ofSize: 10, name: .medium)

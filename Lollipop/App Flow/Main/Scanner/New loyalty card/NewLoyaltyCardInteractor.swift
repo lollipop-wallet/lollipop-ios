@@ -16,7 +16,8 @@ class NewLoyaltyCardInteractor: NewLoyaltyCardInputInteractorProtocol {
     func viewDidLoad() {
         let card = NewLoyaltyCardWireframe.card
         let barcode = NewLoyaltyCardWireframe.barcode ?? ""
-        presenter?.takeDataWith(card: card, barcode: barcode)
+        let isFromTemplate = NewLoyaltyCardWireframe.isFromTemplate ?? false
+        presenter?.takeDataWith(card: card, barcode: barcode, isFromTemplate: isFromTemplate)
     }
     
     func createCard(cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String, partnerAlias: String, cardTemplateId: Int){

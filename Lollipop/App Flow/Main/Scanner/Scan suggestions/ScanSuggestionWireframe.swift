@@ -28,6 +28,7 @@ class ScanSuggestionWireframe: ScanSuggestionWireframeProtocol {
     
     func toNewCard(){
         let vc = NewLoyaltyCardView()
+        NewLoyaltyCardWireframe.isFromTemplate = false
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }
