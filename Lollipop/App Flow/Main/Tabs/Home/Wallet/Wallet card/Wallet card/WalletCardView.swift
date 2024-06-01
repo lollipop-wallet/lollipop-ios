@@ -70,6 +70,10 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
         popBack(2)
     }
     
+    @objc func onDetailsTap() {
+        presenter?.details()
+    }
+    
     @objc func onLocationsTap() {
         presenter?.locations()
     }

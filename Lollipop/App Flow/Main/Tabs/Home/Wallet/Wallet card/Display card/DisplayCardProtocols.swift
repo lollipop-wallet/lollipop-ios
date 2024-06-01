@@ -10,13 +10,14 @@ import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol DisplayCardPresenterProtocol: AnyObject {
+protocol DisplayCardPresenterProtocol: CardDetailsControllerProtocol {
     
     var interactor: DisplayCardInputInteractorProtocol? { get set }
     var view: DisplayCardViewProtocol? { get set }
     var wireframe:DisplayCardWireframeProtocol? { get set }
     
     func viewDidLoad()
+    func details()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -47,4 +48,5 @@ protocol DisplayCardViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol DisplayCardWireframeProtocol: AnyObject {
     static var card: Card? { get set }
+    func toCardDetails(card: Card?, delegate: CardDetailsControllerProtocol?)
 }

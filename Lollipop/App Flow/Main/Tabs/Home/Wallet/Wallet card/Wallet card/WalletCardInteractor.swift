@@ -10,7 +10,7 @@
 import UIKit
 
 class WalletCardInteractor: WalletCardInputInteractorProtocol {
-    
+
     weak var presenter: WalletCardOutputInteractorProtocol?
     
     func viewDidLoad() {

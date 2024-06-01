@@ -59,4 +59,5 @@ protocol CardDetailsWireframeProtocol: AnyObject {
 //MARK: CardDetailsController protocol
 protocol CardDetailsControllerProtocol: AnyObject {
     func updateCards()
+    func updateCardWith(card: Card?)
 }

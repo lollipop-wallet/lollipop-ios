@@ -10,7 +10,7 @@ import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol WalletCardPresenterProtocol: UITableViewDelegate, UITableViewDataSource, WalletCardShopCellProtocol {
+protocol WalletCardPresenterProtocol: UITableViewDelegate, UITableViewDataSource, WalletCardShopCellProtocol, CardDetailsControllerProtocol {
     
     var interactor: WalletCardInputInteractorProtocol? { get set }
     var view: WalletCardViewProtocol? { get set }
@@ -18,6 +18,7 @@ protocol WalletCardPresenterProtocol: UITableViewDelegate, UITableViewDataSource
     
     func viewDidLoad()
     func locations()
+    func details()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -25,7 +26,6 @@ protocol WalletCardInputInteractorProtocol: AnyObject {
     
     var presenter: WalletCardOutputInteractorProtocol?  { get set }
     func viewDidLoad()
-    func getCardDetailsWith(alias: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
@@ -46,6 +46,7 @@ protocol WalletCardViewProtocol: AnyObject {
 protocol WalletCardWireframeProtocol: AnyObject {
     static var card: Card? { get set }
     func toLocations()
+    func toCardDetails(card: Card?, delegate: CardDetailsControllerProtocol?)
 }
 
 //MARK: WalletCardShopCell Protocol

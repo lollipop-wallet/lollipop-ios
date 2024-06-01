@@ -25,4 +25,11 @@ class WalletCardWireframe: WalletCardWireframeProtocol {
         let vc = LocationsView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toCardDetails(card: Card?, delegate: CardDetailsControllerProtocol?){
+        let vc = CardDetailsView()
+        CardDetailsWireframe.card = card
+        CardDetailsWireframe.delegate = delegate
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

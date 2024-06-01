@@ -70,7 +70,6 @@ class DisplayCardView: UIViewController, DisplayCardViewProtocol {
         }
     }
     func setBarcodeHidden(isHidden: Bool){
-        print("je li hidden: ", isHidden ? "da" : "ne")
         DispatchQueue.main.async {
             self.barcodeImageView.isHidden = isHidden
             self.barcodeNumberLabel.isHidden = isHidden
@@ -89,7 +88,7 @@ class DisplayCardView: UIViewController, DisplayCardViewProtocol {
     }
     
     @objc func onDetailsTap() {
-        
+        presenter?.details()
     }
 
 }

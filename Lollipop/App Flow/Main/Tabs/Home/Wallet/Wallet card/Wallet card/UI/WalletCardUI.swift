@@ -29,7 +29,18 @@ extension WalletCardView {
             return button
         }()
         
+        lazy var detailsButton: UIBarButtonItem = {
+            let button = UIBarButtonItem()
+            button.title = LocalizedTitle.details.localized
+            button.tintColor = AppColors.link
+            button.setTitleTextAttributes([ NSAttributedString.Key.font: UIFont.inter(ofSize: 16, name: .semibold)], for: UIControl.State.normal)
+            button.action = #selector(self.onDetailsTap)
+            button.target = self
+            return button
+        }()
+        
         self.navigationItem.leftBarButtonItems = [backButton]
+        self.navigationItem.rightBarButtonItems = [detailsButton]
         
         lazy var mainContentView: UIView = {
             let view = UIView()

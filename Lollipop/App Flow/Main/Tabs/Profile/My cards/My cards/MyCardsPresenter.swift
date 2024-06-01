@@ -99,4 +99,6 @@ extension MyCardsPresenter {
     func updateCards(){
         interactor?.viewDidLoad(showSpinner: false)
     }
+    
+    func updateCardWith(card: Card?) {}
 }

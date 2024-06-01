@@ -20,4 +20,11 @@ class DisplayCardWireframe: DisplayCardWireframeProtocol {
         DisplayCardRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toCardDetails(card: Card?, delegate: CardDetailsControllerProtocol?){
+        let vc = CardDetailsView()
+        CardDetailsWireframe.card = card
+        CardDetailsWireframe.delegate = delegate
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }
