@@ -25,7 +25,7 @@ protocol WalletCardInputInteractorProtocol: AnyObject {
     
     var presenter: WalletCardOutputInteractorProtocol?  { get set }
     func viewDidLoad()
-   
+    func getCardDetailsWith(alias: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER

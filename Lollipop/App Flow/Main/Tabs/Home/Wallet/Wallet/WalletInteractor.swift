@@ -17,4 +17,13 @@ class WalletInteractor: WalletInputInteractorProtocol {
         let cards = WalletWireframe.cards ?? []
         presenter?.takeDataWith(cards: cards)
     }
+    
+    func getCardDetailsWith(alias: String) {
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.getcarddetails(alias: alias) { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self = self else {return}
+            self.presenter?.parseCardDetailsWith(result: result)
+        }
+    }
 }

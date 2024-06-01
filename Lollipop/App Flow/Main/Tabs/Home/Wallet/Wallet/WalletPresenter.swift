@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 class WalletPresenter: NSObject, WalletPresenterProtocol  {
     
@@ -33,10 +34,24 @@ extension WalletPresenter: WalletOutputInteractorProtocol {
         self.datasource = cards
         self.view?.setCardsWith(cards: cards)
     }
+    
+    func parseCardDetailsWith(result: Result<Card, AFError>){
+        switch result {
+        case .success(let card):
+            if card.cardType == .loyalty {
+                wireframe?.toLoyaltyCardDetailsWith(card: card)
+            }else{
+                wireframe?.toDisplayCardDetailsWith(card: card)
+            }
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
 }
 
 extension WalletPresenter {
     func didSelectLoyaltyCartAt(index: Int) {
-        wireframe?.toWalletCard()
+        let item = datasource[index]
+        interactor?.getCardDetailsWith(alias: item.alias ?? "")
     }
 }

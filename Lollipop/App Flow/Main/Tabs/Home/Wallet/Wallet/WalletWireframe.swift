@@ -21,11 +21,6 @@ class WalletWireframe: WalletWireframeProtocol {
         
     }
     
-    func toWalletCard(){
-        let vc = WalletCardView()
-        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func toMyCards(){
         let vc = MyCardsView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
@@ -33,6 +28,19 @@ class WalletWireframe: WalletWireframeProtocol {
     
     func toCardSuggestions(){
         let vc = ScanSuggestionView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func toLoyaltyCardDetailsWith(card: Card?){
+        let vc = WalletCardView()
+        WalletCardWireframe.card = card
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func toDisplayCardDetailsWith(card: Card?){
+        print("Je li odje2")
+        let vc = DisplayCardView()
+        DisplayCardWireframe.card = card
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }
