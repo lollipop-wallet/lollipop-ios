@@ -15,6 +15,7 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
     var interactor : NewLoyaltyCardInputInteractorProtocol?
     weak var view: NewLoyaltyCardViewProtocol?
     var wireframe: NewLoyaltyCardWireframeProtocol?
+    var delegate: NewLoyaltyCardControllerProtocol?
     
     var card: Card?
     var barcode: String?
@@ -72,15 +73,21 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
                 Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: LocalizedTitle.cardImagesNotSet.localized, shouldDismiss: false)
                 return
             }
+            
+            let frontImageData = self.frontImage?.jpegData(compressionQuality: 0.4) ?? Data()
+            let backImageData = self.backImage?.jpegData(compressionQuality: 0.4) ?? Data()
+            
+            interactor?.createDisplayCarad(frontImage: frontImageData, backImage: backImageData, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarcode, nameOnTheCard: nameOnCard, note: note)
         }
     }
 }
 
 extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
-    func takeDataWith(card: Card?, barcode: String, isFromTemplate: Bool) {
+    func takeDataWith(card: Card?, barcode: String, isFromTemplate: Bool, delegate: NewLoyaltyCardControllerProtocol? ) {
         self.card = card
         self.barcode = barcode
         self.isFromTemplate = isFromTemplate
+        self.delegate = delegate
         if isFromTemplate {
             self.view?.setFrontCardImageWith(image: card?.image_front ?? "")
             self.view?.setBackCardImageWith(image: card?.image_back ?? "")
@@ -94,6 +101,7 @@ extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
     func parseNewCardData(result: Result<NewLoyaltyCardModel, AFError>){
         switch result {
         case .success(let model):
+            delegate?.reload()
             Alert().alertMessageNoNavigator(title: LocalizedTitle.notice.localized, text: model.message ?? "", shouldDismiss: false)
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)

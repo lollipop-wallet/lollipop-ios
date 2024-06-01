@@ -295,19 +295,22 @@ extension NewLoyaltyCardView {
         self.cardNameField.keyboardType = .default
         self.cardNameField.background = AppColors.white
         self.cardNameField.leftSuplementaryIconHidden = true
+        self.cardNameField.rightSuplementaryIconHidden = true
         
         self.cardNumberField.title = "\(LocalizedTitle.cardNumber.localized) (\(LocalizedTitle.optional.localized)):"
         self.cardNumberField.errorHidden = true
         self.cardNumberField.keyboardType = .default
         self.cardNumberField.background = AppColors.white
         self.cardNumberField.leftSuplementaryIconHidden = true
-        
+        self.cardNumberField.rightSuplementaryIconHidden = true
+
         self.nameOnTheCardField.title = "\(LocalizedTitle.nameOnTheCard.localized) (\(LocalizedTitle.optional.localized)):"
         self.nameOnTheCardField.errorHidden = true
         self.nameOnTheCardField.keyboardType = .default
         self.nameOnTheCardField.background = AppColors.white
         self.nameOnTheCardField.leftSuplementaryIconHidden = true
-        
+        self.nameOnTheCardField.rightSuplementaryIconHidden = true
+
         self.cardBarcodeField.title = "\(LocalizedTitle.barcode.localized):"
         self.cardBarcodeField.errorHidden = true
         self.cardBarcodeField.keyboardType = .default
@@ -315,7 +318,8 @@ extension NewLoyaltyCardView {
         self.cardBarcodeField.leftSuplementaryIconHidden = false
         self.cardBarcodeField.leftSuplementaryIcon = UIImage(named: AssetTitles.inputFieldBarcodeIcon)
         self.cardBarcodeField.leftSuplementaryIconTint = AppColors.brandPrimary
-        
+        self.cardBarcodeField.rightSuplementaryIconHidden = true
+
         self.cardNotesField.title = "\(LocalizedTitle.notes.localized) (\(LocalizedTitle.optional.localized)):"
         self.cardNotesField.placeholder = "\(LocalizedTitle.max300Chars.localized)"
         self.cardNotesField.errorHidden = true

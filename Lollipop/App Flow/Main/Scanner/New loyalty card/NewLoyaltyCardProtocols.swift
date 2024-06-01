@@ -30,11 +30,12 @@ protocol NewLoyaltyCardInputInteractorProtocol: AnyObject {
     var presenter: NewLoyaltyCardOutputInteractorProtocol?  { get set }
     func viewDidLoad()
     func createCard(cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String, partnerAlias: String, cardTemplateId: Int)
+    func createDisplayCarad(frontImage: Data, backImage: Data, cardName: String, cardNumber: String, cardBarCode: String, nameOnTheCard: String, note: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol NewLoyaltyCardOutputInteractorProtocol: AnyObject {
-    func takeDataWith(card: Card?, barcode: String, isFromTemplate: Bool)
+    func takeDataWith(card: Card?, barcode: String, isFromTemplate: Bool, delegate: NewLoyaltyCardControllerProtocol?)
     func parseNewCardData(result: Result<NewLoyaltyCardModel, AFError>)
 }
 //MARK: View
@@ -57,4 +58,12 @@ protocol NewLoyaltyCardWireframeProtocol: AnyObject {
     static var card: Card? { get set }
     static var barcode: String? { get set }
     static var isFromTemplate: Bool? { get set }
+    static var delegate: NewLoyaltyCardControllerProtocol? { get set }
+}
+
+
+//MARK: NewLoyaltyCardController Protocol
+
+protocol NewLoyaltyCardControllerProtocol: AnyObject {
+    func reload()
 }

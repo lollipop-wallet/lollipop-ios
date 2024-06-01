@@ -13,12 +13,15 @@ class HomeInteractor: HomeInputInteractorProtocol {
     
     weak var presenter: HomeOutputInteractorProtocol?
     
-    func viewDidLoad() {
+    func viewDidLoad(showSpinner: Bool) {
         let delegate = HomeWireframe.delegate
-        
-        UIApplication.topViewController()?.view.showSpinner()
+        if showSpinner {
+            UIApplication.topViewController()?.view.showSpinner()
+        }
         APIClient.gethome { [weak self] result in
-            UIApplication.topViewController()?.view.hideSpinner()
+            if showSpinner {
+                UIApplication.topViewController()?.view.hideSpinner()
+            }
             guard let self = self else {return}
             self.presenter?.parseHomeData(result: result, delegate: delegate)
         }

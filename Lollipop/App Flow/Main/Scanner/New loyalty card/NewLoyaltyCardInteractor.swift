@@ -17,7 +17,8 @@ class NewLoyaltyCardInteractor: NewLoyaltyCardInputInteractorProtocol {
         let card = NewLoyaltyCardWireframe.card
         let barcode = NewLoyaltyCardWireframe.barcode ?? ""
         let isFromTemplate = NewLoyaltyCardWireframe.isFromTemplate ?? false
-        presenter?.takeDataWith(card: card, barcode: barcode, isFromTemplate: isFromTemplate)
+        let delegate = NewLoyaltyCardWireframe.delegate
+        presenter?.takeDataWith(card: card, barcode: barcode, isFromTemplate: isFromTemplate, delegate: delegate)
     }
     
     func createCard(cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String, partnerAlias: String, cardTemplateId: Int){
@@ -26,6 +27,14 @@ class NewLoyaltyCardInteractor: NewLoyaltyCardInputInteractorProtocol {
             UIApplication.topViewController()?.view?.hideSpinner()
             guard let self = self else { return }
             self.presenter?.parseNewCardData(result: result)
+        }
+    }
+    
+    func createDisplayCarad(frontImage: Data, backImage: Data, cardName: String, cardNumber: String, cardBarCode: String, nameOnTheCard: String, note: String){
+        UIApplication.topViewController()?.view?.showSpinner()
+        APIClient.createdisplaycard(frontImage: frontImage, backImage: backImage, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, nameOnTheCard: nameOnTheCard, codeType: CardCodeType.plaincode.rawValue, note: note) { [weak self] result in
+            UIApplication.topViewController()?.view?.hideSpinner()
+            self?.presenter?.parseNewCardData(result: result)
         }
     }
 }

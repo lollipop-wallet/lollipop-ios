@@ -12,6 +12,7 @@ class NewLoyaltyCardWireframe: NewLoyaltyCardWireframeProtocol {
     static var card: Card?
     static var barcode: String?
     static var isFromTemplate: Bool?
+    static var delegate: NewLoyaltyCardControllerProtocol?
     
     static func createModule(NewLoyaltyCardRef: NewLoyaltyCardView) {
         let presenter: NewLoyaltyCardPresenterProtocol & NewLoyaltyCardOutputInteractorProtocol = NewLoyaltyCardPresenter()

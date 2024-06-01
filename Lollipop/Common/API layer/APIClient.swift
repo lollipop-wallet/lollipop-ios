@@ -71,29 +71,46 @@ class APIClient {
             let parameters = route.multipartFormData()
             for (key, value) in (parameters ?? [:]) {
                 if let image = value as? Data {
-                    multipartFormData.append(image, withName: key, fileName: "image.jpeg", mimeType: "file")
+                    multipartFormData.append(image, withName: key, fileName: "image_(\(Date().millisecondsSince1970).jpeg", mimeType: "file")
+                }
+                if let text = value as? String {
+                    multipartFormData.append(text.data(using: .utf8) ?? Data(), withName: key)
                 }
             }
-//            for i in 0..<photos.count {
-//                multipartFormData.append(photos[i], withName: "images[]", fileName: "image_\(i).jpeg", mimeType: "file")
-//            }
-//            if isFastAvatar {
-//                multipartFormData.append(photoGroupType.data(using: .utf8) ?? Data(), withName: APIParameterKey.subjectType)
-//                multipartFormData.append(title.data(using: .utf8) ?? Data(), withName: APIParameterKey.title)
-//                multipartFormData.append(prompt.data(using: .utf8) ?? Data(), withName: APIParameterKey.prompt)
-//            }else{
-//                multipartFormData.append(photoGroupType.data(using: .utf8) ?? Data(), withName: APIParameterKey.modelFor)
-//            }
         }, with: route)
             .responseDecodable (decoder: decoder) { (response: DataResponse<T, AFError>) in
                 print("API response code: ",response.response?.statusCode ?? "")
                 print("API URL: ", response.request?.url?.absoluteString ?? "")
                 let json = JSON(response.data ?? Data())
                 print("API result: ", json)
-                if response.response?.statusCode == 200{
+                switch response.response?.statusCode ?? 0{
+                case 200...300:
                     completion(response.result)
-                }
-                else {
+                case 401:
+                    print("Unknown")
+                case 422:
+                    if let vc = UIApplication.topViewController() {
+                        vc.view.hideSpinner()
+                    }else{
+                        UIApplication.root().view.hideSpinner()
+                    }
+                    let decoder = JSONDecoder()
+                    if let exception = try? decoder.decode(ExceptionModel.self, from: response.data ?? Data()) {
+                        Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: exception.message ?? "", shouldDismiss: false)
+                    }
+                case 403, 404, 500:
+                    Alert().alertMessageNoNavigator(title: LocalizedTitle.notice.localized, text: LocalizedTitle.unknownError.localized, shouldDismiss: false)
+                    if let vc = UIApplication.topViewController() {
+                        vc.view.hideSpinner()
+                    }else{
+                        UIApplication.root().view.hideSpinner()
+                    }
+                default:
+                    if let vc = UIApplication.topViewController() {
+                        vc.view.hideSpinner()
+                    }else{
+                        UIApplication.root().view.hideSpinner()
+                    }
                     Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: LocalizedTitle.unknownError.localized, shouldDismiss: false)
                 }
             }
@@ -200,5 +217,10 @@ class APIClient {
     static func createloyaltycard(cardName: String, cardNumber: String, cardBarCode: String, nameOnTheCard: String, codeType: String, note: String, partnerAlias: String, templateId: String, completion:@escaping (Result<NewLoyaltyCardModel, AFError>)->Void){
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.createloyaltycard(cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, nameOnTheCard: nameOnTheCard, codeType: codeType, note: note, partnerAlias: partnerAlias, templateId: templateId), completion: completion)
+    }
+    
+    static func createdisplaycard(frontImage: Data, backImage: Data, cardName: String, cardNumber: String, cardBarCode: String, nameOnTheCard: String, codeType: String, note: String, completion:@escaping (Result<NewLoyaltyCardModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performUpload(route: APIRouter.createdisplaycard(frontImage: frontImage, backImage: backImage, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, nameOnTheCard: nameOnTheCard, codeType: codeType, note: note), completion: completion)
     }
 }

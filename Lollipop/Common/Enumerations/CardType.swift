@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CardType {
+enum CardType: String {
     case loyalty
     case display
 }

@@ -11,7 +11,7 @@ import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddCardHomeCellProtocol, HomeCardCellProtocol, CircledCategoryCellProtocol, HomePosterCategoryCellProtocol, RectangleCategoryCellProtocol, ProfileControllerProtocol{
+protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddCardHomeCellProtocol, HomeCardCellProtocol, CircledCategoryCellProtocol, HomePosterCategoryCellProtocol, RectangleCategoryCellProtocol, ProfileControllerProtocol, NewLoyaltyCardControllerProtocol{
     
     var interactor: HomeInputInteractorProtocol? { get set }
     var view: HomeViewProtocol? { get set }
@@ -26,7 +26,7 @@ protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddC
 protocol HomeInputInteractorProtocol: AnyObject {
     
     var presenter: HomeOutputInteractorProtocol?  { get set }
-    func viewDidLoad()
+    func viewDidLoad(showSpinner: Bool)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER

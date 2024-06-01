@@ -19,7 +19,8 @@ class HomePresenter: NSObject, HomePresenterProtocol  {
     
     func viewDidLoad() {
         ProfileWireframe.delegate = self
-        interactor?.viewDidLoad()
+        NewLoyaltyCardWireframe.delegate = self
+        interactor?.viewDidLoad(showSpinner: true)
     }
     
     func avatar() {
@@ -141,5 +142,12 @@ extension HomePresenter {
 extension HomePresenter {
     func updateAvatar(avatar: String) {
         view?.setUserAvatarWith(avatar: avatar)
+    }
+}
+
+//MARK: NewLoyaltyCardController delegate
+extension HomePresenter {
+    func reload() {
+        interactor?.viewDidLoad(showSpinner: false)
     }
 }
