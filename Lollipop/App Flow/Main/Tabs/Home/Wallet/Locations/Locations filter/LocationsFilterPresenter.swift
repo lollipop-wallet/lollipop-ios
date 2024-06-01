@@ -22,6 +22,16 @@ class LocationsFilterPresenter: NSObject, LocationsFilterPresenterProtocol  {
     func viewDidLoad() {
         interactor?.viewDidLoad()
     }
+    
+    func reset() {
+        if self.filterType == .city {
+            self.cities.indices.forEach { self.cities[$0].selected = false }
+            self.view?.reload()
+        }else{
+            self.brands.indices.forEach { self.brands[$0].selected = false }
+            self.view?.reload()
+        }
+    }
 }
 
 extension LocationsFilterPresenter: LocationsFilterOutputInteractorProtocol {

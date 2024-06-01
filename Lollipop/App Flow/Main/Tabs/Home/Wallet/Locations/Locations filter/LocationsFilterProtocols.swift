@@ -17,6 +17,7 @@ protocol LocationsFilterPresenterProtocol: UITableViewDelegate, UITableViewDataS
     var wireframe:LocationsFilterWireframeProtocol? { get set }
     
     func viewDidLoad()
+    func reset()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR

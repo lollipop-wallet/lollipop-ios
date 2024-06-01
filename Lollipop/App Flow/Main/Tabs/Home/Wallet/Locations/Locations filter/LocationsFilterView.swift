@@ -37,6 +37,6 @@ class LocationsFilterView: UIViewController, LocationsFilterViewProtocol {
 
     //MARK: Actions
     @objc func reset() {
-        
+        presenter?.reset()
     }
 }
