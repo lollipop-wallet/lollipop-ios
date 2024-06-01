@@ -39,7 +39,7 @@ class LoyaltyCard: UIView {
     
     lazy var loyaltyCardImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 16
         imageView.backgroundColor = .blue
         imageView.clipsToBounds = true

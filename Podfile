@@ -30,6 +30,7 @@ pod 'FSPagerView'
 pod 'Localize-Swift'
 pod 'BarcodeScanner'
 pod 'GoogleSignIn'
+pod 'RSBarcodes_Swift', '~> 5.2.0'
 
 post_install do |installer|
   installer.generated_projects.each do |project|

@@ -62,7 +62,6 @@ extension WalletCardView {
         }()
         
         self.barcodeImageView.contentMode = .scaleAspectFit
-        self.barcodeImageView.backgroundColor = .red
         
         self.barcodeNumberLabel.font = .inter(ofSize: 18, name: .regular)
         self.barcodeNumberLabel.textAlignment = .center
@@ -304,7 +303,7 @@ extension WalletCardView {
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(self.loyaltyCard.snp.bottom).offset(32)
-            make.height.equalTo(80)
+            make.height.equalTo((self.view.frame.width - 40) * 0.23)
         }
         
         contentView.addSubview(saleSpotsLabel)

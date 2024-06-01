@@ -52,6 +52,12 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
             self.barcodeNumberLabel.text = barcode
         }
     }
+    
+    func setBarcodeImageWith(image: UIImage){
+        DispatchQueue.main.async {
+            self.barcodeImageView.image = image
+        }
+    }
 
     //MARK: Actions
     @objc func onBackTap() {

@@ -39,6 +39,7 @@ protocol WalletCardViewProtocol: AnyObject {
     func setTitleWith(title: String)
     func setCardImageWith(image: String)
     func setBarcodeNumberWith(barcode: String)
+    func setBarcodeImageWith(image: UIImage)
 }
 //MARK: Wireframe
 protocol WalletCardWireframeProtocol: AnyObject {
