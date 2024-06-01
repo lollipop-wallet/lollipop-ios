@@ -70,7 +70,7 @@ class HomeCardTableViewCell: UITableViewCell {
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
             make.bottom.equalToSuperview().offset(-24)
-            make.height.equalTo(8)
+            //make.height.equalTo(8)
         }
         
         view.addSubview(collectionView)
