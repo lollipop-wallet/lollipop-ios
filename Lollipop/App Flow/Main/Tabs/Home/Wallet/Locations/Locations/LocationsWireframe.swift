@@ -22,12 +22,13 @@ class LocationsWireframe: LocationsWireframeProtocol {
         
     }
     
-    func toFilterWith(filterType: LocationFilterType, delegate: LocationsFilterControllerProtocol?, cities: [City], brands: [Brand]){
+    func toFilterWith(filterType: LocationFilterType, delegate: LocationsFilterControllerProtocol?, cities: [City], brands: [Brand], partnerId: Int){
         let vc = LocationsFilterView()
         LocationsFilterWireframe.filterType = filterType
         LocationsFilterWireframe.delegate = delegate
         LocationsFilterWireframe.cities = cities
         LocationsFilterWireframe.brands = brands
+        LocationsFilterWireframe.partnerId = partnerId
         let heightCount = 48 * (filterType == .city ? cities.count : brands.count)
         let sheetController = SheetViewController(controller: vc, sizes: [.fixed(CGFloat(heightCount) + 92.0)], options: Configuration().options)
         sheetController.allowPullingPastMaxHeight = false

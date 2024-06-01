@@ -18,6 +18,16 @@ class LocationsFilterInteractor: LocationsFilterInputInteractorProtocol {
         let delegate = LocationsFilterWireframe.delegate
         let cities = LocationsFilterWireframe.cities ?? []
         let brands = LocationsFilterWireframe.brands ?? []
-        presenter?.takeDataWith(filterType: filterType, delegate: delegate, cities: cities, brands: brands)
+        let partnerId = LocationsFilterWireframe.partnerId ?? 0
+        presenter?.takeDataWith(filterType: filterType, delegate: delegate, cities: cities, brands: brands, partnerId: partnerId)
+    }
+    
+    func getLocations(partnerId: Int, brands: String, cities: String){
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.getlocations(parnerId: partnerId, brands: brands, cities: cities) { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self = self else {return}
+            self.presenter?.parseLocationsData(result: result)
+        }
     }
 }

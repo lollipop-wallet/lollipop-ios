@@ -25,11 +25,11 @@ class LocationsPresenter: NSObject, LocationsPresenterProtocol  {
     }
     
     func cityFilter(){
-        wireframe?.toFilterWith(filterType: .city, delegate: self, cities: self.cities, brands: self.brands)
+        wireframe?.toFilterWith(filterType: .city, delegate: self, cities: self.cities, brands: self.brands, partnerId: self.partner?.id ?? 0)
     }
     
     func shopFilter(){
-        wireframe?.toFilterWith(filterType: .shop, delegate: self, cities: self.cities, brands: self.brands)
+        wireframe?.toFilterWith(filterType: .shop, delegate: self, cities: self.cities, brands: self.brands, partnerId: self.partner?.id ?? 0)
     }
     
 }
@@ -76,11 +76,10 @@ extension LocationsPresenter {
 
 //MARK: LocationsFilter Delegate
 extension LocationsPresenter {
-    func filterLocationsByCities() {
-        
-    }
-    
-    func filterLocationsByShops() {
-        
+    func filterWith(locations: [Location], cities: [City], brands: [Brand]){
+        self.datasource = locations
+        self.cities = cities
+        self.brands = brands
+        self.view?.reload()
     }
 }

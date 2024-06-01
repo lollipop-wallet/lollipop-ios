@@ -13,6 +13,7 @@ class LocationsFilterWireframe: LocationsFilterWireframeProtocol {
     static var delegate: LocationsFilterControllerProtocol?
     static var cities: [City]?
     static var brands: [Brand]?
+    static var partnerId: Int?
     
     static func createModule(LocationsFilterRef: LocationsFilterView) {
         let presenter: LocationsFilterPresenterProtocol & LocationsFilterOutputInteractorProtocol = LocationsFilterPresenter()
