@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -16,6 +17,7 @@ protocol LocationsPresenterProtocol: UITableViewDelegate, UITableViewDataSource,
     var view: LocationsViewProtocol? { get set }
     var wireframe:LocationsWireframeProtocol? { get set }
     
+    func viewDidLoad()
     func cityFilter()
     func shopFilter()
 }
@@ -24,23 +26,24 @@ protocol LocationsPresenterProtocol: UITableViewDelegate, UITableViewDataSource,
 protocol LocationsInputInteractorProtocol: AnyObject {
     
     var presenter: LocationsOutputInteractorProtocol?  { get set }
-    
-   
+    func viewDidLoad()
+    func getLocations(partnerId: Int, brands: String, cities: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol LocationsOutputInteractorProtocol: AnyObject {
-    
-
+    func takeData(partner: Partner?)
+    func parseLocationsData(result: Result<LocationsModel, AFError>)
 }
 //MARK: View
 protocol LocationsViewProtocol: AnyObject {
     
     var presenter: LocationsPresenterProtocol?  { get set }
-    
+    func reload()
 }
 //MARK: Wireframe
 protocol LocationsWireframeProtocol: AnyObject {
+    static var partner: Partner? { get set }
     func toFilterWith(filterType: LocationFilterType, delegate: LocationsFilterControllerProtocol?)
 }
 

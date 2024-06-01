@@ -178,11 +178,11 @@ class LocationTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: LocationCellProtocol) {
+    func configureWith(item: Location?, index: IndexPath, delegate: LocationCellProtocol) {
         self.index = index
         self.delegate = delegate
-        self.titleLabel.text = "Podgorica"
-        self.subtitleLabel.text = "Vasa Bakocevica 12"
+        self.titleLabel.text = item?.name ?? ""
+        self.subtitleLabel.text = item?.address ?? ""
     }
     
     //MARK: Actions

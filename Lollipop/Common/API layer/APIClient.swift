@@ -230,4 +230,9 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.getcarddetails(alias: alias), completion: completion)
     }
+    
+    static func getlocations(parnerId: Int, brands: String, cities: String, completion:@escaping (Result<LocationsModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.getlocations(partnerId: parnerId, brands: brands, cities: cities), completion: completion)
+    }
 }

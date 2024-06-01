@@ -45,7 +45,7 @@ protocol WalletCardViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol WalletCardWireframeProtocol: AnyObject {
     static var card: Card? { get set }
-    func toLocations()
+    func toLocations(partner: Partner?)
     func toCardDetails(card: Card?, delegate: CardDetailsControllerProtocol?)
 }
 

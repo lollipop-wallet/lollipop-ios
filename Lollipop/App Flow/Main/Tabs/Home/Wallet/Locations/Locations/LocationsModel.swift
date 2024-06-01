@@ -10,6 +10,7 @@ import Foundation
 
 struct LocationsModel : Codable {
     let locations: [Location]?
+    let cities: [String]?
 }
 
 struct Location: Codable {

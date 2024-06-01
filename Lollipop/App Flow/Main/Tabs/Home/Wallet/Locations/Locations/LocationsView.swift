@@ -20,6 +20,7 @@ class LocationsView: UIViewController, LocationsViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +30,13 @@ class LocationsView: UIViewController, LocationsViewProtocol {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    //MARK: LocationsView protocol
+    func reload() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     //MARK: Actions

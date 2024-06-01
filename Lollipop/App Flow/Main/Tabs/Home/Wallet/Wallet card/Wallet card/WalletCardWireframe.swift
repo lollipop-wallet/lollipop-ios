@@ -21,8 +21,9 @@ class WalletCardWireframe: WalletCardWireframeProtocol {
         
     }
     
-    func toLocations() {
+    func toLocations(partner: Partner?){
         let vc = LocationsView()
+        LocationsWireframe.partner = partner
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
     

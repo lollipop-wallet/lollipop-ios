@@ -10,6 +10,7 @@ import FittedSheets
 
 class LocationsWireframe: LocationsWireframeProtocol {
     
+    static var partner: Partner?
     
     static func createModule(LocationsRef: LocationsView) {
         let presenter: LocationsPresenterProtocol & LocationsOutputInteractorProtocol = LocationsPresenter()
