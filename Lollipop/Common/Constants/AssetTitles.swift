@@ -77,4 +77,6 @@ struct AssetTitles {
     static let profileFavoriteShopsFilledIcon = "ic_profile_favorite_shops_filled"
     static let addCardWalletIcon = "ic_add_wallet"
     static let scanBarcodeIcon = "ic_scan_barcode"
+    static let cardTemplateFrontIcon = "ic_card_template_front"
+    static let cardTemplateBackIcon = "ic_card_template_back"
 }
