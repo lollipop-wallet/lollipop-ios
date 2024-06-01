@@ -9,6 +9,18 @@
 import Foundation
 
 struct LocationsModel : Codable {
-    
+    let locations: [Location]?
+}
+
+struct Location: Codable {
+    let name: String?
+    let alias: String?
+    let description: String?
+    let city: String?
+    let address: String?
+    let lat: String?
+    let lon: String?
+    let phone: String?
+    let email: String?
 }
 
