@@ -28,6 +28,12 @@ class LocationsFilterView: UIViewController, LocationsFilterViewProtocol {
             self.titleLabel.text = title
         }
     }
+    
+    func reload(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 
     //MARK: Actions
     @objc func reset() {

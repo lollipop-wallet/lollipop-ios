@@ -17,18 +17,19 @@ class LocationsPresenter: NSObject, LocationsPresenterProtocol  {
     var partner: Partner?
     var backupDatasource = [Location]()
     var datasource = [Location]()
-    var cities = [String]()
+    var cities = [City]()
+    var brands = [Brand]()
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
     }
     
     func cityFilter(){
-        wireframe?.toFilterWith(filterType: .city, delegate: self)
+        wireframe?.toFilterWith(filterType: .city, delegate: self, cities: self.cities, brands: self.brands)
     }
     
     func shopFilter(){
-        wireframe?.toFilterWith(filterType: .shop, delegate: self)
+        wireframe?.toFilterWith(filterType: .shop, delegate: self, cities: self.cities, brands: self.brands)
     }
     
 }
@@ -44,8 +45,13 @@ extension LocationsPresenter: LocationsOutputInteractorProtocol {
         case .success(let model):
             self.backupDatasource = model.locations ?? []
             self.datasource = model.locations ?? []
-            self.cities = model.cities ?? []
             self.view?.reload()
+            for i in 0..<(model.cities ?? []).count {
+                let item = (model.cities ?? [])[i]
+                let city = City(cityName: item, selected: false)
+                self.cities.append(city)
+            }
+            self.brands = model.brands ?? []
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }

@@ -103,6 +103,7 @@ struct Brand: Codable {
     var favoriteIconTintColor: UIColor {
         return (is_favorite ?? 0) == 1 ? AppColors.brandPrimary : AppColors.darkGrey
     }
+    var selected: Bool?
 }
 
 struct FeaturedBanner: Codable {

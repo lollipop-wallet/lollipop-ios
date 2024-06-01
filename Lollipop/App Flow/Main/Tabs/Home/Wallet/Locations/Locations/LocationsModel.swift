@@ -11,6 +11,7 @@ import Foundation
 struct LocationsModel : Codable {
     let locations: [Location]?
     let cities: [String]?
+    let brands: [Brand]?
 }
 
 struct Location: Codable {
@@ -25,3 +26,7 @@ struct Location: Codable {
     let email: String?
 }
 
+struct City {
+    var cityName: String?
+    var selected: Bool?
+}

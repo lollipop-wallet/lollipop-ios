@@ -44,7 +44,7 @@ protocol LocationsViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol LocationsWireframeProtocol: AnyObject {
     static var partner: Partner? { get set }
-    func toFilterWith(filterType: LocationFilterType, delegate: LocationsFilterControllerProtocol?)
+    func toFilterWith(filterType: LocationFilterType, delegate: LocationsFilterControllerProtocol?, cities: [City], brands: [Brand])
 }
 
 //MARK: LocationCell Protocol

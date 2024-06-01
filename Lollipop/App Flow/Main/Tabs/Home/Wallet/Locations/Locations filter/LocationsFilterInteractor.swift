@@ -16,6 +16,8 @@ class LocationsFilterInteractor: LocationsFilterInputInteractorProtocol {
     func viewDidLoad() {
         let filterType = LocationsFilterWireframe.filterType
         let delegate = LocationsFilterWireframe.delegate
-        presenter?.takeDataWith(filterType: filterType, delegate: delegate)
+        let cities = LocationsFilterWireframe.cities ?? []
+        let brands = LocationsFilterWireframe.brands ?? []
+        presenter?.takeDataWith(filterType: filterType, delegate: delegate, cities: cities, brands: brands)
     }
 }

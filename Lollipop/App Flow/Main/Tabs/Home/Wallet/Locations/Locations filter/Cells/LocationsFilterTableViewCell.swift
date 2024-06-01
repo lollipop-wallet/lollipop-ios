@@ -124,11 +124,18 @@ class LocationsFilterTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: LocationsFilterCellProtocol) {
+    func configureWithCity(city: City?, index: IndexPath, delegate: LocationsFilterCellProtocol) {
         self.index = index
         self.delegate = delegate
-        self.titleLabel.text = "Dameo"
-        self.checkBoxIcon.image = UIImage(named: AssetTitles.checkBoxUnselectedIcon)
+        self.titleLabel.text = city?.cityName ?? ""
+        self.checkBoxIcon.image = UIImage(named: (city?.selected ?? false) ?  AssetTitles.checkBoxSelectedIcon : AssetTitles.checkBoxUnselectedIcon)
+    }
+    
+    func configureWithBrand(brand: Brand?, index: IndexPath, delegate: LocationsFilterCellProtocol) {
+        self.index = index
+        self.delegate = delegate
+        self.titleLabel.text = brand?.name ?? ""
+        self.checkBoxIcon.image = UIImage(named: (brand?.selected ?? false) ?  AssetTitles.checkBoxSelectedIcon : AssetTitles.checkBoxUnselectedIcon)
     }
     
     //MARK: Actions

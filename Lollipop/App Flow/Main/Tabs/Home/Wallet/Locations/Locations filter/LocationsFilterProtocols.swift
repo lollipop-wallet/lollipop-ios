@@ -29,18 +29,21 @@ protocol LocationsFilterInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol LocationsFilterOutputInteractorProtocol: AnyObject {
-    func takeDataWith(filterType: LocationFilterType?, delegate: LocationsFilterControllerProtocol?)
+    func takeDataWith(filterType: LocationFilterType?, delegate: LocationsFilterControllerProtocol?, cities: [City], brands: [Brand])
 }
 //MARK: View
 protocol LocationsFilterViewProtocol: AnyObject {
     
     var presenter: LocationsFilterPresenterProtocol?  { get set }
     func setTitleLabelWith(title: String)
+    func reload()
 }
 //MARK: Wireframe
 protocol LocationsFilterWireframeProtocol: AnyObject {
     static var filterType: LocationFilterType? { get set }
     static var delegate: LocationsFilterControllerProtocol? { get set }
+    static var cities: [City]? { get set }
+    static var brands: [Brand]? { get set }
 }
 
 //MARK: LocationsFilterCell protocol
