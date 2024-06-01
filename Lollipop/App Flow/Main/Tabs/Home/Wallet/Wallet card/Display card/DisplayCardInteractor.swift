@@ -12,4 +12,9 @@ import UIKit
 class DisplayCardInteractor: DisplayCardInputInteractorProtocol {
     
     weak var presenter: DisplayCardOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        let card = DisplayCardWireframe.card
+        presenter?.takeData(card: card)
+    }
 }

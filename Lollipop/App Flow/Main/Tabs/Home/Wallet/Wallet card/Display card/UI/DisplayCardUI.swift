@@ -57,7 +57,7 @@ extension DisplayCardView {
         
 
         self.barcodeImageView.contentMode = .scaleAspectFit
-        self.barcodeImageView.backgroundColor = .red
+        //self.barcodeImageView.backgroundColor = .red
         self.barcodeImageView.snp.makeConstraints { make in
             make.height.equalTo(80)
         }

@@ -102,6 +102,7 @@ extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
         switch result {
         case .success(let model):
             delegate?.reload()
+            UIApplication.topViewController()?.popBack(5)
             Alert().alertMessageNoNavigator(title: LocalizedTitle.notice.localized, text: model.message ?? "", shouldDismiss: false)
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)

@@ -42,4 +42,11 @@ class HomeWireframe: HomeWireframeProtocol {
         WalletCardWireframe.card = card
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toDisplayCardDetailsWith(card: Card?){
+        print("Je li odje2")
+        let vc = DisplayCardView()
+        DisplayCardWireframe.card = card
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

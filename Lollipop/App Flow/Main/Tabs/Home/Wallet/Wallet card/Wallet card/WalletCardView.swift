@@ -58,6 +58,12 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
             self.barcodeImageView.image = image
         }
     }
+    
+    func reload(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 
     //MARK: Actions
     @objc func onBackTap() {

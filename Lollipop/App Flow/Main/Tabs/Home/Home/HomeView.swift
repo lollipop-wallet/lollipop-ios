@@ -26,7 +26,6 @@ class HomeView: UIViewController, HomeViewProtocol {
         presenter?.viewDidLoad()
     }
 
-    
     //MARK: HomeView Protocol
     func reload(){
         DispatchQueue.main.async {

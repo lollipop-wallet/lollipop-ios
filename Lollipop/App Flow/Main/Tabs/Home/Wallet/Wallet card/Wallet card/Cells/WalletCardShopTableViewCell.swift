@@ -146,10 +146,11 @@ class WalletCardShopTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: WalletCardShopCellProtocol) {
+    func configureWith(item: Brand?, index: IndexPath, delegate: WalletCardShopCellProtocol) {
         self.index = index
         self.delegate = delegate
-        self.titleLabel.text = "Nike shop"
+        self.titleLabel.text = item?.name ?? ""
+        self.shopImageView.imageFromURL(url: item?.logo ?? "")
     }
     
     //MARK: Actions

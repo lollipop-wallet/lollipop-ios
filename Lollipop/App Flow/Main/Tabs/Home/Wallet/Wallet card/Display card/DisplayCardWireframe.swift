@@ -9,6 +9,7 @@ import UIKit
 
 class DisplayCardWireframe: DisplayCardWireframeProtocol {
     
+    static var card: Card?
     
     static func createModule(DisplayCardRef: DisplayCardView) {
         let presenter: DisplayCardPresenterProtocol & DisplayCardOutputInteractorProtocol = DisplayCardPresenter()

@@ -69,9 +69,11 @@ class APIClient {
     private static func performUpload<T:Decodable>(route: APIRouter, decoder: JSONDecoder = JSONDecoder(), completion: @escaping (Result<T, AFError>) -> Void) -> DataRequest {
         return AF.upload(multipartFormData: { (multipartFormData) in
             let parameters = route.multipartFormData()
+            print("Parametri su:", parameters ?? [:])
+
             for (key, value) in (parameters ?? [:]) {
                 if let image = value as? Data {
-                    multipartFormData.append(image, withName: key, fileName: "image_(\(Date().millisecondsSince1970).jpeg", mimeType: "file")
+                    multipartFormData.append(image, withName: key, fileName: "image_\(Date().millisecondsSince1970).jpeg", mimeType: "file")
                 }
                 if let text = value as? String {
                     multipartFormData.append(text.data(using: .utf8) ?? Data(), withName: key)

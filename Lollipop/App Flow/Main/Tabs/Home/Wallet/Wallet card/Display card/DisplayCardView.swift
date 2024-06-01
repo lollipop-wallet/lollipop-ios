@@ -23,6 +23,7 @@ class DisplayCardView: UIViewController, DisplayCardViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +33,54 @@ class DisplayCardView: UIViewController, DisplayCardViewProtocol {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    //MARK: DisplayCardView protocol
+    
+    func setTitleWith(title: String){
+        DispatchQueue.main.async {
+            self.navigationItem.title = title
+        }
+    }
+    func setCardFrontImageWith(image: String){
+        DispatchQueue.main.async {
+            self.cardFrontImageView.imageFromURL(url: image)
+        }
+    }
+    func setCardBackImageWith(image: String){
+        DispatchQueue.main.async {
+            self.cardBackImageView.imageFromURL(url: image)
+        }
+    }
+    
+    func setCardSerialNumberWith(serialNumber: String){
+        DispatchQueue.main.async {
+            self.cardSerialNumberLabel.text = serialNumber
+        }
+    }
+    
+    func setBarcodeNumberWith(barcode: String){
+        DispatchQueue.main.async {
+            self.barcodeNumberLabel.text = barcode
+        }
+    }
+    func setBarcodeImageWith(image: UIImage) {
+        DispatchQueue.main.async {
+            self.barcodeImageView.image = image
+        }
+    }
+    func setBarcodeHidden(isHidden: Bool){
+        print("je li hidden: ", isHidden ? "da" : "ne")
+        DispatchQueue.main.async {
+            self.barcodeImageView.isHidden = isHidden
+            self.barcodeNumberLabel.isHidden = isHidden
+        }
+    }
+    
+    func setCardNumberHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.cardSerialNumberLabel.isHidden = isHidden
+        }
     }
 
     //MARK: Actions

@@ -175,7 +175,7 @@ extension HomeCardTableViewCell {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(30))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 48), heightDimension: .estimated(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 68) * 0.63))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 48), heightDimension: .absolute(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 68) * 0.63))
         let group = NSCollectionLayoutGroup.vertical( layoutSize: groupSize, subitem: item, count: 1)
             group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 0,trailing: 8)
         let section = NSCollectionLayoutSection(group: group)

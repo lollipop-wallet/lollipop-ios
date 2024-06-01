@@ -50,6 +50,7 @@ protocol HomeWireframeProtocol: AnyObject {
     func toPromotionDetailsWith(banner: Banner?)
     func toCardTemplates()
     func toLoyaltyCardDetailsWith(card: Card?)
+    func toDisplayCardDetailsWith(card: Card?)
 }
 
 //MARK: HomeController protocol

@@ -39,6 +39,7 @@ class HomePresenter: NSObject, HomePresenterProtocol  {
 extension HomePresenter: HomeOutputInteractorProtocol {
     func parseHomeData(result: Result<HomeModel, AFError>, delegate: HomeControllerProtocol?){
         self.delegate = delegate
+        self.datasource = []
         switch result {
         case .success(let model):
             if !(model.cards ?? []).isEmpty {
@@ -85,8 +86,11 @@ extension HomePresenter: HomeOutputInteractorProtocol {
     func parseCardDetailsWith(result: Result<Card, AFError>){
         switch result {
         case .success(let card):
+            print("Kod je", card.code ?? "")
             if card.cardType == .loyalty {
                 wireframe?.toLoyaltyCardDetailsWith(card: card)
+            }else{
+                wireframe?.toDisplayCardDetailsWith(card: card)
             }
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
@@ -164,6 +168,8 @@ extension HomePresenter {
 //MARK: NewLoyaltyCardController delegate
 extension HomePresenter {
     func reload() {
+        self.datasource = []
+        self.view?.reload()
         interactor?.viewDidLoad(showSpinner: false)
     }
 }
