@@ -27,11 +27,13 @@ protocol HomeInputInteractorProtocol: AnyObject {
     
     var presenter: HomeOutputInteractorProtocol?  { get set }
     func viewDidLoad(showSpinner: Bool)
+    func getCardDetailsWith(alias: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol HomeOutputInteractorProtocol: AnyObject {
     func parseHomeData(result: Result<HomeModel, AFError>, delegate: HomeControllerProtocol?)
+    func parseCardDetailsWith(result: Result<Card, AFError>)
 }
 //MARK: View
 protocol HomeViewProtocol: AnyObject {
@@ -47,6 +49,7 @@ protocol HomeWireframeProtocol: AnyObject {
     func toPromotions()
     func toPromotionDetailsWith(banner: Banner?)
     func toCardTemplates()
+    func toLoyaltyCardDetailsWith(card: Card?)
 }
 
 //MARK: HomeController protocol
@@ -62,7 +65,7 @@ protocol AddCardHomeCellProtocol: AnyObject {
 
 //MARK: HomeCardCell protocol
 protocol HomeCardCellProtocol: AnyObject {
-    
+    func didSelectCard(card: Card?)
 }
 
 //MARK: CircledCategoryCell Protocol

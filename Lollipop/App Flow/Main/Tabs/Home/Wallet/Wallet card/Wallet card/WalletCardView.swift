@@ -21,6 +21,7 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +31,26 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    //MARK: WalletCardView protocol
+    
+    func setTitleWith(title: String){
+        DispatchQueue.main.async {
+            self.navigationItem.title = title
+        }
+    }
+    
+    func setCardImageWith(image: String) {
+        DispatchQueue.main.async {
+            self.loyaltyCard.imageUrl = image
+        }
+    }
+    
+    func setBarcodeNumberWith(barcode: String){
+        DispatchQueue.main.async {
+            self.barcodeNumberLabel.text = barcode
+        }
     }
 
     //MARK: Actions

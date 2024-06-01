@@ -159,7 +159,8 @@ extension HomeCardTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     
     
     func didSelectItemAt(index: IndexPath) {
-        
+        let item = self.datasource[index.row]
+        delegate?.didSelectCard(card: item)
     }
 }
 

@@ -13,13 +13,24 @@ class WalletCardPresenter: NSObject, WalletCardPresenterProtocol  {
     weak var view: WalletCardViewProtocol?
     var wireframe: WalletCardWireframeProtocol?
     
+    var card: Card?
+    
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
+    
     func locations() {
         wireframe?.toLocations()
     }
 }
 
 extension WalletCardPresenter: WalletCardOutputInteractorProtocol {
-    
+    func takeData(card: Card?){
+        self.card = card
+        self.view?.setTitleWith(title: card?.card_template?.name ?? "")
+        self.view?.setCardImageWith(image: card?.card_template?.image_front ?? "")
+        self.view?.setBarcodeNumberWith(barcode: card?.code ?? "")
+    }
 }
 
 //MARK: UITableViewDelegate&Datasource

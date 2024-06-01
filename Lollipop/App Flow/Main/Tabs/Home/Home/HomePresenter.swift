@@ -81,6 +81,17 @@ extension HomePresenter: HomeOutputInteractorProtocol {
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }
     }    
+    
+    func parseCardDetailsWith(result: Result<Card, AFError>){
+        switch result {
+        case .success(let card):
+            if card.cardType == .loyalty {
+                wireframe?.toLoyaltyCardDetailsWith(card: card)
+            }
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
 }
 
 extension HomePresenter {
@@ -111,6 +122,11 @@ extension HomePresenter {
             cell.configureWith(datasource: self.datasource[indexPath.row].banners ?? [], index: indexPath, delegate: self)
             return cell
         }
+    }
+    
+    //MARK: CardTableCell protocol
+    func didSelectCard(card: Card?){
+        interactor?.getCardDetailsWith(alias: card?.alias ?? "")
     }
     
     func didTapAddCard() {

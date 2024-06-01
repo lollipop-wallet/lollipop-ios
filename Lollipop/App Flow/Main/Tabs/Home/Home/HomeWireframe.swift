@@ -36,4 +36,10 @@ class HomeWireframe: HomeWireframeProtocol {
         let vc = ScanSuggestionView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toLoyaltyCardDetailsWith(card: Card?){
+        let vc = WalletCardView()
+        WalletCardWireframe.card = card
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

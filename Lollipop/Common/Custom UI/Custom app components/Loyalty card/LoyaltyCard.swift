@@ -42,6 +42,7 @@ class LoyaltyCard: UIView {
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 16
         imageView.backgroundColor = .blue
+        imageView.clipsToBounds = true
         return imageView
     }()
     
