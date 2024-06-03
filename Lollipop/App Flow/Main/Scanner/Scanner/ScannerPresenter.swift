@@ -18,6 +18,10 @@ class ScannerPresenter: NSObject, ScannerPresenterProtocol  {
     func viewDidLoad() {
         interactor?.viewDidLoad()
     }
+    
+    func manually(){
+        wireframe?.toNewCardWith(card: self.card, barcode: "")
+    }
 }
 
 extension ScannerPresenter: ScannerOutputInteractorProtocol {
@@ -29,7 +33,6 @@ extension ScannerPresenter: ScannerOutputInteractorProtocol {
 //MARK: Barcodescanner delegate
 extension ScannerPresenter {
     func scanner(_ controller: BarcodeScanner.BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-        print("ovo je kod: ", code)
         wireframe?.toNewCardWith(card: self.card, barcode: code)
     }
     

@@ -18,6 +18,7 @@ protocol ScannerPresenterProtocol: BarcodeScannerCodeDelegate, BarcodeScannerErr
     var wireframe:ScannerWireframeProtocol? { get set }
     
     func viewDidLoad()
+    func manually()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
