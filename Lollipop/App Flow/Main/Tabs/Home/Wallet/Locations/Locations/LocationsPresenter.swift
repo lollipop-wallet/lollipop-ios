@@ -71,6 +71,8 @@ extension LocationsPresenter {
     }
     
     func didSelectItemAt(index: IndexPath) {
+        let item = self.datasource[index.row]
+        wireframe?.toMapWith(location: item)
     }
 }
 

@@ -7,6 +7,7 @@
 //
 import UIKit
 import FittedSheets
+import MapKit
 
 class LocationsWireframe: LocationsWireframeProtocol {
     
@@ -33,5 +34,12 @@ class LocationsWireframe: LocationsWireframeProtocol {
         let sheetController = SheetViewController(controller: vc, sizes: [.fixed(CGFloat(heightCount) + 92.0)], options: Configuration().options)
         sheetController.allowPullingPastMaxHeight = false
         UIApplication.topViewController()?.present(sheetController, animated: true, completion: nil)
+    }
+    
+    func toMapWith(location: Location?){
+        let coordinate = CLLocationCoordinate2DMake(Double(location?.lat ?? "") ?? 0.0, Double(location?.lon ?? "") ?? 0.0)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = location?.name ?? ""
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
     }
 }
