@@ -13,6 +13,7 @@ class MainPartnerTableViewCell: UITableViewCell {
     var index: IndexPath!
     
     var datasource = [Brand]()
+    var scrollIndex = Int()
     
     lazy var cellContentView: UIView = {
         let view = UIView()
@@ -28,7 +29,6 @@ class MainPartnerTableViewCell: UITableViewCell {
     lazy var partnerBackgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .red
         return imageView
     }()
         
@@ -117,6 +117,8 @@ class MainPartnerTableViewCell: UITableViewCell {
         self.datasource = brands
         self.collectionView.reloadData()
         self.pageControl.numberOfPages = brands.count
+        self.partnerBackgroundImage.imageFromURL(url: brands.first?.featured_image ?? "")
+        self.scrollIndex = 0
     }
     
     //MARK: Actions
@@ -158,6 +160,11 @@ extension MainPartnerTableViewCell {
         section.visibleItemsInvalidationHandler = { [weak self] (items, offset, env) -> Void in
             guard let self = self, let itemWidth = items.last?.bounds.width else { return }
             let page = round(offset.x / (itemWidth + section.interGroupSpacing))
+            let index = Int(page)
+            if self.scrollIndex != index {
+                self.scrollIndex = index
+                self.partnerBackgroundImage.imageFromURL(url: self.datasource[index].featured_image ?? "")
+            }
             self.pageControl.currentPage = Int(page)
         }
         
