@@ -84,6 +84,7 @@ struct Partner: Codable {
     let status: String?
     let is_featured: Int?
     let is_official: Int?
+    let card_templates: [CardTemplate]?
     let brands: [Brand]?
 }
 

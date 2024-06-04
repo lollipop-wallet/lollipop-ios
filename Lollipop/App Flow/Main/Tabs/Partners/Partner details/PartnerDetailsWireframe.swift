@@ -9,6 +9,7 @@ import UIKit
 
 class PartnerDetailsWireframe: PartnerDetailsWireframeProtocol {
     
+    static var alias: String?
     
     static func createModule(PartnerDetailsRef: PartnerDetailsView) {
         let presenter: PartnerDetailsPresenterProtocol & PartnerDetailsOutputInteractorProtocol = PartnerDetailsPresenter()

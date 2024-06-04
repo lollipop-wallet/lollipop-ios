@@ -141,8 +141,14 @@ extension HomePresenter {
         }
     }
     
+    //MARK: CircledCategoryCell Protocol
+    
     func didTapSeeMoreFromCircleCategory(){
         delegate?.toPartnersTabFromHome()
+    }
+    
+    func didSelectBrandWith(brand: Brand?){
+        wireframe?.toBrandDetailsWith(alias: brand?.alias ?? "")
     }
     
     func didTapSeeMoreFromRectCategory(){

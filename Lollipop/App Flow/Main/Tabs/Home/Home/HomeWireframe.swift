@@ -44,9 +44,14 @@ class HomeWireframe: HomeWireframeProtocol {
     }
     
     func toDisplayCardDetailsWith(card: Card?){
-        print("Je li odje2")
         let vc = DisplayCardView()
         DisplayCardWireframe.card = card
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func toBrandDetailsWith(alias: String?){
+        let vc = PartnerDetailsView()
+        PartnerDetailsWireframe.alias = alias
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

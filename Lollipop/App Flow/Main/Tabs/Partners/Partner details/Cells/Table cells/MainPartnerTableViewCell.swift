@@ -12,6 +12,8 @@ class MainPartnerTableViewCell: UITableViewCell {
     var delegate: MainPartnerCellProtocol?
     var index: IndexPath!
     
+    var datasource = [Brand]()
+    
     lazy var cellContentView: UIView = {
         let view = UIView()
         return view
@@ -109,10 +111,12 @@ class MainPartnerTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: MainPartnerCellProtocol) {
+    func configureWith(brands: [Brand], index: IndexPath, delegate: MainPartnerCellProtocol) {
         self.index = index
         self.delegate = delegate
-        self.pageControl.numberOfPages = 5
+        self.datasource = brands
+        self.collectionView.reloadData()
+        self.pageControl.numberOfPages = brands.count
     }
     
     //MARK: Actions
@@ -120,12 +124,12 @@ class MainPartnerTableViewCell: UITableViewCell {
 
 extension MainPartnerTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, MainPartnerCollectionCellProtocol, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.datasource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.mainPartnerCollectionCell.rawValue, for: indexPath) as! MainPartnerCollectionViewCell
-        cell.configureWith(delegate: self, index: indexPath)
+        cell.configureWith(brand: self.datasource[indexPath.row], delegate: self, index: indexPath)
         return cell
     }
     

@@ -142,7 +142,8 @@ extension HomeCircleHorizontalCategoryTableViewCell: UICollectionViewDelegate, U
     
     
     func didSelectItemAt(index: IndexPath) {
-        
+        let item = self.datasource[index.row]
+        self.delegate?.didSelectBrandWith(brand: item)
     }
 }
 

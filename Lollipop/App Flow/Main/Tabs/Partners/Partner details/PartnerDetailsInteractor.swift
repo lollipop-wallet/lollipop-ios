@@ -12,4 +12,18 @@ import UIKit
 class PartnerDetailsInteractor: PartnerDetailsInputInteractorProtocol {
     
     weak var presenter: PartnerDetailsOutputInteractorProtocol?
+    
+    func viewDidLoad(){
+        let alias = PartnerDetailsWireframe.alias ?? ""
+        presenter?.takeData(alias: alias)
+    }
+    
+    func getDetails(alias: String) {
+        UIApplication.topViewController()?.view?.showSpinner()
+        APIClient.getbranddetails(alias: alias) { [weak self] result in
+            UIApplication.topViewController()?.view?.hideSpinner()
+            guard let self = self else {return}
+            presenter?.parseBrandDetailsData(result: result)
+        }
+    }
 }

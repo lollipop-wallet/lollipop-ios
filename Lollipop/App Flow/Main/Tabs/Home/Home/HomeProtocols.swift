@@ -51,6 +51,7 @@ protocol HomeWireframeProtocol: AnyObject {
     func toCardTemplates()
     func toLoyaltyCardDetailsWith(card: Card?)
     func toDisplayCardDetailsWith(card: Card?)
+    func toBrandDetailsWith(alias: String?)
 }
 
 //MARK: HomeController protocol
@@ -72,6 +73,7 @@ protocol HomeCardCellProtocol: AnyObject {
 //MARK: CircledCategoryCell Protocol
 protocol CircledCategoryCellProtocol: AnyObject {
     func didTapSeeMoreFromCircleCategory()
+    func didSelectBrandWith(brand: Brand?)
 }
 
 //MARK: HomePosterCategoryCell Protocol

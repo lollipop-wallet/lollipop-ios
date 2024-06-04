@@ -101,7 +101,6 @@ class CircledItemCollectionViewCell: UICollectionViewCell {
     //MARK: Actions
     
     @objc func onCellTap(){
-        print("wdwda")
         delegate?.didSelectItemAt(index: self.index)
     }
 }

@@ -108,9 +108,11 @@ class MainPartnerCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
-    func configureWith(delegate: MainPartnerCollectionCellProtocol, index: IndexPath) {
+    func configureWith(brand: Brand?, delegate: MainPartnerCollectionCellProtocol, index: IndexPath) {
         self.delegate = delegate
         self.index = index
+        self.photo.imageFromURL(url: brand?.logo ?? "")
+        self.partnerTitleLabel.text = brand?.name ?? ""
     }
     
     

@@ -18,6 +18,15 @@ class PartnerDetailsView: UIViewController, PartnerDetailsViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
+    }
+    
+    //MARK: PartnerDetailsView protocol
+    
+    func reload(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

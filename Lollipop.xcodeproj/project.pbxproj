@@ -234,6 +234,8 @@
 		623C1D3C2C09B4C900296759 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C1D3B2C09B4C900296759 /* CardType.swift */; };
 		623C1D3E2C09BE9800296759 /* CardCodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C1D3D2C09BE9800296759 /* CardCodeType.swift */; };
 		623C1D412C0A2BB300296759 /* UpdateAvatarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C1D402C0A2BB300296759 /* UpdateAvatarModel.swift */; };
+		623E987B2C0F4D77005DC950 /* PartnerIitemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623E987A2C0F4D77005DC950 /* PartnerIitemType.swift */; };
+		623E987D2C0F4DE0005DC950 /* PartnerListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623E987C2C0F4DE0005DC950 /* PartnerListModel.swift */; };
 		625C15282C025FFA001760C3 /* HomeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C15272C025FFA001760C3 /* HomeListModel.swift */; };
 		626906AE2BE0A8D100BF5F62 /* MyShopsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */; };
 		626906AF2BE0A8D100BF5F62 /* MyShopsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626906A92BE0A8D100BF5F62 /* MyShopsProtocols.swift */; };
@@ -738,6 +740,8 @@
 		623C1D3B2C09B4C900296759 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
 		623C1D3D2C09BE9800296759 /* CardCodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCodeType.swift; sourceTree = "<group>"; };
 		623C1D402C0A2BB300296759 /* UpdateAvatarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAvatarModel.swift; sourceTree = "<group>"; };
+		623E987A2C0F4D77005DC950 /* PartnerIitemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerIitemType.swift; sourceTree = "<group>"; };
+		623E987C2C0F4DE0005DC950 /* PartnerListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerListModel.swift; sourceTree = "<group>"; };
 		625C15272C025FFA001760C3 /* HomeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListModel.swift; sourceTree = "<group>"; };
 		626906A82BE0A8D100BF5F62 /* MyShopsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsPresenter.swift; sourceTree = "<group>"; };
 		626906A92BE0A8D100BF5F62 /* MyShopsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopsProtocols.swift; sourceTree = "<group>"; };
@@ -1473,6 +1477,7 @@
 				2CD069082C034DA20098B029 /* TabBarIndex.swift */,
 				623C1D3B2C09B4C900296759 /* CardType.swift */,
 				623C1D3D2C09BE9800296759 /* CardCodeType.swift */,
+				623E987A2C0F4D77005DC950 /* PartnerIitemType.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -2138,6 +2143,7 @@
 				62730C8E2BE8F121004209B9 /* PartnerDetailsProtocols.swift */,
 				62730C8F2BE8F121004209B9 /* PartnerDetailsInteractor.swift */,
 				62730C902BE8F121004209B9 /* PartnerDetailsView.swift */,
+				623E987C2C0F4DE0005DC950 /* PartnerListModel.swift */,
 				62730C912BE8F121004209B9 /* PartnerDetailsModel.swift */,
 				62730C922BE8F121004209B9 /* PartnerDetailsWireframe.swift */,
 				62730C9A2BE8F128004209B9 /* UI */,
@@ -3432,6 +3438,7 @@
 				626906AF2BE0A8D100BF5F62 /* MyShopsProtocols.swift in Sources */,
 				626906B02BE0A8D100BF5F62 /* MyShopsInteractor.swift in Sources */,
 				62730CFD2BEA7285004209B9 /* ScanSuggestionUI.swift in Sources */,
+				623E987D2C0F4DE0005DC950 /* PartnerListModel.swift in Sources */,
 				626906B12BE0A8D100BF5F62 /* MyShopsView.swift in Sources */,
 				623450CE2BFAFB0A00FE8E71 /* DPDConstants.swift in Sources */,
 				623C1D332C082C6400296759 /* ReorderCardsTableViewCell.swift in Sources */,
@@ -3527,6 +3534,7 @@
 				2C5BD1EA2BEB871C0051799E /* DisplayCardModel.swift in Sources */,
 				2C5BD1EB2BEB871C0051799E /* DisplayCardWireframe.swift in Sources */,
 				62F6CE6A2BDE6C9700C4775C /* LanguageWireframe.swift in Sources */,
+				623E987B2C0F4D77005DC950 /* PartnerIitemType.swift in Sources */,
 				2CE0722A2BE0F73000768C73 /* MyCardsTableViewCell.swift in Sources */,
 				2CACCDE92BD540C9008178F8 /* RemoteConfigManager.swift in Sources */,
 				2CACCDCE2BD53E58008178F8 /* Int+Extension.swift in Sources */,
