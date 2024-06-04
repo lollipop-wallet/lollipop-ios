@@ -100,7 +100,7 @@ class MainPartnerTableViewCell: UITableViewCell {
             make.bottom.equalToSuperview()
             make.trailing.equalToSuperview().offset(32)
             make.leading.equalToSuperview()
-            make.height.equalTo(32)
+            make.height.equalTo(24)
         }
         
         cellContentView.addSubview(mainPlaceholderView)

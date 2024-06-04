@@ -205,7 +205,7 @@ class PartnerDetailsOptionsTableViewCell: UITableViewCell {
         cellContentView.addSubview(separatorView)
         separatorView.snp.makeConstraints { make in
             make.bottom.leading.trailing.equalToSuperview()
-            make.height.equalTo(32)
+            make.height.equalTo(24)
         }
         
         cellContentView.addSubview(mainInfoStack)

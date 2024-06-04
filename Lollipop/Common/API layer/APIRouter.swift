@@ -100,7 +100,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
         case .getlocations(let partnerId, let brands, let cities):
             return "locations?partner_id=\(partnerId)&brands=\(brands)&cities=\(cities)"
         case .getbranddetails(let alias):
-            return "brands/\(alias)?includes=partner.brands,partner.card_templates,banners,locations,user_favorite"
+            return "brands/\(alias)?includes=partner.brands,partner.card_templates,banners.brand,locations,user_favorite"
         }
     }
     

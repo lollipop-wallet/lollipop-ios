@@ -10,7 +10,7 @@ import Foundation
 struct PartnerListModel {
     var card: EnhancedCardTemplate?
     var brands: [Brand]?
-    var featuredBanner: FeaturedBanner?
+    var featuredBanner: Banner?
     var banners: [Banner]?
     var itemType: PartnerIitemType?
 }

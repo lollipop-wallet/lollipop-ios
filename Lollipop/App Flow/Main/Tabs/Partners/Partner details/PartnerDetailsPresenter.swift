@@ -29,8 +29,12 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
     func parseBrandDetailsData(result: Result<PartnerDetailsModel, AFError>){
         switch result {
         case .success(let model):
+            
+            //MARK: Brands
             let brandsListModelItem = PartnerListModel(card: nil, brands: model.partner?.brands ?? [], featuredBanner: nil, banners: [], itemType: .brand)
             self.datasource.append(brandsListModelItem)
+            
+            //MARK: Cards
             let templates = model.partner?.card_templates ?? []
             for i in 0..<templates.count {
                 let template = templates[i]
@@ -38,6 +42,25 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
                 let cardsListModelItem = PartnerListModel(card: enhancedTemplate, brands: [], featuredBanner: nil, banners: [], itemType: .card)
                 self.datasource.append(cardsListModelItem)
             }
+            let optionsListModelItem = PartnerListModel(card: nil, brands: [], featuredBanner: nil, banners: [], itemType: .options)
+            self.datasource.append(optionsListModelItem)
+            
+            //MARK: Poster
+            let banners = model.banners ?? []
+            let posterBannerCollection = banners.filter { ($0.is_featured ?? 0) == 1 }
+            
+            if !posterBannerCollection.isEmpty {
+                let posterListModelItem = PartnerListModel(card: nil, brands: [], featuredBanner: posterBannerCollection.first, banners: [], itemType: .poster)
+                self.datasource.append(posterListModelItem)
+            }
+            
+            //MARK: Promotion
+            let promotionBannerCollection = banners.filter { ($0.is_featured ?? 0) == 0 }
+            if !promotionBannerCollection.isEmpty {
+                let promotionListModelItem = PartnerListModel(card: nil, brands: [], featuredBanner: nil, banners: promotionBannerCollection, itemType: .promotion)
+                self.datasource.append(promotionListModelItem)
+            }
+
             self.view?.reload()
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
@@ -66,11 +89,11 @@ extension PartnerDetailsPresenter {
             return cell
         }else if self.datasource[indexPath.row].itemType == .poster {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homePosterCell.rawValue, for: indexPath) as! HomePosterCategoryTableViewCell
-            cell.configureWith(item: nil, index: indexPath, delegate: self)
+            cell.configureWith(item: self.datasource[indexPath.row].featuredBanner, index: indexPath, delegate: self)
             return cell
         }else if self.datasource[indexPath.row].itemType == .promotion {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homeRectItemCell.rawValue, for: indexPath) as! HomeRectHorizontalCategoryTableViewCell
-            cell.configureWith(datasource: [], index: indexPath, delegate: self)
+            cell.configureWith(datasource: self.datasource[indexPath.row].banners ?? [], index: indexPath, delegate: self)
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.partnerDetailsCustomCell.rawValue, for: indexPath) as! PartnerDetailsCustomTableViewCell

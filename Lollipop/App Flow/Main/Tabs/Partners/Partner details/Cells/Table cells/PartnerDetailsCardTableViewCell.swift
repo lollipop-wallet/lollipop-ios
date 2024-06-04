@@ -156,7 +156,6 @@ class PartnerDetailsCardTableViewCell: UITableViewCell {
         
     }
     func configureWith(card: EnhancedCardTemplate?, index: IndexPath, delegate: PartnerDetailsCardCellProtocol) {
-        print("Jesi li poslednji: ", (card?.isLast ?? false) ? "Jesam" : "Nijesam")
         self.index = index
         self.delegate = delegate
         self.titleLabel.text = card?.template?.name ?? ""

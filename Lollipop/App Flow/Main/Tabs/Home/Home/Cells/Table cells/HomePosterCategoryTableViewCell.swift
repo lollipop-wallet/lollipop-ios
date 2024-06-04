@@ -146,10 +146,20 @@ class HomePosterCategoryTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
+    
     func configureWith(item: FeaturedBanner?, index: IndexPath, delegate: HomePosterCategoryCellProtocol) {
         self.index = index
         self.delegate = delegate
-        self.posterHeaderIcon.imageFromURL(url: item?.brand?.featured_image ?? "")
+        self.posterHeaderIcon.imageFromURL(url: item?.brand?.logo ?? "")
+        self.posterImage.imageFromURL(url: item?.featured_image ?? "")
+        self.posterHeaderTitleLabel.text = item?.brand?.name ?? ""
+        self.posterTitleLabel.text = item?.title ?? ""
+    }
+    
+    func configureWith(item: Banner?, index: IndexPath, delegate: HomePosterCategoryCellProtocol) {
+        self.index = index
+        self.delegate = delegate
+        self.posterHeaderIcon.imageFromURL(url: item?.brand?.logo ?? "")
         self.posterImage.imageFromURL(url: item?.featured_image ?? "")
         self.posterHeaderTitleLabel.text = item?.brand?.name ?? ""
         self.posterTitleLabel.text = item?.title ?? ""

@@ -127,6 +127,7 @@ struct Banner: Codable {
     let external_link: String?
     let external_link_label: String?
     let status: String?
+    let is_featured: Int?
     let brand: Brand?
 }
 
