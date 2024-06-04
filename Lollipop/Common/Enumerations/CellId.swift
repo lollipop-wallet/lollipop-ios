@@ -38,4 +38,5 @@ enum CellId : String {
     case phoneNumberPrefixCell = "phoneNumberPrefixCell"
     case favoriteCardCell = "favoriteCardCell"
     case reorderCardCell = "reorderCardCell"
+    case partnerDetailsCardListCell = "partnerDetailsCardListCell"
 }

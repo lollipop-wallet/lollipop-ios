@@ -51,7 +51,7 @@ protocol MainPartnerCellProtocol: AnyObject {
 
 //MARK: PartnerDetailsCardCell Protocol
 protocol PartnerDetailsCardCellProtocol: AnyObject {
-    
+    func didSelectCardTemplateItemAt(index: IndexPath)
 }
 
 //MARK: PartnerDetailsOptionsCell Protocol

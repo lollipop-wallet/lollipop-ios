@@ -29,8 +29,15 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
     func parseBrandDetailsData(result: Result<PartnerDetailsModel, AFError>){
         switch result {
         case .success(let model):
-            let brandsListModelItem = PartnerListModel(cards: [], brands: model.partner?.brands ?? [], featuredBanner: nil, banners: [], itemType: .brand)
+            let brandsListModelItem = PartnerListModel(card: nil, brands: model.partner?.brands ?? [], featuredBanner: nil, banners: [], itemType: .brand)
             self.datasource.append(brandsListModelItem)
+            let templates = model.partner?.card_templates ?? []
+            for i in 0..<templates.count {
+                let template = templates[i]
+                let enhancedTemplate = EnhancedCardTemplate(template: template, isLast: i == templates.count - 1)
+                let cardsListModelItem = PartnerListModel(card: enhancedTemplate, brands: [], featuredBanner: nil, banners: [], itemType: .card)
+                self.datasource.append(cardsListModelItem)
+            }
             self.view?.reload()
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
@@ -51,7 +58,7 @@ extension PartnerDetailsPresenter {
             return cell
         }else if self.datasource[indexPath.row].itemType == .card {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.parnterDetailsCardCell.rawValue, for: indexPath) as! PartnerDetailsCardTableViewCell
-            cell.configureWith(index: indexPath, delegate: self)
+            cell.configureWith(card: self.datasource[indexPath.row].card, index: indexPath, delegate: self)
             return cell
         }else if self.datasource[indexPath.row].itemType == .options {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.partnerDetailsOptionsCell.rawValue, for: indexPath) as! PartnerDetailsOptionsTableViewCell
@@ -70,6 +77,11 @@ extension PartnerDetailsPresenter {
             cell.configureWith(index: indexPath, delegate: self)
             return cell
         }
+    }
+    
+    //MARK: CardTemplate Delegate
+    func didSelectCardTemplateItemAt(index: IndexPath){
+
     }
     
     func didTapSeeMoreFromRectCategory() {

@@ -21,7 +21,28 @@ class PartnerDetailsCardTableViewCell: UITableViewCell {
     lazy var separatorView: UIView = {
         let view = UIView()
         view.backgroundColor = AppColors.lightGrey
+        view.snp.makeConstraints { make in
+            make.height.equalTo(24)
+        }
         return view
+    }()
+    
+    lazy var midSeparatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = AppColors.lightGrey
+        view.snp.makeConstraints { make in
+            make.height.equalTo(12)
+        }
+        return view
+    }()
+    
+    lazy var separatorStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [separatorView, midSeparatorView])
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        stack.spacing = 0
+        return stack
     }()
     
     lazy var cardImageView: UIImageView = {
@@ -118,10 +139,9 @@ class PartnerDetailsCardTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview()
         }
         
-        cellContentView.addSubview(separatorView)
-        separatorView.snp.makeConstraints { make in
+        cellContentView.addSubview(separatorStack)
+        separatorStack.snp.makeConstraints { make in
             make.bottom.leading.trailing.equalToSuperview()
-            make.height.equalTo(32)
         }
         
         cellContentView.addSubview(cardCellPlaceholderView)
@@ -135,13 +155,17 @@ class PartnerDetailsCardTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: PartnerDetailsCardCellProtocol) {
+    func configureWith(card: EnhancedCardTemplate?, index: IndexPath, delegate: PartnerDetailsCardCellProtocol) {
         self.index = index
         self.delegate = delegate
-        self.titleLabel.text = "Dameo"
+        self.titleLabel.text = card?.template?.name ?? ""
+        self.cardImageView.imageFromURL(url: card?.template?.image_front ?? "")
+        self.midSeparatorView.isHidden = card?.isLast ?? false
+        self.separatorView.isHidden = !(card?.isLast ?? false)
     }
     
     //MARK: Actions
     @objc func onCellTap() {
+        self.delegate?.didSelectCardTemplateItemAt(index: self.index)
     }
 }

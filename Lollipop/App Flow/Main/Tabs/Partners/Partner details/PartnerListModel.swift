@@ -8,9 +8,14 @@
 import Foundation
 
 struct PartnerListModel {
-    var cards: [Card]?
+    var card: EnhancedCardTemplate?
     var brands: [Brand]?
     var featuredBanner: FeaturedBanner?
     var banners: [Banner]?
     var itemType: PartnerIitemType?
+}
+
+struct EnhancedCardTemplate  {
+    let template: CardTemplate?
+    let isLast: Bool?
 }
