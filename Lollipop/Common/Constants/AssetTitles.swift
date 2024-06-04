@@ -79,4 +79,5 @@ struct AssetTitles {
     static let scanBarcodeIcon = "ic_scan_barcode"
     static let cardTemplateFrontIcon = "ic_card_template_front"
     static let cardTemplateBackIcon = "ic_card_template_back"
+    static let linkIcon = "ic_link"
 }

@@ -24,13 +24,14 @@ class PartnerDetailsCustomTableViewCell: UITableViewCell {
         return view
     }()
     
-    lazy var cardImageView: UIImageView = {
+    lazy var itemImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 12
         imageView.layer.masksToBounds = true
         imageView.snp.makeConstraints { make in
             make.width.height.equalTo(24)
         }
+        imageView.image = UIImage(named: AssetTitles.linkIcon)
         return imageView
     }()
     
@@ -57,7 +58,7 @@ class PartnerDetailsCustomTableViewCell: UITableViewCell {
     }()
     
     lazy var cardStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [cardImageView, titleLabel, rightSupplementaryIcon])
+        let stack = UIStackView(arrangedSubviews: [itemImageView, titleLabel, rightSupplementaryIcon])
         stack.axis = .horizontal
         stack.alignment = .center
         stack.distribution = .fill
@@ -118,18 +119,18 @@ class PartnerDetailsCustomTableViewCell: UITableViewCell {
         cardCellPlaceholderView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.bottom.equalTo(separatorView.snp.top)
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
+            make.leading.equalToSuperview().offset(12)
+            make.trailing.equalToSuperview().offset(-12)
             make.height.equalTo(56)
         }
         
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: PartnerDetailsCustomCellProtocol) {
+    func configureWith(item: CustomLink?, index: IndexPath, delegate: PartnerDetailsCustomCellProtocol) {
         self.index = index
         self.delegate = delegate
-        self.titleLabel.text = "Dameo"
+        self.titleLabel.text = item?.title ?? ""
     }
     
     //MARK: Actions

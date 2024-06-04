@@ -60,6 +60,13 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
                 let promotionListModelItem = PartnerListModel(card: nil, brands: [], featuredBanner: nil, banners: promotionBannerCollection, itemType: .promotion)
                 self.datasource.append(promotionListModelItem)
             }
+            
+            //MARK: Custom link
+            if !(model.external_link ?? "").isEmpty && !(model.external_link_label ?? "").isEmpty {
+                let customLink = CustomLink(title: model.external_link_label ?? "", link: model.external_link ?? "")
+                let customLinkListModelItem = PartnerListModel(card: nil, brands: [], featuredBanner: nil, banners: [], customLink: customLink, itemType: .link)
+                self.datasource.append(customLinkListModelItem)
+            }
 
             self.view?.reload()
         case .failure(let error):
@@ -97,7 +104,7 @@ extension PartnerDetailsPresenter {
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.partnerDetailsCustomCell.rawValue, for: indexPath) as! PartnerDetailsCustomTableViewCell
-            cell.configureWith(index: indexPath, delegate: self)
+            cell.configureWith(item: self.datasource[indexPath.row].customLink, index: indexPath, delegate: self)
             return cell
         }
     }

@@ -12,10 +12,16 @@ struct PartnerListModel {
     var brands: [Brand]?
     var featuredBanner: Banner?
     var banners: [Banner]?
+    var customLink: CustomLink?
     var itemType: PartnerIitemType?
 }
 
 struct EnhancedCardTemplate  {
     let template: CardTemplate?
     let isLast: Bool?
+}
+
+struct CustomLink {
+    let title: String?
+    let link: String?
 }
