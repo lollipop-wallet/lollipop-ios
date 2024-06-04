@@ -42,6 +42,7 @@ protocol PartnerDetailsViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol PartnerDetailsWireframeProtocol: AnyObject {
     static var alias: String? { get set }
+    func toPartnerCardWith(card: CardTemplate?)
 }
 
 //MARK: MainPartnerCell Protocol

@@ -111,7 +111,8 @@ extension PartnerDetailsPresenter {
     
     //MARK: CardTemplate Delegate
     func didSelectCardTemplateItemAt(index: IndexPath){
-
+        let item = self.datasource[index.row]
+        wireframe?.toPartnerCardWith(card: item.card?.template)
     }
     
     func didTapSeeMoreFromRectCategory() {

@@ -20,4 +20,9 @@ class PartnerDetailsWireframe: PartnerDetailsWireframeProtocol {
         PartnerDetailsRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toPartnerCardWith(card: CardTemplate?){
+        let vc = PartnerCardView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }
