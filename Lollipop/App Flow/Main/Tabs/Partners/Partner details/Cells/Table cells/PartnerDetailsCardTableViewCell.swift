@@ -147,7 +147,7 @@ class PartnerDetailsCardTableViewCell: UITableViewCell {
         cellContentView.addSubview(cardCellPlaceholderView)
         cardCellPlaceholderView.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.bottom.equalTo(separatorView.snp.top)
+            make.bottom.equalTo(separatorStack.snp.top)
             make.leading.equalToSuperview().offset(12)
             make.trailing.equalToSuperview().offset(-12)
         }
@@ -156,11 +156,12 @@ class PartnerDetailsCardTableViewCell: UITableViewCell {
         
     }
     func configureWith(card: EnhancedCardTemplate?, index: IndexPath, delegate: PartnerDetailsCardCellProtocol) {
+        print("Jesi li poslednji: ", (card?.isLast ?? false) ? "Jesam" : "Nijesam")
         self.index = index
         self.delegate = delegate
         self.titleLabel.text = card?.template?.name ?? ""
         self.cardImageView.imageFromURL(url: card?.template?.image_front ?? "")
-        self.midSeparatorView.isHidden = card?.isLast ?? false
+        self.midSeparatorView.isHidden = (card?.isLast ?? false)
         self.separatorView.isHidden = !(card?.isLast ?? false)
     }
     
