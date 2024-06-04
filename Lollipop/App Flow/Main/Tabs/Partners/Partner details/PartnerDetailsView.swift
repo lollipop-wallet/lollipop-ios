@@ -12,6 +12,7 @@ import UIKit
 class PartnerDetailsView: UIViewController, PartnerDetailsViewProtocol {
     
     var tableView = UITableView()
+    var favoriteButton = UIButton()
 
     var presenter: PartnerDetailsPresenterProtocol?
 
@@ -35,6 +36,15 @@ class PartnerDetailsView: UIViewController, PartnerDetailsViewProtocol {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    //MARK: Actions
+    
+    @objc func onBackTap() {
+        popBack(2)
+    }
+    
+    @objc func onFavoriteTap() {
     }
 
 }
