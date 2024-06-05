@@ -29,6 +29,14 @@ class WalletCardPresenter: NSObject, WalletCardPresenterProtocol  {
     func details() {
         wireframe?.toCardDetails(card: self.card, delegate: self)
     }
+    
+    func programme() {
+        wireframe?.toHTMLWith(title: self.card?.partner?.instruction?.title ?? "", description: self.card?.partner?.instruction?.description ?? "", buttonTitle: self.card?.partner?.instruction?.label ?? "", externalLink: "")
+    }
+    
+    func rules() {
+        wireframe?.toHTMLWith(title: self.card?.partner?.rule?.title ?? "", description: self.card?.partner?.rule?.description ?? "", buttonTitle: self.card?.partner?.rule?.label ?? "", externalLink: "")
+    }
 }
 
 extension WalletCardPresenter: WalletCardOutputInteractorProtocol {

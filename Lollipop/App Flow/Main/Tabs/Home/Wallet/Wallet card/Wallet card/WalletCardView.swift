@@ -79,10 +79,10 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
     }
     
     @objc func onAboutProgrammeTap() {
-        
+        presenter?.programme()
     }
     
     @objc func onRulesTap() {
-        
+        presenter?.rules()
     }
 }

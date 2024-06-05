@@ -19,6 +19,8 @@ protocol WalletCardPresenterProtocol: UITableViewDelegate, UITableViewDataSource
     func viewDidLoad()
     func locations()
     func details()
+    func programme()
+    func rules()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -47,6 +49,7 @@ protocol WalletCardWireframeProtocol: AnyObject {
     static var card: Card? { get set }
     func toLocations(partner: Partner?)
     func toCardDetails(card: Card?, delegate: CardDetailsControllerProtocol?)
+    func toHTMLWith(title: String, description: String, buttonTitle: String, externalLink: String)
 }
 
 //MARK: WalletCardShopCell Protocol
