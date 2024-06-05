@@ -74,6 +74,13 @@ class HomePosterCategoryTableViewCell: UITableViewCell {
         return stack
     }()
     
+    lazy var cellButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(onCellTap), for: .touchUpInside)
+        //button.backgroundColor = .green
+        return button
+    }()
+    
     lazy var whiteContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = AppColors.white
@@ -97,6 +104,13 @@ class HomePosterCategoryTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(-20)
         }
+        
+        view.addSubview(cellButton)
+        cellButton.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(posterHeaderStack.snp.bottom)
+        }
+        
         view.layer.cornerRadius = 12
         view.layer.masksToBounds = true
         return view

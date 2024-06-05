@@ -132,7 +132,8 @@ extension PartnerDetailsPresenter {
     
     //MARK: PosterDelegate
     func didTapPosterWith(index: IndexPath) {
-        
+        let item = self.datasource[index.row]
+        wireframe?.openLinkWith(link: item.featuredBanner?.external_link ?? "", delegate: self)
     }
     
     

@@ -33,6 +33,13 @@
 		2C5BD1EA2BEB871C0051799E /* DisplayCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1E42BEB871C0051799E /* DisplayCardModel.swift */; };
 		2C5BD1EB2BEB871C0051799E /* DisplayCardWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1E52BEB871C0051799E /* DisplayCardWireframe.swift */; };
 		2C5BD1EF2BEB872B0051799E /* DisplayCardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5BD1EE2BEB872B0051799E /* DisplayCardUI.swift */; };
+		2C5F24B22C10C52600E73EE8 /* HTMLPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F24AB2C10C52600E73EE8 /* HTMLPresenter.swift */; };
+		2C5F24B32C10C52600E73EE8 /* HTMLProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F24AC2C10C52600E73EE8 /* HTMLProtocols.swift */; };
+		2C5F24B42C10C52600E73EE8 /* HTMLInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F24AD2C10C52600E73EE8 /* HTMLInteractor.swift */; };
+		2C5F24B52C10C52600E73EE8 /* HTMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F24AE2C10C52600E73EE8 /* HTMLView.swift */; };
+		2C5F24B62C10C52600E73EE8 /* HTMLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F24AF2C10C52600E73EE8 /* HTMLModel.swift */; };
+		2C5F24B72C10C52600E73EE8 /* HTMLWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F24B02C10C52600E73EE8 /* HTMLWireframe.swift */; };
+		2C5F24BA2C10C54100E73EE8 /* HTMLUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F24B92C10C54100E73EE8 /* HTMLUI.swift */; };
 		2CA195392BE213A000CC10F5 /* CardDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */; };
 		2CA1953A2BE213A000CC10F5 /* CardDetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */; };
 		2CA1953B2BE213A000CC10F5 /* CardDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */; };
@@ -532,6 +539,13 @@
 		2C5BD1E42BEB871C0051799E /* DisplayCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardModel.swift; sourceTree = "<group>"; };
 		2C5BD1E52BEB871C0051799E /* DisplayCardWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardWireframe.swift; sourceTree = "<group>"; };
 		2C5BD1EE2BEB872B0051799E /* DisplayCardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCardUI.swift; sourceTree = "<group>"; };
+		2C5F24AB2C10C52600E73EE8 /* HTMLPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLPresenter.swift; sourceTree = "<group>"; };
+		2C5F24AC2C10C52600E73EE8 /* HTMLProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLProtocols.swift; sourceTree = "<group>"; };
+		2C5F24AD2C10C52600E73EE8 /* HTMLInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLInteractor.swift; sourceTree = "<group>"; };
+		2C5F24AE2C10C52600E73EE8 /* HTMLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLView.swift; sourceTree = "<group>"; };
+		2C5F24AF2C10C52600E73EE8 /* HTMLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLModel.swift; sourceTree = "<group>"; };
+		2C5F24B02C10C52600E73EE8 /* HTMLWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLWireframe.swift; sourceTree = "<group>"; };
+		2C5F24B92C10C54100E73EE8 /* HTMLUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLUI.swift; sourceTree = "<group>"; };
 		2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenter.swift; sourceTree = "<group>"; };
 		2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsProtocols.swift; sourceTree = "<group>"; };
 		2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsInteractor.swift; sourceTree = "<group>"; };
@@ -1190,6 +1204,28 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		2C5F24A92C10C51300E73EE8 /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				2C5F24AB2C10C52600E73EE8 /* HTMLPresenter.swift */,
+				2C5F24AC2C10C52600E73EE8 /* HTMLProtocols.swift */,
+				2C5F24AD2C10C52600E73EE8 /* HTMLInteractor.swift */,
+				2C5F24AE2C10C52600E73EE8 /* HTMLView.swift */,
+				2C5F24AF2C10C52600E73EE8 /* HTMLModel.swift */,
+				2C5F24B02C10C52600E73EE8 /* HTMLWireframe.swift */,
+				2C5F24B82C10C53200E73EE8 /* UI */,
+			);
+			path = HTML;
+			sourceTree = "<group>";
+		};
+		2C5F24B82C10C53200E73EE8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2C5F24B92C10C54100E73EE8 /* HTMLUI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		2CA195302BE2139000CC10F5 /* Card details */ = {
 			isa = PBXGroup;
 			children = (
@@ -1325,6 +1361,7 @@
 				2CCF3AA72BD7B24D00B3729E /* Registration */,
 				62F6CD6F2BDBBDEC00C4775C /* Main */,
 				2CE32AC12BDFBB83004757C5 /* Dialogue */,
+				2C5F24A92C10C51300E73EE8 /* HTML */,
 			);
 			path = "App Flow";
 			sourceTree = "<group>";
@@ -3212,6 +3249,12 @@
 				2CE32ACC2BDFBB91004757C5 /* DialogueView.swift in Sources */,
 				2CE32ACD2BDFBB91004757C5 /* DialogueModel.swift in Sources */,
 				2CE32ACE2BDFBB91004757C5 /* DialogueWireframe.swift in Sources */,
+				2C5F24B22C10C52600E73EE8 /* HTMLPresenter.swift in Sources */,
+				2C5F24B32C10C52600E73EE8 /* HTMLProtocols.swift in Sources */,
+				2C5F24B42C10C52600E73EE8 /* HTMLInteractor.swift in Sources */,
+				2C5F24B52C10C52600E73EE8 /* HTMLView.swift in Sources */,
+				2C5F24B62C10C52600E73EE8 /* HTMLModel.swift in Sources */,
+				2C5F24B72C10C52600E73EE8 /* HTMLWireframe.swift in Sources */,
 				2CBA98742BE4FC2000B804E6 /* PromotionsUI.swift in Sources */,
 				62F6CD9E2BDBC6D600C4775C /* PartnersProtocols.swift in Sources */,
 				62F6CD9F2BDBC6D600C4775C /* PartnersInteractor.swift in Sources */,
@@ -3570,6 +3613,7 @@
 				62F6CE052BDD55E900C4775C /* ProfileSettingsPresenter.swift in Sources */,
 				62F6CE062BDD55E900C4775C /* ProfileSettingsProtocols.swift in Sources */,
 				62F6CE5B2BDE6BC900C4775C /* AboutUI.swift in Sources */,
+				2C5F24BA2C10C54100E73EE8 /* HTMLUI.swift in Sources */,
 				62F6CE072BDD55E900C4775C /* ProfileSettingsInteractor.swift in Sources */,
 				2C3ACCDA2BFC75A40030907E /* Config.swift in Sources */,
 				62F6CE082BDD55E900C4775C /* ProfileSettingsView.swift in Sources */,

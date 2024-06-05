@@ -96,7 +96,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
         case .createloyaltycard, .createdisplaycard:
             return "cards"
         case .getcarddetails(let alias):
-            return "cards/\(alias)?includes=partner.brands"
+            return "cards/\(alias)?includes=partner.brands,partner.rule,partner.instruction"
         case .getlocations(let partnerId, let brands, let cities):
             return "locations?partner_id=\(partnerId)&brands=\(brands)&cities=\(cities)"
         case .getbranddetails(let alias):
