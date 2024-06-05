@@ -22,6 +22,14 @@ class PartnerDetailsView: UIViewController, PartnerDetailsViewProtocol {
         presenter?.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     //MARK: PartnerDetailsView protocol
     
     func reload(){
@@ -30,12 +38,10 @@ class PartnerDetailsView: UIViewController, PartnerDetailsViewProtocol {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    func setFavoriteIconWith(icon: String){
+        DispatchQueue.main.async {
+            self.favoriteButton.setImage(UIImage(named: icon), for: .normal)
+        }
     }
     
     //MARK: Actions

@@ -38,6 +38,7 @@ protocol PartnerDetailsViewProtocol: AnyObject {
     
     var presenter: PartnerDetailsPresenterProtocol?  { get set }
     func reload()
+    func setFavoriteIconWith(icon: String)
 }
 //MARK: Wireframe
 protocol PartnerDetailsWireframeProtocol: AnyObject {

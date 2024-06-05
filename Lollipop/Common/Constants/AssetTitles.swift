@@ -80,4 +80,5 @@ struct AssetTitles {
     static let cardTemplateFrontIcon = "ic_card_template_front"
     static let cardTemplateBackIcon = "ic_card_template_back"
     static let linkIcon = "ic_link"
+    static let favoriteRoundedSelectedIcon = "ic_favorite_selected_rounded"
 }
