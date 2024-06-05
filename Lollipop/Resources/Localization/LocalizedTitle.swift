@@ -183,6 +183,7 @@ enum LocalizedTitle: String {
     case favoriteCards
     case markFavoriteCards
     case cardImagesNotSet
+    case promotions
     
     var localized: String {
         return self.rawValue.localized()

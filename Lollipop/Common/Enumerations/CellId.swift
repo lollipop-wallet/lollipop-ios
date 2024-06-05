@@ -39,4 +39,6 @@ enum CellId : String {
     case favoriteCardCell = "favoriteCardCell"
     case reorderCardCell = "reorderCardCell"
     case partnerDetailsCardListCell = "partnerDetailsCardListCell"
+    case partnerDetailsPromotionTableCell = "partnerDetailsPromotionTableCell"
+    case partnerDetailsPromotionCollectionCell = "partnerDetailsPromotionCollectionCell"
 }

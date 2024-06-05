@@ -99,7 +99,7 @@ extension PartnerDetailsPresenter {
             cell.configureWith(item: self.datasource[indexPath.row].featuredBanner, index: indexPath, delegate: self)
             return cell
         }else if self.datasource[indexPath.row].itemType == .promotion {
-            let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homeRectItemCell.rawValue, for: indexPath) as! HomeRectHorizontalCategoryTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellId.partnerDetailsPromotionTableCell.rawValue, for: indexPath) as! PartnerDetailsPromotionTableViewCell
             cell.configureWith(datasource: self.datasource[indexPath.row].banners ?? [], index: indexPath, delegate: self)
             return cell
         }else{
@@ -115,7 +115,9 @@ extension PartnerDetailsPresenter {
         wireframe?.toPartnerCardWith(card: item.card?.template)
     }
     
-    func didTapSeeMoreFromRectCategory() {
+    //MARK: Promotions Delegate
+    func didTapSeeMoreFromPartnerDetailsCellCategory() {
+        
     }
     
     func didTapBannerWith(banner: Banner?) {

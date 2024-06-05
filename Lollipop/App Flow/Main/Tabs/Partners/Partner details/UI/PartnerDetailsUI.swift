@@ -29,7 +29,7 @@ extension PartnerDetailsView {
         self.tableView.register(PartnerDetailsCardTableViewCell.self, forCellReuseIdentifier: CellId.parnterDetailsCardCell.rawValue)
         self.tableView.register(PartnerDetailsOptionsTableViewCell.self, forCellReuseIdentifier: CellId.partnerDetailsOptionsCell.rawValue)
         self.tableView.register(HomePosterCategoryTableViewCell.self, forCellReuseIdentifier: CellId.homePosterCell.rawValue)
-        self.tableView.register(HomeRectHorizontalCategoryTableViewCell.self, forCellReuseIdentifier: CellId.homeRectItemCell.rawValue)
+        self.tableView.register(PartnerDetailsPromotionTableViewCell.self, forCellReuseIdentifier: CellId.partnerDetailsPromotionTableCell.rawValue)
         self.tableView.register(PartnerDetailsCustomTableViewCell.self, forCellReuseIdentifier: CellId.partnerDetailsCustomCell.rawValue)
         self.tableView.delegate = presenter
         self.tableView.dataSource = presenter

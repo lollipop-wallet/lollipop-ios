@@ -11,7 +11,7 @@ import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PartnerDetailsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, MainPartnerCellProtocol, PartnerDetailsCardCellProtocol, PartnerDetailsOptionsCellProtocol, HomePosterCategoryCellProtocol, RectangleCategoryCellProtocol, PartnerDetailsCustomCellProtocol {
+protocol PartnerDetailsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, MainPartnerCellProtocol, PartnerDetailsCardCellProtocol, PartnerDetailsOptionsCellProtocol, HomePosterCategoryCellProtocol, PartnerDetailsPromotionTableViewCellProtocol, PartnerDetailsCustomCellProtocol {
     
     var interactor: PartnerDetailsInputInteractorProtocol? { get set }
     var view: PartnerDetailsViewProtocol? { get set }
@@ -68,4 +68,15 @@ protocol PartnerDetailsCustomCellProtocol: AnyObject {
 //MARK: MainPartnerCollectionCell Protocol
 protocol MainPartnerCollectionCellProtocol: AnyObject {
     
+}
+
+//MARK: PartnerDetailsPromotionTableViewCell Protocol
+protocol PartnerDetailsPromotionTableViewCellProtocol: AnyObject {
+    func didTapSeeMoreFromPartnerDetailsCellCategory()
+    func didTapBannerWith(banner: Banner?)
+}
+
+//MARK: PartnerDetailsPromotionCollectionViewCell Protocol
+protocol PartnerDetailsPromotionCollectionViewCellProtocol: AnyObject {
+    func didSelectItemAt(index: IndexPath)
 }

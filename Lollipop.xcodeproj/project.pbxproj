@@ -356,6 +356,8 @@
 		628AA6DC2BFB6600009A3077 /* NewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6D52BFB6600009A3077 /* NewPasswordView.swift */; };
 		628AA6DD2BFB6600009A3077 /* NewPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6D62BFB6600009A3077 /* NewPasswordModel.swift */; };
 		628AA6DE2BFB6600009A3077 /* NewPasswordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628AA6D72BFB6600009A3077 /* NewPasswordWireframe.swift */; };
+		62ADAA652C10AA0900472E22 /* PartnerDetailsPromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ADAA642C10AA0900472E22 /* PartnerDetailsPromotionTableViewCell.swift */; };
+		62ADAA672C10AB5400472E22 /* PartnerDetailsPromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ADAA662C10AB5400472E22 /* PartnerDetailsPromotionCollectionViewCell.swift */; };
 		62B48DA82C043AB40035AD22 /* SetToFavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B48DA72C043AB40035AD22 /* SetToFavoriteModel.swift */; };
 		62BC2FF22C0B43A200E3CD63 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BC2FF12C0B43A200E3CD63 /* RoundedImageView.swift */; };
 		62BFFD282BE5E16300899800 /* Code resoruces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD272BE5E16300899800 /* Code resoruces.swift */; };
@@ -862,6 +864,8 @@
 		628AA6D52BFB6600009A3077 /* NewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordView.swift; sourceTree = "<group>"; };
 		628AA6D62BFB6600009A3077 /* NewPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordModel.swift; sourceTree = "<group>"; };
 		628AA6D72BFB6600009A3077 /* NewPasswordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordWireframe.swift; sourceTree = "<group>"; };
+		62ADAA642C10AA0900472E22 /* PartnerDetailsPromotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsPromotionTableViewCell.swift; sourceTree = "<group>"; };
+		62ADAA662C10AB5400472E22 /* PartnerDetailsPromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsPromotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		62B48DA72C043AB40035AD22 /* SetToFavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetToFavoriteModel.swift; sourceTree = "<group>"; };
 		62BC2FF12C0B43A200E3CD63 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		62BFFD272BE5E16300899800 /* Code resoruces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Code resoruces.swift"; sourceTree = "<group>"; };
@@ -2231,6 +2235,7 @@
 				62730CD12BE9F500004209B9 /* PartnerDetailsCardTableViewCell.swift */,
 				62730CD42BE9F937004209B9 /* PartnerDetailsOptionsTableViewCell.swift */,
 				62730CD62BEA00D5004209B9 /* PartnerDetailsCustomTableViewCell.swift */,
+				62ADAA642C10AA0900472E22 /* PartnerDetailsPromotionTableViewCell.swift */,
 			);
 			path = "Table cells";
 			sourceTree = "<group>";
@@ -2239,6 +2244,7 @@
 			isa = PBXGroup;
 			children = (
 				62730CCB2BE9EA6F004209B9 /* MainPartnerCollectionViewCell.swift */,
+				62ADAA662C10AB5400472E22 /* PartnerDetailsPromotionCollectionViewCell.swift */,
 			);
 			path = "Collection cells";
 			sourceTree = "<group>";
@@ -3493,6 +3499,7 @@
 				62730CF62BEA726F004209B9 /* ScanSuggestionInteractor.swift in Sources */,
 				62730CF72BEA726F004209B9 /* ScanSuggestionView.swift in Sources */,
 				62730CF82BEA726F004209B9 /* ScanSuggestionModel.swift in Sources */,
+				62ADAA652C10AA0900472E22 /* PartnerDetailsPromotionTableViewCell.swift in Sources */,
 				62730CF92BEA726F004209B9 /* ScanSuggestionWireframe.swift in Sources */,
 				2CBA98802BE5174F00B804E6 /* PromotionDetailsPresenter.swift in Sources */,
 				2CBA98812BE5174F00B804E6 /* PromotionDetailsProtocols.swift in Sources */,
@@ -3532,6 +3539,7 @@
 				628AA6DE2BFB6600009A3077 /* NewPasswordWireframe.swift in Sources */,
 				2C5BD1E92BEB871C0051799E /* DisplayCardView.swift in Sources */,
 				2C5BD1EA2BEB871C0051799E /* DisplayCardModel.swift in Sources */,
+				62ADAA672C10AB5400472E22 /* PartnerDetailsPromotionCollectionViewCell.swift in Sources */,
 				2C5BD1EB2BEB871C0051799E /* DisplayCardWireframe.swift in Sources */,
 				62F6CE6A2BDE6C9700C4775C /* LanguageWireframe.swift in Sources */,
 				623E987B2C0F4D77005DC950 /* PartnerIitemType.swift in Sources */,
