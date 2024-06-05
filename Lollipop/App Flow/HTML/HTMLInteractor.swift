@@ -12,4 +12,12 @@ import UIKit
 class HTMLInteractor: HTMLInputInteractorProtocol {
     
     weak var presenter: HTMLOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        let title = HTMLWireframe.title ?? ""
+        let description = HTMLWireframe.description ?? ""
+        let buttonTitle = HTMLWireframe.buttonTitle ?? ""
+        let link = HTMLWireframe.externalLink ?? ""
+        presenter?.takeData(title: title, description: description, buttonTitle: buttonTitle, externalLink: link)
+    }
 }

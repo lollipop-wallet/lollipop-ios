@@ -155,7 +155,7 @@ extension HomePresenter {
     //MARK: Poster category
     func didTapPosterWith(index: IndexPath){
         let item = self.datasource[index.row]
-        wireframe?.openLink(link: item.featuredBanner?.external_link ?? "", delegate: self)
+        wireframe?.toHTMLWith(title: item.featuredBanner?.title ?? "", description: item.featuredBanner?.description ?? "", buttonTitle: item.featuredBanner?.external_link_label ?? "", externalLink: item.featuredBanner?.external_link ?? "")
     }
     
     

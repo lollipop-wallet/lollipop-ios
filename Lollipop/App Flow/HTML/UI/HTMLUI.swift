@@ -37,11 +37,12 @@ extension HTMLView {
         self.webView.isOpaque = false
         self.webView.backgroundColor = UIColor.clear
         self.webView.scrollView.backgroundColor = UIColor.clear
+        self.webView.navigationDelegate = presenter
         
         lazy var seeMoreButton: UIButton = {
             let button = UIButton()
             button.addTarget(self, action: #selector(onSeeMoreTap), for: .touchUpInside)
-            button.setTitle(LocalizedTitle.seeMore.localized, for: .normal)
+            //button.setTitle(LocalizedTitle.seeMore.localized, for: .normal)
             button.backgroundColor = AppColors.brandPrimary
             button.titleLabel?.font = .inter(ofSize: 16, name: .medium)
             button.setTitleColor(AppColors.white, for: .normal)
@@ -50,10 +51,12 @@ extension HTMLView {
             return button
         }()
         
+        self.seeMoreButton = seeMoreButton
+        
         lazy var seeMorePlaceholderView: UIView = {
             let view = UIView()
-            view.addSubview(seeMoreButton)
-            seeMoreButton.snp.makeConstraints { make in
+            view.addSubview(self.seeMoreButton)
+            self.seeMoreButton.snp.makeConstraints { make in
                 make.leading.equalToSuperview().offset(64)
                 make.trailing.equalToSuperview().offset(-64)
                 make.centerX.centerY.equalToSuperview()
@@ -64,6 +67,8 @@ extension HTMLView {
             view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
             return view
         }()
+        
+        self.seeMoreView = seeMorePlaceholderView
         
         self.view.addSubview(backButton)
         backButton.snp.makeConstraints { make in
@@ -87,8 +92,8 @@ extension HTMLView {
             make.bottom.equalToSuperview().offset(-120)
         }
         
-        self.view.addSubview(seeMorePlaceholderView)
-        seeMorePlaceholderView.snp.makeConstraints { make in
+        self.view.addSubview(self.seeMoreView)
+        self.seeMoreView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.height.equalTo(96)
         }

@@ -54,6 +54,7 @@ protocol HomeWireframeProtocol: AnyObject {
     func toDisplayCardDetailsWith(card: Card?)
     func toBrandDetailsWith(alias: String?)
     func openLink(link: String, delegate: SFSafariViewControllerDelegate)
+    func toHTMLWith(title: String, description: String, buttonTitle: String, externalLink: String)
 }
 
 //MARK: HomeController protocol
