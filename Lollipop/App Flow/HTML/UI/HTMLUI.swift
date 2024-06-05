@@ -38,6 +38,9 @@ extension HTMLView {
         self.webView.backgroundColor = UIColor.clear
         self.webView.scrollView.backgroundColor = UIColor.clear
         self.webView.navigationDelegate = presenter
+        self.webView.snp.makeConstraints { make in
+            make.width.equalTo(self.view.frame.width - 40)
+        }
         
         lazy var seeMoreButton: UIButton = {
             let button = UIButton()
@@ -69,6 +72,19 @@ extension HTMLView {
         }()
         
         self.seeMoreView = seeMorePlaceholderView
+        self.seeMoreView.snp.makeConstraints { make in
+            make.height.equalTo(96)
+            make.width.equalTo(self.view.frame.width)
+        }
+        
+        lazy var mainStackView: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [self.webView, self.seeMoreView])
+            stack.axis = .vertical
+            stack.alignment = .center
+            stack.distribution = .fill
+            stack.spacing = 0
+            return stack
+        }()
         
         self.view.addSubview(backButton)
         backButton.snp.makeConstraints { make in
@@ -84,18 +100,18 @@ extension HTMLView {
             make.trailing.equalToSuperview().offset(-20)
         }
 
-        self.view.addSubview(self.webView)
-        self.webView.snp.makeConstraints { make in
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(32)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-            make.bottom.equalToSuperview().offset(-120)
-        }
+//        self.view.addSubview(self.webView)
+//        self.webView.snp.makeConstraints { make in
+//            make.top.equalTo(self.titleLabel.snp.bottom).offset(32)
+//            make.leading.equalToSuperview().offset(20)
+//            make.trailing.equalToSuperview().offset(-20)
+//            make.bottom.equalToSuperview().offset(-120)
+//        }
         
-        self.view.addSubview(self.seeMoreView)
-        self.seeMoreView.snp.makeConstraints { make in
+        self.view.addSubview(mainStackView)
+        mainStackView.snp.makeConstraints { make in
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(32)
             make.leading.trailing.bottom.equalToSuperview()
-            make.height.equalTo(96)
         }
     }
 }

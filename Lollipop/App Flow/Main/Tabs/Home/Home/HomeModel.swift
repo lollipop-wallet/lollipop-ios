@@ -86,6 +86,8 @@ struct Partner: Codable {
     let is_official: Int?
     let card_templates: [CardTemplate]?
     let brands: [Brand]?
+    let rule: Rule?
+    let instruction: Instruction?
 }
 
 struct Brand: Codable {
@@ -137,4 +139,18 @@ struct Element: Codable {
     let featured_image: String?
     let featured_banner: FeaturedBanner?
     let banners: [Banner]?
+}
+
+struct Rule: Codable {
+    let title: String?
+    let description: String?
+    let label: String?
+    let icon: String?
+}
+
+struct Instruction: Codable {
+    let title: String?
+    let description: String?
+    let label: String?
+    let icon: String?
 }

@@ -24,3 +24,5 @@ struct PartnerDetailsModel : Codable {
 struct UserFavorite: Codable {
     let is_favorite: Int?
 }
+
+

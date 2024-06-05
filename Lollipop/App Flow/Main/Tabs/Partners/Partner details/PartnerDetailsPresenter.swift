@@ -123,11 +123,11 @@ extension PartnerDetailsPresenter {
     }
     
     func didTapAbout(){
-        
+        wireframe?.toHTMLWith(title: self.model?.partner?.instruction?.title ?? "", description: self.model?.partner?.instruction?.description ?? "", buttonTitle: self.model?.partner?.instruction?.label ?? "", externalLink: "")
     }
     
     func didTapRules(){
-        
+        wireframe?.toHTMLWith(title: self.model?.partner?.rule?.title ?? "", description: self.model?.partner?.rule?.description ?? "", buttonTitle: self.model?.partner?.rule?.label ?? "", externalLink: "")
     }
     
     //MARK: PosterDelegate
