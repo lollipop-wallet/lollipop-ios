@@ -158,6 +158,11 @@ extension HomePresenter {
         wireframe?.toHTMLWith(title: item.featuredBanner?.title ?? "", description: item.featuredBanner?.description ?? "", buttonTitle: item.featuredBanner?.external_link_label ?? "", externalLink: item.featuredBanner?.external_link ?? "")
     }
     
+    func didTapPosterBrandWith(index: IndexPath) {
+        let item = self.datasource[index.row]
+        wireframe?.toBrandDetailsWith(alias: item.featuredBanner?.brand?.alias ?? "")
+    }
+    
     
     //MARK: RectCategoryCell Protocol
     func didTapSeeMoreFromRectCategory(){

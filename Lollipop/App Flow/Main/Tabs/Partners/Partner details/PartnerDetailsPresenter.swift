@@ -136,6 +136,9 @@ extension PartnerDetailsPresenter {
         wireframe?.toHTMLWith(title: item.featuredBanner?.title ?? "", description: item.featuredBanner?.description ?? "", buttonTitle: item.featuredBanner?.external_link_label ?? "", externalLink: item.featuredBanner?.external_link ?? "")
     }
     
+    func didTapPosterBrandWith(index: IndexPath) {
+    }
+    
     
     //MARK: Promotions Delegate
     func didTapSeeMoreFromPartnerDetailsCellCategory() {

@@ -82,6 +82,7 @@ protocol CircledCategoryCellProtocol: AnyObject {
 //MARK: HomePosterCategoryCell Protocol
 protocol HomePosterCategoryCellProtocol: AnyObject {
     func didTapPosterWith(index: IndexPath)
+    func didTapPosterBrandWith(index: IndexPath)
 }
 
 //MARK: RectangleCategoryCell Protocol

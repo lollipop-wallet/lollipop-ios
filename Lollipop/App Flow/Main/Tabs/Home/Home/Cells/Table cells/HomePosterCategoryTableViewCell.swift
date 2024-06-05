@@ -30,10 +30,29 @@ class HomePosterCategoryTableViewCell: UITableViewCell {
         imageView.layer.cornerRadius = 20
         imageView.layer.masksToBounds = true
         imageView.backgroundColor = .red
-        imageView.snp.makeConstraints { make in
+        return imageView
+    }()
+    
+    lazy var posterHeaderIconButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(onBrandTap), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var posterHeaderIconPlaceholderView: UIView = {
+        let view = UIView()
+        view.addSubview(posterHeaderIcon)
+        posterHeaderIcon.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+        view.addSubview(posterHeaderIconButton)
+        posterHeaderIconButton.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+        view.snp.makeConstraints { make in
             make.width.height.equalTo(40)
         }
-        return imageView
+        return view
     }()
     
     lazy var posterHeaderTitleLabel: UILabel = {
@@ -66,7 +85,7 @@ class HomePosterCategoryTableViewCell: UITableViewCell {
     }()
     
     lazy var posterHeaderStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [posterHeaderIcon, posterHeaderTitleLabel])
+        let stack = UIStackView(arrangedSubviews: [posterHeaderIconPlaceholderView, posterHeaderTitleLabel])
         stack.axis = .horizontal
         stack.alignment = .center
         stack.distribution = .fill
@@ -182,5 +201,9 @@ class HomePosterCategoryTableViewCell: UITableViewCell {
     //MARK: Actions
     @objc func onCellTap() {
         self.delegate?.didTapPosterWith(index: self.index)
+    }
+    
+    @objc func onBrandTap(){
+        self.delegate?.didTapPosterBrandWith(index: self.index)
     }
 }
