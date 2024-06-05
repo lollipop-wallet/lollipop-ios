@@ -50,6 +50,7 @@ protocol WalletCardWireframeProtocol: AnyObject {
     func toLocations(partner: Partner?)
     func toCardDetails(card: Card?, delegate: CardDetailsControllerProtocol?)
     func toHTMLWith(title: String, description: String, buttonTitle: String, externalLink: String)
+    func toBrandDetailsWith(alias: String?)
 }
 
 //MARK: WalletCardShopCell Protocol

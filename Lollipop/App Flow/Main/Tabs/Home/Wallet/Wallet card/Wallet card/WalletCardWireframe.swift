@@ -42,4 +42,10 @@ class WalletCardWireframe: WalletCardWireframeProtocol {
         HTMLWireframe.externalLink = externalLink
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toBrandDetailsWith(alias: String?){
+        let vc = PartnerDetailsView()
+        PartnerDetailsWireframe.alias = alias
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

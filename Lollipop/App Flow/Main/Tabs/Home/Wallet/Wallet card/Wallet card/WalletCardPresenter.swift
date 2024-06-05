@@ -66,7 +66,8 @@ extension WalletCardPresenter {
     }
     
     func didSelectItemAt(index: IndexPath) {
-        
+        let item = self.datasource[index.row]
+        wireframe?.toBrandDetailsWith(alias: item.alias ?? "")
     }
 }
 
