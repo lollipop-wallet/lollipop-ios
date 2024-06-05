@@ -9,6 +9,7 @@ import UIKit
 
 class PartnerCardWireframe: PartnerCardWireframeProtocol {
     
+    static var cardTemplate: CardTemplate?
     
     static func createModule(PartnerCardRef: PartnerCardView) {
         let presenter: PartnerCardPresenterProtocol & PartnerCardOutputInteractorProtocol = PartnerCardPresenter()
@@ -22,6 +23,12 @@ class PartnerCardWireframe: PartnerCardWireframeProtocol {
     
     func toPartnerNewCard(){
         let vc = PartnerCardSignupView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func toScannerWith(card: Card?){
+        let vc = ScannerView()
+        ScannerWireframe.card = card
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

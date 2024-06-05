@@ -14,10 +14,18 @@ class PartnerCardPresenter: NSObject, PartnerCardPresenterProtocol  {
     var wireframe: PartnerCardWireframeProtocol?
     
     var datasource = DefaultModels().partnerCardOptionsDatasource
+    var cardTemplate: CardTemplate?
+    
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
 }
 
 extension PartnerCardPresenter: PartnerCardOutputInteractorProtocol {
-    
+    func takeData(cardTemplate: CardTemplate?) {
+        self.cardTemplate = cardTemplate
+        self.view?.setCardImageWith(imageLink: cardTemplate?.image_front ?? "")
+    }
 }
 
 extension PartnerCardPresenter {
@@ -36,7 +44,8 @@ extension PartnerCardPresenter {
         if item.option == .wantsCard {
             wireframe?.toPartnerNewCard()
         }else{
-            
+            let card = Card(id: self.cardTemplate?.id ?? 0, name: self.cardTemplate?.name ?? "", alias: "", name_on_card: "", image_front: self.cardTemplate?.image_front ?? "", image_back: self.cardTemplate?.image_back ?? "", code: "", cardNumber: "", note: "", type: "loyalty", card_template: nil, partner: nil, position: 0)
+            wireframe?.toScannerWith(card: card)
         }
     }
 }

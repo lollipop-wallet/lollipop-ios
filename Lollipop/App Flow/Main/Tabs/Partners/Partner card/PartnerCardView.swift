@@ -19,6 +19,7 @@ class PartnerCardView: UIViewController, PartnerCardViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +29,14 @@ class PartnerCardView: UIViewController, PartnerCardViewProtocol {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    //MARK: PartnerCardView protocol
+    
+    func setCardImageWith(imageLink: String){
+        DispatchQueue.main.async {
+            self.cardImageView.imageFromURL(url: imageLink)
+        }
     }
     
     //MARK: Actions

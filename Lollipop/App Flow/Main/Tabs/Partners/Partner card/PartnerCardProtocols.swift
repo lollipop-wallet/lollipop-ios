@@ -16,30 +16,32 @@ protocol PartnerCardPresenterProtocol: UITableViewDelegate, UITableViewDataSourc
     var view: PartnerCardViewProtocol? { get set }
     var wireframe:PartnerCardWireframeProtocol? { get set }
     
+    func viewDidLoad()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
 protocol PartnerCardInputInteractorProtocol: AnyObject {
     
     var presenter: PartnerCardOutputInteractorProtocol?  { get set }
-    
+    func viewDidLoad()
    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol PartnerCardOutputInteractorProtocol: AnyObject {
-    
-
+    func takeData(cardTemplate: CardTemplate?)
 }
 //MARK: View
 protocol PartnerCardViewProtocol: AnyObject {
     
     var presenter: PartnerCardPresenterProtocol?  { get set }
-    
+    func setCardImageWith(imageLink: String)
 }
 //MARK: Wireframe
 protocol PartnerCardWireframeProtocol: AnyObject {
+    static var cardTemplate: CardTemplate? { get set }
     func toPartnerNewCard()
+    func toScannerWith(card: Card?)
 }
 
 //MARK: PartnerCardOptionCellProtocol

@@ -7,6 +7,7 @@
 //
 import UIKit
 import Alamofire
+import SafariServices
 
 class HomePresenter: NSObject, HomePresenterProtocol  {
     
@@ -151,6 +152,14 @@ extension HomePresenter {
         wireframe?.toBrandDetailsWith(alias: brand?.alias ?? "")
     }
     
+    //MARK: Poster category
+    func didTapPosterWith(index: IndexPath){
+        let item = self.datasource[index.row]
+        wireframe?.openLink(link: item.featuredBanner?.external_link ?? "", delegate: self)
+    }
+    
+    
+    //MARK: RectCategoryCell Protocol
     func didTapSeeMoreFromRectCategory(){
         if Manager.isRegistered {
             wireframe?.toPromotions()

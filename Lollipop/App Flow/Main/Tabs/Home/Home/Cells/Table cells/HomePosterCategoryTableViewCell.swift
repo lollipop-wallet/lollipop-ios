@@ -167,5 +167,6 @@ class HomePosterCategoryTableViewCell: UITableViewCell {
     
     //MARK: Actions
     @objc func onCellTap() {
+        self.delegate?.didTapPosterWith(index: self.index)
     }
 }

@@ -8,10 +8,11 @@
 
 import UIKit
 import Alamofire
+import SafariServices
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddCardHomeCellProtocol, HomeCardCellProtocol, CircledCategoryCellProtocol, HomePosterCategoryCellProtocol, RectangleCategoryCellProtocol, ProfileControllerProtocol, NewLoyaltyCardControllerProtocol{
+protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddCardHomeCellProtocol, HomeCardCellProtocol, CircledCategoryCellProtocol, HomePosterCategoryCellProtocol, RectangleCategoryCellProtocol, ProfileControllerProtocol, NewLoyaltyCardControllerProtocol, SFSafariViewControllerDelegate{
     
     var interactor: HomeInputInteractorProtocol? { get set }
     var view: HomeViewProtocol? { get set }
@@ -52,6 +53,7 @@ protocol HomeWireframeProtocol: AnyObject {
     func toLoyaltyCardDetailsWith(card: Card?)
     func toDisplayCardDetailsWith(card: Card?)
     func toBrandDetailsWith(alias: String?)
+    func openLink(link: String, delegate: SFSafariViewControllerDelegate)
 }
 
 //MARK: HomeController protocol
@@ -78,7 +80,7 @@ protocol CircledCategoryCellProtocol: AnyObject {
 
 //MARK: HomePosterCategoryCell Protocol
 protocol HomePosterCategoryCellProtocol: AnyObject {
-    
+    func didTapPosterWith(index: IndexPath)
 }
 
 //MARK: RectangleCategoryCell Protocol

@@ -10,7 +10,7 @@ import Alamofire
 import SafariServices
 
 class PartnerDetailsPresenter: NSObject, PartnerDetailsPresenterProtocol  {
-    
+
     var interactor : PartnerDetailsInputInteractorProtocol?
     weak var view: PartnerDetailsViewProtocol?
     var wireframe: PartnerDetailsWireframeProtocol?
@@ -129,6 +129,12 @@ extension PartnerDetailsPresenter {
     func didTapRules(){
         
     }
+    
+    //MARK: PosterDelegate
+    func didTapPosterWith(index: IndexPath) {
+        
+    }
+    
     
     //MARK: Promotions Delegate
     func didTapSeeMoreFromPartnerDetailsCellCategory() {
