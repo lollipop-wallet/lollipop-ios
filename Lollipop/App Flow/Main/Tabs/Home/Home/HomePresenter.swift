@@ -44,7 +44,11 @@ extension HomePresenter: HomeOutputInteractorProtocol {
         switch result {
         case .success(let model):
             if !(model.cards ?? []).isEmpty {
-                let homeItem = HomeListModel(cards: model.cards ?? [], brands: [], featuredBanner: nil, banners: [], itemType: .cards)
+                var cards = model.cards ?? []
+                if cards.count >= 5 {
+                    cards.append(DefaultModels().allCardsCard)
+                }
+                let homeItem = HomeListModel(cards: cards, brands: [], featuredBanner: nil, banners: [], itemType: .cards)
                 self.datasource.append(homeItem)
             }else{
                 let homeItem = HomeListModel(cards: [], brands: [], featuredBanner: nil, banners: [], itemType: .addcard)
@@ -132,6 +136,10 @@ extension HomePresenter {
     //MARK: CardTableCell protocol
     func didSelectCard(card: Card?){
         interactor?.getCardDetailsWith(alias: card?.alias ?? "")
+    }
+    
+    func didTapSeeAllCards(){
+        wireframe?.toCards()
     }
     
     func didTapAddCard() {

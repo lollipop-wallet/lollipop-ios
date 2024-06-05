@@ -162,6 +162,10 @@ extension HomeCardTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         let item = self.datasource[index.row]
         delegate?.didSelectCard(card: item)
     }
+    
+    func didTapSeeAllCards(){
+        delegate?.didTapSeeAllCards()
+    }
 }
 
 extension HomeCardTableViewCell {

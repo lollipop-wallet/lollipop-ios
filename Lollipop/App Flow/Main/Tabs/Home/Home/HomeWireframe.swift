@@ -71,4 +71,9 @@ class HomeWireframe: HomeWireframeProtocol {
         HTMLWireframe.externalLink = externalLink
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toCards(){
+        let vc = MyCardsView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

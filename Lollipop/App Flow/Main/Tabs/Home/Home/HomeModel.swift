@@ -65,6 +65,7 @@ struct Card: Codable {
     var cardType: CardType {
         return (type ?? "") == "loyalty" ? .loyalty : .display
     }
+    var isSeeAllCards: Bool?
 }
 
 struct CardTemplate: Codable {

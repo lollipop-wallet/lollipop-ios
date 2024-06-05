@@ -55,6 +55,7 @@ protocol HomeWireframeProtocol: AnyObject {
     func toBrandDetailsWith(alias: String?)
     func openLink(link: String, delegate: SFSafariViewControllerDelegate)
     func toHTMLWith(title: String, description: String, buttonTitle: String, externalLink: String)
+    func toCards()
 }
 
 //MARK: HomeController protocol
@@ -71,6 +72,7 @@ protocol AddCardHomeCellProtocol: AnyObject {
 //MARK: HomeCardCell protocol
 protocol HomeCardCellProtocol: AnyObject {
     func didSelectCard(card: Card?)
+    func didTapSeeAllCards()
 }
 
 //MARK: CircledCategoryCell Protocol
@@ -94,6 +96,7 @@ protocol RectangleCategoryCellProtocol: AnyObject {
 //MARK: LoyaltyCardCell protocol
 protocol LoyaltyCardCellProtocol: AnyObject {
     func didSelectItemAt(index: IndexPath)
+    func didTapSeeAllCards()
 }
 
 //MARK: CircledItemCell Protocol
