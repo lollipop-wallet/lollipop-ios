@@ -47,6 +47,7 @@ protocol PartnerDetailsWireframeProtocol: AnyObject {
     func toPartnerCardWith(card: CardTemplate?)
     func toLocations(partner: Partner?)
     func openLinkWith(link: String, delegate: SFSafariViewControllerDelegate)
+    func toHTMLWith(title: String, description: String, buttonTitle: String, externalLink: String)
 }
 
 //MARK: MainPartnerCell Protocol
