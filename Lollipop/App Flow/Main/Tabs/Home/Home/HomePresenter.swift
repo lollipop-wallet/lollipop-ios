@@ -143,7 +143,6 @@ extension HomePresenter {
     }
     
     //MARK: CircledCategoryCell Protocol
-    
     func didTapSeeMoreFromCircleCategory(){
         delegate?.toPartnersTabFromHome()
     }

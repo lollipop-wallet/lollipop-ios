@@ -142,10 +142,11 @@ extension PartnerDetailsPresenter {
     
     //MARK: Promotions Delegate
     func didTapSeeMoreFromPartnerDetailsCellCategory() {
-        
+        wireframe?.toPromotions()
     }
     
     func didTapBannerWith(banner: Banner?) {
+        wireframe?.toPromotionDetailsWith(banner: banner)
     }
     
     //MARK: CustomCell Delegate

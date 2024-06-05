@@ -28,4 +28,6 @@ class PromotionDetailsWireframe: PromotionDetailsWireframeProtocol {
         controller.delegate = delegate
         UIApplication.topViewController()?.present(controller, animated: true)
     }
+    
+
 }
