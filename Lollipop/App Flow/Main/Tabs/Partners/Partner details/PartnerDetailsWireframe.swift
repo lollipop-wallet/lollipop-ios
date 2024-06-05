@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import SafariServices
 
 class PartnerDetailsWireframe: PartnerDetailsWireframeProtocol {
     
@@ -30,5 +31,12 @@ class PartnerDetailsWireframe: PartnerDetailsWireframeProtocol {
         let vc = LocationsView()
         LocationsWireframe.partner = partner
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func openLinkWith(link: String, delegate: SFSafariViewControllerDelegate){
+        let url = URL(string: link)!
+        let controller = SFSafariViewController(url: url)
+        controller.delegate = delegate
+        UIApplication.topViewController()?.present(controller, animated: true)
     }
 }

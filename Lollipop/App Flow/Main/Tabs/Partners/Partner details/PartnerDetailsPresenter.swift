@@ -7,6 +7,7 @@
 //
 import UIKit
 import Alamofire
+import SafariServices
 
 class PartnerDetailsPresenter: NSObject, PartnerDetailsPresenterProtocol  {
     
@@ -137,5 +138,8 @@ extension PartnerDetailsPresenter {
     func didTapBannerWith(banner: Banner?) {
     }
     
-    
+    //MARK: CustomCell Delegate
+    func didTapCustomLinkWith(link: String){
+        wireframe?.openLinkWith(link: link, delegate: self)
+    }
 }

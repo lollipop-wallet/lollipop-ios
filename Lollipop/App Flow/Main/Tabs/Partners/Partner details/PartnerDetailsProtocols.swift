@@ -8,10 +8,11 @@
 
 import UIKit
 import Alamofire
+import SafariServices
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PartnerDetailsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, MainPartnerCellProtocol, PartnerDetailsCardCellProtocol, PartnerDetailsOptionsCellProtocol, HomePosterCategoryCellProtocol, PartnerDetailsPromotionTableViewCellProtocol, PartnerDetailsCustomCellProtocol {
+protocol PartnerDetailsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, MainPartnerCellProtocol, PartnerDetailsCardCellProtocol, PartnerDetailsOptionsCellProtocol, HomePosterCategoryCellProtocol, PartnerDetailsPromotionTableViewCellProtocol, PartnerDetailsCustomCellProtocol, SFSafariViewControllerDelegate {
     
     var interactor: PartnerDetailsInputInteractorProtocol? { get set }
     var view: PartnerDetailsViewProtocol? { get set }
@@ -45,6 +46,7 @@ protocol PartnerDetailsWireframeProtocol: AnyObject {
     static var alias: String? { get set }
     func toPartnerCardWith(card: CardTemplate?)
     func toLocations(partner: Partner?)
+    func openLinkWith(link: String, delegate: SFSafariViewControllerDelegate)
 }
 
 //MARK: MainPartnerCell Protocol
@@ -66,7 +68,7 @@ protocol PartnerDetailsOptionsCellProtocol: AnyObject {
 
 //MARK: PartnerDetailsCustomCell Protocol
 protocol PartnerDetailsCustomCellProtocol: AnyObject {
-    
+    func didTapCustomLinkWith(link: String)
 }
 
 //MARK: MainPartnerCollectionCell Protocol

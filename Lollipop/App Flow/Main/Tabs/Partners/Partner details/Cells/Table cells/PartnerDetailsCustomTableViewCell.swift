@@ -11,6 +11,7 @@ class PartnerDetailsCustomTableViewCell: UITableViewCell {
     
     var delegate: PartnerDetailsCustomCellProtocol?
     var index: IndexPath!
+    var link: String?
     
     lazy var cellContentView: UIView = {
         let view = UIView()
@@ -131,9 +132,11 @@ class PartnerDetailsCustomTableViewCell: UITableViewCell {
         self.index = index
         self.delegate = delegate
         self.titleLabel.text = item?.title ?? ""
+        self.link = item?.link
     }
     
     //MARK: Actions
     @objc func onCellTap() {
+        delegate?.didTapCustomLinkWith(link: self.link ?? "")
     }
 }
