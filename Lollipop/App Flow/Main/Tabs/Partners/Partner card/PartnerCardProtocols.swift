@@ -29,7 +29,7 @@ protocol PartnerCardInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol PartnerCardOutputInteractorProtocol: AnyObject {
-    func takeData(cardTemplate: CardTemplate?)
+    func takeData(cardTemplate: CardTemplate?, partner: Partner?)
 }
 //MARK: View
 protocol PartnerCardViewProtocol: AnyObject {
@@ -40,6 +40,7 @@ protocol PartnerCardViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol PartnerCardWireframeProtocol: AnyObject {
     static var cardTemplate: CardTemplate? { get set }
+    static var partner: Partner? { get set }
     func toPartnerNewCard()
     func toScannerWith(card: Card?)
 }

@@ -10,6 +10,7 @@ import UIKit
 class PartnerCardWireframe: PartnerCardWireframeProtocol {
     
     static var cardTemplate: CardTemplate?
+    static var partner: Partner?
     
     static func createModule(PartnerCardRef: PartnerCardView) {
         let presenter: PartnerCardPresenterProtocol & PartnerCardOutputInteractorProtocol = PartnerCardPresenter()

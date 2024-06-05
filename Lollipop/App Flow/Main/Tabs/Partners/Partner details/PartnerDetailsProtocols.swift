@@ -44,7 +44,7 @@ protocol PartnerDetailsViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol PartnerDetailsWireframeProtocol: AnyObject {
     static var alias: String? { get set }
-    func toPartnerCardWith(card: CardTemplate?)
+    func toPartnerCardWith(card: CardTemplate?, partner: Partner?)
     func toLocations(partner: Partner?)
     func openLinkWith(link: String, delegate: SFSafariViewControllerDelegate)
     func toHTMLWith(title: String, description: String, buttonTitle: String, externalLink: String)

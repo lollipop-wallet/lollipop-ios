@@ -114,7 +114,7 @@ extension PartnerDetailsPresenter {
     //MARK: CardTemplate Delegate
     func didSelectCardTemplateItemAt(index: IndexPath){
         let item = self.datasource[index.row]
-        wireframe?.toPartnerCardWith(card: item.card?.template)
+        wireframe?.toPartnerCardWith(card: item.card?.template, partner: self.model?.partner)
     }
     
     //MARK: Options Delegate

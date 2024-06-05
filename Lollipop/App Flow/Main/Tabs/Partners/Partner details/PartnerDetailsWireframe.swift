@@ -22,8 +22,10 @@ class PartnerDetailsWireframe: PartnerDetailsWireframeProtocol {
         
     }
     
-    func toPartnerCardWith(card: CardTemplate?){
+    func toPartnerCardWith(card: CardTemplate?, partner: Partner?){
         let vc = PartnerCardView()
+        PartnerCardWireframe.cardTemplate = card
+        PartnerCardWireframe.partner = partner
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
     
