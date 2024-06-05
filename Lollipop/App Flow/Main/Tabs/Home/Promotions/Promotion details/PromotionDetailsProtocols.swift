@@ -8,10 +8,11 @@
 
 import Foundation
 import SafariServices
+import WebKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PromotionDetailsPresenterProtocol: SFSafariViewControllerDelegate {
+protocol PromotionDetailsPresenterProtocol: SFSafariViewControllerDelegate, WKNavigationDelegate{
     
     var interactor: PromotionDetailsInputInteractorProtocol? { get set }
     var view: PromotionDetailsViewProtocol? { get set }

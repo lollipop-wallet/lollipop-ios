@@ -7,6 +7,7 @@
 //
 import UIKit
 import SafariServices
+import WebKit
 
 class PromotionDetailsPresenter: NSObject, PromotionDetailsPresenterProtocol  {
     
@@ -37,5 +38,12 @@ extension PromotionDetailsPresenter: PromotionDetailsOutputInteractorProtocol {
 extension PromotionDetailsPresenter {
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         controller.dismiss(animated: true)
+    }
+}
+
+extension PromotionDetailsPresenter {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        let js = "document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust='300%'"//dual size
+        webView.evaluateJavaScript(js, completionHandler: nil)
     }
 }

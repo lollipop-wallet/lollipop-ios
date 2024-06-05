@@ -37,6 +37,7 @@ extension PromotionDetailsView {
         self.webView.isOpaque = false
         self.webView.backgroundColor = UIColor.clear
         self.webView.scrollView.backgroundColor = UIColor.clear
+        self.webView.navigationDelegate = presenter
         
         lazy var seeMoreButton: UIButton = {
             let button = UIButton()
