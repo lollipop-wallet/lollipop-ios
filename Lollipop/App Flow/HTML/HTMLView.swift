@@ -28,7 +28,7 @@ class HTMLView: UIViewController, HTMLViewProtocol {
     }
     
     @objc func onSeeMoreTap() {
-        presenter?.seeMore()
+        //presenter?.seeMore()
     }
 
 }
