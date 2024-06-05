@@ -44,6 +44,7 @@ protocol PartnerDetailsViewProtocol: AnyObject {
 protocol PartnerDetailsWireframeProtocol: AnyObject {
     static var alias: String? { get set }
     func toPartnerCardWith(card: CardTemplate?)
+    func toLocations(partner: Partner?)
 }
 
 //MARK: MainPartnerCell Protocol
@@ -58,7 +59,9 @@ protocol PartnerDetailsCardCellProtocol: AnyObject {
 
 //MARK: PartnerDetailsOptionsCell Protocol
 protocol PartnerDetailsOptionsCellProtocol: AnyObject {
-    
+    func didTapLocations()
+    func didTapAbout()
+    func didTapRules()
 }
 
 //MARK: PartnerDetailsCustomCell Protocol

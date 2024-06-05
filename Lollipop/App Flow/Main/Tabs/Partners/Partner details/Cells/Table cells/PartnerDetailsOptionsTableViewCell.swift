@@ -227,14 +227,14 @@ class PartnerDetailsOptionsTableViewCell: UITableViewCell {
     
     //MARK: Actions
     @objc func onLocationsTap(){
-        
+        delegate?.didTapLocations()
     }
     
     @objc func onAboutProgrammeTap(){
-        
+        delegate?.didTapAbout()
     }
     
     @objc func onRulesTap() {
-        
+        delegate?.didTapRules()
     }
 }

@@ -25,4 +25,10 @@ class PartnerDetailsWireframe: PartnerDetailsWireframeProtocol {
         let vc = PartnerCardView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toLocations(partner: Partner?){
+        let vc = LocationsView()
+        LocationsWireframe.partner = partner
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

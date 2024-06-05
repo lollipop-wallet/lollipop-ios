@@ -15,6 +15,7 @@ class PartnerDetailsPresenter: NSObject, PartnerDetailsPresenterProtocol  {
     var wireframe: PartnerDetailsWireframeProtocol?
     
     var datasource = [PartnerListModel]()
+    var model: PartnerDetailsModel?
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -29,7 +30,7 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
     func parseBrandDetailsData(result: Result<PartnerDetailsModel, AFError>){
         switch result {
         case .success(let model):
-            
+            self.model = model
             //MARK: Brands
             let brandsListModelItem = PartnerListModel(card: nil, brands: model.partner?.brands ?? [], featuredBanner: nil, banners: [], itemType: .brand)
             self.datasource.append(brandsListModelItem)
@@ -113,6 +114,19 @@ extension PartnerDetailsPresenter {
     func didSelectCardTemplateItemAt(index: IndexPath){
         let item = self.datasource[index.row]
         wireframe?.toPartnerCardWith(card: item.card?.template)
+    }
+    
+    //MARK: Options Delegate
+    func didTapLocations(){
+        wireframe?.toLocations(partner: self.model?.partner)
+    }
+    
+    func didTapAbout(){
+        
+    }
+    
+    func didTapRules(){
+        
     }
     
     //MARK: Promotions Delegate
