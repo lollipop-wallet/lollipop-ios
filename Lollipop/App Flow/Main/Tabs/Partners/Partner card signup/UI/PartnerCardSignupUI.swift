@@ -147,7 +147,7 @@ extension PartnerCardSignupView {
         self.cityField.text = LocalizedTitle.choose.localized
         self.cityField.rightSuplementaryIconHidden = false
         self.cityField.leftSuplementaryIconHidden = true
-        self.cityField.tag = 1
+        self.cityField.tag = 0
         self.cityField.delegate = presenter
         
         self.phonePrefixField.title = "\(LocalizedTitle.phoneNumber.localized):"
@@ -156,7 +156,8 @@ extension PartnerCardSignupView {
         self.phonePrefixField.rightSuplementaryIconHidden = false
         self.phonePrefixField.leftSuplementaryIconHidden = true
         //self.phonePrefixField.leftSuplementaryDefaultIcon = UIImage(named: AssetTitles.flagMneIcon)
-        self.phonePrefixField.tag = 0
+        self.phonePrefixField.text = "🇲🇪"
+        self.phonePrefixField.tag = 1
         self.phonePrefixField.delegate = presenter
         
         self.phoneField.title = " "
@@ -240,6 +241,7 @@ extension PartnerCardSignupView {
         self.phoneCodeDropDown.backgroundColor = AppColors.white
         self.phoneCodeDropDown.cornerRadius = 8
         self.phoneCodeDropDown.dismissMode = .onTap
+        self.phoneCodeDropDown.tag = 1
         self.phoneCodeDropDown.delegate = presenter
         
         let datasource = (Config.model.countries ?? []).map { $0.dropItem }
@@ -252,6 +254,31 @@ extension PartnerCardSignupView {
         self.phoneCodeDropDown.selectionAction = { [weak self] (index, item) in
             guard let self = self else {return}
             self.presenter?.handleDropDownTap(item: (Config.model.countries ?? [])[index])
+        }
+        
+        
+        self.cityDropDown.cellNib = UINib(nibName: "CityTableViewCell", bundle: nil)
+        self.cityDropDown.anchorView = self.cityField
+        self.cityDropDown.cellHeight = 48
+        self.cityDropDown.direction = .bottom
+        self.cityDropDown.bottomOffset = CGPoint(x: 0, y: 85)
+        self.cityDropDown.backgroundColor = AppColors.white
+        self.cityDropDown.cornerRadius = 8
+        self.cityDropDown.dismissMode = .onTap
+        self.cityDropDown.tag = 0
+        self.cityDropDown.delegate = presenter
+        
+        let cityDatasource = (Config.model.cities ?? [])
+        self.cityDropDown.dataSource = cityDatasource
+        
+        self.cityDropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let cell = cell as? CityTableViewCell else { return }
+            cell.cityNameLabel.text = item
+        }
+//
+        self.cityDropDown.selectionAction = { [weak self] (index, item) in
+            guard let self = self else {return}
+            self.presenter?.handleCityDropdownTapWith(item: item)
         }
         
         self.phoneStack = UIStackView(arrangedSubviews: [self.phonePrefixField, self.phoneField])

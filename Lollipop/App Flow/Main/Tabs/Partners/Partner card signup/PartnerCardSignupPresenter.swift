@@ -23,6 +23,10 @@ class PartnerCardSignupPresenter: NSObject, PartnerCardSignupPresenterProtocol  
         self.view?.setFlagWith(flag: item.flag ?? "")
         self.view?.setPrefixWith(prefix: "+\(item.phone_code ?? "")")
     }
+    
+    func handleCityDropdownTapWith(item: String){
+        view?.setCityWith(item: item)
+    }
 }
 
 extension PartnerCardSignupPresenter: PartnerCardSignupOutputInteractorProtocol {
@@ -32,21 +36,20 @@ extension PartnerCardSignupPresenter: PartnerCardSignupOutputInteractorProtocol 
     }
 }
 
-//MARK: Input field protocols
+//MARK: Dropdown field delegate
 extension PartnerCardSignupPresenter {
     func showHideDropdown(tag: Int) {
-        view?.setupAndOpenPhonePrefixDropdown()
+        view?.showDropdownWith(tag: tag)
     }
 }
 
-
-//MARK: Dropdown protocol
+//MARK: Dropdown delegate
 extension PartnerCardSignupPresenter {
     func dropDownHidden(tag: Int) {
-        view?.hidePrefixDropdown()
+        view?.hideDropdownWith(tag: tag)
     }
     
     func dropDownShown(tag: Int) {
-        view?.setupAndOpenPhonePrefixDropdown()
+        view?.showDropdownWith(tag: tag)
     }
 }

@@ -22,6 +22,7 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
     var termsLabel = UILabel()
     var phoneStack = UIStackView()
     var phoneCodeDropDown = DropDown()
+    var cityDropDown = DropDown()
 
 
     var presenter: PartnerCardSignupPresenterProtocol?
@@ -42,16 +43,28 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
     }
     
     //MARK: PartnerCardSignupView protocol
-    func setupAndOpenPhonePrefixDropdown(){        
-        self.phoneCodeDropDown.show()
-        self.phonePrefixField.borderWidth = 2
-        self.phonePrefixField.borderColor = AppColors.link
+    func showDropdownWith(tag: Int){
+        if tag == 0 {
+            self.cityDropDown.show()
+            self.cityField.borderWidth = 2
+            self.cityField.borderColor = AppColors.link
+        }else{
+            self.phoneCodeDropDown.show()
+            self.phonePrefixField.borderWidth = 2
+            self.phonePrefixField.borderColor = AppColors.link
+        }
     }
     
-    func hidePrefixDropdown(){
-        self.phonePrefixField.isDropdownHidden = true
-        self.phonePrefixField.borderWidth = 1.0
-        self.phonePrefixField.borderColor = AppColors.mediumGrey
+    func hideDropdownWith(tag: Int){
+        if tag == 0 {
+            self.cityField.isDropdownHidden = true
+            self.cityField.borderWidth = 1
+            self.cityField.borderColor = AppColors.mediumGrey
+        }else{
+            self.phonePrefixField.isDropdownHidden = true
+            self.phonePrefixField.borderWidth = 1
+            self.phonePrefixField.borderColor = AppColors.mediumGrey
+        }
     }
     
     func setCardImageWith(image: String){
@@ -63,6 +76,12 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
     func setPrefixWith(prefix: String){
         DispatchQueue.main.async {
             self.phoneField.leftLabelSupplementaryText = prefix
+        }
+    }
+    
+    func setCityWith(item: String){
+        DispatchQueue.main.async {
+            self.cityField.text = item
         }
     }
     
