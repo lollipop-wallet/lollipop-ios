@@ -43,12 +43,11 @@ extension PartnerCardPresenter {
     
     func didSelectItemAt(index: IndexPath) {
         let item = self.datasource[index.row]
-        let card = Card(id: self.cardTemplate?.id ?? 0, name: self.cardTemplate?.name ?? "", alias: "", name_on_card: "", image_front: self.cardTemplate?.image_front ?? "", image_back: self.cardTemplate?.image_back ?? "", code: "", cardNumber: "", note: "", type: "loyalty", card_template: nil, partner: self.partner, position: 0)
+        let card = Card(id: self.cardTemplate?.id ?? 0, name: self.cardTemplate?.name ?? "", alias: "", name_on_card: "", image_front: self.cardTemplate?.image_front ?? "", image_back: self.cardTemplate?.image_back ?? "", code: "", cardNumber: "", note: "", type: "loyalty", card_template: self.cardTemplate, partner: self.partner, position: 0)
         
         if item.option == .wantsCard {
-            wireframe?.toPartnerNewCard()
+            wireframe?.toPartnerNewCard(card: card)
         }else{
-
             wireframe?.toScannerWith(card: card)
         }
     }

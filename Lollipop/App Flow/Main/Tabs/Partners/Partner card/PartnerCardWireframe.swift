@@ -24,6 +24,7 @@ class PartnerCardWireframe: PartnerCardWireframeProtocol {
     
     func toPartnerNewCard(card: Card?){
         let vc = PartnerCardSignupView()
+        PartnerCardSignupWireframe.card = card
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
     
