@@ -9,6 +9,7 @@ import UIKit
 
 class PartnerCardSignupWireframe: PartnerCardSignupWireframeProtocol {
     
+    static var card: Card?
     
     static func createModule(PartnerCardSignupRef: PartnerCardSignupView) {
         let presenter: PartnerCardSignupPresenterProtocol & PartnerCardSignupOutputInteractorProtocol = PartnerCardSignupPresenter()

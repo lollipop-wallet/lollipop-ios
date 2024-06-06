@@ -29,6 +29,7 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +52,12 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
         self.phonePrefixField.isDropdownHidden = true
         self.phonePrefixField.borderWidth = 1.0
         self.phonePrefixField.borderColor = AppColors.mediumGrey
+    }
+    
+    func setCardImageWith(image: String){
+        DispatchQueue.main.async {
+            self.cardImageView.imageFromURL(url: image)
+        }
     }
     
     //MARK: Actions

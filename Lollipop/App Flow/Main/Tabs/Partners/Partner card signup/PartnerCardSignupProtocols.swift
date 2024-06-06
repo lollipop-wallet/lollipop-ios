@@ -15,7 +15,8 @@ protocol PartnerCardSignupPresenterProtocol: DropdownInputFieldProtocol, Dropdow
     var interactor: PartnerCardSignupInputInteractorProtocol? { get set }
     var view: PartnerCardSignupViewProtocol? { get set }
     var wireframe:PartnerCardSignupWireframeProtocol? { get set }
-    
+
+    func viewDidLoad()
     func handleDropDownTap()
 }
 //MARK: Interactor
@@ -23,14 +24,13 @@ protocol PartnerCardSignupPresenterProtocol: DropdownInputFieldProtocol, Dropdow
 protocol PartnerCardSignupInputInteractorProtocol: AnyObject {
     
     var presenter: PartnerCardSignupOutputInteractorProtocol?  { get set }
-    
+    func viewDidLoad()
    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol PartnerCardSignupOutputInteractorProtocol: AnyObject {
-    
-
+    func takeData(card: Card?)
 }
 //MARK: View
 protocol PartnerCardSignupViewProtocol: AnyObject {
@@ -38,9 +38,9 @@ protocol PartnerCardSignupViewProtocol: AnyObject {
     var presenter: PartnerCardSignupPresenterProtocol?  { get set }
     func setupAndOpenPhonePrefixDropdown()
     func hidePrefixDropdown()
+    func setCardImageWith(image: String)
 }
 //MARK: Wireframe
 protocol PartnerCardSignupWireframeProtocol: AnyObject {
-
-    
+    static var card: Card? { get set }
 }

@@ -13,12 +13,21 @@ class PartnerCardSignupPresenter: NSObject, PartnerCardSignupPresenterProtocol  
     weak var view: PartnerCardSignupViewProtocol?
     var wireframe: PartnerCardSignupWireframeProtocol?
     
+    var card: Card?
+    
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
+    
     func handleDropDownTap(){
     }
 }
 
 extension PartnerCardSignupPresenter: PartnerCardSignupOutputInteractorProtocol {
-    
+    func takeData(card: Card?){
+        self.card = card
+        self.view?.setCardImageWith(image: card?.card_template?.image_front ?? "")
+    }
 }
 
 //MARK: Input field protocols

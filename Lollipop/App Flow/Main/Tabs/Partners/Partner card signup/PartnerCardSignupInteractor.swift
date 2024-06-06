@@ -12,4 +12,9 @@ import UIKit
 class PartnerCardSignupInteractor: PartnerCardSignupInputInteractorProtocol {
     
     weak var presenter: PartnerCardSignupOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        let card = PartnerCardSignupWireframe.card
+        presenter?.takeData(card: card)
+    }
 }

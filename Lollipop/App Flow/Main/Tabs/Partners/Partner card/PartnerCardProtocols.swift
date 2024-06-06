@@ -41,7 +41,7 @@ protocol PartnerCardViewProtocol: AnyObject {
 protocol PartnerCardWireframeProtocol: AnyObject {
     static var cardTemplate: CardTemplate? { get set }
     static var partner: Partner? { get set }
-    func toPartnerNewCard()
+    func toPartnerNewCard(card: Card?)
     func toScannerWith(card: Card?)
 }
 
