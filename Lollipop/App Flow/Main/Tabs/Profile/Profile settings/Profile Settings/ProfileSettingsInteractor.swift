@@ -12,4 +12,9 @@ import UIKit
 class ProfileSettingsInteractor: ProfileSettingsInputInteractorProtocol {
     
     weak var presenter: ProfileSettingsOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        let model = ProfileSettingsWireframe.model
+        presenter?.takeData(model: model)
+    }
 }

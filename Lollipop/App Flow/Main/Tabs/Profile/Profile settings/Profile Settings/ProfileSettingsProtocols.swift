@@ -16,6 +16,7 @@ protocol ProfileSettingsPresenterProtocol: UITableViewDelegate, UITableViewDataS
     var view: ProfileSettingsViewProtocol? { get set }
     var wireframe:ProfileSettingsWireframeProtocol? { get set }
     
+    func viewDidLoad()
     func deleteAccount()
 }
 //MARK: Interactor
@@ -23,14 +24,13 @@ protocol ProfileSettingsPresenterProtocol: UITableViewDelegate, UITableViewDataS
 protocol ProfileSettingsInputInteractorProtocol: AnyObject {
     
     var presenter: ProfileSettingsOutputInteractorProtocol?  { get set }
-    
+    func viewDidLoad()
    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol ProfileSettingsOutputInteractorProtocol: AnyObject {
-    
-
+    func takeData(model: ProfileModel?)
 }
 //MARK: View
 protocol ProfileSettingsViewProtocol: AnyObject {
@@ -40,6 +40,7 @@ protocol ProfileSettingsViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol ProfileSettingsWireframeProtocol: AnyObject {
+    static var model: ProfileModel? { get set }
     func toPersonalData()
     func toChangePassword()
     func toAccountDeletion()

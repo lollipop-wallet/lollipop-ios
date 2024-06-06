@@ -13,7 +13,12 @@ class ProfileSettingsPresenter: NSObject, ProfileSettingsPresenterProtocol  {
     weak var view: ProfileSettingsViewProtocol?
     var wireframe: ProfileSettingsWireframeProtocol?
     
+    var model: ProfileModel?
     let datasource = DefaultModels().personalDataDatasource
+    
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
 
     func deleteAccount(){
         wireframe?.toAccountDeletion()
@@ -21,7 +26,9 @@ class ProfileSettingsPresenter: NSObject, ProfileSettingsPresenterProtocol  {
 }
 
 extension ProfileSettingsPresenter: ProfileSettingsOutputInteractorProtocol {
-    
+    func takeData(model: ProfileModel?){
+        self.model = model
+    }
 }
 
 //MARK: UITableViewDelegate&Datasource

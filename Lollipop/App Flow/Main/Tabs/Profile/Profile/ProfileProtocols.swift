@@ -52,7 +52,7 @@ protocol ProfileWireframeProtocol: AnyObject {
     static var delegate: ProfileControllerProtocol? { get set }
     
     func toMyShops()
-    func toPersonalData()
+    func toPersonalData(model: ProfileModel?)
     func toMyCards()
     func toAbout()
     func toTerms()

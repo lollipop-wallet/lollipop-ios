@@ -20,6 +20,7 @@ class ProfilePresenter: NSObject, ProfilePresenterProtocol  {
     let datasource = DefaultModels().profileDatasource
     var config = PHPickerConfiguration(photoLibrary: .shared())
     var userImage = UIImage()
+    var model: ProfileModel?
 
     func myShops(){
         wireframe?.toMyShops()
@@ -36,7 +37,7 @@ class ProfilePresenter: NSObject, ProfilePresenterProtocol  {
             { [weak self] _ in
                 guard let self = self  else {return}
                 if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                    var imagePicker = UIImagePickerController()
+                    let imagePicker = UIImagePickerController()
                     imagePicker.delegate = self
                     imagePicker.sourceType = .camera;
                     imagePicker.allowsEditing = false
@@ -61,6 +62,7 @@ extension ProfilePresenter: ProfileOutputInteractorProtocol {
         self.delegate = delegate
         switch result {
         case .success(let model):
+            self.model = model
             self.view?.setUserNameWith(name: model.name ?? "")
             if !(model.avatar ?? "").isEmpty{
                 self.view?.setUserAvatarWith(avatar: model.avatar ?? "")
@@ -118,7 +120,7 @@ extension ProfilePresenter {
         let item = self.datasource[index.section][index.row]
         switch item.item {
         case .settings:
-            wireframe?.toPersonalData()
+            wireframe?.toPersonalData(model: self.model)
         case .cards:
             wireframe?.toMyCards()
         case .about:
