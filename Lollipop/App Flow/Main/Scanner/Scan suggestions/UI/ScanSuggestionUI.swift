@@ -49,7 +49,7 @@ extension ScanSuggestionView {
         self.tableView.register(ScanSuggestionTableViewCell.self, forCellReuseIdentifier: CellId.scanSuggestionCell.rawValue)
         self.tableView.delegate = presenter
         self.tableView.dataSource = presenter
-        self.tableView.backgroundColor = AppColors.lightGrey
+        self.tableView.backgroundColor = AppColors.error
         self.tableView.sectionHeaderTopPadding = 0
         
         lazy var barcodeIcon: UIImageView = {
@@ -174,7 +174,7 @@ extension ScanSuggestionView {
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview().offset(-61)
-            make.top.equalToSuperview().offset(24)
+            make.top.equalToSuperview()
         }
 
 //        self.view.addSubview(self.tableView)
