@@ -90,6 +90,11 @@ class InputField: UIView {
         get { return true }
     }
     
+    open var leftSuplementaryLabelTextColor: UIColor? {
+        set { self.inputFieldSuplementaryLeftLabel.textColor = newValue ?? AppColors.darkGrey }
+        get { return AppColors.darkGrey }
+    }
+    
     open var rightSuplementaryIcon: UIImage? {
         set { self.inputFieldSuplementaryRightIcon.image = newValue ?? UIImage() }
         get { return UIImage() }

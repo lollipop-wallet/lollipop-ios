@@ -173,3 +173,6 @@
 "markFavoriteCards" = "Mark favorite cards (up to 5)";
 "cardImagesNotSet" = "Front or back side of card has not been set. Please set front and back side of card and try again.";
 "promotions" = "Promotions";
+"termsMessage" = "You need to accept terms and coditions";
+"inquiryDialogueTitle" = "Thanks for the inquiry";
+"inquiryDialogueSubtitle" = "Your inquiry is sent to customer service and you will be contacted soon for further steps.";

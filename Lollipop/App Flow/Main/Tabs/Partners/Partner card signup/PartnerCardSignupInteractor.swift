@@ -17,4 +17,13 @@ class PartnerCardSignupInteractor: PartnerCardSignupInputInteractorProtocol {
         let card = PartnerCardSignupWireframe.card
         presenter?.takeData(card: card)
     }
+    
+    func inquiry(name: String, city: String, phone: String, partnerAlias: String, email: String){
+        UIApplication.topViewController()?.view?.showSpinner()
+        APIClient.inquiry(name: name, city: city, phone: phone, partnerAlias: partnerAlias, email: email) { [weak self] result in
+            UIApplication.topViewController()?.view?.hideSpinner()
+            guard let self = self else { return }
+            self.presenter?.parseInquiryData(result: result)
+        }
+    }
 }

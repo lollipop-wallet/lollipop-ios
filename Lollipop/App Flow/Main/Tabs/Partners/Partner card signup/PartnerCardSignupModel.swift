@@ -9,6 +9,6 @@
 import Foundation
 
 struct PartnerCardSignupModel : Codable {
-    
+    let message: String?
 }
 

@@ -140,6 +140,7 @@ extension PartnerCardSignupView {
         self.nameField.leftSuplementaryIconHidden = true
         self.nameField.placeholder = LocalizedTitle.enterNameAndSurname.localized
         self.nameField.leftSuplementarylabelHidden = true
+        self.nameField.rightSuplementaryIconHidden = true
         
         self.cityField.title = "\(LocalizedTitle.city.localized):"
         self.cityField.errorHidden = true
@@ -167,6 +168,9 @@ extension PartnerCardSignupView {
         self.phoneField.leftSuplementaryIconHidden = true
         self.phoneField.leftLabelSupplementaryText = "+382"
         self.phoneField.leftSuplementarylabelHidden = false
+        self.phoneField.rightSuplementaryIconHidden = true
+        self.phoneField.leftSuplementaryLabelTextColor = AppColors.black
+        self.phoneField.font = .inter(ofSize: 14, name: .regular)
         
         self.emailField.title = "\(LocalizedTitle.email.localized):"
         self.emailField.errorHidden = true
@@ -175,6 +179,7 @@ extension PartnerCardSignupView {
         self.emailField.leftSuplementaryIconHidden = true
         self.emailField.leftSuplementarylabelHidden = true
         self.emailField.placeholder = "\(LocalizedTitle.enterEmailAddress.localized):"
+        self.emailField.rightSuplementaryIconHidden = true
         
         self.checkBoxIcon.image = UIImage(named: AssetTitles.checkBoxUnselectedIcon)
         

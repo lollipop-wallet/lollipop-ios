@@ -172,3 +172,6 @@
 "markFavoriteCards" = "Označi istaknute kartice (do 5)";
 "cardImagesNotSet" = "Slike za prednju i zadnju stranu kartice su obavezne. Odaberi slike za prednju i zadnju stranu kartice i probaj ponovo.";
 "promotions" = "Promocije";
+"termsMessage" = "Morate se složiti sa uslovima korišćenja da biste nastavili dalje.";
+"inquiryDialogueTitle" = "Hvala na poslatoj prijavi";
+"inquiryDialogueSubtitle" = "Vaš zahtev je poslat korisničkoj službi i uskoro ćemo Vas kontaktirati za dalje korake";

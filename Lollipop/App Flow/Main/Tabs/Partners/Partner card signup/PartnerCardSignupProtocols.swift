@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PartnerCardSignupPresenterProtocol: DropdownInputFieldProtocol, DropdownProtocol, DropdownInputFieldProtocol {
+protocol PartnerCardSignupPresenterProtocol: DropdownInputFieldProtocol, DropdownProtocol, DropdownInputFieldProtocol, DialogueControllerProtocol {
     
     var interactor: PartnerCardSignupInputInteractorProtocol? { get set }
     var view: PartnerCardSignupViewProtocol? { get set }
@@ -19,7 +20,8 @@ protocol PartnerCardSignupPresenterProtocol: DropdownInputFieldProtocol, Dropdow
     func viewDidLoad()
     func handleDropDownTap(item: CountryCode)
     func handleCityDropdownTapWith(item: String)
-
+    func onTermsCheckTap()
+    func send(name: String, city: String, prefix: String, phone: String, email: String)
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -27,12 +29,13 @@ protocol PartnerCardSignupInputInteractorProtocol: AnyObject {
     
     var presenter: PartnerCardSignupOutputInteractorProtocol?  { get set }
     func viewDidLoad()
-   
+    func inquiry(name: String, city: String, phone: String, partnerAlias: String, email: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol PartnerCardSignupOutputInteractorProtocol: AnyObject {
     func takeData(card: Card?)
+    func parseInquiryData(result: Result<PartnerCardSignupModel, AFError>)
 }
 //MARK: View
 protocol PartnerCardSignupViewProtocol: AnyObject {
@@ -44,9 +47,12 @@ protocol PartnerCardSignupViewProtocol: AnyObject {
     func setPrefixWith(prefix: String)
     func setFlagWith(flag: String)
     func setCityWith(item: String)
+    func setTermsCheckWith(isOn: Bool)
+    func validate(isNameEmpty: Bool, isCityEmpty: Bool, isPhoneEmpty: Bool, isEmailEmpty: Bool)
 
 }
 //MARK: Wireframe
 protocol PartnerCardSignupWireframeProtocol: AnyObject {
     static var card: Card? { get set }
+    func toDialogue(delegate: DialogueControllerProtocol?)
 }

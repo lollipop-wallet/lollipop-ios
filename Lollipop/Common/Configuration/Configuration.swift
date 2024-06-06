@@ -70,6 +70,9 @@ struct Configuration {
         }
     }
     
+    //MARK: Default country
+    static let defaultCountry = "Montenegro"
+    
     //MARK: Current app id
     static let currentAppId = "1"
     

@@ -197,6 +197,7 @@
 		2CEC7FC22BD935A50050E762 /* CalendarInputProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7FC12BD935A50050E762 /* CalendarInputProtocols.swift */; };
 		6212737C2BE4A08700FDA7D0 /* HomeCircleHorizontalCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212737B2BE4A08700FDA7D0 /* HomeCircleHorizontalCategoryTableViewCell.swift */; };
 		6212737E2BE4A0B500FDA7D0 /* CircledItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212737D2BE4A0B500FDA7D0 /* CircledItemCollectionViewCell.swift */; };
+		621B81502C12187D0071B7F8 /* InquiryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621B814F2C12187D0071B7F8 /* InquiryType.swift */; };
 		62214AE52BD6E17600ABF38E /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214ADE2BD6E17600ABF38E /* OnboardingPresenter.swift */; };
 		62214AE62BD6E17600ABF38E /* OnboardingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214ADF2BD6E17600ABF38E /* OnboardingProtocols.swift */; };
 		62214AE72BD6E17600ABF38E /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62214AE02BD6E17600ABF38E /* OnboardingInteractor.swift */; };
@@ -712,6 +713,7 @@
 		38FFEF8E6EBB79E961E895E0 /* Pods-Lollipop.lollipop production debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production debug.xcconfig"; sourceTree = "<group>"; };
 		6212737B2BE4A08700FDA7D0 /* HomeCircleHorizontalCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCircleHorizontalCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		6212737D2BE4A0B500FDA7D0 /* CircledItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircledItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		621B814F2C12187D0071B7F8 /* InquiryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryType.swift; sourceTree = "<group>"; };
 		62214ADE2BD6E17600ABF38E /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		62214ADF2BD6E17600ABF38E /* OnboardingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocols.swift; sourceTree = "<group>"; };
 		62214AE02BD6E17600ABF38E /* OnboardingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInteractor.swift; sourceTree = "<group>"; };
@@ -1519,6 +1521,7 @@
 				623C1D3B2C09B4C900296759 /* CardType.swift */,
 				623C1D3D2C09BE9800296759 /* CardCodeType.swift */,
 				623E987A2C0F4D77005DC950 /* PartnerIitemType.swift */,
+				621B814F2C12187D0071B7F8 /* InquiryType.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -3396,6 +3399,7 @@
 				62E24BD12BEC81D900F6D82B /* UIDeviceComplete.swift in Sources */,
 				2CA1955F2BE2475600CC10F5 /* DeleteCardInteractor.swift in Sources */,
 				2CA195602BE2475600CC10F5 /* DeleteCardView.swift in Sources */,
+				621B81502C12187D0071B7F8 /* InquiryType.swift in Sources */,
 				2CA195612BE2475600CC10F5 /* DeleteCardModel.swift in Sources */,
 				2CA195622BE2475600CC10F5 /* DeleteCardWireframe.swift in Sources */,
 				62F6CDE32BDD3AE900C4775C /* ProfileTableViewCell.swift in Sources */,

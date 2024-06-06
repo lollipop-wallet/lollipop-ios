@@ -89,17 +89,37 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
         self.phonePrefixField.text = flag
     }
     
+    func setTermsCheckWith(isOn: Bool){
+        DispatchQueue.main.async {
+            self.checkBoxIcon.image = UIImage(named: isOn ? AssetTitles.checkBoxSelectedIcon : AssetTitles.checkBoxUnselectedIcon)
+        }
+    }
+    
+    func validate(isNameEmpty: Bool, isCityEmpty: Bool, isPhoneEmpty: Bool, isEmailEmpty: Bool){
+        self.nameField.borderWidth = 1
+        self.nameField.borderColor = isNameEmpty ? AppColors.error : AppColors.black
+        
+        self.cityField.borderWidth = 1
+        self.cityField.borderColor = isCityEmpty ? AppColors.error : AppColors.black
+        
+        self.phoneField.borderWidth = 1
+        self.phoneField.borderColor = isPhoneEmpty ? AppColors.error : AppColors.black
+        
+        self.emailField.borderWidth = 1
+        self.emailField.borderColor = isEmailEmpty ? AppColors.error : AppColors.black
+    }
+    
     //MARK: Actions
     @objc func onBackTap() {
         popBack(2)
     }
     
     @objc func onCheckboxTap() {
-        
+        presenter?.onTermsCheckTap()
     }
     
     @objc func onSendTap() {
-        
+        presenter?.send(name: self.nameField.textField.text ?? "", city: self.cityField.text ?? "", prefix: self.phoneField.inputFieldSuplementaryLeftLabel.text ?? "", phone: self.phoneField.textField.text ?? "", email: self.emailField.textField.text ?? "")
     }
     
     @objc func onTermsLabelTap(sender: UITapGestureRecognizer) {

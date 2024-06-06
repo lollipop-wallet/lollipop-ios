@@ -240,4 +240,9 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.getbranddetails(alias: alias), completion: completion)
     }
+    
+    static func inquiry(name: String, city: String, phone: String, partnerAlias: String, email: String, completion:@escaping (Result<PartnerCardSignupModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.inquiry(name: name, city: city, phone: phone, partnerAlias: partnerAlias, email: email), completion: completion)
+    }
 }
