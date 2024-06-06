@@ -14,4 +14,5 @@ enum ProfileItem {
     case language
     case terms
     case shops
+    case signout
 }

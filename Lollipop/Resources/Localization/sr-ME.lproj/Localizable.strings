@@ -175,3 +175,6 @@
 "termsMessage" = "Morate se složiti sa uslovima korišćenja da biste nastavili dalje.";
 "inquiryDialogueTitle" = "Hvala na poslatoj prijavi";
 "inquiryDialogueSubtitle" = "Vaš zahtjev je poslat korisničkoj službi i uskoro ćemo Vas kontaktirati za dalje korake";
+"version" = "Verzija";
+"privacyPolicy" = "Politika privatnosti";
+"termsAndConditions" = "Uslovi korišćenja";

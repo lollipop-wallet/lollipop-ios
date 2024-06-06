@@ -15,6 +15,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
     var nameLabel = UILabel()
     var phoneLabel = UILabel()
     var tableView = AutomaticHeightTableView(frame: .zero, style: .insetGrouped)
+    var versionLabel = UILabel()
 
     var presenter: ProfilePresenterProtocol?
 
@@ -61,7 +62,11 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         presenter?.myShops()
     }
     
-    @objc func onLogoutTap() {
+    @objc func onTermsTap() {
+        
+    }
+    
+    @objc func onPrivacyTap() {
         
     }
 }

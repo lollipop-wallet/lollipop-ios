@@ -187,6 +187,9 @@ enum LocalizedTitle: String {
     case termsMessage
     case inquiryDialogueTitle
     case inquiryDialogueSubtitle
+    case version
+    case privacyPolicy
+    case termsAndConditions
     
     var localized: String {
         return self.rawValue.localized()

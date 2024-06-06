@@ -129,6 +129,8 @@ extension ProfilePresenter {
             wireframe?.toTerms()
         case .shops:
             wireframe?.toMyShops()
+        case .signout:
+            print()
         }
     }
 }

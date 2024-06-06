@@ -15,13 +15,12 @@ struct DefaultModels {
     let unselected = [AssetTitles.homeUnselectedIcon, AssetTitles.partnersUnselectedIcon, "", AssetTitles.lollipopUnselectedIcon, AssetTitles.profileUnselectedIcon]
     let selected = [AssetTitles.homeSelectedIcon, AssetTitles.partnersSelectedIcon, "", AssetTitles.lollipopSelectedIcon, AssetTitles.profileSelectedIcon]
     
-    let profileDatasource = [[ProfileListModel(icon: AssetTitles.profileCardsFilledIcon, title: LocalizedTitle.myCards.localized, item: .cards),
-                              ProfileListModel(icon: AssetTitles.profileFavoriteShopsFilledIcon, title: LocalizedTitle.favoriteStores.localized, item: .shops)],
+    let profileDatasource = [[ProfileListModel(icon: AssetTitles.cardsIcon, title: LocalizedTitle.myCards.localized, item: .cards),
+                              ProfileListModel(icon: AssetTitles.storeOutlinedIcon, title: LocalizedTitle.favoriteStores.localized, item: .shops)],
                              
                              [ProfileListModel(icon: AssetTitles.settingsIcon, title: LocalizedTitle.profileSettings.localized, item: .settings),
                             ProfileListModel(icon: AssetTitles.aboutIcon, title: LocalizedTitle.aboutApp.localized, item: .about),
-                            ProfileListModel(icon: AssetTitles.changeLanguageIcon, title: LocalizedTitle.changeLanguage.localized, item: .language),
-                            ProfileListModel(icon: AssetTitles.termsIcon, title: LocalizedTitle.termsOfUse.localized, item: .terms)]]
+                            ProfileListModel(icon: AssetTitles.logoutIcon, title: LocalizedTitle.signOut.localized, item: .signout)]]
     
     let personalDataDatasource = [ProfileSettingsModel(icon: AssetTitles.personalDataIcon, title: LocalizedTitle.personalData.localized, item: .data),
                                   ProfileSettingsModel(icon: AssetTitles.lockIcon, title: LocalizedTitle.passwordChange.localized, item: .password)]

@@ -176,3 +176,6 @@
 "termsMessage" = "You need to accept terms and coditions";
 "inquiryDialogueTitle" = "Thanks for the inquiry";
 "inquiryDialogueSubtitle" = "Your inquiry is sent to customer service and you will be contacted soon for further steps.";
+"version" = "Version";
+"privacyPolicy" = "Privacy policy";
+"termsAndConditions" = "Terms and conditions";

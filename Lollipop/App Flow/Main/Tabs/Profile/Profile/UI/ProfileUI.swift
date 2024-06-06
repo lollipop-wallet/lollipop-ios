@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyAttributes
 
 extension ProfileView {
     func setup() {
@@ -209,12 +210,11 @@ extension ProfileView {
                 make.top.equalToSuperview().offset(24)
             }
             
-            view.addSubview(logoutPlaceholderView)
-            logoutPlaceholderView.snp.makeConstraints { make in
+            view.addSubview(infoStack)
+            infoStack.snp.makeConstraints { make in
                 make.leading.trailing.equalToSuperview()
-                make.top.equalTo(self.tableView.snp.bottom)
-                make.height.equalTo(56)
-                make.bottom.equalToSuperview()
+                make.top.equalTo(self.tableView.snp.bottom).offset(48)
+                make.bottom.equalToSuperview().offset(-48)
             }
             
             
@@ -224,47 +224,49 @@ extension ProfileView {
             return view
         }()
         
-        lazy var logoutIcon: UIImageView = {
-            let imageView = UIImageView()
-            imageView.image = UIImage(named: AssetTitles.signOutIcon)
-            imageView.contentMode = .scaleAspectFit
-            return imageView
-        }()
+        self.versionLabel.font = .inter(ofSize: 12, name: .regular)
+        self.versionLabel.textColor = AppColors.darkGrey
+        self.versionLabel.text =  "\(LocalizedTitle.version.localized): \(UIApplication.appVersion)"
+        self.versionLabel.textAlignment = .center
         
-        lazy var logoutLabel: UILabel = {
-            let label = UILabel()
-            label.font = .inter(ofSize: 16, name: .semibold)
-            label.textColor = AppColors.link
-            label.textAlignment = .left
-            label.text = LocalizedTitle.signOut.localized
-            return label
-        }()
-        
-        lazy var logoutButton: UIButton = {
+        lazy var termsButton: UIButton = {
             let button = UIButton()
-            button.addTarget(self, action: #selector(onLogoutTap), for: .touchUpInside)
+            button.addTarget(self, action: #selector(onTermsTap), for: .touchUpInside)
+            button.setAttributedTitle(self.prepareAttributedTitleWith(title: LocalizedTitle.termsAndConditions.localized), for: .normal)
+            button.snp.makeConstraints { make in
+                make.height.equalTo(15)
+            }
+            button.titleLabel?.textAlignment = .right
             return button
         }()
         
-        lazy var logoutPlaceholderView: UIView = {
-            let view = UIView()
-            view.addSubview(logoutIcon)
-            logoutIcon.snp.makeConstraints { make in
-                make.width.height.equalTo(24)
-                make.leading.equalToSuperview().offset(16)
-                make.centerY.equalToSuperview()
+        lazy var privacyButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onPrivacyTap), for: .touchUpInside)
+            button.setAttributedTitle(self.prepareAttributedTitleWith(title: LocalizedTitle.privacyPolicy.localized), for: .normal)
+            button.snp.makeConstraints { make in
+                make.height.equalTo(15)
             }
-            view.addSubview(logoutLabel)
-            logoutLabel.snp.makeConstraints { make in
-                make.leading.equalTo(logoutIcon.snp.trailing).offset(12)
-                make.trailing.equalToSuperview()
-                make.centerY.equalToSuperview()
-            }
-            view.addSubview(logoutButton)
-            logoutButton.snp.makeConstraints { make in
-                make.leading.trailing.top.bottom.equalToSuperview()
-            }
-            return view
+            button.titleLabel?.textAlignment = .left
+            return button
+        }()
+        
+        lazy var linksStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [privacyButton, termsButton])
+            stack.axis = .horizontal
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.spacing = 32
+            return stack
+        }()
+        
+        lazy var infoStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [self.versionLabel, linksStack])
+            stack.axis = .vertical
+            stack.alignment = .center
+            stack.distribution = .fill
+            stack.spacing = 10
+            return stack
         }()
         
         lazy var scrollView : UIScrollView = {
@@ -316,5 +318,14 @@ extension ProfileView {
             make.height.equalTo(100)
         }
         
+    }
+    
+    func prepareAttributedTitleWith(title: String) -> NSAttributedString{
+        return title.withAttributes([
+            .textColor(AppColors.black),
+            .font(.inter(ofSize: 12, name: .regular)),
+            .underlineStyle(.single),
+            .underlineColor(AppColors.black)
+        ])
     }
 }

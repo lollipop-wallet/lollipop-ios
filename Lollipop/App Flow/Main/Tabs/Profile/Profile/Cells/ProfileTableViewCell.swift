@@ -128,6 +128,8 @@ class ProfileTableViewCell: UITableViewCell {
         self.titleLabel.text = item.title
         self.iconImageView.image = UIImage(named: item.icon)
         self.separatorView.backgroundColor = item.separatorHidden ? AppColors.lightGrey : AppColors.black.withAlphaComponent(0.1)
+        self.iconImageView.tintColor = item.item == .signout ? AppColors.link : AppColors.black
+        self.titleLabel.textColor = item.item == .signout ? AppColors.link : AppColors.black
     }
     
     //MARK: Actions
