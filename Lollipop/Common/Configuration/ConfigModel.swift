@@ -33,5 +33,8 @@ struct CountryCode: Codable {
     let phone_code: String?
     let iso_code: String?
     let flag: String?
+    var dropItem: String {
+        return "\(flag ?? "") \(name ?? "") +\(phone_code ?? "")"
+    }
 }
 

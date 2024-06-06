@@ -19,7 +19,9 @@ class PartnerCardSignupPresenter: NSObject, PartnerCardSignupPresenterProtocol  
         interactor?.viewDidLoad()
     }
     
-    func handleDropDownTap(){
+    func handleDropDownTap(item: CountryCode){
+        self.view?.setFlagWith(flag: item.flag ?? "")
+        self.view?.setPrefixWith(prefix: "+\(item.phone_code ?? "")")
     }
 }
 

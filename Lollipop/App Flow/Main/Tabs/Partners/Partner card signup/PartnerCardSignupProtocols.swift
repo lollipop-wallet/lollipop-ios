@@ -17,7 +17,7 @@ protocol PartnerCardSignupPresenterProtocol: DropdownInputFieldProtocol, Dropdow
     var wireframe:PartnerCardSignupWireframeProtocol? { get set }
 
     func viewDidLoad()
-    func handleDropDownTap()
+    func handleDropDownTap(item: CountryCode)
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -39,6 +39,8 @@ protocol PartnerCardSignupViewProtocol: AnyObject {
     func setupAndOpenPhonePrefixDropdown()
     func hidePrefixDropdown()
     func setCardImageWith(image: String)
+    func setPrefixWith(prefix: String)
+    func setFlagWith(flag: String)
 }
 //MARK: Wireframe
 protocol PartnerCardSignupWireframeProtocol: AnyObject {

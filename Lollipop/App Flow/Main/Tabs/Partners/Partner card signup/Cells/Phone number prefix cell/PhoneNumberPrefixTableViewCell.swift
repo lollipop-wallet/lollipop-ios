@@ -10,15 +10,10 @@ import UIKit
 
 class PhoneNumberPrefixTableViewCell: DropDownCell {
 
-    @IBOutlet weak var countryFlagImageView: UIImageView!
-    @IBOutlet weak var countryNameLabel: UILabel!
-    @IBOutlet weak var countryCodeLabel: UILabel!
+    @IBOutlet weak var phonePrefixLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        countryFlagImageView.layer.cornerRadius = 12
-        countryFlagImageView.layer.masksToBounds = true
-        countryFlagImageView.image = UIImage(named: AssetTitles.flagMneIcon)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

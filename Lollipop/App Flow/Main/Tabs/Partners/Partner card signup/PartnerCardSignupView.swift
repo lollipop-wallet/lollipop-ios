@@ -60,6 +60,16 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
         }
     }
     
+    func setPrefixWith(prefix: String){
+        DispatchQueue.main.async {
+            self.phoneField.leftLabelSupplementaryText = prefix
+        }
+    }
+    
+    func setFlagWith(flag: String){
+        self.phonePrefixField.text = flag
+    }
+    
     //MARK: Actions
     @objc func onBackTap() {
         popBack(2)

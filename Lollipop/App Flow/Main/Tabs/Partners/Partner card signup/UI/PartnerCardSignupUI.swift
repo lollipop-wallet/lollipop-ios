@@ -147,14 +147,15 @@ extension PartnerCardSignupView {
         self.cityField.text = LocalizedTitle.choose.localized
         self.cityField.rightSuplementaryIconHidden = false
         self.cityField.leftSuplementaryIconHidden = true
-        //self.cityField.delegate = presenter
+        self.cityField.tag = 1
+        self.cityField.delegate = presenter
         
         self.phonePrefixField.title = "\(LocalizedTitle.phoneNumber.localized):"
         self.phonePrefixField.errorHidden = true
         self.phonePrefixField.background = AppColors.white
         self.phonePrefixField.rightSuplementaryIconHidden = false
-        self.phonePrefixField.leftSuplementaryIconHidden = false
-        self.phonePrefixField.leftSuplementaryDefaultIcon = UIImage(named: AssetTitles.flagMneIcon)
+        self.phonePrefixField.leftSuplementaryIconHidden = true
+        //self.phonePrefixField.leftSuplementaryDefaultIcon = UIImage(named: AssetTitles.flagMneIcon)
         self.phonePrefixField.tag = 0
         self.phonePrefixField.delegate = presenter
         
@@ -229,7 +230,7 @@ extension PartnerCardSignupView {
         }()
         
         self.phonePrefixField.snp.makeConstraints { make in
-            make.width.equalTo(106)
+            make.width.equalTo(76)
         }
         
         self.phoneCodeDropDown.cellNib = UINib(nibName: "PhoneNumberPrefixTableViewCell", bundle: nil)
@@ -241,18 +242,16 @@ extension PartnerCardSignupView {
         self.phoneCodeDropDown.dismissMode = .onTap
         self.phoneCodeDropDown.delegate = presenter
         
-        let datasource = ["dwa", "dwa","dwa","dwa","dwa","dwa"]
+        let datasource = (Config.model.countries ?? []).map { $0.dropItem }
         self.phoneCodeDropDown.dataSource = datasource
         self.phoneCodeDropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
             guard let cell = cell as? PhoneNumberPrefixTableViewCell else { return }
-            cell.countryFlagImageView.backgroundColor = .red
-            cell.countryNameLabel.text = "Crna Gora"
-            cell.countryCodeLabel.text = "+382"
+            cell.phonePrefixLabel.text = item
         }
         
         self.phoneCodeDropDown.selectionAction = { [weak self] (index, item) in
             guard let self = self else {return}
-            self.presenter?.handleDropDownTap()
+            self.presenter?.handleDropDownTap(item: (Config.model.countries ?? [])[index])
         }
         
         self.phoneStack = UIStackView(arrangedSubviews: [self.phonePrefixField, self.phoneField])
