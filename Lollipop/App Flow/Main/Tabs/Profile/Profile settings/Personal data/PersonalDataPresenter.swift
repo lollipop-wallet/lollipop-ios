@@ -14,13 +14,21 @@ class PersonalDataPresenter: NSObject, PersonalDataPresenterProtocol  {
     weak var view: PersonalDataViewProtocol?
     var wireframe: PersonalDataWireframeProtocol?
     
+    var model: ProfileModel?
+    
+    func viewDidLoad() {
+        interactor?.viewDidLoad()
+    }
+    
     func proceed() {
         
     }
 }
 
 extension PersonalDataPresenter: PersonalDataOutputInteractorProtocol {
-    
+    func takeData(model: ProfileModel?){
+        self.model = model
+    }
 }
 
 //MARK: InputCalendarField delegate

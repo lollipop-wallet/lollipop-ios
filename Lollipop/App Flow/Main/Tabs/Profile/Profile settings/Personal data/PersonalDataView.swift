@@ -25,6 +25,7 @@ class PersonalDataView: UIViewController, PersonalDataViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
 
     override func viewWillAppear(_ animated: Bool) {

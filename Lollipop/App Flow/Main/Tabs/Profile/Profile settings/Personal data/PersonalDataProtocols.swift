@@ -16,22 +16,20 @@ protocol PersonalDataPresenterProtocol: CalendarInputProtocol, DropdownInputFiel
     var view: PersonalDataViewProtocol? { get set }
     var wireframe:PersonalDataWireframeProtocol? { get set }
     
+    func viewDidLoad()
     func proceed()
-
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
 protocol PersonalDataInputInteractorProtocol: AnyObject {
     
     var presenter: PersonalDataOutputInteractorProtocol?  { get set }
-    
-   
+    func viewDidLoad()
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol PersonalDataOutputInteractorProtocol: AnyObject {
-    
-
+    func takeData(model: ProfileModel?)
 }
 //MARK: View
 protocol PersonalDataViewProtocol: AnyObject {
@@ -42,7 +40,6 @@ protocol PersonalDataViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol PersonalDataWireframeProtocol: AnyObject {
-
-    
+    static var model: ProfileModel? { get set }
 }
 

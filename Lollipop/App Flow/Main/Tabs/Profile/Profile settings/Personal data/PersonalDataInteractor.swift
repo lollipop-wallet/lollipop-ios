@@ -12,4 +12,9 @@ import UIKit
 class PersonalDataInteractor: PersonalDataInputInteractorProtocol {
     
     weak var presenter: PersonalDataOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        let model = PersonalDataWireframe.model
+        presenter?.takeData(model: model)
+    }
 }

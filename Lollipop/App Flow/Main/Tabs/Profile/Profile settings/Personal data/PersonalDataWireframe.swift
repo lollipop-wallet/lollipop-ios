@@ -9,6 +9,7 @@ import UIKit
 
 class PersonalDataWireframe: PersonalDataWireframeProtocol {
     
+    static var model: ProfileModel?
     
     static func createModule(PersonalDataRef: PersonalDataView) {
         let presenter: PersonalDataPresenterProtocol & PersonalDataOutputInteractorProtocol = PersonalDataPresenter()

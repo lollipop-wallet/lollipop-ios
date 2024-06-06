@@ -47,7 +47,7 @@ extension ProfileSettingsPresenter {
         let item = self.datasource[index.row]
         switch item.item {
         case .data:
-            wireframe?.toPersonalData()
+            wireframe?.toPersonalData(model: self.model)
         case .password:
             wireframe?.toChangePassword()
         case .language:

@@ -41,7 +41,7 @@ protocol ProfileSettingsViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol ProfileSettingsWireframeProtocol: AnyObject {
     static var model: ProfileModel? { get set }
-    func toPersonalData()
+    func toPersonalData(model: ProfileModel?)
     func toChangePassword()
     func toAccountDeletion()
     func toLanguage()
