@@ -11,7 +11,6 @@ enum ProfileItem {
     case settings
     case cards
     case about
-    case language
     case terms
     case shops
     case signout

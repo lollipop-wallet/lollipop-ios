@@ -43,6 +43,8 @@ extension ProfileSettingsPresenter {
             wireframe?.toPersonalData()
         case .password:
             wireframe?.toChangePassword()
+        case .language:
+            wireframe?.toLanguage()
         }
     }
 }

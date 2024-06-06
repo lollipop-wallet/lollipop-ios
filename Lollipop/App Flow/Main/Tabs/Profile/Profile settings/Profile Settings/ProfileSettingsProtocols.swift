@@ -43,6 +43,7 @@ protocol ProfileSettingsWireframeProtocol: AnyObject {
     func toPersonalData()
     func toChangePassword()
     func toAccountDeletion()
+    func toLanguage()
 }
 
 //MARK: ProfileSettingsCell Protocol

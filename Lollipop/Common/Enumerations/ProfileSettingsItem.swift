@@ -10,4 +10,5 @@ import Foundation
 enum ProfileSettingsItem {
     case data
     case password
+    case language
 }

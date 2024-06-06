@@ -23,7 +23,8 @@ struct DefaultModels {
                             ProfileListModel(icon: AssetTitles.logoutIcon, title: LocalizedTitle.signOut.localized, item: .signout)]]
     
     let personalDataDatasource = [ProfileSettingsModel(icon: AssetTitles.personalDataIcon, title: LocalizedTitle.personalData.localized, item: .data),
-                                  ProfileSettingsModel(icon: AssetTitles.lockIcon, title: LocalizedTitle.passwordChange.localized, item: .password)]
+                                  ProfileSettingsModel(icon: AssetTitles.lockIcon, title: LocalizedTitle.passwordChange.localized, item: .password),
+                                  ProfileSettingsModel(icon: AssetTitles.changeLanguageIcon, title: LocalizedTitle.changeLanguage.localized, item: .language)]
     
     let languageDatasource = [LanguageModel(flag: AssetTitles.flagMneIcon, title: LocalizedTitle.mne.localized, lanCode: .mne, selected: false),
                               LanguageModel(flag: AssetTitles.flagEngIcon, title: LocalizedTitle.eng.localized, lanCode: .en, selected: false)]

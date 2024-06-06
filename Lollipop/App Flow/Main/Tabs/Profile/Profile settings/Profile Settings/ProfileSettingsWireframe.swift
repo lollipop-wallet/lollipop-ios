@@ -34,4 +34,9 @@ class ProfileSettingsWireframe: ProfileSettingsWireframeProtocol {
         let vc = AccountDeletionView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toLanguage(){
+        let vc = LanguageView()
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

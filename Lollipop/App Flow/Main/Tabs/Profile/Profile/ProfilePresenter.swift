@@ -123,8 +123,6 @@ extension ProfilePresenter {
             wireframe?.toMyCards()
         case .about:
             wireframe?.toAbout()
-        case .language:
-            wireframe?.toLanguage()
         case .terms:
             wireframe?.toTerms()
         case .shops:
