@@ -18,4 +18,13 @@ class PersonalDataInteractor: PersonalDataInputInteractorProtocol {
         let delegate = PersonalDataWireframe.delegate
         presenter?.takeData(model: model, delegate: delegate)
     }
+    
+    func update(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String){
+        UIApplication.topViewController()?.view?.showSpinner()
+        APIClient.updateuser(name: "\(firstname) \(lastname)", email: email, phone: "", dob: dob, city: city, gender: gender) { [weak self] result in
+            UIApplication.topViewController()?.view?.hideSpinner()
+            guard let self = self else { return }
+            self.presenter?.par
+        }
+    }
 }

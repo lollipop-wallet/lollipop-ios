@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 class PersonalDataPresenter: NSObject, PersonalDataPresenterProtocol  {
 
@@ -46,6 +47,17 @@ extension PersonalDataPresenter: PersonalDataOutputInteractorProtocol {
         self.view?.setDoB(dob: model?.date_of_birth?.dateString ?? "")
         self.view?.setGender(gender: model?.genderUserReadable ?? "")
         self.view?.setCity(city: model?.city ?? "")
+    }
+    
+    func parseUpdateUserData(result: Result<PersonalDataModel, AFError>){
+        switch result {
+        case .success(let model):
+            self.model = model.data
+            self.delegate?.didUpdateProfileWith(model: model.data)
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.notice.localized, text: model.message ?? "", shouldDismiss: false)
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
     }
 }
 

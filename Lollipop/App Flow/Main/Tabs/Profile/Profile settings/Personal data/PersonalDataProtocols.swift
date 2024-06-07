@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -25,11 +26,13 @@ protocol PersonalDataInputInteractorProtocol: AnyObject {
     
     var presenter: PersonalDataOutputInteractorProtocol?  { get set }
     func viewDidLoad()
+    func update(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol PersonalDataOutputInteractorProtocol: AnyObject {
     func takeData(model: ProfileModel?, delegate: PersonalDataControllerProtocol?)
+    func parseUpdateUserData(result: Result<PersonalDataModel, AFError>)
 }
 //MARK: View
 protocol PersonalDataViewProtocol: AnyObject {
