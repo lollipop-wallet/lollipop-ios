@@ -17,6 +17,7 @@ class ProfileSettingsPresenter: NSObject, ProfileSettingsPresenterProtocol  {
     let datasource = DefaultModels().personalDataDatasource
     
     func viewDidLoad() {
+        PersonalDataWireframe.delegate = self
         interactor?.viewDidLoad()
     }
 
@@ -53,5 +54,11 @@ extension ProfileSettingsPresenter {
         case .language:
             wireframe?.toLanguage()
         }
+    }
+}
+
+extension ProfileSettingsPresenter {
+    func didUpdateProfileWith(model: ProfileModel?) {
+        self.model = model
     }
 }

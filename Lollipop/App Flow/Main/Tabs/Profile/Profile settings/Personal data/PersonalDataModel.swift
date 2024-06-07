@@ -9,5 +9,7 @@
 import Foundation
 
 struct PersonalDataModel: Codable {
+    let message: String?
+    let data: ProfileModel?
 }
 

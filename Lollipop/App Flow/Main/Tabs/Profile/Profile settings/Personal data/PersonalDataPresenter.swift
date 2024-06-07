@@ -15,6 +15,7 @@ class PersonalDataPresenter: NSObject, PersonalDataPresenterProtocol  {
     var wireframe: PersonalDataWireframeProtocol?
     
     var model: ProfileModel?
+    var delegate: PersonalDataControllerProtocol?
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -26,7 +27,8 @@ class PersonalDataPresenter: NSObject, PersonalDataPresenterProtocol  {
 }
 
 extension PersonalDataPresenter: PersonalDataOutputInteractorProtocol {
-    func takeData(model: ProfileModel?){
+    func takeData(model: ProfileModel?, delegate: PersonalDataControllerProtocol?){
+        self.delegate = delegate
         self.model = model
         let nameComponents = model?.name?.components(separatedBy: " ") ?? []
         if !nameComponents.isEmpty {

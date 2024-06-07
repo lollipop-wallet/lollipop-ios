@@ -29,7 +29,7 @@ protocol PersonalDataInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol PersonalDataOutputInteractorProtocol: AnyObject {
-    func takeData(model: ProfileModel?)
+    func takeData(model: ProfileModel?, delegate: PersonalDataControllerProtocol?)
 }
 //MARK: View
 protocol PersonalDataViewProtocol: AnyObject {
@@ -46,5 +46,10 @@ protocol PersonalDataViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol PersonalDataWireframeProtocol: AnyObject {
     static var model: ProfileModel? { get set }
+    static var delegate: PersonalDataControllerProtocol? { get set }
 }
 
+//MARK: PersonalDataController Protocol
+protocol PersonalDataControllerProtocol: AnyObject {
+    func didUpdateProfileWith(model: ProfileModel?)
+}

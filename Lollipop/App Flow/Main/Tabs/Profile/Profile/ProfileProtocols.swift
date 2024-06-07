@@ -12,7 +12,7 @@ import PhotosUI
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol ProfilePresenterProtocol: UITableViewDelegate, UITableViewDataSource, ProfileCellProtocol, PHPickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+protocol ProfilePresenterProtocol: UITableViewDelegate, UITableViewDataSource, ProfileCellProtocol, PHPickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PersonalDataControllerProtocol{
     
     var interactor: ProfileInputInteractorProtocol? { get set }
     var view: ProfileViewProtocol? { get set }
@@ -66,4 +66,5 @@ protocol ProfileCellProtocol: AnyObject {
 //MARK: ProfileController Protocol
 protocol ProfileControllerProtocol: AnyObject {
     func updateAvatar(avatar: String)
+    func updateNameWith(name: String)
 }

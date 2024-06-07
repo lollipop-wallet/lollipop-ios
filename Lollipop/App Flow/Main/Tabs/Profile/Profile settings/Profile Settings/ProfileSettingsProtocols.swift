@@ -10,7 +10,7 @@ import UIKit
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol ProfileSettingsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, ProfileSettingsCellProtocol {
+protocol ProfileSettingsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, ProfileSettingsCellProtocol, PersonalDataControllerProtocol{
     
     var interactor: ProfileSettingsInputInteractorProtocol? { get set }
     var view: ProfileSettingsViewProtocol? { get set }

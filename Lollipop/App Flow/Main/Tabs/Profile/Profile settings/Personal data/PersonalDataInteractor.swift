@@ -15,6 +15,7 @@ class PersonalDataInteractor: PersonalDataInputInteractorProtocol {
     
     func viewDidLoad() {
         let model = PersonalDataWireframe.model
-        presenter?.takeData(model: model)
+        let delegate = PersonalDataWireframe.delegate
+        presenter?.takeData(model: model, delegate: delegate)
     }
 }

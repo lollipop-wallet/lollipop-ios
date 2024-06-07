@@ -190,6 +190,10 @@ extension HomePresenter {
     func updateAvatar(avatar: String) {
         view?.setUserAvatarWith(avatar: avatar)
     }
+    
+    func updateNameWith(name: String) {
+        view?.setUserNameWith(name: name)
+    }
 }
 
 //MARK: NewLoyaltyCardController delegate

@@ -27,6 +27,7 @@ class ProfilePresenter: NSObject, ProfilePresenterProtocol  {
     }
     
     func viewDidLoad() {
+        PersonalDataWireframe.delegate = self
         interactor?.viewDidLoad()
     }
     
@@ -172,5 +173,16 @@ extension ProfilePresenter {
         self.userImage = image
         let imageData = self.userImage.jpegData(compressionQuality: 0.4)
         self.interactor?.updateAvatar(avatar: imageData ?? Data())
+    }
+}
+
+extension ProfilePresenter {
+    func didUpdateProfileWith(model: ProfileModel?) {
+        self.model = model
+        self.view?.setUserNameWith(name: model?.name ?? "")
+        self.view?.setUserPhoneWith(phone: model?.phone ?? "")
+        self.view?.setPhoneHidden(isHidden: !(model?.phone ?? "").isEmpty)
+        self.delegate?.updateAvatar(avatar: model?.avatar ?? "")
+        self.delegate?.updateNameWith(name: model?.name ?? "")
     }
 }
