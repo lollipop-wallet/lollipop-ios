@@ -21,6 +21,8 @@ class PersonalDataView: UIViewController, PersonalDataViewProtocol {
     var datePickerStackView = UIStackView()
     var genderField = DropdownInputField()
     var cityField = DropdownInputField()
+    var cityDropdown = DropDown()
+    var genderDropdown = DropDown()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +91,30 @@ class PersonalDataView: UIViewController, PersonalDataViewProtocol {
         self.genderField.borderColor = isGenderEmpty ? AppColors.error : AppColors.black
         self.calendarField.borderWidth = 1
         self.calendarField.borderColor = isDoBEmpty ? AppColors.error : AppColors.black
+    }
+    
+    func showDropdownWith(tag: Int){
+        if tag == 0 {
+            self.genderDropdown.show()
+            self.genderField.borderWidth = 2
+            self.genderField.borderColor = AppColors.link
+        }else{
+            self.cityDropdown.show()
+            self.cityField.borderWidth = 2
+            self.cityField.borderColor = AppColors.link
+        }
+    }
+    
+    func hideDropdownWith(tag: Int){
+        if tag == 0 {
+            self.genderField.isDropdownHidden = true
+            self.genderField.borderWidth = 1
+            self.genderField.borderColor = AppColors.mediumGrey
+        }else{
+            self.cityField.isDropdownHidden = true
+            self.cityField.borderWidth = 1
+            self.cityField.borderColor = AppColors.mediumGrey
+        }
     }
     
     //MARK: Actions

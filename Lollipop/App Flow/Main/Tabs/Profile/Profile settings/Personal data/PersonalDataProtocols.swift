@@ -11,13 +11,15 @@ import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PersonalDataPresenterProtocol: CalendarInputProtocol, DropdownInputFieldProtocol {
+protocol PersonalDataPresenterProtocol: CalendarInputProtocol, DropdownInputFieldProtocol, DropdownProtocol {
     
     var interactor: PersonalDataInputInteractorProtocol? { get set }
     var view: PersonalDataViewProtocol? { get set }
     var wireframe:PersonalDataWireframeProtocol? { get set }
     
     func viewDidLoad()
+    func handleGenderDropdownTapWith(item: Gender)
+    func handleCityDropdownTapWith(item: String)
     func proceed(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String)
 }
 //MARK: Interactor
@@ -46,6 +48,8 @@ protocol PersonalDataViewProtocol: AnyObject {
     func setCity(city: String)
     func setGender(gender: String)
     func validate(isFirstNameEmpty: Bool, isLastNameEmpty: Bool, isEmailEmpty: Bool, isGenderEmpty: Bool, isDoBEmpty: Bool)
+    func showDropdownWith(tag: Int)
+    func hideDropdownWith(tag: Int)
 }
 //MARK: Wireframe
 protocol PersonalDataWireframeProtocol: AnyObject {

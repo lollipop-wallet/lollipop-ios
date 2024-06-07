@@ -16,10 +16,20 @@ class PersonalDataPresenter: NSObject, PersonalDataPresenterProtocol  {
     var wireframe: PersonalDataWireframeProtocol?
     
     var model: ProfileModel?
+    var gender: Gender?
     var delegate: PersonalDataControllerProtocol?
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
+    }
+    
+    func handleGenderDropdownTapWith(item: Gender){
+        self.gender = item
+        view?.setGender(gender: item.label ?? "")
+    }
+    
+    func handleCityDropdownTapWith(item: String){
+        view?.setCity(city: item)
     }
     
     func proceed(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String){
@@ -71,6 +81,17 @@ extension PersonalDataPresenter {
 //MARK: Dropdown field delegate
 extension PersonalDataPresenter {
     func showHideDropdown(tag: Int) {
-        
+        view?.showDropdownWith(tag: tag)
+    }
+}
+
+//MARK: Dropdown delegate
+extension PersonalDataPresenter {
+    func dropDownHidden(tag: Int) {
+        view?.hideDropdownWith(tag: tag)
+    }
+    
+    func dropDownShown(tag: Int) {
+        view?.showDropdownWith(tag: tag)
     }
 }
