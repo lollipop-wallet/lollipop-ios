@@ -21,8 +21,11 @@ class PersonalDataPresenter: NSObject, PersonalDataPresenterProtocol  {
         interactor?.viewDidLoad()
     }
     
-    func proceed() {
-        
+    func proceed(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String){
+        guard !firstname.isEmpty, !lastname.isEmpty, !dob.isEmpty, !email.isEmpty, !gender.isEmpty else {
+            view?.validate(isFirstNameEmpty: firstname.isEmpty, isLastNameEmpty: lastname.isEmpty, isEmailEmpty: email.isEmpty, isGenderEmpty: gender == LocalizedTitle.choose.localized, isDoBEmpty: dob == LocalizedTitle.choose.localized)
+            return
+        }
     }
 }
 

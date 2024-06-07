@@ -17,7 +17,7 @@ protocol PersonalDataPresenterProtocol: CalendarInputProtocol, DropdownInputFiel
     var wireframe:PersonalDataWireframeProtocol? { get set }
     
     func viewDidLoad()
-    func proceed()
+    func proceed(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String)
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -42,6 +42,7 @@ protocol PersonalDataViewProtocol: AnyObject {
     func setDoB(dob: String)
     func setCity(city: String)
     func setGender(gender: String)
+    func validate(isFirstNameEmpty: Bool, isLastNameEmpty: Bool, isEmailEmpty: Bool, isGenderEmpty: Bool, isDoBEmpty: Bool)
 }
 //MARK: Wireframe
 protocol PersonalDataWireframeProtocol: AnyObject {
