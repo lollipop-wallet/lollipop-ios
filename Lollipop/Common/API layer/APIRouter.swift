@@ -38,13 +38,14 @@ enum APIRouter: URLRequestConvertible, Equatable {
     case getlocations(partnerId: Int, brands: String, cities: String)
     case getbranddetails(alias: String)
     case inquiry(name: String, city: String, phone: String, partnerAlias: String, email: String)
+    case updateuser(name: String, email: String, phone: String, dob: String, city: String, gender: String)
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
         case .getconfig, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards, .getprofile, .getcarddetails, .getlocations, .getbranddetails:
             return .get
-        case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards, .updateloyaltycard, .updateavatar, .createloyaltycard, .createdisplaycard, .inquiry:
+        case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards, .updateloyaltycard, .updateavatar, .createloyaltycard, .createdisplaycard, .inquiry, .updateuser:
             return .post
         }
     }
@@ -104,6 +105,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return "brands/\(alias)?includes=partner.brands,partner.rule,partner.instruction,partner.card_templates,banners.brand,locations,user_favorite"
         case .inquiry:
             return "inquiries"
+        case .updateuser:
+            return "user"
         }
     }
     
@@ -134,6 +137,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return [APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : note, APIParameterKey.partnerAlias : partnerAlias, APIParameterKey.cardTemplateId : templateId, APIParameterKey.type : CardType.loyalty.rawValue, APIParameterKey.nameOnTheCard : nameOnTheCard]
         case .inquiry(let name, let city, let phone, let alias, let email):
             return [APIParameterKey.type : InquiryType.card.rawValue, APIParameterKey.customerName : name, APIParameterKey.country : Configuration.defaultCountry, APIParameterKey.city : city, APIParameterKey.phone : phone, APIParameterKey.partnerAlias : alias, APIParameterKey.email : email]
+        case .updateuser(let name, let email, let phone, let dob, let city, let gender):
+            return [APIParameterKey.name : name, APIParameterKey.email : email, APIParameterKey.phone : phone, APIParameterKey.dob : dob, APIParameterKey.city : city, APIParameterKey.gender : gender, APIParameterKey.country : Configuration.defaultCountry]
             
         }
     }

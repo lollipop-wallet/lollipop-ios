@@ -245,4 +245,10 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.inquiry(name: name, city: city, phone: phone, partnerAlias: partnerAlias, email: email), completion: completion)
     }
+    
+    static func updateuser(name: String, email: String, phone: String, dob: String, city: String, gender: String, completion:@escaping (Result<PersonalDataModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.updateuser(name: name, email: email, phone: phone, dob: dob, city: city, gender: gender), completion: completion)
+    }
 }
+
