@@ -28,6 +28,19 @@ class PersonalDataPresenter: NSObject, PersonalDataPresenterProtocol  {
 extension PersonalDataPresenter: PersonalDataOutputInteractorProtocol {
     func takeData(model: ProfileModel?){
         self.model = model
+        let nameComponents = model?.name?.components(separatedBy: " ") ?? []
+        if !nameComponents.isEmpty {
+            self.view?.setFirstName(firstName: nameComponents[0])
+        }
+        if nameComponents.count == 2 {
+            self.view?.setLastName(lastName: nameComponents[1])
+        }else if nameComponents.count > 2 {
+            self.view?.setLastName(lastName: "\(nameComponents[1]) \(nameComponents[2])")
+        }
+        self.view?.setEmail(email: model?.email ?? "")
+        self.view?.setDoB(dob: model?.date_of_birth?.dateString ?? "")
+        self.view?.setGender(gender: model?.genderUserReadable ?? "")
+        self.view?.setCity(city: model?.city ?? "")
     }
 }
 

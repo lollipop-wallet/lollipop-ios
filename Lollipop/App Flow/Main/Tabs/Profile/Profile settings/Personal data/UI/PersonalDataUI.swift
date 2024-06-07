@@ -36,19 +36,22 @@ extension PersonalDataView {
         self.nameField.keyboardType = .default
         self.nameField.background = AppColors.white
         self.nameField.leftSuplementaryIconHidden = true
+        self.nameField.leftSuplementarylabelHidden = true
         
         self.surnameField.title = "\(LocalizedTitle.surname.localized):"
         self.surnameField.errorHidden = true
         self.surnameField.keyboardType = .default
         self.surnameField.background = AppColors.white
         self.surnameField.leftSuplementaryIconHidden = true
+        self.surnameField.leftSuplementarylabelHidden = true
 
         self.emailField.title = "\(LocalizedTitle.email.localized):"
         self.emailField.errorHidden = true
         self.emailField.keyboardType = .emailAddress
         self.emailField.background = AppColors.white
         self.emailField.leftSuplementaryIconHidden = true
-        
+        self.emailField.leftSuplementarylabelHidden = true
+
         self.calendarField.title = "\(LocalizedTitle.dateOfBirh.localized):"
         self.calendarField.errorHidden = true
         self.calendarField.background = AppColors.white
@@ -68,6 +71,7 @@ extension PersonalDataView {
         self.genderField.background = AppColors.white
         self.genderField.text = LocalizedTitle.choose.localized
         self.genderField.rightSuplementaryIconHidden = false
+        self.genderField.leftSuplementaryIconHidden = true
         self.genderField.delegate = presenter
         
         lazy var midStack: UIStackView = {
@@ -103,6 +107,7 @@ extension PersonalDataView {
         self.cityField.background = AppColors.white
         self.cityField.text = LocalizedTitle.choose.localized
         self.cityField.rightSuplementaryIconHidden = false
+        self.cityField.leftSuplementaryIconHidden = true
         self.cityField.delegate = presenter
         
         lazy var mainStack: UIStackView = {

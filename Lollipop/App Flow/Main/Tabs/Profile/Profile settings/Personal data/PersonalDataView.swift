@@ -44,6 +44,40 @@ class PersonalDataView: UIViewController, PersonalDataViewProtocol {
         }
     }
     
+    func setFirstName(firstName: String){
+        DispatchQueue.main.async {
+            self.nameField.text = firstName
+        }
+    }
+    func setLastName(lastName: String){
+        DispatchQueue.main.async {
+            self.surnameField.text = lastName
+        }
+    }
+    func setEmail(email: String){
+        DispatchQueue.main.async {
+            self.emailField.text = email
+        }
+    }
+    func setDoB(dob: String){
+        DispatchQueue.main.async {
+            self.calendarField.text = dob
+            self.calendarField.textColor = AppColors.black
+            self.calendarField.borderColor = AppColors.black
+        }
+    }
+    func setCity(city: String){
+        DispatchQueue.main.async {
+            self.cityField.text = city
+        }
+    }
+    
+    func setGender(gender: String) {
+        DispatchQueue.main.async {
+            self.genderField.text = gender
+        }
+    }
+    
     //MARK: Actions
     @objc func onBackTap() {
         popBack(2)

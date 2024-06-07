@@ -36,7 +36,12 @@ protocol PersonalDataViewProtocol: AnyObject {
     
     var presenter: PersonalDataPresenterProtocol?  { get set }
     func displayCalendar()
-
+    func setFirstName(firstName: String)
+    func setLastName(lastName: String)
+    func setEmail(email: String)
+    func setDoB(dob: String)
+    func setCity(city: String)
+    func setGender(gender: String)
 }
 //MARK: Wireframe
 protocol PersonalDataWireframeProtocol: AnyObject {
