@@ -30,38 +30,14 @@ extension String {
     }
     
     var dateString: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let date = dateFormatter.date(from: self)
-        dateFormatter.dateFormat = "d MMMM"
-        return  dateFormatter.string(from: date!)
-    }
-    
-    var dateStringFax: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        let date = dateFormatter.date(from: self)
-        dateFormatter.dateFormat = "d MMM hh:mm"
-        return  dateFormatter.string(from: date!)
-    }
-    
-    var dateStringFaxLong: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        let date = dateFormatter.date(from: self)
-        dateFormatter.dateFormat = "d MMM yyyy, hh:mm"
-        return  dateFormatter.string(from: date!)
-    }
-    
-    var cardDateString: String {
-        if self.contains("-") {
+        if self.contains("T") && self != "" {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "YYYY-MM-dd"
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
             let date = dateFormatter.date(from: self)
             dateFormatter.dateFormat = "dd.MM.YYYY"
             return  dateFormatter.string(from: date!)
         }else{
-            return ""
+            return self
         }
     }
     
@@ -74,6 +50,7 @@ extension String {
             return Date()
         }
     }
+    
     
     var thousandFormatter: String {
         if self.count > 3 {
