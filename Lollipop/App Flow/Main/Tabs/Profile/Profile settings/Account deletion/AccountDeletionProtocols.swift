@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -16,6 +17,7 @@ protocol AccountDeletionPresenterProtocol: AnyObject {
     var view: AccountDeletionViewProtocol? { get set }
     var wireframe:AccountDeletionWireframeProtocol? { get set }
     
+    func delete()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -23,13 +25,12 @@ protocol AccountDeletionInputInteractorProtocol: AnyObject {
     
     var presenter: AccountDeletionOutputInteractorProtocol?  { get set }
     
-   
+   func delete()
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol AccountDeletionOutputInteractorProtocol: AnyObject {
-    
-
+    func parseDeletedAccountData(result: Result<Empty, AFError>)
 }
 //MARK: View
 protocol AccountDeletionViewProtocol: AnyObject {
@@ -39,6 +40,5 @@ protocol AccountDeletionViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol AccountDeletionWireframeProtocol: AnyObject {
-
-    
+    func toMain()
 }

@@ -41,6 +41,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
     case updateuser(name: String, email: String, phone: String, dob: String, city: String, gender: String)
     case deletecard(alias: String)
     case logout
+    case deleteaccount
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
@@ -49,7 +50,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return .get
         case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards, .updateloyaltycard, .updateavatar, .createloyaltycard, .createdisplaycard, .inquiry, .updateuser, .logout:
             return .post
-        case .deletecard:
+        case .deletecard, .deleteaccount:
             return .delete
         }
     }
@@ -109,7 +110,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return "brands/\(alias)?includes=partner.brands,partner.rule,partner.instruction,partner.card_templates,banners.brand,locations,user_favorite"
         case .inquiry:
             return "inquiries"
-        case .updateuser:
+        case .updateuser, .deleteaccount:
             return "user"
         case .deletecard(let alias):
             return "cards/\(alias)"
@@ -121,7 +122,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
     // MARK: - Parameters
     private var parameters: Parameters? {
         switch self {
-        case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards, .getprofile, .updateavatar, .createdisplaycard, .getcarddetails, .getlocations, .getbranddetails, .deletecard, .logout:
+        case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards, .getprofile, .updateavatar, .createdisplaycard, .getcarddetails, .getlocations, .getbranddetails, .deletecard, .logout, .deleteaccount:
             return nil
         case .login(let email, let password):
             return [APIParameterKey.email : email, APIParameterKey.password : password]
@@ -177,7 +178,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
     
         func multipartFormData() -> Parameters? {
             switch self {
-            case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards, .getprofile, .login, .register, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards, .updateloyaltycard, .createloyaltycard, .getcarddetails, .getlocations, .getbranddetails, .inquiry, .updateuser, .deletecard, .logout:
+            case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards, .getprofile, .login, .register, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards, .updateloyaltycard, .createloyaltycard, .getcarddetails, .getlocations, .getbranddetails, .inquiry, .updateuser, .deletecard, .logout, .deleteaccount:
                 return nil
             case .updateavatar(let avatar):
                 return [APIParameterKey.avatar : avatar]

@@ -33,10 +33,10 @@ class AccountDeletionView: UIViewController, AccountDeletionViewProtocol {
     }
     
     @objc func onDeleteAccountTap() {
-        
+        presenter?.delete()
     }
     
     @objc func onQuitTap() {
-        
+        popBack(2)
     }
 }

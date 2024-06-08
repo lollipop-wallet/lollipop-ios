@@ -260,5 +260,10 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.logout, completion: completion)
     }
+    
+    static func deleteaccount(completion:@escaping (Result<Empty, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.deleteaccount, completion: completion)
+    }
 }
 
