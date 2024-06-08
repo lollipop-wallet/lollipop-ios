@@ -32,7 +32,7 @@ protocol LocationsInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol LocationsOutputInteractorProtocol: AnyObject {
-    func takeData(partner: Partner?)
+    func takeData(partner: Partner?, brands: [Brand]?)
     func parseLocationsData(result: Result<LocationsModel, AFError>)
 }
 //MARK: View
@@ -44,6 +44,7 @@ protocol LocationsViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol LocationsWireframeProtocol: AnyObject {
     static var partner: Partner? { get set }
+    static var brands: [Brand]? { get set }
     func toFilterWith(filterType: LocationFilterType, delegate: LocationsFilterControllerProtocol?, cities: [City], brands: [Brand], partnerId: Int)
     func toMapWith(location: Location?)
 }

@@ -12,6 +12,7 @@ import MapKit
 class LocationsWireframe: LocationsWireframeProtocol {
     
     static var partner: Partner?
+    static var brands: [Brand]?
     
     static func createModule(LocationsRef: LocationsView) {
         let presenter: LocationsPresenterProtocol & LocationsOutputInteractorProtocol = LocationsPresenter()

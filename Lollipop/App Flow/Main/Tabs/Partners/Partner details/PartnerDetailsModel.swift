@@ -11,6 +11,7 @@ import Foundation
 struct PartnerDetailsModel : Codable {
     let id: Int?
     let name: String?
+    let alias: String?
     let featured_image: String?
     let logo: String?
     let external_link: String?

@@ -131,7 +131,9 @@ extension PartnerDetailsPresenter {
     
     //MARK: Options Delegate
     func didTapLocations(){
-        wireframe?.toLocations(partner: self.model?.partner)
+        let allBrands = self.model?.partner?.brands ?? []
+        let locationBrands = allBrands.filter { ($0.alias ?? "") == (self.model?.alias ?? "") }
+        wireframe?.toLocations(partner: self.model?.partner, brands: locationBrands)
     }
     
     func didTapAbout(){

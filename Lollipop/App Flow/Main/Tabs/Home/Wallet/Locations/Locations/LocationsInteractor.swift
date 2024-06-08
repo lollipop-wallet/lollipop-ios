@@ -15,7 +15,8 @@ class LocationsInteractor: LocationsInputInteractorProtocol {
     
     func viewDidLoad() {
         let partner = LocationsWireframe.partner
-        presenter?.takeData(partner: partner)
+        let brands = LocationsWireframe.brands ?? []
+        presenter?.takeData(partner: partner, brands: brands)
     }
     
     func getLocations(partnerId: Int, brands: String, cities: String){

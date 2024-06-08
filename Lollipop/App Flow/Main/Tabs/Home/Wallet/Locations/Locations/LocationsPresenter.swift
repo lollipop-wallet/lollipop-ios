@@ -19,6 +19,7 @@ class LocationsPresenter: NSObject, LocationsPresenterProtocol  {
     var datasource = [Location]()
     var cities = [City]()
     var brands = [Brand]()
+    var startingBrands = [Brand]()
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -35,9 +36,11 @@ class LocationsPresenter: NSObject, LocationsPresenterProtocol  {
 }
 
 extension LocationsPresenter: LocationsOutputInteractorProtocol {
-    func takeData(partner: Partner?) {
+    func takeData(partner: Partner?, brands: [Brand]?){
         self.partner = partner
-        interactor?.getLocations(partnerId: partner?.id ?? 0, brands: "", cities: "")
+        self.startingBrands = brands ?? []
+        let selectedBrands = (brands ?? []).map { String($0.id ?? 0) }.joined(separator: ",")
+        interactor?.getLocations(partnerId: partner?.id ?? 0, brands: selectedBrands, cities: "")
     }
     
     func parseLocationsData(result: Result<LocationsModel, AFError>){
@@ -48,10 +51,20 @@ extension LocationsPresenter: LocationsOutputInteractorProtocol {
             self.view?.reload()
             for i in 0..<(model.cities ?? []).count {
                 let item = (model.cities ?? [])[i]
-                let city = City(cityName: item, selected: false)
+                let city = City(cityName: item, selected: true)
                 self.cities.append(city)
             }
             self.brands = model.brands ?? []
+            var finalBrands = [Brand]()
+            if !startingBrands.isEmpty {
+                for i in 0..<self.brands.count {
+                    var oneBrand = self.brands[i]
+                    let filteredPreselectedBrands = self.startingBrands.filter { ($0.alias ?? "") == oneBrand.alias}
+                    oneBrand.selected = !filteredPreselectedBrands.isEmpty
+                    finalBrands.append(oneBrand)
+                }
+                self.brands = finalBrands
+            }
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }
