@@ -23,7 +23,7 @@ class WalletCardPresenter: NSObject, WalletCardPresenterProtocol  {
     }
     
     func locations() {
-        wireframe?.toLocations(partner: self.card?.partner)
+        wireframe?.toLocations(partner: self.card?.partner, brands: self.datasource)
     }
     
     func details() {
