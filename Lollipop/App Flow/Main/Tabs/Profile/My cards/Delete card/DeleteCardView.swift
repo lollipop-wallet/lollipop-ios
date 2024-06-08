@@ -16,6 +16,7 @@ class DeleteCardView: UIViewController, DeleteCardViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,7 +34,7 @@ class DeleteCardView: UIViewController, DeleteCardViewProtocol {
     }
     
     @objc func onDeleteCardTap() {
-        
+        presenter?.delete()
     }
     
     @objc func onQuitTap() {

@@ -9,6 +9,8 @@ import UIKit
 
 class DeleteCardWireframe: DeleteCardWireframeProtocol {
     
+    static var delegate: DeleteCardControllerProtocol?
+    static var alias: String?
     
     static func createModule(DeleteCardRef: DeleteCardView) {
         let presenter: DeleteCardPresenterProtocol & DeleteCardOutputInteractorProtocol = DeleteCardPresenter()

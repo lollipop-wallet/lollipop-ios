@@ -12,4 +12,14 @@ import UIKit
 class DeleteCardInteractor: DeleteCardInputInteractorProtocol {
     
     weak var presenter: DeleteCardOutputInteractorProtocol?
+    
+    func viewDidLoad() {
+        let delegate = DeleteCardWireframe.delegate
+        let alias = DeleteCardWireframe.alias ?? ""
+        presenter?.takeData(delegate: delegate, alias: alias)
+    }
+    
+    func delete(alias: String) {
+        
+    }
 }

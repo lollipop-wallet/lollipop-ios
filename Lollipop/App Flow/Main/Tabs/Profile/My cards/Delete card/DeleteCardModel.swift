@@ -9,6 +9,6 @@
 import Foundation
 
 struct DeleteCardModel : Codable {
-    
+    let message: String?
 }
 

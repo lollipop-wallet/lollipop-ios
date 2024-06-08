@@ -19,9 +19,11 @@ class MyCardsPresenter: NSObject, MyCardsPresenterProtocol  {
     var favoriteCards = [Card]()
     var selectedSegment = Int()
     var selectedIndex = Int()
+    var shouldUpdateHomeCards = Bool()
     var delegate: MyCardsControllerProtocol?
     
     func viewDidLoad() {
+        DeleteCardWireframe.delegate = self
         self.selectedSegment = 0
         interactor?.viewDidLoad(showSpinner: true)
     }
@@ -51,6 +53,10 @@ extension MyCardsPresenter: MyCardsOutputInteractorProtocol {
             self.allCards = cards
             self.datasource = self.selectedSegment == 0 ? allCards : favoriteCards
             self.view?.reload()
+            if self.shouldUpdateHomeCards {
+                delegate?.updateUserCardsWith(cards: favCards)
+                self.shouldUpdateHomeCards = false
+            }
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }
@@ -104,4 +110,12 @@ extension MyCardsPresenter {
     }
     
     func updateCardWith(card: Card?) {}
+}
+
+//MARK: DeleteCardController delegate
+extension MyCardsPresenter {
+    func didDeleteCard() {
+        self.shouldUpdateHomeCards = true
+        self.interactor?.viewDidLoad(showSpinner: false)
+    }
 }

@@ -54,7 +54,7 @@ protocol EditCardViewProtocol: AnyObject {
 protocol EditCardWireframeProtocol: AnyObject {
     static var card: Card? { get set }
     static var delegate: EditCardControllerProtocol? { get set }
-    func toDelete()
+    func toDelete(alias: String)
 }
 
 //MARK: EditCardController protocol

@@ -11,7 +11,7 @@ import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol MyCardsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, MyCardsCellProtocol, FavoriteCardsControllerProtocol, ReorderCardsControllerProtocol, CardDetailsControllerProtocol {
+protocol MyCardsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, MyCardsCellProtocol, FavoriteCardsControllerProtocol, ReorderCardsControllerProtocol, CardDetailsControllerProtocol, DeleteCardControllerProtocol{
     
     var interactor: MyCardsInputInteractorProtocol? { get set }
     var view: MyCardsViewProtocol? { get set }

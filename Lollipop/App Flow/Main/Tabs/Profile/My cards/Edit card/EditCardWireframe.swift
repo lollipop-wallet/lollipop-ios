@@ -22,8 +22,9 @@ class EditCardWireframe: EditCardWireframeProtocol {
         
     }
     
-    func toDelete(){
+    func toDelete(alias: String){
         let vc = DeleteCardView()
+        DeleteCardWireframe.alias = alias
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

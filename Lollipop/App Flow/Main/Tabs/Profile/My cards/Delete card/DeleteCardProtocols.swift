@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -16,20 +17,22 @@ protocol DeleteCardPresenterProtocol: AnyObject {
     var view: DeleteCardViewProtocol? { get set }
     var wireframe:DeleteCardWireframeProtocol? { get set }
     
+    func viewDidLoad()
+    func delete()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
 protocol DeleteCardInputInteractorProtocol: AnyObject {
     
     var presenter: DeleteCardOutputInteractorProtocol?  { get set }
-    
-   
+    func viewDidLoad()
+    func delete(alias: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol DeleteCardOutputInteractorProtocol: AnyObject {
-    
-
+    func takeData(delegate: DeleteCardControllerProtocol?, alias: String?)
+    func parseDeletedCardData(result: Result<DeleteCardModel, AFError>)
 }
 //MARK: View
 protocol DeleteCardViewProtocol: AnyObject {
@@ -39,6 +42,11 @@ protocol DeleteCardViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol DeleteCardWireframeProtocol: AnyObject {
+    static var delegate: DeleteCardControllerProtocol? { get set }
+    static var alias: String? { get set }
+}
 
-    
+//MARK: DeleteCardControllerProtocol
+protocol DeleteCardControllerProtocol: AnyObject {
+    func didDeleteCard()
 }

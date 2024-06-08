@@ -22,7 +22,7 @@ class EditCardPresenter: EditCardPresenterProtocol  {
     }
     
     func delete(){
-        wireframe?.toDelete()
+        wireframe?.toDelete(alias: self.card?.alias ?? "")
     }
     
     func save(frontImage: UIImage, backImage: UIImage, cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String){
