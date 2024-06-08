@@ -54,7 +54,7 @@ protocol PartnerDetailsWireframeProtocol: AnyObject {
 
 //MARK: MainPartnerCell Protocol
 protocol MainPartnerCellProtocol: AnyObject {
-    
+    func getPartnerWith(alias: String, selectedIndex: Int)
 }
 
 //MARK: PartnerDetailsCardCell Protocol

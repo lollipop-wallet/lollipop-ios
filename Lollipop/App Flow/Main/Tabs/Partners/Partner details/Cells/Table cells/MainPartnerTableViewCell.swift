@@ -14,6 +14,7 @@ class MainPartnerTableViewCell: UITableViewCell {
     
     var datasource = [Brand]()
     var scrollIndex = Int()
+    var previousScrollIndex = Int()
     
     lazy var cellContentView: UIView = {
         let view = UIView()
@@ -111,13 +112,13 @@ class MainPartnerTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(brands: [Brand], index: IndexPath, delegate: MainPartnerCellProtocol) {
+    func configureWith(brands: [Brand], partnerSelectedIndex: Int, index: IndexPath, delegate: MainPartnerCellProtocol) {
         self.index = index
         self.delegate = delegate
         self.datasource = brands
-        self.collectionView.reloadData()
+        //self.collectionView.reloadData()
         self.pageControl.numberOfPages = brands.count
-        self.partnerBackgroundImage.imageFromURL(url: brands.first?.featured_image ?? "")
+        self.partnerBackgroundImage.imageFromURL(url: brands[partnerSelectedIndex].featured_image ?? "")
         self.scrollIndex = 0
     }
     
@@ -137,7 +138,6 @@ extension MainPartnerTableViewCell: UICollectionViewDelegate, UICollectionViewDa
     
     
     func didSelectItemAt(index: IndexPath) {
-        
     }
 }
 
@@ -156,14 +156,13 @@ extension MainPartnerTableViewCell {
         let group = NSCollectionLayoutGroup.vertical( layoutSize: groupSize, subitem: item, count: 1)
             group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 0,trailing: 8)
         let section = NSCollectionLayoutSection(group: group)
-
         section.visibleItemsInvalidationHandler = { [weak self] (items, offset, env) -> Void in
             guard let self = self, let itemWidth = items.last?.bounds.width else { return }
             let page = round(offset.x / (itemWidth + section.interGroupSpacing))
             let index = Int(page)
-            if self.scrollIndex != index {
+            if self.scrollIndex != index && index <= self.datasource.count - 1{
                 self.scrollIndex = index
-                self.partnerBackgroundImage.imageFromURL(url: self.datasource[index].featured_image ?? "")
+                self.delegate?.getPartnerWith(alias: self.datasource[self.scrollIndex].alias ?? "", selectedIndex: self.scrollIndex)
             }
             self.pageControl.currentPage = Int(page)
         }

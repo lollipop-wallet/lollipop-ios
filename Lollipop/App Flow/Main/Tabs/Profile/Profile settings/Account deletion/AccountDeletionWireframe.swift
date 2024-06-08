@@ -9,7 +9,6 @@ import UIKit
 
 class AccountDeletionWireframe: AccountDeletionWireframeProtocol {
     
-    
     static func createModule(AccountDeletionRef: AccountDeletionView) {
         let presenter: AccountDeletionPresenterProtocol & AccountDeletionOutputInteractorProtocol = AccountDeletionPresenter()
         AccountDeletionRef.presenter = presenter
@@ -19,12 +18,14 @@ class AccountDeletionWireframe: AccountDeletionWireframeProtocol {
         AccountDeletionRef.presenter?.interactor?.presenter = presenter
         
     }
+    
+    func toMain(){
+        let mainVC = MainView()
+        let navigationController = UINavigationController(rootViewController: mainVC)
+        navigationController.isNavigationBarHidden = true
+        UIApplication.shared.keyWindow?.rootViewController = navigationController
+        UIApplication.shared.keyWindow?.makeKeyAndVisible()
+    }
 }
 
-func toMain(){
-    let mainVC = MainView()
-    let navigationController = UINavigationController(rootViewController: mainVC)
-    navigationController.isNavigationBarHidden = true
-    UIApplication.shared.keyWindow?.rootViewController = navigationController
-    UIApplication.shared.keyWindow?.makeKeyAndVisible()
-}
+

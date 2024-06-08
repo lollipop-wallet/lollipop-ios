@@ -10,13 +10,14 @@ import Alamofire
 import SafariServices
 
 class PartnerDetailsPresenter: NSObject, PartnerDetailsPresenterProtocol  {
-
+    
     var interactor : PartnerDetailsInputInteractorProtocol?
     weak var view: PartnerDetailsViewProtocol?
     var wireframe: PartnerDetailsWireframeProtocol?
     
     var datasource = [PartnerListModel]()
     var model: PartnerDetailsModel?
+    var partnerSelectedIndex = Int()
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -29,12 +30,15 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
     }
     
     func parseBrandDetailsData(result: Result<PartnerDetailsModel, AFError>){
+        self.datasource = []
         switch result {
         case .success(let model):
             self.model = model
             //MARK: Brands
-            let brandsListModelItem = PartnerListModel(card: nil, brands: model.partner?.brands ?? [], featuredBanner: nil, banners: [], itemType: .brand)
-            self.datasource.append(brandsListModelItem)
+            if  !(model.partner?.brands ?? []).isEmpty {
+                let brandsListModelItem = PartnerListModel(card: nil, brands: model.partner?.brands ?? [], featuredBanner: nil, banners: [], itemType: .brand)
+                self.datasource.append(brandsListModelItem)
+            }
             
             //MARK: Cards
             let templates = model.partner?.card_templates ?? []
@@ -69,6 +73,7 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
                 let customLinkListModelItem = PartnerListModel(card: nil, brands: [], featuredBanner: nil, banners: [], customLink: customLink, itemType: .link)
                 self.datasource.append(customLinkListModelItem)
             }
+            print("ovoliko ih je: ", self.datasource.count)
             self.view?.setFavoriteIconWith(icon: (model.user_favorite?.is_favorite ?? 0) == 1 ? AssetTitles.favoriteRoundedSelectedIcon : AssetTitles.favoriteRoundedIcon)
             self.view?.reload()
         case .failure(let error):
@@ -86,7 +91,7 @@ extension PartnerDetailsPresenter {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if self.datasource[indexPath.row].itemType == .brand {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.mainPartnerCell.rawValue, for: indexPath) as! MainPartnerTableViewCell
-            cell.configureWith(brands: self.datasource[indexPath.row].brands ?? [], index: indexPath, delegate: self)
+            cell.configureWith(brands: self.datasource[indexPath.row].brands ?? [], partnerSelectedIndex: self.partnerSelectedIndex, index: indexPath, delegate: self)
             return cell
         }else if self.datasource[indexPath.row].itemType == .card {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.parnterDetailsCardCell.rawValue, for: indexPath) as! PartnerDetailsCardTableViewCell
@@ -111,6 +116,13 @@ extension PartnerDetailsPresenter {
         }
     }
     
+    //MARK: MainPartnerCell Delegate
+    
+    func getPartnerWith(alias: String, selectedIndex: Int) {
+        self.partnerSelectedIndex = selectedIndex
+        interactor?.getDetails(alias: alias)
+    }
+
     //MARK: CardTemplate Delegate
     func didSelectCardTemplateItemAt(index: IndexPath){
         let item = self.datasource[index.row]
