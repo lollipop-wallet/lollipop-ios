@@ -39,6 +39,7 @@ protocol MyCardsViewProtocol: AnyObject {
     
     var presenter: MyCardsPresenterProtocol?  { get set }
     func reload()
+    func setSegmentedControlHidden(isHidden: Bool)
 }
 //MARK: Wireframe
 protocol MyCardsWireframeProtocol: AnyObject {

@@ -30,7 +30,11 @@ class MyCardsPresenter: NSObject, MyCardsPresenterProtocol  {
     
     func edit(){
         if self.selectedSegment == 0 {
-            wireframe?.toFavoriteCardsWith(cards: self.allCards, delegate: self)
+            if self.allCards.count <= 5 {
+                wireframe?.toReorderCardsWith(cards: self.favoriteCards, delegate: self)
+            }else{
+                wireframe?.toFavoriteCardsWith(cards: self.allCards, delegate: self)
+            }
         }else{
             wireframe?.toReorderCardsWith(cards: self.favoriteCards, delegate: self)
         }
@@ -57,6 +61,7 @@ extension MyCardsPresenter: MyCardsOutputInteractorProtocol {
                 delegate?.updateUserCardsWith(cards: favCards)
                 self.shouldUpdateHomeCards = false
             }
+            self.view?.setSegmentedControlHidden(isHidden: cards.count <= 5)
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }

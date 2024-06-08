@@ -43,15 +43,16 @@ extension MyCardsView {
         self.navigationItem.leftBarButtonItems = [backButton]
         self.navigationItem.rightBarButtonItems = [sortButton]
         
-        lazy var segmentedControl: CustomSegmentedControl = {
-            let control = CustomSegmentedControl(items: [LocalizedTitle.allCards.localized, LocalizedTitle.favoriteCards.localized])
-            control.selectedSegmentIndex = 0
-            control.backgroundColor = AppColors.white
-            control.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
-            control.setTitleTextAttributes([.foregroundColor: AppColors.darkGrey, NSAttributedString.Key.font: UIFont.inter(ofSize: 14, name: .semibold)], for: .normal)
-            control.setTitleTextAttributes([.foregroundColor: AppColors.white, NSAttributedString.Key.font:  UIFont.inter(ofSize: 14, name: .semibold)], for: .selected)
-            return control
-        }()
+        self.segmentedControl = CustomSegmentedControl(items: [LocalizedTitle.allCards.localized, LocalizedTitle.favoriteCards.localized])
+        self.segmentedControl.selectedSegmentIndex = 0
+        self.segmentedControl.backgroundColor = AppColors.white
+        self.segmentedControl.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
+        self.segmentedControl.setTitleTextAttributes([.foregroundColor: AppColors.darkGrey, NSAttributedString.Key.font: UIFont.inter(ofSize: 14, name: .semibold)], for: .normal)
+        self.segmentedControl.setTitleTextAttributes([.foregroundColor: AppColors.white, NSAttributedString.Key.font:  UIFont.inter(ofSize: 14, name: .semibold)], for: .selected)
+        self.segmentedControl.snp.makeConstraints { make in
+            make.height.equalTo(47)
+        }
+        self.segmentedControl.isHidden = true
         
         self.tableView.separatorStyle = .none
         self.tableView.register(MyCardsTableViewCell.self, forCellReuseIdentifier: CellId.myCardsCell.rawValue)
@@ -60,20 +61,37 @@ extension MyCardsView {
         self.tableView.backgroundColor = AppColors.lightGrey
         self.tableView.sectionHeaderTopPadding = 0
         
-        self.view.addSubview(segmentedControl)
-        segmentedControl.snp.makeConstraints { make in
+        lazy var mainStackView: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [self.segmentedControl, self.tableView])
+            stack.axis = .vertical
+            stack.distribution = .fill
+            stack.alignment = .fill
+            stack.spacing = 24
+            return stack
+        }()
+        
+        self.view.addSubview(mainStackView)
+        mainStackView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(16)
-            make.height.equalTo(47)
-        }
-
-        self.view.addSubview(self.tableView)
-        self.tableView.snp.makeConstraints { make in
-            make.top.equalTo(segmentedControl.snp.bottom).offset(24)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview()
         }
+        
+//        self.view.addSubview(segmentedControl)
+//        segmentedControl.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(20)
+//            make.trailing.equalToSuperview().offset(-20)
+//            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(16)
+//            make.height.equalTo(47)
+//        }
+//
+//        self.view.addSubview(self.tableView)
+//        self.tableView.snp.makeConstraints { make in
+//            make.top.equalTo(segmentedControl.snp.bottom).offset(24)
+//            make.leading.equalToSuperview().offset(20)
+//            make.trailing.equalToSuperview().offset(-20)
+//            make.bottom.equalToSuperview()
+//        }
     }
 }

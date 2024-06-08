@@ -12,6 +12,7 @@ import UIKit
 class MyCardsView: UIViewController, MyCardsViewProtocol {
     
     var tableView = UITableView()
+    var segmentedControl = CustomSegmentedControl()
 
     var presenter: MyCardsPresenterProtocol?
 
@@ -35,6 +36,12 @@ class MyCardsView: UIViewController, MyCardsViewProtocol {
     func reload(){
         DispatchQueue.main.async {
             self.tableView.reloadData()
+        }
+    }
+    
+    func setSegmentedControlHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.segmentedControl.isHidden = isHidden
         }
     }
     
