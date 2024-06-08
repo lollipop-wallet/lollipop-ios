@@ -179,3 +179,4 @@
 "version" = "Version";
 "privacyPolicy" = "Privacy policy";
 "termsAndConditions" = "Terms and conditions";
+"notReordered" = "You didn't make any change. Please reorder cards and try again.";

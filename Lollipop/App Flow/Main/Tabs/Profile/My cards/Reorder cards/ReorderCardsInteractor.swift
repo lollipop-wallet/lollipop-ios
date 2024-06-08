@@ -29,7 +29,6 @@ class ReorderCardsInteractor: ReorderCardsInputInteractorProtocol {
 
         request.httpMethod = "POST"
         request.httpBody = postData
-
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             guard let self = self else {return}
             guard let data = data else {
@@ -41,6 +40,7 @@ class ReorderCardsInteractor: ReorderCardsInputInteractorProtocol {
                 self.presenter?.parseReorderCardsData(model: model)
             }
         }
+        
         task.resume()
     }
 }

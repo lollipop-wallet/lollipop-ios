@@ -19,6 +19,7 @@ protocol ReorderCardsPresenterProtocol: UITableViewDelegate, UITableViewDataSour
     
     func viewDidLoad()
     func updateDatasourceWith(datasource: [Card])
+    func save()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR

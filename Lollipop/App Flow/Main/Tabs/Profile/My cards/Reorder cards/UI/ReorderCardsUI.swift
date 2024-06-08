@@ -32,8 +32,18 @@ extension ReorderCardsView {
             return button
         }()
         
+        lazy var saveButton: UIBarButtonItem = {
+            let button = UIBarButtonItem()
+            button.title = LocalizedTitle.save.localized
+            button.tintColor = AppColors.link
+            button.setTitleTextAttributes([ NSAttributedString.Key.font: UIFont.inter(ofSize: 16, name: .semibold)], for: UIControl.State.normal)
+            button.action = #selector(self.onSaveTap)
+            button.target = self
+            return button
+        }()
         
         self.navigationItem.leftBarButtonItems = [backButton]
+        self.navigationItem.rightBarButtonItems = [saveButton]
         
         self.tableView.separatorStyle = .none
         self.tableView.register(ReorderCardsTableViewCell.self, forCellReuseIdentifier: CellId.reorderCardCell.rawValue)

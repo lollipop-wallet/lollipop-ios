@@ -68,10 +68,10 @@ extension ReorderCardsView {
                         self.datasource.remove(at: Path.initialIndexPath!.row)
                         self.datasource.insert(movedObject, at: indexPath!.row)
                         tableView.moveRow(at: Path.initialIndexPath!, to: indexPath!)
-                        presenter?.updateDatasourceWith(datasource: self.datasource)
                         Path.initialIndexPath = indexPath
                         let generator = UIImpactFeedbackGenerator(style: .light)
                         generator.impactOccurred()
+                        self.presenter?.updateDatasourceWith(datasource: self.datasource)
                     }
                 }
         default:

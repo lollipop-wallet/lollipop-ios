@@ -17,6 +17,7 @@ class ReorderCardsPresenter: NSObject, ReorderCardsPresenterProtocol  {
     var datasource = [Card]()
     var reorderedDatasource = [Card]()
     var delegate: ReorderCardsControllerProtocol?
+    var reorderParameters: String = ""
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -28,10 +29,9 @@ class ReorderCardsPresenter: NSObject, ReorderCardsPresenterProtocol  {
         var parameters = String()
         for i in 0..<datasource.count {
             let item = datasource[i]
-            let card = PositionModel(alias: item.alias ?? "", position: (item.position ?? 0))
+            let card = PositionModel(alias: item.alias ?? "", position: i+1)
             reorderedCards.append(card)
         }
-        
         var dictionary = [[String: String]]()
         
         for i in 0..<reorderedCards.count {
@@ -47,9 +47,18 @@ class ReorderCardsPresenter: NSObject, ReorderCardsPresenterProtocol  {
             if let jsonString = String(data: jsonData, encoding: .utf8) {
                 let paramString = "{ \"cards\": \(jsonString)}"
                 parameters = paramString
+                self.reorderParameters = parameters
             }
         }
-        interactor?.reorder(parameters: parameters)
+    }
+    
+    func save(){
+        guard !self.reorderedDatasource.isEmpty else {
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: LocalizedTitle.notReordered.localized, shouldDismiss: false)
+            return
+        }
+        UIApplication.topViewController()?.view.showSpinner()
+        interactor?.reorder(parameters: self.reorderParameters)
     }
 }
 
@@ -62,6 +71,9 @@ extension ReorderCardsPresenter: ReorderCardsOutputInteractorProtocol {
     }
     
     func parseReorderCardsData(model: ReorderCardsModel){
+        DispatchQueue.main.async {
+            UIApplication.topViewController()?.view.hideSpinner()
+        }
         Alert().alertMessageNoNavigator(title: LocalizedTitle.notice.localized, text: model.message ?? "", shouldDismiss: false)
         self.delegate?.updateFavoriteCardsWith(cards: self.reorderedDatasource)
     }

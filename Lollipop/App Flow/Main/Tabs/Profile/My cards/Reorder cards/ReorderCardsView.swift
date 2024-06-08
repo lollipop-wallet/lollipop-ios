@@ -46,4 +46,8 @@ class ReorderCardsView: UIViewController, ReorderCardsViewProtocol {
     @objc func onBackTap() {
         popBack(2)
     }
+    
+    @objc func onSaveTap() {
+        presenter?.save()
+    }
 }
