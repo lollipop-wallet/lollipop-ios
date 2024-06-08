@@ -80,7 +80,7 @@ struct Configuration {
     static let currentAppVersion = "1.9"
 
     //MARK: AppName
-    static let appName = "Lollipop"
+    static let appName = "Lollypop"
     
     //MARK: Keychain pwd
     static let keychainKey = "lollipopAppKeychainPassword"
@@ -90,9 +90,9 @@ struct Configuration {
     
     
     //MARK: Privacy and Terms config
-    static let privacyPolicy = "https://prettyboamedia.com/secondphone-privacy/"
+    static let privacyPolicy = "https://lollypop.me/privacy/"
     
-    static let terms = "https://prettyboamedia.com/terms-conditions/"
+    static let terms = "https://lollypop.me/terms-conditions/"
     
     //MARK: VersionUpdate config
     let softwareUpdate = "App-prefs:General&path=SOFTWARE_UPDATE_LINK"
