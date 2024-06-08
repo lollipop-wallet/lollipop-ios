@@ -32,12 +32,12 @@ class PersonalDataPresenter: NSObject, PersonalDataPresenterProtocol  {
         view?.setCity(city: item)
     }
     
-    func proceed(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String){
+    func proceed(firstname: String, lastname: String, email: String, phone: String, dob: String, gender: String, city: String){
         guard !firstname.isEmpty, !lastname.isEmpty, !dob.isEmpty, !email.isEmpty, !gender.isEmpty else {
             view?.validate(isFirstNameEmpty: firstname.isEmpty, isLastNameEmpty: lastname.isEmpty, isEmailEmpty: email.isEmpty, isGenderEmpty: gender == LocalizedTitle.choose.localized, isDoBEmpty: dob == LocalizedTitle.choose.localized)
             return
         }
-        interactor?.update(firstname: firstname, lastname: lastname, email: email, dob: dob, gender: self.gender?.code ?? "", city: city)
+        interactor?.update(firstname: firstname, lastname: lastname, email: email, phone: phone, dob: dob, gender: self.gender?.code ?? "", city: city)
     }
 }
 
@@ -58,6 +58,7 @@ extension PersonalDataPresenter: PersonalDataOutputInteractorProtocol {
         self.view?.setDoB(dob: model?.date_of_birth?.dateString ?? "")
         self.view?.setGender(gender: model?.genderUserReadable ?? "")
         self.view?.setCity(city: model?.city ?? "")
+        self.view?.setPhoneWith(phone: model?.phone ?? "")
         self.gender = Gender(code: model?.gender ?? "", label: model?.genderUserReadable)
     }
     

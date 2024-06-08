@@ -20,7 +20,7 @@ protocol PersonalDataPresenterProtocol: CalendarInputProtocol, DropdownInputFiel
     func viewDidLoad()
     func handleGenderDropdownTapWith(item: Gender)
     func handleCityDropdownTapWith(item: String)
-    func proceed(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String)
+    func proceed(firstname: String, lastname: String, email: String, phone: String, dob: String, gender: String, city: String)
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -28,7 +28,7 @@ protocol PersonalDataInputInteractorProtocol: AnyObject {
     
     var presenter: PersonalDataOutputInteractorProtocol?  { get set }
     func viewDidLoad()
-    func update(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String)
+    func update(firstname: String, lastname: String, email: String, phone: String, dob: String, gender: String, city: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
@@ -47,6 +47,7 @@ protocol PersonalDataViewProtocol: AnyObject {
     func setDoB(dob: String)
     func setCity(city: String)
     func setGender(gender: String)
+    func setPhoneWith(phone: String)
     func validate(isFirstNameEmpty: Bool, isLastNameEmpty: Bool, isEmailEmpty: Bool, isGenderEmpty: Bool, isDoBEmpty: Bool)
     func showDropdownWith(tag: Int)
     func hideDropdownWith(tag: Int)

@@ -54,6 +54,14 @@ extension PersonalDataView {
         self.emailField.leftSuplementaryIconHidden = true
         self.emailField.leftSuplementarylabelHidden = true
         self.emailField.rightSuplementaryIconHidden = true
+        
+        self.phoneField.title = "\(LocalizedTitle.phoneNumber.localized):"
+        self.phoneField.errorHidden = true
+        self.phoneField.keyboardType = .phonePad
+        self.phoneField.background = AppColors.white
+        self.phoneField.leftSuplementaryIconHidden = true
+        self.phoneField.leftSuplementarylabelHidden = false
+        self.phoneField.rightSuplementaryIconHidden = true
 
         self.calendarField.title = "\(LocalizedTitle.dateOfBirh.localized):"
         self.calendarField.errorHidden = true
@@ -165,7 +173,7 @@ extension PersonalDataView {
         
         
         lazy var mainStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [self.nameField, self.surnameField, self.emailField, midStack, self.cityField])
+            let stack = UIStackView(arrangedSubviews: [self.nameField, self.surnameField, self.emailField, self.phoneField, midStack, self.cityField])
             stack.axis = .vertical
             stack.alignment = .fill
             stack.distribution = .fill

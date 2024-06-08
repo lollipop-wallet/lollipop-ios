@@ -80,7 +80,7 @@ extension ProfilePresenter: ProfileOutputInteractorProtocol {
                 self.view?.setUserAvatarWith(avatar: model.avatar ?? "")
             }
             self.view?.setUserPhoneWith(phone: model.phone ?? "")
-            self.view?.setPhoneHidden(isHidden: !(model.phone ?? "").isEmpty)
+            self.view?.setPhoneHidden(isHidden: (model.phone ?? "").isEmpty)
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }
@@ -205,7 +205,7 @@ extension ProfilePresenter {
         self.model = model
         self.view?.setUserNameWith(name: model?.name ?? "")
         self.view?.setUserPhoneWith(phone: model?.phone ?? "")
-        self.view?.setPhoneHidden(isHidden: !(model?.phone ?? "").isEmpty)
+        self.view?.setPhoneHidden(isHidden: (model?.phone ?? "").isEmpty)
         self.delegate?.updateAvatar(avatar: model?.avatar ?? "")
         self.delegate?.updateNameWith(name: model?.name ?? "")
     }

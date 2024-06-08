@@ -16,6 +16,7 @@ class PersonalDataView: UIViewController, PersonalDataViewProtocol {
     var nameField = InputField()
     var surnameField = InputField()
     var emailField = InputField()
+    var phoneField = InputField()
     var calendarField = CalendarInputField()
     var datePicker = UIDatePicker()
     var datePickerStackView = UIStackView()
@@ -80,6 +81,12 @@ class PersonalDataView: UIViewController, PersonalDataViewProtocol {
         }
     }
     
+    func setPhoneWith(phone: String){
+        DispatchQueue.main.async {
+            self.phoneField.text = phone
+        }
+    }
+    
     func validate(isFirstNameEmpty: Bool, isLastNameEmpty: Bool, isEmailEmpty: Bool, isGenderEmpty: Bool, isDoBEmpty: Bool){
         self.nameField.borderWidth = 1
         self.nameField.borderColor = isFirstNameEmpty ? AppColors.error : AppColors.black
@@ -131,6 +138,6 @@ class PersonalDataView: UIViewController, PersonalDataViewProtocol {
     }
     
     @objc func onProceedTap() {
-        presenter?.proceed(firstname: nameField.textField.text ?? "", lastname: surnameField.textField.text ?? "", email: emailField.textField.text ?? "", dob: calendarField.inputLabel.text ?? "", gender: genderField.inputLabel.text ?? "", city: cityField.inputLabel.text ?? "")
+        presenter?.proceed(firstname: nameField.textField.text ?? "", lastname: surnameField.textField.text ?? "", email: emailField.textField.text ?? "", phone: self.phoneField.textField.text ?? "", dob: calendarField.inputLabel.text ?? "", gender: genderField.inputLabel.text ?? "", city: cityField.inputLabel.text ?? "")
     }
 }

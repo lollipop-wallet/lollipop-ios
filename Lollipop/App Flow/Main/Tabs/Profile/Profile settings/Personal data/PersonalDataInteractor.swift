@@ -19,9 +19,9 @@ class PersonalDataInteractor: PersonalDataInputInteractorProtocol {
         presenter?.takeData(model: model, delegate: delegate)
     }
     
-    func update(firstname: String, lastname: String, email: String, dob: String, gender: String, city: String){
+    func update(firstname: String, lastname: String, email: String, phone: String, dob: String, gender: String, city: String){
         UIApplication.topViewController()?.view?.showSpinner()
-        APIClient.updateuser(name: "\(firstname) \(lastname)", email: email, phone: "", dob: dob, city: city, gender: gender) { [weak self] result in
+        APIClient.updateuser(name: "\(firstname) \(lastname)", email: email, phone: phone, dob: dob, city: city, gender: gender) { [weak self] result in
             UIApplication.topViewController()?.view?.hideSpinner()
             guard let self = self else { return }
             self.presenter?.parseUpdateUserData(result: result)
