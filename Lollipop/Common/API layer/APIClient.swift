@@ -255,5 +255,10 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.deletecard(alias: alias), completion: completion)
     }
+    
+    static func logout(completion:@escaping (Result<Empty, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.logout, completion: completion)
+    }
 }
 

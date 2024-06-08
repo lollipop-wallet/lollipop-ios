@@ -85,6 +85,19 @@ extension ProfilePresenter: ProfileOutputInteractorProtocol {
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }
     }
+    
+    func parseSignOutData(result: Result<Empty, AFError>){
+        switch result {
+        case .success(_):
+            Manager.token = ""
+            Manager.isRegistered = false
+            UserDefaults.standard.removeObject(forKey: StorageKeys.accessToken.rawValue)
+            UserDefaults.standard.synchronize()
+            wireframe?.toMain()
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
 }
 
 //MARK: UITableViewDelegate&Datasource
@@ -132,7 +145,7 @@ extension ProfilePresenter {
         case .shops:
             wireframe?.toMyShops()
         case .signout:
-            print()
+            interactor?.signOut()
         }
     }
 }

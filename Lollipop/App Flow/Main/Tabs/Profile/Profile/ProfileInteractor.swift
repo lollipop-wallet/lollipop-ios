@@ -14,7 +14,6 @@ class ProfileInteractor: ProfileInputInteractorProtocol {
     weak var presenter: ProfileOutputInteractorProtocol?
     
     func viewDidLoad() {
-        print("Aco1")
         let delegate = ProfileWireframe.delegate
         UIApplication.topViewController()?.view.showSpinner()
         APIClient.getprofile { [weak self] result in
@@ -30,6 +29,15 @@ class ProfileInteractor: ProfileInputInteractorProtocol {
             UIApplication.root().view.hideSpinner()
             guard let self = self else { return }
             self.presenter?.parseUpdatedAvatarData(result: result)
+        }
+    }
+    
+    func signOut() {
+        UIApplication.root().view.showSpinner()
+        APIClient.logout { [weak self] result in
+            UIApplication.root().view.hideSpinner()
+            guard let self = self else { return }
+            self.presenter?.parseSignOutData(result: result)
         }
     }
 }

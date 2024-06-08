@@ -30,12 +30,14 @@ protocol ProfileInputInteractorProtocol: AnyObject {
     var presenter: ProfileOutputInteractorProtocol?  { get set }
     func viewDidLoad()
     func updateAvatar(avatar: Data)
+    func signOut()
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol ProfileOutputInteractorProtocol: AnyObject {
     func parseUserData(result: Result<ProfileModel, AFError>, delegate: ProfileControllerProtocol?)
     func parseUpdatedAvatarData(result: Result<UpdateAvatarModel, AFError>)
+    func parseSignOutData(result: Result<Empty, AFError>)
 }
 //MARK: View
 protocol ProfileViewProtocol: AnyObject {
@@ -56,6 +58,7 @@ protocol ProfileWireframeProtocol: AnyObject {
     func toMyCards(delegage: MyCardsControllerProtocol?)
     func toAbout()
     func toTerms()
+    func toMain()
 }
 
 //MARK: ProfileCell Protocol
