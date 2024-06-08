@@ -250,5 +250,10 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.updateuser(name: name, email: email, phone: phone, dob: dob, city: city, gender: gender), completion: completion)
     }
+    
+    static func deletecard(alias: String, completion:@escaping (Result<DeleteCardModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.deletecard(alias: alias), completion: completion)
+    }
 }
 

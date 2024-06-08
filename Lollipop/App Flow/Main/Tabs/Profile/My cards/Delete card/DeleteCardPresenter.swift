@@ -36,8 +36,10 @@ extension DeleteCardPresenter: DeleteCardOutputInteractorProtocol {
         switch result {
         case .success(let model):
             UIApplication.topViewController()?.openAlert(title: LocalizedTitle.notice.localized, message: model.message ?? "", alertStyle: .alert, actionTitles: [LocalizedTitle.ok.localized], actionColors: [.systemBlue], actionStyles: [.default], actions: [
-                { _ in
-                    UIApplication.topViewController()?.popBack(3)
+                { [weak self] _ in
+                    guard let self = self else {return}
+                    self.delegate?.didDeleteCard()
+                    UIApplication.topViewController()?.popBack(4)
                 }
            ])
         case .failure(let error):
