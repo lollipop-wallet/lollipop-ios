@@ -194,6 +194,17 @@ extension HomePresenter {
     func updateNameWith(name: String) {
         view?.setUserNameWith(name: name)
     }
+    
+    func updateCardsWith(cards: [Card]){
+        var userCards = cards
+        if userCards.count >= 5 {
+            userCards.append(DefaultModels().allCardsCard)
+        }
+        var cardsItem = self.datasource[0]
+        cardsItem.cards = userCards
+        print("Radi li ovo: ", userCards.count)
+        self.view?.reload()
+    }
 }
 
 //MARK: NewLoyaltyCardController delegate

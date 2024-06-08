@@ -19,6 +19,7 @@ class MyCardsPresenter: NSObject, MyCardsPresenterProtocol  {
     var favoriteCards = [Card]()
     var selectedSegment = Int()
     var selectedIndex = Int()
+    var delegate: MyCardsControllerProtocol?
     
     func viewDidLoad() {
         self.selectedSegment = 0
@@ -41,7 +42,8 @@ class MyCardsPresenter: NSObject, MyCardsPresenterProtocol  {
 }
 
 extension MyCardsPresenter: MyCardsOutputInteractorProtocol {
-    func parseCardsData(result: Result<[Card], AFError>){
+    func parseCardsData(result: Result<[Card], AFError>, delegate: MyCardsControllerProtocol?){
+        self.delegate = delegate
         switch result {
         case .success(let cards):
             let favCards = cards.filter { ($0.is_favorite ?? 0) == 1}
@@ -91,6 +93,7 @@ extension MyCardsPresenter {
         self.favoriteCards = cards
         self.datasource = cards
         self.view?.reload()
+        self.delegate?.updateUserCardsWith(cards: cards)
     }
 }
 

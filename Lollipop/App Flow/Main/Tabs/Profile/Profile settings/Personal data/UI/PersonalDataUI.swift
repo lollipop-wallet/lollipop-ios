@@ -37,6 +37,7 @@ extension PersonalDataView {
         self.nameField.background = AppColors.white
         self.nameField.leftSuplementaryIconHidden = true
         self.nameField.leftSuplementarylabelHidden = true
+        self.nameField.rightSuplementaryIconHidden = true
         
         self.surnameField.title = "\(LocalizedTitle.surname.localized):"
         self.surnameField.errorHidden = true
@@ -44,6 +45,7 @@ extension PersonalDataView {
         self.surnameField.background = AppColors.white
         self.surnameField.leftSuplementaryIconHidden = true
         self.surnameField.leftSuplementarylabelHidden = true
+        self.surnameField.rightSuplementaryIconHidden = true
 
         self.emailField.title = "\(LocalizedTitle.email.localized):"
         self.emailField.errorHidden = true
@@ -51,6 +53,7 @@ extension PersonalDataView {
         self.emailField.background = AppColors.white
         self.emailField.leftSuplementaryIconHidden = true
         self.emailField.leftSuplementarylabelHidden = true
+        self.emailField.rightSuplementaryIconHidden = true
 
         self.calendarField.title = "\(LocalizedTitle.dateOfBirh.localized):"
         self.calendarField.errorHidden = true
@@ -60,7 +63,7 @@ extension PersonalDataView {
         self.calendarField.rightSuplementaryIcon = UIImage(named: AssetTitles.calendarIcon)
         self.calendarField.rightSuplementaryIconTintColor = AppColors.darkGrey
         self.calendarField.delegate = presenter
-        
+
         self.datePicker.preferredDatePickerStyle = .inline
         self.datePicker.datePickerMode = .date
         self.datePicker.tintColor = AppColors.mediumGrey

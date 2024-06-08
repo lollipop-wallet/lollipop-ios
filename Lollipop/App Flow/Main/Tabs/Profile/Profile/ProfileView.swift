@@ -23,6 +23,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         super.viewDidLoad()
         setup()
         presenter?.viewDidLoad()
+        print("Aco2")
     }
     
     //MARK: ProfileView Protocol

@@ -17,6 +17,7 @@ class ProfileSettingsView: UIViewController, ProfileSettingsViewProtocol {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        print("Ime: ", ProfileSettingsWireframe.model?.name ?? "")
         setup()
         presenter?.viewDidLoad()
     }

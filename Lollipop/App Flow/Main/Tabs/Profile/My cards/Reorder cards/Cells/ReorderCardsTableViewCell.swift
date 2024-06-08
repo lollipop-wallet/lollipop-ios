@@ -170,7 +170,7 @@ class ReorderCardsTableViewCell: UITableViewCell {
         self.delegate = delegate
         self.titleLabel.text = item?.name ?? ""
         self.subtitleLabel.text = item?.code ?? ""
-        self.cardImageView.imageFromURL(url: item?.card_template?.image_front ?? "")
+        self.cardImageView.imageFromURL(url: item?.cardType == .loyalty ? item?.card_template?.image_front ?? "" : item?.image_front ?? "")
     }
     
     //MARK: Actions

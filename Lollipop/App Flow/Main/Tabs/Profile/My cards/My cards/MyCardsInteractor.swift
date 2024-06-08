@@ -14,6 +14,7 @@ class MyCardsInteractor: MyCardsInputInteractorProtocol {
     weak var presenter: MyCardsOutputInteractorProtocol?
     
     func viewDidLoad(showSpinner: Bool){
+        let delegate = MyCardsWireframe.delegate
         if showSpinner {
             UIApplication.topViewController()?.view.showSpinner()
         }
@@ -22,7 +23,7 @@ class MyCardsInteractor: MyCardsInputInteractorProtocol {
                 UIApplication.topViewController()?.view.hideSpinner()
             }
             guard let self = self else {return}
-            self.presenter?.parseCardsData(result: result)
+            self.presenter?.parseCardsData(result: result, delegate: delegate)
         }
     }
 }

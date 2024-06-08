@@ -27,8 +27,9 @@ class ProfileWireframe: ProfileWireframeProtocol {
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func toMyCards(){
+    func toMyCards(delegage: MyCardsControllerProtocol?){
         let vc = MyCardsView()
+        MyCardsWireframe.delegate = delegage
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
     

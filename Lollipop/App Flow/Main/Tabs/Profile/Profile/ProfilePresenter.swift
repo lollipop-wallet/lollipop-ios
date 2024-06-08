@@ -29,6 +29,7 @@ class ProfilePresenter: NSObject, ProfilePresenterProtocol  {
     func viewDidLoad() {
         PersonalDataWireframe.delegate = self
         interactor?.viewDidLoad()
+        print("Aco")
     }
     
     func editAvatar(){
@@ -123,7 +124,7 @@ extension ProfilePresenter {
         case .settings:
             wireframe?.toPersonalData(model: self.model)
         case .cards:
-            wireframe?.toMyCards()
+            wireframe?.toMyCards(delegage: self)
         case .about:
             wireframe?.toAbout()
         case .terms:
@@ -184,5 +185,13 @@ extension ProfilePresenter {
         self.view?.setPhoneHidden(isHidden: !(model?.phone ?? "").isEmpty)
         self.delegate?.updateAvatar(avatar: model?.avatar ?? "")
         self.delegate?.updateNameWith(name: model?.name ?? "")
+    }
+}
+
+
+//MARK: MyCardsCOntroller delegate
+extension ProfilePresenter {
+    func updateUserCardsWith(cards: [Card]) {
+        self.delegate?.updateCardsWith(cards: cards)
     }
 }

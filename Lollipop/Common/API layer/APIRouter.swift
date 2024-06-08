@@ -169,7 +169,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
     
         func multipartFormData() -> Parameters? {
             switch self {
-            case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards, .getprofile, .login, .register, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards, .updateloyaltycard, .createloyaltycard, .getcarddetails, .getlocations, .getbranddetails, .inquiry:
+            case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards, .getprofile, .login, .register, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards, .updateloyaltycard, .createloyaltycard, .getcarddetails, .getlocations, .getbranddetails, .inquiry, .updateuser:
                 return nil
             case .updateavatar(let avatar):
                 return [APIParameterKey.avatar : avatar]

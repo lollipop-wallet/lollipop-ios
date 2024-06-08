@@ -32,7 +32,7 @@ protocol MyCardsInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol MyCardsOutputInteractorProtocol: AnyObject {
-    func parseCardsData(result: Result<[Card], AFError>)
+    func parseCardsData(result: Result<[Card], AFError>, delegate: MyCardsControllerProtocol?)
 }
 //MARK: View
 protocol MyCardsViewProtocol: AnyObject {
@@ -42,6 +42,7 @@ protocol MyCardsViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol MyCardsWireframeProtocol: AnyObject {
+    static var delegate: MyCardsControllerProtocol? { get set }
     func toFavoriteCardsWith(cards: [Card], delegate: FavoriteCardsControllerProtocol?)
     func toReorderCardsWith(cards: [Card], delegate: ReorderCardsControllerProtocol?)
     func toDetails(card: Card?, delegate: CardDetailsControllerProtocol?)
@@ -50,4 +51,9 @@ protocol MyCardsWireframeProtocol: AnyObject {
 //MARK: MyCardsCell Protocol
 protocol MyCardsCellProtocol: AnyObject {
     func didSelectItemAt(index: IndexPath)
+}
+
+//MARK: MyCardsController Protocol
+protocol MyCardsControllerProtocol: AnyObject {
+    func updateUserCardsWith(cards: [Card])
 }

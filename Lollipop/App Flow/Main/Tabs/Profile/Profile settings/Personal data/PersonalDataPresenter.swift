@@ -37,6 +37,7 @@ class PersonalDataPresenter: NSObject, PersonalDataPresenterProtocol  {
             view?.validate(isFirstNameEmpty: firstname.isEmpty, isLastNameEmpty: lastname.isEmpty, isEmailEmpty: email.isEmpty, isGenderEmpty: gender == LocalizedTitle.choose.localized, isDoBEmpty: dob == LocalizedTitle.choose.localized)
             return
         }
+        interactor?.update(firstname: firstname, lastname: lastname, email: email, dob: dob, gender: self.gender?.code ?? "", city: city)
     }
 }
 
@@ -57,6 +58,7 @@ extension PersonalDataPresenter: PersonalDataOutputInteractorProtocol {
         self.view?.setDoB(dob: model?.date_of_birth?.dateString ?? "")
         self.view?.setGender(gender: model?.genderUserReadable ?? "")
         self.view?.setCity(city: model?.city ?? "")
+        self.gender = Gender(code: model?.gender ?? "", label: model?.genderUserReadable)
     }
     
     func parseUpdateUserData(result: Result<PersonalDataModel, AFError>){

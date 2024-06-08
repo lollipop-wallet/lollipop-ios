@@ -14,6 +14,7 @@ class ProfileInteractor: ProfileInputInteractorProtocol {
     weak var presenter: ProfileOutputInteractorProtocol?
     
     func viewDidLoad() {
+        print("Aco1")
         let delegate = ProfileWireframe.delegate
         UIApplication.topViewController()?.view.showSpinner()
         APIClient.getprofile { [weak self] result in
