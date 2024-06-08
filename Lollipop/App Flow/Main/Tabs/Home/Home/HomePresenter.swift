@@ -202,7 +202,7 @@ extension HomePresenter {
         }
         var cardsItem = self.datasource[0]
         cardsItem.cards = userCards
-        print("Radi li ovo: ", userCards.count)
+        self.datasource[0] = cardsItem
         self.view?.reload()
     }
 }
