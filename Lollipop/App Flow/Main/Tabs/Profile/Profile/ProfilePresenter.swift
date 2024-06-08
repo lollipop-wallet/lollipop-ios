@@ -9,6 +9,8 @@ import UIKit
 import Alamofire
 import Photos
 import PhotosUI
+import SafariServices
+
 
 class ProfilePresenter: NSObject, ProfilePresenterProtocol  {
     
@@ -56,6 +58,14 @@ class ProfilePresenter: NSObject, ProfilePresenterProtocol  {
             {_ in
             }
        ])
+    }
+    
+    func terms(){
+        wireframe?.openLink(link: Configuration.terms, delegate: self)
+    }
+    
+    func privacy(){
+        wireframe?.openLink(link: Configuration.privacyPolicy, delegate: self)
     }
 }
 

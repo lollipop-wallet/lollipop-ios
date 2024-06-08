@@ -9,10 +9,11 @@
 import UIKit
 import Alamofire
 import PhotosUI
+import SafariServices
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol ProfilePresenterProtocol: UITableViewDelegate, UITableViewDataSource, ProfileCellProtocol, PHPickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PersonalDataControllerProtocol, MyCardsControllerProtocol{
+protocol ProfilePresenterProtocol: UITableViewDelegate, UITableViewDataSource, ProfileCellProtocol, PHPickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PersonalDataControllerProtocol, MyCardsControllerProtocol, SFSafariViewControllerDelegate{
     
     var interactor: ProfileInputInteractorProtocol? { get set }
     var view: ProfileViewProtocol? { get set }
@@ -21,7 +22,8 @@ protocol ProfilePresenterProtocol: UITableViewDelegate, UITableViewDataSource, P
     func viewDidLoad()
     func myShops()
     func editAvatar()
-    
+    func terms()
+    func privacy()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -59,6 +61,7 @@ protocol ProfileWireframeProtocol: AnyObject {
     func toAbout()
     func toTerms()
     func toMain()
+    func openLink(link: String, delegate: SFSafariViewControllerDelegate)
 }
 
 //MARK: ProfileCell Protocol

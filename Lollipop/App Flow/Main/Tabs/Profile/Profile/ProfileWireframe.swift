@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import SafariServices
 
 class ProfileWireframe: ProfileWireframeProtocol {
     
@@ -54,5 +55,12 @@ class ProfileWireframe: ProfileWireframeProtocol {
         navigationController.isNavigationBarHidden = true
         UIApplication.shared.keyWindow?.rootViewController = navigationController
         UIApplication.shared.keyWindow?.makeKeyAndVisible()
+    }
+    
+    func openLink(link: String, delegate: SFSafariViewControllerDelegate){
+        let url = URL(string: link)!
+        let controller = SFSafariViewController(url: url)
+        controller.delegate = delegate
+        UIApplication.topViewController()?.present(controller, animated: true)
     }
 }
