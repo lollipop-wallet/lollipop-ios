@@ -12,6 +12,8 @@ import UIKit
 class LanguageView: UIViewController, LanguageViewProtocol {
     
     var tableView = AutomaticHeightTableView()
+    var subtitleLabel = UILabel()
+    var saveButton = UIButton()
 
     var presenter: LanguagePresenterProtocol?
 
@@ -38,13 +40,31 @@ class LanguageView: UIViewController, LanguageViewProtocol {
         }
     }
     
+    func setTitleWith(title: String){
+        DispatchQueue.main.async {
+            self.navigationItem.title = title
+        }
+    }
+    
+    func setSubtitleWith(subtitle: String){
+        DispatchQueue.main.async {
+            self.subtitleLabel.text = subtitle
+        }
+    }
+    
+    func setSaveButtonTitleWith(title: String){
+        DispatchQueue.main.async {
+            self.saveButton.setTitle(title, for: .normal)
+        }
+    }
+    
     //MARK: Actions
     @objc func onBackTap() {
         popBack(2)
     }
     
     @objc func onSaveTap() {
-        
+        presenter?.save()
     }
 
 }

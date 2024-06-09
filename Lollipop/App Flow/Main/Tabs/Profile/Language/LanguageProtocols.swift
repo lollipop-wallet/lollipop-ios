@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -17,26 +18,28 @@ protocol LanguagePresenterProtocol: UITableViewDelegate, UITableViewDataSource, 
     var wireframe:LanguageWireframeProtocol? { get set }
     
     func viewDidLoad()
+    func save()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
 protocol LanguageInputInteractorProtocol: AnyObject {
     
     var presenter: LanguageOutputInteractorProtocol?  { get set }
-    
-   
+    func updateLanWith(languageId: Int)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol LanguageOutputInteractorProtocol: AnyObject {
-    
-
+    func parseUpdatedLanguageData(result: Result<LanguageModel, AFError>)
 }
 //MARK: View
 protocol LanguageViewProtocol: AnyObject {
     
     var presenter: LanguagePresenterProtocol?  { get set }
     func reload()
+    func setTitleWith(title: String)
+    func setSubtitleWith(subtitle: String)
+    func setSaveButtonTitleWith(title: String)
 }
 //MARK: Wireframe
 protocol LanguageWireframeProtocol: AnyObject {

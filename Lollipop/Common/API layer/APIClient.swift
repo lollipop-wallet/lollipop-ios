@@ -265,5 +265,10 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.deleteaccount, completion: completion)
     }
+    
+    static func updatelanguage(languageId: Int, completion:@escaping (Result<LanguageModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.updatelanguage(languageId: languageId), completion: completion)
+    }
 }
 

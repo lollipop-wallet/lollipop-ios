@@ -8,10 +8,12 @@
 
 import Foundation
 
-struct LanguageModel {
-    var flag: String
-    var title: String
-    var lanCode: LanCode
-    var selected: Bool
+struct LanguageModel: Codable{
+    let message: String?
+    let data: LanguageData?
+}
+
+struct LanguageData: Codable {
+    let language: Language?
 }
 

@@ -40,6 +40,8 @@ extension LanguageView {
             return label
         }()
         
+        self.subtitleLabel = chooseAppLanLabel
+        
         lazy var saveButton: UIButton = {
             let button = UIButton()
             button.addTarget(self, action: #selector(onSaveTap), for: .touchUpInside)
@@ -52,22 +54,24 @@ extension LanguageView {
             return button
         }()
         
+        self.saveButton = saveButton
+        
         self.tableView.separatorStyle = .none
         self.tableView.register(LanguageTableViewCell.self, forCellReuseIdentifier: CellId.lanCell.rawValue)
         self.tableView.delegate = presenter
         self.tableView.dataSource = presenter
         self.tableView.backgroundColor = AppColors.lightGrey
         
-        self.view.addSubview(chooseAppLanLabel)
-        chooseAppLanLabel.snp.makeConstraints { make in
+        self.view.addSubview(self.subtitleLabel)
+        self.subtitleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(6)
             make.height.equalTo(19)
         }
         
-        self.view.addSubview(saveButton)
-        saveButton.snp.makeConstraints { make in
+        self.view.addSubview(self.saveButton)
+        self.saveButton.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview().offset(-45)

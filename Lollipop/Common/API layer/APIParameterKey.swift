@@ -36,4 +36,5 @@ struct APIParameterKey {
     static let backImage = "back_image"
     static let customerName = "customer_name"
     static let phone = "phone"
+    static let languageId = "language_id"
 }

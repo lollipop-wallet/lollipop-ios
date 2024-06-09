@@ -6,6 +6,8 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import Alamofire
+import Localize_Swift
 
 class LanguagePresenter: NSObject, LanguagePresenterProtocol  {
     
@@ -26,10 +28,32 @@ class LanguagePresenter: NSObject, LanguagePresenterProtocol  {
         }
         self.view?.reload()
     }
+    
+    func save() {
+        let selectedDatasource = self.datasource.filter { ($0.selected ?? false) }
+        if !selectedDatasource.isEmpty {
+            interactor?.updateLanWith(languageId: selectedDatasource.first?.id ?? 0)
+        }
+    }
 }
 
 extension LanguagePresenter: LanguageOutputInteractorProtocol {
-    
+    func parseUpdatedLanguageData(result: Result<LanguageModel, AFError>){
+        switch result {
+        case .success(let model):
+            Localize.setCurrentLanguage(model.data?.language?.lanCode?.rawValue ?? "")
+            UserDefaults.standard.set(model.data?.language?.lanCode?.rawValue ?? "", forKey: "lanCode")
+            UserDefaults.standard.synchronize()
+            self.view?.setTitleWith(title: LocalizedTitle.changeLanguage.localized)
+            self.view?.setSubtitleWith(subtitle: LocalizedTitle.chooseAppLanguage.localized)
+            self.view?.setSaveButtonTitleWith(title: LocalizedTitle.save.localized)
+            self.view?.reload()
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.notes.localized, text: model.message ?? "", shouldDismiss: false)
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+
+    }
 }
 
 //MARK: UITableViewDelegate&Datasource
