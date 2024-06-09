@@ -129,12 +129,12 @@ class LanguageTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(item: LanguageModel, index: IndexPath, delegate: LanguageTableViewCellProtocol) {
+    func configureWith(item: Language, index: IndexPath, delegate: LanguageTableViewCellProtocol) {
         self.index = index
         self.delegate = delegate
-        self.titleLabel.text = item.title
-        self.iconImageView.image = UIImage(named: item.flag)
-        self.radioIcon.image = UIImage(named: item.selected ? AssetTitles.radioSelectedIcon : AssetTitles.radioUnselectedIcon)
+        self.titleLabel.text = item.localizedName
+        self.iconImageView.image = UIImage(named: item.icon)
+        self.radioIcon.image = UIImage(named: (item.selected ?? false) ? AssetTitles.radioSelectedIcon : AssetTitles.radioUnselectedIcon)
     }
     
     //MARK: Actions

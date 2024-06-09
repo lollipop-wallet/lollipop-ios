@@ -23,9 +23,17 @@ struct Language: Codable {
     let name: String?
     let code: String?
     let locale: String?
+    let id: Int?
     var lanCode: LanCode? {
         return (locale ?? "") == "en" ? .en : .mne
     }
+    var localizedName: String {
+        return (locale ?? "") == "en" ? LocalizedTitle.eng.localized : LocalizedTitle.mne.localized
+    }
+    var icon: String {
+        return (locale ?? "") == "en" ? AssetTitles.flagEngIcon : AssetTitles.flagMneIcon
+    }
+    var selected: Bool?
 }
 
 struct CountryCode: Codable {

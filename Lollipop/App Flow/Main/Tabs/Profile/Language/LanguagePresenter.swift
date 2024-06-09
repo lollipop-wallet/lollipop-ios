@@ -13,14 +13,15 @@ class LanguagePresenter: NSObject, LanguagePresenterProtocol  {
     weak var view: LanguageViewProtocol?
     var wireframe: LanguageWireframeProtocol?
     
-    var datasource = [LanguageModel]()
+    var datasource = [Language]()
     
     func viewDidLoad() {
-        let source = DefaultModels().languageDatasource
+        let source = Config.model.languages ?? []
+        let finalSource = source.filter { ($0.locale ?? "") == "me" || ($0.locale ?? "") == "en" }
         
-        for i in 0..<source.count {
-            var item = source[i]
-            item.selected = item.lanCode.rawValue == Manager.selectedLanguageCode
+        for i in 0..<finalSource.count {
+            var item = finalSource[i]
+            item.selected = item.lanCode?.rawValue == Manager.selectedLanguageCode
             self.datasource.append(item)
         }
         self.view?.reload()
