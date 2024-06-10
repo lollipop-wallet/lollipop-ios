@@ -9,6 +9,6 @@
 import Foundation
 
 struct ChangePasswordModel : Codable {
-    
+    let message: String?
 }
 

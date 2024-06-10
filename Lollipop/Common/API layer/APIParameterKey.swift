@@ -37,4 +37,5 @@ struct APIParameterKey {
     static let customerName = "customer_name"
     static let phone = "phone"
     static let languageId = "language_id"
+    static let currentPassword = "current_password"
 }

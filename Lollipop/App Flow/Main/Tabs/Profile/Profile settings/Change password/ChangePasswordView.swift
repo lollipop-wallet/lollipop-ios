@@ -31,11 +31,22 @@ class ChangePasswordView: UIViewController, ChangePasswordViewProtocol {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    //MARK: ChangePassword View protocol:
+    func validate(isCurrendPwdEmpty: Bool, isNewPwdEmpty: Bool, isConfirmedPwdEmpty: Bool){
+        self.currentPasswordField.borderWidth = 1
+        self.currentPasswordField.borderColor = isCurrendPwdEmpty ? AppColors.error : AppColors.black
+        self.newPasswordField.borderWidth = 1
+        self.newPasswordField.borderColor = isNewPwdEmpty ? AppColors.error : AppColors.black
+        self.confirmPasswordField.borderWidth = 1
+        self.confirmPasswordField.borderColor = isConfirmedPwdEmpty ? AppColors.error : AppColors.black
+    }
+    
     //MARK: Actions
     @objc func onBackTap() {
         popBack(2)
     }
     
     @objc func onSaveTap() {
+        presenter?.change(currentPassword: self.currentPasswordField.textField.text ?? "", newPassword: self.newPasswordField.textField.text ?? "", newPasswordConfirmation: self.confirmPasswordField.textField.text ?? "")
     }
 }

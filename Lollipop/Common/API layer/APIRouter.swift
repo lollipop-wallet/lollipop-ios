@@ -43,13 +43,14 @@ enum APIRouter: URLRequestConvertible, Equatable {
     case logout
     case deleteaccount
     case updatelanguage(languageId: Int)
+    case changepassword(currentPwd: String, newPwd: String, newPwdConfirm: String)
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
         case .getconfig, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards, .getprofile, .getcarddetails, .getlocations, .getbranddetails:
             return .get
-        case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards, .updateloyaltycard, .updateavatar, .createloyaltycard, .createdisplaycard, .inquiry, .updateuser, .logout, .updatelanguage:
+        case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards, .updateloyaltycard, .updateavatar, .createloyaltycard, .createdisplaycard, .inquiry, .updateuser, .logout, .updatelanguage, .changepassword:
             return .post
         case .deletecard, .deleteaccount:
             return .delete
@@ -119,6 +120,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return "logout"
         case .updatelanguage:
             return "user/language"
+        case .changepassword:
+            return "update-password"
         }
     }
     
@@ -153,6 +156,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return [APIParameterKey.name : name, APIParameterKey.email : email, APIParameterKey.phone : phone, APIParameterKey.dob : dob, APIParameterKey.city : city, APIParameterKey.gender : gender, APIParameterKey.country : Configuration.defaultCountry]
         case .updatelanguage(let languageId):
             return [APIParameterKey.languageId : languageId]
+        case .changepassword(let currentPwd, let newPwd, let newPwdConfirmation):
+            return [APIParameterKey.currentPassword : currentPwd, APIParameterKey.password : newPwd, APIParameterKey.passwordConfirmation : newPwdConfirmation]
             
         }
     }
@@ -183,7 +188,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
     
         func multipartFormData() -> Parameters? {
             switch self {
-            case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards, .getprofile, .login, .register, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards, .updateloyaltycard, .createloyaltycard, .getcarddetails, .getlocations, .getbranddetails, .inquiry, .updateuser, .deletecard, .logout, .deleteaccount, .updatelanguage:
+            case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards, .getprofile, .login, .register, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards, .updateloyaltycard, .createloyaltycard, .getcarddetails, .getlocations, .getbranddetails, .inquiry, .updateuser, .deletecard, .logout, .deleteaccount, .updatelanguage, .changepassword:
                 return nil
             case .updateavatar(let avatar):
                 return [APIParameterKey.avatar : avatar]

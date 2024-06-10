@@ -270,5 +270,10 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.updatelanguage(languageId: languageId), completion: completion)
     }
+    
+    static func changepassword(oldPassword: String, newPassword: String, newPasswordConfirmation: String, completion:@escaping (Result<ChangePasswordModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performRequest(route: APIRouter.changepassword(currentPwd: oldPassword, newPwd: newPassword, newPwdConfirm: newPasswordConfirmation), completion: completion)
+    }
 }
 

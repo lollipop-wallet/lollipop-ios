@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -16,26 +17,27 @@ protocol ChangePasswordPresenterProtocol: AnyObject {
     var view: ChangePasswordViewProtocol? { get set }
     var wireframe:ChangePasswordWireframeProtocol? { get set }
     
+    func change(currentPassword: String, newPassword: String, newPasswordConfirmation: String)
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
 protocol ChangePasswordInputInteractorProtocol: AnyObject {
     
     var presenter: ChangePasswordOutputInteractorProtocol?  { get set }
-    
+    func change(currentPassword: String, newPassword: String, newPasswordConfirmation: String)
    
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol ChangePasswordOutputInteractorProtocol: AnyObject {
-    
-
+    func parseChangedPasswordData(result: Result<ChangePasswordModel, AFError>)
 }
 //MARK: View
 protocol ChangePasswordViewProtocol: AnyObject {
     
     var presenter: ChangePasswordPresenterProtocol?  { get set }
-    
+    func validate(isCurrendPwdEmpty: Bool, isNewPwdEmpty: Bool, isConfirmedPwdEmpty: Bool)
+
 }
 //MARK: Wireframe
 protocol ChangePasswordWireframeProtocol: AnyObject {
