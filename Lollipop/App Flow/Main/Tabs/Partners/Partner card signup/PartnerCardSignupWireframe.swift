@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import SafariServices
 
 class PartnerCardSignupWireframe: PartnerCardSignupWireframeProtocol {
     

@@ -69,7 +69,6 @@ class HomePosterCategoryTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 8
         imageView.layer.masksToBounds = true
-        imageView.backgroundColor = .blue
         return imageView
     }()
 

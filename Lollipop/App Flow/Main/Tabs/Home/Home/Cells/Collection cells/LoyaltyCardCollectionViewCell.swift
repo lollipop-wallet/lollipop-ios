@@ -86,7 +86,7 @@ class LoyaltyCardCollectionViewCell: UICollectionViewCell {
             make.bottom.equalToSuperview().offset(-34)
             make.centerX.equalToSuperview()
         }
-        view.backgroundColor = AppColors.brandPrimary
+        view.backgroundColor = AppColors.white
         return view
     }()
     
