@@ -88,7 +88,8 @@ extension PartnersPresenter {
     }
     
     func didSelectItemAt(index: IndexPath) {
-        wireframe?.toPartnerDetails()
+        let item = self.datasource[index.row]
+        wireframe?.toPartnerDetails(alias: item.alias ?? "")
     }
 }
 

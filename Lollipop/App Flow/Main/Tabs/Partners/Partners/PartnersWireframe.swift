@@ -26,8 +26,9 @@ class PartnersWireframe: PartnersWireframeProtocol {
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func toPartnerDetails(){
+    func toPartnerDetails(alias: String){
         let vc = PartnerDetailsView()
+        PartnerDetailsWireframe.alias = alias
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
     

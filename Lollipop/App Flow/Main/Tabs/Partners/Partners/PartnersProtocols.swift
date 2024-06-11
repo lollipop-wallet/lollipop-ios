@@ -49,7 +49,7 @@ protocol PartnersWireframeProtocol: AnyObject {
     static var delegate: PartnersControllerProtocol? { get set }
     
     func toNewPartner()
-    func toPartnerDetails()
+    func toPartnerDetails(alias: String)
     func toMyShops(delegate: MyShopsControllerProtocol?)
 }
 
