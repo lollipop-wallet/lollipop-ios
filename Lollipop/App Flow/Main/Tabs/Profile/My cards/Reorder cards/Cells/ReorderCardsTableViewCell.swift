@@ -41,7 +41,6 @@ class ReorderCardsTableViewCell: UITableViewCell {
             make.width.equalTo(72)
             make.height.equalTo(47)
         }
-        view.backgroundColor = .red
         return view
     }()
     
