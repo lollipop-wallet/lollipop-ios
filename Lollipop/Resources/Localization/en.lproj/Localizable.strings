@@ -180,3 +180,5 @@
 "privacyPolicy" = "Privacy policy";
 "termsAndConditions" = "Terms and conditions";
 "notReordered" = "You didn't make any change. Please reorder cards and try again.";
+"sendNewCode" = "Send new code";
+"askForNewCodeIn" = "Request new code in";

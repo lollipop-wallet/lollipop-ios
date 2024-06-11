@@ -95,6 +95,22 @@ extension OTPView {
             button.layer.masksToBounds = true
             return button
         }()
+        
+        self.requestNewCodeButton.addTarget(self, action: #selector(onRequestNewCodeTap), for: .touchUpInside)
+        self.requestNewCodeButton.setTitle(LocalizedTitle.sendNewCode.localized, for: .normal)
+        self.requestNewCodeButton.titleLabel?.font = .inter(ofSize: 16, name: .semibold)
+        self.requestNewCodeButton.setTitleColor(AppColors.brandPrimary, for: .normal)
+        
+        self.requestNewCodeTimerLabel.isHidden = true
+
+        lazy var newCodeStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [self.requestNewCodeButton, self.requestNewCodeTimerLabel])
+            stack.axis = .vertical
+            stack.distribution = .fill
+            stack.alignment = .fill
+            stack.spacing = 0
+            return stack
+        }()
                 
         self.view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
@@ -124,6 +140,14 @@ extension OTPView {
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(otpStack.snp.bottom).offset(32)
             make.height.equalTo(48)
+        }
+        
+        self.view.addSubview(newCodeStack)
+        newCodeStack.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(proceedButton.snp.bottom).offset(24)
+            make.height.equalTo(20)
         }
     }
 }

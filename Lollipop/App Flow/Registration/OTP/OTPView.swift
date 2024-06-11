@@ -18,6 +18,8 @@ class OTPView: UIViewController, OTPViewProtocol {
     var thirdOTPField = OTPInputField()
     var fourthOTPField = OTPInputField()
     var backButton = UIBarButtonItem()
+    var requestNewCodeButton = UIButton()
+    var requestNewCodeTimerLabel = UILabel()
 
     var presenter: OTPPresenterProtocol?
 
@@ -87,6 +89,24 @@ class OTPView: UIViewController, OTPViewProtocol {
             self.navigationItem.leftBarButtonItems = shouldSet ? [self.backButton] : []
         }
     }
+    
+    func setTimerLabelHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.requestNewCodeTimerLabel.isHidden = isHidden
+        }
+    }
+    
+    func setSendNewCodeButtonHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.requestNewCodeButton.isHidden = isHidden
+        }
+    }
+    
+    func setTimerLabelTextWith(text: NSAttributedString){
+        DispatchQueue.main.async {
+            self.requestNewCodeTimerLabel.attributedText = text
+        }
+    }
 
     //MARK: Actions
     @objc func onCloseTap() {
@@ -99,5 +119,9 @@ class OTPView: UIViewController, OTPViewProtocol {
     
     @objc func onProceedTap() {
         presenter?.proceed(firstChar: firstOTPField.textField.text ?? "", secondChar: secondOTPField.textField.text ?? "", thirdChar: thirdOTPField.textField.text ?? "", fourthChar: fourthOTPField.textField.text ?? "")
+    }
+    
+    @objc func onRequestNewCodeTap() {
+        presenter?.requestNewCode()
     }
 }

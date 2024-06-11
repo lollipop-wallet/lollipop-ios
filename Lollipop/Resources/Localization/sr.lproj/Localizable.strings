@@ -179,3 +179,5 @@
 "privacyPolicy" = "Politika privatnosti";
 "termsAndConditions" = "Uslovi korišćenja";
 "notReordered" = "Niste preuredili raspored kartica. Napravite izmenu u rasporedu i pokušajte ponovo.";
+"sendNewCode" = "Pošalji novi kôd";
+"askForNewCodeIn" = "Zatraži novi kod za";

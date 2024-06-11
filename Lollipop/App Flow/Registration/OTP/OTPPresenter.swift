@@ -38,6 +38,10 @@ class OTPPresenter: NSObject, OTPPresenterProtocol  {
             wireframe?.toNewPasswordWith(email: self.email, otp: self.otp)
         }
     }
+    
+    func requestNewCode(){
+        
+    }
 }
 
 extension OTPPresenter: OTPOutputInteractorProtocol {

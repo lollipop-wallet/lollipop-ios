@@ -21,8 +21,15 @@ class MainWireframe: MainWireframeProtocol {
     }
     
     func toWalletWith(cards: [Card]){
-        let vc = WalletView()
-        WalletWireframe.cards = cards
-        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+//        let vc = WalletView()
+//        WalletWireframe.cards = cards
+//        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+        
+        let vc = OTPView()
+//        OTPWireframe.id = id
+//        OTPWireframe.email = email
+//        OTPWireframe.otpType = .registration
+        let navVC = UINavigationController(rootViewController: vc)
+        UIApplication.topViewController()?.present(navVC, animated: true)
     }
 }

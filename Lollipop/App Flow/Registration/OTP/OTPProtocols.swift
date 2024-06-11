@@ -19,6 +19,7 @@ protocol OTPPresenterProtocol: OTPInputFieldProtocol {
     
     func viewDidLoad()
     func proceed(firstChar: String, secondChar: String, thirdChar: String, fourthChar: String)
+    func requestNewCode()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -45,6 +46,9 @@ protocol OTPViewProtocol: AnyObject {
     func resignFirstResponder()
     func validate(firstFieldEmpty: Bool, secondFieldEmpty: Bool, thirdFieldEmpty: Bool, fourthFieldEmpty: Bool)
     func setBackButtonToLeftBarButtonItems(shouldSet: Bool)
+    func setTimerLabelHidden(isHidden: Bool)
+    func setSendNewCodeButtonHidden(isHidden: Bool)
+    func setTimerLabelTextWith(text: NSAttributedString)
 }
 //MARK: Wireframe
 protocol OTPWireframeProtocol: AnyObject {
