@@ -32,4 +32,11 @@ class PartnerCardSignupWireframe: PartnerCardSignupWireframeProtocol {
         DialogueWireframe.delegate = delegate
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func openLink(link: String, delegate: SFSafariViewControllerDelegate){
+        let url = URL(string: link)!
+        let controller = SFSafariViewController(url: url)
+        controller.delegate = delegate
+        UIApplication.topViewController()?.present(controller, animated: true)
+    }
 }

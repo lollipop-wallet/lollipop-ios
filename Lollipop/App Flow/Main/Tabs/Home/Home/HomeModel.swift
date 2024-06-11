@@ -75,6 +75,7 @@ struct CardTemplate: Codable {
     let image_back: String?
     let code_type: String?
     let cta_links_to: String?
+    let terms_conditions_url: String?
 }
 
 struct Partner: Codable {

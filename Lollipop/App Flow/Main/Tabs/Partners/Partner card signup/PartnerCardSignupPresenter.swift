@@ -7,6 +7,7 @@
 //
 import UIKit
 import Alamofire
+import SafariServices
 
 class PartnerCardSignupPresenter: NSObject, PartnerCardSignupPresenterProtocol  {
     
@@ -47,6 +48,10 @@ class PartnerCardSignupPresenter: NSObject, PartnerCardSignupPresenterProtocol  
         }
         let phone = prefix + phone
         interactor?.inquiry(name: name, city: city, phone: phone, partnerAlias: self.card?.partner?.alias ?? "", email: email)
+    }
+    
+    func openTermsAndConditions() {
+        wireframe?.openLink(link: self.card?.card_template?.terms_conditions_url ?? "", delegate: self)
     }
 }
 

@@ -8,10 +8,11 @@
 
 import Foundation
 import Alamofire
+import SafariServices
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol PartnerCardSignupPresenterProtocol: DropdownInputFieldProtocol, DropdownProtocol, DropdownInputFieldProtocol, DialogueControllerProtocol {
+protocol PartnerCardSignupPresenterProtocol: DropdownInputFieldProtocol, DropdownProtocol, DropdownInputFieldProtocol, DialogueControllerProtocol, SFSafariViewControllerDelegate{
     
     var interactor: PartnerCardSignupInputInteractorProtocol? { get set }
     var view: PartnerCardSignupViewProtocol? { get set }
@@ -22,6 +23,7 @@ protocol PartnerCardSignupPresenterProtocol: DropdownInputFieldProtocol, Dropdow
     func handleCityDropdownTapWith(item: String)
     func onTermsCheckTap()
     func send(name: String, city: String, prefix: String, phone: String, email: String)
+    func openTermsAndConditions()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -55,4 +57,5 @@ protocol PartnerCardSignupViewProtocol: AnyObject {
 protocol PartnerCardSignupWireframeProtocol: AnyObject {
     static var card: Card? { get set }
     func toDialogue(delegate: DialogueControllerProtocol?)
+    func openLink(link: String, delegate: SFSafariViewControllerDelegate)
 }

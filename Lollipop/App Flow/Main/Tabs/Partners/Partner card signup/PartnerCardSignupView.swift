@@ -124,6 +124,7 @@ class PartnerCardSignupView: UIViewController, PartnerCardSignupViewProtocol {
     
     @objc func onTermsLabelTap(sender: UITapGestureRecognizer) {
         if sender.didTapAttributedTextInLabel(label: termsLabel, targetText: LocalizedTitle.termsString.localized) {
+            presenter?.openTermsAndConditions()
         } else {
             print("Tapped none")
         }
