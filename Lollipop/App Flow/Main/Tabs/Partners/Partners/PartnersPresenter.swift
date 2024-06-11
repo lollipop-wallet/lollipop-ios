@@ -57,7 +57,14 @@ extension PartnersPresenter: PartnersOutputInteractorProtocol {
         switch result {
         case .success(let data):
             self.completeDatasource = data
-            interactor?.getFavoriteParnters()
+            if Manager.isRegistered {
+                interactor?.getFavoriteParnters()
+            }else{
+                UIApplication.topViewController()?.view?.hideSpinner()
+                self.datasource = self.completeDatasource
+                self.favoriteDatasource = []
+                self.view?.reload()
+            }
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }
