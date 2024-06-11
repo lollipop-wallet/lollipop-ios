@@ -29,7 +29,7 @@ protocol ForgotPwdEmailInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol ForgotPwdEmailOutputInteractorProtocol: AnyObject {
-    func parseOTPDataWith(result: Result<ForgotPwdEmailModel, AFError>)
+    func parseOTPDataWith(result: Result<OTPModel, AFError>)
 }
 //MARK: View
 protocol ForgotPwdEmailViewProtocol: AnyObject {

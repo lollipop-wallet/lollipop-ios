@@ -9,6 +9,6 @@
 import Foundation
 
 struct OTPModel : Codable {
-    
+    let message: String?
 }
 

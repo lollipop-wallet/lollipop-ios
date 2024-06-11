@@ -42,9 +42,11 @@ class OTPPresenter: NSObject, OTPPresenterProtocol  {
     }
     
     func requestNewCode(){
-        self.view?.setSendNewCodeButtonHidden(isHidden: true)
-        self.view?.setTimerLabelHidden(isHidden: false)
-        self.initiateCountdownTimer()
+        if self.otpType == .registration {
+            interactor?.resendRegistrationOTP()
+        }else{
+            interactor?.resendForgotPasswordOTPWith(email: self.email)
+        }
     }
 }
 
@@ -65,6 +67,17 @@ extension OTPPresenter: OTPOutputInteractorProtocol {
             UserDefaults.standard.synchronize()
             Manager.isRegistered = true
             wireframe?.toMain()
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
+    
+    func parseOTPData(result: Result<OTPModel, AFError>){
+        switch result {
+        case .success(_):
+            self.view?.setSendNewCodeButtonHidden(isHidden: true)
+            self.view?.setTimerLabelHidden(isHidden: false)
+            self.initiateCountdownTimer()
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }
@@ -137,7 +150,6 @@ extension OTPPresenter {
             Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] (timer) in
                 guard let self = self else {return}
                 if self.secondsRemaining > 0 {
-                    print ("\(self.secondsRemaining) seconds")
                     self.view?.setTimerLabelTextWith(text: self.setupTimerLabelWith(secondsRemaining: "\(self.secondsRemaining)"))
                     self.secondsRemaining -= 1
                 } else {

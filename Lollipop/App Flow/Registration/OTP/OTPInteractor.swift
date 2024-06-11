@@ -29,4 +29,22 @@ class OTPInteractor: OTPInputInteractorProtocol {
             self.presenter?.parseVerificationData(result: result)
         }
     }
+    
+    func resendRegistrationOTP(){
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.sendregistrationotp { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self = self else {return}
+            self.presenter?.parseOTPData(result: result)
+        }
+    }
+    
+    func resendForgotPasswordOTPWith(email: String){
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.sendforgotpwdotp(email: email) { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self = self else {return}
+            self.presenter?.parseOTPData(result: result)
+        }
+    }
 }

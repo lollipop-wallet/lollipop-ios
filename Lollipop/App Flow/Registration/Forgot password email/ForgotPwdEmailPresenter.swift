@@ -27,9 +27,9 @@ class ForgotPwdEmailPresenter: ForgotPwdEmailPresenterProtocol  {
 }
 
 extension ForgotPwdEmailPresenter: ForgotPwdEmailOutputInteractorProtocol {
-    func parseOTPDataWith(result: Result<ForgotPwdEmailModel, AFError>){
+    func parseOTPDataWith(result: Result<OTPModel, AFError>){
         switch result {
-        case .success(let model):
+        case .success(_):
             print("success")
             wireframe?.toOTPWith(email: self.email)
         case .failure(let error):

@@ -28,12 +28,15 @@ protocol OTPInputInteractorProtocol: AnyObject {
     var presenter: OTPOutputInteractorProtocol?  { get set }
     func viewDidLoad()
     func verify(id: Int, code: String)
+    func resendRegistrationOTP()
+    func resendForgotPasswordOTPWith(email: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol OTPOutputInteractorProtocol: AnyObject {
     func takeData(id: Int, email: String, otpType: OTPType?, delegate: OTPControllerProtocol?)
     func parseVerificationData(result: Result<Empty, AFError>)
+    func parseOTPData(result: Result<OTPModel, AFError>)
 }
 //MARK: View
 protocol OTPViewProtocol: AnyObject {

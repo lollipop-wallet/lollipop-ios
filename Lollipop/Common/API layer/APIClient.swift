@@ -131,6 +131,11 @@ class APIClient {
         performRequest(route: APIRouter.register(name: name, email: email, dob: dob, gender: gender, city: city, password: password, confirmPassword: confirmPassword), completion: completion)
     }
     
+    static func sendregistrationotp(completion:@escaping (Result<OTPModel, AFError>)->Void){
+        Manager.authTypeHeader = ""
+        performRequest(route: APIRouter.registrationotp, completion: completion)
+    }
+    
     static func verifyemail(id: Int, code: String, completion:@escaping (Result<Empty, AFError>)->Void){
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.verifyemail(id: id, code: code), completion: completion)
@@ -141,7 +146,7 @@ class APIClient {
         performRequest(route: APIRouter.verifyresetpassword(code: code, email: email, password: password, confirmPassword: confirmPassword), completion: completion)
     }
     
-    static func sendforgotpwdotp(email: String, completion:@escaping (Result<ForgotPwdEmailModel, AFError>)->Void){
+    static func sendforgotpwdotp(email: String, completion:@escaping (Result<OTPModel, AFError>)->Void){
         Manager.authTypeHeader = ""
         performRequest(route: APIRouter.sendforgotpwdotp(email: email), completion: completion)
     }
