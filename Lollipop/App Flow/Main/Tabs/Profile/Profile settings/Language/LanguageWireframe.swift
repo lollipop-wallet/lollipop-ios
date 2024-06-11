@@ -20,5 +20,12 @@ class LanguageWireframe: LanguageWireframeProtocol {
         
     }
     
+    func toMain(){
+        let mainVC = MainView()
+        let navigationController = UINavigationController(rootViewController: mainVC)
+        navigationController.isNavigationBarHidden = true
+        UIApplication.shared.keyWindow?.rootViewController = navigationController
+        UIApplication.shared.keyWindow?.makeKeyAndVisible()
+    }
     
 }

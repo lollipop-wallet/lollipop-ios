@@ -48,7 +48,12 @@ extension LanguagePresenter: LanguageOutputInteractorProtocol {
             self.view?.setSubtitleWith(subtitle: LocalizedTitle.chooseAppLanguage.localized)
             self.view?.setSaveButtonTitleWith(title: LocalizedTitle.save.localized)
             self.view?.reload()
-            Alert().alertMessageNoNavigator(title: LocalizedTitle.notes.localized, text: model.message ?? "", shouldDismiss: false)
+            UIApplication.topViewController()?.openAlert(title: LocalizedTitle.notice.localized, message: model.message ?? "", alertStyle: .alert, actionTitles: [LocalizedTitle.ok.localized], actionColors: [.systemBlue], actionStyles: [.default], actions: [
+                { [weak self] _ in
+                    guard let self = self  else {return}
+                    self.wireframe?.toMain()
+                }
+           ])
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }

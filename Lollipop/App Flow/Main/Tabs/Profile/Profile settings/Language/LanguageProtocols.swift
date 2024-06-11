@@ -43,7 +43,7 @@ protocol LanguageViewProtocol: AnyObject {
 }
 //MARK: Wireframe
 protocol LanguageWireframeProtocol: AnyObject {
-    
+    func toMain()
 }
 
 //MARK: LanguageTableViewCell Protocol

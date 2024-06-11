@@ -2760,7 +2760,6 @@
 				62F6CDFC2BDD55D700C4775C /* Profile settings */,
 				62F6CE382BDE682100C4775C /* My cards */,
 				62F6CE4A2BDE6B7200C4775C /* About */,
-				62F6CE5C2BDE6C8700C4775C /* Language */,
 				62F6CE6E2BDE6DE700C4775C /* Terms */,
 			);
 			path = Profile;
@@ -2834,6 +2833,7 @@
 			children = (
 				62F6CE372BDE679100C4775C /* Profile Settings */,
 				62F6CDE52BDD454600C4775C /* Personal data */,
+				62F6CE5C2BDE6C8700C4775C /* Language */,
 				62F6CE132BDD5AE200C4775C /* Change password */,
 				62F6CE252BDE0DD100C4775C /* Account deletion */,
 			);
