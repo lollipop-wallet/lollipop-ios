@@ -44,6 +44,7 @@ extension LanguagePresenter: LanguageOutputInteractorProtocol {
             Localize.setCurrentLanguage(model.data?.language?.lanCode?.rawValue ?? "")
             UserDefaults.standard.set(model.data?.language?.lanCode?.rawValue ?? "", forKey: "lanCode")
             UserDefaults.standard.synchronize()
+            Manager.selectedLanguageCode = model.data?.language?.lanCode?.rawValue ?? ""
             self.view?.setTitleWith(title: LocalizedTitle.changeLanguage.localized)
             self.view?.setSubtitleWith(subtitle: LocalizedTitle.chooseAppLanguage.localized)
             self.view?.setSaveButtonTitleWith(title: LocalizedTitle.save.localized)
