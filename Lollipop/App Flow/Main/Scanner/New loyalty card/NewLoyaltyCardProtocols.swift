@@ -59,6 +59,7 @@ protocol NewLoyaltyCardWireframeProtocol: AnyObject {
     static var barcode: String? { get set }
     static var isFromTemplate: Bool? { get set }
     static var delegate: NewLoyaltyCardControllerProtocol? { get set }
+    func toMain()
 }
 
 
