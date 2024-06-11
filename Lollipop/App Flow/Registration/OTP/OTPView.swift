@@ -108,6 +108,7 @@ class OTPView: UIViewController, OTPViewProtocol {
         }
     }
 
+
     //MARK: Actions
     @objc func onCloseTap() {
         dismiss(animated: true)

@@ -102,6 +102,7 @@ extension OTPView {
         self.requestNewCodeButton.setTitleColor(AppColors.brandPrimary, for: .normal)
         
         self.requestNewCodeTimerLabel.isHidden = true
+        self.requestNewCodeTimerLabel.textAlignment = .center
 
         lazy var newCodeStack: UIStackView = {
             let stack = UIStackView(arrangedSubviews: [self.requestNewCodeButton, self.requestNewCodeTimerLabel])

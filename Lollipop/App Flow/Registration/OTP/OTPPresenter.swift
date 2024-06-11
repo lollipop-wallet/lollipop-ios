@@ -20,6 +20,8 @@ class OTPPresenter: NSObject, OTPPresenterProtocol  {
     var delegate: OTPControllerProtocol?
     var email = String()
     var otp = String()
+    var secondsRemaining = 20
+
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -40,7 +42,9 @@ class OTPPresenter: NSObject, OTPPresenterProtocol  {
     }
     
     func requestNewCode(){
-        
+        self.view?.setSendNewCodeButtonHidden(isHidden: true)
+        self.view?.setTimerLabelHidden(isHidden: false)
+        self.initiateCountdownTimer()
     }
 }
 
@@ -109,5 +113,40 @@ extension OTPPresenter {
         ])
         
         return part1 + part2 + part3 + part4
+    }
+    
+    fileprivate func setupTimerLabelWith(secondsRemaining: String) -> NSAttributedString {
+        let part1 = "\(LocalizedTitle.askForNewCodeIn.localized): ".withAttributes([
+            .textColor(AppColors.darkGrey),
+            .font(.inter(ofSize: 16, name: .regular))
+        ])
+        
+        let part2 = "00:\(secondsRemaining)".withAttributes([
+            .textColor(AppColors.darkGrey),
+            .font(.inter(ofSize: 16, name: .bold)),
+        ])
+        
+        return part1 + part2
+    }
+}
+
+//MARK: Timer
+extension OTPPresenter {
+    fileprivate func initiateCountdownTimer(){
+        DispatchQueue.main.async {
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] (timer) in
+                guard let self = self else {return}
+                if self.secondsRemaining > 0 {
+                    print ("\(self.secondsRemaining) seconds")
+                    self.view?.setTimerLabelTextWith(text: self.setupTimerLabelWith(secondsRemaining: "\(self.secondsRemaining)"))
+                    self.secondsRemaining -= 1
+                } else {
+                    timer.invalidate()
+                    self.secondsRemaining = 20
+                    self.view?.setSendNewCodeButtonHidden(isHidden: false)
+                    self.view?.setTimerLabelHidden(isHidden: true)
+                }
+            }
+        }
     }
 }
