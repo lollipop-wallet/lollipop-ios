@@ -11,7 +11,7 @@ import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol MainPresenterProtocol: HomeControllerProtocol, PartnersControllerProtocol {
+protocol MainPresenterProtocol: HomeControllerProtocol, PartnersControllerProtocol, WalletControllerProtocol {
     
     var interactor: MainInputInteractorProtocol? { get set }
     var view: MainViewProtocol? { get set }

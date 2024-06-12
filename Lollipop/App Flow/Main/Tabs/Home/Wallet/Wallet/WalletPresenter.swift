@@ -15,12 +15,16 @@ class WalletPresenter: NSObject, WalletPresenterProtocol  {
     var wireframe: WalletWireframeProtocol?
     
     var datasource = [Card]()
+    var delegate: WalletControllerProtocol?
  
     func viewDidLoad() {
         if Manager.isRegistered {
             interactor?.viewDidLoad()
+            self.view?.setRightBarButtonItems(shouldSetAddButton: true)
         }else{
+            self.interactor?.viewDidLoadUnregistered()
             self.view?.setNoCardsViewHidden(isHidden: false)
+            self.view?.setRightBarButtonItems(shouldSetAddButton: false)
         }
     }
     
@@ -29,17 +33,21 @@ class WalletPresenter: NSObject, WalletPresenterProtocol  {
     }
     
     func addCard(){
-        wireframe?.toCardSuggestions()
+        if Manager.isRegistered {
+            wireframe?.toCardSuggestions()
+        }else{
+            self.delegate?.toProfileTabFromWallet()
+        }
     }
 }
 
 extension WalletPresenter: WalletOutputInteractorProtocol {
-    func takeDataWith(cards: [Card]) {
-        self.datasource = cards
-        self.view?.setCardsWith(cards: cards)
+    func takeDataWith(delegate: WalletControllerProtocol?){
+        self.delegate = delegate
     }
     
-    func parseCardsDataWith(result: Result<[Card], AFError>){
+    func parseCardsDataWith(result: Result<[Card], AFError>, delegate: WalletControllerProtocol?){
+        self.delegate = delegate
         switch result {
         case .success(let cards):
             let walletCards = cards.filter { ($0.is_favorite ?? 0) == 1 }

@@ -36,6 +36,7 @@ class MainPresenter: NSObject, MainPresenterProtocol  {
         vc3Nav.isNavigationBarHidden = true
         
         let vc4 = WalletView()
+        WalletWireframe.delegate = self
         vc4.tabBarItem = UITabBarItem(title: LocalizedTitle.cards.localized, image: UIImage(named: AssetTitles.cardsIcon), selectedImage: UIImage(named: AssetTitles.walletSelectedIcon))
         vc4.navigationController?.title = LocalizedTitle.cards.localized
         let vc4Nav = UINavigationController(rootViewController: vc4)
@@ -88,6 +89,14 @@ extension MainPresenter {
 //MARK: PartnersController Delegate
 extension MainPresenter {
     func toProfileTab() {
+        view?.switchTabWith(index: .profile)
+    }
+}
+
+
+//MARK: WalletController delegate
+extension MainPresenter {
+    func toProfileTabFromWallet() {
         view?.switchTabWith(index: .profile)
     }
 }

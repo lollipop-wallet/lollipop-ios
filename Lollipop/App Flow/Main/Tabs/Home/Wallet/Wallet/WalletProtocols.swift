@@ -28,12 +28,13 @@ protocol WalletInputInteractorProtocol: AnyObject {
     var presenter: WalletOutputInteractorProtocol?  { get set }
     func viewDidLoad()
     func getCardDetailsWith(alias: String)
+    func viewDidLoadUnregistered()
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol WalletOutputInteractorProtocol: AnyObject {
-    func takeDataWith(cards: [Card])
-    func parseCardsDataWith(result: Result<[Card], AFError>)
+    func takeDataWith(delegate: WalletControllerProtocol?)
+    func parseCardsDataWith(result: Result<[Card], AFError>, delegate: WalletControllerProtocol?)
     func parseCardDetailsWith(result: Result<Card, AFError>)
 }
 //MARK: View
@@ -43,12 +44,20 @@ protocol WalletViewProtocol: AnyObject {
     func setCardsWith(cards: [Card])
     func setAllCardsButtonHidden(isHidden: Bool)
     func setNoCardsViewHidden(isHidden: Bool)
+    func setRightBarButtonItems(shouldSetAddButton: Bool)
 }
 //MARK: Wireframe
 protocol WalletWireframeProtocol: AnyObject {
     static var cards: [Card]? { get set }
+    static var delegate: WalletControllerProtocol? { get set }
     func toMyCards()
     func toCardSuggestions()
     func toLoyaltyCardDetailsWith(card: Card?)
     func toDisplayCardDetailsWith(card: Card?)
 }
+
+//MARK: WalletController Protocol
+protocol WalletControllerProtocol: AnyObject {
+    func toProfileTabFromWallet()
+}
+
