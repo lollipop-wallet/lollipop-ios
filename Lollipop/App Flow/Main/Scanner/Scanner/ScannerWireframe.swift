@@ -25,7 +25,7 @@ class ScannerWireframe: ScannerWireframeProtocol {
         let vc = NewLoyaltyCardView()
         NewLoyaltyCardWireframe.card = card
         NewLoyaltyCardWireframe.barcode = barcode
-        NewLoyaltyCardWireframe.isFromTemplate = true
+        NewLoyaltyCardWireframe.isFromTemplate = !(card?.name ?? "").isEmpty
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -38,7 +38,7 @@ class ScannerView: UIViewController, ScannerViewProtocol {
     }
     
     @objc func onEnterManuallyTap() {
-        
+        presenter?.manually()
     }
 
 }
