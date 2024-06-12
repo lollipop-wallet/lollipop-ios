@@ -55,10 +55,10 @@ class MainPresenter: NSObject, MainPresenterProtocol  {
         
         view?.setControllersWith(vcs: [vc1Nav, vc2Nav, vc3Nav, vc4Nav, Manager.isRegistered ? vc5Nav : vc6Nav])
     }
-    
-    func scan() {
+
+    func scanCard(){
         if Manager.isRegistered {
-            interactor?.getWalletCards()
+            wireframe?.toCardTemplates()
         }else{
             view?.switchTabWith(index: .profile)
         }
@@ -66,24 +66,6 @@ class MainPresenter: NSObject, MainPresenterProtocol  {
 }
 
 extension MainPresenter: MainOutputInteractorProtocol {
-    func parseWalletCards(result: Result<[Card], AFError>){
-        switch result {
-        case .success(let cards):
-            if cards.isEmpty {
-                
-            }else{
-                let walletCards = cards.filter { ($0.is_favorite ?? 0) == 1 }
-                if walletCards.isEmpty {
-                    
-                }else{
-                    wireframe?.toWalletWith(cards: walletCards)
-                }
-            }
-        case .failure(let error):
-            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
-        }
-    }
-
 }
 
 //MARK: HomeController Delegate

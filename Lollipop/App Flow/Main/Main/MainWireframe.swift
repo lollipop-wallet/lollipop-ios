@@ -20,9 +20,8 @@ class MainWireframe: MainWireframeProtocol {
         
     }
     
-    func toWalletWith(cards: [Card]){
-        let vc = WalletView()
-        WalletWireframe.cards = cards
+    func toCardTemplates(){
+        let vc = ScanSuggestionView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

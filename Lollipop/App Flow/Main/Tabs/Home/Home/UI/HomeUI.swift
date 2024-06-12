@@ -119,7 +119,7 @@ extension HomeView {
         }()
         
         self.navigationItem.leftBarButtonItems = [avatarButton]
-        self.navigationItem.rightBarButtonItems = [addButton]
+        //self.navigationItem.rightBarButtonItems = [addButton]
         
         ///Content
         
