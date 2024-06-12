@@ -35,11 +35,17 @@ class MainPresenter: NSObject, MainPresenterProtocol  {
         let vc3Nav = UINavigationController(rootViewController: vc3)
         vc3Nav.isNavigationBarHidden = true
         
-        let vc4 = LollipopView()
-        vc4.tabBarItem = UITabBarItem(title: LocalizedTitle.lollipop.localized, image: UIImage(named: AssetTitles.lollipopUnselectedIcon), selectedImage: UIImage(named: AssetTitles.lollipopSelectedIcon))
-        vc4.navigationController?.title = LocalizedTitle.lollipop.localized
+        let vc4 = WalletView()
+        vc4.tabBarItem = UITabBarItem(title: LocalizedTitle.cards.localized, image: UIImage(named: AssetTitles.lollipopUnselectedIcon), selectedImage: UIImage(named: AssetTitles.lollipopSelectedIcon))
+        vc4.navigationController?.title = LocalizedTitle.cards.localized
         let vc4Nav = UINavigationController(rootViewController: vc4)
         vc4Nav.isNavigationBarHidden = false
+        
+//        let vc4 = LollipopView()
+//        vc4.tabBarItem = UITabBarItem(title: LocalizedTitle.lollipop.localized, image: UIImage(named: AssetTitles.lollipopUnselectedIcon), selectedImage: UIImage(named: AssetTitles.lollipopSelectedIcon))
+//        vc4.navigationController?.title = LocalizedTitle.lollipop.localized
+//        let vc4Nav = UINavigationController(rootViewController: vc4)
+//        vc4Nav.isNavigationBarHidden = false
         
         let vc5 = ProfileView()
         vc5.tabBarItem = UITabBarItem(title: LocalizedTitle.profile.localized, image: UIImage(named: AssetTitles.profileUnselectedIcon), selectedImage: UIImage(named: AssetTitles.profileSelectedIcon))

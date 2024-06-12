@@ -195,6 +195,7 @@ enum LocalizedTitle: String {
     case askForNewCodeIn
     case addOtherCard
     case cities
+    case cards
     
     var localized: String {
         return self.rawValue.localized()
