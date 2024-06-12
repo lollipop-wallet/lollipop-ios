@@ -38,6 +38,18 @@ class LocationsView: UIViewController, LocationsViewProtocol {
             self.tableView.reloadData()
         }
     }
+    
+    func setCityLabelWith(text: String){
+        DispatchQueue.main.async {
+            self.locationCityLabel.text = text
+        }
+    }
+    
+    func setBrandLabelWith(text: String){
+        DispatchQueue.main.async {
+            self.locationShopLabel.text = text
+        }
+    }
 
     //MARK: Actions
     @objc func onBackTap() {

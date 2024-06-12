@@ -38,6 +38,7 @@ class LocationsPresenter: NSObject, LocationsPresenterProtocol  {
 extension LocationsPresenter: LocationsOutputInteractorProtocol {
     func takeData(partner: Partner?, brands: [Brand]?){
         self.partner = partner
+        self.view?.setBrandLabelWith(text: "\(LocalizedTitle.stores.localized): (\((brands ?? []).count)")
         self.startingBrands = brands ?? []
         let selectedBrands = (brands ?? []).map { String($0.id ?? 0) }.joined(separator: ",")
         interactor?.getLocations(partnerId: partner?.id ?? 0, brands: selectedBrands, cities: "")

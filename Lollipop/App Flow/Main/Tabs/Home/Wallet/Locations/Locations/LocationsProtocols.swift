@@ -40,6 +40,8 @@ protocol LocationsViewProtocol: AnyObject {
     
     var presenter: LocationsPresenterProtocol?  { get set }
     func reload()
+    func setCityLabelWith(text: String)
+    func setBrandLabelWith(text: String)
 }
 //MARK: Wireframe
 protocol LocationsWireframeProtocol: AnyObject {
