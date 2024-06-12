@@ -81,7 +81,7 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
                 let customLinkListModelItem = PartnerListModel(card: nil, brands: [], featuredBanner: nil, banners: [], customLink: customLink, itemType: .link)
                 self.datasource.append(customLinkListModelItem)
             }
-            self.view?.setFavoriteIconWith(icon: (model.user_favorite?.is_favorite ?? 0) == 1 ? AssetTitles.favoriteRoundedSelectedIcon : AssetTitles.favoriteRoundedIcon)
+            //self.view?.setFavoriteIconWith(icon: (model.user_favorite?.is_favorite ?? 0) == 1 ? AssetTitles.favoriteRoundedSelectedIcon : AssetTitles.favoriteRoundedIcon)
             self.view?.reload()
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)

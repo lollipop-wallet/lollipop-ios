@@ -21,8 +21,8 @@ extension PartnerDetailsView {
         
         self.favoriteButton.addTarget(self, action: #selector(onFavoriteTap), for: .touchUpInside)
         self.favoriteButton.setImage(UIImage(named: AssetTitles.favoriteRoundedIcon), for: .normal)
+        self.favoriteButton.isHidden = true
 
-        
         self.tableView.separatorStyle = .none
         self.tableView.backgroundColor = AppColors.lightGrey
         self.tableView.register(MainPartnerTableViewCell.self, forCellReuseIdentifier: CellId.mainPartnerCell.rawValue)

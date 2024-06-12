@@ -15,8 +15,10 @@ struct DefaultModels {
     let unselected = [AssetTitles.homeUnselectedIcon, AssetTitles.partnersUnselectedIcon, "", AssetTitles.cardsIcon, AssetTitles.profileUnselectedIcon]
     let selected = [AssetTitles.homeSelectedIcon, AssetTitles.partnersSelectedIcon, "", AssetTitles.walletSelectedIcon, AssetTitles.profileSelectedIcon]
     
-    let profileDatasource = [[ProfileListModel(icon: AssetTitles.cardsIcon, title: LocalizedTitle.myCards.localized, item: .cards),
-                              ProfileListModel(icon: AssetTitles.storeOutlinedIcon, title: LocalizedTitle.favoriteStores.localized, item: .shops)],
+//  MARK: To uncomment when Zorica onboards shops
+//  let profileDatasource = [[ProfileListModel(icon: AssetTitles.cardsIcon, title: LocalizedTitle.myCards.localized, item: .cards),
+//                              ProfileListModel(icon: AssetTitles.storeOutlinedIcon, title: LocalizedTitle.favoriteStores.localized, item: .shops)],
+    let profileDatasource = [[ProfileListModel(icon: AssetTitles.cardsIcon, title: LocalizedTitle.myCards.localized, item: .cards)],
                              
                              [ProfileListModel(icon: AssetTitles.settingsIcon, title: LocalizedTitle.profileSettings.localized, item: .settings),
                             ProfileListModel(icon: AssetTitles.aboutIcon, title: LocalizedTitle.aboutApp.localized, item: .about),
