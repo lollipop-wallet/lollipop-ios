@@ -9,6 +9,7 @@ import UIKit
 import Photos
 import PhotosUI
 import Alamofire
+import CropViewController
 
 class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
     
@@ -147,15 +148,24 @@ extension NewLoyaltyCardPresenter {
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true)
-        guard let image = info[.originalImage] as? UIImage else {
-            return
+        picker.dismiss(animated: true) {
+            guard let image = info[.originalImage] as? UIImage else {
+                return
+            }
+            self.wireframe?.toCropViewControllerWith(image: image, delegate: self)
         }
-        self.view?.setFrontCardImageWith(image: image, isFront: self.isFrontCard)
-        if self.isFrontCard {
-            self.frontImage = image
-        }else{
-            self.backImage = image
-        }
+    }
+}
+
+//MAKR: Cropview controller delegate
+extension NewLoyaltyCardPresenter {
+    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+        UIApplication.topViewController()?.dismiss(animated: true)
+            self.view?.setFrontCardImageWith(image: image, isFront: self.isFrontCard)
+            if self.isFrontCard {
+                self.frontImage = image
+            }else{
+                self.backImage = image
+            }
     }
 }

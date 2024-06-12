@@ -9,10 +9,11 @@
 import Foundation
 import PhotosUI
 import Alamofire
+import CropViewController
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol NewLoyaltyCardPresenterProtocol: PHPickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+protocol NewLoyaltyCardPresenterProtocol: PHPickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CropViewControllerDelegate {
     
     var interactor: NewLoyaltyCardInputInteractorProtocol? { get set }
     var view: NewLoyaltyCardViewProtocol? { get set }
@@ -60,6 +61,7 @@ protocol NewLoyaltyCardWireframeProtocol: AnyObject {
     static var isFromTemplate: Bool? { get set }
     static var delegate: NewLoyaltyCardControllerProtocol? { get set }
     func toMain()
+    func toCropViewControllerWith(image: UIImage, delegate: CropViewControllerDelegate)
 }
 
 
