@@ -21,7 +21,7 @@ class ScanSuggestionPresenter: NSObject, ScanSuggestionPresenterProtocol  {
     }
     
     func newCard() {
-        wireframe?.toNewCard()
+        wireframe?.toScannerWith(card: nil)
     }
 }
 
