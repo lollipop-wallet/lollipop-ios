@@ -46,14 +46,123 @@ extension WalletView {
             return view
         }()
         
+        lazy var lightPurpleBackgroundView: UIView = {
+            let view = UIView()
+            view.backgroundColor = AppColors.brandPrimary.withAlphaComponent(0.2)
+            view.layer.cornerRadius = 16
+            view.layer.masksToBounds = true
+            return view
+        }()
+        
+        lazy var titleLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 30, name: .bold)
+            label.textAlignment = .left
+            label.textColor = AppColors.white
+            label.numberOfLines = 0
+            label.lineBreakMode = .byWordWrapping
+            label.text = LocalizedTitle.digitalizePlasticCardTitle.localized
+            return label
+        }()
+        
+        lazy var subtitleLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 14, name: .regular)
+            label.textAlignment = .left
+            label.textColor = AppColors.white
+            label.numberOfLines = 0
+            label.lineBreakMode = .byWordWrapping
+            label.text = LocalizedTitle.digitalizePlasticCardSubtitle.localized
+            return label
+        }()
+        
+        lazy var textStack: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
+            stack.axis = .vertical
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.spacing = 6
+            return stack
+        }()
+        
+        lazy var addButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(onAddCardTap), for: .touchUpInside)
+            button.setTitle(LocalizedTitle.addCard.localized, for: .normal)
+            button.backgroundColor = AppColors.white
+            button.titleLabel?.font = .inter(ofSize: 14, name: .semibold)
+            button.setTitleColor(AppColors.black, for: .normal)
+            button.layer.cornerRadius = 12
+            button.layer.masksToBounds = true
+            return button
+        }()
+        
+        lazy var dataContentView: UIView = {
+            let view = UIView()
+            view.addSubview(textStack)
+            textStack.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(20)
+                make.trailing.equalToSuperview().offset(-20)
+                make.top.equalToSuperview().offset(16)
+            }
+            
+            view.addSubview(addButton)
+            addButton.snp.makeConstraints { make in
+                make.width.equalTo(123)
+                make.height.equalTo(40)
+                make.leading.equalToSuperview().offset(20)
+                make.top.equalTo(textStack.snp.bottom).offset(24)
+            }
+            
+            view.layer.cornerRadius = 16
+            view.layer.masksToBounds = true
+            view.backgroundColor = AppColors.brandPrimary
+            return view
+        }()
+        
+        lazy var noCardsContainerView: UIView = {
+            let view = UIView()
+            
+            view.addSubview(lightPurpleBackgroundView)
+            lightPurpleBackgroundView.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(12)
+                make.trailing.equalToSuperview().offset(-12)
+                make.top.equalToSuperview()
+                make.bottom.equalToSuperview().offset(-47)
+            }
+            
+            view.addSubview(dataContentView)
+            dataContentView.snp.makeConstraints { make in
+                make.top.equalToSuperview().offset(15)
+                make.bottom.equalToSuperview()
+                make.leading.equalToSuperview()
+                make.trailing.equalToSuperview()
+            }
+            
+            return view
+        }()
+        
+        self.noCardsView = noCardsContainerView
+        
         lazy var curvedTopView: UIView = {
             let view = UIView()
+            
+            view.addSubview(self.noCardsView)
+            self.noCardsView.snp.makeConstraints { make in
+                make.top.equalToSuperview().offset(20)
+                make.bottom.equalToSuperview().offset(-20)
+                make.leading.equalToSuperview().offset(20)
+                make.trailing.equalToSuperview().offset(-20)
+                make.height.equalTo(((UIApplication.topViewController()?.view.frame.width ?? 1.0) - 40) * 0.64)
+            }
+        
             view.backgroundColor = AppColors.white
             view.layer.cornerRadius = 24
             view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
             return view
         }()
         
+        self.noCardsView.isHidden = true
         self.cardView.delegate = presenter
         
         view.addSubview(mainContentView)

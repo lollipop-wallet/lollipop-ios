@@ -42,6 +42,7 @@ protocol WalletViewProtocol: AnyObject {
     var presenter: WalletPresenterProtocol?  { get set }
     func setCardsWith(cards: [Card])
     func setAllCardsButtonHidden(isHidden: Bool)
+    func setNoCardsViewHidden(isHidden: Bool)
 }
 //MARK: Wireframe
 protocol WalletWireframeProtocol: AnyObject {

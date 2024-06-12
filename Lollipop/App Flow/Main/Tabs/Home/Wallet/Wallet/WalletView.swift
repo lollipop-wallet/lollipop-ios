@@ -13,6 +13,7 @@ class WalletView: UIViewController, WalletViewProtocol {
     
     var cardView = WalletStack()
     var allCardsButton = UIButton()
+    var noCardsView = UIView()
     
     var presenter: WalletPresenterProtocol?
     
@@ -43,6 +44,12 @@ class WalletView: UIViewController, WalletViewProtocol {
     func setAllCardsButtonHidden(isHidden: Bool){
         DispatchQueue.main.async {
             self.allCardsButton.isHidden = isHidden
+        }
+    }
+    
+    func setNoCardsViewHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.noCardsView.isHidden = isHidden
         }
     }
 

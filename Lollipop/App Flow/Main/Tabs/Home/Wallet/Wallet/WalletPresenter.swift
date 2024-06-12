@@ -19,6 +19,8 @@ class WalletPresenter: NSObject, WalletPresenterProtocol  {
     func viewDidLoad() {
         if Manager.isRegistered {
             interactor?.viewDidLoad()
+        }else{
+            self.view?.setNoCardsViewHidden(isHidden: false)
         }
     }
     
