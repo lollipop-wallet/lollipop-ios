@@ -38,7 +38,6 @@ class LocationsPresenter: NSObject, LocationsPresenterProtocol  {
 extension LocationsPresenter: LocationsOutputInteractorProtocol {
     func takeData(partner: Partner?, brands: [Brand]?){
         self.partner = partner
-        self.view?.setBrandLabelWith(text: "\(LocalizedTitle.stores.localized): (\((brands ?? []).count)")
         self.startingBrands = brands ?? []
         let selectedBrands = (brands ?? []).map { String($0.id ?? 0) }.joined(separator: ",")
         interactor?.getLocations(partnerId: partner?.id ?? 0, brands: selectedBrands, cities: "")
@@ -66,6 +65,8 @@ extension LocationsPresenter: LocationsOutputInteractorProtocol {
                 }
                 self.brands = finalBrands
             }
+            self.view?.setCityLabelWith(text: "\(LocalizedTitle.cities.localized): (\(self.cities.count))")
+            self.view?.setBrandLabelWith(text: "\(LocalizedTitle.stores.localized): (\(self.brands.count))")
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }
@@ -96,6 +97,8 @@ extension LocationsPresenter {
         self.datasource = locations
         self.cities = cities
         self.brands = brands
+        self.view?.setCityLabelWith(text: "\(LocalizedTitle.cities.localized): (\(self.cities.count))")
+        self.view?.setBrandLabelWith(text: "\(LocalizedTitle.stores.localized): (\(self.brands.count))")
         self.view?.reload()
     }
 }
