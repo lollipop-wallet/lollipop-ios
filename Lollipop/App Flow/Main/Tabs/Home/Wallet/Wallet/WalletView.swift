@@ -39,6 +39,12 @@ class WalletView: UIViewController, WalletViewProtocol {
             self.cardView.datasource = cards
         }
     }
+    
+    func setAllCardsButtonHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.allCardsButton.isHidden = isHidden
+        }
+    }
 
     //MARK: Actions
     @objc func onBackTap() {

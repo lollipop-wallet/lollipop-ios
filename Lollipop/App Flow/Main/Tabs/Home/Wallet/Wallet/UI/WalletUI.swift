@@ -75,6 +75,7 @@ extension WalletView {
         self.allCardsButton.setTitleColor(AppColors.brandPrimary, for: .normal)
         self.allCardsButton.layer.cornerRadius = 12
         self.allCardsButton.layer.masksToBounds = true
+        self.allCardsButton.isHidden = true
         
         mainContentView.addSubview(self.cardView)
         self.cardView.snp.makeConstraints { make in

@@ -33,6 +33,7 @@ protocol WalletInputInteractorProtocol: AnyObject {
 //INTERACTOR TO PRESENTER
 protocol WalletOutputInteractorProtocol: AnyObject {
     func takeDataWith(cards: [Card])
+    func parseCardsDataWith(result: Result<[Card], AFError>)
     func parseCardDetailsWith(result: Result<Card, AFError>)
 }
 //MARK: View
@@ -40,6 +41,7 @@ protocol WalletViewProtocol: AnyObject {
     
     var presenter: WalletPresenterProtocol?  { get set }
     func setCardsWith(cards: [Card])
+    func setAllCardsButtonHidden(isHidden: Bool)
 }
 //MARK: Wireframe
 protocol WalletWireframeProtocol: AnyObject {
