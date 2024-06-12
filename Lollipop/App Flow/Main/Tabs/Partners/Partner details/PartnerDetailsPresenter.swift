@@ -18,6 +18,9 @@ class PartnerDetailsPresenter: NSObject, PartnerDetailsPresenterProtocol  {
     var datasource = [PartnerListModel]()
     var model: PartnerDetailsModel?
     var partnerSelectedIndex = Int()
+    var partnerAlias = String()
+    var mainCellStartIndex = Int()
+    var shouldMainCellScrollerJumpToCustomIndex = Bool()
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -26,6 +29,8 @@ class PartnerDetailsPresenter: NSObject, PartnerDetailsPresenterProtocol  {
 
 extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
     func takeData(alias: String) {
+        self.partnerAlias = alias
+        self.shouldMainCellScrollerJumpToCustomIndex = true
         self.interactor?.getDetails(alias: alias)
     }
     
@@ -38,6 +43,9 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
             if  !(model.partner?.brands ?? []).isEmpty {
                 let brandsListModelItem = PartnerListModel(card: nil, brands: model.partner?.brands ?? [], featuredBanner: nil, banners: [], itemType: .brand)
                 self.datasource.append(brandsListModelItem)
+                let index = (model.partner?.brands ?? []).firstIndex { $0.alias ?? "" == self.partnerAlias } ?? 0
+                print("Indeks je: ", Int(index))
+                self.mainCellStartIndex = index
             }
             
             //MARK: Cards
@@ -73,7 +81,6 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
                 let customLinkListModelItem = PartnerListModel(card: nil, brands: [], featuredBanner: nil, banners: [], customLink: customLink, itemType: .link)
                 self.datasource.append(customLinkListModelItem)
             }
-            print("ovoliko ih je: ", self.datasource.count)
             self.view?.setFavoriteIconWith(icon: (model.user_favorite?.is_favorite ?? 0) == 1 ? AssetTitles.favoriteRoundedSelectedIcon : AssetTitles.favoriteRoundedIcon)
             self.view?.reload()
         case .failure(let error):
@@ -91,7 +98,7 @@ extension PartnerDetailsPresenter {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if self.datasource[indexPath.row].itemType == .brand {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.mainPartnerCell.rawValue, for: indexPath) as! MainPartnerTableViewCell
-            cell.configureWith(brands: self.datasource[indexPath.row].brands ?? [], partnerSelectedIndex: self.partnerSelectedIndex, index: indexPath, delegate: self)
+            cell.configureWith(brands: self.datasource[indexPath.row].brands ?? [], partnerSelectedIndex: self.partnerSelectedIndex, startIndex: self.mainCellStartIndex, shouldJumpToCustomIndex: self.shouldMainCellScrollerJumpToCustomIndex, index: indexPath, delegate: self)
             return cell
         }else if self.datasource[indexPath.row].itemType == .card {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.parnterDetailsCardCell.rawValue, for: indexPath) as! PartnerDetailsCardTableViewCell
@@ -120,6 +127,8 @@ extension PartnerDetailsPresenter {
     
     func getPartnerWith(alias: String, selectedIndex: Int) {
         self.partnerSelectedIndex = selectedIndex
+        self.partnerAlias = alias
+        self.shouldMainCellScrollerJumpToCustomIndex = false
         interactor?.getDetails(alias: alias)
     }
 

@@ -15,7 +15,9 @@ class MainPartnerTableViewCell: UITableViewCell {
     var datasource = [Brand]()
     var scrollIndex = Int()
     var previousScrollIndex = Int()
-    
+    var startWithIndexPath: IndexPath?
+    var shouldJumpToCustomIndex = Bool()
+
     lazy var cellContentView: UIView = {
         let view = UIView()
         return view
@@ -112,7 +114,7 @@ class MainPartnerTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(brands: [Brand], partnerSelectedIndex: Int, index: IndexPath, delegate: MainPartnerCellProtocol) {
+    func configureWith(brands: [Brand], partnerSelectedIndex: Int, startIndex: Int, shouldJumpToCustomIndex: Bool, index: IndexPath, delegate: MainPartnerCellProtocol) {
         self.index = index
         self.delegate = delegate
         self.datasource = brands
@@ -120,6 +122,8 @@ class MainPartnerTableViewCell: UITableViewCell {
         self.pageControl.numberOfPages = brands.count
         self.partnerBackgroundImage.imageFromURL(url: brands[partnerSelectedIndex].featured_image ?? "")
         self.scrollIndex = 0
+        self.shouldJumpToCustomIndex = shouldJumpToCustomIndex
+        self.startWithIndexPath = .init(item: startIndex, section: 0)
     }
     
     //MARK: Actions
@@ -134,6 +138,15 @@ extension MainPartnerTableViewCell: UICollectionViewDelegate, UICollectionViewDa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.mainPartnerCollectionCell.rawValue, for: indexPath) as! MainPartnerCollectionViewCell
         cell.configureWith(brand: self.datasource[indexPath.row], delegate: self, index: indexPath)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if self.shouldJumpToCustomIndex {
+            if let startWithIndexPath = startWithIndexPath {
+                collectionView.scrollToItem(at: startWithIndexPath, at: .left, animated: false)
+                self.startWithIndexPath = nil
+            }
+        }
     }
     
     
