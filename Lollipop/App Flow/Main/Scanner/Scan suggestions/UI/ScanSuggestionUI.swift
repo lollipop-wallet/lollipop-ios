@@ -22,7 +22,7 @@ extension ScanSuggestionView {
         navigationItem.scrollEdgeAppearance = appearance
         UINavigationBar.appearance().layoutMargins.left = 20
         
-        self.navigationItem.title = LocalizedTitle.loyaltyCards.localized
+        self.navigationItem.title = LocalizedTitle.addCard.localized
         
         lazy var backButton: UIBarButtonItem = {
             let button = UIBarButtonItem()
@@ -82,7 +82,7 @@ extension ScanSuggestionView {
             label.font = .inter(ofSize: 16, name: .regular)
             label.textColor = AppColors.black
             label.textAlignment = .left
-            label.text = LocalizedTitle.addCard.localized
+            label.text = LocalizedTitle.addOtherCard.localized
             return label
         }()
         

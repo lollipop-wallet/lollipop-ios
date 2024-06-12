@@ -193,6 +193,7 @@ enum LocalizedTitle: String {
     case notReordered
     case sendNewCode
     case askForNewCodeIn
+    case addOtherCard
     
     var localized: String {
         return self.rawValue.localized()
