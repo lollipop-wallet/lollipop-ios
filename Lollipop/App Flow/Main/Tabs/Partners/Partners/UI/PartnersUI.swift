@@ -196,17 +196,17 @@ extension PartnersView {
         self.noFavoritesStackView.spacing = 24
         self.noFavoritesStackView.isHidden = true
 
-        self.view.addSubview(segmentedControl)
-        segmentedControl.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
-            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
-            make.height.equalTo(47)
-        }
+//        self.view.addSubview(segmentedControl)
+//        segmentedControl.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(16)
+//            make.trailing.equalToSuperview().offset(-16)
+//            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
+//            make.height.equalTo(47)
+//        }
         
         self.view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
-            make.top.equalTo(segmentedControl.snp.bottom).offset(32)
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
