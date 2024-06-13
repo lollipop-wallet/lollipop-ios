@@ -72,7 +72,7 @@ class HomeCircleHorizontalCategoryTableViewCell: UITableViewCell {
         }
         view.addSubview(self.collectionView)
         self.collectionView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
+            make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.top.equalTo(titleStack.snp.bottom).offset(24)
             make.bottom.equalToSuperview()
@@ -161,7 +161,7 @@ extension HomeCircleHorizontalCategoryTableViewCell {
         let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(110), heightDimension: .estimated(134))
 
         let group = NSCollectionLayoutGroup.vertical( layoutSize: groupSize, subitem: item, count: 1)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0,trailing: 20)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0,trailing: 10)
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         
