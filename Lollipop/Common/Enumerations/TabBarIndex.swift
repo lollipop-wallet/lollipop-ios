@@ -9,7 +9,7 @@ import Foundation
 
 enum TabBarIndex: Int {
     case home = 0
-    case lolly = 1
-    case partners = 3
+    case wallet = 3
+    case partners = 1
     case profile = 4
 }

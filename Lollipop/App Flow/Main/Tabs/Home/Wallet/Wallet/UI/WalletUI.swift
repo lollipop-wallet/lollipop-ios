@@ -39,7 +39,7 @@ extension WalletView {
         
         self.addCardBarButton = addCardButton
         
-        self.navigationItem.leftBarButtonItems = [backButton]
+        //self.navigationItem.leftBarButtonItems = [backButton]
         //self.navigationItem.rightBarButtonItems = [addCardButton]
         
         lazy var mainContentView: UIView = {
