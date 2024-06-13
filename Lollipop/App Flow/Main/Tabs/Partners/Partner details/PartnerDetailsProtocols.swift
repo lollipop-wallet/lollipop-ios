@@ -49,7 +49,7 @@ protocol PartnerDetailsWireframeProtocol: AnyObject {
     func openLinkWith(link: String, delegate: SFSafariViewControllerDelegate)
     func toHTMLWith(title: String, description: String, buttonTitle: String, externalLink: String)
     func toPromotionDetailsWith(banner: Banner?)
-    func toPromotions()
+    func toPromotions(partnerAlias: String?)
 }
 
 //MARK: MainPartnerCell Protocol

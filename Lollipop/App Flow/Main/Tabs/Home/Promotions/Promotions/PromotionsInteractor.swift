@@ -14,6 +14,11 @@ class PromotionsInteractor: PromotionsInputInteractorProtocol {
     weak var presenter: PromotionsOutputInteractorProtocol?
     
     func viewDidLoad() {
+        let partnerAlias = PromotionsWireframe.partnerAlias ?? ""
+        presenter?.takeData(partnerAlias: partnerAlias)
+    }
+    
+    func getPromotions(){
         UIApplication.topViewController()?.view.showSpinner()
         APIClient.getpromotions { [weak self] result in
             UIApplication.topViewController()?.view.hideSpinner()

@@ -58,8 +58,9 @@ class PartnerDetailsWireframe: PartnerDetailsWireframeProtocol {
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func toPromotions(){
+    func toPromotions(partnerAlias: String?){
         let vc = PromotionsView()
+        PromotionsWireframe.partnerAlias = partnerAlias
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -165,7 +165,7 @@ extension PartnerDetailsPresenter {
     
     //MARK: Promotions Delegate
     func didTapSeeMoreFromPartnerDetailsCellCategory() {
-        wireframe?.toPromotions()
+        wireframe?.toPromotions(partnerAlias: self.model?.alias ?? "")
     }
     
     func didTapBannerWith(banner: Banner?) {

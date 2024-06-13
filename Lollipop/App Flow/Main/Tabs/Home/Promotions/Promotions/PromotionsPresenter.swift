@@ -15,6 +15,7 @@ class PromotionsPresenter: NSObject, PromotionsPresenterProtocol  {
     var wireframe: PromotionsWireframeProtocol?
     
     var datasource = [Banner]()
+    var partnerAlias = String()
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -22,10 +23,21 @@ class PromotionsPresenter: NSObject, PromotionsPresenterProtocol  {
 }
 
 extension PromotionsPresenter: PromotionsOutputInteractorProtocol {
+    
+    func takeData(partnerAlias: String){
+        self.partnerAlias = partnerAlias
+        interactor?.getPromotions()
+    }
+    
     func parsePromotionsData(result: Result<[Banner], AFError>){
         switch result {
         case .success(let data):
-            self.datasource = data
+            if partnerAlias.isEmpty {
+                self.datasource = data
+            }else{
+                let filter = data.filter { ($0.brand?.alias ?? "") == self.partnerAlias }
+                self.datasource = filter
+            }
             self.view?.reload()
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)

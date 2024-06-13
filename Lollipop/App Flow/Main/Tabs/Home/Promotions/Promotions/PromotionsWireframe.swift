@@ -9,6 +9,7 @@ import UIKit
 
 class PromotionsWireframe: PromotionsWireframeProtocol {
     
+    static var partnerAlias: String? 
     
     static func createModule(PromotionsRef: PromotionsView) {
         let presenter: PromotionsPresenterProtocol & PromotionsOutputInteractorProtocol = PromotionsPresenter()
