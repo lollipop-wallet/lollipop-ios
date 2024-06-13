@@ -157,12 +157,13 @@ extension HomeCircleHorizontalCategoryTableViewCell {
     private func generateFlowLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(30))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0,trailing: 10)
         let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(110), heightDimension: .estimated(134))
 
         let group = NSCollectionLayoutGroup.vertical( layoutSize: groupSize, subitem: item, count: 1)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0,trailing: 10)
+        //group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0,trailing: 10)
         let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0,trailing: 10)
         section.orthogonalScrollingBehavior = .continuous
         
         return section
