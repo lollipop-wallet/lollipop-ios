@@ -24,6 +24,7 @@ class HomeWireframe: HomeWireframeProtocol {
     
     func toPromotions(){
         let vc = PromotionsView()
+        PromotionsWireframe.partnerAlias = ""
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
     
