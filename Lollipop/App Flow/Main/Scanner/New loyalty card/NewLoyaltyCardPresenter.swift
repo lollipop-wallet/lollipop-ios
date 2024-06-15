@@ -137,12 +137,13 @@ extension NewLoyaltyCardPresenter {
         // This is called at the end; after all signals are matched (IN/OUT)
         dispatchGroup.notify(queue: .main) {
             if !images.isEmpty{
-                self.view?.setFrontCardImageWith(image: images.first ?? UIImage(), isFront: self.isFrontCard)
-                if self.isFrontCard {
-                    self.frontImage = images.first ?? UIImage()
-                }else{
-                    self.backImage = images.first ?? UIImage()
-                }
+                self.wireframe?.toCropViewControllerWith(image: images.first ?? UIImage(), delegate: self)
+//                self.view?.setFrontCardImageWith(image: images.first ?? UIImage(), isFront: self.isFrontCard)
+//                if self.isFrontCard {
+//                    self.frontImage = images.first ?? UIImage()
+//                }else{
+//                    self.backImage = images.first ?? UIImage()
+//                }
             }
         }
     }

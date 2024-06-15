@@ -10,6 +10,7 @@ import Alamofire
 import Photos
 import PhotosUI
 import SafariServices
+import CropViewController
 
 
 class ProfilePresenter: NSObject, ProfilePresenterProtocol  {
@@ -163,40 +164,37 @@ extension ProfilePresenter {
 //MARK: PHPickerController Delegate & ImagePicker delegate
 extension ProfilePresenter {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        picker.dismiss(animated: true, completion: nil)
-        
-        let imageItems = results.map { $0.itemProvider }.filter { $0.canLoadObject(ofClass: UIImage.self) }
-        
-        let dispatchGroup = DispatchGroup()
-        var images = [UIImage]()
-        
-        for imageItem in imageItems {
-            dispatchGroup.enter() // signal IN
-            imageItem.loadObject(ofClass: UIImage.self) { image, _ in
-                if let image = image as? UIImage {
-                    images.append(image)
+        picker.dismiss(animated: true) {
+            let imageItems = results.map { $0.itemProvider }.filter { $0.canLoadObject(ofClass: UIImage.self) }
+            
+            let dispatchGroup = DispatchGroup()
+            var images = [UIImage]()
+            
+            for imageItem in imageItems {
+                dispatchGroup.enter() // signal IN
+                imageItem.loadObject(ofClass: UIImage.self) { image, _ in
+                    if let image = image as? UIImage {
+                        images.append(image)
+                    }
+                    dispatchGroup.leave() // signal OUT
                 }
-                dispatchGroup.leave() // signal OUT
             }
-        }
-        // This is called at the end; after all signals are matched (IN/OUT)
-        dispatchGroup.notify(queue: .main) {
-            if !images.isEmpty{
-                self.userImage = images.first ?? UIImage()
-                let imageData = self.userImage.jpegData(compressionQuality: 0.6)
-                self.interactor?.updateAvatar(avatar: imageData ?? Data())
+            // This is called at the end; after all signals are matched (IN/OUT)
+            dispatchGroup.notify(queue: .main) {
+                if !images.isEmpty{
+                    self.wireframe?.toCropViewControllerWith(image: images.first ?? UIImage(), delegate: self)
+                }
             }
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true)
-        guard let image = info[.originalImage] as? UIImage else {
-            return
+        picker.dismiss(animated: true) {
+            guard let image = info[.originalImage] as? UIImage else {
+                return
+            }
+            self.wireframe?.toCropViewControllerWith(image: image, delegate: self)
         }
-        self.userImage = image
-        let imageData = self.userImage.jpegData(compressionQuality: 0.4)
-        self.interactor?.updateAvatar(avatar: imageData ?? Data())
     }
 }
 
@@ -216,5 +214,15 @@ extension ProfilePresenter {
 extension ProfilePresenter {
     func updateUserCardsWith(cards: [Card]) {
         self.delegate?.updateCardsWith(cards: cards)
+    }
+}
+
+//MARK: Cropview controller delegate
+extension ProfilePresenter {
+    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+        UIApplication.topViewController()?.dismiss(animated: true)
+        self.userImage = image
+        let imageData = self.userImage.jpegData(compressionQuality: 0.4)
+        self.interactor?.updateAvatar(avatar: imageData ?? Data())
     }
 }

@@ -10,10 +10,11 @@ import UIKit
 import Alamofire
 import PhotosUI
 import SafariServices
+import CropViewController
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol ProfilePresenterProtocol: UITableViewDelegate, UITableViewDataSource, ProfileCellProtocol, PHPickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PersonalDataControllerProtocol, MyCardsControllerProtocol, SFSafariViewControllerDelegate{
+protocol ProfilePresenterProtocol: UITableViewDelegate, UITableViewDataSource, ProfileCellProtocol, PHPickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PersonalDataControllerProtocol, MyCardsControllerProtocol, SFSafariViewControllerDelegate, CropViewControllerDelegate{
     
     var interactor: ProfileInputInteractorProtocol? { get set }
     var view: ProfileViewProtocol? { get set }
@@ -62,6 +63,7 @@ protocol ProfileWireframeProtocol: AnyObject {
     func toTerms()
     func toMain()
     func openLink(link: String, delegate: SFSafariViewControllerDelegate)
+    func toCropViewControllerWith(image: UIImage, delegate: CropViewControllerDelegate)
 }
 
 //MARK: ProfileCell Protocol

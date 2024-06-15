@@ -7,6 +7,7 @@
 //
 import UIKit
 import SafariServices
+import CropViewController
 
 class ProfileWireframe: ProfileWireframeProtocol {
     
@@ -62,5 +63,12 @@ class ProfileWireframe: ProfileWireframeProtocol {
         let controller = SFSafariViewController(url: url)
         controller.delegate = delegate
         UIApplication.topViewController()?.present(controller, animated: true)
+    }
+    
+    func toCropViewControllerWith(image: UIImage, delegate: CropViewControllerDelegate){
+        let cropViewController = CropViewController(image: image)
+        cropViewController.delegate = delegate
+        let nav = UINavigationController(rootViewController: cropViewController)
+        UIApplication.topViewController()?.present(nav, animated: true, completion: nil)
     }
 }
