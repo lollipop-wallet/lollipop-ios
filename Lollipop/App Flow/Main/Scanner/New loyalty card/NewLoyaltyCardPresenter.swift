@@ -118,32 +118,26 @@ extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
 //MARK: PHPickerController Delegate & ImagePicker delegate
 extension NewLoyaltyCardPresenter {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        picker.dismiss(animated: true, completion: nil)
-        
-        let imageItems = results.map { $0.itemProvider }.filter { $0.canLoadObject(ofClass: UIImage.self) }
-        
-        let dispatchGroup = DispatchGroup()
-        var images = [UIImage]()
-        
-        for imageItem in imageItems {
-            dispatchGroup.enter() // signal IN
-            imageItem.loadObject(ofClass: UIImage.self) { image, _ in
-                if let image = image as? UIImage {
-                    images.append(image)
+        picker.dismiss(animated: true) {
+            let imageItems = results.map { $0.itemProvider }.filter { $0.canLoadObject(ofClass: UIImage.self) }
+            
+            let dispatchGroup = DispatchGroup()
+            var images = [UIImage]()
+            
+            for imageItem in imageItems {
+                dispatchGroup.enter() // signal IN
+                imageItem.loadObject(ofClass: UIImage.self) { image, _ in
+                    if let image = image as? UIImage {
+                        images.append(image)
+                    }
+                    dispatchGroup.leave() // signal OUT
                 }
-                dispatchGroup.leave() // signal OUT
             }
-        }
-        // This is called at the end; after all signals are matched (IN/OUT)
-        dispatchGroup.notify(queue: .main) {
-            if !images.isEmpty{
-                self.wireframe?.toCropViewControllerWith(image: images.first ?? UIImage(), delegate: self)
-//                self.view?.setFrontCardImageWith(image: images.first ?? UIImage(), isFront: self.isFrontCard)
-//                if self.isFrontCard {
-//                    self.frontImage = images.first ?? UIImage()
-//                }else{
-//                    self.backImage = images.first ?? UIImage()
-//                }
+            // This is called at the end; after all signals are matched (IN/OUT)
+            dispatchGroup.notify(queue: .main) {
+                if !images.isEmpty{
+                    self.wireframe?.toCropViewControllerWith(image: images.first ?? UIImage(), delegate: self)
+                }
             }
         }
     }
