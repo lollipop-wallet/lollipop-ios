@@ -21,12 +21,6 @@ class PromotionsWireframe: PromotionsWireframeProtocol {
         
     }
     
-    func toDetailsWith(banner: Banner?){
-        let vc = PromotionDetailsView()
-        PromotionDetailsWireframe.banner = banner
-        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func toHTMLWith(title: String, description: String, buttonTitle: String, externalLink: String){
         let vc = HTMLView()
         HTMLWireframe.title = title
