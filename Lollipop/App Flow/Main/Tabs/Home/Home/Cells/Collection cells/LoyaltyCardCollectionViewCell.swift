@@ -116,6 +116,7 @@ class LoyaltyCardCollectionViewCell: UICollectionViewCell {
         self.photo.imageFromURL(url: item?.cardType == .loyalty ? item?.card_template?.image_front ?? "" : item?.image_front ?? "")
         self.photo.isHidden = (item?.isSeeAllCards ?? false)
         self.seeAllCardsPlaceHolder.isHidden = !(item?.isSeeAllCards ?? false)
+        self.photoPlaceHolder.backgroundColor = (item?.isSeeAllCards ?? false) ? AppColors.brandPrimary : AppColors.white
     }
     
     
