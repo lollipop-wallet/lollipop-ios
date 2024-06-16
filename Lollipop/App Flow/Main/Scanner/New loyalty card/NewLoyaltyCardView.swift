@@ -87,11 +87,9 @@ class NewLoyaltyCardView: UIViewController, NewLoyaltyCardViewProtocol {
         }
     }
     
-    func validate(cardNameIsEmpty: Bool, cardCodeIsEmpty: Bool){
+    func validate(cardNameIsEmpty: Bool){
         self.cardNameField.borderWidth = 1
         self.cardNameField.borderColor = cardNameIsEmpty ? AppColors.error : AppColors.black
-        self.cardBarcodeField.borderWidth = 1
-        self.cardBarcodeField.borderColor = cardCodeIsEmpty ? AppColors.error : AppColors.black
     }
 
     //MARK: Actions

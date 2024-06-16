@@ -23,7 +23,7 @@ class NewLoyaltyCardInteractor: NewLoyaltyCardInputInteractorProtocol {
     
     func createCard(cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String, partnerAlias: String, cardTemplateId: Int){
         UIApplication.topViewController()?.view?.showSpinner()
-        APIClient.createloyaltycard(cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarcode, nameOnTheCard: nameOnCard, codeType: !cardBarcode.isEmpty ? CardCodeType.barcode.rawValue : CardCodeType.plaincode.rawValue, note: note, partnerAlias: partnerAlias, templateId: String(cardTemplateId)) { [weak self] result in
+        APIClient.createloyaltycard(cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarcode, nameOnTheCard: nameOnCard, codeType: !cardBarcode.isEmpty ? CardCodeType.barcode.rawValue : "", note: note, partnerAlias: partnerAlias, templateId: String(cardTemplateId)) { [weak self] result in
             UIApplication.topViewController()?.view?.hideSpinner()
             guard let self = self else { return }
             self.presenter?.parseNewCardData(result: result)
@@ -32,7 +32,7 @@ class NewLoyaltyCardInteractor: NewLoyaltyCardInputInteractorProtocol {
     
     func createDisplayCarad(frontImage: Data, backImage: Data, cardName: String, cardNumber: String, cardBarCode: String, nameOnTheCard: String, note: String){
         UIApplication.topViewController()?.view?.showSpinner()
-        APIClient.createdisplaycard(frontImage: frontImage, backImage: backImage, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, nameOnTheCard: nameOnTheCard, codeType: !cardBarCode.isEmpty ? CardCodeType.barcode.rawValue : CardCodeType.plaincode.rawValue, note: note) { [weak self] result in
+        APIClient.createdisplaycard(frontImage: frontImage, backImage: backImage, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, nameOnTheCard: nameOnTheCard, codeType: !cardBarCode.isEmpty ? CardCodeType.plaincode.rawValue : "", note: note) { [weak self] result in
             UIApplication.topViewController()?.view?.hideSpinner()
             self?.presenter?.parseNewCardData(result: result)
         }

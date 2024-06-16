@@ -51,7 +51,7 @@ protocol NewLoyaltyCardViewProtocol: AnyObject {
     func setBarcodeWith(barcode: String)
     func setFrontCameraControlHidden(isHidden: Bool)
     func setBackCameraControlHidden(isHidden: Bool)
-    func validate(cardNameIsEmpty: Bool, cardCodeIsEmpty: Bool)
+    func validate(cardNameIsEmpty: Bool)
 
 }
 //MARK: Wireframe

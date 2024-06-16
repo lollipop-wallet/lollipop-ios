@@ -60,14 +60,14 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
     
     func save(frontImage: UIImage, backImage: UIImage, cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String) {
         if (self.isFromTemplate ?? false){
-            guard !cardName.isEmpty, !cardBarcode.isEmpty else {
-                view?.validate(cardNameIsEmpty: cardName.isEmpty, cardCodeIsEmpty: cardBarcode.isEmpty)
+            guard !cardName.isEmpty else {
+                view?.validate(cardNameIsEmpty: cardName.isEmpty)
                 return
             }
             interactor?.createCard(cardName: cardName, cardNumber: cardNumber, cardBarcode: self.barcode ?? "", nameOnCard: nameOnCard, note: note, partnerAlias: card?.partner?.alias ?? "", cardTemplateId: card?.id ?? 0)
         }else{
-            guard !cardName.isEmpty, !cardBarcode.isEmpty else {
-                view?.validate(cardNameIsEmpty: cardName.isEmpty, cardCodeIsEmpty: cardBarcode.isEmpty)
+            guard !cardName.isEmpty else {
+                view?.validate(cardNameIsEmpty: cardName.isEmpty)
                 return
             }
             
