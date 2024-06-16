@@ -169,7 +169,7 @@ extension PartnerDetailsPresenter {
     }
     
     func didTapBannerWith(banner: Banner?) {
-        wireframe?.toPromotionDetailsWith(banner: banner)
+        wireframe?.toHTMLWith(title: banner?.title ?? "", description: banner?.description ?? "", buttonTitle: banner?.external_link_label ?? "", externalLink: banner?.external_link ?? "")
     }
     
     //MARK: CustomCell Delegate

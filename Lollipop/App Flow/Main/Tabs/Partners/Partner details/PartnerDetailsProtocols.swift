@@ -48,7 +48,6 @@ protocol PartnerDetailsWireframeProtocol: AnyObject {
     func toLocations(partner: Partner?, brands: [Brand])
     func openLinkWith(link: String, delegate: SFSafariViewControllerDelegate)
     func toHTMLWith(title: String, description: String, buttonTitle: String, externalLink: String)
-    func toPromotionDetailsWith(banner: Banner?)
     func toPromotions(partnerAlias: String?)
 }
 
