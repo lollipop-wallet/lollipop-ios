@@ -27,11 +27,76 @@ public extension WKWebView {
         guard let fontData = try? Data(contentsOf: fontFileUrl) else {
             return
         }
+        print("Ulazis li odje?", fontFileUrl)
         let css = """
                 @font-face {
                     font-family: '\(fontFamilyName)';
                     src: url(data:font/octet-stream;base64,\(fontData.base64EncodedString()))
                     format('\(type.format)');
+                },
+                *, :after, :before {
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                }
+                html,
+                body{
+                    width: 100%;
+                    text-rendering: optimizeLegibility;
+                    font-size: 16px;
+                    margin: 0;
+                    padding: 0;
+                    min-height: 100%;
+                }
+                body {
+                    font-family: 'Inter';
+                    line-height: 1.6;
+                    padding: 32px 0 64px;
+                    display: block;
+                    box-sizing: border-box;
+                    outline: 1px solid red;
+                    min-height: 100%;
+                }
+
+                p, li{
+                    font-family: 'Inter';
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    margin-bottom: 18px;
+                }
+                h1{
+                    font-family: 'Inter';
+                    font-weight: 700;
+                    font-size: 30px;
+                    line-height: 36px;
+                    margin: 32px 0;
+                }
+                h2{
+                    font-family: 'Inter';
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 28px;
+                    margin: 24px 0;
+                }
+                h3{
+                    font-family: 'Inter';
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 24px;
+                    margin: 16px 0;
+                }
+                h4, h5, h6{
+                    font-family: 'Inter';
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 22px;
+                    margin: 12px 0;
+                }
+                img, iframe{
+                    width: 100%;
+                    display: block;
+                    border-radius: 16px;
+                    margin: 32px 0;
                 }
                 """
         let cssStyle = """

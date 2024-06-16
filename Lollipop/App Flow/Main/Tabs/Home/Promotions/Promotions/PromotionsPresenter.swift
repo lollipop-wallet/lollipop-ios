@@ -59,7 +59,7 @@ extension PromotionsPresenter {
     
     func didSelectItemAt(index: IndexPath) {
         let item = self.datasource[index.row]
-        wireframe?.toDetailsWith(banner: item)
+        wireframe?.toHTMLWith(title: item.title ?? "", description: item.description ?? "", buttonTitle: item.external_link_label ?? "", externalLink: item.external_link ?? "")
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

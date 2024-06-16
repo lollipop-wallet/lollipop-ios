@@ -35,8 +35,11 @@ class HTMLView: UIViewController, HTMLViewProtocol {
     
     func setContentWith(content: String){
         DispatchQueue.main.async {
-            self.webView.loadHTMLString(content, baseURL: nil)
-            self.webView.injectScript(fontFileName: "Inter-Bold", type: .ttf, fontFamilyName: "Inter")
+            //self.webView.loadHTMLString(content.replacingOccurrences(of: "<p>", with: "<h1>").replacingOccurrences(of: "</p>", with: "</h1>"), baseURL: nil)
+            let headString = "<head><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'></head>"
+            self.webView.loadHTMLString(headString + content, baseURL: nil)
+            self.webView.injectScript(fontFileName: "Inter-Bold", type: .ttf, fontFamilyName: "inter")
+            self.webView.injectScript(fontFileName: "Inter-Regular", type: .ttf, fontFamilyName: "inter")
         }
     }
     

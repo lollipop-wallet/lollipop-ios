@@ -44,6 +44,7 @@ protocol PromotionsViewProtocol: AnyObject {
 protocol PromotionsWireframeProtocol: AnyObject {
     static var partnerAlias: String? { get set }
     func toDetailsWith(banner: Banner?)
+    func toHTMLWith(title: String, description: String, buttonTitle: String, externalLink: String)
 }
 
 //MARK: PromotionsCell Protocol
