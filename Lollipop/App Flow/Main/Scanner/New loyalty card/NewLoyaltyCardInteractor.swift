@@ -32,7 +32,7 @@ class NewLoyaltyCardInteractor: NewLoyaltyCardInputInteractorProtocol {
     
     func createDisplayCarad(frontImage: Data, backImage: Data, cardName: String, cardNumber: String, cardBarCode: String, nameOnTheCard: String, note: String){
         UIApplication.topViewController()?.view?.showSpinner()
-        APIClient.createdisplaycard(frontImage: frontImage, backImage: backImage, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, nameOnTheCard: nameOnTheCard, codeType: !cardBarCode.isEmpty ? CardCodeType.plaincode.rawValue : "", note: note) { [weak self] result in
+        APIClient.createdisplaycard(frontImage: frontImage, backImage: backImage, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, nameOnTheCard: nameOnTheCard, codeType: !cardBarCode.isEmpty ? CardCodeType.barcode.rawValue : (!cardNumber.isEmpty ? CardCodeType.plaincode.rawValue : ""), note: note) { [weak self] result in
             UIApplication.topViewController()?.view?.hideSpinner()
             self?.presenter?.parseNewCardData(result: result)
         }
