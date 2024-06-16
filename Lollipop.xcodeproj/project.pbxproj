@@ -378,6 +378,8 @@
 		62BFFD3C2BE7457E00899800 /* LocationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD362BE7457E00899800 /* LocationsModel.swift */; };
 		62BFFD3D2BE7457E00899800 /* LocationsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD372BE7457E00899800 /* LocationsWireframe.swift */; };
 		62BFFD412BE7458E00899800 /* LocationsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD402BE7458E00899800 /* LocationsUI.swift */; };
+		62DA008F2C1E9B45003A45AA /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = 62DA008E2C1E9B45003A45AA /* styles.css */; };
+		62DA00912C1EA473003A45AA /* WKWebView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DA00902C1EA473003A45AA /* WKWebView+Extension.swift */; };
 		62E24BC72BEC81D100F6D82B /* Identifier+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E24BC42BEC81D100F6D82B /* Identifier+Extension.swift */; };
 		62E24BC82BEC81D100F6D82B /* DeviceFamily+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E24BC52BEC81D100F6D82B /* DeviceFamily+Extension.swift */; };
 		62E24BC92BEC81D100F6D82B /* DeviceModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E24BC62BEC81D100F6D82B /* DeviceModel+Extension.swift */; };
@@ -894,6 +896,8 @@
 		62BFFD362BE7457E00899800 /* LocationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsModel.swift; sourceTree = "<group>"; };
 		62BFFD372BE7457E00899800 /* LocationsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsWireframe.swift; sourceTree = "<group>"; };
 		62BFFD402BE7458E00899800 /* LocationsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsUI.swift; sourceTree = "<group>"; };
+		62DA008E2C1E9B45003A45AA /* styles.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
+		62DA00902C1EA473003A45AA /* WKWebView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Extension.swift"; sourceTree = "<group>"; };
 		62E24BC42BEC81D100F6D82B /* Identifier+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Identifier+Extension.swift"; sourceTree = "<group>"; };
 		62E24BC52BEC81D100F6D82B /* DeviceFamily+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceFamily+Extension.swift"; sourceTree = "<group>"; };
 		62E24BC62BEC81D100F6D82B /* DeviceModel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceModel+Extension.swift"; sourceTree = "<group>"; };
@@ -1387,6 +1391,7 @@
 		2CACCD672BD527C0008178F8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				62DA008D2C1E9B37003A45AA /* CSS */,
 				62214AEE2BD6E3BA00ABF38E /* Font */,
 				2CACCD912BD52F71008178F8 /* Localization */,
 				62BFFD262BE5E15200899800 /* Code ideas */,
@@ -1478,6 +1483,7 @@
 				2CACCDEC2BD541D3008178F8 /* AppDelegate+Extension.swift */,
 				62E24BC32BEC81B500F6D82B /* Device sizes */,
 				623C1D392C08CAA200296759 /* JSONEncoder+Extension.swift */,
+				62DA00902C1EA473003A45AA /* WKWebView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2595,6 +2601,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		62DA008D2C1E9B37003A45AA /* CSS */ = {
+			isa = PBXGroup;
+			children = (
+				62DA008E2C1E9B45003A45AA /* styles.css */,
+			);
+			path = CSS;
+			sourceTree = "<group>";
+		};
 		62E24BC32BEC81B500F6D82B /* Device sizes */ = {
 			isa = PBXGroup;
 			children = (
@@ -3153,6 +3167,7 @@
 				62214AFC2BD6E3C500ABF38E /* Inter-Bold.ttf in Resources */,
 				2CACCDA02BD530A5008178F8 /* Localizable.strings in Resources */,
 				2CACCD382BD51C83008178F8 /* Base in Resources */,
+				62DA008F2C1E9B45003A45AA /* styles.css in Resources */,
 				62214AFA2BD6E3C500ABF38E /* Inter-Regular.ttf in Resources */,
 				62214AF82BD6E3C500ABF38E /* Inter-ExtraLight.ttf in Resources */,
 				62214B002BD6E3C500ABF38E /* Inter-Medium.ttf in Resources */,
@@ -3603,6 +3618,7 @@
 				62F6CDB42BDBC74B00C4775C /* LollipopWireframe.swift in Sources */,
 				2CACCDAA2BD5327F008178F8 /* UIColor+Extension.swift in Sources */,
 				62730CD52BE9F937004209B9 /* PartnerDetailsOptionsTableViewCell.swift in Sources */,
+				62DA00912C1EA473003A45AA /* WKWebView+Extension.swift in Sources */,
 				2CACCD852BD528F7008178F8 /* LaunchWireframe.swift in Sources */,
 				2CACCD952BD52FA3008178F8 /* LocalizedTitle.swift in Sources */,
 				2CA195532BE23D9300CC10F5 /* EditCardUI.swift in Sources */,

@@ -36,6 +36,7 @@ class HTMLView: UIViewController, HTMLViewProtocol {
     func setContentWith(content: String){
         DispatchQueue.main.async {
             self.webView.loadHTMLString(content, baseURL: nil)
+            self.webView.injectScript(fontFileName: "Inter-Bold", type: .ttf, fontFamilyName: "Inter")
         }
     }
     

@@ -45,8 +45,8 @@ extension HTMLPresenter: HTMLOutputInteractorProtocol {
 
 extension HTMLPresenter {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        let js = "document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust='300%'"//dual size
-        webView.evaluateJavaScript(js, completionHandler: nil)
+//        let js = "document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust='300%'"//dual size
+//        webView.evaluateJavaScript(js, completionHandler: nil)
     }
 }
 
