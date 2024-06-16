@@ -48,7 +48,6 @@ protocol HomeViewProtocol: AnyObject {
 protocol HomeWireframeProtocol: AnyObject {
     static var delegate: HomeControllerProtocol? { get set }
     func toPromotions()
-    func toPromotionDetailsWith(banner: Banner?)
     func toCardTemplates()
     func toLoyaltyCardDetailsWith(card: Card?)
     func toDisplayCardDetailsWith(card: Card?)

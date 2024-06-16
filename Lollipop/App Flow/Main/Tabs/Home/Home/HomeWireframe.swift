@@ -28,12 +28,6 @@ class HomeWireframe: HomeWireframeProtocol {
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func toPromotionDetailsWith(banner: Banner?){
-        let vc = PromotionDetailsView()
-        PromotionDetailsWireframe.banner = banner
-        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func toCardTemplates(){
         let vc = ScanSuggestionView()
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
