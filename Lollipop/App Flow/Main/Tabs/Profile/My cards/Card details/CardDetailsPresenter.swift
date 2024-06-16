@@ -31,7 +31,7 @@ extension CardDetailsPresenter: CardDetailsOutputInteractorProtocol {
         self.delegate = delegate
         self.view?.setFrontCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_front ?? "" : card?.image_front ?? "")
         self.view?.setBackCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_back ?? "" : card?.image_back ?? "")
-        self.view?.setCardNameWith(name: card?.name ?? "")
+        self.view?.setCardNameWith(name: card?.cardType == .loyalty ? card?.card_template?.name ?? "" : card?.name ?? "")
         self.view?.setCardNameHidden(isHidden: card?.isCardNameHidden ?? false)
         self.view?.setCardNumberWith(number: card?.cardNumber ?? "")
         self.view?.setCardNumberHidden(isHidden: card?.isCardNumberHidden ?? false)
