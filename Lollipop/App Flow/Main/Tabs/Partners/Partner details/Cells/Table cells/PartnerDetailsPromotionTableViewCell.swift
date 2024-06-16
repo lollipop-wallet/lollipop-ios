@@ -76,7 +76,7 @@ class PartnerDetailsPromotionTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview()
             make.top.equalTo(titleStack.snp.bottom).offset(24)
             make.bottom.equalToSuperview()
-            make.height.equalTo(216)
+            make.height.equalTo(UIScreen.main.bounds.width * 0.64)
         }
         return view
     }()
@@ -159,7 +159,9 @@ extension PartnerDetailsPromotionTableViewCell {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 6, bottom: 0,trailing: 6)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(170), heightDimension: .estimated(216))
+        //let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(170), heightDimension: .estimated(216))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.435), heightDimension: .fractionalWidth(0.64))
+
 
         let group = NSCollectionLayoutGroup.vertical( layoutSize: groupSize, subitem: item, count: 1)
         //group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 6, bottom: 0,trailing: 6)
