@@ -53,6 +53,7 @@ extension NewPartnerView {
         self.shopNameField.keyboardType = .default
         self.shopNameField.background = AppColors.white
         self.shopNameField.leftSuplementaryIconHidden = true
+        self.shopNameField.rightSuplementaryIconHidden = true
         
         self.cityField.title = "\(LocalizedTitle.cityYouLiveIn.localized)"
         self.cityField.errorHidden = true
