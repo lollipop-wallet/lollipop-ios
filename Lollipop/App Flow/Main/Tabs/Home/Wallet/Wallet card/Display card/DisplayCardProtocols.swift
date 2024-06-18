@@ -44,6 +44,8 @@ protocol DisplayCardViewProtocol: AnyObject {
     func setBarcodeImageWith(image: UIImage)
     func setBarcodeHidden(isHidden: Bool)
     func setCardNumberHidden(isHidden: Bool)
+    func setQRCodeWith(image: UIImage)
+    func setQRCodeHidden(isHidden: Bool)
 }
 //MARK: Wireframe
 protocol DisplayCardWireframeProtocol: AnyObject {

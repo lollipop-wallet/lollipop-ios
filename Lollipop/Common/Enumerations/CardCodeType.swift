@@ -11,4 +11,5 @@ enum CardCodeType: String {
     case barcode = "bar_code"
     case qrcode = "qr_code"
     case plaincode = "plain_code"
+    case nocode = ""
 }

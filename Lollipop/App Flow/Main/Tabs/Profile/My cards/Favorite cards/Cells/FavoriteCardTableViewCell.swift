@@ -188,6 +188,7 @@ class FavoriteCardTableViewCell: UITableViewCell {
         self.subtitleLabel.text = item?.code ?? ""
         self.checkBoxIcon.image = item?.favoriteIcon
         self.checkBoxIcon.tintColor = item?.favoriteIconTintColor
+        self.cardImageView.imageFromURL(url: item?.cardType == .loyalty ? item?.card_template?.image_front ?? "" : item?.image_front ?? "")
     }
     
     //MARK: Actions

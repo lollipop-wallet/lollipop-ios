@@ -30,8 +30,8 @@ protocol NewLoyaltyCardInputInteractorProtocol: AnyObject {
     
     var presenter: NewLoyaltyCardOutputInteractorProtocol?  { get set }
     func viewDidLoad()
-    func createCard(cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String, partnerAlias: String, cardTemplateId: Int)
-    func createDisplayCarad(frontImage: Data, backImage: Data, cardName: String, cardNumber: String, cardBarCode: String, nameOnTheCard: String, note: String)
+    func createCard(cardName: String, cardNumber: String, cardBarcode: String, codeType: String, nameOnCard: String, note: String, partnerAlias: String, cardTemplateId: Int)
+    func createDisplayCarad(frontImage: Data, backImage: Data, cardName: String, cardNumber: String, cardBarCode: String, codeType: String, nameOnTheCard: String, note: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER

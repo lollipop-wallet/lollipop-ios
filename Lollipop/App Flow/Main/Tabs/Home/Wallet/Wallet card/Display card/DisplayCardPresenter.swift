@@ -38,7 +38,12 @@ extension DisplayCardPresenter: DisplayCardOutputInteractorProtocol {
         self.view?.setBarcodeImageWith(image: image)
         self.view?.setCardSerialNumberWith(serialNumber: card?.cardNumber ?? "")
         self.view?.setCardNumberHidden(isHidden: (card?.cardNumber ?? "").isEmpty)
-        self.view?.setBarcodeHidden(isHidden: (card?.code ?? "").isEmpty)
+        self.view?.setBarcodeHidden(isHidden: card?.isBarcodeImageHidden ?? false)
+        self.view?.setQRCodeHidden(isHidden: card?.isQRImageHidden ?? false)
+        if card?.cardCodeType == .qrcode {
+            let qrImage = card?.code?.generateQRCode() ?? UIImage()
+            self.view?.setQRCodeWith(image: qrImage)
+        }
     }
 }
 
@@ -57,6 +62,11 @@ extension DisplayCardPresenter {
         self.view?.setBarcodeImageWith(image: image)
         self.view?.setCardSerialNumberWith(serialNumber: card?.cardNumber ?? "")
         self.view?.setCardNumberHidden(isHidden: (card?.cardNumber ?? "").isEmpty)
-        self.view?.setBarcodeHidden(isHidden: (card?.code ?? "").isEmpty)
+        self.view?.setBarcodeHidden(isHidden: card?.isBarcodeImageHidden ?? false)
+        self.view?.setQRCodeHidden(isHidden: card?.isQRImageHidden ?? false)
+        if card?.cardCodeType == .qrcode {
+            let qrImage = card?.code?.generateQRCode() ?? UIImage()
+            self.view?.setQRCodeWith(image: qrImage)
+        }
     }
 }

@@ -13,6 +13,7 @@ class DisplayCardView: UIViewController, DisplayCardViewProtocol {
     
     var barcodeImageView = UIImageView()
     var barcodeNumberLabel = UILabel()
+    var qrCodeImageView = UIImageView()
     var barcodeStackView = UIStackView()
     var cardSerialNumberLabel = UILabel()
     var cardFrontImageView = UIImageView()
@@ -79,6 +80,18 @@ class DisplayCardView: UIViewController, DisplayCardViewProtocol {
     func setCardNumberHidden(isHidden: Bool){
         DispatchQueue.main.async {
             self.cardSerialNumberLabel.isHidden = isHidden
+        }
+    }
+    
+    func setQRCodeWith(image: UIImage){
+        DispatchQueue.main.async {
+            self.qrCodeImageView.image = image
+        }
+    }
+    
+    func setQRCodeHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.qrCodeImageView.isHidden = isHidden
         }
     }
 

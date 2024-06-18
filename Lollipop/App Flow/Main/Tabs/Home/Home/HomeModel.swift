@@ -38,7 +38,7 @@ struct Card: Codable {
     let note: String?
     let type: String?
     var is_favorite: Int?
-    let card_template: CardTemplate?
+    var card_template: CardTemplate?
     let partner: Partner?
     let position: Int?
     var favoriteIcon: UIImage {
@@ -66,6 +66,31 @@ struct Card: Codable {
         return (type ?? "") == "loyalty" ? .loyalty : .display
     }
     var isSeeAllCards: Bool?
+    
+    var cardCodeType: CardCodeType {
+        get {
+            if (card_template?.code_type ?? "") == "bar_code" {
+                return .barcode
+            }else if (card_template?.code_type ?? "") == "qr_code"{
+                return .qrcode
+            }else if (card_template?.code_type ?? "") == "plain_code"{
+                return .plaincode
+            }else{
+                return .nocode
+            }
+        }
+        set {
+        }
+    }
+    
+    var isBarcodeImageHidden: Bool {
+        return cardCodeType != .barcode
+    }
+    
+    var isQRImageHidden: Bool {
+        return cardCodeType != .qrcode
+    }
+    
 }
 
 struct CardTemplate: Codable {
@@ -73,7 +98,7 @@ struct CardTemplate: Codable {
     let name: String?
     let image_front: String?
     let image_back: String?
-    let code_type: String?
+    var code_type: String?
     let cta_links_to: String?
     let terms_conditions_url: String?
 }

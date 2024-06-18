@@ -64,7 +64,7 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
                 view?.validate(cardNameIsEmpty: cardName.isEmpty)
                 return
             }
-            interactor?.createCard(cardName: cardName, cardNumber: cardNumber, cardBarcode: self.barcode ?? "", nameOnCard: nameOnCard, note: note, partnerAlias: card?.partner?.alias ?? "", cardTemplateId: card?.id ?? 0)
+            interactor?.createCard(cardName: cardName, cardNumber: cardNumber, cardBarcode: self.barcode ?? "", codeType: self.card?.card_template?.code_type ?? "", nameOnCard: nameOnCard, note: note, partnerAlias: card?.partner?.alias ?? "", cardTemplateId: card?.id ?? 0)
         }else{
             guard !cardName.isEmpty else {
                 view?.validate(cardNameIsEmpty: cardName.isEmpty)
@@ -79,13 +79,14 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
             let frontImageData = self.frontImage?.jpegData(compressionQuality: 0.4) ?? Data()
             let backImageData = self.backImage?.jpegData(compressionQuality: 0.4) ?? Data()
             
-            interactor?.createDisplayCarad(frontImage: frontImageData, backImage: backImageData, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarcode, nameOnTheCard: nameOnCard, note: note)
+            interactor?.createDisplayCarad(frontImage: frontImageData, backImage: backImageData, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarcode, codeType: self.card?.card_template?.code_type ?? "", nameOnTheCard: nameOnCard, note: note)
         }
     }
 }
 
 extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
     func takeDataWith(card: Card?, barcode: String, isFromTemplate: Bool, delegate: NewLoyaltyCardControllerProtocol? ) {
+        print("Koji je tip kartice: ", card?.card_template?.code_type ?? "")
         self.card = card
         self.barcode = barcode
         self.isFromTemplate = isFromTemplate

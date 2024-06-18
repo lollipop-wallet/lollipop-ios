@@ -70,7 +70,12 @@ extension DisplayCardView {
             make.height.equalTo(22)
         }
         
-        self.barcodeStackView = UIStackView(arrangedSubviews: [self.barcodeImageView, self.barcodeNumberLabel])
+        self.qrCodeImageView.contentMode = .scaleAspectFit
+        self.qrCodeImageView.snp.makeConstraints { make in
+            make.width.height.equalTo(101)
+        }
+        
+        self.barcodeStackView = UIStackView(arrangedSubviews: [self.barcodeImageView, self.barcodeNumberLabel, self.qrCodeImageView])
         self.barcodeStackView.axis = .vertical
         self.barcodeStackView.distribution = .fill
         self.barcodeStackView.alignment = .fill
