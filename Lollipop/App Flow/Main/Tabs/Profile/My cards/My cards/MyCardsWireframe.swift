@@ -41,4 +41,16 @@ class MyCardsWireframe: MyCardsWireframeProtocol {
         ReorderCardsWireframe.delegate = delegate
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toLoyaltyCardDetailsWith(card: Card?){
+        let vc = WalletCardView()
+        WalletCardWireframe.card = card
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func toDisplayCardDetailsWith(card: Card?){
+        let vc = DisplayCardView()
+        DisplayCardWireframe.card = card
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

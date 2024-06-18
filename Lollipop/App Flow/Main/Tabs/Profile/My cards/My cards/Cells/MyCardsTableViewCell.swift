@@ -179,10 +179,10 @@ class MyCardsTableViewCell: UITableViewCell {
     
     //MARK: Actions
     @objc func onCardTap() {
-        
+        delegate?.didSelectItemForBarcodeAt(index: self.index)
     }
     
     @objc func onCellTap() {
-        delegate?.didSelectItemAt(index: self.index)
+        delegate?.didSelectItemForDetailsAt(index: self.index)
     }
 }

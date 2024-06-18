@@ -27,12 +27,13 @@ protocol MyCardsInputInteractorProtocol: AnyObject {
     
     var presenter: MyCardsOutputInteractorProtocol?  { get set }
     func viewDidLoad(showSpinner: Bool)
-   
+    func getCardDetailsWith(alias: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol MyCardsOutputInteractorProtocol: AnyObject {
     func parseCardsData(result: Result<[Card], AFError>, delegate: MyCardsControllerProtocol?)
+    func parseCardDetailsWith(result: Result<Card, AFError>)
 }
 //MARK: View
 protocol MyCardsViewProtocol: AnyObject {
@@ -47,11 +48,14 @@ protocol MyCardsWireframeProtocol: AnyObject {
     func toFavoriteCardsWith(cards: [Card], delegate: FavoriteCardsControllerProtocol?)
     func toReorderCardsWith(cards: [Card], delegate: ReorderCardsControllerProtocol?)
     func toDetails(card: Card?, delegate: CardDetailsControllerProtocol?)
+    func toLoyaltyCardDetailsWith(card: Card?)
+    func toDisplayCardDetailsWith(card: Card?)
 }
 
 //MARK: MyCardsCell Protocol
 protocol MyCardsCellProtocol: AnyObject {
-    func didSelectItemAt(index: IndexPath)
+    func didSelectItemForBarcodeAt(index: IndexPath)
+    func didSelectItemForDetailsAt(index: IndexPath)
 }
 
 //MARK: MyCardsController Protocol

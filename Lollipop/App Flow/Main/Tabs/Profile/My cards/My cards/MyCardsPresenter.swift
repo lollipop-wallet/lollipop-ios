@@ -66,6 +66,19 @@ extension MyCardsPresenter: MyCardsOutputInteractorProtocol {
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }
     }
+    
+    func parseCardDetailsWith(result: Result<Card, AFError>){
+        switch result {
+        case .success(let card):
+            if card.cardType == .loyalty {
+                wireframe?.toLoyaltyCardDetailsWith(card: card)
+            }else{
+                wireframe?.toDisplayCardDetailsWith(card: card)
+            }
+        case .failure(let error):
+            Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
 }
 
 
@@ -83,10 +96,16 @@ extension MyCardsPresenter {
     }
 
     
-    func didSelectItemAt(index: IndexPath) {
+    func didSelectItemForDetailsAt(index: IndexPath) {
         self.selectedIndex = index.row
         let item = self.datasource[index.row]
         wireframe?.toDetails(card: item, delegate: self)
+    }
+    
+    func didSelectItemForBarcodeAt(index: IndexPath) {
+        self.selectedIndex = index.row
+        let item = self.datasource[index.row]
+        interactor?.getCardDetailsWith(alias: item.alias ?? "")
     }
 }
 
