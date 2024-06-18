@@ -28,6 +28,7 @@ class DisplayCardPresenter: NSObject, DisplayCardPresenterProtocol  {
 
 extension DisplayCardPresenter: DisplayCardOutputInteractorProtocol {
     func takeData(card: Card?){
+        print("Koji je tip kartice: ", card?.cardCodeType)
         self.card = card
         self.view?.setTitleWith(title: card?.name ?? "")
         self.view?.setCardFrontImageWith(image: card?.image_front ?? "")

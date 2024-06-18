@@ -41,6 +41,7 @@ struct Card: Codable {
     var card_template: CardTemplate?
     let partner: Partner?
     let position: Int?
+    let code_type: String?
     var favoriteIcon: UIImage {
         return UIImage(named: (is_favorite ?? 0) == 1 ? AssetTitles.heartIcon : AssetTitles.outlinedHeartIcon)!
     }
@@ -69,14 +70,26 @@ struct Card: Codable {
     
     var cardCodeType: CardCodeType {
         get {
-            if (card_template?.code_type ?? "") == "bar_code" {
-                return .barcode
-            }else if (card_template?.code_type ?? "") == "qr_code"{
-                return .qrcode
-            }else if (card_template?.code_type ?? "") == "plain_code"{
-                return .plaincode
+            if card_template == nil {
+                if (code_type ?? "") == "bar_code" {
+                    return .barcode
+                }else if (code_type ?? "") == "qr_code"{
+                    return .qrcode
+                }else if (code_type ?? "") == "plain_code"{
+                    return .plaincode
+                }else{
+                    return .nocode
+                }
             }else{
-                return .nocode
+                if (card_template?.code_type ?? "") == "bar_code" {
+                    return .barcode
+                }else if (card_template?.code_type ?? "") == "qr_code"{
+                    return .qrcode
+                }else if (card_template?.code_type ?? "") == "plain_code"{
+                    return .plaincode
+                }else{
+                    return .nocode
+                }
             }
         }
         set {
