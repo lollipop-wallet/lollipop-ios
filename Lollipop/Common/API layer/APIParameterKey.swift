@@ -38,4 +38,6 @@ struct APIParameterKey {
     static let phone = "phone"
     static let languageId = "language_id"
     static let currentPassword = "current_password"
+    static let imageFront = "image_front"
+    static let imageBack = "image_back"
 }

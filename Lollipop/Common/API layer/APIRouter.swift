@@ -193,7 +193,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
             case .updateavatar(let avatar):
                 return [APIParameterKey.avatar : avatar]
             case .createdisplaycard(let frontImage, let backImage, let cardName, let cardNumber, let cardBarCode, let nameOnTheCard, let codeType, let note):
-                return [APIParameterKey.frontImage : frontImage, APIParameterKey.backImage : backImage, APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : note, APIParameterKey.type : CardType.display.rawValue, APIParameterKey.nameOnTheCard : nameOnTheCard]
+                return [APIParameterKey.imageFront : frontImage, APIParameterKey.imageBack : backImage, APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : note, APIParameterKey.type : CardType.display.rawValue, APIParameterKey.nameOnTheCard : nameOnTheCard]
             }
         }
     }
