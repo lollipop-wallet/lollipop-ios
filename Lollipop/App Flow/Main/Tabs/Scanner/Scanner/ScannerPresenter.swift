@@ -33,21 +33,19 @@ extension ScannerPresenter: ScannerOutputInteractorProtocol {
 //MARK: Barcodescanner delegate
 extension ScannerPresenter {
     func scanner(_ controller: BarcodeScanner.BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-        if self.card?.card_template == nil {
+        if (self.card?.name ?? "").isEmpty {
             if type.contains("QRCode") {
-                if self.card?.card_template == nil {
-                    let cardTemplate = CardTemplate(id: 0, name: "", image_front: "", image_back: "", code_type: CardCodeType.qrcode.rawValue, cta_links_to: "", terms_conditions_url: "")
-                    let card = Card(id: 0, name: "", alias: "", name_on_card: "", image_front: "", image_back: "", code: "", cardNumber: "", note: "", type: "", is_favorite: 0, card_template: cardTemplate, partner: nil, position: 0, code_type: "", isSeeAllCards: false)
-                    wireframe?.toNewCardWith(card: card, barcode: code)
-                }else{
-                    wireframe?.toNewCardWith(card: self.card, barcode: code)
-                }
+                let cardTemplate = CardTemplate(id: 0, name: "", image_front: "", image_back: "", code_type: CardCodeType.qrcode.rawValue, cta_links_to: "", terms_conditions_url: "")
+                let card = Card(id: 0, name: "", alias: "", name_on_card: "", image_front: "", image_back: "", code: "", cardNumber: "", note: "", type: "", is_favorite: 0, card_template: cardTemplate, partner: nil, position: 0, code_type: "", isSeeAllCards: false)
+                wireframe?.toNewCardWith(card: card, barcode: code)
             }else {
                 let cardTemplate = CardTemplate(id: 0, name: "", image_front: "", image_back: "", code_type: CardCodeType.barcode.rawValue, cta_links_to: "", terms_conditions_url: "")
                 let card = Card(id: 0, name: "", alias: "", name_on_card: "", image_front: "", image_back: "", code: "", cardNumber: "", note: "", type: "", is_favorite: 0, card_template: cardTemplate, partner: nil, position: 0, code_type: "", isSeeAllCards: false)
                 wireframe?.toNewCardWith(card: card, barcode: code)
             }
         }else{
+            let cardTemplate = CardTemplate(id: 0, name: "", image_front: "", image_back: "", code_type: card?.code_type ?? "", cta_links_to: "", terms_conditions_url: "")
+            self.card?.card_template = cardTemplate
             wireframe?.toNewCardWith(card: self.card, barcode: code)
         }
     }
