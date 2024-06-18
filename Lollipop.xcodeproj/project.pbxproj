@@ -2668,7 +2668,6 @@
 			children = (
 				62F6CD702BDBBDF200C4775C /* Main */,
 				62F6CD822BDBC67800C4775C /* Tabs */,
-				62730CD82BEA500B004209B9 /* Scanner */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -2701,6 +2700,7 @@
 				62F6CD832BDBC68800C4775C /* Home */,
 				62F6CD952BDBC6C800C4775C /* Partners */,
 				62F6CDA72BDBC73D00C4775C /* Lollipop */,
+				62730CD82BEA500B004209B9 /* Scanner */,
 				62F6CDB92BDBC78100C4775C /* Profile */,
 			);
 			path = Tabs;

@@ -94,6 +94,12 @@ class MyCardsTableViewCell: UITableViewCell {
         return stack
     }()
     
+    lazy var cardButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(onCardTap), for: .touchUpInside)
+        return button
+    }()
+    
     lazy var cellButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(onCellTap), for: .touchUpInside)
@@ -107,9 +113,16 @@ class MyCardsTableViewCell: UITableViewCell {
             make.leading.top.equalToSuperview().offset(12)
             make.bottom.trailing.equalToSuperview().offset(-12)
         }
+        
+        view.addSubview(cardButton)
+        cardButton.snp.makeConstraints { make in
+            make.leading.bottom.top.equalToSuperview()
+            make.trailing.equalTo(self.rightSupplementaryIcon.snp.leading).offset(-16)
+        }
         view.addSubview(cellButton)
         cellButton.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalToSuperview()
+            make.trailing.top.bottom.equalToSuperview()
+            make.leading.equalTo(self.cardButton.snp.trailing)
         }
         view.layer.cornerRadius = 12
         view.layer.masksToBounds = true
@@ -165,6 +178,10 @@ class MyCardsTableViewCell: UITableViewCell {
     }
     
     //MARK: Actions
+    @objc func onCardTap() {
+        
+    }
+    
     @objc func onCellTap() {
         delegate?.didSelectItemAt(index: self.index)
     }
