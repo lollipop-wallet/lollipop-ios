@@ -86,7 +86,6 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
 
 extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
     func takeDataWith(card: Card?, barcode: String, isFromTemplate: Bool, delegate: NewLoyaltyCardControllerProtocol? ) {
-        print("Koji je tip kartice: ", card?.card_template?.code_type ?? "")
         self.card = card
         self.barcode = barcode
         self.isFromTemplate = isFromTemplate
