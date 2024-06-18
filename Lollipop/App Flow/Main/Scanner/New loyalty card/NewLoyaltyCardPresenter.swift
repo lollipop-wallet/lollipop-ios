@@ -94,6 +94,8 @@ extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
             self.view?.setFrontCardImageWith(image: card?.image_front ?? "")
             self.view?.setBackCardImageWith(image: card?.image_back ?? "")
             self.view?.setCardNameWith(name: card?.name ?? "")
+        }
+        if !barcode.isEmpty {
             self.view?.setBarcodeWith(barcode: barcode)
         }
         self.view?.setFrontCameraControlHidden(isHidden: isFromTemplate)
