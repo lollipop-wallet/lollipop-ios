@@ -13,6 +13,8 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
     
     var barcodeImageView = UIImageView()
     var barcodeNumberLabel = UILabel()
+    var qrCodeImageView = UIImageView()
+    var barcodeStackView = UIStackView()
     var loyaltyCard = LoyaltyCard()
     var tableView = AutomaticHeightTableView()
 

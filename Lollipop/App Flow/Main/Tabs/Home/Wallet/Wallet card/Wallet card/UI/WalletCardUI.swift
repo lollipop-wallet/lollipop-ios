@@ -73,11 +73,31 @@ extension WalletCardView {
         }()
         
         self.barcodeImageView.contentMode = .scaleAspectFit
+        self.barcodeImageView.snp.makeConstraints { make in
+            make.height.equalTo(80)
+        }
         
         self.barcodeNumberLabel.font = .inter(ofSize: 18, name: .regular)
         self.barcodeNumberLabel.textAlignment = .center
         self.barcodeNumberLabel.textColor = AppColors.black
         self.barcodeNumberLabel.text = "231532321315123"
+        self.barcodeNumberLabel.snp.makeConstraints { make in
+            make.height.equalTo(22)
+        }
+        
+        self.qrCodeImageView.contentMode = .scaleAspectFit
+        self.qrCodeImageView.snp.makeConstraints { make in
+            make.width.height.equalTo(101)
+        }
+        
+        self.barcodeStackView = UIStackView(arrangedSubviews: [self.barcodeImageView, self.barcodeNumberLabel, self.qrCodeImageView])
+        self.barcodeStackView.axis = .vertical
+        self.barcodeStackView.distribution = .fill
+        self.barcodeStackView.alignment = .fill
+        self.barcodeStackView.spacing = 7
+//        self.barcodeStackView.snp.makeConstraints { make in
+//            make.width.equalTo(self.view.frame.width - 66)
+//        }
         
         self.loyaltyCard.pointsHidden = true
         
@@ -287,24 +307,25 @@ extension WalletCardView {
             make.width.equalTo(scrollView)
         }
         
-        contentView.addSubview(self.barcodeImageView)
-        self.barcodeImageView.snp.makeConstraints { make in
+        
+        contentView.addSubview(self.barcodeStackView)
+        self.barcodeStackView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(20)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(80)
         }
         
-        contentView.addSubview(self.barcodeNumberLabel)
-        self.barcodeNumberLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.barcodeImageView.snp.bottom).offset(7)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-        }
+//        contentView.addSubview(self.barcodeNumberLabel)
+//        self.barcodeNumberLabel.snp.makeConstraints { make in
+//            make.top.equalTo(self.barcodeImageView.snp.bottom).offset(7)
+//            make.leading.equalToSuperview().offset(20)
+//            make.trailing.equalToSuperview().offset(-20)
+//        }
         
         contentView.addSubview(self.loyaltyCard)
         self.loyaltyCard.snp.makeConstraints { make in
-            make.top.equalTo(self.barcodeNumberLabel.snp.bottom).offset(32)
+            make.top.equalTo(self.barcodeStackView.snp.bottom).offset(32)
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
         }
