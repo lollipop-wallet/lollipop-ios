@@ -48,6 +48,7 @@ extension WalletCardPresenter: WalletCardOutputInteractorProtocol {
         let barcode = RSUnifiedCodeGenerator.shared.generateCode(card?.code ?? "", machineReadableCodeObjectType: AVMetadataObject.ObjectType.code128.rawValue)
         let image = RSAbstractCodeGenerator.resizeImage(barcode ?? UIImage(), targetSize: CGSize(width: UIScreen.main.bounds.width - 20, height: 80), contentMode: UIView.ContentMode.center) ?? UIImage()
         self.view?.setBarcodeImageWith(image: image)
+        self.view?.setBarcodeHidden(isHidden: card?.isBarcodeImageHidden ?? false)
         self.view?.setQRCodeHidden(isHidden: card?.isQRImageHidden ?? false)
         if card?.cardCodeType == .qrcode {
             let qrImage = card?.code?.generateQRCode() ?? UIImage()

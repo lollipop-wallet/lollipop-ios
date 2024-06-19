@@ -78,6 +78,13 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
             self.qrCodeImageView.isHidden = isHidden
         }
     }
+    
+    func setBarcodeHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.barcodeImageView.isHidden = isHidden
+            self.barcodeNumberLabel.isHidden = isHidden
+        }
+    }
 
     //MARK: Actions
     @objc func onBackTap() {
