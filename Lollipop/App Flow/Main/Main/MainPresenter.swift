@@ -25,8 +25,8 @@ class MainPresenter: NSObject, MainPresenterProtocol  {
         
         let vc2 = PartnersView()
         PartnersWireframe.delegate = self
-        vc2.tabBarItem = UITabBarItem(title: LocalizedTitle.stores.localized, image: UIImage(named: AssetTitles.partnersUnselectedIcon), selectedImage: UIImage(named: AssetTitles.partnersSelectedIcon))
-        vc2.navigationController?.title = LocalizedTitle.stores.localized
+        vc2.tabBarItem = UITabBarItem(title: LocalizedTitle.partners.localized, image: UIImage(named: AssetTitles.partnersUnselectedIcon), selectedImage: UIImage(named: AssetTitles.partnersSelectedIcon))
+        vc2.navigationController?.title = LocalizedTitle.partners.localized
         let vc2Nav = UINavigationController(rootViewController: vc2)
         vc2Nav.isNavigationBarHidden = false
         
