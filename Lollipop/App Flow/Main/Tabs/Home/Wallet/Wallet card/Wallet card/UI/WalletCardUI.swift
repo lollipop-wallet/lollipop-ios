@@ -313,7 +313,6 @@ extension WalletCardView {
             make.top.equalToSuperview().offset(20)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.height.equalTo(80)
         }
         
 //        contentView.addSubview(self.barcodeNumberLabel)

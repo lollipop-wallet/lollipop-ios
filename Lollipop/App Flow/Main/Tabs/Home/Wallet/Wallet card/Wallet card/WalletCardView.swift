@@ -66,6 +66,18 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
             self.tableView.reloadData()
         }
     }
+    
+    func setQRCodeWith(image: UIImage){
+        DispatchQueue.main.async {
+            self.qrCodeImageView.image = image
+        }
+    }
+    
+    func setQRCodeHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.qrCodeImageView.isHidden = isHidden
+        }
+    }
 
     //MARK: Actions
     @objc func onBackTap() {
