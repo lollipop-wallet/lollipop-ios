@@ -39,7 +39,6 @@ class WalletWireframe: WalletWireframeProtocol {
     }
     
     func toDisplayCardDetailsWith(card: Card?){
-        print("Je li odje2")
         let vc = DisplayCardView()
         DisplayCardWireframe.card = card
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
