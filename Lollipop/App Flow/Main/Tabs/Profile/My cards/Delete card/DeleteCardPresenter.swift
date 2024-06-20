@@ -16,6 +16,7 @@ class DeleteCardPresenter: DeleteCardPresenterProtocol  {
     
     var delegate: DeleteCardControllerProtocol?
     var alias: String?
+    var arrivalDestination: CardDeletionArrivalDestination?
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -27,9 +28,10 @@ class DeleteCardPresenter: DeleteCardPresenterProtocol  {
 }
 
 extension DeleteCardPresenter: DeleteCardOutputInteractorProtocol {
-    func takeData(delegate: DeleteCardControllerProtocol?, alias: String?){
+    func takeData(delegate: DeleteCardControllerProtocol?, alias: String?, destination: CardDeletionArrivalDestination?){
         self.delegate = delegate
         self.alias = alias
+        self.arrivalDestination = destination
     }
     
     func parseDeletedCardData(result: Result<DeleteCardModel, AFError>){
@@ -40,6 +42,7 @@ extension DeleteCardPresenter: DeleteCardOutputInteractorProtocol {
                     guard let self = self else {return}
                     self.delegate?.didDeleteCard()
                     //MARK: Figure out how to return to the starting position after deletion from each possible spot in the app.
+                    UIApplication.topViewController()?.popBackSpecific(toControllerType: self.arrivalDestination == .wallet ? WalletView.self : MyCardsView.self)
                     UIApplication.topViewController()?.popBack(5)
                 }
            ])

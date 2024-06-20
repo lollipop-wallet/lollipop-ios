@@ -31,7 +31,7 @@ protocol DeleteCardInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol DeleteCardOutputInteractorProtocol: AnyObject {
-    func takeData(delegate: DeleteCardControllerProtocol?, alias: String?)
+    func takeData(delegate: DeleteCardControllerProtocol?, alias: String?, destination: CardDeletionArrivalDestination?)
     func parseDeletedCardData(result: Result<DeleteCardModel, AFError>)
 }
 //MARK: View
@@ -44,6 +44,7 @@ protocol DeleteCardViewProtocol: AnyObject {
 protocol DeleteCardWireframeProtocol: AnyObject {
     static var delegate: DeleteCardControllerProtocol? { get set }
     static var alias: String? { get set }
+    static var destination: CardDeletionArrivalDestination? { get set }
 }
 
 //MARK: DeleteCardControllerProtocol

@@ -19,6 +19,7 @@ class WalletPresenter: NSObject, WalletPresenterProtocol  {
  
     func viewDidLoad() {
         DeleteCardWireframe.delegate = self
+        DeleteCardWireframe.destination = .wallet
         if Manager.isRegistered {
             interactor?.viewDidLoad()
             self.view?.setRightBarButtonItems(shouldSetAddButton: true)

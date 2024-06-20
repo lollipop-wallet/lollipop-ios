@@ -158,6 +158,7 @@
 		2CCF3AB62BD7B29300B3729E /* SignInWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AAF2BD7B29300B3729E /* SignInWireframe.swift */; };
 		2CCF3AB92BD7B2A100B3729E /* SignInUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF3AB82BD7B2A100B3729E /* SignInUI.swift */; };
 		2CD069092C034DA20098B029 /* TabBarIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD069082C034DA20098B029 /* TabBarIndex.swift */; };
+		2CD8AD6B2C245FE900656EF7 /* CardDeletionArrivalDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8AD6A2C245FE900656EF7 /* CardDeletionArrivalDestination.swift */; };
 		2CDDA7362BDA256100B6C8B5 /* OTPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA72F2BDA256100B6C8B5 /* OTPPresenter.swift */; };
 		2CDDA7372BDA256100B6C8B5 /* OTPProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA7302BDA256100B6C8B5 /* OTPProtocols.swift */; };
 		2CDDA7382BDA256100B6C8B5 /* OTPInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDA7312BDA256100B6C8B5 /* OTPInteractor.swift */; };
@@ -674,6 +675,7 @@
 		2CCF3AAF2BD7B29300B3729E /* SignInWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWireframe.swift; sourceTree = "<group>"; };
 		2CCF3AB82BD7B2A100B3729E /* SignInUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUI.swift; sourceTree = "<group>"; };
 		2CD069082C034DA20098B029 /* TabBarIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIndex.swift; sourceTree = "<group>"; };
+		2CD8AD6A2C245FE900656EF7 /* CardDeletionArrivalDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeletionArrivalDestination.swift; sourceTree = "<group>"; };
 		2CDDA72F2BDA256100B6C8B5 /* OTPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPPresenter.swift; sourceTree = "<group>"; };
 		2CDDA7302BDA256100B6C8B5 /* OTPProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPProtocols.swift; sourceTree = "<group>"; };
 		2CDDA7312BDA256100B6C8B5 /* OTPInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInteractor.swift; sourceTree = "<group>"; };
@@ -1528,6 +1530,7 @@
 				623C1D3D2C09BE9800296759 /* CardCodeType.swift */,
 				623E987A2C0F4D77005DC950 /* PartnerIitemType.swift */,
 				621B814F2C12187D0071B7F8 /* InquiryType.swift */,
+				2CD8AD6A2C245FE900656EF7 /* CardDeletionArrivalDestination.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -3536,6 +3539,7 @@
 				62730CD22BE9F500004209B9 /* PartnerDetailsCardTableViewCell.swift in Sources */,
 				62730C732BE8ED97004209B9 /* AboutProgrammeView.swift in Sources */,
 				62730C742BE8ED97004209B9 /* AboutProgrammeModel.swift in Sources */,
+				2CD8AD6B2C245FE900656EF7 /* CardDeletionArrivalDestination.swift in Sources */,
 				62730C752BE8ED97004209B9 /* AboutProgrammeWireframe.swift in Sources */,
 				2CACCDEB2BD54120008178F8 /* PushNotificationsManager.swift in Sources */,
 				2CDDA7402BDA367000B6C8B5 /* OTPInputProtocols.swift in Sources */,

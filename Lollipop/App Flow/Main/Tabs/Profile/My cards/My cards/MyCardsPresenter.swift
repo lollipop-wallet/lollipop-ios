@@ -24,6 +24,7 @@ class MyCardsPresenter: NSObject, MyCardsPresenterProtocol  {
     
     func viewDidLoad() {
         DeleteCardWireframe.delegate = self
+        DeleteCardWireframe.destination = .profile
         self.selectedSegment = 0
         interactor?.viewDidLoad(showSpinner: true)
     }

@@ -11,6 +11,7 @@ class DeleteCardWireframe: DeleteCardWireframeProtocol {
     
     static var delegate: DeleteCardControllerProtocol?
     static var alias: String?
+    static var destination: CardDeletionArrivalDestination?
     
     static func createModule(DeleteCardRef: DeleteCardView) {
         let presenter: DeleteCardPresenterProtocol & DeleteCardOutputInteractorProtocol = DeleteCardPresenter()

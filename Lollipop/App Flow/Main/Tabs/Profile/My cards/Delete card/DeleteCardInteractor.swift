@@ -16,7 +16,8 @@ class DeleteCardInteractor: DeleteCardInputInteractorProtocol {
     func viewDidLoad() {
         let delegate = DeleteCardWireframe.delegate
         let alias = DeleteCardWireframe.alias ?? ""
-        presenter?.takeData(delegate: delegate, alias: alias)
+        let destination = DeleteCardWireframe.destination
+        presenter?.takeData(delegate: delegate, alias: alias, destination: destination)
     }
     
     func delete(alias: String) {
