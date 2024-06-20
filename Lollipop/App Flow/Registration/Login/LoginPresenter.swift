@@ -35,7 +35,6 @@ extension LoginPresenter: LoginOutputInteractorProtocol {
     func parseLoginData(result: Result<LoginModel, AFError>){
         switch result {
         case .success(let model):
-            print("success")
             Manager.token = model.token ?? ""
             UserDefaults.standard.set(Manager.token, forKey: StorageKeys.accessToken.rawValue)
             UserDefaults.standard.synchronize()
