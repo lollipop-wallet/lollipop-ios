@@ -18,6 +18,7 @@ class WalletPresenter: NSObject, WalletPresenterProtocol  {
     var delegate: WalletControllerProtocol?
  
     func viewDidLoad() {
+        DeleteCardWireframe.delegate = self
         if Manager.isRegistered {
             interactor?.viewDidLoad()
             self.view?.setRightBarButtonItems(shouldSetAddButton: true)
@@ -77,5 +78,13 @@ extension WalletPresenter {
     func didSelectLoyaltyCartAt(index: Int) {
         let item = datasource[index]
         interactor?.getCardDetailsWith(alias: item.alias ?? "")
+    }
+}
+
+
+//MARK: DeleteCardController delegate
+extension WalletPresenter {
+    func didDeleteCard() {
+        interactor?.viewDidLoad()
     }
 }

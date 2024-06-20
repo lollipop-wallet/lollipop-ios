@@ -11,7 +11,7 @@ import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol WalletPresenterProtocol: WalletStackProtocol{
+protocol WalletPresenterProtocol: WalletStackProtocol, DeleteCardControllerProtocol{
     
     var interactor: WalletInputInteractorProtocol? { get set }
     var view: WalletViewProtocol? { get set }
