@@ -39,7 +39,8 @@ extension DeleteCardPresenter: DeleteCardOutputInteractorProtocol {
                 { [weak self] _ in
                     guard let self = self else {return}
                     self.delegate?.didDeleteCard()
-                    UIApplication.topViewController()?.popBack(4)
+                    //MARK: Figure out how to return to the starting position after deletion from each possible spot in the app.
+                    UIApplication.topViewController()?.popBack(5)
                 }
            ])
         case .failure(let error):

@@ -28,6 +28,10 @@ class WalletStack: UIView {
     }
     
     func setup(cards: [Card]) {
+        //MARK: Remove all subviews fristly
+        self.subviews.forEach({ $0.removeFromSuperview() })
+        
+        //MARK: Add new views
         for i in 0..<cards.count{
             let card = cards[i]
             let view = WalletCard()
