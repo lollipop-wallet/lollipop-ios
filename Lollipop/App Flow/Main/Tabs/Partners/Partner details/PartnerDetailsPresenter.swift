@@ -106,7 +106,7 @@ extension PartnerDetailsPresenter {
             return cell
         }else if self.datasource[indexPath.row].itemType == .options {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.partnerDetailsOptionsCell.rawValue, for: indexPath) as! PartnerDetailsOptionsTableViewCell
-            cell.configureWith(index: indexPath, delegate: self)
+            cell.configureWith(rulesTitle: self.model?.partner?.rule?.label ?? "", aboutTitle: self.model?.partner?.instruction?.label ?? "",index: indexPath, delegate: self)
             return cell
         }else if self.datasource[indexPath.row].itemType == .poster {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellId.homePosterCell.rawValue, for: indexPath) as! HomePosterCategoryTableViewCell

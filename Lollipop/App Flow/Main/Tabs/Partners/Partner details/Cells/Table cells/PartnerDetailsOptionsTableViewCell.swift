@@ -220,9 +220,11 @@ class PartnerDetailsOptionsTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
-    func configureWith(index: IndexPath, delegate: PartnerDetailsOptionsCellProtocol) {
+    func configureWith(rulesTitle: String, aboutTitle: String, index: IndexPath, delegate: PartnerDetailsOptionsCellProtocol) {
         self.index = index
         self.delegate = delegate
+        self.rulesTitleLabel.text = rulesTitle.isEmpty ? LocalizedTitle.rules.localized : rulesTitle
+        self.aboutTitleLabel.text = aboutTitle.isEmpty ? LocalizedTitle.aboutProgramme.localized : aboutTitle
     }
     
     //MARK: Actions
