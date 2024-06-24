@@ -64,7 +64,7 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
                 view?.validate(cardNameIsEmpty: cardName.isEmpty)
                 return
             }
-            interactor?.createCard(cardName: cardName, cardNumber: cardNumber, cardBarcode: cardBarcode, codeType: self.card?.card_template?.code_type ?? "", nameOnCard: nameOnCard, note: note, partnerAlias: card?.partner?.alias ?? "", cardTemplateId: card?.id ?? 0)
+            interactor?.createCard(cardName: cardName, cardNumber: cardNumber, cardBarcode: cardBarcode, codeType: self.card?.code_type ?? "", nameOnCard: nameOnCard, note: note, partnerAlias: card?.partner?.alias ?? "", cardTemplateId: card?.id ?? 0)
         }else{
             guard !cardName.isEmpty else {
                 view?.validate(cardNameIsEmpty: cardName.isEmpty)
