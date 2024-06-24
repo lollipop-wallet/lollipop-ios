@@ -80,7 +80,7 @@ extension ScanSuggestionPresenter {
     
     func didSelectItemAt(index: IndexPath) {
         let item = self.datasource[index.section][index.row]
-        if item.cardCodeType == .plaincode {
+        if item.cardCodeType == .plaincode || item.cardCodeType == .nocode{
             wireframe?.toNewCardWith(card: item)
         }else{
             wireframe?.toScannerWith(card: item)
