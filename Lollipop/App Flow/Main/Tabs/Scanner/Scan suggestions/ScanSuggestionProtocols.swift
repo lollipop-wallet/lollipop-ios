@@ -42,7 +42,7 @@ protocol ScanSuggestionViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol ScanSuggestionWireframeProtocol: AnyObject {
     func toScannerWith(card: Card?)
-    func toNewCard()
+    func toNewCardWith(card: Card?)
 }
 
 //MARK: ScanSuggestionCell Protocol
