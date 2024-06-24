@@ -167,7 +167,28 @@ extension WalletView {
         self.noCardsView.isHidden = true
         self.cardView.delegate = presenter
         
-        view.addSubview(mainContentView)
+
+        
+        self.allCardsButton.addTarget(self, action: #selector(onSeeAllCardsTap), for: .touchUpInside)
+        self.allCardsButton.setTitle(LocalizedTitle.seeAllCards.localized, for: .normal)
+        self.allCardsButton.backgroundColor = AppColors.white
+        self.allCardsButton.titleLabel?.font = .inter(ofSize: 14, name: .semibold)
+        self.allCardsButton.setTitleColor(AppColors.brandPrimary, for: .normal)
+        self.allCardsButton.layer.cornerRadius = 12
+        self.allCardsButton.layer.masksToBounds = true
+        self.allCardsButton.isHidden = true
+        
+        lazy var scrollView : UIScrollView = {
+            let scView = UIScrollView()
+            return scView
+        }()
+        
+        lazy var contentView : UIView = {
+            let view = UIView()
+            return view
+        }()
+        
+        self.view.addSubview(mainContentView)
         mainContentView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
             make.leading.trailing.bottom.equalToSuperview()
@@ -179,28 +200,32 @@ extension WalletView {
             make.height.equalTo(self.view.frame.height * 0.33)
         }
         
-        self.allCardsButton.addTarget(self, action: #selector(onSeeAllCardsTap), for: .touchUpInside)
-        self.allCardsButton.setTitle(LocalizedTitle.seeAllCards.localized, for: .normal)
-        self.allCardsButton.backgroundColor = AppColors.white
-        self.allCardsButton.titleLabel?.font = .inter(ofSize: 14, name: .semibold)
-        self.allCardsButton.setTitleColor(AppColors.brandPrimary, for: .normal)
-        self.allCardsButton.layer.cornerRadius = 12
-        self.allCardsButton.layer.masksToBounds = true
-        self.allCardsButton.isHidden = true
+        mainContentView.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
         
-        mainContentView.addSubview(self.cardView)
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets.zero)
+            make.width.equalTo(scrollView)
+        }
+        
+        
+        scrollView.addSubview(self.cardView)
         self.cardView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(30)
+            make.top.equalToSuperview().offset(30)
         }
         
-        mainContentView.addSubview(self.allCardsButton)
+        contentView.addSubview(self.allCardsButton)
         self.allCardsButton.snp.makeConstraints { make in
             make.top.equalTo(self.cardView.snp.bottom).offset(48)
             make.height.equalTo(40)
             make.centerX.equalToSuperview()
             make.width.equalTo(170)
+            make.bottom.equalToSuperview().offset(-48)
         }
     }
 }
