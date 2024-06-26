@@ -64,7 +64,8 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
                 view?.validate(cardNameIsEmpty: cardName.isEmpty)
                 return
             }
-            interactor?.createCard(cardName: cardName, cardNumber: cardNumber, cardBarcode: cardBarcode, codeType: self.card?.code_type ?? "", nameOnCard: nameOnCard, note: note, partnerAlias: card?.partner?.alias ?? "", cardTemplateId: card?.id ?? 0)
+            let codeType = self.card?.cardCodeType == .plaincode ? (self.card?.code_type ?? "") : (!cardBarcode.isEmpty ? (self.card?.code_type ?? "") : "")
+            interactor?.createCard(cardName: cardName, cardNumber: cardNumber, cardBarcode: cardBarcode, codeType: codeType, nameOnCard: nameOnCard, note: note, partnerAlias: card?.partner?.alias ?? "", cardTemplateId: card?.id ?? 0)
         }else{
             guard !cardName.isEmpty else {
                 view?.validate(cardNameIsEmpty: cardName.isEmpty)
@@ -100,6 +101,7 @@ extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
         }
         self.view?.setFrontCameraControlHidden(isHidden: isFromTemplate)
         self.view?.setBackCameraControlHidden(isHidden: isFromTemplate)
+        self.view?.setBarcodeFieldHidden(isHidden: card?.cardCodeType == .plaincode)
     }
     
     func parseNewCardData(result: Result<NewLoyaltyCardModel, AFError>){
