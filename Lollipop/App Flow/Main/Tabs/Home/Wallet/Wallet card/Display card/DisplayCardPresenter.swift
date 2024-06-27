@@ -28,11 +28,10 @@ class DisplayCardPresenter: NSObject, DisplayCardPresenterProtocol  {
 
 extension DisplayCardPresenter: DisplayCardOutputInteractorProtocol {
     func takeData(card: Card?){
-        print("Koji je tip kartice: ", card?.cardCodeType)
         self.card = card
         self.view?.setTitleWith(title: card?.name ?? "")
-        self.view?.setCardFrontImageWith(image: card?.image_front ?? "")
-        self.view?.setCardBackImageWith(image: card?.image_back ?? "")
+        self.view?.setCardFrontImageWith(image: card?.card_template != nil ? (card?.card_template?.image_front ?? "") : card?.image_front ?? "")
+        self.view?.setCardBackImageWith(image:  card?.card_template != nil ? (card?.card_template?.image_back ?? "") : card?.image_back ?? "")
         self.view?.setBarcodeNumberWith(barcode: card?.code ?? "")
         let barcode = RSUnifiedCodeGenerator.shared.generateCode(card?.code ?? "", machineReadableCodeObjectType: AVMetadataObject.ObjectType.code128.rawValue)
         let image = RSAbstractCodeGenerator.resizeImage(barcode ?? UIImage(), targetSize: CGSize(width: UIScreen.main.bounds.width - 20, height: 80), contentMode: UIView.ContentMode.center) ?? UIImage()
