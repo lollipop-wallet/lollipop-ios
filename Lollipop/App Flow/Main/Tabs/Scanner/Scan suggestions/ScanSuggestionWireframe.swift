@@ -30,6 +30,7 @@ class ScanSuggestionWireframe: ScanSuggestionWireframeProtocol {
         let vc = NewLoyaltyCardView()
         NewLoyaltyCardWireframe.card = card
         NewLoyaltyCardWireframe.isFromTemplate = (card?.partner?.is_official ?? 0) == 1
+        NewLoyaltyCardWireframe.barcode = ""
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }
