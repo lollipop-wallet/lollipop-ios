@@ -136,7 +136,7 @@ extension ScanSuggestionView {
             label.font = .inter(ofSize: 20, name: .bold)
             label.textColor = AppColors.black
             label.textAlignment = .left
-            label.text = LocalizedTitle.cantSeeCardInTheList.localized
+            label.text = LocalizedTitle.cardNotOnTheList.localized
             return label
         }()
         
