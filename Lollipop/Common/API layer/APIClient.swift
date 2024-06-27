@@ -221,9 +221,9 @@ class APIClient {
         performUpload(route: APIRouter.updateavatar(avatar: avatar), completion: completion)
     }
     
-    static func createloyaltycard(cardName: String, cardNumber: String, cardBarCode: String, nameOnTheCard: String, codeType: String, note: String, partnerAlias: String, templateId: String, completion:@escaping (Result<NewLoyaltyCardModel, AFError>)->Void){
+    static func createloyaltycard(cardName: String, cardNumber: String, cardBarCode: String, nameOnTheCard: String, codeType: String, note: String, partnerAlias: String, templateId: String, cardType: String, completion:@escaping (Result<NewLoyaltyCardModel, AFError>)->Void){
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
-        performRequest(route: APIRouter.createloyaltycard(cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, nameOnTheCard: nameOnTheCard, codeType: codeType, note: note, partnerAlias: partnerAlias, templateId: templateId), completion: completion)
+        performRequest(route: APIRouter.createloyaltycard(cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, nameOnTheCard: nameOnTheCard, codeType: codeType, note: note, partnerAlias: partnerAlias, templateId: templateId, cardType: cardType), completion: completion)
     }
     
     static func createdisplaycard(frontImage: Data, backImage: Data, cardName: String, cardNumber: String, cardBarCode: String, nameOnTheCard: String, codeType: String, note: String, completion:@escaping (Result<NewLoyaltyCardModel, AFError>)->Void){

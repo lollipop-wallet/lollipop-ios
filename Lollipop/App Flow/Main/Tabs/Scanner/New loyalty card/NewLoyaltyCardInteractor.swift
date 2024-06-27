@@ -21,9 +21,9 @@ class NewLoyaltyCardInteractor: NewLoyaltyCardInputInteractorProtocol {
         presenter?.takeDataWith(card: card, barcode: barcode, isFromTemplate: isFromTemplate, delegate: delegate)
     }
     
-    func createCard(cardName: String, cardNumber: String, cardBarcode: String, codeType: String, nameOnCard: String, note: String, partnerAlias: String, cardTemplateId: Int){
+    func createCard(cardName: String, cardNumber: String, cardBarcode: String, codeType: String, nameOnCard: String, note: String, partnerAlias: String, cardTemplateId: Int, cardType: String){
         UIApplication.topViewController()?.view?.showSpinner()
-        APIClient.createloyaltycard(cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarcode, nameOnTheCard: nameOnCard, codeType: codeType, note: note, partnerAlias: partnerAlias, templateId: String(cardTemplateId)) { [weak self] result in
+        APIClient.createloyaltycard(cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarcode, nameOnTheCard: nameOnCard, codeType: codeType, note: note, partnerAlias: partnerAlias, templateId: String(cardTemplateId), cardType: cardType) { [weak self] result in
             UIApplication.topViewController()?.view?.hideSpinner()
             guard let self = self else { return }
             self.presenter?.parseNewCardData(result: result)
