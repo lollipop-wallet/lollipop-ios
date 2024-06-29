@@ -27,9 +27,16 @@ struct AppColors {
     
 
 struct ColorHex {
-    static let brandPrimary = "#7D58B8"
-    static let brandSecondary = "#CDB0FB"
-    static let brandPowder = "#F3DAE0"
+    //MARK: Old
+    //static let brandPrimary = "#7D58B8"
+    //static let brandSecondary = "#CDB0FB"
+    //static let brandPowder = "#F3DAE0"
+
+    //MARK: New
+    static let brandPrimary = "#2D40FF"
+    static let brandSecondary = "#D5D9FF"
+    static let brandPowder = "#D5D9FF"
+    
     static let black = "#221F1F"
     static let darkGrey = "#AFACB2"
     static let mediumGrey = "#E1E1E1"

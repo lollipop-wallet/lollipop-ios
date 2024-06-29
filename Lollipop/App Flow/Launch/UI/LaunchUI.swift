@@ -22,7 +22,8 @@ extension LaunchView {
         
         self.view.addSubview(lollipopIcon)
         lollipopIcon.snp.makeConstraints { make in
-            make.width.height.equalTo(104)
+            make.width.equalTo(224)
+            make.height.equalTo(62)
             make.centerX.centerY.equalToSuperview()
         }
     }
