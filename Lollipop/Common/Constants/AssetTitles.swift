@@ -84,4 +84,6 @@ struct AssetTitles {
     static let illustrationSuccessInquiryIcon = "ic_illustration_inquiry_success"
     static let logoutIcon = "ic_log_out"
     static let walletSelectedIcon = "ic_wallet_selected"
+    static let cardsPlaceholderIcon = "ic_cards_placeholder"
+    static let lastCardPlaceholderIcon = "ic_last_card_placeholder"
 }

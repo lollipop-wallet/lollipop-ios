@@ -32,10 +32,18 @@ class LoyaltyCardCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
+    lazy var lastCardBackgroundImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: AssetTitles.lastCardPlaceholderIcon)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
     lazy var seeAllCardsLabel: UILabel = {
         let label = UILabel()
         label.font = .inter(ofSize: 14, name: .semibold)
-        label.textColor = AppColors.brandPrimary
+        label.textColor = AppColors.white
         label.textAlignment = .center
         label.text = LocalizedTitle.seeAllCards.localized
         return label
@@ -50,6 +58,7 @@ class LoyaltyCardCollectionViewCell: UICollectionViewCell {
     
     lazy var seeAllCardsPlaceHolder: UIView = {
         let view = UIView()
+        
         view.addSubview(seeAllCardsLabel)
         seeAllCardsLabel.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
@@ -60,7 +69,7 @@ class LoyaltyCardCollectionViewCell: UICollectionViewCell {
         }
         view.layer.cornerRadius = 12
         view.layer.masksToBounds = true
-        view.backgroundColor = AppColors.white
+        view.backgroundColor = AppColors.brandPrimary
         return view
     }()
 
@@ -69,6 +78,12 @@ class LoyaltyCardCollectionViewCell: UICollectionViewCell {
         let view = UIView()
         view.layer.cornerRadius = 24
         view.layer.masksToBounds = true
+        
+        view.addSubview(lastCardBackgroundImage)
+        lastCardBackgroundImage.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+        
         view.addSubview(photo)
         photo.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
@@ -115,8 +130,9 @@ class LoyaltyCardCollectionViewCell: UICollectionViewCell {
         self.index = index
         self.photo.imageFromURL(url: item?.cardType == .loyalty ? item?.card_template?.image_front ?? "" : item?.image_front ?? "")
         self.photo.isHidden = (item?.isSeeAllCards ?? false)
+        self.lastCardBackgroundImage.isHidden = !(item?.isSeeAllCards ?? false)
         self.seeAllCardsPlaceHolder.isHidden = !(item?.isSeeAllCards ?? false)
-        self.photoPlaceHolder.backgroundColor = (item?.isSeeAllCards ?? false) ? AppColors.brandPrimary : AppColors.white
+        //self.photoPlaceHolder.backgroundColor = (item?.isSeeAllCards ?? false) ? AppColors.brandPrimary : AppColors.white
     }
     
     

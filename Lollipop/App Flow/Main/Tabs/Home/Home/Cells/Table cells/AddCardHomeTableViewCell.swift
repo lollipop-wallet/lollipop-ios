@@ -23,19 +23,27 @@ class AddCardHomeTableViewCell: UITableViewCell {
         return view
     }()
     
-    lazy var lightPurpleBackgroundView: UIView = {
+    lazy var brandBlueBackgroundView: UIView = {
         let view = UIView()
-        view.backgroundColor = AppColors.brandPrimary.withAlphaComponent(0.2)
+        view.backgroundColor = AppColors.brandPrimary
         view.layer.cornerRadius = 16
         view.layer.masksToBounds = true
         return view
+    }()
+    
+    lazy var backgroudImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: AssetTitles.cardsPlaceholderIcon)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
     }()
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .inter(ofSize: 30, name: .bold)
         label.textAlignment = .left
-        label.textColor = AppColors.white
+        label.textColor = AppColors.black
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.text = LocalizedTitle.digitalizePlasticCardTitle.localized
@@ -46,7 +54,7 @@ class AddCardHomeTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = .inter(ofSize: 14, name: .regular)
         label.textAlignment = .left
-        label.textColor = AppColors.white
+        label.textColor = AppColors.black
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.text = LocalizedTitle.digitalizePlasticCardSubtitle.localized
@@ -66,9 +74,9 @@ class AddCardHomeTableViewCell: UITableViewCell {
         let button = UIButton()
         button.addTarget(self, action: #selector(onAddCardTap), for: .touchUpInside)
         button.setTitle(LocalizedTitle.addCard.localized, for: .normal)
-        button.backgroundColor = AppColors.white
+        button.backgroundColor = AppColors.brandPrimary
         button.titleLabel?.font = .inter(ofSize: 14, name: .semibold)
-        button.setTitleColor(AppColors.black, for: .normal)
+        button.setTitleColor(AppColors.white, for: .normal)
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true
         return button
@@ -76,6 +84,11 @@ class AddCardHomeTableViewCell: UITableViewCell {
     
     lazy var dataContentView: UIView = {
         let view = UIView()
+        view.addSubview(backgroudImage)
+        backgroudImage.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+        
         view.addSubview(textStack)
         textStack.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
@@ -128,8 +141,8 @@ class AddCardHomeTableViewCell: UITableViewCell {
             make.top.equalTo(topPaddingView.snp.bottom)
         }
         
-        view.addSubview(lightPurpleBackgroundView)
-        lightPurpleBackgroundView.snp.makeConstraints { make in
+        view.addSubview(brandBlueBackgroundView)
+        brandBlueBackgroundView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
             make.top.equalToSuperview().offset(17)
