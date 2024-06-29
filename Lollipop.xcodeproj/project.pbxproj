@@ -3900,6 +3900,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2F5C16632B5378460D3B34E7 /* Pods-Lollipop.lollipop developmet debug.xcconfig */;
 			buildSettings = {
+				APP_NAME = "Lollypop Dev";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lollipop/Lollipop.entitlements;
@@ -3935,6 +3936,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D3FE9FE9BD3C0E082D2D49D8 /* Pods-Lollipop.lollipop development release.xcconfig */;
 			buildSettings = {
+				APP_NAME = "Lollypop Dev";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lollipop/Lollipop.entitlements;
@@ -4111,6 +4113,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38FFEF8E6EBB79E961E895E0 /* Pods-Lollipop.lollipop production debug.xcconfig */;
 			buildSettings = {
+				APP_NAME = Lollypop;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lollipop/Lollipop.entitlements;
@@ -4243,6 +4246,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7089D40ECF3C7B2E72F9D192 /* Pods-Lollipop.lollipop production release.xcconfig */;
 			buildSettings = {
+				APP_NAME = Lollypop;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lollipop/Lollipop.entitlements;
