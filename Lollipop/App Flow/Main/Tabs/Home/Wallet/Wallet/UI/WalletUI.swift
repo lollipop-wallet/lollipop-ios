@@ -48,9 +48,9 @@ extension WalletView {
             return view
         }()
         
-        lazy var lightPurpleBackgroundView: UIView = {
+        lazy var brandPrimaryBackgroundView: UIView = {
             let view = UIView()
-            view.backgroundColor = AppColors.brandPrimary.withAlphaComponent(0.2)
+            view.backgroundColor = AppColors.brandPrimary
             view.layer.cornerRadius = 16
             view.layer.masksToBounds = true
             return view
@@ -60,7 +60,7 @@ extension WalletView {
             let label = UILabel()
             label.font = .inter(ofSize: 30, name: .bold)
             label.textAlignment = .left
-            label.textColor = AppColors.white
+            label.textColor = AppColors.black
             label.numberOfLines = 0
             label.lineBreakMode = .byWordWrapping
             label.text = LocalizedTitle.digitalizePlasticCardTitle.localized
@@ -71,7 +71,7 @@ extension WalletView {
             let label = UILabel()
             label.font = .inter(ofSize: 14, name: .regular)
             label.textAlignment = .left
-            label.textColor = AppColors.white
+            label.textColor = AppColors.black
             label.numberOfLines = 0
             label.lineBreakMode = .byWordWrapping
             label.text = LocalizedTitle.digitalizePlasticCardSubtitle.localized
@@ -91,16 +91,29 @@ extension WalletView {
             let button = UIButton()
             button.addTarget(self, action: #selector(onAddCardTap), for: .touchUpInside)
             button.setTitle(LocalizedTitle.addCard.localized, for: .normal)
-            button.backgroundColor = AppColors.white
+            button.backgroundColor = AppColors.brandPrimary
             button.titleLabel?.font = .inter(ofSize: 14, name: .semibold)
-            button.setTitleColor(AppColors.black, for: .normal)
+            button.setTitleColor(AppColors.white, for: .normal)
             button.layer.cornerRadius = 12
             button.layer.masksToBounds = true
             return button
         }()
         
+        lazy var backgroudImage: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.cardsPlaceholderIcon)
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+            return imageView
+        }()
+        
         lazy var dataContentView: UIView = {
             let view = UIView()
+            view.addSubview(backgroudImage)
+            backgroudImage.snp.makeConstraints { make in
+                make.leading.trailing.top.bottom.equalToSuperview()
+            }
+            
             view.addSubview(textStack)
             textStack.snp.makeConstraints { make in
                 make.leading.equalToSuperview().offset(20)
@@ -125,8 +138,8 @@ extension WalletView {
         lazy var noCardsContainerView: UIView = {
             let view = UIView()
             
-            view.addSubview(lightPurpleBackgroundView)
-            lightPurpleBackgroundView.snp.makeConstraints { make in
+            view.addSubview(brandPrimaryBackgroundView)
+            brandPrimaryBackgroundView.snp.makeConstraints { make in
                 make.leading.equalToSuperview().offset(12)
                 make.trailing.equalToSuperview().offset(-12)
                 make.top.equalToSuperview()
