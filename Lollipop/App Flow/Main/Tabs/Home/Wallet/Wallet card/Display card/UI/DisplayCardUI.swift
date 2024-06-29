@@ -43,7 +43,7 @@ extension DisplayCardView {
         
         lazy var mainContentView: UIView = {
             let view = UIView()
-            view.backgroundColor = AppColors.brandPrimary
+            view.backgroundColor = AppColors.brandSecondary
             return view
         }()
         
