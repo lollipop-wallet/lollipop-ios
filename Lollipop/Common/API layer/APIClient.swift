@@ -280,5 +280,10 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.changepassword(currentPwd: oldPassword, newPwd: newPassword, newPwdConfirm: newPasswordConfirmation), completion: completion)
     }
+    
+    static func updatedisplaycard(cardAlias: String, frontImage: Data, backImage: Data, cardName: String, cardNumber: String, cardBarCode: String, codeType: String, nameOnTheCard: String, notes: String, completion:@escaping (Result<EditCardModel, AFError>)->Void){
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
+        performUpload(route: APIRouter.updatedisplaycard(cardAlias: cardAlias, frontImage: frontImage, backImage: backImage, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, codeType: codeType, nameOnTheCard: nameOnTheCard, notes: notes), completion: completion)
+    }
 }
 
