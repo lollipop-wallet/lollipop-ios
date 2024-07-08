@@ -151,9 +151,9 @@ enum APIRouter: URLRequestConvertible, Equatable {
         case .reordercards(let cards):
             return [APIParameterKey.cards : cards]
         case .updateloyaltycard(_, let cardName, let cardNumber, let cardBarCode, let codeType, let nameOnTheCard, let notes):
-            return [APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : notes, APIParameterKey.nameOnTheCard : nameOnTheCard]
+            return [APIParameterKey.name : cardName, APIParameterKey.customerCode : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : notes, APIParameterKey.nameOnTheCard : nameOnTheCard]
         case .createloyaltycard(let cardName, let cardNumber, let cardBarCode, let nameOnTheCard, let codeType, let note, let partnerAlias, let templateId, let cardType):
-            return [APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : note, APIParameterKey.partnerAlias : partnerAlias, APIParameterKey.cardTemplateId : templateId, APIParameterKey.type : cardType, APIParameterKey.nameOnTheCard : nameOnTheCard]
+            return [APIParameterKey.name : cardName, APIParameterKey.customerCode : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : note, APIParameterKey.partnerAlias : partnerAlias, APIParameterKey.cardTemplateId : templateId, APIParameterKey.type : cardType, APIParameterKey.nameOnTheCard : nameOnTheCard]
         case .inquiry(let name, let city, let phone, let alias, let email):
             return [APIParameterKey.type : InquiryType.card.rawValue, APIParameterKey.customerName : name, APIParameterKey.country : Configuration.defaultCountry, APIParameterKey.city : city, APIParameterKey.phone : phone, APIParameterKey.partnerAlias : alias, APIParameterKey.email : email]
         case .updateuser(let name, let email, let phone, let dob, let city, let gender):
@@ -196,9 +196,9 @@ enum APIRouter: URLRequestConvertible, Equatable {
             case .updateavatar(let avatar):
                 return [APIParameterKey.avatar : avatar]
             case .createdisplaycard(let frontImage, let backImage, let cardName, let cardNumber, let cardBarCode, let nameOnTheCard, let codeType, let note):
-                return [APIParameterKey.imageFront : frontImage, APIParameterKey.imageBack : backImage, APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : note, APIParameterKey.type : CardType.display.rawValue, APIParameterKey.nameOnTheCard : nameOnTheCard]
+                return [APIParameterKey.imageFront : frontImage, APIParameterKey.imageBack : backImage, APIParameterKey.name : cardName, APIParameterKey.customerCode : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : note, APIParameterKey.type : CardType.display.rawValue, APIParameterKey.nameOnTheCard : nameOnTheCard]
             case .updatedisplaycard(_, let frontImage, let backImage, let cardName, let cardNumber, let cardBarCode, let codeType, let nameOnTheCard, let notes):
-                return [APIParameterKey.imageFront : frontImage, APIParameterKey.imageBack : backImage, APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : notes, APIParameterKey.nameOnTheCard : nameOnTheCard]
+                return [APIParameterKey.imageFront : frontImage, APIParameterKey.imageBack : backImage, APIParameterKey.name : cardName, APIParameterKey.customerCode : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : notes, APIParameterKey.nameOnTheCard : nameOnTheCard]
             }
         }
     }

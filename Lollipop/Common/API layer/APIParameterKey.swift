@@ -40,4 +40,5 @@ struct APIParameterKey {
     static let currentPassword = "current_password"
     static let imageFront = "image_front"
     static let imageBack = "image_back"
+    static let customerCode = "customer_code"
 }
