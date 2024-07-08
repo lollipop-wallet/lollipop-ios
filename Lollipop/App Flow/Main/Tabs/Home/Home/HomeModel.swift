@@ -59,7 +59,7 @@ struct Card: Codable {
         return (code ?? "").isEmpty
     }
     var isCardNumberHidden: Bool {
-        return (cardNumber ?? "").isEmpty
+        return (customer_code ?? "").isEmpty
     }
     var isNotesHidden: Bool {
         return (note ?? "").isEmpty
