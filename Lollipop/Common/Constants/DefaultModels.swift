@@ -33,5 +33,5 @@ struct DefaultModels {
     
     let partnerCardOptionsDatasource = [PartnerCardOptionModel(title: LocalizedTitle.ihaveCardTitle.localized, subtitile: LocalizedTitle.iHaveCardSubtitle.localized, icon: AssetTitles.cardFilledIcon, option: .possessesCard),
                                         PartnerCardOptionModel(title: LocalizedTitle.iWantCardTitle.localized, subtitile: LocalizedTitle.iWantCardSubtitle.localized, icon: AssetTitles.sendFilledIcon, option: .wantsCard)]
-    let allCardsCard = Card(id: 0, name: "", alias: "", name_on_card: "", image_front: "", image_back: "", code: "", cardNumber: "", note: "", type: "", card_template: nil, partner: nil, position: 0, code_type: "", isSeeAllCards: true)
+    let allCardsCard = Card(id: 0, name: "", alias: "", name_on_card: "", image_front: "", image_back: "", code: "", cardNumber: "", note: "", type: "", card_template: nil, partner: nil, position: 0, code_type: "", customer_code: "", isSeeAllCards: true)
 }

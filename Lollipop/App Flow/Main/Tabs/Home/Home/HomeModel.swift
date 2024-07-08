@@ -42,6 +42,7 @@ struct Card: Codable {
     let partner: Partner?
     let position: Int?
     let code_type: String?
+    let customer_code: String?
     var favoriteIcon: UIImage {
         return UIImage(named: (is_favorite ?? 0) == 1 ? AssetTitles.heartIcon : AssetTitles.outlinedHeartIcon)!
     }
