@@ -97,8 +97,8 @@ extension EditCardPresenter: EditCardOutputInteractorProtocol {
         self.view?.setBarcodeWith(barcode: card?.code ?? "")
         self.view?.setNameOnTheCardWith(nameOnTheCard: card?.name_on_card ?? "")
         self.view?.setNotesWith(notes: card?.note ?? "")
-        self.view?.setFrontCameraControlHidden(isHidden: card?.cardType == .loyalty)
-        self.view?.setBackCameraControlHidden(isHidden: card?.cardType == .loyalty)
+        self.view?.setFrontCameraControlHidden(isHidden: card?.card_template != nil)
+        self.view?.setBackCameraControlHidden(isHidden: card?.card_template != nil)
     }
     
     func parseUpdatedCardData(result: Result<EditCardModel, AFError>){
