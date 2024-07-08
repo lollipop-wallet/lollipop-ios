@@ -7,8 +7,11 @@
 //
 import UIKit
 import Alamofire
+import Photos
+import PhotosUI
+import CropViewController
 
-class EditCardPresenter: EditCardPresenterProtocol  {
+class EditCardPresenter: NSObject, EditCardPresenterProtocol  {
     
     var interactor : EditCardInputInteractorProtocol?
     weak var view: EditCardViewProtocol?
@@ -16,6 +19,10 @@ class EditCardPresenter: EditCardPresenterProtocol  {
     
     var delegate: EditCardControllerProtocol?
     var card: Card?
+    var isFrontCard = Bool()
+    var config = PHPickerConfiguration(photoLibrary: .shared())
+    var frontImage: UIImage?
+    var backImage: UIImage?
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -23,6 +30,34 @@ class EditCardPresenter: EditCardPresenterProtocol  {
     
     func delete(){
         wireframe?.toDelete(alias: self.card?.alias ?? "")
+    }
+    
+    func camera(isFront: Bool){
+        config.selectionLimit = 1
+        config.filter = PHPickerFilter.images
+
+        self.isFrontCard = isFront
+        UIApplication.topViewController()?.openAlert(title: isFront ? LocalizedTitle.frontCardPage.localized : LocalizedTitle.backCardPage.localized, message: LocalizedTitle.photoOrAlbumDescription.localized, alertStyle: .actionSheet, actionTitles: [LocalizedTitle.takeAPhoto.localized, LocalizedTitle.photoAlbum.localized, LocalizedTitle.cancel.localized], actionColors: [.systemBlue, .systemBlue, .systemBlue], actionStyles: [.default, .default, .cancel], actions: [
+            { [weak self] _ in
+                guard let self = self  else {return}
+                if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                    let imagePicker = UIImagePickerController()
+                    imagePicker.delegate = self
+                    imagePicker.sourceType = .camera;
+                    imagePicker.allowsEditing = false
+                    UIApplication.topViewController()?.present(imagePicker, animated: true, completion: nil)
+                }
+            },
+            { [weak self] _ in
+                guard let self = self  else {return}
+                let pickerViewController = PHPickerViewController(configuration: self.config)
+                pickerViewController.delegate = self
+                pickerViewController.modalPresentationStyle = .fullScreen
+                UIApplication.topViewController()?.present(pickerViewController, animated: true, completion: nil)
+            },
+            {_ in
+            }
+       ])
     }
     
     func save(frontImage: UIImage, backImage: UIImage, cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String){
@@ -75,5 +110,55 @@ extension EditCardPresenter: EditCardOutputInteractorProtocol {
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }
+    }
+}
+
+//MARK: PHPickerController Delegate & ImagePicker delegate
+extension EditCardPresenter {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true) {
+            let imageItems = results.map { $0.itemProvider }.filter { $0.canLoadObject(ofClass: UIImage.self) }
+            
+            let dispatchGroup = DispatchGroup()
+            var images = [UIImage]()
+            
+            for imageItem in imageItems {
+                dispatchGroup.enter() // signal IN
+                imageItem.loadObject(ofClass: UIImage.self) { image, _ in
+                    if let image = image as? UIImage {
+                        images.append(image)
+                    }
+                    dispatchGroup.leave() // signal OUT
+                }
+            }
+            // This is called at the end; after all signals are matched (IN/OUT)
+            dispatchGroup.notify(queue: .main) {
+                if !images.isEmpty{
+                    self.wireframe?.toCropViewControllerWith(image: images.first ?? UIImage(), delegate: self)
+                }
+            }
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true) {
+            guard let image = info[.originalImage] as? UIImage else {
+                return
+            }
+            self.wireframe?.toCropViewControllerWith(image: image, delegate: self)
+        }
+    }
+}
+
+//MAKR: Cropview controller delegate
+extension EditCardPresenter {
+    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+        UIApplication.topViewController()?.dismiss(animated: true)
+            self.view?.setFrontCardImageWith(image: image, isFront: self.isFrontCard)
+            if self.isFrontCard {
+                self.frontImage = image
+            }else{
+                self.backImage = image
+            }
     }
 }

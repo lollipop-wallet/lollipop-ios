@@ -104,6 +104,16 @@ class EditCardView: UIViewController, EditCardViewProtocol {
         self.cardNameField.borderWidth = 1
         self.cardNameField.borderColor = cardNameIsEmpty ? AppColors.error : AppColors.black
     }
+    
+    func setFrontCardImageWith(image: UIImage, isFront: Bool){
+        DispatchQueue.main.async {
+            if isFront {
+                self.cardImageFrontSideView.image = image
+            }else{
+                self.cardImageBackSideView.image = image
+            }
+        }
+    }
 
     //MARK: Actions
     @objc func onBackTap() {

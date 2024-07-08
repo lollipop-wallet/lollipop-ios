@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import CropViewController
 
 class EditCardWireframe: EditCardWireframeProtocol {
     
@@ -26,5 +27,12 @@ class EditCardWireframe: EditCardWireframeProtocol {
         let vc = DeleteCardView()
         DeleteCardWireframe.alias = alias
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func toCropViewControllerWith(image: UIImage, delegate: CropViewControllerDelegate){
+        let cropViewController = CropViewController(image: image)
+        cropViewController.delegate = delegate
+        let nav = UINavigationController(rootViewController: cropViewController)
+        UIApplication.topViewController()?.present(nav, animated: true, completion: nil)
     }
 }

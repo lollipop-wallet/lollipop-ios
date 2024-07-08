@@ -8,10 +8,13 @@
 
 import UIKit
 import Alamofire
+import CropViewController
+import Photos
+import PhotosUI
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol EditCardPresenterProtocol: AnyObject {
+protocol EditCardPresenterProtocol: PHPickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CropViewControllerDelegate {
     
     var interactor: EditCardInputInteractorProtocol? { get set }
     var view: EditCardViewProtocol? { get set }
@@ -51,12 +54,14 @@ protocol EditCardViewProtocol: AnyObject {
     func setBackCameraControlHidden(isHidden: Bool)
     func validate(cardNameIsEmpty: Bool, cardCodeIsEmpty: Bool)
     func validate(cardNameIsEmpty: Bool)
+    func setFrontCardImageWith(image: UIImage, isFront: Bool)
 }
 //MARK: Wireframe
 protocol EditCardWireframeProtocol: AnyObject {
     static var card: Card? { get set }
     static var delegate: EditCardControllerProtocol? { get set }
     func toDelete(alias: String)
+    func toCropViewControllerWith(image: UIImage, delegate: CropViewControllerDelegate)
 }
 
 //MARK: EditCardController protocol
