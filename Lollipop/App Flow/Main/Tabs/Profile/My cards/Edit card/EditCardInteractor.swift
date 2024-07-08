@@ -27,4 +27,13 @@ class EditCardInteractor: EditCardInputInteractorProtocol {
             self.presenter?.parseUpdatedCardData(result: result)
         }
     }
+    
+    func updatedisplaycard(cardAlias: String, frontImage: Data, backImage: Data, cardName: String, cardNumber: String, cardBarCode: String, codeType: String, nameOnTheCard: String, note: String){
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.updatedisplaycard(cardAlias: cardAlias, frontImage: frontImage, backImage: backImage, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, codeType: codeType, nameOnTheCard: nameOnTheCard, notes: note) { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self = self else { return }
+            self.presenter?.parseUpdatedCardData(result: result)
+        }
+    }
 }

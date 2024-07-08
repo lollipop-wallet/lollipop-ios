@@ -29,6 +29,7 @@ protocol EditCardInputInteractorProtocol: AnyObject {
     
     func viewDidLoad()
     func updateCard(cardAlias: String, cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String)
+    func updatedisplaycard(cardAlias: String, frontImage: Data, backImage: Data, cardName: String, cardNumber: String, cardBarCode: String, codeType: String, nameOnTheCard: String, note: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
@@ -49,6 +50,7 @@ protocol EditCardViewProtocol: AnyObject {
     func setFrontCameraControlHidden(isHidden: Bool)
     func setBackCameraControlHidden(isHidden: Bool)
     func validate(cardNameIsEmpty: Bool, cardCodeIsEmpty: Bool)
+    func validate(cardNameIsEmpty: Bool)
 }
 //MARK: Wireframe
 protocol EditCardWireframeProtocol: AnyObject {

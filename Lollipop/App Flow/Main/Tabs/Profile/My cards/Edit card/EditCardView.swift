@@ -99,6 +99,11 @@ class EditCardView: UIViewController, EditCardViewProtocol {
         self.cardBarcodeField.borderWidth = 1
         self.cardBarcodeField.borderColor = cardCodeIsEmpty ? AppColors.error : AppColors.black
     }
+    
+    func validate(cardNameIsEmpty: Bool){
+        self.cardNameField.borderWidth = 1
+        self.cardNameField.borderColor = cardNameIsEmpty ? AppColors.error : AppColors.black
+    }
 
     //MARK: Actions
     @objc func onBackTap() {

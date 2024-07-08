@@ -33,7 +33,20 @@ class EditCardPresenter: EditCardPresenterProtocol  {
             }
             interactor?.updateCard(cardAlias: self.card?.alias ?? "", cardName: cardName, cardNumber: cardNumber, cardBarcode: cardBarcode, nameOnCard: nameOnCard, note: note)
         }else{
+            guard !cardName.isEmpty else {
+                view?.validate(cardNameIsEmpty: cardName.isEmpty)
+                return
+            }
             
+//            guard frontImage != nil, backImage != nil else {
+//                Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: LocalizedTitle.cardImagesNotSet.localized, shouldDismiss: false)
+//                return
+//            }
+            
+            let frontImageData = frontImage.jpegData(compressionQuality: 0.4) ?? Data()
+            let backImageData = backImage.jpegData(compressionQuality: 0.4) ?? Data()
+            
+            interactor?.updatedisplaycard(cardAlias: self.card?.alias ?? "", frontImage: frontImageData, backImage: backImageData, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarcode, codeType: self.card?.code_type ?? "", nameOnTheCard: nameOnCard, note: note)
         }
     }
 }
