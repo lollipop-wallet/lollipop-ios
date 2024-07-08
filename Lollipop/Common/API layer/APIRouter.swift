@@ -44,13 +44,15 @@ enum APIRouter: URLRequestConvertible, Equatable {
     case deleteaccount
     case updatelanguage(languageId: Int)
     case changepassword(currentPwd: String, newPwd: String, newPwdConfirm: String)
+    case updatedisplaycard(cardAlias: String, frontImage: Data, backImage: Data, cardName: String, cardNumber: String, cardBarCode: String, codeType: String, nameOnTheCard: String, notes: String)
+
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
         case .getconfig, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards, .getprofile, .getcarddetails, .getlocations, .getbranddetails:
             return .get
-        case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards, .updateloyaltycard, .updateavatar, .createloyaltycard, .createdisplaycard, .inquiry, .updateuser, .logout, .updatelanguage, .changepassword:
+        case .login, .register, .registrationotp, .verifyresetpassword, .sendforgotpwdotp, .togglefavorite, .suggestshop, .togglecardfavorite, .reordercards, .updateloyaltycard, .updateavatar, .createloyaltycard, .createdisplaycard, .inquiry, .updateuser, .logout, .updatelanguage, .changepassword, .updatedisplaycard:
             return .post
         case .deletecard, .deleteaccount:
             return .delete
@@ -122,13 +124,15 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return "user/language"
         case .changepassword:
             return "update-password"
+        case .updatedisplaycard(let alias,_,_,_,_,_,_,_,_):
+            return "cards/\(alias)?includes=partner"
         }
     }
     
     // MARK: - Parameters
     private var parameters: Parameters? {
         switch self {
-        case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards, .getprofile, .updateavatar, .createdisplaycard, .getcarddetails, .getlocations, .getbranddetails, .deletecard, .logout, .deleteaccount:
+        case .getconfig, .registrationotp, .verifyemail, .gethome, .getbrands, .getfavoritebrands, .getpromotions, .getfavoriteshops, .getcardtemplates, .getusercards, .getprofile, .updateavatar, .createdisplaycard, .getcarddetails, .getlocations, .getbranddetails, .deletecard, .logout, .deleteaccount, .updatedisplaycard:
             return nil
         case .login(let email, let password):
             return [APIParameterKey.email : email, APIParameterKey.password : password]
@@ -158,7 +162,6 @@ enum APIRouter: URLRequestConvertible, Equatable {
             return [APIParameterKey.languageId : languageId]
         case .changepassword(let currentPwd, let newPwd, let newPwdConfirmation):
             return [APIParameterKey.currentPassword : currentPwd, APIParameterKey.password : newPwd, APIParameterKey.passwordConfirmation : newPwdConfirmation]
-            
         }
     }
         
@@ -194,6 +197,8 @@ enum APIRouter: URLRequestConvertible, Equatable {
                 return [APIParameterKey.avatar : avatar]
             case .createdisplaycard(let frontImage, let backImage, let cardName, let cardNumber, let cardBarCode, let nameOnTheCard, let codeType, let note):
                 return [APIParameterKey.imageFront : frontImage, APIParameterKey.imageBack : backImage, APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : note, APIParameterKey.type : CardType.display.rawValue, APIParameterKey.nameOnTheCard : nameOnTheCard]
+            case .updatedisplaycard(_, let frontImage, let backImage, let cardName, let cardNumber, let cardBarCode, let codeType, let nameOnTheCard, let notes):
+                return [APIParameterKey.imageFront : frontImage, APIParameterKey.imageBack : backImage, APIParameterKey.name : cardName, APIParameterKey.cardNumber : cardNumber, APIParameterKey.code : cardBarCode, APIParameterKey.codeType : codeType, APIParameterKey.note : notes, APIParameterKey.nameOnTheCard : nameOnTheCard]
             }
         }
     }
