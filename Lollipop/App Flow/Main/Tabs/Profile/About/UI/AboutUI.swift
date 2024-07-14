@@ -41,6 +41,54 @@ extension AboutView {
             return view
         }()
         
+        lazy var topLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .regular)
+            label.textAlignment = .left
+            label.textColor = AppColors.black
+            label.numberOfLines = 0
+            label.lineBreakMode = .byWordWrapping
+            label.text = LocalizedTitle.aboutTopText.localized
+            return label
+        }()
+        
+        lazy var imageOne: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.aboutIcon1)
+            imageView.contentMode = .scaleAspectFill
+            return imageView
+        }()
+        
+        lazy var firstTitleLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 18, name: .semibold)
+            label.textAlignment = .left
+            label.textColor = AppColors.black
+            label.numberOfLines = 0
+            label.lineBreakMode = .byWordWrapping
+            label.text = LocalizedTitle.aboutTitle1.localized
+            return label
+        }()
+        
+        lazy var firstSubtitleLabel: UILabel = {
+            let label = UILabel()
+            label.font = .inter(ofSize: 16, name: .regular)
+            label.textAlignment = .left
+            label.textColor = AppColors.black
+            label.numberOfLines = 0
+            label.lineBreakMode = .byWordWrapping
+            label.text = LocalizedTitle.aboutSubtitle1.localized
+            return label
+        }()
+        
+        lazy var imageTwo: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.aboutIcon2)
+            imageView.contentMode = .scaleAspectFill
+            return imageView
+        }()
+        
+        
         self.view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
@@ -52,6 +100,43 @@ extension AboutView {
         contentView.snp.makeConstraints { make in
             make.edges.equalTo(scrollView).inset(UIEdgeInsets.zero)
             make.width.equalTo(scrollView)
+        }
+        
+        contentView.addSubview(topLabel)
+        topLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+        }
+        
+        contentView.addSubview(imageOne)
+        imageOne.snp.makeConstraints { make in
+            make.top.equalTo(topLabel.snp.bottom).offset(32)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.height.equalTo((self.view.frame.width - 40) * 0.71)
+        }
+        
+        contentView.addSubview(firstTitleLabel)
+        firstTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(imageOne.snp.bottom).offset(32)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+        }
+        
+        contentView.addSubview(firstSubtitleLabel)
+        firstSubtitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(firstTitleLabel.snp.bottom).offset(16)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+        }
+        
+        contentView.addSubview(imageTwo)
+        imageTwo.snp.makeConstraints { make in
+            make.top.equalTo(firstSubtitleLabel.snp.bottom).offset(32)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.height.equalTo((self.view.frame.width - 40) * 0.71)
         }
     }
 }
