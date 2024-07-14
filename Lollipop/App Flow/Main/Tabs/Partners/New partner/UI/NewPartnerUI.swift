@@ -55,7 +55,7 @@ extension NewPartnerView {
         self.shopNameField.leftSuplementaryIconHidden = true
         self.shopNameField.rightSuplementaryIconHidden = true
         
-        self.cityField.title = "\(LocalizedTitle.cityYouLiveIn.localized)"
+        self.cityField.title = "\(LocalizedTitle.city.localized) (\(LocalizedTitle.optional.localized))"
         self.cityField.errorHidden = true
         self.cityField.background = AppColors.white
         self.cityField.text = "Podgorica"
