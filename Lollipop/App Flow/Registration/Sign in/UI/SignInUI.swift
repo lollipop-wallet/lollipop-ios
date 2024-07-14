@@ -83,6 +83,7 @@ extension SignInView {
             let label = UILabel()
             label.font = .inter(ofSize: 14, name: .medium)
             label.text = LocalizedTitle.continueWirhEmail.localized
+            label.textColor = AppColors.white
             label.textAlignment = .center
             return label
         }()
