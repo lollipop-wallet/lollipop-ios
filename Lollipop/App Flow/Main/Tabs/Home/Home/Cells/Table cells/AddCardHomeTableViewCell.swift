@@ -46,7 +46,7 @@ class AddCardHomeTableViewCell: UITableViewCell {
         label.textColor = AppColors.black
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.text = LocalizedTitle.digitalizePlasticCardTitle.localized
+        label.text = LocalizedTitle.placeForYourCards.localized
         return label
     }()
     
@@ -57,7 +57,7 @@ class AddCardHomeTableViewCell: UITableViewCell {
         label.textColor = AppColors.black
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.text = LocalizedTitle.digitalizePlasticCardSubtitle.localized
+        label.text = LocalizedTitle.keepYourCardsInPhone.localized
         return label
     }()
     
