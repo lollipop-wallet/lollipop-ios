@@ -64,7 +64,6 @@ class PartnerDetailsCardTableViewCell: UITableViewCell {
             make.width.equalTo(72)
             make.height.equalTo(47)
         }
-        view.backgroundColor = .red
         return view
     }()
     
@@ -117,7 +116,7 @@ class PartnerDetailsCardTableViewCell: UITableViewCell {
         }
         view.layer.cornerRadius = 12
         view.layer.masksToBounds = true
-        view.backgroundColor = AppColors.brandPrimary
+        view.backgroundColor = AppColors.brandSecondary
         return view
     }()
     
