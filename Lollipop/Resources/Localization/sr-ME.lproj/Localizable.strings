@@ -56,8 +56,8 @@
 "currentPassword" = "Trenutna šifra";
 "newPassword" = "Nova šifra";
 "confirmNewPassword" = "Potvrda nove šifre";
-"deleteAccountTitle" = "Da li si siguran/a da želiš obrisati svoj nalog?";
-"deleteAccountSubtitle" = "Ovom akcijom će biti obrisani svi tvoji podaci i neće biti moguće povratiti ih.";
+"deleteAccountTitle" = "Da li si siguran/a da želiš da obrišeš svoj nalog?";
+"deleteAccountSubtitle" = "Ovom akcijom će svi tvoji podaci biti trajno obrisani i neće biti moguće povratiti ih.";
 "deleteAccount" = "Obriši nalog";
 "myShops" = "Moje prodavnice";
 "mne" = "Crnogorski";
@@ -98,8 +98,8 @@
 "delete" = "Obriši";
 "cardNumber" = "Broj kartice";
 "cardDeletion" = "Brisanje kartice";
-"cardDeletionTitle" = "Da li si siguran/na da želiš da obrišete ovu karticu?";
-"cardDeletionSubtitle" = "Ovom akcijom će biti obrisana kartica i svi podaci koju su za nju vezani.";
+"cardDeletionTitle" = "Da li si siguran/a da želiš da obrišeš ovu karticu?";
+"cardDeletionSubtitle" = "Ovom akcijom će kartica i svi podaci koju su za nju vezani biti obrisani.";
 "deleteCard" = "Obriši karticu";
 "signIn" = "Prijavi se";
 "digitalizePlasticCardTitle" = "Digitalizuj plastičnu karticu";
@@ -151,7 +151,7 @@
 "forgottenPwd" = "Zaboravljena šifra?";
 "noLollypopAccount" = "Nemaš nalog na Lollypop-u?";
 "register" = "Registruj se";
-"cityYouLiveIn" = "Grad u kome živiš";
+"cityYouLiveIn" = "Grad u kom živiš";
 "alreadyHaveAnAccount" = "Već imaš nalog na Lollypop-u?";
 "passwordsDontMatch" = "Šifre se ne podudaraju. Provjeri unos i pokušaj ponovo.";
 "enterEmailForPwdChange" = "Unesi email za promjenu šifre";

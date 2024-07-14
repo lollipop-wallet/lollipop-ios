@@ -114,7 +114,7 @@ extension PersonalDataView {
         self.datePickerStackView.alignment = .fill
         self.datePickerStackView.isHidden = true
         
-        self.cityField.title = "\(LocalizedTitle.city.localized)(\(LocalizedTitle.optional.localized)):"
+        self.cityField.title = "\(LocalizedTitle.cityYouLiveIn.localized)(\(LocalizedTitle.optional.localized)):"
         self.cityField.errorHidden = true
         self.cityField.background = AppColors.white
         self.cityField.text = LocalizedTitle.choose.localized
