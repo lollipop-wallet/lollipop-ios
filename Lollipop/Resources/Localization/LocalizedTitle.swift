@@ -200,6 +200,13 @@ enum LocalizedTitle: String {
     case placeForYourCards
     case keepYourCardsInPhone
     case cardSignUp
+    case aboutTopText
+    case aboutTitle1
+    case aboutSubtitle1
+    case aboutTitle2
+    case aboutSubtitle2
+    case aboutTitle3
+    case aboutSubtitle3
     
     var localized: String {
         return self.rawValue.localized()

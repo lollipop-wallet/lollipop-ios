@@ -188,3 +188,10 @@
 "placeForYourCards" = "Mjesto za sve tvoje kartice";
 "keepYourCardsInPhone" = "Čuvaj svoje loyalty i članske kartice u telefonu";
 "cardSignUp" = "Prijava za karticu";
+"aboutTopText" = "Lollypop je aplikacija koja ti omogućava da digitalizuješ svoje članske, loyalty i druge kartice povoljnosti, i čuvaš ih u telefonu. Nakon registracije možeš da dodaš svoju prvu karticu u aplikaciju.";
+"aboutTitle1" = "Skeniraj bar-kod ili QR kod sa kartica koje već imaš i kad ti zatrebaju, pravac lollypop! Tu su, da ih lako nađeš i pokažeš.";
+"aboutSubtitle1" = "Prebaci svoje kartice s QR ili bar-kodom u lollypop. Skeniraj kod, prati nekoliko jednostavnih koraka i tvoja kartica će biti digitalizovana. Ukoliko želiš, možeš unijeti i dodatne informacije. Kartica će biti sačuvana u aplikaciji, spremna za tvoju narednu kupovinu.\n\nAko kartica koju želiš da dodaš nije na listi ponuđenih, odaberi opciju “Dodaj drugu karticu”. Možeš da skeniraš kod ili ručno uneseš podatke sa kartice, fotografišeš je i sačuvaš u aplikaciji kao pokaznu karticu.";
+"aboutTitle2" = "Više nikad nećeš preturati po karticama u potrazi za onom jednom. Lollypop je jedna aplikacija za sve kartice.";
+"aboutSubtitle2" = "Uz lollypop, sve tvoje kartice povoljnosti uvijek su ti pri ruci. Ne propusti priliku da sakupljaš poene i ostvariš pogodnosti pri svakoj kupovini. Pokaži skeniranu karticu kod naših partnera. Način korišćenja ostaje isti a digitalizovane kartice su elegantnije i ne prave gužvu u novčaniku.";
+"aboutTitle3" = "Uvijek se nešto novo nudi, a lollypop prati dešavanja. Saznaj sve o aktuelnim promo ponudama, a možda otkriješ i neki novi program povoljnosti.";
+"aboutSubtitle3" = "Lollypop ti donosi sve potrebne informacije o različitim programima lojalnosti. Otkrićeš kako da sakupljaš poene, osvajaš popuste, nagrade i druge privilegije, i iskoristiš svoj novac na pametan način.\n\nIstraži naše partnere i informiši se o najnovijim ponudama i akcijama. Ako tvoj omiljeni brend još nije na listi naših partnera, slobodno nam pošalji preporuku! ";
