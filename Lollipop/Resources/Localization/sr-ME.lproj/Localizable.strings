@@ -66,8 +66,8 @@
 "ourPartners" = "Naši partneri";
 "all" = "Svi";
 "favorite" = "Omiljeno";
-"cantSeeFavoriteBrand" = "Ne vidiš omiljeni brend na listi?";
-"recommendLollipopPartner" = "Preporuči Lollipop partnera";
+"cantSeeFavoriteBrand" = "Brend koji voliš nije na listi?";
+"recommendLollipopPartner" = "Preporuči partnera";
 "partnerDetails" = "Detalji partnera";
 "shopName" = "Naziv radnje";
 "enterShopMerchantName" = "Upiši ime radnje/trgovca";
@@ -174,7 +174,7 @@
 "promotions" = "Promocije";
 "termsMessage" = "Moraš se složiti sa uslovima korišćenja da bi nastavio/la dalje.";
 "inquiryDialogueTitle" = "Hvala na poslatoj prijavi";
-"inquiryDialogueSubtitle" = "Tvoj zahtjev je poslat korisničkoj službi i uskoro ćemo te kontaktirati za dalje korake";
+"inquiryDialogueSubtitle" = "Tvoja prijava je proslijeđena partnerskoj korisničkoj službi, koja će te kontaktirati za dalje korake.";
 "version" = "Verzija";
 "privacyPolicy" = "Politika privatnosti";
 "termsAndConditions" = "Uslovi korišćenja";

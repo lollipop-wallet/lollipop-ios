@@ -32,7 +32,7 @@ class PartnersCollectionViewCell: UICollectionViewCell {
     
     lazy var cellPlaceholderView: UIView = {
         let view = UIView()
-        view.backgroundColor = AppColors.brandPrimary
+        view.backgroundColor = AppColors.white
         view.addSubview(partnerImageView)
         partnerImageView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
