@@ -20,7 +20,7 @@ extension PartnerCardSignupView {
         appearance.setBackIndicatorImage(imgClose, transitionMaskImage: imgClose)
         navigationItem.standardAppearance = appearance
         UINavigationBar.appearance().layoutMargins.left = 20
-        navigationItem.title = LocalizedTitle.cardDetails.localized
+        navigationItem.title = LocalizedTitle.cardSignUp.localized
         
         lazy var backButton: UIBarButtonItem = {
             let button = UIBarButtonItem()

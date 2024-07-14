@@ -199,6 +199,7 @@ enum LocalizedTitle: String {
     case cardNotOnTheList
     case placeForYourCards
     case keepYourCardsInPhone
+    case cardSignUp
     
     var localized: String {
         return self.rawValue.localized()

@@ -120,8 +120,8 @@
 "ihaveCardTitle" = "Imam karticu";
 "iHaveCardSubtitle" = "Digitalizuj svoju postojeću karticu";
 "iWantCardTitle" = "Želim karticu";
-"iWantCardSubtitle" = "Prijavi se da postaneš dio kluba";
-"newPartnerCardInfo" = "Ukoliko želite da se priključite programu, popunite polja u nastavku";
+"iWantCardSubtitle" = "Ispuni zahtev i pošalji prijavu";
+"newPartnerCardInfo" = "Ukoliko želiš da se prijaviš za karticu, popuni polja u nastavku";
 "nameAndSurname" = "Ime i prezime";
 "phoneNumber" = "Broj telefona";
 "enterNameAndSurname" = "Unesite ime i prezime";
@@ -187,3 +187,4 @@
 "cardNotOnTheList" = "Kartica nije na listi?";
 "placeForYourCards" = "Mesto za sve tvoje kartice";
 "keepYourCardsInPhone" = "Čuvaj svoje loyalty i članske kartice u telefonu";
+"cardSignUp" = "Prijava za karticu";
