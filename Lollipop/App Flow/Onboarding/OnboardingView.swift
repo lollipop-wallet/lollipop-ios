@@ -24,6 +24,7 @@ class OnboardingView: UIViewController, OnboardingViewProtocol {
     //MARK: OnboardingView Protocol
     
     func setPageViewControllerWith(vc: UIViewController){
+        
         DispatchQueue.main.async {
             self.pageViewController.setViewControllers([vc], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
             self.pageViewController.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)

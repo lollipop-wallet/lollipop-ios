@@ -27,11 +27,7 @@ class ContentView: UIViewController {
         setup()
         setupFields()
     }
-    
-    override func viewDidLayoutSubviews() {
 
-    }
-    
     func setupFields() {
         self.artworkImageView.image = UIImage(named: artworkName)
         self.titleLabel.text = titleString

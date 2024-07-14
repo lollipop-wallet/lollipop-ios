@@ -11,6 +11,7 @@ extension ContentView {
     func setup() {
         self.view.backgroundColor = AppColors.white
         self.artworkImageView.contentMode = .scaleAspectFill
+        self.artworkImageView.clipsToBounds = true
         
         let device = UIDevice.current.dc.deviceModel
         
