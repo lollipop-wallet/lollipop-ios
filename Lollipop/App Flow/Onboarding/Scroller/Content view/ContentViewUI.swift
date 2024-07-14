@@ -10,7 +10,7 @@ import UIKit
 extension ContentView {
     func setup() {
         self.view.backgroundColor = AppColors.white
-        self.artworkImageView.contentMode = .scaleAspectFit
+        self.artworkImageView.contentMode = .scaleAspectFill
         
         let device = UIDevice.current.dc.deviceModel
         
@@ -61,16 +61,25 @@ extension ContentView {
             let view = UIView()
             view.addSubview(self.titleLabel)
             self.titleLabel.snp.makeConstraints { make in
-                make.leading.top.equalToSuperview().offset(22)
-                make.trailing.equalToSuperview().offset(-22)
+                make.leading.top.equalToSuperview().offset(20)
+                make.trailing.equalToSuperview().offset(-20)
             }
             
             view.addSubview(self.subtitleLabel)
             self.subtitleLabel.snp.makeConstraints { make in
-                make.leading.equalToSuperview().offset(22)
-                make.trailing.equalToSuperview().offset(-22)
+                make.leading.equalToSuperview().offset(20)
+                make.trailing.equalToSuperview().offset(-20)
                 make.top.equalTo(self.titleLabel.snp.bottom).offset(8)
             }
+            
+            view.addSubview(self.proceedView)
+            self.proceedView.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(20)
+                make.trailing.equalToSuperview().offset(-20)
+                make.bottom.equalToSuperview().offset(bottomDistance)
+                make.height.equalTo(48)
+            }
+            
             view.backgroundColor = AppColors.white
             view.layer.cornerRadius = 32
             view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
@@ -80,14 +89,6 @@ extension ContentView {
         self.view.addSubview(self.artworkImageView)
         self.artworkImageView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
-        }
-        
-        self.view.addSubview(self.proceedView)
-        self.proceedView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-            make.bottom.equalToSuperview().offset(bottomDistance)
-            make.height.equalTo(48)
         }
         
         self.view.addSubview(curvedBottomPlaceholderView)
