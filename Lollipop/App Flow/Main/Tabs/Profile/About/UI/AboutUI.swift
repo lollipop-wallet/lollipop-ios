@@ -30,5 +30,28 @@ extension AboutView {
         }()
         
         self.navigationItem.leftBarButtonItems = [backButton]
+        
+        lazy var scrollView : UIScrollView = {
+            let scView = UIScrollView()
+            return scView
+        }()
+        
+        lazy var contentView : UIView = {
+            let view = UIView()
+            return view
+        }()
+        
+        self.view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(32)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets.zero)
+            make.width.equalTo(scrollView)
+        }
     }
 }
