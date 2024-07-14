@@ -57,25 +57,29 @@ extension ContentView {
             make.leading.trailing.top.bottom.equalToSuperview()
         }
         
+        lazy var curvedBottomPlaceholderView: UIView = {
+            let view = UIView()
+            view.addSubview(self.titleLabel)
+            self.titleLabel.snp.makeConstraints { make in
+                make.leading.top.equalToSuperview().offset(22)
+                make.trailing.equalToSuperview().offset(-22)
+            }
+            
+            view.addSubview(self.subtitleLabel)
+            self.subtitleLabel.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(22)
+                make.trailing.equalToSuperview().offset(-22)
+                make.top.equalTo(self.titleLabel.snp.bottom).offset(8)
+            }
+            view.backgroundColor = AppColors.white
+            view.layer.cornerRadius = 32
+            view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+            return view
+        }()
+        
         self.view.addSubview(self.artworkImageView)
         self.artworkImageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-            make.top.equalToSuperview().offset(topDistance)
-        }
-        
-        self.view.addSubview(self.titleLabel)
-        self.titleLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
-            make.top.equalTo(self.artworkImageView.snp.bottom).offset(24)
-        }
-        
-        self.view.addSubview(self.subtitleLabel)
-        self.subtitleLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(8)
+            make.leading.trailing.top.bottom.equalToSuperview()
         }
         
         self.view.addSubview(self.proceedView)
@@ -84,6 +88,12 @@ extension ContentView {
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview().offset(bottomDistance)
             make.height.equalTo(48)
+        }
+        
+        self.view.addSubview(curvedBottomPlaceholderView)
+        curvedBottomPlaceholderView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(self.view.frame.width * 0.98)
         }
     }
 }
