@@ -15,6 +15,7 @@ class WalletView: UIViewController, WalletViewProtocol {
     var allCardsButton = UIButton()
     var noCardsView = UIView()
     var addCardBarButton = UIBarButtonItem()
+    var scrollView = UIScrollView()
     
     var presenter: WalletPresenterProtocol?
     
@@ -51,6 +52,7 @@ class WalletView: UIViewController, WalletViewProtocol {
     func setNoCardsViewHidden(isHidden: Bool){
         DispatchQueue.main.async {
             self.noCardsView.isHidden = isHidden
+            self.scrollView.isHidden = !isHidden
         }
     }
     

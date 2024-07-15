@@ -201,22 +201,12 @@ extension WalletView {
             return view
         }()
         
+        self.scrollView = scrollView
+        
         self.view.addSubview(mainContentView)
         mainContentView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
             make.leading.trailing.bottom.equalToSuperview()
-        }
-        
-        
-        mainContentView.addSubview(scrollView)
-        scrollView.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalToSuperview()
-        }
-        
-        scrollView.addSubview(contentView)
-        contentView.snp.makeConstraints { make in
-            make.edges.equalTo(scrollView).inset(UIEdgeInsets.zero)
-            make.width.equalTo(scrollView)
         }
         
         mainContentView.addSubview(curvedTopView)
@@ -225,8 +215,18 @@ extension WalletView {
             make.height.equalTo(self.view.frame.height * 0.33)
         }
         
+        mainContentView.addSubview(self.scrollView)
+        self.scrollView.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
         
-        scrollView.addSubview(self.cardView)
+        self.scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.edges.equalTo(self.scrollView).inset(UIEdgeInsets.zero)
+            make.width.equalTo(self.scrollView)
+        }
+        
+        self.scrollView.addSubview(self.cardView)
         self.cardView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
