@@ -45,7 +45,7 @@ class WalletStack: UIView {
             view.snp.makeConstraints { make in
                 make.leading.trailing.equalToSuperview()
                 make.height.equalTo(view.snp.width).multipliedBy(0.645)
-                make.top.equalToSuperview().offset(i == 0 ? 0 : (i * 86))
+                make.top.equalToSuperview().offset(i == 0 ? 0 : (i * 80))
                 if i == cards.count - 1 {
                     make.bottom.equalToSuperview()
                 }
