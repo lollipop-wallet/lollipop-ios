@@ -132,7 +132,7 @@ class APIClient {
     }
     
     static func sendregistrationotp(completion:@escaping (Result<OTPModel, AFError>)->Void){
-        Manager.authTypeHeader = ""
+        Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performRequest(route: APIRouter.registrationotp, completion: completion)
     }
     
