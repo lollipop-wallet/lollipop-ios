@@ -11,6 +11,7 @@ class WalletWireframe: WalletWireframeProtocol {
     
     static var cards: [Card]?
     static var delegate: WalletControllerProtocol?
+    static var cardsDelegate: WalletCardsUpdaterProtocol?
     
     static func createModule(WalletRef: WalletView) {
         let presenter: WalletPresenterProtocol & WalletOutputInteractorProtocol = WalletPresenter()

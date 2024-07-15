@@ -22,6 +22,7 @@ class HomePresenter: NSObject, HomePresenterProtocol  {
         ProfileWireframe.delegate = self
         NewLoyaltyCardWireframe.delegate = self
         PartnerCardWireframe.delegate = self
+        WalletWireframe.cardsDelegate = self
         interactor?.viewDidLoad(showSpinner: true)
     }
     
@@ -220,7 +221,20 @@ extension HomePresenter {
 //MARK: PartnersCardController protocol
 extension HomePresenter {
     func toProfileTabFromPartnersCard() {
-        print("Radi li ovo?")
         delegate?.toProfileTabFromHome()
+    }
+}
+
+//MARK: CardsUpdater Delegate from wallet
+extension HomePresenter {
+    func updateUserCardsWith(cards: [Card]) {
+        var userCards = cards
+        if userCards.count >= 5 {
+            userCards.append(DefaultModels().allCardsCard)
+        }
+        var cardsItem = self.datasource[0]
+        cardsItem.cards = userCards
+        self.datasource[0] = cardsItem
+        self.view?.reload()
     }
 }

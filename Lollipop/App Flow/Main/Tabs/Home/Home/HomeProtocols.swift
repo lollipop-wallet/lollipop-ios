@@ -12,7 +12,7 @@ import SafariServices
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddCardHomeCellProtocol, HomeCardCellProtocol, CircledCategoryCellProtocol, HomePosterCategoryCellProtocol, RectangleCategoryCellProtocol, ProfileControllerProtocol, NewLoyaltyCardControllerProtocol, SFSafariViewControllerDelegate, PartnersCardControllerProtocol{
+protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddCardHomeCellProtocol, HomeCardCellProtocol, CircledCategoryCellProtocol, HomePosterCategoryCellProtocol, RectangleCategoryCellProtocol, ProfileControllerProtocol, NewLoyaltyCardControllerProtocol, SFSafariViewControllerDelegate, PartnersCardControllerProtocol, WalletCardsUpdaterProtocol{
     
     var interactor: HomeInputInteractorProtocol? { get set }
     var view: HomeViewProtocol? { get set }

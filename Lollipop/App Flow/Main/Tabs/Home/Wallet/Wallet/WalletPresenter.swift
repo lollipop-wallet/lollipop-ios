@@ -16,12 +16,14 @@ class WalletPresenter: NSObject, WalletPresenterProtocol  {
     
     var datasource = [Card]()
     var delegate: WalletControllerProtocol?
+    var cardsDelegate: WalletCardsUpdaterProtocol?
  
     func viewDidLoad() {
+        MyCardsWireframe.delegate = self
         DeleteCardWireframe.delegate = self
         DeleteCardWireframe.destination = .wallet
         if Manager.isRegistered {
-            interactor?.viewDidLoad()
+            interactor?.viewDidLoad(showSpinner: true)
             self.view?.setRightBarButtonItems(shouldSetAddButton: true)
         }else{
             self.interactor?.viewDidLoadUnregistered()
@@ -44,12 +46,14 @@ class WalletPresenter: NSObject, WalletPresenterProtocol  {
 }
 
 extension WalletPresenter: WalletOutputInteractorProtocol {
-    func takeDataWith(delegate: WalletControllerProtocol?){
+    func takeDataWith(delegate: WalletControllerProtocol?, cardsDelegate: WalletCardsUpdaterProtocol?){
         self.delegate = delegate
+        self.cardsDelegate = cardsDelegate
     }
     
-    func parseCardsDataWith(result: Result<[Card], AFError>, delegate: WalletControllerProtocol?){
+    func parseCardsDataWith(result: Result<[Card], AFError>, delegate: WalletControllerProtocol?, cardsDelegate: WalletCardsUpdaterProtocol?){
         self.delegate = delegate
+        self.cardsDelegate = cardsDelegate
         switch result {
         case .success(let cards):
             let walletCards = cards.filter { ($0.is_favorite ?? 0) == 1 }
@@ -86,6 +90,15 @@ extension WalletPresenter {
 //MARK: DeleteCardController delegate
 extension WalletPresenter {
     func didDeleteCard() {
-        interactor?.viewDidLoad()
+        interactor?.viewDidLoad(showSpinner: false)
+    }
+}
+
+
+//MARK: MyCardsController delegate
+extension WalletPresenter {
+    func updateUserCardsWith(cards: [Card]) {
+        interactor?.viewDidLoad(showSpinner: false)
+        self.cardsDelegate?.updateUserCardsWith(cards: cards)
     }
 }

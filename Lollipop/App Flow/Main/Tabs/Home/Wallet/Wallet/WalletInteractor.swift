@@ -13,13 +13,18 @@ class WalletInteractor: WalletInputInteractorProtocol {
     
     weak var presenter: WalletOutputInteractorProtocol?
     
-    func viewDidLoad() {
+    func viewDidLoad(showSpinner: Bool){
         let delegate = WalletWireframe.delegate
-        UIApplication.topViewController()?.view.showSpinner()
+        let cardsDelegate = WalletWireframe.cardsDelegate
+        if showSpinner {
+            UIApplication.topViewController()?.view.showSpinner()
+        }
         APIClient.getusercards { [weak self] result in
-            UIApplication.topViewController()?.view.hideSpinner()
+            if showSpinner {
+                UIApplication.topViewController()?.view.hideSpinner()
+            }
             guard let self = self else {return}
-            self.presenter?.parseCardsDataWith(result: result, delegate: delegate)
+            self.presenter?.parseCardsDataWith(result: result, delegate: delegate, cardsDelegate: cardsDelegate)
         }
     }
     
@@ -34,6 +39,7 @@ class WalletInteractor: WalletInputInteractorProtocol {
     
     func viewDidLoadUnregistered(){
         let delegate = WalletWireframe.delegate
-        presenter?.takeDataWith(delegate: delegate)
+        let cardsDelegate = WalletWireframe.cardsDelegate
+        presenter?.takeDataWith(delegate: delegate, cardsDelegate: cardsDelegate)
     }
 }

@@ -11,7 +11,7 @@ import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol WalletPresenterProtocol: WalletStackProtocol, DeleteCardControllerProtocol{
+protocol WalletPresenterProtocol: WalletStackProtocol, DeleteCardControllerProtocol, MyCardsControllerProtocol{
     
     var interactor: WalletInputInteractorProtocol? { get set }
     var view: WalletViewProtocol? { get set }
@@ -26,15 +26,15 @@ protocol WalletPresenterProtocol: WalletStackProtocol, DeleteCardControllerProto
 protocol WalletInputInteractorProtocol: AnyObject {
     
     var presenter: WalletOutputInteractorProtocol?  { get set }
-    func viewDidLoad()
+    func viewDidLoad(showSpinner: Bool)
     func getCardDetailsWith(alias: String)
     func viewDidLoadUnregistered()
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol WalletOutputInteractorProtocol: AnyObject {
-    func takeDataWith(delegate: WalletControllerProtocol?)
-    func parseCardsDataWith(result: Result<[Card], AFError>, delegate: WalletControllerProtocol?)
+    func takeDataWith(delegate: WalletControllerProtocol?, cardsDelegate: WalletCardsUpdaterProtocol?)
+    func parseCardsDataWith(result: Result<[Card], AFError>, delegate: WalletControllerProtocol?, cardsDelegate: WalletCardsUpdaterProtocol?)
     func parseCardDetailsWith(result: Result<Card, AFError>)
 }
 //MARK: View
@@ -50,6 +50,7 @@ protocol WalletViewProtocol: AnyObject {
 protocol WalletWireframeProtocol: AnyObject {
     static var cards: [Card]? { get set }
     static var delegate: WalletControllerProtocol? { get set }
+    static var cardsDelegate: WalletCardsUpdaterProtocol? { get set }
     func toMyCards()
     func toCardSuggestions()
     func toLoyaltyCardDetailsWith(card: Card?)
@@ -59,5 +60,10 @@ protocol WalletWireframeProtocol: AnyObject {
 //MARK: WalletController Protocol
 protocol WalletControllerProtocol: AnyObject {
     func toProfileTabFromWallet()
+}
+
+//MARK: WalletCardsUpdater protocol
+protocol WalletCardsUpdaterProtocol: AnyObject {
+    func updateUserCardsWith(cards: [Card])
 }
 
