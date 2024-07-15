@@ -118,6 +118,7 @@ extension MyCardsPresenter {
         self.allCards = cards
         self.datasource = cards
         self.view?.reload()
+        self.delegate?.updateUserCardsWith(cards: favCards)
     }
     
     func updateFavoriteCardsWith(cards: [Card]) {
