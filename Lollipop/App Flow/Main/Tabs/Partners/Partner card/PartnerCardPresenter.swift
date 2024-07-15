@@ -16,6 +16,7 @@ class PartnerCardPresenter: NSObject, PartnerCardPresenterProtocol  {
     var datasource = DefaultModels().partnerCardOptionsDatasource
     var cardTemplate: CardTemplate?
     var partner: Partner?
+    var delegate: PartnersCardControllerProtocol?
     
     func viewDidLoad() {
         interactor?.viewDidLoad()
@@ -23,9 +24,10 @@ class PartnerCardPresenter: NSObject, PartnerCardPresenterProtocol  {
 }
 
 extension PartnerCardPresenter: PartnerCardOutputInteractorProtocol {
-    func takeData(cardTemplate: CardTemplate?, partner: Partner?) {
+    func takeData(cardTemplate: CardTemplate?, partner: Partner?, delegate: PartnersCardControllerProtocol?) {
         self.cardTemplate = cardTemplate
         self.partner = partner
+        self.delegate = delegate
         self.view?.setCardImageWith(imageLink: cardTemplate?.image_front ?? "")
     }
 }
@@ -45,10 +47,15 @@ extension PartnerCardPresenter {
         let item = self.datasource[index.row]
         let card = Card(id: self.cardTemplate?.id ?? 0, name: self.cardTemplate?.name ?? "", alias: "", name_on_card: "", image_front: self.cardTemplate?.image_front ?? "", image_back: self.cardTemplate?.image_back ?? "", code: "", cardNumber: "", note: "", type: "loyalty", card_template: self.cardTemplate, partner: self.partner, position: 0, code_type: self.cardTemplate?.code_type ?? "", customer_code: "")
         
-        if item.option == .wantsCard {
-            wireframe?.toPartnerNewCard(card: card)
+        if Manager.isRegistered {
+            if item.option == .wantsCard {
+                wireframe?.toPartnerNewCard(card: card)
+            }else{
+                wireframe?.toScannerWith(card: card)
+            }
         }else{
-            wireframe?.toScannerWith(card: card)
+            delegate?.toProfileTabFromPartnersCard()
+            UIApplication.topViewController()?.popBackSpecific(toControllerType: MainView.self)
         }
     }
 }

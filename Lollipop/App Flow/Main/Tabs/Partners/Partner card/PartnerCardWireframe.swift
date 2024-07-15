@@ -11,6 +11,7 @@ class PartnerCardWireframe: PartnerCardWireframeProtocol {
     
     static var cardTemplate: CardTemplate?
     static var partner: Partner?
+    static var delegate: PartnersCardControllerProtocol?
     
     static func createModule(PartnerCardRef: PartnerCardView) {
         let presenter: PartnerCardPresenterProtocol & PartnerCardOutputInteractorProtocol = PartnerCardPresenter()

@@ -29,7 +29,7 @@ protocol PartnerCardInputInteractorProtocol: AnyObject {
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol PartnerCardOutputInteractorProtocol: AnyObject {
-    func takeData(cardTemplate: CardTemplate?, partner: Partner?)
+    func takeData(cardTemplate: CardTemplate?, partner: Partner?, delegate: PartnersCardControllerProtocol?)
 }
 //MARK: View
 protocol PartnerCardViewProtocol: AnyObject {
@@ -41,6 +41,7 @@ protocol PartnerCardViewProtocol: AnyObject {
 protocol PartnerCardWireframeProtocol: AnyObject {
     static var cardTemplate: CardTemplate? { get set }
     static var partner: Partner? { get set }
+    static var delegate: PartnersCardControllerProtocol? { get set }
     func toPartnerNewCard(card: Card?)
     func toScannerWith(card: Card?)
 }
@@ -48,4 +49,9 @@ protocol PartnerCardWireframeProtocol: AnyObject {
 //MARK: PartnerCardOptionCellProtocol
 protocol PartnerCardOptionCellProtocol: AnyObject {
     func didSelectItemAt(index: IndexPath)
+}
+
+//MARK: PartnersCardController Protocol
+protocol PartnersCardControllerProtocol: AnyObject {
+    func toProfileTabFromPartnersCard()
 }

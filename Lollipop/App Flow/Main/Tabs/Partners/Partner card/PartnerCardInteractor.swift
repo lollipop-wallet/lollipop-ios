@@ -16,6 +16,7 @@ class PartnerCardInteractor: PartnerCardInputInteractorProtocol {
     func viewDidLoad() {
         let cardTemplate = PartnerCardWireframe.cardTemplate
         let partner = PartnerCardWireframe.partner
-        presenter?.takeData(cardTemplate: cardTemplate, partner: partner)
+        let delegate = PartnerCardWireframe.delegate
+        presenter?.takeData(cardTemplate: cardTemplate, partner: partner, delegate: delegate)
     }
 }

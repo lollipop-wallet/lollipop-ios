@@ -15,4 +15,5 @@ struct Manager {
     static var isRegistered = Bool()
     static var token = String()
     static var authTypeHeader = String()
+    static var initialTabBarScreenIndex = Int()
 }

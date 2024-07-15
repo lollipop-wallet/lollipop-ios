@@ -21,6 +21,7 @@ class HomePresenter: NSObject, HomePresenterProtocol  {
     func viewDidLoad() {
         ProfileWireframe.delegate = self
         NewLoyaltyCardWireframe.delegate = self
+        PartnerCardWireframe.delegate = self
         interactor?.viewDidLoad(showSpinner: true)
     }
     
@@ -213,5 +214,13 @@ extension HomePresenter {
         self.datasource = []
         self.view?.reload()
         interactor?.viewDidLoad(showSpinner: false)
+    }
+}
+
+//MARK: PartnersCardController protocol
+extension HomePresenter {
+    func toProfileTabFromPartnersCard() {
+        print("Radi li ovo?")
+        delegate?.toProfileTabFromHome()
     }
 }
