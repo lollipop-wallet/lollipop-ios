@@ -29,6 +29,11 @@ class WalletCard: UIView {
         get { return "" }
     }
     
+    open var setCardLogoHidden: Bool? {
+        set { self.cardLogoPlaceholderView.isHidden = newValue ?? false }
+        get { return false }
+    }
+    
     var delegate: WalletCardProtocol?
     
     lazy var cardLogoIcon: UIImageView = {

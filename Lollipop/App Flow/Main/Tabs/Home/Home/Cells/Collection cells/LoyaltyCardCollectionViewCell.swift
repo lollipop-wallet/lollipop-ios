@@ -128,7 +128,7 @@ class LoyaltyCardCollectionViewCell: UICollectionViewCell {
     func configureWith(item: Card?, delegate: LoyaltyCardCellProtocol, index: IndexPath) {
         self.delegate = delegate
         self.index = index
-        self.photo.imageFromURL(url: item?.cardType == .loyalty ? item?.card_template?.image_front ?? "" : item?.image_front ?? "")
+        self.photo.imageFromURL(url: item?.cardType == .loyalty ? item?.card_template?.image_front ?? "" : (item?.card_template != nil ? (item?.card_template?.image_front ?? "") : item?.image_front ?? ""))
         self.photo.isHidden = (item?.isSeeAllCards ?? false)
         self.lastCardBackgroundImage.isHidden = !(item?.isSeeAllCards ?? false)
         self.seeAllCardsPlaceHolder.isHidden = !(item?.isSeeAllCards ?? false)

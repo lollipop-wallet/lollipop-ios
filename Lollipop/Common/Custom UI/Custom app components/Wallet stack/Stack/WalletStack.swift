@@ -37,8 +37,9 @@ class WalletStack: UIView {
             let view = WalletCard()
             view.delegate = self
             view.cardLogoIcon.imageFromURL(url: card.partner?.logo ?? "")
-            view.cardImage.imageFromURL(url: card.cardType == .loyalty ? (card.card_template?.image_front ?? "") : card.image_front ?? "")
+            view.cardImage.imageFromURL(url: card.cardType == .loyalty ? card.card_template?.image_front ?? "" : (card.card_template != nil ? (card.card_template?.image_front ?? "") : card.image_front ?? ""))
             view.partnerName = card.partner?.name ?? ""
+            view.setCardLogoHidden = (card.partner?.name ?? "").isEmpty
             view.tag = i
             self.addSubview(view)
             view.snp.makeConstraints { make in
