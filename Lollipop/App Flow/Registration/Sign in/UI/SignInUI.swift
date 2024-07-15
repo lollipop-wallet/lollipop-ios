@@ -386,13 +386,13 @@ extension SignInView {
 //            make.width.height.equalTo(48)
 //        }
         
-        self.view.addSubview(lollypopPlaceholder)
-        lollypopPlaceholder.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(60)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(115)
-            make.height.equalTo(36)
-        }
+//        self.view.addSubview(lollypopPlaceholder)
+//        lollypopPlaceholder.snp.makeConstraints { make in
+//            make.top.equalToSuperview().offset(60)
+//            make.centerX.equalToSuperview()
+//            make.width.equalTo(115)
+//            make.height.equalTo(36)
+//        }
     }
     
     fileprivate func setupTermsString() -> NSAttributedString{
