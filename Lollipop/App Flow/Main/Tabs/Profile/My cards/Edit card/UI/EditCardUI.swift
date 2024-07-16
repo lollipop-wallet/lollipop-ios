@@ -321,7 +321,7 @@ extension EditCardView {
         self.nameOnTheCardField.leftSuplementaryIconHidden = true
         self.nameOnTheCardField.rightSuplementaryIconHidden = true
         
-        self.cardBarcodeField.title = "\(LocalizedTitle.barcode.localized):"
+        self.cardBarcodeField.title = "\(LocalizedTitle.cardNumber.localized):"
         self.cardBarcodeField.errorHidden = true
         self.cardBarcodeField.keyboardType = .default
         self.cardBarcodeField.background = AppColors.white
@@ -337,7 +337,7 @@ extension EditCardView {
         self.cardNotesField.background = AppColors.white
         
         lazy var fieldsStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [self.cardNameField, self.cardNumberField, self.nameOnTheCardField, self.cardBarcodeField, self.cardNotesField])
+            let stack = UIStackView(arrangedSubviews: [self.cardNameField, self.nameOnTheCardField, self.cardBarcodeField, self.cardNotesField])
             stack.axis = .vertical
             stack.alignment = .fill
             stack.distribution = .fill

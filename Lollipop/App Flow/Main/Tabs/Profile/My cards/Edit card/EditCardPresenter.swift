@@ -93,7 +93,7 @@ extension EditCardPresenter: EditCardOutputInteractorProtocol {
         self.view?.setFrontCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_front ?? "" : (card?.card_template != nil ? (card?.card_template?.image_front ?? "") : card?.image_front ?? ""))
         self.view?.setBackCardImageWith(image: card?.cardType == .loyalty ? card?.card_template?.image_back ?? "" : (card?.card_template != nil ? (card?.card_template?.image_back ?? "") : card?.image_back ?? ""))
         self.view?.setCardNameWith(name: card?.name ?? "")
-        self.view?.setCardNumberWith(number: card?.customer_code ?? "")
+        //self.view?.setCardNumberWith(number: card?.customer_code ?? "")
         self.view?.setBarcodeWith(barcode: card?.code ?? "")
         self.view?.setNameOnTheCardWith(nameOnTheCard: card?.name_on_card ?? "")
         self.view?.setNotesWith(notes: card?.note ?? "")
