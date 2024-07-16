@@ -15,6 +15,7 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
     var barcodeNumberLabel = UILabel()
     var qrCodeImageView = UIImageView()
     var barcodeStackView = UIStackView()
+    var plainNumberLabel = UILabel()
     var loyaltyCard = LoyaltyCard()
     var tableView = AutomaticHeightTableView()
 
@@ -83,6 +84,18 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
         DispatchQueue.main.async {
             self.barcodeImageView.isHidden = isHidden
             self.barcodeNumberLabel.isHidden = isHidden
+        }
+    }
+    
+    func setPlainNumberWith(plainNumber: String){
+        DispatchQueue.main.async {
+            self.plainNumberLabel.text = plainNumber
+        }
+    }
+    
+    func setPlainNumberHidden(isHidden: Bool){
+        DispatchQueue.main.async {
+            self.plainNumberLabel.isHidden = isHidden
         }
     }
 

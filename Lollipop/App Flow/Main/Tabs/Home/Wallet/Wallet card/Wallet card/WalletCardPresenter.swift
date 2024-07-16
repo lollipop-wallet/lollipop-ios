@@ -41,6 +41,7 @@ class WalletCardPresenter: NSObject, WalletCardPresenterProtocol  {
 
 extension WalletCardPresenter: WalletCardOutputInteractorProtocol {
     func takeData(card: Card?){
+        print("Koji je tip: ", card?.cardCodeType)
         self.card = card
         self.view?.setTitleWith(title: card?.card_template?.name ?? "")
         self.view?.setCardImageWith(image: card?.card_template?.image_front ?? "")
@@ -53,6 +54,10 @@ extension WalletCardPresenter: WalletCardOutputInteractorProtocol {
         if card?.cardCodeType == .qrcode {
             let qrImage = card?.code?.generateQRCode() ?? UIImage()
             self.view?.setQRCodeWith(image: qrImage)
+        }
+        self.view?.setPlainNumberHidden(isHidden: card?.isPlainNumberLabelHidden ?? false)
+        if card?.cardCodeType == .plaincode {
+            self.view?.setPlainNumberWith(plainNumber: card?.code ?? "")
         }
         self.datasource = card?.partner?.brands ?? []
         self.view?.reload()

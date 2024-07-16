@@ -105,6 +105,10 @@ struct Card: Codable {
         return cardCodeType != .qrcode
     }
     
+    var isPlainNumberLabelHidden: Bool {
+        return cardCodeType != .plaincode
+    }
+    
 }
 
 struct CardTemplate: Codable {

@@ -60,8 +60,8 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
     
     func save(frontImage: UIImage, backImage: UIImage, cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String) {
         if (self.isFromTemplate ?? false){
-            guard !cardName.isEmpty else {
-                view?.validate(cardNameIsEmpty: cardName.isEmpty)
+            guard !cardName.isEmpty, !cardBarcode.isEmpty else {
+                view?.validateLoyalty(cardNameIsEmpty: cardName.isEmpty, barcodeIsEmpty: cardBarcode.isEmpty)
                 return
             }
             let codeType = self.card?.cardCodeType == .plaincode ? (self.card?.code_type ?? "") : (!cardBarcode.isEmpty ? (self.card?.code_type ?? "") : "")
@@ -101,7 +101,7 @@ extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
         }
         self.view?.setFrontCameraControlHidden(isHidden: isFromTemplate)
         self.view?.setBackCameraControlHidden(isHidden: isFromTemplate)
-        self.view?.setBarcodeFieldHidden(isHidden: card?.cardCodeType == .plaincode)
+        //self.view?.setBarcodeFieldHidden(isHidden: card?.cardCodeType == .plaincode)
     }
     
     func parseNewCardData(result: Result<NewLoyaltyCardModel, AFError>){

@@ -46,6 +46,8 @@ protocol WalletCardViewProtocol: AnyObject {
     func setQRCodeWith(image: UIImage)
     func setQRCodeHidden(isHidden: Bool)
     func setBarcodeHidden(isHidden: Bool)
+    func setPlainNumberWith(plainNumber: String)
+    func setPlainNumberHidden(isHidden: Bool)
 }
 //MARK: Wireframe
 protocol WalletCardWireframeProtocol: AnyObject {

@@ -85,12 +85,19 @@ extension WalletCardView {
             make.height.equalTo(22)
         }
         
+        self.plainNumberLabel.font = .inter(ofSize: 18, name: .regular)
+        self.plainNumberLabel.textAlignment = .center
+        self.plainNumberLabel.textColor = AppColors.black
+        self.plainNumberLabel.snp.makeConstraints { make in
+            make.height.equalTo(22)
+        }
+        
         self.qrCodeImageView.contentMode = .scaleAspectFit
         self.qrCodeImageView.snp.makeConstraints { make in
             make.width.height.equalTo(101)
         }
         
-        self.barcodeStackView = UIStackView(arrangedSubviews: [self.barcodeImageView, self.barcodeNumberLabel, self.qrCodeImageView])
+        self.barcodeStackView = UIStackView(arrangedSubviews: [self.barcodeImageView, self.barcodeNumberLabel, self.plainNumberLabel, self.qrCodeImageView])
         self.barcodeStackView.axis = .vertical
         self.barcodeStackView.distribution = .fill
         self.barcodeStackView.alignment = .fill

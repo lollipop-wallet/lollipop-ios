@@ -92,6 +92,14 @@ class NewLoyaltyCardView: UIViewController, NewLoyaltyCardViewProtocol {
         self.cardNameField.borderColor = cardNameIsEmpty ? AppColors.error : AppColors.black
     }
     
+    func validateLoyalty(cardNameIsEmpty: Bool, barcodeIsEmpty: Bool){
+        self.cardNameField.borderWidth = 1
+        self.cardNameField.borderColor = cardNameIsEmpty ? AppColors.error : AppColors.black
+        
+        self.cardBarcodeField.borderWidth = 1
+        self.cardBarcodeField.borderColor = barcodeIsEmpty ? AppColors.error : AppColors.black
+    }
+    
     func setBarcodeFieldHidden(isHidden: Bool) {
         DispatchQueue.main.async {
             self.cardBarcodeField.isHidden = isHidden
