@@ -60,5 +60,6 @@ extension CardDetailsPresenter {
         self.view?.setNotesWith(notes: card?.note ?? "")
         self.view?.setNotesHidden(isHidden: card?.isNotesHidden ?? false)
         self.delegate?.updateCards()
+        self.delegate?.updateCardWith(card: card)
     }
 }

@@ -41,7 +41,6 @@ class WalletCardPresenter: NSObject, WalletCardPresenterProtocol  {
 
 extension WalletCardPresenter: WalletCardOutputInteractorProtocol {
     func takeData(card: Card?){
-        print("Koji je tip: ", card?.cardCodeType)
         self.card = card
         self.view?.setTitleWith(title: card?.card_template?.name ?? "")
         self.view?.setCardImageWith(image: card?.card_template?.image_front ?? "")
