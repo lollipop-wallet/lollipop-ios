@@ -22,6 +22,7 @@ protocol EditCardPresenterProtocol: PHPickerViewControllerDelegate, UIImagePicke
     
     func viewDidLoad()
     func delete()
+    func camera(isFront: Bool)
     func save(frontImage: UIImage, backImage: UIImage, cardName: String, cardNumber: String, cardBarcode: String, nameOnCard: String, note: String)
 }
 //MARK: Interactor

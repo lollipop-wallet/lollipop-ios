@@ -54,6 +54,7 @@ extension PersonalDataView {
         self.emailField.leftSuplementaryIconHidden = true
         self.emailField.leftSuplementarylabelHidden = true
         self.emailField.rightSuplementaryIconHidden = true
+        self.emailField.textField.autocapitalizationType = .none
         
         self.phoneField.title = "\(LocalizedTitle.phoneNumber.localized):"
         self.phoneField.errorHidden = true

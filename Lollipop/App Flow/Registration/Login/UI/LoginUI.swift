@@ -37,6 +37,7 @@ extension LoginView {
         self.emailField.background = AppColors.white
         self.emailField.leftSuplementaryIconHidden = true
         self.emailField.rightSuplementaryIconHidden = true
+        self.emailField.textField.autocapitalizationType = .none
         
         self.passwordField.title = "\(LocalizedTitle.enterPassword.localized):"
         self.passwordField.errorHidden = true

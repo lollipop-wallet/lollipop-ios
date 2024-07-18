@@ -129,10 +129,10 @@ class EditCardView: UIViewController, EditCardViewProtocol {
     }
     
     @objc func onFrontCameraTap() {
-        //presenter?.camera(isFront: true)
+        presenter?.camera(isFront: true)
     }
     
     @objc func onBackCameraTap() {
-        //presenter?.camera(isFront: false)
+        presenter?.camera(isFront: false)
     }
 }

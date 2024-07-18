@@ -49,6 +49,7 @@ extension ForgotPwdEmailView {
         self.emailField.leftSuplementaryIconHidden = true
         self.emailField.leftSuplementarylabelHidden = true
         self.emailField.rightSuplementaryIconHidden = true
+        self.emailField.textField.autocapitalizationType = .none
         
         lazy var proceedButton: UIButton = {
             let button = UIButton()

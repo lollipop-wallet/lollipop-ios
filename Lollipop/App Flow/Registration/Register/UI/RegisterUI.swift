@@ -54,6 +54,7 @@ extension RegisterView {
         self.emailField.leftSuplementaryIconHidden = true
         self.emailField.leftSuplementarylabelHidden = true
         self.emailField.rightSuplementaryIconHidden = true
+        self.emailField.textField.autocapitalizationType = .none
         
         self.calendarField.title = "\(LocalizedTitle.dateOfBirh.localized):"
         self.calendarField.errorHidden = true

@@ -180,6 +180,7 @@ extension PartnerCardSignupView {
         self.emailField.leftSuplementarylabelHidden = true
         self.emailField.placeholder = "\(LocalizedTitle.enterEmailAddress.localized):"
         self.emailField.rightSuplementaryIconHidden = true
+        self.emailField.textField.autocapitalizationType = .none
         
         self.checkBoxIcon.image = UIImage(named: AssetTitles.checkBoxUnselectedIcon)
         
