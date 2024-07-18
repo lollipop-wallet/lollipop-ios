@@ -94,7 +94,7 @@
 "barcode" = "Bar-kod broj";
 "notes" = "Bilješke";
 "edit" = "Uredi";
-"cardTitle" = "Ime kartice";
+"cardTitle" = "Naziv kartice";
 "delete" = "Obriši";
 "cardNumber" = "Broj kartice";
 "cardDeletion" = "Brisanje kartice";

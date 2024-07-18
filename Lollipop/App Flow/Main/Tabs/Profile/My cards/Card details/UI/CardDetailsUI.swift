@@ -182,7 +182,7 @@ extension CardDetailsView {
             label.font = .inter(ofSize: 16, name: .semibold)
             label.textColor = AppColors.black
             label.textAlignment = .left
-            label.text = "\(LocalizedTitle.barcode.localized):"
+            label.text = "\(LocalizedTitle.cardNumber.localized):"
             return label
         }()
         

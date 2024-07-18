@@ -70,7 +70,6 @@ extension DisplayCardView {
         }
         
         self.qrCodeImageView.contentMode = .scaleAspectFit
-        self.qrCodeImageView.backgroundColor = .red
         self.qrCodeImageView.snp.makeConstraints { make in
             make.width.height.equalTo(101)
         }
@@ -86,7 +85,6 @@ extension DisplayCardView {
         
         self.cardFrontImageView.layer.cornerRadius = 16
         self.cardFrontImageView.layer.masksToBounds = true
-        self.cardFrontImageView.backgroundColor = .red
         self.cardFrontImageView.snp.makeConstraints { make in
             make.width.equalTo(self.view.frame.width - 66)
             make.height.equalTo((self.view.frame.width - 66) * 0.648)
@@ -94,7 +92,6 @@ extension DisplayCardView {
         
         self.cardBackImageView.layer.cornerRadius = 16
         self.cardBackImageView.layer.masksToBounds = true
-        self.cardBackImageView.backgroundColor = .yellow
         self.cardBackImageView.snp.makeConstraints { make in
             make.width.equalTo(self.view.frame.width - 66)
             make.height.equalTo((self.view.frame.width - 66) * 0.648)
