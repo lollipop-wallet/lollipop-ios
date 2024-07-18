@@ -65,12 +65,12 @@ extension DisplayCardView {
         self.barcodeNumberLabel.font = .inter(ofSize: 18, name: .regular)
         self.barcodeNumberLabel.textAlignment = .center
         self.barcodeNumberLabel.textColor = AppColors.black
-        self.barcodeNumberLabel.text = "231532321315123"
         self.barcodeNumberLabel.snp.makeConstraints { make in
             make.height.equalTo(22)
         }
         
         self.qrCodeImageView.contentMode = .scaleAspectFit
+        self.qrCodeImageView.backgroundColor = .red
         self.qrCodeImageView.snp.makeConstraints { make in
             make.width.height.equalTo(101)
         }
@@ -103,7 +103,9 @@ extension DisplayCardView {
         self.cardSerialNumberLabel.font = .inter(ofSize: 24, name: .regular)
         self.cardSerialNumberLabel.textColor = AppColors.black
         self.cardSerialNumberLabel.textAlignment = .center
-        self.cardSerialNumberLabel.text = "01JK2-982M-A912-38HA"
+        self.cardSerialNumberLabel.snp.makeConstraints { make in
+            make.height.equalTo(22)
+        }
         
         lazy var filler: UIView = {
             let view = UIView()
@@ -113,7 +115,7 @@ extension DisplayCardView {
         
         
         lazy var mainStackView: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [self.barcodeStackView, self.cardSerialNumberLabel, self.cardFrontImageView, self.cardBackImageView, filler])
+            let stack = UIStackView(arrangedSubviews: [self.barcodeStackView, self.cardSerialNumberLabel, self.cardFrontImageView, self.cardBackImageView])
             stack.axis = .vertical
             stack.alignment = .center
             stack.distribution = .fill
@@ -131,7 +133,7 @@ extension DisplayCardView {
             view.addSubview(mainStackView)
             mainStackView.snp.makeConstraints { make in
                 make.leading.trailing.bottom.equalToSuperview()
-                make.top.equalToSuperview().offset(32)
+                make.top.equalToSuperview().offset(0)
             }
             return view
         }()
