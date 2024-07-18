@@ -26,7 +26,11 @@ class PartnersPresenter: NSObject, PartnersPresenterProtocol  {
     }
     
     func suggestPartner() {
-        wireframe?.toNewPartner()
+        if Manager.isRegistered {
+            wireframe?.toNewPartner()
+        }else{
+            delegate?.toProfileTab()
+        }
     }
     
     func changeSegment(segment: Int){
