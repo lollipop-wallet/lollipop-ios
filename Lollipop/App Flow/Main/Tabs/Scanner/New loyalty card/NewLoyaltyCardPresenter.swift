@@ -88,13 +88,14 @@ class NewLoyaltyCardPresenter: NSObject, NewLoyaltyCardPresenterProtocol  {
             let frontImageData = self.frontImage?.jpegData(compressionQuality: 0.4) ?? Data()
             let backImageData = self.backImage?.jpegData(compressionQuality: 0.4) ?? Data()
             
-            interactor?.createDisplayCarad(frontImage: frontImageData, backImage: backImageData, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarcode, codeType: self.card?.card_template?.code_type ?? "", nameOnTheCard: nameOnCard, note: note)
+            interactor?.createDisplayCarad(frontImage: frontImageData, backImage: backImageData, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarcode, codeType: self.card?.code_type ?? "", nameOnTheCard: nameOnCard, note: note)
         }
     }
 }
 
 extension NewLoyaltyCardPresenter: NewLoyaltyCardOutputInteractorProtocol {
     func takeDataWith(card: Card?, barcode: String, isFromTemplate: Bool, delegate: NewLoyaltyCardControllerProtocol? ) {
+        print("Koji je code type: ", card?.code_type ?? "")
         self.card = card
         self.barcode = barcode
         self.isFromTemplate = isFromTemplate
