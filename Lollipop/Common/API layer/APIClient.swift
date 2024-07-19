@@ -46,10 +46,29 @@ class APIClient {
                     }else{
                         UIApplication.root().view.hideSpinner()
                     }
-                    let decoder = JSONDecoder()
-                    if let exception = try? decoder.decode(ExceptionModel.self, from: response.data ?? Data()) {
-                        Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: exception.message ?? "", shouldDismiss: false)
+//                    let decoder = JSONDecoder()
+//                    if let exception = try? decoder.decode(ExceptionModel.self, from: response.data ?? Data()) {
+//                        Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: exception.message ?? "", shouldDismiss: false)
+//                    }
+                    do {
+                        let errorDict = try JSONSerialization.jsonObject(with: response.data ?? Data()) as? [AnyHashable: Any] ?? [:]
+                        let errors = errorDict["errors"] as? [String : [String]]
+                                
+                        var concatenatedMessage = ""
+                        
+                        for (key, messages) in (errors ?? [:]) {
+                            for message in messages {
+                                concatenatedMessage += message + "\n\n"
+                            }
+                        }
+                        // Trim the trailing whitespace
+                        concatenatedMessage = concatenatedMessage.trimmingCharacters(in: .whitespacesAndNewlines)
+                        Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: concatenatedMessage, shouldDismiss: false)
+                    } catch {
+                        print("JsonError: ", error)
+                        Alert().alertMessageNoNavigator(title: LocalizedTitle.notice.localized, text: LocalizedTitle.unknownError.localized + "\n" + error.localizedDescription, shouldDismiss: false)
                     }
+                    
                 case 403, 404, 500:
                     Alert().alertMessageNoNavigator(title: LocalizedTitle.notice.localized, text: LocalizedTitle.unknownError.localized, shouldDismiss: false)
                     if let vc = UIApplication.topViewController() {
