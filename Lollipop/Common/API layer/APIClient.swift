@@ -61,7 +61,6 @@ class APIClient {
                                 concatenatedMessage += message + "\n\n"
                             }
                         }
-                        // Trim the trailing whitespace
                         concatenatedMessage = concatenatedMessage.trimmingCharacters(in: .whitespacesAndNewlines)
                         Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: concatenatedMessage, shouldDismiss: false)
                     } catch {
