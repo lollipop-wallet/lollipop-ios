@@ -15,7 +15,9 @@ class LaunchPresenter: LaunchPresenterProtocol  {
     var wireframe: LaunchWireframeProtocol?
     
     func viewDidLoad(){
-        interactor?.getConfig()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0)  {
+            self.interactor?.getConfig()
+        }
     }
 }
 
