@@ -20,11 +20,21 @@ extension LaunchView {
             return imageView
         }()
         
-        self.view.addSubview(lollipopIcon)
-        lollipopIcon.snp.makeConstraints { make in
-            make.width.equalTo(224)
-            make.height.equalTo(62)
-            make.centerX.centerY.equalToSuperview()
-        }
+//        self.view.addSubview(lollipopIcon)
+//        lollipopIcon.snp.makeConstraints { make in
+//            make.width.equalTo(224)
+//            make.height.equalTo(62)
+//            make.centerX.centerY.equalToSuperview()
+//        }
+        self.animationView = .init(name: "splash_screen")
+        self.animationView?.contentMode = .scaleAspectFill
+        self.animationView?.loopMode = .playOnce
+        
+        self.view.addSubview(self.animationView ?? UIView())
+        (self.animationView ?? UIView()).snp.makeConstraints({ make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        })
+        
+        self.animationView?.play()
     }
 }
