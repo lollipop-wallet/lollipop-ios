@@ -28,15 +28,15 @@ class SignInView: UIViewController, SignInViewProtocol {
     }
     
     @objc func onAppleTap() {
-        
+        presenter?.signInApple()
     }
     
     @objc func onFacebookTap() {
-        
+        presenter?.signInFacebook()
     }
     
     @objc func onGoogleTap() {
-        
+        presenter?.signInGoogle()
     }
     
     @objc func onCloseTap() {

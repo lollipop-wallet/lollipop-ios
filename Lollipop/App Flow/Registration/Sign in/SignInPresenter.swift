@@ -16,6 +16,18 @@ class SignInPresenter: SignInPresenterProtocol  {
     func signInEmail() {
         wireframe?.toManualSignIn()
     }
+    
+    func signInGoogle(){
+        
+    }
+    
+    func signInApple(){
+        
+    }
+    
+    func signInFacebook(){
+        
+    }
 }
 
 extension SignInPresenter: SignInOutputInteractorProtocol {

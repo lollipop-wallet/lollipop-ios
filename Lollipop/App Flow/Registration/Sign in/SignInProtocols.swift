@@ -17,6 +17,9 @@ protocol SignInPresenterProtocol: AnyObject {
     var wireframe:SignInWireframeProtocol? { get set }
     
     func signInEmail()
+    func signInGoogle()
+    func signInApple()
+    func signInFacebook()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
