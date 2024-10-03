@@ -3910,11 +3910,12 @@
 				CODE_SIGN_ENTITLEMENTS = Lollipop/Lollipop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 63M9VB92YC;
+				DEVELOPMENT_TEAM = 8M2J78DM79;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Lollypop aplikacija traži dozvolu za korišćenje kamere za potrebe skeniranja loyalty kartica.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -3924,7 +3925,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lollipop.coa.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lw.lolipop.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -3946,11 +3947,12 @@
 				CODE_SIGN_ENTITLEMENTS = Lollipop/Lollipop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 63M9VB92YC;
+				DEVELOPMENT_TEAM = 8M2J78DM79;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Lollypop aplikacija traži dozvolu za korišćenje kamere za potrebe skeniranja loyalty kartica.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -3960,7 +3962,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lollipop.coa.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lw.lolipop.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -4123,11 +4125,12 @@
 				CODE_SIGN_ENTITLEMENTS = Lollipop/Lollipop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 63M9VB92YC;
+				DEVELOPMENT_TEAM = 8M2J78DM79;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Lollypop aplikacija traži dozvolu za korišćenje kamere za potrebe skeniranja loyalty kartica.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -4137,7 +4140,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lollipop.coa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lw.lolipop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -4256,11 +4259,12 @@
 				CODE_SIGN_ENTITLEMENTS = Lollipop/Lollipop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 63M9VB92YC;
+				DEVELOPMENT_TEAM = 8M2J78DM79;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Lollypop aplikacija traži dozvolu za korišćenje kamere za potrebe skeniranja loyalty kartica.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -4270,7 +4274,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lollipop.coa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lw.lolipop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
