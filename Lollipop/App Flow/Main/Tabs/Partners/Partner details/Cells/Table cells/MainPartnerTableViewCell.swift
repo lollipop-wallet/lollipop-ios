@@ -173,8 +173,9 @@ extension MainPartnerTableViewCell {
             guard let self = self, let itemWidth = items.last?.bounds.width else { return }
             let page = round(offset.x / (itemWidth + section.interGroupSpacing))
             let index = Int(page)
-            if self.scrollIndex != index && index <= self.datasource.count - 1{
+            if self.scrollIndex != index && index <= self.datasource.count - 1 && index >= 0{
                 self.scrollIndex = index
+                print("Skrol indeks: ", self.scrollIndex)
                 self.delegate?.getPartnerWith(alias: self.datasource[self.scrollIndex].alias ?? "", selectedIndex: self.scrollIndex)
             }
             self.pageControl.currentPage = Int(page)
