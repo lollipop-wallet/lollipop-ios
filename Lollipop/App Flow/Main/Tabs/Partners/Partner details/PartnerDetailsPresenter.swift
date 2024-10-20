@@ -48,17 +48,6 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
                 self.mainCellStartIndex = index
             }
             
-            //MARK: Cards
-            let templates = model.partner?.card_templates ?? []
-            for i in 0..<templates.count {
-                let template = templates[i]
-                let enhancedTemplate = EnhancedCardTemplate(template: template, isLast: i == templates.count - 1)
-                let cardsListModelItem = PartnerListModel(card: enhancedTemplate, brands: [], featuredBanner: nil, banners: [], itemType: .card)
-                self.datasource.append(cardsListModelItem)
-            }
-            let optionsListModelItem = PartnerListModel(card: nil, brands: [], featuredBanner: nil, banners: [], itemType: .options)
-            self.datasource.append(optionsListModelItem)
-            
             //MARK: Poster
             let banners = model.banners ?? []
             let posterBannerCollection = banners.filter { ($0.is_featured ?? 0) == 1 }
@@ -74,6 +63,20 @@ extension PartnerDetailsPresenter: PartnerDetailsOutputInteractorProtocol {
                 let promotionListModelItem = PartnerListModel(card: nil, brands: [], featuredBanner: nil, banners: promotionBannerCollection, itemType: .promotion)
                 self.datasource.append(promotionListModelItem)
             }
+            
+            //MARK: Cards
+            let templates = model.partner?.card_templates ?? []
+            for i in 0..<templates.count {
+                let template = templates[i]
+                let enhancedTemplate = EnhancedCardTemplate(template: template, isLast: i == templates.count - 1)
+                let cardsListModelItem = PartnerListModel(card: enhancedTemplate, brands: [], featuredBanner: nil, banners: [], itemType: .card)
+                self.datasource.append(cardsListModelItem)
+            }
+            
+            //MARK: Options
+            let optionsListModelItem = PartnerListModel(card: nil, brands: [], featuredBanner: nil, banners: [], itemType: .options)
+            self.datasource.append(optionsListModelItem)
+            
             
             //MARK: Custom link
             if !(model.external_link ?? "").isEmpty && !(model.external_link_label ?? "").isEmpty {
