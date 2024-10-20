@@ -65,7 +65,7 @@ extension AppDelegate {
     
     func configureEntryPoint() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let launchView = RegisterView()
+        let launchView = LaunchView()
         //Manager.currentIndexOnMain = 0
         let navigationController = UINavigationController(rootViewController: launchView)
         //navigationController.isNavigationBarHidden = true

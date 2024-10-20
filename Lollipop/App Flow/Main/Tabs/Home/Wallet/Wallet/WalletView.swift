@@ -23,6 +23,9 @@ class WalletView: UIViewController, WalletViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         presenter?.viewDidLoad()
     }
     

@@ -47,6 +47,7 @@ extension HomePresenter: HomeOutputInteractorProtocol {
         case .success(let model):
             if !(model.cards ?? []).isEmpty {
                 var cards = model.cards ?? []
+                print("Ima kartica: ", cards.count)
                 if cards.count >= 5 {
                     cards.append(DefaultModels().allCardsCard)
                 }
