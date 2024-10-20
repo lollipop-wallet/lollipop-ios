@@ -60,6 +60,7 @@ extension WalletPresenter: WalletOutputInteractorProtocol {
             self.datasource = walletCards
             self.view?.setCardsWith(cards: walletCards)
             self.view?.setAllCardsButtonHidden(isHidden: cards.count <= 5)
+            self.view?.setNoCardsViewHidden(isHidden: !walletCards.isEmpty)
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }

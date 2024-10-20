@@ -89,4 +89,5 @@ struct AssetTitles {
     static let aboutIcon1 = "ic_about_1"
     static let aboutIcon2 = "ic_about_2"
     static let aboutIcon3 = "ic_about_3"
+    static let lollyCircleLogoIcon = "ic_lolly_circle_logo"
 }

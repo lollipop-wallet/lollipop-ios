@@ -203,6 +203,12 @@ extension WalletView {
         
         self.scrollView = scrollView
         
+        lazy var logoIcon: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: AssetTitles.lollyCircleLogoIcon)
+            return imageView
+        }()
+        
         self.view.addSubview(mainContentView)
         mainContentView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
@@ -213,6 +219,13 @@ extension WalletView {
         curvedTopView.snp.makeConstraints { make in
             make.leading.trailing.top.equalToSuperview()
             make.height.equalTo(self.view.frame.height * 0.33)
+        }
+        
+        mainContentView.addSubview(logoIcon)
+        logoIcon.snp.makeConstraints { make in
+            make.width.height.equalTo(198)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-87)
         }
         
         mainContentView.addSubview(self.scrollView)
