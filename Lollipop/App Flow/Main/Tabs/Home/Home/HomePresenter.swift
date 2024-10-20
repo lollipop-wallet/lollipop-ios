@@ -199,14 +199,21 @@ extension HomePresenter {
     }
     
     func updateCardsWith(cards: [Card]){
-        var userCards = cards
-        if userCards.count >= 5 {
+        if cards.isEmpty {
+            self.datasource = []
+            self.view?.reload()
+            interactor?.viewDidLoad(showSpinner: false)
+        }else{
+            var userCards = cards
             userCards.append(DefaultModels().allCardsCard)
+    //        if userCards.count >= 5 {
+    //            userCards.append(DefaultModels().allCardsCard)
+    //        }
+            var cardsItem = self.datasource[0]
+            cardsItem.cards = userCards
+            self.datasource[0] = cardsItem
+            self.view?.reload()
         }
-        var cardsItem = self.datasource[0]
-        cardsItem.cards = userCards
-        self.datasource[0] = cardsItem
-        self.view?.reload()
     }
 }
 
@@ -229,13 +236,20 @@ extension HomePresenter {
 //MARK: CardsUpdater Delegate from wallet
 extension HomePresenter {
     func updateUserCardsWith(cards: [Card]) {
-        var userCards = cards
-        if userCards.count >= 5 {
+        if cards.isEmpty {
+            self.datasource = []
+            self.view?.reload()
+            interactor?.viewDidLoad(showSpinner: false)
+        }else{
+            var userCards = cards
             userCards.append(DefaultModels().allCardsCard)
+    //        if userCards.count >= 5 {
+    //            userCards.append(DefaultModels().allCardsCard)
+    //        }
+            var cardsItem = self.datasource[0]
+            cardsItem.cards = userCards
+            self.datasource[0] = cardsItem
+            self.view?.reload()
         }
-        var cardsItem = self.datasource[0]
-        cardsItem.cards = userCards
-        self.datasource[0] = cardsItem
-        self.view?.reload()
     }
 }
