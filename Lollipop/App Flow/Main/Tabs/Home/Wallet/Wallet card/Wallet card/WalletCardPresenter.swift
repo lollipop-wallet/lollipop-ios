@@ -60,6 +60,8 @@ extension WalletCardPresenter: WalletCardOutputInteractorProtocol {
         }
         self.datasource = card?.partner?.brands ?? []
         self.view?.reload()
+        self.view?.setRulesTitleWith(rulesTitle: (card?.partner?.rule?.label ?? "").isEmpty ? LocalizedTitle.rules.localized : card?.partner?.rule?.label ?? "")
+        self.view?.setAboutTitleWith(aboutTitle: (card?.partner?.instruction?.label ?? "").isEmpty ? LocalizedTitle.aboutProgramme.localized : card?.partner?.instruction?.label ?? "")
     }
 }
 

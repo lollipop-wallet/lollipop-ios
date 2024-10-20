@@ -18,6 +18,8 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
     var plainNumberLabel = UILabel()
     var loyaltyCard = LoyaltyCard()
     var tableView = AutomaticHeightTableView()
+    var rulesTitleLabel = UILabel()
+    var aboutTitleLabel = UILabel()
 
     var presenter: WalletCardPresenterProtocol?
 
@@ -96,6 +98,18 @@ class WalletCardView: UIViewController, WalletCardViewProtocol {
     func setPlainNumberHidden(isHidden: Bool){
         DispatchQueue.main.async {
             self.plainNumberLabel.isHidden = isHidden
+        }
+    }
+    
+    func setRulesTitleWith(rulesTitle: String){
+        DispatchQueue.main.async {
+            self.rulesTitleLabel.text = rulesTitle
+        }
+    }
+    
+    func setAboutTitleWith(aboutTitle: String){
+        DispatchQueue.main.async {
+            self.aboutTitleLabel.text = aboutTitle
         }
     }
 

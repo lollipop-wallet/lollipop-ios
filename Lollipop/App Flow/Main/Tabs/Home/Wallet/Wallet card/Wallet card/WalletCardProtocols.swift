@@ -48,6 +48,8 @@ protocol WalletCardViewProtocol: AnyObject {
     func setBarcodeHidden(isHidden: Bool)
     func setPlainNumberWith(plainNumber: String)
     func setPlainNumberHidden(isHidden: Bool)
+    func setRulesTitleWith(rulesTitle: String)
+    func setAboutTitleWith(aboutTitle: String)
 }
 //MARK: Wireframe
 protocol WalletCardWireframeProtocol: AnyObject {

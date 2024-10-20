@@ -179,6 +179,8 @@ extension WalletCardView {
             return label
         }()
         
+        self.aboutTitleLabel = aboutTitleLabel
+        
         lazy var aboutButton: UIButton = {
             let button = UIButton()
             button.addTarget(self, action: #selector(onAboutProgrammeTap), for: .touchUpInside)
@@ -186,7 +188,7 @@ extension WalletCardView {
         }()
         
         lazy var aboutStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [aboutIcon, aboutTitleLabel])
+            let stack = UIStackView(arrangedSubviews: [aboutIcon, self.aboutTitleLabel])
             stack.axis = .vertical
             stack.alignment = .center
             stack.distribution = .fill
@@ -231,6 +233,8 @@ extension WalletCardView {
             return label
         }()
         
+        self.rulesTitleLabel = rulesTitleLabel
+        
         lazy var rulesButton: UIButton = {
             let button = UIButton()
             button.addTarget(self, action: #selector(onRulesTap), for: .touchUpInside)
@@ -238,7 +242,7 @@ extension WalletCardView {
         }()
         
         lazy var rulesStack: UIStackView = {
-            let stack = UIStackView(arrangedSubviews: [rulesIcon, rulesTitleLabel])
+            let stack = UIStackView(arrangedSubviews: [rulesIcon, self.rulesTitleLabel])
             stack.axis = .vertical
             stack.alignment = .center
             stack.distribution = .fill
