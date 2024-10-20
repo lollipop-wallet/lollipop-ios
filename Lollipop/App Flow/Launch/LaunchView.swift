@@ -19,6 +19,7 @@ class LaunchView: UIViewController, LaunchViewProtocol {
         super.viewDidLoad()
         setup()
         presenter?.viewDidLoad()
+
     }
 
 }

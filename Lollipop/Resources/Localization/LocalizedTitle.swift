@@ -207,6 +207,8 @@ enum LocalizedTitle: String {
     case aboutSubtitle2
     case aboutTitle3
     case aboutSubtitle3
+    case popularCards
+
     
     var localized: String {
         return self.rawValue.localized()

@@ -38,9 +38,8 @@ extension AppDelegate {
         //MARK: Defaults
         Manager.sessionsCount = 1
         
-        // Firebase Configuration - extend this to take into consideration environments and different plist files
-       //  let options = FirebaseOptions(contentsOfFile: Configuration.googlePlistFilePath)
-       //  FirebaseApp.configure(options: options!)
+        let options = FirebaseOptions(contentsOfFile: Configuration.googlePlistFilePath)
+        FirebaseApp.configure(options: options!)
         
         configureNotifications(application)
 

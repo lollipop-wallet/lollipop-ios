@@ -40,6 +40,8 @@
 		2C5F24B62C10C52600E73EE8 /* HTMLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F24AF2C10C52600E73EE8 /* HTMLModel.swift */; };
 		2C5F24B72C10C52600E73EE8 /* HTMLWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F24B02C10C52600E73EE8 /* HTMLWireframe.swift */; };
 		2C5F24BA2C10C54100E73EE8 /* HTMLUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F24B92C10C54100E73EE8 /* HTMLUI.swift */; };
+		2C6FA5622CC595060053C234 /* GoogleService-Info-Dev.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C6FA5612CC595060053C234 /* GoogleService-Info-Dev.plist */; };
+		2C6FA5642CC595880053C234 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C6FA5632CC595880053C234 /* GoogleService-Info.plist */; };
 		2CA195392BE213A000CC10F5 /* CardDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */; };
 		2CA1953A2BE213A000CC10F5 /* CardDetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */; };
 		2CA1953B2BE213A000CC10F5 /* CardDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */; };
@@ -551,6 +553,8 @@
 		2C5F24AF2C10C52600E73EE8 /* HTMLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLModel.swift; sourceTree = "<group>"; };
 		2C5F24B02C10C52600E73EE8 /* HTMLWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLWireframe.swift; sourceTree = "<group>"; };
 		2C5F24B92C10C54100E73EE8 /* HTMLUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLUI.swift; sourceTree = "<group>"; };
+		2C6FA5612CC595060053C234 /* GoogleService-Info-Dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Dev.plist"; sourceTree = "<group>"; };
+		2C6FA5632CC595880053C234 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CA195322BE213A000CC10F5 /* CardDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenter.swift; sourceTree = "<group>"; };
 		2CA195332BE213A000CC10F5 /* CardDetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsProtocols.swift; sourceTree = "<group>"; };
 		2CA195342BE213A000CC10F5 /* CardDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsInteractor.swift; sourceTree = "<group>"; };
@@ -1380,6 +1384,8 @@
 			isa = PBXGroup;
 			children = (
 				2CACCD392BD51C83008178F8 /* Info.plist */,
+				2C6FA5612CC595060053C234 /* GoogleService-Info-Dev.plist */,
+				2C6FA5632CC595880053C234 /* GoogleService-Info.plist */,
 			);
 			path = "Info property lists";
 			sourceTree = "<group>";
@@ -3166,6 +3172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C6FA5622CC595060053C234 /* GoogleService-Info-Dev.plist in Resources */,
 				2C5569552BFE1A6F00E12208 /* GenderTableViewCell.xib in Resources */,
 				62214AF92BD6E3C500ABF38E /* Inter-ExtraBold.ttf in Resources */,
 				62214AFD2BD6E3C500ABF38E /* Inter-Black.ttf in Resources */,
@@ -3182,6 +3189,7 @@
 				2C5569502BFE19BB00E12208 /* CityTableViewCell.xib in Resources */,
 				623450D22BFAFB0A00FE8E71 /* DropDownCell.xib in Resources */,
 				62214AFE2BD6E3C500ABF38E /* Inter-Thin.ttf in Resources */,
+				2C6FA5642CC595880053C234 /* GoogleService-Info.plist in Resources */,
 				623693692BF5BBD700E23799 /* PhoneNumberPrefixTableViewCell.xib in Resources */,
 				62214AFB2BD6E3C500ABF38E /* Inter-SemiBold.ttf in Resources */,
 			);
@@ -3914,7 +3922,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Lollypop aplikacija traži dozvolu za korišćenje kamere za potrebe skeniranja loyalty kartica.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -3951,7 +3959,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Lollypop aplikacija traži dozvolu za korišćenje kamere za potrebe skeniranja loyalty kartica.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -4129,7 +4137,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Lollypop aplikacija traži dozvolu za korišćenje kamere za potrebe skeniranja loyalty kartica.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -4263,7 +4271,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Lollipop Dev";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Lollypop aplikacija traži dozvolu za korišćenje kamere za potrebe skeniranja loyalty kartica.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
