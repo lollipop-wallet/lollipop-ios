@@ -87,6 +87,9 @@ extension RegisterView {
             stack.spacing = 8
             return stack
         }()
+        
+        self.datePicker.tintColor = .black
+        datePicker.overrideUserInterfaceStyle = .light
 
         lazy var datePickerPlaceholder: UIView = {
             let view = UIView()
@@ -95,7 +98,7 @@ extension RegisterView {
                 make.leading.top.equalToSuperview().offset(5)
                 make.trailing.bottom.equalToSuperview().offset(-5)
             }
-            view.backgroundColor = AppColors.black.withAlphaComponent(0.5)
+            view.backgroundColor = AppColors.white
             view.layer.cornerRadius = 8
             view.layer.masksToBounds = true
             return view
@@ -256,6 +259,15 @@ extension RegisterView {
             self.presenter?.handleCityDropdownTapWith(item: item)
         }
         
+        lazy var calendarTapButton: UIButton = {
+            let button = UIButton()
+            button.addTarget(self, action: #selector(hideCalendar), for: .touchUpInside)
+            return button
+        }()
+        
+        self.hideCalendarButton = calendarTapButton
+        self.hideCalendarButton.isHidden = true
+        
         self.view.addSubview(mainStack)
         mainStack.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
@@ -285,6 +297,12 @@ extension RegisterView {
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(proceedButton.snp.bottom).offset(32)
             make.height.equalTo(74)
+        }
+        
+        self.view.addSubview(hideCalendarButton)
+        hideCalendarButton.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(self.datePickerStackView.snp.bottom)
         }
     }
 }

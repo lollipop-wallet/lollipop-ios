@@ -21,6 +21,7 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     var cityField = DropdownInputField()
     var cityDropdown = DropDown()
     var genderDropdown = DropDown()
+    var hideCalendarButton = UIButton()
 
     var presenter: RegisterPresenterProtocol?
 
@@ -42,6 +43,7 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     func displayCalendar(){
         DispatchQueue.main.async {
             self.datePickerStackView.isHidden = !self.datePickerStackView.isHidden
+            self.hideCalendarButton.isHidden = !self.hideCalendarButton.isHidden
         }
     }
     
@@ -113,5 +115,10 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     
     @objc func onAlreadyHaveAccountTap() {
         popBack(2)
+    }
+    
+    @objc func hideCalendar() {
+        self.datePickerStackView.isHidden = true
+        self.hideCalendarButton.isHidden = true
     }
 }
