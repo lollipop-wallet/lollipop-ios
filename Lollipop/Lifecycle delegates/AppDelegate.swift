@@ -7,7 +7,7 @@
 
 import UIKit
 import GoogleSignIn
-
+import FBSDKCoreKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureAppWith(application, didFinishLaunchingWithOptions: launchOptions)
         
         configureEntryPoint()
+        
         
         return true
     }
@@ -36,6 +37,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       if handled {
         return true
       }
+        
+        ApplicationDelegate.shared.application(
+            app,
+            open: url,
+            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+        )
 
       // Handle other custom URL types.
 

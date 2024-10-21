@@ -11,6 +11,7 @@ import AppTrackingTransparency
 import IQKeyboardManagerSwift
 import Alamofire
 import Localize_Swift
+import FBSDKCoreKit
 
 // MARK: - AppDelegate
 extension AppDelegate {
@@ -59,6 +60,12 @@ extension AppDelegate {
             Manager.sessionsCount = 1
             StorageManager().saveSessionsWith(sessions: 1)
         }
+        
+        // Initialize Facebook SDK
+        FBSDKCoreKit.ApplicationDelegate.shared.application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
         
     }
     

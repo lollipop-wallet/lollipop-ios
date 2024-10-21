@@ -2,6 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6</string>
+				<string>fb7449475511844855</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>7449475511844855</string>
+	<key>FacebookClientToken</key>
+	<string>5e4331bc1e134b4dc15206bb9f8bd692</string>
+	<key>FacebookDisplayName</key>
+	<string>Lollipop Loyalty App</string>
+	<key>GIDClientID</key>
+	<string>$(GOOGLE_CLIENT_ID)</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Inter-Black.ttf</string>
@@ -18,27 +36,5 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
-	<key>GIDClientID</key>
-	<string>$(GOOGLE_CLIENT_ID)</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fbAPP-ID</string>
-			</array>
-		</dict>
-	</array>
-	<key>FacebookAppID</key>
-	<string>7449475511844855</string>
-	<key>FacebookClientToken</key>
-	<string>5e4331bc1e134b4dc15206bb9f8bd692</string>
-	<key>FacebookDisplayName</key>
-	<string>Lollipop Loyalty App</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>fbapi</string>
-      <string>fb-messenger-share-api</string>
-    </array>
 </dict>
 </plist>

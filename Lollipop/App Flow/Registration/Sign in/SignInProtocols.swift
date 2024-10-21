@@ -20,7 +20,7 @@ protocol SignInPresenterProtocol: AnyObject {
     func signInEmail()
     func signInGoogle(vc: SignInView)
     func signInApple()
-    func signInFacebook()
+    func signInFacebook(vc: SignInView)
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR
@@ -28,6 +28,7 @@ protocol SignInInputInteractorProtocol: AnyObject {
     
     var presenter: SignInOutputInteractorProtocol?  { get set }
     func googleSignIn(token: String)
+    func facebookSignIn(token: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER

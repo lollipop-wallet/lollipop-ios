@@ -32,7 +32,7 @@ class SignInView: UIViewController, SignInViewProtocol {
     }
     
     @objc func onFacebookTap() {
-        presenter?.signInFacebook()
+        presenter?.signInFacebook(vc: self)
     }
     
     @objc func onGoogleTap() {

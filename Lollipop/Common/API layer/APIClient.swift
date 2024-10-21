@@ -308,5 +308,10 @@ class APIClient {
         Manager.authTypeHeader = ""
         performRequest(route: APIRouter.googlesignin(idToken: token), completion: completion)
     }
+    
+    static func facebooksignin(token: String, completion:@escaping (Result<LoginModel, AFError>)->Void){
+        Manager.authTypeHeader = ""
+        performRequest(route: APIRouter.facebooksignin(idToken: token), completion: completion)
+    }
 }
 
