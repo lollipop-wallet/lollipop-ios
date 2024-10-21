@@ -303,5 +303,10 @@ class APIClient {
         Manager.authTypeHeader = APIAuthTypeHeader.bearer.authIdentifier
         performUpload(route: APIRouter.updatedisplaycard(cardAlias: cardAlias, frontImage: frontImage, backImage: backImage, cardName: cardName, cardNumber: cardNumber, cardBarCode: cardBarCode, codeType: codeType, nameOnTheCard: nameOnTheCard, notes: notes), completion: completion)
     }
+    
+    static func googlesignin(token: String, completion:@escaping (Result<LoginModel, AFError>)->Void){
+        Manager.authTypeHeader = ""
+        performRequest(route: APIRouter.googlesignin(idToken: token), completion: completion)
+    }
 }
 

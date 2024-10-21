@@ -18,16 +18,16 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
-    <key>GIDClientID</key>
-    <string>958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6.apps.googleusercontent.com</string>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-        <key>CFBundleURLSchemes</key>
-        <array>
-          <string>com.googleusercontent.apps.958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6</string>
-        </array>
-      </dict>
-    </array>
+	<key>GIDClientID</key>
+	<string>$(GOOGLE_CLIENT_ID)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>$(GOOGLE_REVERSED_CLIENT_ID)</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

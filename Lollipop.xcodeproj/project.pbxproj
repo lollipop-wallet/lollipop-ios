@@ -3921,8 +3921,10 @@
 				DEVELOPMENT_TEAM = 8M2J78DM79;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				GOOGLE_CLIENT_ID = "958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6.apps.googleusercontent.com";
+				GOOGLE_REVERSED_CLIENT_ID = "com.googleusercontent.apps.958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6";
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = "Lollypop Dev";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Lollypop aplikacija traži dozvolu za korišćenje kamere za potrebe skeniranja loyalty kartica.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -3958,8 +3960,10 @@
 				DEVELOPMENT_TEAM = 8M2J78DM79;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				GOOGLE_CLIENT_ID = "958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6.apps.googleusercontent.com";
+				GOOGLE_REVERSED_CLIENT_ID = "com.googleusercontent.apps.958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6";
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = "Lollypop Dev";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Lollypop aplikacija traži dozvolu za korišćenje kamere za potrebe skeniranja loyalty kartica.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -4136,8 +4140,10 @@
 				DEVELOPMENT_TEAM = 8M2J78DM79;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				GOOGLE_CLIENT_ID = "";
+				GOOGLE_REVERSED_CLIENT_ID = "";
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = "Lollypop Dev";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Lollypop aplikacija traži dozvolu za korišćenje kamere za potrebe skeniranja loyalty kartica.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -4270,8 +4276,10 @@
 				DEVELOPMENT_TEAM = 8M2J78DM79;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				GOOGLE_CLIENT_ID = "";
+				GOOGLE_REVERSED_CLIENT_ID = "";
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = "Lollypop Dev";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Lollypop aplikacija traži dozvolu za korišćenje kamere za potrebe skeniranja loyalty kartica.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

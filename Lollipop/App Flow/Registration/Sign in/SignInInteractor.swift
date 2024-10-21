@@ -12,4 +12,13 @@ import UIKit
 class SignInInteractor: SignInInputInteractorProtocol {
     
     weak var presenter: SignInOutputInteractorProtocol?
+    
+    func googleSignIn(token: String){
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.googlesignin(token: token) { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self = self else { return }
+            self.presenter?.takeData(result: result)
+        }
+    }
 }

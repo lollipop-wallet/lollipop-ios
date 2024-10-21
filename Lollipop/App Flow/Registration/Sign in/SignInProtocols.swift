@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 //MARK: Presenter
 // VIEW TO PRESENTER
@@ -26,14 +27,12 @@ protocol SignInPresenterProtocol: AnyObject {
 protocol SignInInputInteractorProtocol: AnyObject {
     
     var presenter: SignInOutputInteractorProtocol?  { get set }
-    
-   
+    func googleSignIn(token: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER
 protocol SignInOutputInteractorProtocol: AnyObject {
-    
-
+    func takeData(result: Result<LoginModel, AFError>)
 }
 //MARK: View
 protocol SignInViewProtocol: AnyObject {
@@ -44,4 +43,5 @@ protocol SignInViewProtocol: AnyObject {
 //MARK: Wireframe
 protocol SignInWireframeProtocol: AnyObject {
     func toManualSignIn()
+    func toMain()
 }
