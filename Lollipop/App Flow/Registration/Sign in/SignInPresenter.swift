@@ -6,6 +6,7 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 import UIKit
+import GoogleSignIn
 
 class SignInPresenter: SignInPresenterProtocol  {
     
@@ -17,8 +18,16 @@ class SignInPresenter: SignInPresenterProtocol  {
         wireframe?.toManualSignIn()
     }
     
-    func signInGoogle(){
-        
+    func signInGoogle(vc: SignInView){
+       vc.view.showSpinner()
+        GIDSignIn.sharedInstance.signIn(withPresenting: vc) { signInResult, error in
+          guard error == nil else { return }
+            vc.view.hideSpinner()
+            print("ovo je rezultat: ", signInResult)
+            print("GoogleUserToken: ", signInResult?.user.idToken?.tokenString)
+            print("GoogleIdToken", signInResult?.user.accessToken.tokenString)
+          // If sign in succeeded, display the app's main content View.
+        }
     }
     
     func signInApple(){

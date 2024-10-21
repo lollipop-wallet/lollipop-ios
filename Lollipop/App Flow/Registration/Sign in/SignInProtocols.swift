@@ -17,7 +17,7 @@ protocol SignInPresenterProtocol: AnyObject {
     var wireframe:SignInWireframeProtocol? { get set }
     
     func signInEmail()
-    func signInGoogle()
+    func signInGoogle(vc: SignInView)
     func signInApple()
     func signInFacebook()
 }

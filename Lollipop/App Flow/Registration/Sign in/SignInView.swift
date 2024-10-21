@@ -36,7 +36,7 @@ class SignInView: UIViewController, SignInViewProtocol {
     }
     
     @objc func onGoogleTap() {
-        presenter?.signInGoogle()
+        presenter?.signInGoogle(vc: self)
     }
     
     @objc func onCloseTap() {

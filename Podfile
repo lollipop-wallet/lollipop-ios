@@ -32,6 +32,7 @@ pod 'BarcodeScanner'
 pod 'GoogleSignIn'
 pod 'RSBarcodes_Swift', '~> 5.2.0'
 pod 'lottie-ios'
+pod 'GoogleSignIn'
 
 post_install do |installer|
   installer.generated_projects.each do |project|

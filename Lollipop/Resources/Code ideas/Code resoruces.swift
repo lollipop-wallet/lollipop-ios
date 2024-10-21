@@ -13,3 +13,8 @@ import Foundation
 //https://github.com/MillmanY/MMCardView
 
 //https://github.com/hfrahmann/HFCardCollectionViewLayout
+
+//CLientId for google
+//958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6.apps.googleusercontent.com
+
+//958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6.apps.googleusercontent.com
