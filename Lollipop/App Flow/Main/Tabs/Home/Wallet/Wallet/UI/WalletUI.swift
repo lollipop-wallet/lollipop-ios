@@ -246,13 +246,13 @@ extension WalletView {
             make.top.equalToSuperview().offset(30)
         }
         
-        contentView.addSubview(self.allCardsButton)
+        mainContentView.addSubview(self.allCardsButton)
         self.allCardsButton.snp.makeConstraints { make in
-            make.top.equalTo(self.cardView.snp.bottom).offset(16)
+            //make.top.equalTo(self.cardView.snp.bottom).offset(16)
             make.height.equalTo(40)
             make.centerX.equalToSuperview()
             make.width.equalTo(170)
-            make.bottom.equalToSuperview().offset(-48)
+            make.bottom.equalToSuperview().offset(-29)
         }
     }
 }
