@@ -25,9 +25,20 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>$(GOOGLE_REVERSED_CLIENT_ID)</string>
+				<string>fbAPP-ID</string>
 			</array>
 		</dict>
 	</array>
+	<key>FacebookAppID</key>
+	<string>7449475511844855</string>
+	<key>FacebookClientToken</key>
+	<string>5e4331bc1e134b4dc15206bb9f8bd692</string>
+	<key>FacebookDisplayName</key>
+	<string>Lollipop Loyalty App</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>fbapi</string>
+      <string>fb-messenger-share-api</string>
+    </array>
 </dict>
 </plist>
