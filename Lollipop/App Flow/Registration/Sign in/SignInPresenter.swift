@@ -10,8 +10,9 @@ import GoogleSignIn
 import Alamofire
 import FBSDKCoreKit
 import FBSDKLoginKit
+import AuthenticationServices
 
-class SignInPresenter: SignInPresenterProtocol  {
+class SignInPresenter: NSObject, SignInPresenterProtocol  {
     
     var interactor : SignInInputInteractorProtocol?
     weak var view: SignInViewProtocol?
@@ -32,7 +33,12 @@ class SignInPresenter: SignInPresenterProtocol  {
     }
     
     func signInApple(){
-        
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.performRequests()
     }
     
     func signInFacebook(vc: SignInView){
@@ -88,6 +94,20 @@ extension SignInPresenter: SignInOutputInteractorProtocol {
             wireframe?.toMain()
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
+        }
+    }
+}
+
+
+//MARK: Apple Sign in delegate
+extension SignInPresenter {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as?  ASAuthorizationAppleIDCredential {
+            let userIdentifier = appleIDCredential.user
+            let fullName = appleIDCredential.fullName
+            let email = appleIDCredential.email
+            let token = appleIDCredential.identityToken
+            print("User id is \(userIdentifier) \n Full Name is \(String(describing: fullName)) \n Email id is \(String(describing: email))")
         }
     }
 }

@@ -8,10 +8,11 @@
 
 import Foundation
 import Alamofire
+import AuthenticationServices
 
 //MARK: Presenter
 // VIEW TO PRESENTER
-protocol SignInPresenterProtocol: AnyObject {
+protocol SignInPresenterProtocol: ASAuthorizationControllerDelegate {
     
     var interactor: SignInInputInteractorProtocol? { get set }
     var view: SignInViewProtocol? { get set }
