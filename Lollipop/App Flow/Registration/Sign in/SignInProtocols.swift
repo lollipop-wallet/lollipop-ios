@@ -30,6 +30,7 @@ protocol SignInInputInteractorProtocol: AnyObject {
     var presenter: SignInOutputInteractorProtocol?  { get set }
     func googleSignIn(token: String)
     func facebookSignIn(token: String)
+    func appleSignIn(token: String)
 }
 //MARK: Interactor
 //INTERACTOR TO PRESENTER

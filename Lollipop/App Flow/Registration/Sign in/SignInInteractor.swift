@@ -30,4 +30,13 @@ class SignInInteractor: SignInInputInteractorProtocol {
             self.presenter?.takeData(result: result)
         }
     }
+    
+    func appleSignIn(token: String){
+        UIApplication.topViewController()?.view.showSpinner()
+        APIClient.applesignin(token: token) { [weak self] result in
+            UIApplication.topViewController()?.view.hideSpinner()
+            guard let self = self else { return }
+            self.presenter?.takeData(result: result)
+        }
+    }
 }

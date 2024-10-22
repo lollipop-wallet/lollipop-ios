@@ -106,7 +106,8 @@ extension SignInPresenter {
             let userIdentifier = appleIDCredential.user
             let fullName = appleIDCredential.fullName
             let email = appleIDCredential.email
-            let token = appleIDCredential.identityToken
+            let token = String(data: appleIDCredential.identityToken ?? Data(), encoding: .utf8) ?? ""
+            interactor?.appleSignIn(token: token)
             print("User id is \(userIdentifier) \n Full Name is \(String(describing: fullName)) \n Email id is \(String(describing: email))")
         }
     }

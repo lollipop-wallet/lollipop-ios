@@ -313,5 +313,10 @@ class APIClient {
         Manager.authTypeHeader = ""
         performRequest(route: APIRouter.facebooksignin(idToken: token), completion: completion)
     }
+    
+    static func applesignin(token: String, completion:@escaping (Result<LoginModel, AFError>)->Void){
+        Manager.authTypeHeader = ""
+        performRequest(route: APIRouter.applesignin(idToken: token), completion: completion)
+    }
 }
 
