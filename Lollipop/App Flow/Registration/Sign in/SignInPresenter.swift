@@ -103,11 +103,7 @@ extension SignInPresenter: SignInOutputInteractorProtocol {
 extension SignInPresenter {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as?  ASAuthorizationAppleIDCredential {
-            let userIdentifier = appleIDCredential.user
-            let fullName = appleIDCredential.fullName
-            let email = appleIDCredential.email
             let token = String(data: appleIDCredential.identityToken ?? Data(), encoding: .utf8) ?? ""
-            print("Token is: ", token)
             interactor?.appleSignIn(token: token)
         }
     }
