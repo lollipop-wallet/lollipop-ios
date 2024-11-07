@@ -38,7 +38,7 @@ class HomeRectHorizontalCategoryTableViewCell: UITableViewCell {
         label.font = .inter(ofSize: 20, name: .bold)
         label.textColor = AppColors.black
         label.textAlignment = .left
-        label.text = "Promocije"
+        label.text = LocalizedTitle.ourPick.localized
         return label
     }()
     
@@ -67,7 +67,7 @@ class HomeRectHorizontalCategoryTableViewCell: UITableViewCell {
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalToSuperview()
-            make.height.equalTo(20)
+            make.height.equalTo(22)
         }
         view.addSubview(self.collectionView)
         self.collectionView.snp.makeConstraints { make in
