@@ -16,4 +16,5 @@ enum HTTPHeaderField: String {
     case refresh = "Refresh-Token"
     case branding = "Branding-Type"
     case acceptRanges = "Accept-Ranges"
+    case platform = "X-Platform"
 }

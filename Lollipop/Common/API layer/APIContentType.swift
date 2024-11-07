@@ -12,4 +12,5 @@ enum ContentType: String {
     case pdf = "application/pdf"
     case binary = "binary"
     case bytes = "bytes"
+    case ios = "ios"
 }

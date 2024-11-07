@@ -181,6 +181,7 @@ enum APIRouter: URLRequestConvertible, Equatable {
             urlRequest.httpMethod = method.rawValue
             urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
             urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
+            urlRequest.setValue(ContentType.ios.rawValue, forHTTPHeaderField: HTTPHeaderField.platform.rawValue)
             if Manager.authTypeHeader == APIAuthTypeHeader.bearer.authIdentifier {
                 print("Heder je: ", "Bearer \(Manager.token)")
                 urlRequest.setValue("Bearer \(Manager.token)", forHTTPHeaderField: HTTPHeaderField.authorization.rawValue)
