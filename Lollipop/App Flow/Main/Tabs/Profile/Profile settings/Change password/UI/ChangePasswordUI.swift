@@ -45,7 +45,7 @@ extension ChangePasswordView {
         self.newPasswordField.leftSuplementaryIconHidden = true
         self.newPasswordField.isSecureTextEntry = true
         
-        self.confirmPasswordField.title = "\(LocalizedTitle.newPassword.localized):"
+        self.confirmPasswordField.title = "\(LocalizedTitle.repeatPassword.localized):"
         self.confirmPasswordField.errorHidden = true
         self.confirmPasswordField.keyboardType = .default
         self.confirmPasswordField.background = AppColors.white
