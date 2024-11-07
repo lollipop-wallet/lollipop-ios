@@ -209,6 +209,7 @@ enum LocalizedTitle: String {
     case aboutSubtitle3
     case popularCards
     case repeatPassword
+    case ourPick
 
     
     var localized: String {

@@ -119,9 +119,9 @@
 "programmeRules" = "Programme rules";
 "options" = "Options";
 "ihaveCardTitle" = "I have card";
-"iHaveCardSubtitle" = "Digitalize your own card";
+"iHaveCardSubtitle" = "Digitalize own card";
 "iWantCardTitle" = "I want a card";
-"iWantCardSubtitle" = "Sign up to become a club member";
+"iWantCardSubtitle" = "How to get a card";
 "newPartnerCardInfo" = "If you want to join the programme, please fill in the fields bellow";
 "nameAndSurname" = "First and Last name";
 "phoneNumber" = "Phone number";
@@ -198,3 +198,4 @@
 "aboutSubtitle3" = "Lollypop brings you all the information you need about different loyalty programs. You will discover how to collect points, win discounts, prizes and other privileges, and use your money in a smart way.\n\nExplore our partners and find out about the latest offers and promotions. If your favorite brand is not yet on the list of our partners, feel free to send us a recommendation!";
 "popularCards" = "Popular cards";
 "repeatPassword" = "Repeat password";
+"ourPick" = "Our pick";

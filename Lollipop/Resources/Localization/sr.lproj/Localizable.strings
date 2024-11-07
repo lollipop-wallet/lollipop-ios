@@ -118,9 +118,9 @@
 "programmeRules" = "Pravila programa";
 "options" = "Opcije";
 "ihaveCardTitle" = "Imam karticu";
-"iHaveCardSubtitle" = "Digitalizuj svoju postojeću karticu";
+"iHaveCardSubtitle" = "Digitalizuj svoju karticu";
 "iWantCardTitle" = "Želim karticu";
-"iWantCardSubtitle" = "Ispuni zahtev i pošalji prijavu";
+"iWantCardSubtitle" = "Kako da dobiješ karticu";
 "newPartnerCardInfo" = "Ukoliko želiš da se prijaviš za karticu, popuni polja u nastavku";
 "nameAndSurname" = "Ime i prezime";
 "phoneNumber" = "Broj telefona";
@@ -197,3 +197,4 @@
 "aboutSubtitle3" = "Lollypop ti donosi sve potrebne informacije o različitim programima lojalnosti. Otkrićeš kako da sakupljaš poene, osvajaš popuste, nagrade i druge privilegije, i iskoristiš svoj novac na pametan način.\n\nIstraži naše partnere i informiši se o najnovijim ponudama i akcijama. Ako tvoj omiljeni brend još nije na listi naših partnera, slobodno nam pošalji preporuku!";
 "popularCards" = "Popularne kartice";
 "repeatPassword" = "Ponovi šifru";
+"ourPick" = "Izdvajamo";
