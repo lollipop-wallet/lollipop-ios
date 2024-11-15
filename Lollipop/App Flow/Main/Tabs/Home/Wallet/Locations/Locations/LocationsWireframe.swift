@@ -38,7 +38,7 @@ class LocationsWireframe: LocationsWireframeProtocol {
     }
     
     func toMapWith(location: Location?){
-        let coordinate = CLLocationCoordinate2DMake(Double(location?.lat ?? "") ?? 0.0, Double(location?.lon ?? "") ?? 0.0)
+        let coordinate = CLLocationCoordinate2DMake(Double(location?.lat ?? "") ?? 0.0, Double(location?.lng ?? "") ?? 0.0)
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
         mapItem.name = location?.name ?? ""
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])

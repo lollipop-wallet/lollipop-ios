@@ -21,7 +21,7 @@ struct Location: Codable {
     let city: String?
     let address: String?
     let lat: String?
-    let lon: String?
+    let lng: String?
     let phone: String?
     let email: String?
 }
