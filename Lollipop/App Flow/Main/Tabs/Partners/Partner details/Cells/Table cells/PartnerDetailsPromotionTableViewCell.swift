@@ -119,7 +119,7 @@ class PartnerDetailsPromotionTableViewCell: UITableViewCell {
         self.index = index
         self.delegate = delegate
         self.datasource = datasource
-        self.titleLabel.text = LocalizedTitle.promotions.localized
+        self.titleLabel.text = LocalizedTitle.ourPick.localized
         self.collectionView.reloadData()
     }
     
