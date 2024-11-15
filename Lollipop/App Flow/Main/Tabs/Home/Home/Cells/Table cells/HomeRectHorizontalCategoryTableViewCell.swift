@@ -25,7 +25,7 @@ class HomeRectHorizontalCategoryTableViewCell: UITableViewCell {
     
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.createCompositionalLayout())
-        collectionView.register(RectItemCollectionViewCell.self, forCellWithReuseIdentifier: CellId.rectItemCell.rawValue)
+        collectionView.register(PromotionsCollectionViewCell.self, forCellWithReuseIdentifier: CellId.promotionsCell.rawValue)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.isUserInteractionEnabled = true
@@ -75,7 +75,8 @@ class HomeRectHorizontalCategoryTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview()
             make.top.equalTo(titleStack.snp.bottom).offset(24)
             make.bottom.equalToSuperview()
-            make.height.equalTo(216)
+            //make.height.equalTo(216)
+            make.height.equalTo(290)
         }
         return view
     }()
@@ -127,13 +128,13 @@ class HomeRectHorizontalCategoryTableViewCell: UITableViewCell {
     }
 }
 
-extension HomeRectHorizontalCategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, RectItemCellProtocol {
+extension HomeRectHorizontalCategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, PromotionsCellProtocol {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.datasource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.rectItemCell.rawValue, for: indexPath) as! RectItemCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.promotionsCell.rawValue, for: indexPath) as! PromotionsCollectionViewCell
         cell.configureWith(item: self.datasource[indexPath.row], delegate: self, index: indexPath)
         return cell
     }
@@ -157,7 +158,7 @@ extension HomeRectHorizontalCategoryTableViewCell {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 6, bottom: 0,trailing: 6)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(170), heightDimension: .estimated(216))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(170), heightDimension: .estimated(290))
 
         let group = NSCollectionLayoutGroup.vertical( layoutSize: groupSize, subitem: item, count: 1)
        // group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0,trailing: 12)
