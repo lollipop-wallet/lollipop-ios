@@ -16,7 +16,7 @@ struct Configuration {
     static var productionServerBaseURL: String {
         get {
             #if PROD
-                return "https://lollipop.strangehollow.cc/api/"
+                return "https://lollypop.cards/api"
             #else
                 return "https://lollipop.strangehollow.cc/api/"
             #endif
