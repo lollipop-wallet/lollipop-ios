@@ -12,6 +12,7 @@ import IQKeyboardManagerSwift
 import Alamofire
 import Localize_Swift
 import FBSDKCoreKit
+import IQKeyboardToolbarManager
 
 // MARK: - AppDelegate
 extension AppDelegate {
@@ -45,11 +46,7 @@ extension AppDelegate {
         configureNotifications(application)
 
         // IQ keyboard manager
-        IQKeyboardManager.shared.enable = true
-        //IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Dismiss"
-        IQKeyboardManager.shared.enableAutoToolbar = false
-        IQKeyboardManager.shared.toolbarConfiguration.placeholderConfiguration.showPlaceholder = false
-        IQKeyboardManager.shared.resignOnTouchOutside = true
+        configureKeyboardManager()
 
         //Session counter
         if let sessions = UserDefaults.standard.value(forKey: StorageKeys.sessions.rawValue) as? Int{
@@ -67,6 +64,14 @@ extension AppDelegate {
             didFinishLaunchingWithOptions: launchOptions
         )
         
+    }
+    
+    func configureKeyboardManager() {
+        IQKeyboardManager.shared.isEnabled = true
+        //IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Dismiss"
+        IQKeyboardToolbarManager.shared.isEnabled = false
+        IQKeyboardToolbarManager.shared.toolbarConfiguration.placeholderConfiguration.showPlaceholder = false
+        IQKeyboardManager.shared.resignOnTouchOutside = true
     }
     
     func configureEntryPoint() {

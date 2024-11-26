@@ -8,16 +8,16 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>$(GOOGLE_SIGN_IN_URL_SCHEME)</string>
-				<string>fb7449475511844855</string>
+				<string>$(FB_URL_SCHEME)</string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookAppID</key>
-	<string>7449475511844855</string>
+	<string>$(FB_APP_ID)</string>
 	<key>FacebookClientToken</key>
-	<string>5e4331bc1e134b4dc15206bb9f8bd692</string>
+	<string>$(FB_CLIENT_TOKEN)</string>
 	<key>FacebookDisplayName</key>
-	<string>Lollipop Loyalty App</string>
+	<string>$(FB_DISPLAY_NAME)</string>
 	<key>GIDClientID</key>
 	<string>$(GOOGLE_CLIENT_ID)</string>
 	<key>UIAppFonts</key>
