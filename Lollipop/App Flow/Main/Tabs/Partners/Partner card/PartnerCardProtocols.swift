@@ -44,6 +44,7 @@ protocol PartnerCardWireframeProtocol: AnyObject {
     static var delegate: PartnersCardControllerProtocol? { get set }
     func toPartnerNewCard(card: Card?)
     func toScannerWith(card: Card?)
+    func toHTMLWith(title: String, description: String, buttonTitle: String, externalLink: String)
 }
 
 //MARK: PartnerCardOptionCellProtocol

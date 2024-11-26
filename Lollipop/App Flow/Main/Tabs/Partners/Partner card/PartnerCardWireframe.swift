@@ -34,4 +34,13 @@ class PartnerCardWireframe: PartnerCardWireframeProtocol {
         ScannerWireframe.card = card
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func toHTMLWith(title: String, description: String, buttonTitle: String, externalLink: String){
+        let vc = HTMLView()
+        HTMLWireframe.title = title
+        HTMLWireframe.description = description
+        HTMLWireframe.buttonTitle = buttonTitle
+        HTMLWireframe.externalLink = externalLink
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

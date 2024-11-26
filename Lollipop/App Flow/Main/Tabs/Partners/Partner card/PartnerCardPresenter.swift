@@ -49,7 +49,11 @@ extension PartnerCardPresenter {
         
         if Manager.isRegistered {
             if item.option == .wantsCard {
-                wireframe?.toPartnerNewCard(card: card)
+                if (self.cardTemplate?.cta_links_to ?? "") == "rules" {
+                    wireframe?.toHTMLWith(title: self.partner?.rule?.title ?? "", description: self.partner?.rule?.description ?? "", buttonTitle: self.partner?.rule?.label ?? "", externalLink: "")
+                }else{
+                    wireframe?.toPartnerNewCard(card: card)
+                }
             }else{
                 wireframe?.toScannerWith(card: card)
             }
