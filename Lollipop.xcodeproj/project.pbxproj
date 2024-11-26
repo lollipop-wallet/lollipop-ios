@@ -3923,6 +3923,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				GOOGLE_CLIENT_ID = "958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6.apps.googleusercontent.com";
 				GOOGLE_REVERSED_CLIENT_ID = "com.googleusercontent.apps.958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6";
+				GOOGLE_SIGN_IN_URL_SCHEME = "com.googleusercontent.apps.958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6";
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Lollypop Dev";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
@@ -3963,6 +3964,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				GOOGLE_CLIENT_ID = "958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6.apps.googleusercontent.com";
 				GOOGLE_REVERSED_CLIENT_ID = "com.googleusercontent.apps.958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6";
+				GOOGLE_SIGN_IN_URL_SCHEME = "com.googleusercontent.apps.958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6";
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Lollypop Dev";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
@@ -4142,8 +4144,9 @@
 				DEVELOPMENT_TEAM = 8M2J78DM79;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				GOOGLE_CLIENT_ID = "";
-				GOOGLE_REVERSED_CLIENT_ID = "";
+				GOOGLE_CLIENT_ID = "302497193112-udsvt6r2qi7updhhld1gjid1r6v7b2j5.apps.googleusercontent.com";
+				GOOGLE_REVERSED_CLIENT_ID = "com.googleusercontent.apps.302497193112-udsvt6r2qi7updhhld1gjid1r6v7b2j5";
+				GOOGLE_SIGN_IN_URL_SCHEME = "com.googleusercontent.apps.302497193112-udsvt6r2qi7updhhld1gjid1r6v7b2j5";
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Lollypop Dev";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
@@ -4279,8 +4282,9 @@
 				DEVELOPMENT_TEAM = 8M2J78DM79;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				GOOGLE_CLIENT_ID = "";
-				GOOGLE_REVERSED_CLIENT_ID = "";
+				GOOGLE_CLIENT_ID = "302497193112-udsvt6r2qi7updhhld1gjid1r6v7b2j5.apps.googleusercontent.com";
+				GOOGLE_REVERSED_CLIENT_ID = "com.googleusercontent.apps.302497193112-udsvt6r2qi7updhhld1gjid1r6v7b2j5";
+				GOOGLE_SIGN_IN_URL_SCHEME = "com.googleusercontent.apps.302497193112-udsvt6r2qi7updhhld1gjid1r6v7b2j5";
 				INFOPLIST_FILE = "Lollipop/Info property lists/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Lollypop Dev";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";

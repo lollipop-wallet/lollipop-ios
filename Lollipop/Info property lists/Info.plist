@@ -7,7 +7,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.958866147718-g9ad20776ki1bf8l3f2o5d5vajlujnq6</string>
+				<string>$(GOOGLE_SIGN_IN_URL_SCHEME)</string>
 				<string>fb7449475511844855</string>
 			</array>
 		</dict>
