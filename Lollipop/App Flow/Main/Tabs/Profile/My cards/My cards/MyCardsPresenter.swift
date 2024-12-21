@@ -62,7 +62,8 @@ extension MyCardsPresenter: MyCardsOutputInteractorProtocol {
                 delegate?.updateUserCardsWith(cards: favCards)
                 self.shouldUpdateHomeCards = false
             }
-            self.view?.setSegmentedControlHidden(isHidden: cards.count <= 5)
+            //MARK: Hide segmented control if number of cards is less then/or equal to 5
+            //self.view?.setSegmentedControlHidden(isHidden: cards.count <= 5)
         case .failure(let error):
             Alert().alertMessageNoNavigator(title: LocalizedTitle.warning.localized, text: error.localizedDescription, shouldDismiss: false)
         }
