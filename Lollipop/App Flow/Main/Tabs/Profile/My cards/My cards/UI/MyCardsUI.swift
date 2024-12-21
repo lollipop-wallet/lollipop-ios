@@ -52,7 +52,7 @@ extension MyCardsView {
         self.segmentedControl.snp.makeConstraints { make in
             make.height.equalTo(47)
         }
-        self.segmentedControl.isHidden = true
+//        self.segmentedControl.isHidden = true
         
         self.tableView.separatorStyle = .none
         self.tableView.register(MyCardsTableViewCell.self, forCellReuseIdentifier: CellId.myCardsCell.rawValue)
