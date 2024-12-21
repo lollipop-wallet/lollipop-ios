@@ -31,11 +31,13 @@ class MyCardsPresenter: NSObject, MyCardsPresenterProtocol  {
     
     func edit(){
         if self.selectedSegment == 0 {
-            if self.allCards.count <= 5 {
-                wireframe?.toReorderCardsWith(cards: self.favoriteCards, delegate: self)
-            }else{
-                wireframe?.toFavoriteCardsWith(cards: self.allCards, delegate: self)
-            }
+//            if self.allCards.count <= 5 {
+//                wireframe?.toReorderCardsWith(cards: self.favoriteCards, delegate: self)
+//            }else{
+//                wireframe?.toFavoriteCardsWith(cards: self.allCards, delegate: self)
+//            }
+            wireframe?.toFavoriteCardsWith(cards: self.allCards, delegate: self)
+
         }else{
             wireframe?.toReorderCardsWith(cards: self.favoriteCards, delegate: self)
         }
