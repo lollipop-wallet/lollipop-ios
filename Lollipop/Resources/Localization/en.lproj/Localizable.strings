@@ -68,7 +68,7 @@
 "all" = "All";
 "favorite" = "Favorite";
 "cantSeeFavoriteBrand" = "Can't see favorite brand on the list?";
-"recommendLollipopPartner" = "Recommend Lollipop partner";
+"recommendLollipopPartner" = "Recommend Lollypop partner";
 "partnerDetails" = "Partner details";
 "shopName" = "Shop name";
 "enterShopMerchantName" = "Enter shop/merchant name";
@@ -198,4 +198,4 @@
 "aboutSubtitle3" = "Lollypop brings you all the information you need about different loyalty programs. You will discover how to collect points, win discounts, prizes and other privileges, and use your money in a smart way.\n\nExplore our partners and find out about the latest offers and promotions. If your favorite brand is not yet on the list of our partners, feel free to send us a recommendation!";
 "popularCards" = "Popular cards";
 "repeatPassword" = "Repeat password";
-"ourPick" = "Our pick";
+"ourPick" = "Highlights";
