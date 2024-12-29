@@ -14,9 +14,10 @@ extension MainView {
         
         let device = UIDevice.current.dc.deviceModel
         var bottomDistance = -21
+        
 
         switch device {
-        case .iPhone6, .iPhone6S, .iPhone6Plus, .iPhone6SPlus, .iPhone7, .iPhone7Plus, .iPhone8, .iPhone8Plus, .iPhoneSE2, .iPhoneSE3:
+        case .iPhone6, .iPhone6S, .iPhone6Plus, .iPhone6SPlus, .iPhone7, .iPhone7Plus, .iPhone8, .iPhone8Plus, .iPhoneSE2, .iPhoneSE3, .unknown:
             bottomDistance = 5
         default:
             bottomDistance = -21
