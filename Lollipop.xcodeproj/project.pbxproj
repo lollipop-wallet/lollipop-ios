@@ -500,7 +500,7 @@
 		62F6CE932BDEA36100C4775C /* LanCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE922BDEA36100C4775C /* LanCode.swift */; };
 		62F6CE962BDEA40600C4775C /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE952BDEA40600C4775C /* LanguageTableViewCell.swift */; };
 		62F6CE992BDF519200C4775C /* AutomaticHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6CE982BDF519200C4775C /* AutomaticHeightCollectionView.swift */; };
-		B365D5C91E69771B53CEDA22 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8484A74B7DFECED0DC62B0 /* Pods_Lollipop.framework */; };
+		E14F3E01C073B145452FE204 /* Pods_Lollipop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4049E5A8C4613ABC5F5B30CE /* Pods_Lollipop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -719,7 +719,10 @@
 		2CEC7FBB2BD8D1810050E762 /* RegisterUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUI.swift; sourceTree = "<group>"; };
 		2CEC7FBE2BD8F74D0050E762 /* CalendarInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInputField.swift; sourceTree = "<group>"; };
 		2CEC7FC12BD935A50050E762 /* CalendarInputProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInputProtocols.swift; sourceTree = "<group>"; };
-		615B4AD5398C4116B9CE54F9 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
+		2EEAF766558AEBD46CFA1F12 /* Pods-Lollipop.lollipop production debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production debug.xcconfig"; sourceTree = "<group>"; };
+		3178A520BBB52C655692AE46 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
+		37F4E406C1D3B0C09FAAAD45 /* Pods-Lollipop.lollipop developmet debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop developmet debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop developmet debug.xcconfig"; sourceTree = "<group>"; };
+		4049E5A8C4613ABC5F5B30CE /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6212737B2BE4A08700FDA7D0 /* HomeCircleHorizontalCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCircleHorizontalCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		6212737D2BE4A0B500FDA7D0 /* CircledItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircledItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		621B814F2C12187D0071B7F8 /* InquiryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryType.swift; sourceTree = "<group>"; };
@@ -1022,10 +1025,7 @@
 		62F6CE922BDEA36100C4775C /* LanCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanCode.swift; sourceTree = "<group>"; };
 		62F6CE952BDEA40600C4775C /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
 		62F6CE982BDF519200C4775C /* AutomaticHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticHeightCollectionView.swift; sourceTree = "<group>"; };
-		BC60A5B8D6426305F6A009A7 /* Pods-Lollipop.lollipop development release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop development release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop development release.xcconfig"; sourceTree = "<group>"; };
-		BF8484A74B7DFECED0DC62B0 /* Pods_Lollipop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lollipop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7AC60AA119918BBF9F5752D /* Pods-Lollipop.lollipop production debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production debug.xcconfig"; sourceTree = "<group>"; };
-		E40E2F38627DAEA8DEADD22B /* Pods-Lollipop.lollipop developmet debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop developmet debug.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop developmet debug.xcconfig"; sourceTree = "<group>"; };
+		C6702BAA3AB52FA64858B7F7 /* Pods-Lollipop.lollipop production release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lollipop.lollipop production release.xcconfig"; path = "Target Support Files/Pods-Lollipop/Pods-Lollipop.lollipop production release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1033,7 +1033,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B365D5C91E69771B53CEDA22 /* Pods_Lollipop.framework in Frameworks */,
+				E14F3E01C073B145452FE204 /* Pods_Lollipop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1324,7 +1324,7 @@
 				2CACCD4B2BD51C83008178F8 /* LollipopUITests */,
 				2CACCD292BD51C81008178F8 /* Products */,
 				8C1AC92D620E8BB50BD90320 /* Pods */,
-				EB2B1D8B42F75F37BDFF6261 /* Frameworks */,
+				AE9406E5E42762D1A84B5BF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3051,18 +3051,18 @@
 		8C1AC92D620E8BB50BD90320 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E40E2F38627DAEA8DEADD22B /* Pods-Lollipop.lollipop developmet debug.xcconfig */,
-				C7AC60AA119918BBF9F5752D /* Pods-Lollipop.lollipop production debug.xcconfig */,
-				BC60A5B8D6426305F6A009A7 /* Pods-Lollipop.lollipop development release.xcconfig */,
-				615B4AD5398C4116B9CE54F9 /* Pods-Lollipop.lollipop production release.xcconfig */,
+				37F4E406C1D3B0C09FAAAD45 /* Pods-Lollipop.lollipop developmet debug.xcconfig */,
+				2EEAF766558AEBD46CFA1F12 /* Pods-Lollipop.lollipop production debug.xcconfig */,
+				3178A520BBB52C655692AE46 /* Pods-Lollipop.lollipop development release.xcconfig */,
+				C6702BAA3AB52FA64858B7F7 /* Pods-Lollipop.lollipop production release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		EB2B1D8B42F75F37BDFF6261 /* Frameworks */ = {
+		AE9406E5E42762D1A84B5BF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF8484A74B7DFECED0DC62B0 /* Pods_Lollipop.framework */,
+				4049E5A8C4613ABC5F5B30CE /* Pods_Lollipop.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -3074,11 +3074,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CACCD522BD51C83008178F8 /* Build configuration list for PBXNativeTarget "Lollipop" */;
 			buildPhases = (
-				A96F13F2499875EBD7F7D377 /* [CP] Check Pods Manifest.lock */,
+				67A76D45BDC03E27D8E9AACE /* [CP] Check Pods Manifest.lock */,
 				2CACCD242BD51C81008178F8 /* Sources */,
 				2CACCD252BD51C81008178F8 /* Frameworks */,
 				2CACCD262BD51C81008178F8 /* Resources */,
-				D80158D575CAC0DB02271BA0 /* [CP] Embed Pods Frameworks */,
+				E6330F86A09F9456FC3589F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -3215,7 +3215,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A96F13F2499875EBD7F7D377 /* [CP] Check Pods Manifest.lock */ = {
+		67A76D45BDC03E27D8E9AACE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3237,7 +3237,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D80158D575CAC0DB02271BA0 /* [CP] Embed Pods Frameworks */ = {
+		E6330F86A09F9456FC3589F4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3914,14 +3914,14 @@
 		};
 		2CACCD532BD51C83008178F8 /* Lollipop Developmet Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E40E2F38627DAEA8DEADD22B /* Pods-Lollipop.lollipop developmet debug.xcconfig */;
+			baseConfigurationReference = 37F4E406C1D3B0C09FAAAD45 /* Pods-Lollipop.lollipop developmet debug.xcconfig */;
 			buildSettings = {
 				APP_NAME = "Lollypop Dev";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lollipop/Lollipop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 8M2J78DM79;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FB_APP_ID = 473723448566521;
@@ -3959,14 +3959,14 @@
 		};
 		2CACCD542BD51C83008178F8 /* Lollipop Development Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC60A5B8D6426305F6A009A7 /* Pods-Lollipop.lollipop development release.xcconfig */;
+			baseConfigurationReference = 3178A520BBB52C655692AE46 /* Pods-Lollipop.lollipop development release.xcconfig */;
 			buildSettings = {
 				APP_NAME = "Lollypop Dev";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lollipop/Lollipop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 8M2J78DM79;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FB_APP_ID = 473723448566521;
@@ -4145,14 +4145,14 @@
 		};
 		2CACCD5C2BD52130008178F8 /* Lollipop Production Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7AC60AA119918BBF9F5752D /* Pods-Lollipop.lollipop production debug.xcconfig */;
+			baseConfigurationReference = 2EEAF766558AEBD46CFA1F12 /* Pods-Lollipop.lollipop production debug.xcconfig */;
 			buildSettings = {
 				APP_NAME = Lollypop;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lollipop/Lollipop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 8M2J78DM79;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FB_APP_ID = 7449475511844855;
@@ -4287,14 +4287,14 @@
 		};
 		2CACCD602BD52134008178F8 /* Lollipop Production Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 615B4AD5398C4116B9CE54F9 /* Pods-Lollipop.lollipop production release.xcconfig */;
+			baseConfigurationReference = C6702BAA3AB52FA64858B7F7 /* Pods-Lollipop.lollipop production release.xcconfig */;
 			buildSettings = {
 				APP_NAME = Lollypop;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lollipop/Lollipop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 8M2J78DM79;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FB_APP_ID = 7449475511844855;
