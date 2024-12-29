@@ -97,15 +97,17 @@ extension ScannerView {
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(titleLabel.snp.bottom).offset(12)
-            make.height.equalTo((self.view.frame.width - 40) * 1.27)
+            make.height.equalTo((self.view.frame.width - 40) * (self.isiPad ? 1.1 : 1.27))
+
         }
         
         scannerPlaceholderView.addSubview(self.scannerContainerView)
         self.scannerContainerView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
-            make.bottom.equalToSuperview().offset(-72)
+            make.bottom.equalToSuperview().offset(self.isiPad ? -22 : -72)
             make.height.equalTo(self.scannerContainerView.snp.width).multipliedBy(0.62)
+            
         }
         self.addChild(scannerViewController)
         scannerViewController.view.frame = scannerContainerView.bounds
