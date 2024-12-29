@@ -34,7 +34,7 @@ class PersonalDataPresenter: NSObject, PersonalDataPresenterProtocol  {
     
     func proceed(firstname: String, lastname: String, email: String, phone: String, dob: String, gender: String, city: String){
         guard !firstname.isEmpty, !lastname.isEmpty, !dob.isEmpty, !email.isEmpty, !gender.isEmpty else {
-            view?.validate(isFirstNameEmpty: firstname.isEmpty, isLastNameEmpty: lastname.isEmpty, isEmailEmpty: email.isEmpty, isGenderEmpty: gender == LocalizedTitle.choose.localized, isDoBEmpty: dob == LocalizedTitle.choose.localized)
+            view?.validate(isFirstNameEmpty: firstname.isEmpty, isLastNameEmpty: lastname.isEmpty, isEmailEmpty: email.isEmpty, isGenderEmpty: gender == LocalizedTitle.choose.localized || gender.isEmpty, isDoBEmpty: dob == LocalizedTitle.choose.localized || dob.isEmpty)
             return
         }
         interactor?.update(firstname: firstname, lastname: lastname, email: email, phone: phone, dob: dob, gender: self.gender?.code ?? "", city: city)
