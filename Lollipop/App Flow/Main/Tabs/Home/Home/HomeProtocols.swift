@@ -21,6 +21,7 @@ protocol HomePresenterProtocol: UITableViewDelegate, UITableViewDataSource, AddC
     func viewDidLoad()
     func avatar()
     func add()
+    func localNotification()
 }
 //MARK: Interactor
 //PRESENTER TO INTERACTOR

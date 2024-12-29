@@ -25,6 +25,10 @@ class HomeView: UIViewController, HomeViewProtocol {
         setup()
         presenter?.viewDidLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        presenter?.localNotification()
+    }
 
     //MARK: HomeView Protocol
     func reload(){

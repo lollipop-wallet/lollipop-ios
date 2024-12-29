@@ -382,6 +382,7 @@
 		62BFFD3C2BE7457E00899800 /* LocationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD362BE7457E00899800 /* LocationsModel.swift */; };
 		62BFFD3D2BE7457E00899800 /* LocationsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD372BE7457E00899800 /* LocationsWireframe.swift */; };
 		62BFFD412BE7458E00899800 /* LocationsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFFD402BE7458E00899800 /* LocationsUI.swift */; };
+		62CC6BF42D2151FB0063A930 /* LocalNotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CC6BF32D2151FB0063A930 /* LocalNotificationType.swift */; };
 		62DA008F2C1E9B45003A45AA /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = 62DA008E2C1E9B45003A45AA /* styles.css */; };
 		62DA00912C1EA473003A45AA /* WKWebView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DA00902C1EA473003A45AA /* WKWebView+Extension.swift */; };
 		62E24BC72BEC81D100F6D82B /* Identifier+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E24BC42BEC81D100F6D82B /* Identifier+Extension.swift */; };
@@ -903,6 +904,7 @@
 		62BFFD362BE7457E00899800 /* LocationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsModel.swift; sourceTree = "<group>"; };
 		62BFFD372BE7457E00899800 /* LocationsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsWireframe.swift; sourceTree = "<group>"; };
 		62BFFD402BE7458E00899800 /* LocationsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsUI.swift; sourceTree = "<group>"; };
+		62CC6BF32D2151FB0063A930 /* LocalNotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationType.swift; sourceTree = "<group>"; };
 		62DA008E2C1E9B45003A45AA /* styles.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
 		62DA00902C1EA473003A45AA /* WKWebView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Extension.swift"; sourceTree = "<group>"; };
 		62E24BC42BEC81D100F6D82B /* Identifier+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Identifier+Extension.swift"; sourceTree = "<group>"; };
@@ -1540,6 +1542,7 @@
 				623E987A2C0F4D77005DC950 /* PartnerIitemType.swift */,
 				621B814F2C12187D0071B7F8 /* InquiryType.swift */,
 				2CD8AD6A2C245FE900656EF7 /* CardDeletionArrivalDestination.swift */,
+				62CC6BF32D2151FB0063A930 /* LocalNotificationType.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -3636,6 +3639,7 @@
 				62730CD52BE9F937004209B9 /* PartnerDetailsOptionsTableViewCell.swift in Sources */,
 				62DA00912C1EA473003A45AA /* WKWebView+Extension.swift in Sources */,
 				2CACCD852BD528F7008178F8 /* LaunchWireframe.swift in Sources */,
+				62CC6BF42D2151FB0063A930 /* LocalNotificationType.swift in Sources */,
 				2CACCD952BD52FA3008178F8 /* LocalizedTitle.swift in Sources */,
 				2CA195532BE23D9300CC10F5 /* EditCardUI.swift in Sources */,
 				627E92C82BDA0E200016FF73 /* MainButton.swift in Sources */,

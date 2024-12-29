@@ -23,6 +23,10 @@ class HomePresenter: NSObject, HomePresenterProtocol  {
         NewLoyaltyCardWireframe.delegate = self
         PartnerCardWireframe.delegate = self
         WalletWireframe.cardsDelegate = self
+        
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(cardDeleted), name: Notification.Name(LocalNotificationType.cardDeleted.rawValue), object: nil)
+        
         interactor?.viewDidLoad(showSpinner: true)
     }
     
@@ -36,6 +40,10 @@ class HomePresenter: NSObject, HomePresenterProtocol  {
         }else{
             delegate?.toProfileTabFromHome()
         }
+    }
+    
+    func localNotification(){
+        
     }
 }
 
@@ -251,5 +259,14 @@ extension HomePresenter {
             self.datasource[0] = cardsItem
             self.view?.reload()
         }
+    }
+}
+
+//MARK: LocalNotification - Card deleted
+extension HomePresenter {
+    @objc func cardDeleted(notification: Notification) {
+      // Take Action on Notification
+        print("Nova implementacija")
+        interactor?.viewDidLoad(showSpinner: false)
     }
 }

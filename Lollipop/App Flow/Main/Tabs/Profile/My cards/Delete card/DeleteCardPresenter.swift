@@ -40,7 +40,10 @@ extension DeleteCardPresenter: DeleteCardOutputInteractorProtocol {
             UIApplication.topViewController()?.openAlert(title: LocalizedTitle.notice.localized, message: model.message ?? "", alertStyle: .alert, actionTitles: [LocalizedTitle.ok.localized], actionColors: [.systemBlue], actionStyles: [.default], actions: [
                 { [weak self] _ in
                     guard let self = self else {return}
-                    self.delegate?.didDeleteCard()
+                    //MARK: Remove delegate implementation, add local notification instead
+                    //self.delegate?.didDeleteCard()
+                    let nc = NotificationCenter.default
+                    nc.post(name: Notification.Name(LocalNotificationType.cardDeleted.rawValue), object: nil)
                     //MARK: Figure out how to return to the starting position after deletion from each possible spot in the app.
                     UIApplication.topViewController()?.popBackSpecific(toControllerType: self.arrivalDestination == .wallet ? WalletView.self : MyCardsView.self)
                     UIApplication.topViewController()?.popBack(5)
