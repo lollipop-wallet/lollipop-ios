@@ -131,7 +131,7 @@ class PersonalDataView: UIViewController, PersonalDataViewProtocol {
     
     @objc func handleDatePicker() {
         DispatchQueue.main.async {
-            self.calendarField.text = self.datePicker.date.asString(style: .medium)
+            self.calendarField.text = self.datePicker.date.asString(dateFormat: "dd.MM.yyyy")
             self.calendarField.textColor = AppColors.black
             self.calendarField.borderColor = AppColors.black
         }
