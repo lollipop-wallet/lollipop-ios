@@ -90,11 +90,17 @@ extension UIViewController {
     }
     
     var isiPad: Bool {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            return true
-        }else{
-            return false
-        }
+//        if #available(iOS 13.0, *) {
+//            if UIDevice.current.userInterfaceIdiom == .pad {
+//                print("This is an iPad, and it's running iPadOS!")
+//                return true
+//            }else {
+//                return false
+//            }
+//        }else{
+//            return false
+//        }
+        return UIDevice.current.model.contains("iPad")
     }
     
     func withMainNavigationController() -> UINavigationController {
